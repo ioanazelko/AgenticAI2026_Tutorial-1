@@ -1,4 +1,4 @@
-# Building a Tool-Using Agent
+# AgenticAI2026_Tutorial-1: Building a Tool-Using Agent
 
 Code for Tutorial 1 of the [Fall School on Agentic AI in Science 2026](https://ai-for-science.org/).
 
@@ -16,7 +16,7 @@ is bundled in `data/registry_snapshot/`.
 ## Setup
 
 ```bash
-git clone https://github.com/ioanazelko/tutorial1-tool-using-agent && cd tutorial1-tool-using-agent
+git clone https://github.com/ioanazelko/AgenticAI2026_Tutorial-1 && cd AgenticAI2026_Tutorial-1
 pip install -r requirements.txt
 cp .env.example .env        # your key, and REGISTRY_DIR if you clone the full registry
 python -m pytest            # offline, a few seconds
