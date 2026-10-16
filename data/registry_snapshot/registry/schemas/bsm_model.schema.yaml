@@ -1,0 +1,967 @@
+$schema: "https://json-schema.org/draft/2020-12/schema"
+$id: "https://darkmatterfm.org/schemas/bsm_model.schema.yaml"
+title: "BSM dark-matter model card"
+description: "Top-level schema for one structured BSM dark-matter model entry."
+type: object
+additionalProperties: false
+
+properties:
+  schema_version:
+    type: string
+
+  model_id:
+    type: string
+    pattern: '^[a-z0-9_-]+$'
+
+  identity:
+    type: object
+    additionalProperties: false
+    properties:
+      name:
+        type: string
+      family:
+        type: string
+        examples:
+          - cold_dark_matter
+          - warm_dark_matter
+          - fuzzy_ultralight_dark_matter
+          - axion_like_dark_matter
+          - sterile_neutrino_dark_matter
+          - self_interacting_dark_matter
+          - asymmetric_dark_matter
+          - freeze_in_dark_matter
+          - hidden_sector_dark_matter
+          - primordial_black_holes
+          - multi_component_dark_matter
+      aliases:
+        type: array
+        items:
+          type: string
+      short_description:
+        type: string
+      historical_origin_or_motivation:
+        type: string
+      status:
+        type: string
+        enum:
+          - canonical
+          - speculative
+          - emerging
+          - benchmark
+          - deprecated
+          - excluded
+          - unknown
+      model_kind:
+        type: string
+        enum:
+          - complete_theory
+          - simplified_model
+          - effective_field_theory
+          - phenomenological_parameterization
+          - benchmark_mapping
+          - unknown
+    required:
+      - name
+      - family
+      - short_description
+      - status
+      - model_kind
+
+  theory:
+    type: object
+    additionalProperties: false
+    properties:
+      theory_level:
+        type: string
+        enum:
+          - uv_complete
+          - simplified_model
+          - effective_field_theory
+          - phenomenological_parameterization
+          - benchmark_mapping
+          - unknown
+      parent_frameworks:
+        type: array
+        items:
+          type: string
+      lagrangian_available:
+        type: string
+        enum: ['yes', 'no', partial, unknown, not_applicable]
+      renormalizable:
+        type: string
+        enum: ['yes', 'no', unknown, not_applicable]
+      eft_cutoff:
+        anyOf:
+          - $ref: "common.schema.yaml#/$defs/parameter"
+          - type: "null"
+      embedded_in_larger_framework:
+        type: string
+        enum: ['yes', 'no', unknown]
+      notes:
+        type: string
+    required:
+      - theory_level
+      - lagrangian_available
+      - renormalizable
+
+  particle_content:
+    type: object
+    additionalProperties: false
+    properties:
+      dark_matter_candidate:
+        type: object
+        additionalProperties: false
+        properties:
+          name:
+            type: string
+          spin:
+            type: string
+          statistics:
+            type: string
+            enum:
+              - boson
+              - fermion
+              - scalar
+              - vector
+              - tensor
+              - black_hole
+              - macroscopic_object
+              - unknown
+          elementary_or_composite:
+            type: string
+            enum:
+              - elementary
+              - composite
+              - macroscopic
+              - unknown
+          number_of_components:
+            type: string
+            enum:
+              - single_component
+              - multi_component
+              - subcomponent
+              - unknown
+        required: [name, spin, statistics, elementary_or_composite]
+      additional_dark_sector_particles:
+        type: array
+        items:
+          type: string
+      mediators:
+        type: array
+        items:
+          type: string
+      dark_radiation_species:
+        type: array
+        items:
+          type: string
+      excited_or_degenerate_states:
+        type: array
+        items:
+          type: string
+      long_lived_particles:
+        type: array
+        items:
+          type: string
+      unstable_parent_particles:
+        type: array
+        items:
+          type: string
+      standard_model_extension:
+        type: string
+        enum: [minimal, substantial, none, unknown]
+    required:
+      - dark_matter_candidate
+      - standard_model_extension
+
+  symmetries:
+    type: object
+    additionalProperties: false
+    properties:
+      stabilizing_mechanism:
+        type: string
+      symmetries:
+        type: array
+        items:
+          type: object
+          additionalProperties: false
+          properties:
+            name:
+              type: string
+            type:
+              type: string
+              enum:
+                - gauge
+                - global
+                - approximate
+                - discrete
+                - shift
+                - accidental
+                - unknown
+            exact_or_approximate:
+              type: string
+              enum: [exact, approximate, assumed, broken, unknown]
+            breaking:
+              type: string
+            breaking_scale:
+              anyOf:
+                - $ref: "common.schema.yaml#/$defs/parameter"
+                - type: "null"
+          required: [name, type, exact_or_approximate]
+      topological_defects_possible:
+        type: string
+        enum: ['yes', 'no', unknown, not_applicable]
+    required:
+      - stabilizing_mechanism
+      - symmetries
+
+  interactions:
+    type: object
+    additionalProperties: false
+    properties:
+      portals:
+        type: array
+        items:
+          type: string
+          enum:
+            - higgs
+            - vector
+            - neutrino
+            - axion
+            - gravitational
+            - other
+            - none
+            - unknown
+      standard_model_targets:
+        type: array
+        items:
+          type: string
+      dark_sector_couplings:
+        type: array
+        items:
+          type: string
+      mediator_types:
+        type: array
+        items:
+          type: string
+      interaction_operators:
+        type: array
+        items:
+          type: string
+      scattering:
+        type: object
+        additionalProperties: false
+        properties:
+          elastic:
+            type: string
+            enum: ['yes', 'no', unknown, not_applicable]
+          inelastic:
+            type: string
+            enum: ['yes', 'no', parameter_dependent, unknown, not_applicable]
+          momentum_dependence:
+            type: string
+            enum: [none, mild, strong, unknown, not_applicable]
+          velocity_dependence:
+            type: string
+            enum: [none, mild, strong, parameter_dependent, unknown, not_applicable]
+          spin_dependence:
+            type: string
+            enum: [none, spin_independent, spin_dependent, both, unknown, not_applicable]
+      annihilation_channels:
+        type: array
+        items:
+          type: string
+      decay_channels:
+        type: array
+        items:
+          type: string
+      self_scattering_channels:
+        type: array
+        items:
+          type: string
+      cp_structure:
+        type: string
+      flavor_structure:
+        type: string
+      tree_or_loop_level:
+        type: string
+        enum: [tree, loop, both, unknown, not_applicable]
+    required:
+      - portals
+      - standard_model_targets
+      - mediator_types
+
+  operators:
+    type: object
+    additionalProperties: false
+    properties:
+      renormalizable_terms:
+        type: array
+        items:
+          type: string
+      eft_operators:
+        type: array
+        items:
+          type: string
+      contact_or_light_mediator:
+        type: string
+        enum: [contact, light_mediator, both, unknown, not_applicable]
+      coupling_types:
+        type: array
+        items:
+          type: string
+
+  parameters:
+    type: object
+    additionalProperties: false
+    properties:
+      core:
+        type: array
+        items:
+          $ref: "common.schema.yaml#/$defs/parameter"
+      nuisance:
+        type: array
+        items:
+          $ref: "common.schema.yaml#/$defs/parameter"
+      derived:
+        type: array
+        items:
+          $ref: "common.schema.yaml#/$defs/parameter"
+    required:
+      - core
+
+  mass_scales_and_hierarchies:
+    type: object
+    additionalProperties: false
+    properties:
+      scales:
+        type: array
+        items:
+          $ref: "common.schema.yaml#/$defs/parameter"
+      hierarchy_questions:
+        type: array
+        items:
+          type: object
+          additionalProperties: false
+          properties:
+            question:
+              type: string
+            answer:
+              type: string
+            status:
+              $ref: "common.schema.yaml#/$defs/status"
+          required: [question, answer, status]
+
+  production:
+    type: object
+    additionalProperties: false
+    properties:
+      mechanisms:
+        type: array
+        items:
+          type: string
+      thermal_equilibrium_with_standard_model:
+        type: string
+        enum: ['yes', 'no', partial, unknown]
+      thermal_equilibrium_with_hidden_sector:
+        type: string
+        enum: ['yes', 'no', partial, parameter_dependent, unknown, not_applicable]
+      abundance_set_by:
+        type: array
+        items:
+          type: string
+      depends_on_reheating_temperature:
+        type: string
+        enum: ['yes', 'no', parameter_dependent, unknown]
+      can_produce_all_dark_matter:
+        type: string
+        enum: ['yes', 'no', parameter_dependent, unknown]
+      nonthermal_momentum_distribution:
+        type: string
+        enum: ['yes', 'no', parameter_dependent, unknown, not_applicable]
+      notes:
+        type: string
+    required:
+      - mechanisms
+      - thermal_equilibrium_with_standard_model
+      - can_produce_all_dark_matter
+
+  relic_density:
+    type: object
+    additionalProperties: false
+    properties:
+      full_or_subcomponent:
+        type: string
+        enum: [full_dark_matter, subcomponent, either, unknown]
+      target_fraction:
+        anyOf:
+          - $ref: "common.schema.yaml#/$defs/parameter"
+          - type: "null"
+      calculation_type:
+        type: string
+        enum: [thermal, nonthermal, mixed, phenomenological, unknown]
+      key_dependencies:
+        type: array
+        items:
+          type: string
+      requires_entropy_dilution:
+        type: string
+        enum: ['yes', 'no', parameter_dependent, unknown, not_applicable]
+      overclosure_risk:
+        type: string
+        enum: ['yes', 'no', parameter_dependent, unknown]
+      underproduction_risk:
+        type: string
+        enum: ['yes', 'no', parameter_dependent, unknown, not_applicable]
+      tuning_assessment:
+        type: string
+        enum: [natural, mild_tuning, tuned, severe_tuning, parameter_dependent, unknown]
+    required:
+      - full_or_subcomponent
+      - calculation_type
+
+  cosmological_history:
+    type: object
+    additionalProperties: false
+    properties:
+      standard_history_assumed:
+        type: boolean
+      nonstandard_features:
+        type: array
+        items:
+          type: string
+      dark_sector_temperature:
+        anyOf:
+          - $ref: "common.schema.yaml#/$defs/parameter"
+          - type: "null"
+      delta_neff:
+        anyOf:
+          - $ref: "common.schema.yaml#/$defs/parameter"
+          - type: "null"
+      kinetic_decoupling:
+        anyOf:
+          - $ref: "common.schema.yaml#/$defs/parameter"
+          - type: "null"
+      chemical_decoupling:
+        anyOf:
+          - $ref: "common.schema.yaml#/$defs/parameter"
+          - type: "null"
+      phase_transitions:
+        type: array
+        items:
+          type: string
+      topological_defects:
+        type: array
+        items:
+          type: string
+      isocurvature_perturbations:
+        type: string
+        enum: ['yes', 'no', parameter_dependent, unknown]
+      bbn_relevance:
+        $ref: "common.schema.yaml#/$defs/relevance"
+      cmb_relevance:
+        $ref: "common.schema.yaml#/$defs/relevance"
+      notes:
+        type: [string, "null"]
+    required:
+      - standard_history_assumed
+      - bbn_relevance
+      - cmb_relevance
+
+  phase_space:
+    type: object
+    additionalProperties: false
+    properties:
+      distribution_type:
+        type: string
+        enum:
+          - thermal
+          - nonthermal
+          - resonant
+          - decay_produced
+          - mixed_cold_warm
+          - field_like
+          - not_applicable
+          - unknown
+      distribution_function_available:
+        type: string
+        enum: ['yes', 'no', approximate, unknown, not_applicable]
+      f_of_p_or_q:
+        type: [string, "null"]
+      average_momentum_relative_to_thermal:
+        anyOf:
+          - type: number
+          - type: string
+          - type: "null"
+      free_streaming_length:
+        anyOf:
+          - $ref: "common.schema.yaml#/$defs/parameter"
+          - type: "null"
+      velocity_dispersion_today:
+        anyOf:
+          - $ref: "common.schema.yaml#/$defs/parameter"
+          - type: string
+          - type: "null"
+      phase_space_bounds:
+        type: array
+        items:
+          type: string
+      notes:
+        type: [string, "null"]
+    required:
+      - distribution_type
+      - distribution_function_available
+
+  structure_formation:
+    type: object
+    additionalProperties: false
+    properties:
+      linear:
+        type: object
+        additionalProperties: false
+        properties:
+          behaves_like_cdm:
+            type: string
+            enum: ['yes', 'no', approximately, scale_dependent, unknown]
+          transfer_function_shape:
+            type: string
+            enum:
+              - cdm_like
+              - smooth_cutoff
+              - oscillatory
+              - step_like
+              - mixed_cold_warm
+              - enhanced_small_scale_power
+              - scale_dependent_growth
+              - unknown
+          small_scale_power_effect:
+            type: string
+            enum: [suppression, enhancement, oscillations, none, mixed, unknown]
+          half_mode_mass:
+            anyOf:
+              - $ref: "common.schema.yaml#/$defs/parameter"
+              - type: "null"
+          thermal_wdm_mapping:
+            type: object
+            additionalProperties: false
+            properties:
+              available:
+                type: boolean
+              validity:
+                type: string
+                enum: [valid, approximate, misleading, invalid, unknown, not_applicable]
+              warning:
+                type: string
+            required: [available, validity]
+          impact_on_sigma8_s8:
+            type: string
+        required:
+          - behaves_like_cdm
+          - transfer_function_shape
+          - small_scale_power_effect
+      nonlinear:
+        type: object
+        additionalProperties: false
+        properties:
+          halo_mass_function_effect:
+            type: string
+          subhalo_mass_function_effect:
+            type: string
+          infall_subhalo_mass_function_effect:
+            type: string
+          present_day_bound_subhalo_mass_function_effect:
+            type: string
+          concentration_mass_relation_effect:
+            type: string
+          density_profile_effect:
+            type: string
+          core_or_cusp_effect:
+            type: string
+          subhalo_survival_effect:
+            type: string
+          tidal_stripping_effect:
+            type: string
+          smallest_galaxies_effect:
+            type: string
+          simulation_calibrated:
+            type: string
+            enum: ['yes', 'no', partial, unknown]
+        required:
+          - halo_mass_function_effect
+          - subhalo_mass_function_effect
+          - simulation_calibrated
+      notes:
+        type: [string, "null"]
+    required:
+      - linear
+      - nonlinear
+
+  environment_dependence:
+    type: object
+    additionalProperties: false
+    properties:
+      depends_on_host_halo_mass:
+        type: boolean
+      depends_on_redshift:
+        type: boolean
+      depends_on_velocity_dispersion:
+        type: boolean
+      depends_on_local_density:
+        type: boolean
+      relevant_environments:
+        type: array
+        items:
+          type: string
+      baryonic_feedback_degeneracy:
+        type: string
+        enum: [high, medium, low, none, unknown]
+      notes:
+        type: string
+
+  observables:
+    type: array
+    items:
+      $ref: "observable.schema.yaml#/$defs/observable"
+
+  constraints:
+    type: array
+    description: >
+      Flat list of constraint entries; each entry's `applies` field records
+      whether/how it applies (the earlier applicable/not_applicable buckets
+      are folded into that field).
+    items:
+      $ref: "constraint.schema.yaml#/$defs/constraint"
+
+  validity_domain:
+    type: array
+    items:
+      $ref: "common.schema.yaml#/$defs/validity_entry"
+
+  degeneracies_and_confounders:
+    type: object
+    additionalProperties: false
+    properties:
+      astrophysical:
+        type: array
+        items:
+          type: string
+      cosmological:
+        type: array
+        items:
+          type: string
+      experimental:
+        type: array
+        items:
+          type: string
+      analysis_level:
+        type: array
+        items:
+          type: string
+
+  computational_representation:
+    type: object
+    additionalProperties: false
+    properties:
+      analytic_formula_available:
+        type: string
+        enum: ['yes', 'no', approximate, unknown]
+      boltzmann_solver_required:
+        type: string
+        enum: [none, class, camb, modified_class, modified_camb, unknown]
+      simulations_required:
+        type: array
+        items:
+          type: string
+      semi_analytic_model_available:
+        type: string
+        enum: ['yes', 'no', partial, unknown]
+      emulator_available:
+        type: string
+        enum: ['yes', 'no', partial, unknown]
+      likelihoods_available:
+        type: array
+        items:
+          type: string
+      public_codes:
+        type: array
+        items:
+          type: string
+      recasting_pipeline_available:
+        type: string
+        enum: ['yes', 'no', partial, unknown]
+      custom_requirements:
+        type: array
+        items:
+          type: string
+    required:
+      - analytic_formula_available
+      - boltzmann_solver_required
+      - emulator_available
+
+
+  associated_code:
+    $ref: "code.schema.yaml#/$defs/associated_code"
+
+  theory_to_observable_routing:
+    type: object
+    additionalProperties: false
+    properties:
+      routes:
+        type: array
+        items:
+          $ref: "route.schema.yaml#/$defs/route"
+    required:
+      - routes
+
+  assumptions:
+    type: object
+    additionalProperties: false
+    properties:
+      global:
+        type: array
+        items:
+          $ref: "common.schema.yaml#/$defs/assumption"
+      constraint_specific:
+        type: array
+        items:
+          $ref: "common.schema.yaml#/$defs/assumption"
+      computation_specific:
+        type: array
+        items:
+          $ref: "common.schema.yaml#/$defs/assumption"
+    required:
+      - global
+
+  provenance:
+    $ref: "provenance.schema.yaml#/$defs/provenance"
+
+  model_comparison:
+    type: object
+    additionalProperties: false
+    properties:
+      theoretical_motivation:
+        type: string
+        enum: [low, medium, high, unknown]
+      naturalness:
+        type: string
+        enum: [low, medium, high, unknown, not_applicable]
+      minimality:
+        type: string
+        enum: [low, medium, high, unknown]
+      explanatory_power:
+        type: array
+        items:
+          type: string
+      observational_distinctiveness:
+        type: string
+        enum: [low, medium, high, unknown]
+      near_term_testability:
+        type: string
+        enum: [low, medium, high, unknown]
+      compatibility_with_current_data:
+        type: string
+        enum: [allowed, partially_allowed, excluded, disputed, unknown]
+      complementarity_across_probes:
+        type: string
+        enum: [low, medium, high, unknown]
+      public_tool_availability:
+        type: string
+        enum: [none, partial, good, excellent, unknown]
+
+  robustness:
+    $ref: "common.schema.yaml#/$defs/robustness"
+
+  benchmarks:
+    type: object
+    additionalProperties: false
+    properties:
+      points:
+        type: array
+        items:
+          type: object
+          additionalProperties: false
+          properties:
+            id:
+              type: string
+            description:
+              type: string
+            status:
+              type: string
+              enum:
+                - allowed
+                - excluded
+                - near_future_testable
+                - stress_test
+                - emulator_training
+                - likelihood_validation
+                - unknown
+            parameter_values:
+              type: object
+            purpose:
+              type: array
+              items:
+                type: string
+          required: [id, description, status]
+      regimes:
+        type: array
+        items:
+          type: string
+
+  agent_failure_modes:
+    type: object
+    additionalProperties: false
+    properties:
+      warnings:
+        type: array
+        items:
+          $ref: "common.schema.yaml#/$defs/agent_warning"
+    required:
+      - warnings
+
+  relations:
+    type: object
+    additionalProperties: false
+    description: >
+      Typed, directed edges from this model to other models in the registry.
+      Intended to be populated after deduplication into canonical entries,
+      so that targets are canonical model_ids; edges between per-paper
+      duplicate cards are not meaningful. Together with the family taxonomy
+      (coarse grouping) and dedup clusters (identity), these edges form the
+      model-relations graph and upgrade novelty checking from "is this model
+      already in the registry?" to "where does this model sit in theory space?".
+    properties:
+      edges:
+        type: array
+        items:
+          type: object
+          additionalProperties: false
+          properties:
+            relation:
+              type: string
+              enum:
+                - special_case_of
+                - generalizes
+                - equivalent_in_limit
+                - uv_completion_of
+                - effective_limit_of
+                - shares_portal
+                - shares_mediator
+                - shares_production_mechanism
+                - same_signature_degenerate_with
+                - embedded_in_same_framework
+                - competes_with
+                - other
+            target_model_id:
+              type: string
+              pattern: '^[a-z0-9_-]+$'
+            target_model_name:
+              type:
+                - string
+                - "null"
+            limit_or_condition:
+              type:
+                - string
+                - "null"
+              description: >
+                Parameter limit or condition under which the relation holds
+                (e.g. "m_mediator -> infinity recovers the EFT", "theta -> 0").
+            rationale:
+              type: string
+            confidence:
+              type: string
+              enum: [low, medium, high, unknown]
+          required: [relation, target_model_id, rationale]
+    required:
+      - edges
+
+  capability_gaps:
+    type: object
+    additionalProperties: false
+    description: >
+      First-class record of what is MISSING to evaluate this model against
+      data: theoretical derivations, tools, simulations, emulators,
+      likelihoods, or data products. Complements computational_representation
+      (which records what exists) and route steps with status missing/partial.
+      Aggregated registry-wide, these entries form a community development
+      roadmap: which capabilities, if built, unblock the most high-priority
+      models.
+    properties:
+      gaps:
+        type: array
+        items:
+          type: object
+          additionalProperties: false
+          properties:
+            id:
+              type: string
+              pattern: '^[a-z0-9_-]+$'
+            gap_type:
+              type: string
+              enum:
+                - theory
+                - derivation
+                - tool
+                - simulation
+                - emulator
+                - likelihood
+                - data
+                - calibration
+                - other
+            description:
+              type: string
+            blocking_observables:
+              type: array
+              description: >
+                Observable ids or channels that cannot be evaluated until
+                this gap is closed.
+              items:
+                type: string
+            blocking_routes:
+              type: array
+              description: >
+                Route or forward-model-chain step ids whose status is
+                missing/partial because of this gap.
+              items:
+                type: string
+            proposed_resolution:
+              type:
+                - string
+                - "null"
+              description: >
+                Concrete suggested approach to close the gap (e.g. "extend the
+                ETHOS parameterization in a modified CLASS to cover oscillatory
+                kinetic decoupling").
+            estimated_effort:
+              type: string
+              enum: [small, medium, large, major_program, unknown]
+            severity:
+              type: string
+              enum:
+                - blocks_all_observables
+                - blocks_key_observables
+                - degrades_precision
+                - minor
+                - unknown
+          required: [gap_type, description]
+    required:
+      - gaps
+
+required:
+  - schema_version
+  - model_id
+  - identity
+  - theory
+  - particle_content
+  - symmetries
+  - interactions
+  - parameters
+  - production
+  - relic_density
+  - cosmological_history
+  - phase_space
+  - structure_formation
+  - validity_domain
+  - assumptions
+  - associated_code
+  - provenance
+  - robustness
+  - agent_failure_modes

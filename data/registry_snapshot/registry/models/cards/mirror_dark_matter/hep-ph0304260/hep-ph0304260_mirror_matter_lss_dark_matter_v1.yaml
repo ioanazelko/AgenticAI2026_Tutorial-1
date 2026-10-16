@@ -1,0 +1,693 @@
+_source:
+  shard: arXiv_src_0304_001_wds.tar
+  paper_id: hep-ph0304260
+  source_member: hep-ph0304260.json
+  enriched: true
+  enrichment_schema_version: dm_model_ocr_enrichment_smoke_v0
+schema_version: model_only_v0
+model_id: hep-ph0304260_mirror_matter_lss_dark_matter_v1
+identity:
+  name: Mirror matter dark matter with cooler mirror sector
+  family: mirror_dark_matter
+  aliases: []
+  short_description: A dark sector exactly mirroring Standard Model particle content, with lower temperature
+    than the ordinary sector, supplies mirror baryons as dark matter and yields distinctive linear structure
+    formation.
+  historical_origin_or_motivation: unknown
+  status: speculative
+  model_kind: complete_theory
+theory:
+  theory_level: uv_complete
+  parent_frameworks:
+  - mirror_matter_model
+  - exact_discrete_mirror_symmetry
+  - mirror_baryon_cosmology
+  lagrangian_available: partial
+  renormalizable: 'yes'
+  embedded_in_larger_framework: 'yes'
+  notes: The paper reviews the mirror-sector theory and develops its cosmological perturbation behavior
+    with a cooler mirror plasma.
+particle_content:
+  dark_matter_candidate:
+    name: mirror baryonic matter
+    spin: multi-species
+    statistics: unknown
+    elementary_or_composite: composite
+    number_of_components: multi_component
+  additional_dark_sector_particles:
+  - mirror protons
+  - mirror neutrons
+  - mirror electrons
+  - mirror atoms
+  mediators:
+  - mirror photons
+  dark_radiation_species:
+  - mirror photons
+  - mirror neutrinos
+  excited_or_degenerate_states: []
+  long_lived_particles:
+  - mirror baryons
+  - mirror electrons
+  unstable_parent_particles: []
+  standard_model_extension: substantial
+symmetries:
+  stabilizing_mechanism: Mirror baryons and mirror electrons are stable for the same reasons ordinary
+    matter is stable, under an exact mirror-sector copy of the Standard Model.
+  symmetries:
+  - name: ordinary-mirror discrete parity symmetry
+    type: discrete
+    exact_or_approximate: exact
+  topological_defects_possible: unknown
+interactions:
+  portals:
+  - gravitational
+  standard_model_targets:
+  - ordinary-sector gravity
+  dark_sector_couplings:
+  - mirror electromagnetic interactions
+  - mirror nuclear interactions
+  - mirror photon-baryon plasma interactions
+  mediator_types:
+  - mirror photons
+  - mirror weak bosons
+  - mirror gluons
+  - gravity between sectors
+  interaction_operators: []
+  annihilation_channels: []
+  decay_channels: []
+  self_scattering_channels:
+  - mirror baryon scattering
+  - mirror photon-baryon scattering
+  tree_or_loop_level: not_applicable
+parameters:
+  core:
+  - name: mirror-to-ordinary photon temperature ratio
+    symbol: x
+    description: Ratio of present mirror photon temperature to ordinary CMB temperature.
+    range: x < about 0.5 from BBN; x < about 0.2 for CDM-like bottom-up structure in the paper
+    role: core
+    status: inferred
+  - name: mirror baryon density
+    symbol: Omega'_B
+    description: Mirror baryon density dominating the present matter density.
+    range: approximately Omega_m; Omega_m h^2 about 0.14 used after WMAP
+    role: core
+    status: inferred
+  - name: processed-spectrum maximum scale
+    symbol: lambda_max
+    description: Scale at which the mirror-DM processed power spectrum has a maximum.
+    value: function of x and density parameters
+    role: core
+    status: inferred
+  - name: mirror Silk damping scale
+    symbol: lambda'_S
+    description: Collisional damping scale below which perturbation growth is suppressed.
+    value: function of x and density parameters
+    role: core
+    status: inferred
+production:
+  mechanisms:
+  - asymmetric initial conditions or baryogenesis in mirror and ordinary sectors
+  - cooler mirror photon-baryon plasma
+  - mirror baryons as the dominant matter component
+  thermal_equilibrium_with_standard_model: 'no'
+  thermal_equilibrium_with_hidden_sector: 'yes'
+  abundance_set_by:
+  - mirror-sector temperature ratio x
+  - mirror baryon asymmetry
+  - mirror baryon density
+  depends_on_reheating_temperature: unknown
+  can_produce_all_dark_matter: 'yes'
+  nonthermal_momentum_distribution: 'no'
+  notes: The ordinary and mirror sectors have the same microphysics but different cosmological temperatures
+    and baryon asymmetries.
+relic_density:
+  full_or_subcomponent: full_dark_matter
+  target_fraction:
+    name: matter density
+    symbol: Omega_m h^2
+    value: about 0.14
+    role: cosmological
+    status: inferred
+  calculation_type: thermal
+  key_dependencies:
+  - temperature ratio x
+  - mirror baryon asymmetry
+  - BBN bound on mirror radiation
+  - mirror photon decoupling and Silk damping
+  requires_entropy_dilution: unknown
+  overclosure_risk: parameter_dependent
+  underproduction_risk: parameter_dependent
+  tuning_assessment: unknown
+cosmological_history:
+  standard_history_assumed: false
+  nonstandard_features:
+  - cooler mirror sector
+  - mirror photons and mirror neutrinos
+  - mirror baryons dominate matter density
+  - mirror photon decoupling and collisional damping
+  dark_sector_temperature:
+    name: mirror sector temperature ratio
+    symbol: x
+    range: less than about 0.5; often x < 0.2 for CDM-like behavior
+    role: cosmological
+    status: inferred
+  delta_neff: null
+  kinetic_decoupling: null
+  chemical_decoupling: null
+  phase_transitions:
+  - mirror-sector recombination/decoupling
+  topological_defects: []
+  isocurvature_perturbations: unknown
+  bbn_relevance: high
+  cmb_relevance: medium
+phase_space:
+  distribution_type: thermal
+  distribution_function_available: approximate
+  notes: The dark matter is a mirror photon-baryon plasma before mirror recombination and later nonrelativistic
+    mirror matter.
+structure_formation:
+  linear:
+    behaves_like_cdm: approximately
+    transfer_function_shape: oscillatory
+    small_scale_power_effect: mixed
+    thermal_wdm_mapping:
+      available: false
+      validity: misleading
+      warning: Mirror dark matter has maxima, acoustic oscillations, and collisional damping rather than
+        a simple WDM-like cutoff.
+  nonlinear:
+    halo_mass_function_effect: unknown; expected to differ because mirror matter is chemically complex
+      and partly dissipative.
+    subhalo_mass_function_effect: unknown
+    density_profile_effect: unknown; dissipative mirror matter can change nonlinear halo behavior.
+    simulation_calibrated: unknown
+validity_domain:
+- id: cool_mirror_sector
+  applies_to: model
+  condition: The mirror sector must be cooler than the ordinary sector so mirror radiation satisfies BBN
+    limits.
+  status: inferred
+  extrapolation_risk: medium
+  caveats: []
+  source_reference_ids:
+  - primary
+  valid_range: x < about 0.5
+- id: cdm_like_linear_growth
+  applies_to: parameter
+  condition: For x below about 0.2 the paper finds bottom-up structure formation similar to CDM in the
+    linear regime.
+  status: inferred
+  extrapolation_risk: medium
+  caveats: []
+  source_reference_ids:
+  - primary
+  valid_range: x < about 0.2
+assumptions:
+  global:
+  - id: exact_mirror_symmetry
+    description: The microscopic mirror sector is an exact parity-related copy of ordinary particle physics.
+    scope: theory
+    status: assumed
+    can_be_relaxed: unknown
+    source_reference_ids:
+    - primary
+    impact_if_violated: Changing mirror microphysics changes stability, interactions, and structure formation.
+  - id: asymmetric_cosmological_initial_conditions
+    description: The ordinary and mirror sectors have different temperatures and generally different baryon
+      asymmetries.
+    scope: cosmological_history
+    status: assumed
+    can_be_relaxed: unknown
+    source_reference_ids:
+    - primary
+    impact_if_violated: Equal temperatures would violate standard BBN expectations and not match the desired
+      matter density.
+associated_code:
+  has_associated_code: unknown
+  code_summary: No associated model code is mentioned in the assigned paper text.
+  primary_code_role: null
+  repositories: []
+  packages_or_modules: []
+  notebooks: []
+  scripts: []
+  containers_or_environments: []
+  expected_inputs: []
+  expected_outputs: []
+  supported_observable_channels: []
+  caveats: []
+provenance:
+  model_id: hep-ph0304260_mirror_matter_lss_dark_matter_v1
+  model_name: Mirror matter dark matter with cooler mirror sector
+  model_family: mirror_dark_matter
+  entry_version: 0.1.0
+  status: machine_extracted
+  created_at: '2026-05-30'
+  last_updated: '2026-05-30'
+  sources:
+    primary_papers:
+    - reference_id: primary
+      title: Mirror dark matter and large scale structure
+      authors:
+      - A. Yu. Ignatiev
+      - R. R. Volkas
+      year: 2003
+      arxiv_id: hep/ph0304260
+      doi: null
+      url: null
+      role: extension
+      notes: Only the assigned SQLite full text was used for this extraction.
+    - arxiv_id: hep-ph/0304260
+      authors:
+      - Ignatiev, A.
+      - Volkas, R.
+      doi: 10.1103/PhysRevD.68.023518
+      notes: Primary local full text and ADS record.
+      reference_id: hep-ph0304260_primary
+      role: original_model
+      title: Mirror dark matter and large scale structure
+      url: https://arxiv.org/abs/hep-ph/0304260
+      year: 2003
+    constraint_papers:
+    - arxiv_id: '0911.3592'
+      authors:
+      - Ciarcelluti, P.
+      doi: 10.1063/1.3462655
+      notes: Related local full text on mirror dark matter cosmology, BBN, CMB, and LSS.
+      reference_id: hep-ph0304260_rel_early_mirror
+      role: extension
+      title: Early Universe cosmology with mirror dark matter
+      url: https://arxiv.org/abs/0911.3592
+      year: 2010
+    - arxiv_id: '1211.5354'
+      authors:
+      - Ciarcelluti, Paolo
+      - Wallemacq, Quentin
+      doi: 10.48550/arXiv.1211.5354
+      notes: Related local full text using cosmological data to constrain mirror matter parameters.
+      reference_id: hep-ph0304260_rel_cosmo_data
+      role: constraint
+      title: Is dark matter made of mirror matter? Evidence from cosmological data
+      url: https://arxiv.org/abs/1211.5354
+      year: 2012
+    - arxiv_id: '0809.0668'
+      authors:
+      - Ciarcelluti, P.
+      doi: 10.1063/1.2987173
+      notes: Related local full text reviewing astrophysical tests of mirror dark matter.
+      reference_id: hep-ph0304260_rel_tests
+      role: review
+      title: Astrophysical tests of mirror dark matter
+      url: https://arxiv.org/abs/0809.0668
+      year: 2008
+    external_databases: []
+    review_papers: []
+  extraction:
+    method: llm_assisted
+    extracted_by: codex_batch_0007_worker
+    extractor_name: Codex GPT-5 dark-matter model-card batch worker
+    extraction_date: '2026-05-30'
+    confidence: high
+    source_chunks_or_sections:
+    - reference_id: primary
+      section: abstract
+      page: null
+      quote_or_summary: The paper re-examines linear density perturbation growth in a universe containing
+        mirror dark matter.
+    - reference_id: primary
+      section: mirror cosmology
+      page: null
+      quote_or_summary: It defines a cooler mirror sector with temperature ratio x and mirror baryons
+        dominating the matter density.
+    unresolved_items:
+    - No modern Boltzmann-code likelihood or MCMC posterior is produced in this batch.
+    - Nonlinear dissipative mirror matter, mirror-star formation, and compact-object distributions are
+      outside the primary linear-regime calculation.
+    - Direct-detection mirror-matter claims are related but not structured for this LSS-focused model
+      card.
+  evidence:
+    particle_content:
+    - reference_id: primary
+      note: 'The paper describes mirror dark matter as chemically complex mirror analogues of ordinary
+        matter: mirror protons, neutrons, electrons, photons, and neutrinos.'
+      confidence: high
+      section: introduction
+    symmetries:
+    - reference_id: primary
+      note: Mirror matter is motivated by an exact discrete symmetry between ordinary and mirror sectors
+        in the microscopic Lagrangian.
+      confidence: high
+      section: mirror cosmology review
+    production_mechanism:
+    - reference_id: primary
+      note: The cosmology is set by asymmetric initial conditions or baryogenesis producing a cooler mirror
+        plasma with temperature ratio x = T0_prime/T0 and mirror baryons dominating matter.
+      confidence: high
+      section: mirror cosmology review
+    cosmological_history:
+    - reference_id: primary
+      note: A cooler mirror sector suppresses relativistic mirror energy density by x^4 and can satisfy
+        BBN bounds; mirror baryons dominate the matter density.
+      confidence: high
+      section: mirror cosmology review
+    parameter_ranges:
+    - reference_id: primary
+      note: The paper discusses x below about 0.5 from BBN, x around or below 0.2 for CDM-like bottom-up
+        structure, and Omega_m h^2 about 0.14.
+      confidence: medium
+      section: abstract and cosmology section
+    validity_domain:
+    - reference_id: primary
+      note: The linear-regime structure features include a maximum scale, collisional damping below a
+        Silk scale, and oscillations between them.
+      confidence: high
+      section: abstract
+    constraints:
+    - confidence: high
+      note: Primary paper states x < 0.2 yields bottom-up structure similar to CDM and discusses Lyman-alpha/CMB/reionization
+        discrimination.
+      page: null
+      reference_id: hep-ph0304260_primary
+      section: Abstract/conclusion
+    - confidence: medium
+      note: Related cosmological-data paper supports treating x and mirror density as constrained parameters.
+      page: null
+      reference_id: hep-ph0304260_rel_cosmo_data
+      section: Abstract/introduction
+    observables:
+    - confidence: high
+      note: Primary abstract states the processed power-spectrum maximum, Silk damping, oscillations,
+        and x dependence.
+      page: null
+      reference_id: hep-ph0304260_primary
+      section: Abstract/linear spectra discussion
+    - confidence: medium
+      note: Related text reviews mirror-dark-matter signatures in BBN, CMB, LSS, and structure formation.
+      page: null
+      reference_id: hep-ph0304260_rel_early_mirror
+      section: Abstract/introduction
+    routes:
+    - confidence: high
+      note: Primary paper derives mirror Jeans and Silk scales and processed spectra for linear perturbation
+        growth.
+      page: null
+      reference_id: hep-ph0304260_primary
+      section: Jeans/Silk/spectra sections
+  review:
+    human_reviewed: false
+    expert_reviewed: false
+    scientific_confidence: high
+    implementation_confidence: medium
+    reviewer_notes: []
+  caveats:
+  - This paper substantially develops mirror-matter structure formation rather than originally inventing
+    the mirror matter model.
+robustness:
+  overall: medium
+  theory_robustness: medium
+  observational_robustness: low
+  computational_robustness: medium
+  dominant_uncertainties:
+  - mirror-sector temperature ratio
+  - mirror baryogenesis
+  - nonlinear dissipative structure formation
+  validation_status: partially_validated
+  notes: The paper gives analytic/semi-quantitative linear-regime structure-formation estimates but not
+    a full nonlinear simulation calibration.
+agent_failure_modes:
+  warnings:
+  - id: not_collisionless_cdm
+    severity: medium
+    category: invalid_mapping
+    warning: Mirror dark matter is chemically complex and partly dissipative, so mapping it to collisionless
+      CDM can fail on small and nonlinear scales.
+    source_reference_ids:
+    - primary
+    mitigation: Use the mirror-sector transfer features and damping scales when available.
+observables:
+- caveats:
+  - The primary paper treats the linear regime and does not follow nonlinear dissipative mirror structure.
+  channel: large_scale_structure
+  effect_direction: shape_change
+  environments:
+  - linear matter power spectrum
+  - mirror photon decoupling epoch
+  id: obs_mirror_power_spectrum_features
+  key_quantities:
+  - description: T_mirror/T_ordinary
+    name: mirror temperature ratio
+    role: cosmological
+    status: inferred
+    symbol: x
+    value: x < 0.2 gives CDM-like bottom-up formation in the primary paper
+  - description: Scale of the processed-spectrum peak
+    name: maximum scale
+    role: derived
+    status: inferred
+    symbol: lambda_max
+  - description: Damping scale for mirror baryons
+    name: mirror Silk scale
+    role: derived
+    status: inferred
+    symbol: lambda_S_prime
+  - description: Mirror-sector baryon density composing dark matter
+    name: mirror baryon density
+    role: cosmological
+    status: inferred
+    symbol: Omega_b_prime
+  linked_constraints:
+  - con_mirror_jeans_silk_lss
+  linked_routes:
+  - route_mirror_temperature_to_lss
+  name: Mirror-baryon processed power-spectrum peak, damping, and oscillations
+  notes: null
+  observability: medium
+  predicted_effect: Adiabatic scale-invariant initial perturbations evolve into a processed mirror-dark-matter
+    power spectrum with a maximum at lambda_max, collisional damping below a smaller mirror Silk scale,
+    and oscillatory perturbations between these scales.
+  redshift_range: radiation era through matter-radiation equality
+  relevance: critical
+  scale_range: galactic and subgalactic linear perturbation scales depending on x
+  source_reference_ids:
+  - hep-ph0304260_primary
+  - hep-ph0304260_rel_early_mirror
+  subchannel: linear mirror-baryon acoustic and collisional-damping features
+- caveats:
+  - A modern Boltzmann-code likelihood is needed for numerical constraints.
+  channel: lyman_alpha
+  effect_direction: model_dependent
+  environments:
+  - Lyman-alpha forest
+  - CMB anisotropy
+  - early reionization
+  id: obs_lya_cmb_reionization_discrimination
+  key_quantities:
+  - description: Controls how close mirror dark matter is to CDM
+    name: temperature ratio
+    role: cosmological
+    status: inferred
+    symbol: x
+  - description: Scale below which mirror-baryon perturbations are damped
+    name: damping scale
+    role: derived
+    status: inferred
+    symbol: lambda_S_prime
+  - description: Epoch controlling whether modes grow before equality
+    name: mirror photon decoupling redshift
+    role: derived
+    status: inferred
+    symbol: z_dec_prime
+  linked_constraints:
+  - con_temperature_ratio_cdm_like_lss
+  - con_mirror_jeans_silk_lss
+  linked_routes:
+  - route_mirror_temperature_to_lss
+  name: Lyman-alpha, CMB, and early-reionization discrimination from CDM
+  notes: null
+  observability: high
+  predicted_effect: For small x the model approaches CDM in the linear regime, but Lyman-alpha forest
+    data, CMB anisotropy, and early reionization can distinguish mirror dark matter from WIMP-style CDM
+    through residual small-scale damping and oscillatory features.
+  redshift_range: linear-growth epoch to observed Lyman-alpha/CMB eras
+  relevance: high
+  scale_range: Lyman-alpha and CMB-sensitive linear scales
+  source_reference_ids:
+  - hep-ph0304260_primary
+  - hep-ph0304260_rel_cosmo_data
+  subchannel: small-scale power and CMB/reionization cross-checks
+constraints:
+- allowed_regions:
+  - The primary paper states that for x < 0.2 mirror dark matter gives bottom-up large-scale structure
+    formation similar to conventional CDM in the linear regime.
+  applies: parameter_dependent
+  assumptions:
+  - can_be_relaxed: 'no'
+    description: The mirror plasma temperature is lower than the ordinary-sector temperature.
+    id: assume_cool_mirror_sector
+    impact_if_violated: A hotter mirror sector would overcontribute radiation density and move damping
+      features to larger observable scales.
+    notes: null
+    scope: cosmological initial conditions
+    source_reference_ids:
+    - hep-ph0304260_primary
+    - hep-ph0304260_rel_early_mirror
+    status: assumed
+  benchmark_implications:
+  - The mirror sector must be cooler than the visible sector; decreasing x makes the linear-regime behavior
+    closer to CDM.
+  caveats:
+  - The x < 0.2 statement is a primary-paper linear-regime criterion, not a modern parameter posterior.
+  constrained_parameters:
+  - x
+  - Omega_b_prime
+  - Delta N_eff
+  - z_dec_prime
+  constraint_type: cosmological
+  data_release: BBN, Lyman-alpha, CMBR, and WMAP-era reionization context discussed by the primary paper
+  excluded_regions:
+  - Mirror sectors hot enough to spoil BBN or shift the processed power-spectrum peak/damping scales onto
+    disallowed large scales.
+  id: con_temperature_ratio_cdm_like_lss
+  likelihood_available: 'no'
+  likelihood_reference: null
+  name: Cool mirror-sector requirement for CDM-like bottom-up structure
+  notes: null
+  observable_channel: BBN and linear large-scale structure
+  recasting_needed: 'yes'
+  robustness: medium
+  source_reference_ids:
+  - hep-ph0304260_primary
+  - hep-ph0304260_rel_early_mirror
+- allowed_regions:
+  - Small-x regions where lambda_max and the damping scale move to sufficiently small scales and the model
+    resembles CDM in linear structure formation.
+  applies: recast_required
+  assumptions:
+  - can_be_relaxed: partial
+    description: The primary processed spectra start from adiabatic scale-invariant perturbations.
+    id: assume_adiabatic_scale_invariant_initial_conditions
+    impact_if_violated: Isocurvature or different primordial spectra would change the inferred transfer
+      function.
+    notes: null
+    scope: linear-transfer calculation
+    source_reference_ids:
+    - hep-ph0304260_primary
+    status: assumed
+  benchmark_implications:
+  - The model has richer linear structure than cold, warm, or hot dark matter and requires a dedicated
+    transfer-function calculation.
+  caveats:
+  - Nonlinear dissipative mirror structure and compact-object formation are outside the linear calculation.
+  constrained_parameters:
+  - x
+  - lambda_max
+  - lambda_S_prime
+  - Omega_b_prime
+  - mirror recombination history
+  constraint_type: astrophysical
+  data_release: Lyman-alpha forest, CMBR anisotropy, and early reionization data discussed qualitatively
+    in the primary paper
+  excluded_regions:
+  - Parameter choices whose mirror Jeans/Silk damping suppresses or oscillates the linear power spectrum
+    on scales incompatible with Lyman-alpha or CMB observations.
+  id: con_mirror_jeans_silk_lss
+  likelihood_available: 'no'
+  likelihood_reference: null
+  name: Mirror Jeans and Silk scale constraints from small-scale power
+  notes: null
+  observable_channel: Lyman-alpha forest/CMB matter power
+  recasting_needed: 'yes'
+  robustness: medium
+  source_reference_ids:
+  - hep-ph0304260_primary
+  - hep-ph0304260_rel_cosmo_data
+theory_to_observable_routing:
+  routes:
+  - agent_notes: Primary paper supplies the qualitative transfer-function features; a modern likelihood
+      pipeline would be the next step.
+    caveats:
+    - Linear-regime success does not settle nonlinear dissipative mirror-object formation.
+    constraint_ids:
+    - con_temperature_ratio_cdm_like_lss
+    - con_mirror_jeans_silk_lss
+    derived_quantities:
+    - z_dec_prime
+    - mirror Jeans length
+    - mirror Silk scale
+    - lambda_max
+    - linear transfer function
+    description: Map the mirror-sector temperature ratio and mirror baryon density into linear power-spectrum
+      observables and cosmological constraints.
+    forward_model_chain:
+    - inputs:
+      - x
+      - Omega_b_prime
+      - cosmological parameters
+      notes: null
+      outputs:
+      - z_dec_prime
+      - radiation contribution
+      step_id: compute_mirror_thermal_history
+      step_type: analytic_formula
+      tool_or_code: mirror-sector recombination and expansion history
+      validity: valid for exact mirror microphysics and cooler-sector assumption
+    - inputs:
+      - x
+      - Omega_b_prime
+      - z_dec_prime
+      notes: null
+      outputs:
+      - lambda_J_prime
+      - lambda_S_prime
+      - lambda_max
+      step_id: compute_jeans_silk_scales
+      step_type: analytic_formula
+      tool_or_code: mirror baryon Jeans and Silk scale formulas
+      validity: primary paper derives characteristic scales for linear growth
+    - inputs:
+      - primordial perturbations
+      - mirror thermal history
+      notes: null
+      outputs:
+      - processed matter power spectrum
+      step_id: build_transfer_function
+      step_type: transfer_function
+      tool_or_code: linear perturbation solver for coupled mirror baryon-photon fluid
+      validity: needed for precision comparison beyond the analytic scale estimates
+    - inputs:
+      - transfer function
+      - CMB anisotropies
+      notes: null
+      outputs:
+      - allowed x and density region
+      step_id: compare_lss_cmb
+      step_type: likelihood
+      tool_or_code: Lyman-alpha/CMB/reionization likelihoods
+      validity: not implemented in the primary paper
+    id: route_mirror_temperature_to_lss
+    input_parameters:
+    - x
+    - Omega_b_prime
+    - Omega_b
+    - Hubble parameter
+    - primordial spectrum
+    likelihoods:
+    - Lyman-alpha forest likelihood
+    - CMB anisotropy likelihood
+    - BBN/Delta N_eff likelihood
+    observable_ids:
+    - obs_mirror_power_spectrum_features
+    - obs_lya_cmb_reionization_discrimination
+    required_code_resources:
+    - mirror-sector Boltzmann/transfer solver
+    - BBN radiation-density recast
+    - Lyman-alpha likelihood
+    route_status: planned
+    source_model_features:
+    - exact mirror sector with stable mirror baryons
+    - cooler mirror plasma
+    - mirror photon-baryon coupling before mirror recombination
+    - dissipative chemically complex dark matter
+    validation_tests:
+    - recover the primary x < 0.2 CDM-like criterion
+    - reproduce peak/damping/oscillation ordering around lambda_max and lambda_S_prime

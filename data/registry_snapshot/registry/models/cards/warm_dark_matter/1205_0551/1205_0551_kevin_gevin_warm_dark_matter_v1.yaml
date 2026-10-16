@@ -1,0 +1,783 @@
+_source:
+  shard: arXiv_src_1205_001_wds.tar
+  paper_id: '1205_0551'
+  source_member: 1205_0551.json
+  enriched: true
+  enrichment_schema_version: dm_model_ocr_enrichment_smoke_v0
+schema_version: model_only_v0
+model_id: 1205_0551_kevin_gevin_warm_dark_matter_v1
+identity:
+  name: keVin-GeVin warm dark matter
+  family: warm_dark_matter
+  aliases:
+  - keV inert fermion warm dark matter
+  - keVin WDM with GeVin entropy dilution
+  short_description: A simple warm dark matter model adding a stable keV inert fermion and a heavier unstable
+    GeV inert fermion to the Standard Model, with suppressed Z couplings and late GeVin decay entropy
+    dilution.
+  historical_origin_or_motivation: Motivated by warm dark matter candidates with keV masses and by the
+    need to obtain the correct abundance through thermal overproduction followed by entropy dilution.
+  status: speculative
+  model_kind: simplified_model
+theory:
+  theory_level: simplified_model
+  parent_frameworks:
+  - Standard Model plus inert neutral fermions
+  - E6 inspired supersymmetric model realization
+  - sterile neutrino realization
+  lagrangian_available: partial
+  renormalizable: unknown
+  embedded_in_larger_framework: 'yes'
+  notes: The paper writes effective interaction Lagrangians for suppressed Z couplings of two neutral
+    fermions and maps the framework onto E6SSM singlinos and sterile-neutrino examples.
+particle_content:
+  dark_matter_candidate:
+    name: stable keVin chi_1
+    spin: 1/2
+    statistics: fermion
+    elementary_or_composite: elementary
+    number_of_components: single_component
+  additional_dark_sector_particles:
+  - unstable GeVin chi_2
+  mediators:
+  - Standard Model Z boson
+  - off-shell Z boson in chi_2 decay
+  dark_radiation_species: []
+  excited_or_degenerate_states: []
+  long_lived_particles:
+  - keVin chi_1
+  unstable_parent_particles:
+  - GeVin chi_2
+  standard_model_extension: minimal
+symmetries:
+  stabilizing_mechanism: The keVin is stabilized by an additional quantum number, with R parity given
+    as an example in supersymmetric realizations; both inert fermions carry zero electric charge and lepton
+    number.
+  symmetries:
+  - name: additional keVin stabilizing quantum number
+    type: unknown
+    exact_or_approximate: exact
+    breaking: not specified; R parity is given as an example
+    breaking_scale: null
+  topological_defects_possible: unknown
+interactions:
+  portals:
+  - vector
+  standard_model_targets:
+  - Standard Model fermions
+  - W bosons when kinematically accessible
+  dark_sector_couplings:
+  - suppressed diagonal Z couplings epsilon_i
+  - suppressed flavor-changing Z coupling between chi_1 and chi_2
+  mediator_types:
+  - Z boson
+  interaction_operators:
+  - Z_mu chi_i gamma^mu gamma_5 chi_i with suppressed coefficient
+  - Z_mu chi_1 gamma^mu gamma_5 chi_2 flavor-changing coupling
+  scattering:
+    elastic: unknown
+    inelastic: unknown
+    momentum_dependence: unknown
+    velocity_dependence: unknown
+    spin_dependence: unknown
+  annihilation_channels:
+  - chi_i chi_i annihilation into Standard Model fermions through Z exchange
+  - chi_i chi_i annihilation into W bosons when open
+  decay_channels:
+  - chi_2 -> chi_1 + off-shell Z -> chi_1 + f fbar
+  self_scattering_channels: []
+  tree_or_loop_level: tree
+parameters:
+  core:
+  - name: keVin mass
+    symbol: M_1
+    description: Mass of the stable warm dark matter keVin.
+    range:
+      min: 1
+      max: 100
+      unit: keV
+      notes: The model targets order 1-100 keV; structure formation implies a lower bound around 1.5 keV
+        in the paper discussion.
+    role: core
+    status: inferred
+    source_reference_ids: []
+  - name: GeVin mass
+    symbol: M_2
+    description: Mass of the heavier unstable inert fermion that later decays and dilutes the keVin abundance.
+    range:
+      min: 1
+      max: 100
+      unit: GeV
+      notes: The paper targets order 1-100 GeV and quotes absolute lower values depending on BBN assumptions.
+    role: core
+    status: inferred
+    source_reference_ids: []
+  - name: keVin Z-coupling suppression
+    symbol: epsilon_1
+    description: Suppression of the chi_1 coupling to the Z boson.
+    range: small, bounded by thermalization and Z-width considerations
+    role: core
+    status: inferred
+    source_reference_ids: []
+  - name: GeVin Z-coupling suppression
+    symbol: epsilon_2
+    description: Suppression of the chi_2 coupling to the Z boson.
+    range: small, controls chi_2 freeze-out
+    role: core
+    status: inferred
+    source_reference_ids: []
+  - name: flavor-changing Z-coupling suppression
+    symbol: eta
+    description: Suppression controlling chi_2 -> chi_1 f fbar decay through an off-shell Z.
+    range: chosen to produce late entropy without spoiling BBN
+    role: core
+    status: inferred
+    source_reference_ids: []
+  - name: reheating temperature after GeVin decay
+    symbol: T_r
+    description: Temperature after entropy-producing GeVin decays.
+    range:
+      min: 0.7 or 4.0
+      max: null
+      unit: MeV
+      notes: Weak and strong BBN benchmark lower bounds quoted by the paper.
+    role: cosmological
+    status: inferred
+    source_reference_ids: []
+  - name: entropy dilution factor
+    symbol: S_req
+    description: Required entropy dilution to reduce the thermally overproduced keVin abundance.
+    value: model-dependent
+    role: derived
+    status: inferred
+    source_reference_ids: []
+production:
+  mechanisms:
+  - thermal production and relativistic freeze-out of keVins
+  - late entropy production from out-of-equilibrium GeVin decays
+  - possible nonthermal production for a keVin without GeVin in very feeble-interaction variants
+  thermal_equilibrium_with_standard_model: partial
+  thermal_equilibrium_with_hidden_sector: unknown
+  abundance_set_by:
+  - M_1
+  - M_2
+  - epsilon_1
+  - epsilon_2
+  - eta
+  - GeVin decay width
+  - entropy dilution factor
+  depends_on_reheating_temperature: 'yes'
+  can_produce_all_dark_matter: parameter_dependent
+  nonthermal_momentum_distribution: parameter_dependent
+  notes: The main scenario has thermally overproduced chi_1 diluted by late chi_2 decay; the paper also
+    notes a nonthermal keVin-only possibility analogous to sterile-neutrino WDM.
+relic_density:
+  full_or_subcomponent: full_dark_matter
+  target_fraction: null
+  calculation_type: mixed
+  key_dependencies:
+  - thermal keVin abundance
+  - GeVin freeze-out regime
+  - late decay width
+  - entropy production
+  - BBN lower bound on reheating temperature
+  requires_entropy_dilution: 'yes'
+  overclosure_risk: 'yes'
+  underproduction_risk: parameter_dependent
+  tuning_assessment: unknown
+cosmological_history:
+  standard_history_assumed: false
+  nonstandard_features:
+  - late matter/energy density domination by GeVin chi_2
+  - entropy injection from GeVin decays before BBN
+  dark_sector_temperature: null
+  delta_neff: null
+  kinetic_decoupling: null
+  chemical_decoupling:
+    name: keVin freeze-out
+    symbol: T_FO^1
+    description: The keVin freezes out while relativistic in the main semi-analytic treatment.
+    value: relativistic freeze-out
+    role: derived
+    status: inferred
+    source_reference_ids: []
+  phase_transitions: []
+  topological_defects: []
+  isocurvature_perturbations: unknown
+  bbn_relevance: high
+  cmb_relevance: unknown
+phase_space:
+  distribution_type: thermal
+  distribution_function_available: approximate
+  average_momentum_relative_to_thermal: null
+  free_streaming_length: null
+  velocity_dispersion_today: null
+  phase_space_bounds:
+  - Lyman-alpha/structure-formation lower bound on M_1 after entropy dilution
+  notes: The candidate is warm; the paper discusses structure-formation bounds through rescaling a nonresonantly
+    produced WDM mass bound by the entropy dilution factor.
+structure_formation:
+  linear:
+    behaves_like_cdm: 'no'
+    transfer_function_shape: smooth_cutoff
+    small_scale_power_effect: suppression
+  nonlinear:
+    halo_mass_function_effect: not simulated in the paper; WDM motivation is reduced small-scale structure
+    subhalo_mass_function_effect: suppression expected for WDM, not calibrated in this paper
+    simulation_calibrated: 'no'
+validity_domain:
+- id: kevin_mass_structure_bound
+  applies_to: parameter
+  condition: M_1 must be high enough to satisfy structure-formation/Lyman-alpha velocity-distribution
+    bounds after entropy dilution.
+  valid_range: absolute lower value around 1.5 keV in the paper discussion
+  status: inferred
+  extrapolation_risk: high
+  caveats:
+  - Exact bound depends on the entropy dilution factor and WDM mapping.
+  source_reference_ids:
+  - '1205_0551'
+  notes: null
+- id: gevin_decay_before_bbn
+  applies_to: production
+  condition: GeVin decay must reheat the Universe above the weak or strong BBN lower temperature before
+    nucleosynthesis.
+  valid_range: T_r greater than about 0.7-4.0 MeV
+  status: inferred
+  extrapolation_risk: high
+  caveats:
+  - Weak versus strong BBN assumptions change allowed parameter space.
+  source_reference_ids:
+  - '1205_0551'
+  notes: null
+- id: semi_analytic_freezeout_limits
+  applies_to: calculation
+  condition: The paper uses analytic limiting regimes for relativistic or nonrelativistic freeze-out and
+    flags intermediate GeVin freeze-out as requiring a numerical Boltzmann treatment.
+  valid_range: null
+  status: approximate
+  extrapolation_risk: medium
+  caveats:
+  - Intermediate freeze-out regions are not fully solved.
+  source_reference_ids:
+  - '1205_0551'
+  notes: null
+assumptions:
+  global:
+  - id: suppressed_z_couplings
+    description: The keVin and GeVin have suppressed couplings to the Standard Model Z boson, possibly
+      from small mixing in a larger model.
+    scope: theory
+    status: assumed
+    impact_if_violated: The freeze-out, decay, and Z-width arguments change.
+    can_be_relaxed: 'yes'
+    source_reference_ids:
+    - '1205_0551'
+    notes: null
+  - id: late_gevin_entropy
+    description: The heavier GeVin becomes cosmologically important and decays late enough to dilute the
+      keVin abundance but early enough not to disturb BBN.
+    scope: cosmological_history
+    status: assumed
+    impact_if_violated: The keVin abundance is generally overproduced or BBN can be disrupted.
+    can_be_relaxed: unknown
+    source_reference_ids:
+    - '1205_0551'
+    notes: null
+associated_code:
+  has_associated_code: unknown
+  code_summary: null
+provenance:
+  model_id: 1205_0551_kevin_gevin_warm_dark_matter_v1
+  model_name: keVin-GeVin warm dark matter
+  model_family: warm_dark_matter
+  entry_version: 0.1.0
+  status: machine_extracted
+  created_at: '2026-05-31'
+  last_updated: '2026-05-31'
+  sources:
+    primary_papers:
+    - reference_id: '1205_0551'
+      title: Warm Dark Matter from keVins
+      authors:
+      - Stephen F. King
+      - Alexander Merle
+      year: 2012
+      arxiv_id: '1205.0551'
+      doi: null
+      url: null
+      role: original_model
+      notes: null
+    - reference_id: p1205
+      title: Warm dark matter from keVins
+      authors:
+      - Stephen F. King
+      - Alexander Merle
+      year: 2012
+      arxiv_id: '1205.0551'
+      doi: null
+      url: https://arxiv.org/abs/1205.0551
+      role: original_model
+      notes: Primary local full text read.
+    constraint_papers: []
+    review_papers:
+    - reference_id: r1502_01011
+      title: 'keV sterile neutrino dark matter from singlet scalar decays: basic concepts and subtle features'
+      authors:
+      - Alexander Merle
+      - Maximilian Totzauer
+      year: 2015
+      arxiv_id: '1502.01011'
+      doi: null
+      url: https://arxiv.org/abs/1502.01011
+      role: review
+      notes: Related local full text read for WDM spectrum caveats.
+    external_databases:
+    - name: NASA ADS
+      url: https://ui.adsabs.harvard.edu/
+      note: Used for sanitized primary/reference/citation metadata discovery only.
+  extraction:
+    method: llm_assisted
+    extracted_by: codex_batch_0019
+    extractor_name: dark-matter model-card extraction worker
+    extraction_date: '2026-05-31'
+    confidence: high
+    source_chunks_or_sections:
+    - reference_id: '1205_0551'
+      section: Abstract and introduction
+      page: null
+      quote_or_summary: Proposes a simple WDM model with stable keVins and unstable GeVins carrying zero
+        electric charge and lepton number.
+    - reference_id: '1205_0551'
+      section: keVins framework
+      page: null
+      quote_or_summary: Defines suppressed Z couplings, masses M1 and M2, and GeVin decay through an off-shell
+        Z.
+    - reference_id: '1205_0551'
+      section: Relic abundance and benchmark discussion
+      page: null
+      quote_or_summary: Derives thermal overproduction, entropy dilution, BBN reheating bounds, and benchmark
+        parameter regions.
+    unresolved_items:
+    - Exact benchmark table values were not reliably recoverable from the plain-text extraction.
+    - Intermediate GeVin freeze-out needs numerical Boltzmann treatment.
+    - Benchmark tables not fully structured from OCR.
+    - X-ray sterile-neutrino analog constraints are model-dependent and left unstructured.
+  evidence:
+    particle_content:
+    - reference_id: '1205_0551'
+      note: The paper adds stable keVin chi_1 with mass of order 1-100 keV and unstable GeVin chi_2 with
+        mass of order 1-100 GeV.
+      confidence: high
+      section: keVins framework
+      page: null
+    symmetries:
+    - reference_id: '1205_0551'
+      note: The keVin is described as stabilized by an additional quantum number, with R parity in supersymmetric
+        models given as an example.
+      confidence: medium
+      section: keVins framework
+      page: null
+    interactions:
+    - reference_id: '1205_0551'
+      note: Both inert fermions have suppressed Z couplings, and chi_2 can decay via a flavor-changing
+        off-shell Z to chi_1 plus SM fermions.
+      confidence: high
+      section: Z couplings
+      page: null
+    production_mechanism:
+    - reference_id: '1205_0551'
+      note: The main abundance mechanism is thermal overproduction of chi_1 followed by entropy dilution
+        from late chi_2 decays.
+      confidence: high
+      section: Relic abundance discussion
+      page: null
+    cosmological_history:
+    - reference_id: '1205_0551'
+      note: The GeVin decay must occur before BBN, with reheating temperature lower bounds around 0.7-4.0
+        MeV used in the analysis.
+      confidence: high
+      section: BBN discussion
+      page: null
+    parameter_ranges:
+    - reference_id: '1205_0551'
+      note: The paper targets M1 of order 1-100 keV, M2 of order 1-100 GeV, and five independent parameters
+        epsilon_1, epsilon_2, eta, M1, and M2.
+      confidence: high
+      section: Framework and benchmarks
+      page: null
+    validity_domain:
+    - reference_id: '1205_0551'
+      note: The allowed region depends on satisfying structure-formation bounds, avoiding Z-width problems,
+        thermalizing when required, and decaying before BBN.
+      confidence: medium
+      section: Bounds and benchmark discussion
+      page: null
+    observables:
+    - reference_id: p1205
+      note: Primary text connects Lyman-alpha, BBN reheating, and invisible Z width to the keVin-GeVin
+        setup.
+      confidence: high
+      section: Bounds/benchmarks
+      page: null
+    constraints:
+    - reference_id: p1205
+      note: Primary text quotes M1 around 1.5 keV, T_r thresholds, M2 lower values, and epsilon_i width
+        bounds.
+      confidence: high
+      section: Bounds discussion
+      page: null
+    - reference_id: r1502_01011
+      note: Related text notes detailed transfer functions are needed for nonthermal WDM spectra.
+      confidence: medium
+      section: Structure formation
+      page: null
+    routes:
+    - reference_id: p1205
+      note: Primary paper supplies semi-analytic freeze-out, entropy, BBN, Lyman-alpha, and Z-width route.
+      confidence: high
+      section: Framework/benchmarks
+      page: null
+  review:
+    human_reviewed: false
+    reviewed_by: null
+    review_date: null
+    expert_reviewed: false
+    expert_reviewer: null
+    expert_review_date: null
+    reviewer_notes: []
+    scientific_confidence: high
+    implementation_confidence: medium
+  caveats:
+  - The paper provides a proof-of-principle semi-analytic treatment and flags intermediate freeze-out
+    regions for future numerical Boltzmann work.
+robustness:
+  overall: medium
+  theory_robustness: medium
+  observational_robustness: not_applicable
+  computational_robustness: medium
+  constraint_robustness: not_applicable
+  dominant_uncertainties:
+  - Semi-analytic treatment of freeze-out limits
+  - BBN bound strength
+  - Mapping of generic parameters into concrete E6SSM or sterile-neutrino realizations
+  validation_status: expert_judgment_only
+  notes: Core model identity and abundance mechanism are explicit; exact allowed regions need more numerical
+    work.
+agent_failure_modes:
+  warnings:
+  - id: do_not_skip_entropy_dilution
+    severity: high
+    category: assumption_mismatch
+    warning: The thermally produced keVin is overabundant without late GeVin entropy dilution in the main
+      scenario.
+    mitigation: Include the GeVin decay and BBN reheating assumptions when using the card.
+    source_reference_ids:
+    - '1205_0551'
+  - id: intermediate_freezeout_unsolved
+    severity: medium
+    category: extrapolation
+    warning: The paper does not solve the intermediate GeVin freeze-out region with a full Boltzmann calculation.
+    mitigation: Avoid treating benchmark regions outside the analytic limits as fully validated.
+    source_reference_ids:
+    - '1205_0551'
+observables:
+- id: o_lyman
+  name: Warm-DM Lyman-alpha suppression
+  channel: lyman_alpha
+  subchannel: linear power/free-streaming
+  predicted_effect: Diluted keVin WDM suppresses small-scale structure and is bounded by Lyman-alpha/structure
+    constraints.
+  effect_direction: suppression
+  key_quantities:
+  - name: keVin mass
+    role: core
+    status: inferred
+    symbol: M_1
+    range: lowest around 1.5
+    unit: keV
+    source_reference_ids:
+    - p1205
+  - name: entropy dilution
+    role: derived
+    status: inferred
+    symbol: S_req
+    source_reference_ids:
+    - p1205
+  redshift_range: post-production to low redshift
+  scale_range: Lyman-alpha and dwarf scales
+  environments:
+  - intergalactic medium
+  - small halos
+  observability: medium
+  relevance: high
+  linked_constraints:
+  - c_lyman
+  linked_routes:
+  - r_entropy_wdm
+  caveats:
+  - Primary uses rescaled WDM bound rather than transfer-function likelihood.
+  source_reference_ids:
+  - p1205
+  - r1502_01011
+  notes: Main WDM observable.
+- id: o_bbn
+  name: BBN reheating after GeVin decay
+  channel: cosmology
+  subchannel: late entropy injection
+  predicted_effect: GeVin decay must dilute keVins but reheat above BBN lower temperatures.
+  effect_direction: rate_change
+  key_quantities:
+  - name: GeVin decay width
+    role: derived
+    status: inferred
+    symbol: Gamma_2
+    source_reference_ids:
+    - p1205
+  - name: reheating temperature
+    role: cosmological
+    status: inferred
+    symbol: T_r
+    range: '>0.7 weak or >4.0 strong'
+    unit: MeV
+    source_reference_ids:
+    - p1205
+  redshift_range: before BBN
+  scale_range: null
+  environments:
+  - early universe
+  observability: high
+  relevance: high
+  linked_constraints:
+  - c_bbn
+  linked_routes:
+  - r_entropy_wdm
+  caveats:
+  - Weak and strong BBN choices differ.
+  source_reference_ids:
+  - p1205
+  notes: Clean timing bound.
+- id: o_zwidth
+  name: Invisible Z-width contribution
+  channel: precision_laboratory
+  subchannel: Z invisible width
+  predicted_effect: If inert fermions are below M_Z/2, suppressed Z couplings contribute to the invisible
+    Z width.
+  effect_direction: rate_change
+  key_quantities:
+  - name: keVin Z suppression
+    role: experimental
+    status: inferred
+    symbol: epsilon_1
+    range: roughly below 0.23 if dominant/open
+    source_reference_ids:
+    - p1205
+  - name: GeVin Z suppression
+    role: experimental
+    status: inferred
+    symbol: epsilon_2
+    range: roughly below 0.23 if dominant/open
+    source_reference_ids:
+    - p1205
+  redshift_range: null
+  scale_range: LEP Z pole
+  environments:
+  - precision electroweak data
+  observability: high
+  relevance: medium
+  linked_constraints:
+  - c_zwidth
+  linked_routes:
+  - r_entropy_wdm
+  caveats:
+  - Only applies when invisible modes are kinematically open.
+  source_reference_ids:
+  - p1205
+  notes: Laboratory check on the simplified model.
+constraints:
+- id: c_lyman
+  name: Lyman-alpha lower bound on diluted keVin WDM
+  constraint_type: cosmological
+  observable_channel: Lyman-alpha forest
+  applies: parameter_dependent
+  constrained_parameters:
+  - M_1
+  - S_req
+  - M_2
+  excluded_regions:
+  - Too-light keVins with excessive free-streaming; primary quotes lowest M_1 around 1.5 keV.
+  allowed_regions:
+  - M_1 above rescaled WDM bound; M_2 above about 13.8 or 2.4 GeV for strong/weak BBN assumptions.
+  benchmark_implications:
+  - Benchmarks must satisfy WDM and BBN constraints together.
+  likelihood_available: 'no'
+  likelihood_reference: null
+  data_release: null
+  recasting_needed: 'yes'
+  robustness: medium
+  assumptions:
+  - id: rescaled_wdm
+    description: Primary rescales a nonresonant WDM bound by S_req^(1/3).
+    scope: structure_formation
+    status: assumed
+    impact_if_violated: A dedicated transfer-function calculation could shift the limit.
+    can_be_relaxed: 'yes'
+    source_reference_ids:
+    - p1205
+  caveats:
+  - No likelihood supplied.
+  source_reference_ids:
+  - p1205
+  - r1502_01011
+  notes: Primary gives numbers; related text supports transfer-function caution.
+- id: c_bbn
+  name: BBN lower bound on GeVin decay reheating
+  constraint_type: cosmological
+  observable_channel: BBN and entropy injection
+  applies: parameter_dependent
+  constrained_parameters:
+  - Gamma_2
+  - T_r
+  - M_2
+  - eta
+  excluded_regions:
+  - Decay reheating below about 0.7 or 4.0 MeV.
+  allowed_regions:
+  - GeVin decay before BBN above adopted threshold.
+  benchmark_implications:
+  - Enough entropy but not too late.
+  likelihood_available: approximate
+  likelihood_reference: null
+  data_release: null
+  recasting_needed: partial
+  robustness: medium
+  assumptions:
+  - id: late_entropy
+    description: GeVin dominates enough to inject entropy after keVin freeze-out.
+    scope: cosmological_history
+    status: assumed
+    impact_if_violated: Without it keVin abundance is generally too high.
+    can_be_relaxed: unknown
+    source_reference_ids:
+    - p1205
+  caveats:
+  - Weak/strong BBN choices shift allowed region.
+  source_reference_ids:
+  - p1205
+  notes: Primary quotes both temperatures.
+- id: c_zwidth
+  name: Invisible Z-width bound on inert couplings
+  constraint_type: laboratory
+  observable_channel: precision Z width
+  applies: parameter_dependent
+  constrained_parameters:
+  - epsilon_1
+  - epsilon_2
+  - eta
+  - M_1
+  - M_2
+  excluded_regions:
+  - Open invisible Z channels with dominant suppression much above roughly 0.23.
+  allowed_regions:
+  - Suppressed couplings below width bound or closed channels.
+  benchmark_implications:
+  - Restricts freeze-out and decay couplings.
+  likelihood_available: approximate
+  likelihood_reference: null
+  data_release: LEP invisible Z width quoted in primary paper
+  recasting_needed: partial
+  robustness: medium
+  assumptions:
+  - id: axial_z
+    description: Primary estimate assumes axial suppressed Z couplings.
+    scope: interactions
+    status: assumed
+    impact_if_violated: Other vector/axial mixtures alter width formulae.
+    can_be_relaxed: 'yes'
+    source_reference_ids:
+    - p1205
+  caveats:
+  - Conditional on kinematics.
+  source_reference_ids:
+  - p1205
+  notes: Fast precision-electroweak check.
+theory_to_observable_routing:
+  routes:
+  - id: r_entropy_wdm
+    description: Compute keVin production, GeVin freeze-out/decay entropy, and BBN/Lyman/Z-width constraints.
+    source_model_features:
+    - keV inert fermion
+    - GeV inert fermion
+    - suppressed Z couplings
+    - late entropy dilution
+    input_parameters:
+    - M_1
+    - M_2
+    - epsilon_1
+    - epsilon_2
+    - eta
+    derived_quantities:
+    - keVin abundance
+    - S_req
+    - Gamma_2
+    - T_r
+    - transfer suppression
+    forward_model_chain:
+    - step_id: s1
+      step_type: semi_analytic_model
+      tool_or_code: freeze-out estimates
+      inputs:
+      - M_1
+      - M_2
+      - epsilon_i
+      outputs:
+      - thermal abundances
+      validity: Relativistic/nonrelativistic limits.
+      notes: Intermediate region approximate.
+    - step_id: s2
+      step_type: analytic_formula
+      tool_or_code: GeVin decay/entropy formulae
+      inputs:
+      - M_2
+      - eta
+      outputs:
+      - Gamma_2
+      - S_req
+      - T_r
+      validity: Decay after keVin freeze-out and before BBN.
+      notes: Balances dilution and BBN.
+    - step_id: s3
+      step_type: recasting
+      tool_or_code: null
+      inputs:
+      - diluted momentum scale
+      - Z couplings
+      outputs:
+      - Lyman bound
+      - Z-width bound
+      validity: Uses rescaled WDM bound and width estimate.
+      notes: Transfer-function solver would improve it.
+    observable_ids:
+    - o_lyman
+    - o_bbn
+    - o_zwidth
+    constraint_ids:
+    - c_lyman
+    - c_bbn
+    - c_zwidth
+    likelihoods:
+    - Lyman-alpha WDM bounds
+    - BBN criteria
+    - LEP Z width
+    required_code_resources:
+    - Boltzmann solver for intermediate region
+    - CLASS/CAMB transfer recast
+    - electroweak data
+    validation_tests:
+    - recover benchmark regions
+    - check T_r thresholds
+    - recover M_1 bound
+    route_status: partially_implemented
+    agent_notes: Semi-analytic route is clear but numerical Boltzmann/transfer functions are missing.
+    caveats:
+    - Do not apply sterile-neutrino X-ray limits to generic keVins without active mixing.

@@ -1,0 +1,327 @@
+_source:
+  shard: arXiv_src_0910_005_wds.tar
+  paper_id: 0910_5713
+  source_member: 0910_5713.json
+schema_version: model_only_v0
+model_id: 0910_5713_inelastic_sommerfeld_dark_matter_v1
+identity:
+  name: Inelastic Sommerfeld-enhanced dark matter
+  family: self_interacting_dark_matter
+  aliases:
+  - two-state inelastic dark matter with Sommerfeld enhancement
+  short_description: A simplified dark matter model variant with a WIMP ground state, a slightly heavier
+    excited state, and a light force carrier that creates Sommerfeld-enhanced annihilation through an
+    off-diagonal long-range potential.
+  historical_origin_or_motivation: Motivated in the paper by cosmic-ray excess interpretations, iDM/XDM
+    scenarios, and the need for enhanced low-velocity annihilation without changing freeze-out by the
+    same factor.
+  status: speculative
+  model_kind: simplified_model
+theory:
+  theory_level: simplified_model
+  parent_frameworks:
+  - iDM
+  - XDM
+  - dark gauge force models
+  lagrangian_available: partial
+  renormalizable: unknown
+  embedded_in_larger_framework: 'yes'
+  notes: The paper formulates a nonrelativistic two-state potential problem rather than a complete UV
+    Lagrangian.
+particle_content:
+  dark_matter_candidate:
+    name: ground-state WIMP in a dark matter multiplet
+    spin: unknown
+    statistics: unknown
+    elementary_or_composite: elementary
+    number_of_components: multi_component
+  additional_dark_sector_particles:
+  - slightly heavier excited state
+  mediators:
+  - light force carrier generating a Yukawa potential
+  dark_radiation_species: []
+  excited_or_degenerate_states:
+  - single excited state with small mass splitting
+  long_lived_particles: []
+  unstable_parent_particles: []
+  standard_model_extension: substantial
+symmetries:
+  stabilizing_mechanism: Dark matter stability is assumed for the WIMP ground state; the paper does not
+    specify a complete stabilizing symmetry.
+  symmetries:
+  - name: new dark gauge group
+    type: gauge
+    exact_or_approximate: unknown
+    breaking: force carrier obtains an O(GeV) mass in the motivated class
+  topological_defects_possible: unknown
+interactions:
+  portals:
+  - other
+  - unknown
+  standard_model_targets:
+  - leptons
+  - pions
+  - other light Standard Model states
+  dark_sector_couplings:
+  - off-diagonal coupling between ground and excited two-particle states
+  mediator_types:
+  - light force carrier
+  - Yukawa-potential mediator
+  interaction_operators: []
+  scattering:
+    elastic: unknown
+    inelastic: 'yes'
+    momentum_dependence: strong
+    velocity_dependence: strong
+    spin_dependence: unknown
+  annihilation_channels:
+  - annihilation into new force carriers
+  decay_channels: []
+  self_scattering_channels:
+  - inelastic excitation through the long-range force
+  cp_structure: unknown
+  flavor_structure: leptophilic or light-state final states are phenomenologically motivated but not fixed
+  tree_or_loop_level: unknown
+parameters:
+  core:
+  - name: dark matter mass
+    status: inferred
+    symbol: m_chi
+    description: Mass of the WIMP dark matter particle.
+    notes: The text uses TeV-scale examples but treats the mass as a parameter.
+    role: core
+  - name: mediator mass
+    status: inferred
+    symbol: m_phi
+    description: Mass of the light force carrier setting the range of the Yukawa potential.
+    notes: The motivated mediator scale is O(GeV).
+    role: core
+  - name: dark-sector coupling
+    status: inferred
+    symbol: alpha
+    description: Coupling controlling the long-range potential and Sommerfeld enhancement.
+    role: core
+  - name: excited-state mass splitting
+    status: inferred
+    symbol: delta
+    description: Splitting between the ground state and heavier excited state.
+    notes: The paper discusses small splittings, including O(100 keV) illustrative values.
+    role: core
+  - name: relative velocity
+    status: inferred
+    symbol: v
+    description: Dark matter relative velocity entering the enhancement calculation.
+    role: core
+production:
+  mechanisms:
+  - thermal WIMP freeze-out
+  - Sommerfeld-enhanced late-time annihilation
+  thermal_equilibrium_with_standard_model: 'yes'
+  thermal_equilibrium_with_hidden_sector: unknown
+  abundance_set_by:
+  - freeze-out annihilation cross section
+  - dark-sector coupling
+  - mediator mass
+  - mass splitting
+  depends_on_reheating_temperature: unknown
+  can_produce_all_dark_matter: parameter_dependent
+  nonthermal_momentum_distribution: unknown
+  notes: The paper uses the thermal WIMP relic cross section as the reference abundance logic, then studies
+    low-velocity enhancements.
+relic_density:
+  full_or_subcomponent: unknown
+  target_fraction: null
+  calculation_type: thermal
+  key_dependencies:
+  - annihilation cross section at freeze-out
+  - Sommerfeld resonance structure
+  - mass splitting
+  - mediator mass
+  - coupling
+  requires_entropy_dilution: unknown
+  overclosure_risk: parameter_dependent
+  underproduction_risk: parameter_dependent
+  tuning_assessment: unknown
+cosmological_history:
+  standard_history_assumed: true
+  nonstandard_features: []
+  dark_sector_temperature: null
+  delta_neff: null
+  kinetic_decoupling: null
+  chemical_decoupling: null
+  phase_transitions: []
+  topological_defects: []
+  isocurvature_perturbations: unknown
+  bbn_relevance: unknown
+  cmb_relevance: unknown
+phase_space:
+  distribution_type: thermal
+  distribution_function_available: unknown
+  average_momentum_relative_to_thermal: null
+  free_streaming_length: null
+  velocity_dispersion_today: null
+  phase_space_bounds: []
+  notes: Halo velocity dependence is central to the Sommerfeld enhancement, but no full phase-space distribution
+    is specified.
+structure_formation:
+  linear:
+    behaves_like_cdm: unknown
+    transfer_function_shape: unknown
+    small_scale_power_effect: unknown
+  nonlinear:
+    halo_mass_function_effect: not discussed in the assigned paper
+    subhalo_mass_function_effect: not discussed in the assigned paper
+    simulation_calibrated: unknown
+validity_domain:
+- id: validity_sommerfeld_regime
+  applies_to: model
+  condition: Sommerfeld enhancement is significant only when the dimensionless velocity, mediator-mass,
+    and splitting parameters are small enough for the potential to dominate.
+  status: inferred
+  extrapolation_risk: medium
+  caveats: []
+- id: validity_two_state_approximation
+  applies_to: model
+  condition: The semi-analytic expressions specialize to a single excited state with purely off-diagonal
+    interaction and are not a complete dark-sector spectrum.
+  status: inferred
+  extrapolation_risk: high
+  caveats: []
+assumptions:
+  global:
+  - id: assume_short_range_annihilation
+    description: The annihilation interaction is short-ranged compared with the long-range potential.
+    scope: production
+    status: assumed
+  - id: assume_single_excited_state
+    description: The main worked model has one excited state coupled off-diagonally to the ground state.
+    scope: theory
+    status: assumed
+  - id: assume_small_splitting
+    description: Mass splittings are small compared with the dark matter mass.
+    scope: theory
+    status: assumed
+associated_code:
+  has_associated_code: unknown
+  code_summary: No associated code was identified from the assigned paper text.
+  primary_code_role: null
+  repositories: []
+  packages_or_modules: []
+  notebooks: []
+  scripts: []
+  containers_or_environments: []
+  expected_inputs: []
+  expected_outputs: []
+  supported_observable_channels: []
+  caveats: []
+provenance:
+  model_id: 0910_5713_inelastic_sommerfeld_dark_matter_v1
+  model_name: Inelastic Sommerfeld-enhanced dark matter
+  model_family: self_interacting_dark_matter
+  entry_version: 0.1.0
+  status: machine_extracted
+  created_at: '2026-05-31'
+  last_updated: '2026-05-31'
+  sources:
+    primary_papers:
+    - reference_id: paper:0910.5713
+      title: Dark matter Sommerfeld enhancement with a mass-split excited state
+      authors: []
+      year: 2009
+      arxiv_id: '0910.5713'
+      doi: null
+      url: null
+      role: extension
+      notes: null
+  extraction:
+    method: llm_assisted
+    extracted_by: codex_batch_0016
+    extractor_name: Codex GPT-5
+    extraction_date: '2026-05-31'
+    confidence: medium
+    source_chunks_or_sections:
+    - reference_id: paper:0910.5713
+      section: Introduction
+      page: null
+      quote_or_summary: The paper motivates dark matter annihilation with light force carriers and small
+        excited-state splittings for PAMELA/ATIC/Fermi/HESS-era anomalies.
+    - reference_id: paper:0910.5713
+      section: Two-state formalism
+      page: null
+      quote_or_summary: It studies a single excited state with purely off-diagonal interaction and a Yukawa-type
+        long-range potential.
+    - reference_id: paper:0910.5713
+      section: Summary
+      page: null
+      quote_or_summary: The paper derives approximate Sommerfeld-enhancement expressions with mass splitting
+        and identifies validity conditions.
+    unresolved_items: []
+  evidence:
+    particle_content:
+    - reference_id: paper:0910.5713
+      note: Dark matter is modeled as a WIMP multiplet with a ground state and a slightly heavier excited
+        state.
+      confidence: medium
+      section: Introduction
+    interactions:
+    - reference_id: paper:0910.5713
+      note: The two-body ground and excited states are coupled by an off-diagonal Yukawa potential from
+        a light force carrier.
+      confidence: medium
+      section: Two-state formalism
+    production_mechanism:
+    - reference_id: paper:0910.5713
+      note: The relic-density motivation is a WIMP initially in thermal equilibrium whose annihilation
+        rate is modified by Sommerfeld effects.
+      confidence: medium
+      section: Introduction
+    parameter_ranges:
+    - reference_id: paper:0910.5713
+      note: Phenomenological examples include a TeV-scale WIMP, O(100 keV) splitting, and GeV-scale force
+        carrier language.
+      confidence: medium
+      section: Introduction and threshold discussion
+    validity_domain:
+    - reference_id: paper:0910.5713
+      note: The approximation is presented for small mediator-to-DM mass ratio, small velocity over coupling,
+        and small mass splitting relative to the DM mass.
+      confidence: medium
+      section: Summary
+  review:
+    human_reviewed: false
+    reviewed_by: null
+    review_date: null
+    expert_reviewed: false
+    expert_reviewer: null
+    expert_review_date: null
+    reviewer_notes: []
+    scientific_confidence: medium
+    implementation_confidence: medium
+  caveats:
+  - The paper is primarily a formalism and model-variant development, not a complete UV construction.
+robustness:
+  overall: medium
+  theory_robustness: medium
+  observational_robustness: unknown
+  computational_robustness: medium
+  dominant_uncertainties:
+  - UV completion and stabilizing symmetry are not specified.
+  - The cosmic-ray motivation is not itself part of the extracted model card.
+  validation_status: expert_judgment_only
+  notes: The formal calculation is detailed, while model identity fields remain generic.
+agent_failure_modes:
+  warnings:
+  - id: warn_not_uv_complete
+    severity: medium
+    category: invalid_mapping
+    warning: Do not treat this two-state potential setup as a fully specified UV-complete dark matter
+      theory.
+    mitigation: Use it as a simplified model card unless a separate paper supplies a full UV completion.
+    source_reference_ids: []
+  - id: warn_cosmic_ray_context
+    severity: medium
+    category: assumption_mismatch
+    warning: Cosmic-ray anomalies motivate the setup but are not extracted as accepted constraints or
+      observables in this run.
+    mitigation: Keep phenomenological motivations separate from model definition.
+    source_reference_ids: []

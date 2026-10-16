@@ -1,0 +1,734 @@
+_source:
+  shard: arXiv_src_1012_001_wds.tar
+  paper_id: '1012_0067'
+  source_member: 1012_0067.json
+  enriched: true
+  enrichment_schema_version: dm_model_ocr_enrichment_smoke_v0
+schema_version: model_only_v0
+model_id: 1012_0067_u1_late_decaying_dark_matter_v1
+identity:
+  name: U(1) late-decaying dark matter
+  family: decaying_dark_matter
+  aliases:
+  - dark-final-state late decaying dark matter
+  - U(1) pseudo-Nambu-Goldstone late-decay model
+  short_description: A U(1) dark-sector variant with nearly degenerate fermionic dark matter states where
+    the heavier state decays to the lighter state plus a pseudo-Nambu-Goldstone boson.
+  historical_origin_or_motivation: Developed as a non-Standard-Model final-state realization of late dark
+    matter decay for small-scale structure problems.
+  status: speculative
+  model_kind: complete_theory
+theory:
+  theory_level: simplified_model
+  parent_frameworks:
+  - Standard Model plus global U(1) dark sector
+  lagrangian_available: 'yes'
+  renormalizable: 'yes'
+  eft_cutoff: null
+  embedded_in_larger_framework: unknown
+  notes: The model replaces the Z4 symmetry with a global U(1) and a complex scalar, then adds a small
+    soft breaking term.
+particle_content:
+  dark_matter_candidate:
+    name: nearly degenerate fermions chi and chi*
+    spin: 1/2
+    statistics: fermion
+    elementary_or_composite: elementary
+    number_of_components: multi_component
+  additional_dark_sector_particles:
+  - complex scalar phi
+  - pseudo-Nambu-Goldstone boson
+  mediators:
+  - pseudo-Nambu-Goldstone boson
+  - scalar radial mode
+  dark_radiation_species:
+  - light pseudo-Nambu-Goldstone boson
+  excited_or_degenerate_states:
+  - heavier state chi*
+  long_lived_particles:
+  - chi*
+  unstable_parent_particles:
+  - chi*
+  standard_model_extension: minimal
+symmetries:
+  stabilizing_mechanism: Dark-sector U(1), softly broken to a discrete remnant, keeps the lighter state
+    stable while permitting slow chi* decay.
+  symmetries:
+  - name: global U(1) dark symmetry
+    type: global
+    exact_or_approximate: broken
+    breaking: spontaneously broken by a complex scalar
+    breaking_scale:
+      name: U(1) breaking scale
+      symbol: v_phi
+      description: Approximate high breaking scale discussed for Gyr lifetimes.
+      value: roughly 1e14
+      fiducial_value: null
+      range: null
+      unit: GeV
+      prior: null
+      scale: null
+      role: core
+      status: inferred
+      source_reference_ids:
+      - '1012_0067'
+      notes: null
+  - name: soft U(1) breaking to Z4
+    type: discrete
+    exact_or_approximate: broken
+    breaking: small soft term gives the pseudo-Nambu-Goldstone boson a mass
+    breaking_scale: null
+  topological_defects_possible: unknown
+interactions:
+  portals:
+  - other
+  standard_model_targets: []
+  dark_sector_couplings:
+  - chi/chi* coupling to complex scalar
+  - chi* chi pseudo-Nambu-Goldstone coupling
+  mediator_types:
+  - pseudo-Nambu-Goldstone boson
+  - scalar radial mode
+  interaction_operators:
+  - renormalizable U(1) dark-sector scalar and Yukawa terms
+  - soft U(1)-breaking scalar term
+  scattering:
+    elastic: unknown
+    inelastic: 'yes'
+    momentum_dependence: unknown
+    velocity_dependence: unknown
+    spin_dependence: unknown
+  annihilation_channels:
+  - suppressed dark-sector annihilation
+  decay_channels:
+  - chi* -> chi plus pseudo-Nambu-Goldstone boson
+  self_scattering_channels:
+  - long-range interactions before pseudo-Nambu-Goldstone mass is added
+  cp_structure: unknown
+  flavor_structure: not_applicable
+  tree_or_loop_level: tree
+parameters:
+  core:
+  - name: fractional mass splitting
+    symbol: epsilon
+    description: Small splitting used for velocity kicks.
+    value: about 1e-5
+    fiducial_value: null
+    range: null
+    unit: null
+    prior: null
+    scale: null
+    role: core
+    status: inferred
+    source_reference_ids:
+    - '1012_0067'
+    notes: null
+  - name: late decay lifetime
+    symbol: tau_chi_star
+    description: Target lifetime for structure effects.
+    value: null
+    fiducial_value: null
+    range: Gyr scale
+    unit: Gyr
+    prior: null
+    scale: null
+    role: core
+    status: inferred
+    source_reference_ids:
+    - '1012_0067'
+    notes: null
+  - name: U(1) breaking scale
+    symbol: v_phi
+    description: High breaking scale implied by the small coupling choice.
+    value: roughly 1e14
+    fiducial_value: null
+    range: null
+    unit: GeV
+    prior: null
+    scale: null
+    role: core
+    status: inferred
+    source_reference_ids:
+    - '1012_0067'
+    notes: null
+  - name: small symmetry parameter
+    symbol: eta
+    description: Small parameter imposed to make the decay lifetime long.
+    value: about 1e-18 in discussion
+    fiducial_value: null
+    range: null
+    unit: null
+    prior: null
+    scale: null
+    role: core
+    status: inferred
+    source_reference_ids:
+    - '1012_0067'
+    notes: null
+  nuisance: []
+  derived: []
+production:
+  mechanisms:
+  - nonthermal production required
+  - possible out-of-equilibrium production through weak bath mixing
+  - possible direct inflaton coupling
+  thermal_equilibrium_with_standard_model: 'no'
+  thermal_equilibrium_with_hidden_sector: unknown
+  abundance_set_by:
+  - not thermal freeze-out
+  - novel dark-sector or inflaton-related production mechanism
+  depends_on_reheating_temperature: unknown
+  can_produce_all_dark_matter: parameter_dependent
+  nonthermal_momentum_distribution: unknown
+  notes: The paper states production through Standard Model mixing is far too small and that a novel production
+    mechanism is needed.
+relic_density:
+  full_or_subcomponent: full_dark_matter
+  target_fraction: null
+  calculation_type: nonthermal
+  key_dependencies:
+  - nonthermal production mechanism
+  - U(1) breaking scale
+  - small decay coupling
+  - fractional mass splitting
+  requires_entropy_dilution: unknown
+  overclosure_risk: unknown
+  underproduction_risk: 'yes'
+  tuning_assessment: tuned
+cosmological_history:
+  standard_history_assumed: false
+  nonstandard_features:
+  - nearly decoupled dark sector
+  - nonthermal production required
+  - late chi* decay to pseudo-Nambu-Goldstone boson
+  dark_sector_temperature: null
+  delta_neff: null
+  kinetic_decoupling: null
+  chemical_decoupling: null
+  phase_transitions:
+  - global U(1) breaking
+  - soft breaking to give the pseudo-Nambu-Goldstone boson a mass
+  topological_defects: []
+  isocurvature_perturbations: unknown
+  bbn_relevance: unknown
+  cmb_relevance: unknown
+phase_space:
+  distribution_type: nonthermal
+  distribution_function_available: unknown
+  average_momentum_relative_to_thermal: null
+  free_streaming_length: null
+  velocity_dispersion_today: null
+  phase_space_bounds: []
+  notes: The paper does not provide a successful thermal distribution for the U(1) variant.
+structure_formation:
+  linear:
+    behaves_like_cdm: scale_dependent
+    transfer_function_shape: unknown
+    small_scale_power_effect: suppression
+    half_mode_mass: null
+    impact_on_sigma8_s8: unknown
+  nonlinear:
+    halo_mass_function_effect: halo expansion intended if late decays occur
+    subhalo_mass_function_effect: small-halo disruption intended
+    simulation_calibrated: partial
+validity_domain:
+- id: nonthermal_u1_variant
+  applies_to: model
+  condition: Applies only if a viable nonthermal abundance mechanism supplies chi and chi* and the tuned
+    decay coupling yields Gyr lifetimes.
+  valid_range: null
+  status: inferred
+  extrapolation_risk: high
+  caveats:
+  - The paper finds Standard Model mixing production inadequate by many orders of magnitude.
+  source_reference_ids:
+  - '1012_0067'
+  notes: null
+assumptions:
+  global:
+  - id: novel_production
+    description: A production mechanism outside thermal Standard Model mixing creates the dark matter
+      abundance.
+    scope: production
+    status: assumed
+    impact_if_violated: Without it, the U(1) model underproduces dark matter.
+    can_be_relaxed: unknown
+    source_reference_ids:
+    - '1012_0067'
+    notes: null
+associated_code:
+  has_associated_code: unknown
+  code_summary: No dedicated public model code is identified in the paper text.
+  primary_code_role: null
+  repositories: []
+  packages_or_modules: []
+  notebooks: []
+  scripts: []
+  containers_or_environments: []
+  expected_inputs: []
+  expected_outputs: []
+  caveats: []
+provenance:
+  model_id: 1012_0067_u1_late_decaying_dark_matter_v1
+  model_name: U(1) late-decaying dark matter
+  model_family: decaying_dark_matter
+  entry_version: 0.1.0
+  status: machine_extracted
+  created_at: '2026-05-31'
+  last_updated: '2026-05-31'
+  sources:
+    primary_papers:
+    - reference_id: '1012_0067'
+      title: A Model For Late Dark Matter Decay
+      authors:
+      - Nicole F. Bell
+      - Ahmad J. Galea
+      - Raymond R. Volkas
+      year: 2010
+      arxiv_id: '1012.0067'
+      doi: null
+      url: null
+      role: original_model
+      notes: Assigned full text from the run-local SQLite database.
+    - arxiv_id: '1012.0067'
+      authors:
+      - Bell, Nicole F.
+      - Galea, Ahmad J.
+      - Volkas, Raymond R.
+      doi: 10.1103/PhysRevD.83.063504
+      notes: Primary local full text used for model-specific enrichment.
+      reference_id: '1012_0067'
+      role: original_model
+      title: Model for late dark matter decay
+      url: https://arxiv.org/abs/1012.0067
+      year: 2011
+    constraint_papers:
+    - arxiv_id: '1904.11773'
+      authors:
+      - Dakin, Jeppe
+      - Hannestad, Steen
+      - Tram, Thomas
+      doi: 10.1088/1475-7516/2019/06/032
+      notes: Related full text read from local cache or bounded arXiv fallback.
+      reference_id: '1904_11773'
+      role: constraint
+      title: Fully relativistic treatment of decaying cold dark matter in N-body simulations
+      url: https://arxiv.org/abs/1904.11773
+      year: 2019
+    - arxiv_id: '2403.15543'
+      authors:
+      - Fuß, Lea
+      - Garny, Mathias
+      - Ibarra, Alejandro
+      doi: 10.1088/1475-7516/2025/01/055
+      notes: Related full text read from local cache or bounded arXiv fallback.
+      reference_id: '2403_15543'
+      role: constraint
+      title: 'Minimal decaying dark matter: from cosmological tensions to neutrino signatures'
+      url: https://arxiv.org/abs/2403.15543
+      year: 2025
+    - arxiv_id: '1201.2426'
+      authors:
+      - Wang, Mei-Yu
+      - Zentner, Andrew R.
+      doi: 10.1103/PhysRevD.85.043514
+      notes: Related full text read from local cache or bounded arXiv fallback.
+      reference_id: '1201_2426'
+      role: constraint
+      title: Effects of unstable dark matter on large-scale structure and constraints from future surveys
+      url: https://arxiv.org/abs/1201.2426
+      year: 2012
+    external_databases: []
+    review_papers: []
+  extraction:
+    method: llm_assisted
+    extracted_by: codex_batch_0005
+    extractor_name: codex
+    extraction_date: '2026-05-31'
+    confidence: medium
+    source_chunks_or_sections:
+    - reference_id: '1012_0067'
+      section: Dark Decays (U1)
+      page: null
+      quote_or_summary: A global U(1) with complex scalar produces a pseudo-Nambu-Goldstone boson final
+        state.
+    - reference_id: '1012_0067'
+      section: Production
+      page: null
+      quote_or_summary: Thermal production is impossible in this case; nonthermal production must be supplied.
+    unresolved_items:
+    - No paper-specific likelihood table was found in the bounded pass.
+    - Exact nonlinear halo response for the U(1) pseudo-Nambu-Goldstone final state remains a recast task.
+  evidence:
+    particle_content:
+    - reference_id: '1012_0067'
+      note: The U(1) version keeps the two fermionic dark matter states and uses a complex scalar whose
+        broken phase yields a light pseudo-Nambu-Goldstone boson.
+      confidence: high
+      section: Dark Decays (U1)
+      page: null
+    symmetries:
+    - reference_id: '1012_0067'
+      note: The discrete Z4 symmetry is replaced by a global U(1), later softly broken so the Nambu-Goldstone
+        boson gets a small mass.
+      confidence: high
+      section: Dark Decays (U1)
+      page: null
+    interactions:
+    - reference_id: '1012_0067'
+      note: The dominant decay is chi* -> chi plus the pseudo-Nambu-Goldstone boson, a non-Standard-Model
+        final state.
+      confidence: high
+      section: Dark Decays (U1)
+      page: null
+    production_mechanism:
+    - reference_id: '1012_0067'
+      note: The paper finds thermal production impossible for the U(1) case and discusses out-of-equilibrium
+        or inflaton-related production as nonthermal alternatives.
+      confidence: high
+      section: Production
+      page: null
+    cosmological_history:
+    - reference_id: '1012_0067'
+      note: The dark and visible sectors are nearly decoupled, and the paper states that a novel production
+        mechanism is needed.
+      confidence: high
+      section: Production
+      page: null
+    parameter_ranges:
+    - reference_id: '1012_0067'
+      note: Obtaining a Gyr lifetime requires very small symmetry-breaking parameters and can imply a
+        U(1) breaking scale around 1e14 GeV.
+      confidence: medium
+      section: Dark Decays (U1)
+      page: null
+    validity_domain:
+    - reference_id: '1012_0067'
+      note: The authors present the U(1) construction as an example that late decaying dark matter can
+        be realized without strong Standard Model coupling.
+      confidence: medium
+      section: Conclusions
+      page: null
+    constraints:
+    - confidence: high
+      note: Primary paper quotes dwarf-halo and cusp lifetime/kick target windows.
+      page: null
+      reference_id: '1012_0067'
+      section: null
+    - confidence: medium
+      note: Related full text gives survey sensitivity examples for kick velocities and lifetimes.
+      page: null
+      reference_id: '1201_2426'
+      section: null
+    - confidence: medium
+      note: Related full text summarizes CMB and high-energy-particle bounds for visible decays and weaker
+        dark-sector bounds.
+      page: null
+      reference_id: '1904_11773'
+      section: null
+    observables:
+    - confidence: high
+      note: Primary paper states the late decay and small velocity-kick small-scale-structure motivation.
+      page: null
+      reference_id: '1012_0067'
+      section: null
+    - confidence: medium
+      note: Related full text connects kick velocity and lifetime to weak-lensing/matter-power observables.
+      page: null
+      reference_id: '1201_2426'
+      section: null
+    - confidence: medium
+      note: Related full text distinguishes invisible dark-sector decays from electromagnetic decay bounds.
+      page: null
+      reference_id: '1904_11773'
+      section: null
+    routes:
+    - confidence: medium
+      note: Primary particle model supplies the decay kinematics; related DDM texts supply recasting targets.
+      page: null
+      reference_id: '1012_0067'
+      section: null
+  review:
+    human_reviewed: false
+    reviewed_by: null
+    review_date: null
+    expert_reviewed: false
+    expert_reviewer: null
+    expert_review_date: null
+    reviewer_notes: []
+    scientific_confidence: medium
+    implementation_confidence: medium
+  caveats:
+  - This row records the paper's U(1) construction even though its production mechanism is acknowledged
+    as problematic.
+  related_entries: []
+  external_links: {}
+robustness:
+  overall: low
+  notes: Machine-extracted from a single assigned paper; fields marked unknown were not supported by the
+    text.
+agent_failure_modes:
+  warnings:
+  - id: production_gap
+    severity: high
+    category: assumption_mismatch
+    warning: The paper itself finds ordinary production via Standard Model mixing impossible for this
+      variant.
+    mitigation: Require an explicit nonthermal production mechanism before using the model quantitatively.
+    source_reference_ids:
+    - '1012_0067'
+observables:
+- caveats:
+  - Baryonic feedback and nonlinear structure formation can mimic or hide the same small-scale effects.
+  channel: small_scale_structure
+  effect_direction: suppression
+  environments:
+  - dwarf galaxies
+  - Milky Way satellites
+  - galactic halos
+  id: halo_heating_late_decay
+  key_quantities:
+  - description: Sets the velocity kick in units of c.
+    fiducial_value: null
+    name: fractional mass splitting
+    notes: null
+    prior: null
+    range: about 5e-5 to 7e-5 in the dwarf-halo example; broader cusp studies allow a wider range
+    role: core
+    scale: null
+    source_reference_ids:
+    - '1012_0067'
+    status: inferred
+    symbol: epsilon
+    unit: null
+    value: null
+  - description: Cosmological lifetime controlling the affected fraction.
+    fiducial_value: null
+    name: decay lifetime
+    notes: null
+    prior: null
+    range: about 1-30 Gyr for the dwarf-halo example; favored cusp ranges extend roughly 0.1-100 Gyr
+    role: core
+    scale: null
+    source_reference_ids:
+    - '1012_0067'
+    status: inferred
+    symbol: tau_chi_star
+    unit: Gyr
+    value: null
+  linked_constraints:
+  - dwarf_halo_kick_lifetime_window
+  - invisible_decay_cosmology_bounds
+  linked_routes:
+  - decay_parameters_to_halo_structure
+  name: Halo heating from late nearly degenerate dark-matter decay
+  notes: null
+  observability: medium
+  predicted_effect: The heavier state decays to a nearly degenerate daughter plus a relativistic light
+    state, giving the daughter a small velocity kick that can soften central cusps and disrupt small halos.
+  redshift_range: null
+  relevance: high
+  scale_range: dwarf-galaxy to Milky-Way subhalo scales
+  source_reference_ids:
+  - '1012_0067'
+  - '1201_2426'
+  - '2403_15543'
+  subchannel: dwarf-galaxy cusps and subhalo survival
+- caveats:
+  - The primary paper targets much smaller mass splittings than some published weak-lensing limits.
+  channel: cosmology
+  effect_direction: model_dependent
+  environments:
+  - cosmic web
+  - galaxy surveys
+  - CMB
+  id: dark_radiation_decay_component
+  key_quantities:
+  - description: Fraction of the unstable component that has decayed by a given epoch.
+    fiducial_value: null
+    name: decayed fraction
+    notes: null
+    prior: null
+    range: null
+    role: core
+    scale: null
+    source_reference_ids:
+    - '1904_11773'
+    status: inferred
+    symbol: f_decay
+    unit: null
+    value: null
+  - description: Controls the energy released to the relativistic component.
+    fiducial_value: null
+    name: mass splitting
+    notes: null
+    prior: null
+    range: small compared with unity
+    role: core
+    scale: null
+    source_reference_ids:
+    - '1012_0067'
+    status: inferred
+    symbol: epsilon
+    unit: null
+    value: null
+  linked_constraints:
+  - invisible_decay_cosmology_bounds
+  linked_routes:
+  - decay_parameters_to_halo_structure
+  name: Invisible relativistic decay component
+  notes: null
+  observability: low
+  predicted_effect: The U(1) model sends most decay energy into a pseudo-Nambu-Goldstone boson, making
+    cosmological matter-density and growth effects more relevant than electromagnetic decay fluxes.
+  redshift_range: null
+  relevance: medium
+  scale_range: linear to nonlinear matter-power scales
+  source_reference_ids:
+  - '1012_0067'
+  - '1904_11773'
+  - '1201_2426'
+  subchannel: dark radiation from chi* decay
+constraints:
+- allowed_regions:
+  - epsilon around 5e-5 to 7e-5 with lifetime about 1-30 Gyr is reported as solving the dwarf-halo problem
+    in cited simulations.
+  - Cusp alleviation is reported over broader lifetime ranges near 0.1-100 Gyr.
+  applies: parameter_dependent
+  assumptions:
+  - can_be_relaxed: partial
+    description: The halo response is treated with the same near-degenerate two-body kinematics as the
+      simulation studies cited by the primary paper.
+    id: halo_only_decay_assumption
+    impact_if_violated: Different branching, kick spectra, or baryonic feedback could shift the preferred
+      window.
+    notes: null
+    scope: constraint interpretation
+    source_reference_ids:
+    - '1012_0067'
+    - '1201_2426'
+    status: assumed
+  benchmark_implications:
+  - The benchmark epsilon about 1e-5 in the model card sits in the small-kick regime and needs simulation
+    recasting for a specific halo sample.
+  caveats:
+  - The primary paper quotes external halo-simulation results rather than fitting a new likelihood.
+  constrained_parameters:
+  - epsilon
+  - tau_chi_star
+  constraint_type: astrophysical
+  data_release: null
+  excluded_regions: []
+  id: dwarf_halo_kick_lifetime_window
+  likelihood_available: 'no'
+  likelihood_reference: null
+  name: Dwarf-halo kick and lifetime target window
+  notes: null
+  observable_channel: small_scale_structure
+  recasting_needed: 'yes'
+  robustness: medium
+  source_reference_ids:
+  - '1012_0067'
+  - '1201_2426'
+- allowed_regions:
+  - Small mass splitting and long lifetime remain less directly constrained in the primary-paper regime.
+  applies: recast_required
+  assumptions:
+  - can_be_relaxed: partial
+    description: The pseudo-Nambu-Goldstone final state is effectively invisible to electromagnetic searches.
+    id: dark_sector_final_state
+    impact_if_violated: Visible branching fractions would activate much stronger indirect-detection constraints.
+    notes: null
+    scope: constraint interpretation
+    source_reference_ids:
+    - '1012_0067'
+    status: inferred
+  benchmark_implications:
+  - The U(1) invisible final state avoids strong gamma-ray and charged cosmic-ray limits, but not matter-power
+    or expansion-history tests.
+  caveats:
+  - Related decaying-DM papers are not exact U(1) pseudo-Nambu-Goldstone implementations.
+  constrained_parameters:
+  - tau_chi_star
+  - epsilon
+  - decayed fraction
+  constraint_type: cosmological
+  data_release: null
+  excluded_regions:
+  - Large decayed fractions into relativistic dark-sector particles before today are disfavored by structure-growth
+    observables.
+  id: invisible_decay_cosmology_bounds
+  likelihood_available: partial
+  likelihood_reference: null
+  name: Cosmological bounds on invisible decaying dark matter
+  notes: null
+  observable_channel: cmb_large_scale_structure
+  recasting_needed: 'yes'
+  robustness: medium
+  source_reference_ids:
+  - '1012_0067'
+  - '1904_11773'
+  - '1201_2426'
+  - '2403_15543'
+theory_to_observable_routing:
+  routes:
+  - agent_notes: The route is scientifically clear but requires nonlinear calibration for the exact U(1)
+      model.
+    caveats:
+    - Primary paper does not provide a reusable likelihood.
+    constraint_ids:
+    - dwarf_halo_kick_lifetime_window
+    - invisible_decay_cosmology_bounds
+    derived_quantities:
+    - kick velocity
+    - decayed fraction versus redshift
+    - matter-power suppression
+    - subhalo density response
+    description: Map lifetime and mass splitting to daughter-particle kicks, then to matter-power and
+      halo-structure observables.
+    forward_model_chain:
+    - inputs:
+      - epsilon
+      - tau_chi_star
+      notes: Use local primary formulas and cited DDM kinematics.
+      outputs:
+      - kick velocity
+      - decayed fraction
+      step_id: r1
+      step_type: analytic_formula
+      tool_or_code: null
+      validity: Valid for two-body near-degenerate decays.
+    - inputs:
+      - kick velocity
+      - decayed fraction
+      - initial power spectrum
+      notes: No ready likelihood in the primary paper.
+      outputs:
+      - halo density profiles
+      - subhalo abundance
+      step_id: r2
+      step_type: simulation
+      tool_or_code: N-body or calibrated halo model
+      validity: Needed for nonlinear small-scale predictions.
+    id: decay_parameters_to_halo_structure
+    input_parameters:
+    - epsilon
+    - tau_chi_star
+    - unstable fraction
+    - initial halo population
+    likelihoods:
+    - custom halo likelihood or weak-lensing/LSS recast
+    observable_ids:
+    - halo_heating_late_decay
+    - dark_radiation_decay_component
+    required_code_resources:
+    - Boltzmann solver with decaying-DM sector
+    - N-body or halo-model emulator
+    route_status: planned
+    source_model_features:
+    - near-degenerate chi and chi*
+    - invisible pseudo-Nambu-Goldstone final state
+    - cosmological late decay
+    validation_tests:
+    - Recover CDM when epsilon -> 0 or tau -> infinity
+    - Compare linear spectra to published DDM results

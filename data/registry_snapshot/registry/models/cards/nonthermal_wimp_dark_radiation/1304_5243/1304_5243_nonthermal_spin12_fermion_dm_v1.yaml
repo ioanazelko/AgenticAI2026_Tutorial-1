@@ -1,0 +1,889 @@
+_source:
+  shard: arXiv_src_1304_008_wds.tar
+  paper_id: '1304_5243'
+  source_member: 1304_5243.json
+  enriched: true
+  enrichment_schema_version: dm_model_ocr_enrichment_smoke_v0
+schema_version: model_only_v0
+model_id: 1304_5243_nonthermal_spin12_fermion_dm_v1
+identity:
+  name: Fermion-parent non-thermal fermion WIMP dark radiation model
+  family: nonthermal_wimp_dark_radiation
+  aliases: []
+  short_description: An illustrative effective model where a heavy spin-1/2 fermion decays to stable spin-1/2
+    dark matter plus a photon, producing a small boosted component.
+  historical_origin_or_motivation: The paper investigates whether a small relativistic nonthermal dark-matter
+    component can mimic extra early-universe radiation.
+  status: speculative
+  model_kind: effective_field_theory
+theory:
+  theory_level: effective_field_theory
+  parent_frameworks:
+  - effective two-body decay model
+  lagrangian_available: 'yes'
+  renormalizable: 'no'
+  eft_cutoff:
+    name: effective cutoff
+    symbol: Lambda
+    description: Cutoff suppressing the dimension-5 fermion decay operator.
+    unit: GeV
+    role: core
+    status: unknown
+    source_reference_ids:
+    - '1304.5243'
+  embedded_in_larger_framework: unknown
+  notes: The paper supplies the interaction needed for parent decay and uses it to connect lifetime, mass
+    hierarchy, and Delta N_eff.
+particle_content:
+  dark_matter_candidate:
+    name: spin-1/2 fermion dark matter
+    spin: 1/2
+    statistics: fermion
+    elementary_or_composite: elementary
+    number_of_components: single_component
+  additional_dark_sector_particles:
+  - heavy spin-1/2 mother fermion
+  mediators:
+  - heavy fermion parent
+  - photon in the decay final state
+  dark_radiation_species: []
+  excited_or_degenerate_states: []
+  long_lived_particles:
+  - spin-1/2 fermion dark matter
+  unstable_parent_particles:
+  - heavy spin-1/2 fermion
+  standard_model_extension: substantial
+symmetries:
+  stabilizing_mechanism: The daughter dark-matter particle is assumed stable; the generic effective examples
+    do not specify a stabilizing symmetry.
+  symmetries:
+  - name: unspecified dark-matter stability
+    type: unknown
+    exact_or_approximate: unknown
+    breaking: not specified in the paper text
+    breaking_scale: null
+  topological_defects_possible: unknown
+interactions:
+  portals:
+  - vector
+  - other
+  standard_model_targets:
+  - photon
+  - electromagnetic field tensor F_mu_nu
+  dark_sector_couplings:
+  - dimension-5 fermion dipole-like decay operator
+  mediator_types:
+  - heavy fermion parent
+  interaction_operators:
+  - dimension-5 fermion-parent to fermion-DM plus photon operator suppressed by Lambda
+  decay_channels:
+  - heavy fermion -> fermion dark matter + photon
+  tree_or_loop_level: tree
+operators:
+  renormalizable_terms: []
+  eft_operators:
+  - dimension-5 fermion dipole-like photon operator suppressed by Lambda
+  contact_or_light_mediator: contact
+  coupling_types:
+  - electromagnetic dipole-like effective coupling
+parameters:
+  core:
+  - name: mother particle mass
+    symbol: M_X
+    description: Mass of the heavy parent particle that decays into dark matter plus photon.
+    range: Must be hierarchically larger than M_DM, about M_X/M_DM ~ 10^5 for Delta N_eff of order 1 in
+      the benchmark.
+    unit: GeV
+    role: core
+    status: approximate
+    source_reference_ids:
+    - '1304.5243'
+  - name: dark matter particle mass
+    symbol: M_DM
+    description: Mass of the daughter dark-matter particle produced in the parent decay.
+    unit: GeV
+    role: core
+    status: unknown
+    source_reference_ids:
+    - '1304.5243'
+  - name: mother lifetime
+    symbol: tau_X
+    description: Lifetime of the heavy parent particle.
+    range:
+      min: 0
+      max: 10000
+      inclusive_min: false
+      inclusive_max: true
+      unit: s
+      notes: 'Paper summary: shorter than about 10^4 s.'
+    unit: s
+    role: core
+    status: approximate
+    source_reference_ids:
+    - '1304.5243'
+  - name: nonthermal dark matter fraction
+    symbol: f
+    description: Fraction of the dark-matter density in the relativistic nonthermal component.
+    range:
+      min: 0
+      max: 0.01
+      inclusive_min: true
+      inclusive_max: true
+      unit: null
+      notes: Paper benchmark uses f=0.01 and summarizes f < 1%.
+    role: core
+    status: approximate
+    source_reference_ids:
+    - '1304.5243'
+  - name: extra radiation target
+    symbol: Delta N_eff
+    description: Effective excess radiation degree of freedom mimicked by the boosted subcomponent.
+    value: order 1
+    role: derived
+    status: approximate
+    source_reference_ids:
+    - '1304.5243'
+  - name: effective cutoff
+    symbol: Lambda
+    description: Cutoff scale in the spin-1/2 parent dipole-like operator; the paper states a 10 GeV DM
+      benchmark needs roughly 10^22 GeV.
+    value: ~1e22 for M_DM about 10 GeV benchmark
+    unit: GeV
+    role: core
+    status: approximate
+    source_reference_ids:
+    - '1304.5243'
+  nuisance: []
+  derived: []
+production:
+  mechanisms:
+  - cold majority component from standard WIMP-like production
+  - subdominant relativistic production through heavy-fermion decay to fermion dark matter plus photon
+  thermal_equilibrium_with_standard_model: partial
+  thermal_equilibrium_with_hidden_sector: unknown
+  abundance_set_by:
+  - thermal freeze-out or other cold-component production for the majority component
+  - parent-particle lifetime, mass ratio, and nonthermal fraction f for the relativistic component
+  depends_on_reheating_temperature: unknown
+  can_produce_all_dark_matter: parameter_dependent
+  nonthermal_momentum_distribution: 'yes'
+  notes: subdominant relativistic production through heavy-fermion decay to fermion dark matter plus photon
+relic_density:
+  full_or_subcomponent: full_dark_matter
+  target_fraction:
+    name: nonthermal relativistic fraction
+    symbol: f
+    description: Fraction of the dark-matter density produced relativistically in the parent decay.
+    range:
+      min: 0
+      max: 0.01
+      inclusive_min: true
+      inclusive_max: true
+      unit: null
+      notes: Paper benchmark and structure-formation summary.
+    role: core
+    status: approximate
+    source_reference_ids:
+    - '1304.5243'
+  calculation_type: mixed
+  key_dependencies:
+  - nonthermal fraction f
+  - mother lifetime tau_X
+  - mother-to-dark-matter mass ratio M_X/M_DM
+  - thermal cold-component abundance
+  requires_entropy_dilution: unknown
+  overclosure_risk: parameter_dependent
+  underproduction_risk: parameter_dependent
+  tuning_assessment: unknown
+cosmological_history:
+  standard_history_assumed: false
+  nonstandard_features:
+  - late decay of a heavier mother particle into dark matter plus photon
+  - small relativistic dark-matter subcomponent contributing to effective radiation density
+  dark_sector_temperature: null
+  delta_neff:
+    name: effective extra neutrino contribution
+    symbol: Delta N_eff
+    description: Radiation-like contribution from the boosted nonthermal dark-matter subcomponent.
+    value: order 1 target in paper examples
+    role: derived
+    status: approximate
+    source_reference_ids:
+    - '1304.5243'
+  kinetic_decoupling: null
+  chemical_decoupling: null
+  phase_transitions: []
+  topological_defects: []
+  isocurvature_perturbations: unknown
+  bbn_relevance: high
+  cmb_relevance: high
+phase_space:
+  distribution_type: mixed_cold_warm
+  distribution_function_available: approximate
+  f_of_p_or_q: No full distribution function is given; the paper derives a boost factor for two-body decay
+    and redshifting.
+  average_momentum_relative_to_thermal: Boosted two-body decay subcomponent with gamma set by M_X/M_DM
+    and redshifting.
+  free_streaming_length: null
+  velocity_dispersion_today: null
+  phase_space_bounds: []
+  notes: Boosted two-body decay subcomponent with gamma set by M_X/M_DM and redshifting.
+structure_formation:
+  linear:
+    behaves_like_cdm: scale_dependent
+    transfer_function_shape: smooth_cutoff
+    small_scale_power_effect: suppression
+    half_mode_mass: null
+    impact_on_sigma8_s8: The paper uses an analytic growth-suppression estimate for the relativistic fraction
+      rather than a full transfer-function calculation.
+  nonlinear:
+    halo_mass_function_effect: unknown
+    subhalo_mass_function_effect: unknown
+    simulation_calibrated: 'no'
+validity_domain:
+- id: small_nonthermal_fraction
+  applies_to: nonthermal relativistic dark-matter fraction
+  condition: The relativistically produced component is kept small enough for the paper's structure-formation
+    discussion.
+  valid_range:
+    min: 0
+    max: 0.01
+    inclusive_min: true
+    inclusive_max: true
+    unit: null
+    notes: Paper summarizes the requirement as f < 1%, using f=0.01 benchmarks.
+  status: approximate
+  extrapolation_risk: medium
+  caveats:
+  - The exact bound is approximate and comes from the paper's analytic treatment of growth suppression.
+  source_reference_ids:
+  - '1304.5243'
+  notes: The exact bound is approximate and comes from the paper's analytic treatment of growth suppression.
+- id: early_parent_decay
+  applies_to: mother-particle lifetime
+  condition: The parent decay producing relativistic dark matter should occur before late-time CMB bounds
+    dominate and before BBN damage in the paper's summary.
+  valid_range:
+    min: 0
+    max: 10000
+    inclusive_min: false
+    inclusive_max: true
+    unit: s
+    notes: Paper summarizes the viable region as tau_X shorter than about 10^4 s.
+  status: approximate
+  extrapolation_risk: medium
+  caveats:
+  - The paper treats the decay time by an approximate lifetime prescription.
+  source_reference_ids:
+  - '1304.5243'
+  notes: The paper treats the decay time by an approximate lifetime prescription.
+- id: large_mass_hierarchy
+  applies_to: mother-to-daughter mass ratio
+  condition: An appreciable Delta N_eff with f about 0.01 and tau about 10^4 s requires a large hierarchy
+    between mother and dark-matter masses.
+  valid_range: M_X / M_DM of order 10^5 for Delta N_eff of order 1 in the paper's benchmark relation
+  status: approximate
+  extrapolation_risk: high
+  caveats:
+  - Nearly degenerate spectra are explicitly disfavored for this mechanism in the paper.
+  source_reference_ids:
+  - '1304.5243'
+  notes: Nearly degenerate spectra are explicitly disfavored for this mechanism in the paper.
+assumptions:
+  global:
+  - id: mixed_thermal_and_decay_abundance
+    description: Most of the dark matter is a cold component, while a small fraction is produced non-thermally
+      and relativistically by parent-particle decay.
+    scope: production
+    status: assumed
+    impact_if_violated: Changing this split changes both the relic-density interpretation and the intended
+      radiation-like behavior.
+    can_be_relaxed: unknown
+    source_reference_ids:
+    - '1304.5243'
+  - id: radiation_era_decay_approximation
+    description: The parent particle decays are approximated as happening at the decay lifetime during
+      radiation domination.
+    scope: cosmological_history
+    status: approximate
+    impact_if_violated: A different expansion history or broad decay distribution would change the boost
+      and Delta N_eff relation.
+    can_be_relaxed: unknown
+    source_reference_ids:
+    - '1304.5243'
+  computation_specific: []
+associated_code:
+  has_associated_code: unknown
+  code_summary: No model-specific public code is described in the assigned paper text.
+  primary_code_role: null
+provenance:
+  model_id: 1304_5243_nonthermal_spin12_fermion_dm_v1
+  model_name: Fermion-parent non-thermal fermion WIMP dark radiation model
+  model_family: nonthermal_wimp_dark_radiation
+  entry_version: 0.1.0
+  status: machine_extracted
+  created_at: '2026-05-31'
+  last_updated: '2026-05-31'
+  sources:
+    primary_papers:
+    - reference_id: '1304.5243'
+      title: Non-thermal WIMPs as ``Dark Radiation'' in Light of ATACAMA, SPT, WMAP9 and Planck
+      authors:
+      - Chris Kelso
+      - Stefano Profumo
+      - Farinaldo S. Queiroz
+      year: 2013
+      arxiv_id: '1304.5243'
+      doi: null
+      url: null
+      role: original_model
+      notes: Assigned source text from target_text.sqlite; paper presents illustrative dark-matter models
+        with a small relativistic nonthermal component.
+    - reference_id: '1304.5243'
+      title: Nonthermal WIMPs as ``dark radiation'' in light of ATACAMA, SPT, WMAP9, and Planck
+      authors:
+      - Kelso, Chris
+      - Profumo, Stefano
+      - Queiroz, Farinaldo S.
+      year: 2013
+      arxiv_id: '1304.5243'
+      doi: 10.1103/PhysRevD.88.023511
+      url: https://arxiv.org/abs/1304.5243
+      role: original_model
+      notes: Primary assigned paper text resolved locally.
+    constraint_papers:
+    - reference_id: '1304.6217'
+      title: Planck constraints on the effective neutrino number and the CMB power spectrum lensing amplitude
+      authors:
+      - Said, Najla
+      - Di Valentino, Eleonora
+      - Gerbino, Martina
+      year: 2013
+      arxiv_id: '1304.6217'
+      doi: 10.1103/PhysRevD.88.023513
+      url: https://arxiv.org/abs/1304.6217
+      role: constraint
+      notes: Related full text resolved locally and read within the three-paper cap.
+    - reference_id: astro-ph/0501562
+      title: Constraining warm dark matter candidates including sterile neutrinos and light gravitinos
+        with WMAP and the Lyman-α forest
+      authors:
+      - Viel, Matteo
+      - Lesgourgues, Julien
+      - Haehnelt, Martin G.
+      - Matarrese, Sabino
+      - Riotto, Antonio
+      year: 2005
+      arxiv_id: astro-ph/0501562
+      doi: 10.1103/PhysRevD.71.063534
+      url: https://arxiv.org/abs/astro-ph/0501562
+      role: constraint
+      notes: Related full text resolved locally and read within the three-paper cap.
+    review_papers:
+    - reference_id: '1308.6630'
+      title: A 331 WIMPy dark radiation model
+      authors:
+      - Kelso, Chris
+      - Pires, C. A. de S.
+      - Profumo, Stefano
+      - Queiroz, Farinaldo S.
+      - Rodrigues da Silva, P. S.
+      year: 2014
+      arxiv_id: '1308.6630'
+      doi: 10.1140/epjc/s10052-014-2797-3
+      url: https://arxiv.org/abs/1308.6630
+      role: extension
+      notes: Related full text resolved locally and read within the three-paper cap.
+    external_databases: []
+  extraction:
+    method: llm_assisted
+    extracted_by: codex_dark_matter_model_batch_worker
+    extractor_name: batch-0004
+    extraction_date: '2026-05-31'
+    confidence: medium
+    source_chunks_or_sections:
+    - reference_id: '1304.5243'
+      section: Model examples / Spin-1/2 particle
+      page: null
+      quote_or_summary: The paper presents a heavy fermion decaying into a spin-1/2 dark-matter particle
+        plus a photon through a dimension-5 operator.
+    - reference_id: '1304.5243'
+      section: Cosmological setup
+      page: null
+      quote_or_summary: The same nonthermal fraction and mass-hierarchy relation is used to mimic extra
+        radiation.
+    unresolved_items:
+    - The paper gives illustrative models and compact parameter relations, not complete UV constructions
+      for the effective-theory examples.
+    - Stabilizing symmetries for the generic daughter dark-matter particles are not specified in the extracted
+      text.
+    - A precision likelihood for the BBN and CMB spectral-distortion curves was not available in the local
+      text.
+    - The exact mixed-DM transfer function for each spin-specific daughter spectrum was not recomputed.
+  evidence:
+    particle_content:
+    - reference_id: '1304.5243'
+      note: Spin-1/2 example identifies a heavy fermion parent and a spin-1/2 dark-matter daughter.
+      confidence: high
+      section: Spin-1/2 particle
+      page: null
+    interactions:
+    - reference_id: '1304.5243'
+      note: The decay operator is a dimension-5 fermionic photon operator suppressed by a cutoff scale.
+      confidence: high
+      section: Spin-1/2 particle
+      page: null
+    production_mechanism:
+    - reference_id: '1304.5243'
+      note: A small nonthermal daughter population is produced relativistically in the parent decay.
+      confidence: high
+      section: Cosmological setup
+      page: null
+    cosmological_history:
+    - reference_id: '1304.5243'
+      note: Delta N_eff is tied to the boosted decay product and fraction f.
+      confidence: high
+      section: Cosmological setup
+      page: null
+    parameter_ranges:
+    - reference_id: '1304.5243'
+      note: The paper says the spin-1/2 case closely mirrors spin-0 and can mimic one extra neutrino for
+        a 10 GeV DM particle with cutoff around 10^22 GeV.
+      confidence: medium
+      section: Spin-1/2 particle
+      page: null
+    validity_domain:
+    - reference_id: '1304.5243'
+      note: The shared setup needs a small f, early decay, and large mass hierarchy.
+      confidence: high
+      section: Conclusion
+      page: null
+    observables:
+    - reference_id: '1304.5243'
+      note: Primary paper derives the nonthermal decay contribution to Delta N_eff and discusses CMB data
+        combinations.
+      confidence: high
+      section: Introduction and model-independent setup
+      page: null
+    - reference_id: '1304.5243'
+      note: Primary paper connects the boosted fraction to structure formation and late electromagnetic
+        injection.
+      confidence: high
+      section: Cosmological bounds
+      page: null
+    - reference_id: '1304.6217'
+      note: Related local text provides Planck-era dark-radiation context.
+      confidence: medium
+      section: Cosmological parameter analysis
+      page: null
+    - reference_id: astro-ph/0501562
+      note: Related local text supports the use of Lyman-alpha information for warm or light dark matter
+        candidates.
+      confidence: medium
+      section: Lyman-alpha constraints
+      page: null
+    constraints:
+    - reference_id: '1304.5243'
+      note: Primary text quotes f < 0.01 and the approximate tau < 10^4 s lifetime requirement.
+      confidence: high
+      section: Cosmological bounds
+      page: null
+    - reference_id: astro-ph/0501562
+      note: Related local text is a Lyman-alpha warm-dark-matter constraint paper.
+      confidence: medium
+      section: Abstract and analysis
+      page: null
+    - reference_id: '1304.6217'
+      note: Related local text discusses effective-neutrino-number constraints after Planck.
+      confidence: medium
+      section: Parameter constraints
+      page: null
+    routes:
+    - reference_id: '1304.5243'
+      note: Primary equations define the analytic Delta N_eff mapping and the qualitative BBN/CMB/structure
+        recast path.
+      confidence: high
+      section: Model-independent setup and cosmological bounds
+      page: null
+  review:
+    human_reviewed: false
+    reviewed_by: null
+    review_date: null
+    expert_reviewed: false
+    expert_reviewer: null
+    expert_review_date: null
+    reviewer_notes: []
+    scientific_confidence: medium
+    implementation_confidence: medium
+  caveats:
+  - Extracted as a model-card candidate from one assigned paper only; no external canonicalization or
+    cross-paper deduplication was performed.
+robustness:
+  overall: medium
+  theory_robustness: medium
+  observational_robustness: unknown
+  computational_robustness: not_applicable
+  dominant_uncertainties:
+  - illustrative model assumptions
+  - approximate treatment of decay timing and structure growth
+  - unspecified stabilizing symmetry for generic effective examples
+  validation_status: expert_judgment_only
+  notes: For the spin-1/2 example, the paper gives a dimension-5 operator and notes that its lifetime
+    differs from the spin-0 case by a numerical factor.
+agent_failure_modes:
+  warnings:
+  - id: mixed_component_not_pure_cdm
+    severity: medium
+    category: assumption_mismatch
+    warning: Do not approximate this entry as a single fully cold dark-matter component; the paper's point
+      is a small relativistic subcomponent.
+    mitigation: Track the nonthermal fraction f and decay boost separately from the cold majority component.
+    source_reference_ids:
+    - '1304.5243'
+  - id: illustrative_parameter_space
+    severity: medium
+    category: extrapolation
+    warning: The effective-theory examples are illustrative parameter realizations rather than complete
+      ultraviolet theories.
+    mitigation: Use the validity-domain and provenance evidence before reusing parameter benchmarks.
+    source_reference_ids:
+    - '1304.5243'
+observables:
+- id: delta_neff_cmb
+  name: Extra radiation-like contribution at matter-radiation equality
+  channel: cmb
+  subchannel: effective relativistic degrees of freedom
+  predicted_effect: A percent-level boosted dark matter subcomponent can mimic an extra relativistic species
+    in the CMB-era expansion rate.
+  effect_direction: enhancement
+  key_quantities:
+  - name: extra effective neutrino number
+    symbol: Delta N_eff
+    value: order 1
+    role: derived
+    status: approximate
+    source_reference_ids:
+    - '1304.5243'
+  - name: nonthermal dark matter fraction
+    symbol: f
+    range:
+      min: 0
+      max: 0.01
+      inclusive_min: true
+      inclusive_max: true
+      unit: null
+      notes: Structure formation discussion favors f below about one percent.
+    role: core
+    status: approximate
+    source_reference_ids:
+    - '1304.5243'
+  - name: parent lifetime
+    symbol: tau_X or tau_B
+    range:
+      min: 0
+      max: 10000
+      inclusive_min: false
+      inclusive_max: true
+      unit: s
+      notes: Late decays beyond about 10^4 s are strongly constrained.
+    unit: s
+    role: core
+    status: approximate
+    source_reference_ids:
+    - '1304.5243'
+  redshift_range: matter-radiation equality through recombination
+  scale_range: null
+  environments:
+  - early universe
+  - CMB
+  observability: medium
+  relevance: high
+  linked_constraints:
+  - bbn_late_decay_energy_injection
+  - cmb_spectral_distortion_energy_injection
+  linked_routes:
+  - nonthermal_decay_to_delta_neff
+  caveats:
+  - The preferred Delta N_eff depends on the CMB, BAO, HST, ACT, SPT, and Planck data combination.
+  - The paper treats illustrative models rather than a global likelihood.
+  source_reference_ids:
+  - '1304.5243'
+  - '1304.6217'
+  notes: null
+- id: free_streaming_structure_suppression
+  name: Suppression of structure growth from boosted subcomponent
+  channel: lyman_alpha
+  subchannel: matter power and free streaming
+  predicted_effect: Relativistically produced dark matter free-streams and suppresses matter fluctuations
+    if the fraction is too large.
+  effect_direction: suppression
+  key_quantities:
+  - name: boost factor at equality
+    symbol: gamma
+    description: Lorentz boost of the nonthermal dark matter component at matter-radiation equality.
+    role: derived
+    status: approximate
+    source_reference_ids:
+    - '1304.5243'
+  - name: nonthermal fraction
+    symbol: f
+    range:
+      min: 0
+      max: 0.01
+      inclusive_min: true
+      inclusive_max: true
+      unit: null
+      notes: Primary text quotes f < 0.01 from WMAP9 plus Lyman-alpha information.
+    role: core
+    status: approximate
+    source_reference_ids:
+    - '1304.5243'
+  redshift_range: post-decay era through structure formation
+  scale_range: Lyman-alpha forest and 8 h^-1 Mpc fluctuation scales
+  environments:
+  - intergalactic medium
+  - large-scale structure
+  observability: medium
+  relevance: high
+  linked_constraints:
+  - structure_formation_fraction_bound
+  linked_routes:
+  - nonthermal_decay_to_delta_neff
+  caveats:
+  - Requires mapping the boosted component to a mixed cold/warm transfer function for precision use.
+  source_reference_ids:
+  - '1304.5243'
+  - astro-ph/0501562
+  notes: null
+- id: late_decay_photon_injection
+  name: Electromagnetic energy injection from parent decay
+  channel: cosmology
+  subchannel: BBN and CMB spectral distortions
+  predicted_effect: The photon emitted in the parent decay can perturb light-element abundances or the
+    CMB spectrum if injected too late or with too much total energy.
+  effect_direction: shape_change
+  key_quantities:
+  - name: decay lifetime
+    symbol: tau_X or tau_B
+    range:
+      min: 0
+      max: 10000
+      inclusive_min: true
+      inclusive_max: true
+      unit: s
+      notes: Relevant benchmark requires early decay.
+    unit: s
+    role: core
+    status: approximate
+    source_reference_ids:
+    - '1304.5243'
+  - name: injected energy density
+    symbol: zeta
+    description: Energy release parameter entering BBN/CMB bounds.
+    role: derived
+    status: inferred
+    source_reference_ids:
+    - '1304.5243'
+  redshift_range: BBN through post-BBN thermalization epochs
+  scale_range: null
+  environments:
+  - early universe plasma
+  observability: medium
+  relevance: high
+  linked_constraints:
+  - bbn_late_decay_energy_injection
+  - cmb_spectral_distortion_energy_injection
+  linked_routes:
+  - nonthermal_decay_to_delta_neff
+  caveats:
+  - The output uses qualitative bounds; no numerical BBN likelihood is embedded.
+  source_reference_ids:
+  - '1304.5243'
+  notes: null
+constraints:
+- id: structure_formation_fraction_bound
+  name: WMAP9 and Lyman-alpha bound on relativistic dark matter fraction
+  constraint_type: cosmological
+  observable_channel: lyman_alpha
+  applies: 'yes'
+  constrained_parameters:
+  - f
+  - gamma
+  excluded_regions:
+  - f >= 0.01 is disfavored in the primary paper summary for the benchmark mapping.
+  allowed_regions:
+  - f < 0.01 for the relativistically produced component.
+  benchmark_implications:
+  - Benchmarks with f=0.01 sit at the edge of the structure-formation bound.
+  likelihood_available: 'no'
+  likelihood_reference: null
+  data_release: null
+  recasting_needed: 'yes'
+  robustness: medium
+  assumptions:
+  - id: mixed_dm_mapping
+    description: The nonthermal component can be represented as a small hot or warm fraction in the matter
+      power calculation.
+    scope: linear structure formation
+    status: approximate
+    impact_if_violated: A different momentum distribution would move the numerical f bound.
+    can_be_relaxed: partial
+    source_reference_ids:
+    - '1304.5243'
+    notes: null
+  caveats:
+  - Bound quoted from the primary paper rather than recomputed.
+  source_reference_ids:
+  - '1304.5243'
+  - astro-ph/0501562
+  notes: null
+- id: bbn_late_decay_energy_injection
+  name: BBN bound on late electromagnetic decays
+  constraint_type: cosmological
+  observable_channel: BBN
+  applies: parameter_dependent
+  constrained_parameters:
+  - tau_X
+  - tau_B
+  - injected photon energy
+  - f
+  excluded_regions:
+  - Most relevant parameter space with lifetimes longer than about 10^4 s is excluded in the primary discussion.
+  allowed_regions:
+  - Early decays with tau below about 10^4 s and small f remain viable in the benchmark region.
+  benchmark_implications:
+  - The model-card benchmark lifetime cap is directly motivated by this bound.
+  likelihood_available: approximate
+  likelihood_reference: null
+  data_release: null
+  recasting_needed: 'yes'
+  robustness: medium
+  assumptions:
+  - id: standard_bbn_background
+    description: Light-element predictions are compared to standard BBN with late electromagnetic injection
+      added.
+    scope: early-universe abundance calculation
+    status: assumed
+    impact_if_violated: Nonstandard BBN histories could change the bound.
+    can_be_relaxed: partial
+    source_reference_ids:
+    - '1304.5243'
+    notes: null
+  caveats:
+  - No public likelihood table was extracted.
+  source_reference_ids:
+  - '1304.5243'
+  notes: null
+- id: cmb_spectral_distortion_energy_injection
+  name: CMB spectral-distortion bound on photon injection
+  constraint_type: cosmological
+  observable_channel: cmb
+  applies: parameter_dependent
+  constrained_parameters:
+  - tau_X
+  - tau_B
+  - energy release
+  excluded_regions:
+  - Late and sufficiently energetic photon injection that distorts the CMB black-body spectrum.
+  allowed_regions:
+  - Prompt or low-energy-injection regions below the spectral-distortion limits.
+  benchmark_implications:
+  - Complements BBN in limiting long parent lifetimes.
+  likelihood_available: approximate
+  likelihood_reference: null
+  data_release: null
+  recasting_needed: 'yes'
+  robustness: medium
+  assumptions:
+  - id: thermalization_history
+    description: The standard thermalization history for bremsstrahlung, double Compton, and Compton processes
+      applies.
+    scope: CMB spectral-distortion calculation
+    status: assumed
+    impact_if_violated: Altered thermalization would shift the lifetime and energy-release limits.
+    can_be_relaxed: unknown
+    source_reference_ids:
+    - '1304.5243'
+    notes: null
+  caveats:
+  - Primary text provides the bound conceptually and graphically.
+  source_reference_ids:
+  - '1304.5243'
+  - '1304.6217'
+  notes: null
+theory_to_observable_routing:
+  routes:
+  - id: nonthermal_decay_to_delta_neff
+    description: Map a heavy-parent decay benchmark to Delta N_eff, free-streaming suppression, and late-decay
+      cosmological bounds.
+    source_model_features:
+    - heavy parent decays to stable dark matter plus a photon
+    - small relativistic nonthermal dark matter fraction
+    - mostly cold dark matter abundance remains present
+    - dipole-like fermion-parent operator
+    input_parameters:
+    - M_X
+    - M_DM
+    - tau_X
+    - f
+    - Lambda
+    derived_quantities:
+    - boost factor at equality
+    - Delta N_eff
+    - mixed-DM transfer-function suppression
+    - electromagnetic energy release
+    forward_model_chain:
+    - step_id: boost_and_neff
+      step_type: analytic_formula
+      tool_or_code: null
+      inputs:
+      - M_X
+      - M_DM
+      - tau_X
+      - f
+      - Lambda
+      outputs:
+      - gamma
+      - Delta N_eff
+      validity: Valid for two-body parent decay with a small nonthermal dark matter fraction.
+      notes: Use the primary paper formula relating lifetime, mass ratio, f, and Delta N_eff.
+    - step_id: structure_bound
+      step_type: transfer_function
+      tool_or_code: mixed cold plus boosted component calculation
+      inputs:
+      - gamma
+      - f
+      outputs:
+      - matter-power suppression
+      validity: Needed for a precision recast of the WMAP9/Lyman-alpha bound.
+      notes: The batch output records the primary-paper bound rather than recomputing it.
+    - step_id: decay_bounds
+      step_type: likelihood
+      tool_or_code: BBN/CMB energy-injection recast
+      inputs:
+      - tau_X or tau_B
+      - energy release
+      outputs:
+      - allowed lifetime-energy region
+      validity: Requires an external BBN/CMB spectral-distortion likelihood for precision use.
+      notes: Use as a planned route.
+    observable_ids:
+    - delta_neff_cmb
+    - free_streaming_structure_suppression
+    - late_decay_photon_injection
+    constraint_ids:
+    - structure_formation_fraction_bound
+    - bbn_late_decay_energy_injection
+    - cmb_spectral_distortion_energy_injection
+    likelihoods: []
+    required_code_resources:
+    - mixed-DM Boltzmann or transfer-function solver
+    - BBN/CMB spectral-distortion likelihood
+    validation_tests:
+    - Recover f < 0.01 benchmark limit
+    - Recover Delta N_eff of order unity for the quoted mass-ratio and lifetime choices
+    route_status: planned
+    agent_notes: No implementation artifact was found in the local text; this is a theory-to-observable
+      route.
+    caveats:
+    - Precision constraints require a dedicated likelihood recast.

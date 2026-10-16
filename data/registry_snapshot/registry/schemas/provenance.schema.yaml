@@ -1,0 +1,497 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+$id: https://darkmatterfm.org/schemas/provenance.schema.yaml
+title: Provenance schema for a BSM dark-matter model entry
+description: Reusable provenance definition for a BSM dark-matter theory registry
+  entry.
+type: object
+additionalProperties: false
+$defs:
+  provenance:
+    type: object
+    additionalProperties: false
+    required:
+    - model_id
+    - entry_version
+    - status
+    - created_at
+    - last_updated
+    - sources
+    - extraction
+    - evidence
+    - review
+    properties:
+      model_id:
+        type: string
+        description: Stable registry identifier for the model entry.
+        examples:
+        - sterile_neutrino_resonant_v1
+        - fuzzy_dark_matter_ultralight_scalar_v1
+      model_name:
+        type:
+        - string
+        - 'null'
+        description: Human-readable model name.
+      model_family:
+        type:
+        - string
+        - 'null'
+        description: Broad family or class of the dark-matter model.
+        examples:
+        - warm_dark_matter
+        - sterile_neutrino
+        - axion_like_particle
+        - self_interacting_dark_matter
+        - asymmetric_dark_matter
+        - freeze_in_dark_matter
+      entry_version:
+        type: string
+        description: Semantic version of this registry entry.
+        pattern: ^v?[0-9]+\.[0-9]+\.[0-9]+$
+        examples:
+        - 0.1.0
+        - v1.0.0
+      status:
+        type: string
+        description: Current provenance/review state of the registry entry.
+        enum:
+        - draft
+        - machine_extracted
+        - human_reviewed
+        - expert_reviewed
+        - deprecated
+      created_at:
+        type: string
+        format: date
+        description: Date on which this registry entry was created.
+      last_updated:
+        type: string
+        format: date
+        description: Date on which this registry entry was last updated.
+      sources:
+        type: object
+        additionalProperties: false
+        required:
+        - primary_papers
+        properties:
+          primary_papers:
+            type: array
+            description: Original or central papers defining the model.
+            items:
+              $ref: '#/$defs/source_document'
+          review_papers:
+            type: array
+            description: Review papers used to contextualize the model.
+            items:
+              $ref: '#/$defs/source_document'
+          constraint_papers:
+            type: array
+            description: Papers imposing observational, cosmological, astrophysical,
+              collider, or laboratory constraints.
+            items:
+              allOf:
+              - $ref: '#/$defs/source_document'
+              - type: object
+                properties:
+                  observable_channel:
+                    type: string
+                    description: Observable or data channel to which the constraint
+                      applies.
+                  constraint_type:
+                    type: string
+                    enum:
+                    - direct_detection
+                    - indirect_detection
+                    - cosmological
+                    - astrophysical
+                    - collider
+                    - laboratory
+                    - theoretical
+                    - other
+          external_databases:
+            type: array
+            description: External databases or registries used as sources.
+            items:
+              type: object
+              additionalProperties: false
+              required:
+              - name
+              properties:
+                name:
+                  type: string
+                url:
+                  type:
+                  - string
+                  - 'null'
+                  format: uri
+                note:
+                  type:
+                  - string
+                  - 'null'
+      extraction:
+        type: object
+        additionalProperties: false
+        required:
+        - method
+        - extracted_by
+        - extraction_date
+        - confidence
+        properties:
+          method:
+            type: string
+            enum:
+            - manual
+            - llm_assisted
+            - automated_parser
+            - imported_from_code
+            - imported_from_database
+            - mixed
+          extracted_by:
+            type: string
+            description: Human, agent, script, or database responsible for extraction.
+          extractor_name:
+            type:
+            - string
+            - 'null'
+            description: Optional name/version of extractor, agent, parser, or person.
+          extraction_date:
+            type: string
+            format: date
+          confidence:
+            type: string
+            enum:
+            - low
+            - medium
+            - high
+          source_chunks_or_sections:
+            type: array
+            description: Specific document locations used during extraction.
+            items:
+              type: object
+              additionalProperties: false
+              required:
+              - reference_id
+              properties:
+                reference_id:
+                  type: string
+                section:
+                  type:
+                  - string
+                  - 'null'
+                page:
+                  type:
+                  - integer
+                  - 'null'
+                  minimum: 1
+                quote_or_summary:
+                  type:
+                  - string
+                  - 'null'
+          unresolved_items:
+            type: array
+            description: Open questions or fields that could not be extracted reliably.
+            items:
+              type: string
+      evidence:
+        type: object
+        description: 'Map from registry physics claims to supporting references. Each
+          top-level key should correspond to a major physics block in the model entry.
+
+          '
+        additionalProperties:
+          type: array
+          items:
+            $ref: '#/$defs/evidence_item'
+        properties:
+          particle_content:
+            type: array
+            items:
+              $ref: '#/$defs/evidence_item'
+          symmetries:
+            type: array
+            items:
+              $ref: '#/$defs/evidence_item'
+          interactions:
+            type: array
+            items:
+              $ref: '#/$defs/evidence_item'
+          production_mechanism:
+            type: array
+            items:
+              $ref: '#/$defs/evidence_item'
+          cosmological_history:
+            type: array
+            items:
+              $ref: '#/$defs/evidence_item'
+          parameter_ranges:
+            type: array
+            items:
+              $ref: '#/$defs/evidence_item'
+          observable_signatures:
+            type: array
+            items:
+              $ref: '#/$defs/evidence_item'
+          constraints:
+            type: array
+            items:
+              $ref: '#/$defs/evidence_item'
+          validity_domain:
+            type: array
+            items:
+              $ref: '#/$defs/evidence_item'
+      review:
+        type: object
+        additionalProperties: false
+        required:
+        - human_reviewed
+        - expert_reviewed
+        - scientific_confidence
+        - implementation_confidence
+        properties:
+          human_reviewed:
+            type: boolean
+          reviewed_by:
+            type:
+            - string
+            - 'null'
+          review_date:
+            type:
+            - string
+            - 'null'
+            format: date
+          expert_reviewed:
+            type: boolean
+          expert_reviewer:
+            type:
+            - string
+            - 'null'
+          expert_review_date:
+            type:
+            - string
+            - 'null'
+            format: date
+          reviewer_notes:
+            type: array
+            items:
+              type: string
+          scientific_confidence:
+            type: string
+            enum:
+            - low
+            - medium
+            - high
+          implementation_confidence:
+            type: string
+            enum:
+            - low
+            - medium
+            - high
+      versioning:
+        type: object
+        additionalProperties: false
+        properties:
+          current_version:
+            type: string
+          previous_versions:
+            type: array
+            items:
+              type: object
+              additionalProperties: false
+              required:
+              - version
+              - date
+              - change_summary
+              properties:
+                version:
+                  type: string
+                date:
+                  type: string
+                  format: date
+                change_summary:
+                  type: string
+          change_log:
+            type: array
+            items:
+              type: object
+              additionalProperties: false
+              required:
+              - date
+              - change_type
+              - description
+              properties:
+                date:
+                  type: string
+                  format: date
+                changed_by:
+                  type:
+                  - string
+                  - 'null'
+                change_type:
+                  type: string
+                  enum:
+                  - added
+                  - modified
+                  - corrected
+                  - deprecated
+                  - reviewed
+                description:
+                  type: string
+      caveats:
+        type: array
+        description: Known caveats, ambiguities, disputed interpretations, or mapping
+          limitations.
+        items:
+          type: string
+      related_entries:
+        type: array
+        description: Links to related model entries in the registry.
+        items:
+          type: object
+          additionalProperties: false
+          required:
+          - model_id
+          - relation
+          properties:
+            model_id:
+              type: string
+            relation:
+              type: string
+              enum:
+              - parent_model
+              - child_model
+              - limiting_case
+              - benchmark_variant
+              - phenomenological_mapping
+              - same_signature_class
+              - related_uv_completion
+              - other
+            note:
+              type:
+              - string
+              - 'null'
+      external_links:
+        type: object
+        additionalProperties: false
+        properties:
+          public_codes:
+            type: array
+            items:
+              $ref: '#/$defs/external_resource'
+          likelihoods:
+            type: array
+            items:
+              allOf:
+              - $ref: '#/$defs/external_resource'
+              - type: object
+                properties:
+                  observable_channel:
+                    type:
+                    - string
+                    - 'null'
+          datasets:
+            type: array
+            items:
+              allOf:
+              - $ref: '#/$defs/external_resource'
+              - type: object
+                properties:
+                  observable_channel:
+                    type:
+                    - string
+                    - 'null'
+  source_document:
+    type: object
+    additionalProperties: false
+    required:
+    - reference_id
+    - title
+    - role
+    properties:
+      reference_id:
+        type: string
+        description: Local citation key or bibliographic identifier.
+      title:
+        type: string
+      authors:
+        type: array
+        items:
+          type: string
+      year:
+        type:
+        - integer
+        - 'null'
+      arxiv_id:
+        type:
+        - string
+        - 'null'
+      doi:
+        type:
+        - string
+        - 'null'
+      url:
+        type:
+        - string
+        - 'null'
+        format: uri
+      role:
+        type: string
+        enum:
+        - original_model
+        - primary_model_source
+        - extension
+        - benchmark
+        - review
+        - constraint
+        - implementation
+        - dataset
+        - likelihood
+        - other
+      notes:
+        type:
+        - string
+        - 'null'
+  evidence_item:
+    type: object
+    additionalProperties: false
+    required:
+    - reference_id
+    - note
+    properties:
+      reference_id:
+        type: string
+      note:
+        type: string
+      confidence:
+        type: string
+        enum:
+        - low
+        - medium
+        - high
+      section:
+        type:
+        - string
+        - 'null'
+      page:
+        type:
+        - integer
+        - 'null'
+        minimum: 1
+  external_resource:
+    type: object
+    additionalProperties: false
+    required:
+    - name
+    - purpose
+    properties:
+      name:
+        type: string
+      url:
+        type:
+        - string
+        - 'null'
+        format: uri
+      purpose:
+        type: string
+      notes:
+        type:
+        - string
+        - 'null'

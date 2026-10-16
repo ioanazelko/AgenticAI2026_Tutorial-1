@@ -1,0 +1,338 @@
+_source:
+  shard: arXiv_src_0712_003_wds.tar
+  paper_id: '0712_4206'
+  source_member: 0712_4206.json
+schema_version: model_only_v0
+model_id: 0712_4206_inert_doublet_h0_wimp_v1
+identity:
+  name: Inert Doublet Model H0 WIMP dark matter
+  family: inert_doublet_dark_matter
+  aliases:
+  - IDM
+  - inert scalar doublet dark matter
+  - H0 dark matter
+  short_description: A two-Higgs-doublet Standard Model extension with an unbroken Z2 symmetry and a lightest
+    neutral inert scalar H0 as a WIMP dark matter candidate.
+  historical_origin_or_motivation: The paper presents the IDM as a simple toy model linking WIMP dark
+    matter with the electroweak symmetry-breaking sector.
+  status: speculative
+  model_kind: complete_theory
+theory:
+  theory_level: simplified_model
+  parent_frameworks:
+  - two Higgs doublet extension of the Standard Model
+  - Z2-symmetric inert scalar sector
+  lagrangian_available: 'yes'
+  renormalizable: 'yes'
+  embedded_in_larger_framework: unknown
+  notes: The paper writes the most general CP-conserving renormalizable scalar potential for H1 and H2
+    under the inert Z2 assignment.
+particle_content:
+  dark_matter_candidate:
+    name: H0
+    spin: '0'
+    statistics: scalar
+    elementary_or_composite: elementary
+    number_of_components: single_component
+  additional_dark_sector_particles:
+  - A0
+  - H+
+  mediators:
+  - Higgs boson
+  - electroweak gauge bosons
+  dark_radiation_species: []
+  excited_or_degenerate_states:
+  - A0
+  - H+
+  long_lived_particles:
+  - H0
+  unstable_parent_particles: []
+  standard_model_extension: substantial
+symmetries:
+  stabilizing_mechanism: An unbroken Z2 symmetry makes the lightest neutral component of the inert doublet
+    stable.
+  symmetries:
+  - name: Z2
+    type: discrete
+    exact_or_approximate: exact
+    breaking: assumed not spontaneously broken
+    breaking_scale: null
+  topological_defects_possible: unknown
+interactions:
+  portals:
+  - higgs
+  - vector
+  standard_model_targets:
+  - Higgs sector
+  - W boson
+  - Z boson
+  - quarks and leptons through Higgs/gauge interactions
+  dark_sector_couplings:
+  - lambda3
+  - lambda4
+  - lambda5
+  mediator_types:
+  - Higgs boson
+  - electroweak gauge bosons
+  interaction_operators:
+  - renormalizable scalar potential couplings H1^2 H2^2 and (H1^dagger H2)^2
+  scattering:
+    elastic: 'yes'
+    inelastic: unknown
+    momentum_dependence: unknown
+    velocity_dependence: unknown
+    spin_dependence: spin_independent
+  annihilation_channels:
+  - electroweak gauge bosons
+  - Higgs-mediated Standard Model final states
+  - photon pairs at one loop
+  decay_channels: []
+  self_scattering_channels: []
+  tree_or_loop_level: both
+parameters:
+  core:
+  - name: H0 mass
+    symbol: M_H0
+    description: Mass of the chosen inert neutral scalar dark matter candidate.
+    value: text lists viable regions near 80 GeV or around/above 500 GeV
+    unit: GeV
+    role: core
+    status: inferred
+    source_reference_ids:
+    - primary
+  - name: A0 mass
+    symbol: M_A0
+    description: Mass of the other neutral inert scalar.
+    value: model dependent
+    unit: GeV
+    role: core
+    status: inferred
+    source_reference_ids:
+    - primary
+  - name: charged inert scalar mass
+    symbol: M_H+
+    description: Mass of the charged inert scalar.
+    value: model dependent
+    unit: GeV
+    role: core
+    status: inferred
+    source_reference_ids:
+    - primary
+  - name: scalar quartic couplings
+    symbol: lambda1-lambda5
+    description: Quartic couplings in the CP-conserving scalar potential.
+    value: real couplings
+    role: core
+    status: inferred
+    source_reference_ids:
+    - primary
+  - name: inert mass parameter
+    symbol: mu2^2
+    description: Mass parameter of the inert doublet H2 in the scalar potential.
+    value: positive in the unbroken-Z2 vacuum
+    role: core
+    status: inferred
+    source_reference_ids:
+    - primary
+production:
+  mechanisms:
+  - thermal WIMP freeze-out
+  thermal_equilibrium_with_standard_model: 'yes'
+  thermal_equilibrium_with_hidden_sector: not_applicable
+  abundance_set_by:
+  - H0 mass
+  - inert scalar mass splittings
+  - quartic couplings lambda3, lambda4, lambda5
+  - electroweak annihilation channels
+  depends_on_reheating_temperature: unknown
+  can_produce_all_dark_matter: parameter_dependent
+  nonthermal_momentum_distribution: 'no'
+  notes: The paper shows H0 relic abundance and states two H0 mass ranges are consistent with dark matter
+    observations.
+relic_density:
+  full_or_subcomponent: either
+  calculation_type: thermal
+  key_dependencies:
+  - M_H0
+  - mass spectrum of H0, A0, H+
+  - lambda3
+  - lambda4
+  - lambda5
+  requires_entropy_dilution: unknown
+  overclosure_risk: parameter_dependent
+  underproduction_risk: parameter_dependent
+  tuning_assessment: unknown
+cosmological_history:
+  standard_history_assumed: true
+  nonstandard_features: []
+  dark_sector_temperature: null
+  delta_neff: null
+  kinetic_decoupling: null
+  chemical_decoupling: null
+  phase_transitions:
+  - electroweak symmetry breaking with H1 vev and inert H2 vev zero
+  topological_defects: []
+  isocurvature_perturbations: unknown
+  bbn_relevance: unknown
+  cmb_relevance: unknown
+phase_space:
+  distribution_type: thermal
+  distribution_function_available: unknown
+  notes: The text treats H0 as a WIMP and discusses its relic abundance but does not print a distribution
+    function.
+structure_formation:
+  linear:
+    behaves_like_cdm: 'yes'
+    transfer_function_shape: cdm_like
+    small_scale_power_effect: none
+  nonlinear:
+    halo_mass_function_effect: unknown
+    subhalo_mass_function_effect: unknown
+    simulation_calibrated: unknown
+validity_domain:
+- id: unbroken_z2
+  applies_to: model
+  condition: The Z2 symmetry must not be spontaneously broken, so H2 has zero vev and the lightest neutral
+    inert scalar is stable.
+  status: assumed
+  extrapolation_risk: high
+  caveats: []
+  source_reference_ids:
+  - primary
+- id: mass_windows
+  applies_to: parameter
+  condition: The text states that two H0 mass ranges are compatible with dark matter observations.
+  status: inferred
+  extrapolation_risk: medium
+  caveats: []
+  source_reference_ids:
+  - primary
+assumptions:
+  global:
+  - id: z2_unbroken
+    description: All Standard Model fields and H1 are Z2-even while H2 is Z2-odd, and H2 does not develop
+      a vev.
+    scope: theory
+    status: assumed
+    can_be_relaxed: unknown
+    source_reference_ids:
+    - primary
+    impact_if_violated: If Z2 breaks, H0 need not be stable.
+  - id: h0_candidate_choice
+    description: H0 is chosen as the lightest neutral inert scalar dark matter candidate.
+    scope: theory
+    status: assumed
+    can_be_relaxed: unknown
+    source_reference_ids:
+    - primary
+associated_code:
+  has_associated_code: unknown
+  code_summary: No model-specific associated code is identified in the assigned text.
+provenance:
+  model_id: 0712_4206_inert_doublet_h0_wimp_v1
+  model_name: Inert Doublet Model H0 WIMP dark matter
+  model_family: inert_doublet_dark_matter
+  entry_version: 0.1.0
+  status: machine_extracted
+  created_at: '2026-05-30'
+  last_updated: '2026-05-30'
+  sources:
+    primary_papers:
+    - reference_id: primary
+      title: 'The Inert Doublet Model : a new archetype of WIMP dark matter?'
+      authors:
+      - Michel H. G. Tytgat
+      year: 2007
+      arxiv_id: '0712.4206'
+      doi: null
+      url: null
+      role: extension
+      notes: null
+  extraction:
+    method: llm_assisted
+    extracted_by: gpt55_dark_matter_batch_worker_batch_0000
+    extractor_name: Codex
+    extraction_date: '2026-05-30'
+    confidence: high
+    source_chunks_or_sections:
+    - reference_id: primary
+      section: opening/model definition
+      page: null
+      quote_or_summary: The paper defines the IDM as a two-doublet extension with an unbroken Z2 symmetry
+        and a neutral scalar dark matter candidate.
+    - reference_id: primary
+      section: scalar potential/relic abundance paragraph
+      page: null
+      quote_or_summary: The text writes the scalar potential, chooses H0 as dark matter, and lists viable
+        H0 mass regions.
+    unresolved_items: []
+  evidence:
+    particle_content:
+    - reference_id: primary
+      note: The inert doublet contains H+, H0, and A0, with H0 chosen as the dark matter candidate.
+      confidence: high
+      section: model definition
+    symmetries:
+    - reference_id: primary
+      note: The Z2 assignment makes H2 odd and is assumed unbroken so the inert neutral scalar remains
+        stable.
+      confidence: high
+      section: model definition
+    interactions:
+    - reference_id: primary
+      note: The paper writes the renormalizable scalar potential with lambda3, lambda4, and lambda5 couplings
+        linking H1 and H2.
+      confidence: high
+      section: scalar potential
+    production_mechanism:
+    - reference_id: primary
+      note: The model is discussed as a WIMP and the H0 relic abundance is shown in the paper.
+      confidence: medium
+      section: relic abundance paragraph
+    parameter_ranges:
+    - reference_id: primary
+      note: The text lists H0 mass ranges near 80 GeV and 500 GeV as consistent with dark matter observations.
+      confidence: high
+      section: relic abundance paragraph
+    cosmological_history:
+    - reference_id: primary
+      note: Electroweak symmetry breaking is through H1 with H2 remaining at zero vev.
+      confidence: high
+      section: scalar potential
+    validity_domain:
+    - reference_id: primary
+      note: The dark matter interpretation depends on the Z2 not being spontaneously broken.
+      confidence: high
+      section: opening
+  review:
+    human_reviewed: false
+    expert_reviewed: false
+    scientific_confidence: medium
+    implementation_confidence: medium
+    reviewer_notes: []
+  caveats:
+  - This is a short model-focused proceeding/review; detailed relic and detection calculations are summarized
+    rather than derived in full.
+robustness:
+  overall: high
+  theory_robustness: high
+  observational_robustness: medium
+  computational_robustness: unknown
+  validation_status: expert_judgment_only
+  notes: The field content, symmetry, potential, and WIMP relic motivation are explicit in the assigned
+    text.
+agent_failure_modes:
+  warnings:
+  - id: z2_breaking
+    severity: high
+    category: assumption_mismatch
+    warning: The dark matter candidate relies on the inert Z2 symmetry remaining unbroken.
+    source_reference_ids:
+    - primary
+  - id: mass_window_parse
+    severity: low
+    category: other
+    warning: The local text rendering drops comparison symbols around the H0 mass ranges; preserve the
+      paper wording rather than over-specifying exact intervals.
+    source_reference_ids:
+    - primary

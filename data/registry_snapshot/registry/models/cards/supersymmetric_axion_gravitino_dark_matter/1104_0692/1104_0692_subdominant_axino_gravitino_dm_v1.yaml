@@ -1,0 +1,705 @@
+_source:
+  shard: arXiv_src_1104_001_wds.tar
+  paper_id: '1104_0692'
+  source_member: 1104_0692.json
+  enriched: true
+  enrichment_schema_version: dm_model_ocr_enrichment_smoke_v0
+schema_version: model_only_v0
+model_id: 1104_0692_subdominant_axino_gravitino_dm_v1
+identity:
+  name: Sub-dominant axino decay gravitino dark matter
+  family: supersymmetric_axion_gravitino_dark_matter
+  aliases:
+  - Region II sub-dominant axino
+  short_description: Supersymmetric QCD axion cosmology where the gravitino is the dominant dark matter
+    and unstable axino production is constrained to a small warm component.
+  historical_origin_or_motivation: Motivated by keeping gravitino dark matter viable despite axino thermal
+    production and late axino decays.
+  status: speculative
+  model_kind: effective_field_theory
+theory:
+  theory_level: effective_field_theory
+  parent_frameworks:
+  - supersymmetric QCD axion
+  - gravitino LSP
+  - axino NLSP
+  lagrangian_available: partial
+  renormalizable: 'no'
+  eft_cutoff: null
+  embedded_in_larger_framework: 'yes'
+  notes: The same effective axion-superfield and supersymmetry-breaking operators define the model variant.
+particle_content:
+  dark_matter_candidate:
+    name: gravitino with sub-dominant axino-decay component
+    spin: spin-3/2 dominant component
+    statistics: fermion
+    elementary_or_composite: elementary
+    number_of_components: subcomponent
+  additional_dark_sector_particles:
+  - QCD axion
+  - saxion
+  mediators:
+  - axion supermultiplet
+  - gravitational/goldstino interactions
+  dark_radiation_species:
+  - relativistic axions from axino decay
+  excited_or_degenerate_states: []
+  long_lived_particles:
+  - gravitino
+  unstable_parent_particles:
+  - axino NLSP
+  standard_model_extension: substantial
+symmetries:
+  stabilizing_mechanism: R-parity stabilizes the gravitino LSP; axino NLSP decays to gravitino plus axion.
+  symmetries:
+  - name: Peccei-Quinn symmetry
+    type: global
+    exact_or_approximate: approximate
+    breaking: spontaneously broken at f_a
+    breaking_scale:
+      name: axion decay constant
+      symbol: f_a
+      range: 10^9-10^12
+      unit: GeV
+      status: inferred
+  - name: R-parity
+    type: discrete
+    exact_or_approximate: exact
+    breaking: not discussed
+    breaking_scale: null
+  topological_defects_possible: unknown
+interactions:
+  portals:
+  - axion
+  - gravitational
+  standard_model_targets:
+  - gluons
+  - gluinos
+  - thermal superpartner bath
+  dark_sector_couplings:
+  - axino-axion-gravitino coupling
+  - axion-superfield coupling to QCD
+  mediator_types:
+  - axion supermultiplet
+  - gravitino/goldstino
+  interaction_operators:
+  - axino -> gravitino + axion effective coupling
+  - A W^a W^a / f_a
+  annihilation_channels: []
+  decay_channels:
+  - axino -> gravitino + axion
+  self_scattering_channels: []
+  tree_or_loop_level: unknown
+parameters:
+  core:
+  - name: axion decay constant
+    symbol: f_a
+    range: 10^9-10^12
+    unit: GeV
+    role: core
+    status: inferred
+  - name: reheating temperature
+    symbol: T_R
+    range: bounded by relativistic and overclosure constraints
+    unit: GeV
+    role: core
+    status: inferred
+  - name: axino yield fraction
+    symbol: Y_axino / Y_gravitino
+    range: < 0.03
+    role: core
+    status: inferred
+  - name: gravitino mass
+    symbol: m_3/2
+    range: bounded by f_a-dependent Region II contours
+    unit: GeV
+    role: core
+    status: inferred
+  - name: axino lifetime
+    symbol: tau_axino
+    range: < 10^13 for relativistic-degree bounds discussed
+    unit: s
+    role: derived
+    status: inferred
+production:
+  mechanisms:
+  - gravitino thermal production
+  - gravitino freeze-in from superpartner decays
+  - axino production followed by axino decay to gravitino plus axion
+  thermal_equilibrium_with_standard_model: 'no'
+  thermal_equilibrium_with_hidden_sector: unknown
+  abundance_set_by:
+  - m_3/2 (Y_axino + Y_3/2) equals observed relic abundance with small axino-decay component
+  depends_on_reheating_temperature: 'yes'
+  can_produce_all_dark_matter: parameter_dependent
+  nonthermal_momentum_distribution: 'yes'
+  notes: The paper emphasizes gravitino freeze-in can dominate in parts of the viable region.
+relic_density:
+  full_or_subcomponent: full_dark_matter
+  target_fraction: null
+  calculation_type: mixed
+  key_dependencies:
+  - f_a
+  - T_R
+  - m_axino
+  - m_3/2
+  - Y_axino / Y_3/2
+  requires_entropy_dilution: unknown
+  overclosure_risk: 'yes'
+  underproduction_risk: parameter_dependent
+  tuning_assessment: unknown
+cosmological_history:
+  standard_history_assumed: true
+  nonstandard_features:
+  - late axino decays to gravitinos and axions
+  - bound on relativistic degrees of freedom
+  dark_sector_temperature: null
+  delta_neff:
+    name: additional effective neutrino species
+    symbol: Delta N_eff
+    range: < about 1
+    role: derived
+    status: inferred
+  kinetic_decoupling: null
+  chemical_decoupling: null
+  phase_transitions: []
+  topological_defects: []
+  isocurvature_perturbations: unknown
+  bbn_relevance: medium
+  cmb_relevance: high
+phase_space:
+  distribution_type: mixed_cold_warm
+  distribution_function_available: 'no'
+  f_of_p_or_q: not provided
+  average_momentum_relative_to_thermal: null
+  free_streaming_length: null
+  velocity_dispersion_today: null
+  phase_space_bounds:
+  - axino-decay gravitino component must be below about 3 percent of the gravitino yield
+  notes: Relativistic gravitinos from axino decay can over-deplete sub-Mpc structures unless sub-dominant.
+structure_formation:
+  linear:
+    behaves_like_cdm: approximately
+    transfer_function_shape: mixed_cold_warm
+    small_scale_power_effect: suppression
+    impact_on_sigma8_s8: not discussed directly; sub-Mpc suppression motivates the yield bound
+  nonlinear:
+    halo_mass_function_effect: not discussed in the paper
+    subhalo_mass_function_effect: possible suppression if warm component is too large
+    simulation_calibrated: unknown
+validity_domain:
+- id: subdominant_axino_yield
+  applies_to: model
+  condition: Y_axino is less than about 0.03 Y_gravitino to satisfy warm-dark-matter structure bounds.
+  valid_range: null
+  status: inferred
+  extrapolation_risk: high
+  caveats: []
+  source_reference_ids:
+  - paper
+  notes: null
+- id: natural_axino_mass
+  applies_to: parameter
+  condition: m_axino is at least of order m_3/2 unless fine-tuned or sequestered.
+  valid_range: null
+  status: inferred
+  extrapolation_risk: high
+  caveats: []
+  source_reference_ids:
+  - paper
+  notes: null
+- id: reheat_bound
+  applies_to: cosmological_history
+  condition: T_R must satisfy the f_a- and mass-dependent Region II bounds.
+  valid_range: null
+  status: inferred
+  extrapolation_risk: medium
+  caveats: []
+  source_reference_ids:
+  - paper
+  notes: null
+assumptions:
+  global:
+  - id: a1
+    description: No fine-tuned or sequestered axino mass suppression is present.
+    scope: theory
+    status: assumed
+    impact_if_violated: The Region II map changes.
+    can_be_relaxed: 'yes'
+    source_reference_ids:
+    - paper
+    notes: null
+  - id: a2
+    description: The warm gravitino component from axino decays remains sub-dominant.
+    scope: structure_formation
+    status: assumed
+    impact_if_violated: Small-scale structure constraints can exclude the regime.
+    can_be_relaxed: 'yes'
+    source_reference_ids:
+    - paper
+    notes: null
+associated_code:
+  has_associated_code: unknown
+  code_summary: null
+provenance:
+  model_id: 1104_0692_subdominant_axino_gravitino_dm_v1
+  model_name: Sub-dominant axino decay gravitino dark matter
+  model_family: supersymmetric_axion_gravitino_dark_matter
+  entry_version: 0.1.0
+  status: machine_extracted
+  created_at: '2026-05-31'
+  last_updated: '2026-05-31'
+  sources:
+    primary_papers:
+    - reference_id: '1104_0692'
+      title: The Cosmological Axino Problem
+      authors:
+      - Clifford Cheung
+      - Gilly Elor
+      - Lawrence J. Hall
+      year: 2011
+      arxiv_id: '1104.0692'
+      doi: null
+      url: null
+      role: extension
+      notes: Primary source for the three gravitino LSP / axino NLSP dark-matter cosmologies extracted
+        here.
+    - arxiv_id: '1104.0692'
+      authors:
+      - Cheung, Clifford
+      - Elor, Gilly
+      - Hall, Lawrence J.
+      doi: 10.1103/PhysRevD.85.015008
+      notes: Primary assigned model-card paper read from local full-text cache.
+      reference_id: '1104_0692'
+      role: original_model
+      title: Cosmological axino problem
+      url: https://arxiv.org/abs/1104.0692
+      year: 2012
+    constraint_papers:
+    - arxiv_id: astro-ph/0501562
+      authors:
+      - Viel, Matteo
+      - Lesgourgues, Julien
+      - Haehnelt, Martin G.
+      - Matarrese, Sabino
+      - Riotto, Antonio
+      doi: 10.1103/PhysRevD.71.063534
+      notes: Local related full text read for WMAP/Lyman-alpha warm-dark-matter constraints on light gravitinos.
+      reference_id: astro-ph0501562
+      role: constraint
+      title: Constraining warm dark matter candidates including sterile neutrinos and light gravitinos
+        with WMAP and the Lyman-α forest
+      url: https://arxiv.org/abs/astro-ph/0501562
+      year: 2005
+    external_databases: []
+    review_papers: []
+  extraction:
+    method: llm_assisted
+    extracted_by: codex_batch_0017
+    extractor_name: dark-matter-model-card-worker
+    extraction_date: '2026-05-31'
+    confidence: medium
+    source_chunks_or_sections:
+    - reference_id: '1104_0692'
+      section: Three Scenarios for Dark Matter
+      page: null
+      quote_or_summary: Region II is the sub-dominant axino case where axino decays cannot overproduce
+        a warm component.
+    - reference_id: '1104_0692'
+      section: Conclusion
+      page: null
+      quote_or_summary: The paper lists sub-dominant axino production as one of three gravitino/axino
+        dark-matter cosmologies.
+    unresolved_items:
+    - The exact warm-component transfer function is not provided in the extracted text.
+    - Region boundaries and cosmological exclusions are figure-level; no likelihood tables were extracted.
+  evidence:
+    particle_content:
+    - reference_id: '1104_0692'
+      note: The Region II dark matter is gravitino dominated, with unstable axinos contributing through
+        decays.
+      confidence: high
+      section: Three Scenarios for Dark Matter
+      page: null
+    symmetries:
+    - reference_id: '1104_0692'
+      note: The same supersymmetric QCD axion and R-parity framework underlies the axino NLSP and gravitino
+        LSP cosmology.
+      confidence: medium
+      section: Introduction and scenarios
+      page: null
+    interactions:
+    - reference_id: '1104_0692'
+      note: The axino decay axino -> gravitino + axion is mediated by the axino-axion-gravitino coupling
+        generated by the mass operator.
+      confidence: high
+      section: Three Scenarios for Dark Matter
+      page: null
+    production_mechanism:
+    - reference_id: '1104_0692'
+      note: Gravitino dark matter receives thermal production/freeze-in contributions and a bounded contribution
+        from axino decays.
+      confidence: high
+      section: Three Scenarios for Dark Matter
+      page: null
+    cosmological_history:
+    - reference_id: '1104_0692'
+      note: The paper imposes Y_axino < 0.03 Y_gravitino in Region II to avoid excessive warm gravitino
+        structure suppression.
+      confidence: high
+      section: Three Scenarios for Dark Matter
+      page: null
+    parameter_ranges:
+    - reference_id: '1104_0692'
+      note: The paper gives bounds on T_R and m_3/2 that vary with f_a for the sub-dominant axino region.
+      confidence: medium
+      section: Three Scenarios for Dark Matter
+      page: null
+    validity_domain:
+    - reference_id: '1104_0692'
+      note: Region II is bounded by relativistic gravitino constraints and the sub-dominant axino yield
+        requirement.
+      confidence: high
+      section: Three Scenarios for Dark Matter
+      page: null
+    constraints:
+    - confidence: high
+      note: Primary text quotes the reheating bound, natural mass ordering, BBN/saxion checks, and relativistic-decay
+        bound.
+      page: null
+      reference_id: '1104_0692'
+      section: null
+    - confidence: medium
+      note: Used as supporting context for the Lyman-alpha/warm-component constraint.
+      page: null
+      reference_id: astro-ph0501562
+      section: null
+    observables:
+    - confidence: high
+      note: Primary text defines the subdominant axino decay scenario and relativistic-gravitino concern.
+      page: null
+      reference_id: '1104_0692'
+      section: null
+    - confidence: medium
+      note: Local related full text covers WMAP/Lyman-alpha constraints for warm candidates including
+        light gravitinos.
+      page: null
+      reference_id: astro-ph0501562
+      section: null
+    routes:
+    - confidence: high
+      note: Primary text supplies the thermal-yield and lifetime scaling used to classify regions.
+      page: null
+      reference_id: '1104_0692'
+      section: null
+  review:
+    human_reviewed: false
+    reviewed_by: null
+    review_date: null
+    expert_reviewed: false
+    expert_reviewer: null
+    expert_review_date: null
+    reviewer_notes: []
+    scientific_confidence: medium
+    implementation_confidence: medium
+robustness:
+  overall: medium
+  theory_robustness: medium
+  observational_robustness: medium
+  computational_robustness: unknown
+  constraint_robustness: medium
+  dominant_uncertainties:
+  - warm-component fraction
+  - superpartner spectrum
+  - reheating temperature
+  validation_status: expert_judgment_only
+  notes: The row captures the paper-defined Region II cosmology.
+agent_failure_modes:
+  warnings:
+  - id: w1
+    severity: high
+    category: extrapolation
+    warning: Do not treat this as fully cold dark matter if the axino-decay gravitino component exceeds
+      the paper's sub-dominant bound.
+    mitigation: Track the axino yield fraction before using CDM-like assumptions.
+    source_reference_ids:
+    - paper
+observables:
+- caveats:
+  - Requires axino abundance to be subdominant enough to satisfy structure bounds.
+  channel: cosmology
+  effect_direction: rate_change
+  environments:
+  - early universe
+  id: subdominant_axino_decay_relic
+  key_quantities:
+  - description: NLSP mass controlling thermal yield and lifetime.
+    name: axino mass
+    role: core
+    scale: log
+    source_reference_ids:
+    - '1104_0692'
+    status: inferred
+    symbol: m_axino
+  - description: LSP mass receiving thermal and decay contributions.
+    name: gravitino mass
+    role: core
+    scale: log
+    source_reference_ids:
+    - '1104_0692'
+    status: inferred
+    symbol: m_3_2
+  - description: Approximate lifetime for axino -> gravitino + axion.
+    name: axino lifetime
+    range: broad; paper estimate scales as m_3/2^2/m_axino^5
+    role: derived
+    source_reference_ids:
+    - '1104_0692'
+    status: approximate
+    symbol: tau_axino
+    unit: s
+  linked_constraints:
+  - thermal_overclosure_reheat_bound
+  - relativistic_decay_structure_bound
+  linked_routes:
+  - thermal_yield_lifetime_region_route
+  name: Subdominant axino decay contribution to gravitino dark matter
+  notes: null
+  observability: low
+  predicted_effect: Cosmologically unstable axinos decay to gravitinos and axions; in the subdominant-axino
+    case the final gravitino abundance is set by m_3/2*(Y_axino + Y_gravitino) = rho0/s0.
+  redshift_range: post-freeze-out through matter-radiation equality
+  relevance: critical
+  scale_range: null
+  source_reference_ids:
+  - '1104_0692'
+  subchannel: nonthermal gravitino production
+- caveats:
+  - The primary paper uses an approximate dark-radiation/warm-component bound rather than a dedicated
+    Boltzmann hierarchy.
+  channel: lyman_alpha
+  effect_direction: suppression
+  environments:
+  - CMB
+  - galaxy surveys
+  - Lyman-alpha forest
+  id: relativistic_gravitino_warm_component
+  key_quantities:
+  - description: Temperature at which decay-produced gravitinos become nonrelativistic.
+    name: nonrelativistic transition temperature
+    range: paper estimate T_NR ~ 1e-2 eV*(m_axino/GeV)^(3/2)
+    role: derived
+    source_reference_ids:
+    - '1104_0692'
+    status: approximate
+    symbol: T_NR
+    unit: eV
+  - description: Energy stored in axinos before decay.
+    name: axino energy yield
+    role: derived
+    source_reference_ids:
+    - '1104_0692'
+    status: inferred
+    symbol: m_axino Y_axino
+  linked_constraints:
+  - relativistic_decay_structure_bound
+  linked_routes:
+  - thermal_yield_lifetime_region_route
+  name: Relativistic gravitino impact on structure
+  notes: null
+  observability: medium
+  predicted_effect: If axinos decay while producing highly relativistic gravitinos, the daughter population
+    can affect matter-radiation equality and small-scale structure probed by CMB, galaxy clustering, and
+    the Lyman-alpha forest.
+  redshift_range: before matter-radiation equality
+  relevance: high
+  scale_range: large-scale structure and Lyman-alpha scales
+  source_reference_ids:
+  - '1104_0692'
+  - astro-ph0501562
+  subchannel: warm/nonthermal gravitino component
+constraints:
+- allowed_regions:
+  - low reheating temperatures compatible with the combined thermal axino and gravitino yields
+  applies: 'yes'
+  assumptions: []
+  benchmark_implications:
+  - High-scale thermal leptogenesis is strongly disfavored in the minimal cosmology considered.
+  caveats: []
+  constrained_parameters:
+  - T_R
+  - f_a
+  - m_axino
+  - m_3_2
+  - thermal yields
+  constraint_type: cosmological
+  data_release: null
+  excluded_regions:
+  - reheating temperatures above roughly 1e3-1e6 GeV for f_a=1e9-1e12 GeV in the natural QCD-axino setup
+  id: thermal_overclosure_reheat_bound
+  likelihood_available: 'no'
+  likelihood_reference: null
+  name: Thermal axino/gravitino overclosure reheating bound
+  notes: null
+  observable_channel: thermal production and overclosure
+  recasting_needed: partial
+  robustness: medium
+  source_reference_ids:
+  - '1104_0692'
+- allowed_regions:
+  - m_axino >= m_3_2 or models with explicit tuning/sequestering
+  applies: parameter_dependent
+  assumptions: []
+  benchmark_implications:
+  - All three dark-matter regions are interpreted under the natural ordering assumption.
+  caveats:
+  - A tuned or sequestered UV completion could relax the argument.
+  constrained_parameters:
+  - m_axino
+  - m_3_2
+  constraint_type: theoretical
+  data_release: null
+  excluded_regions:
+  - m_axino < m_3_2 without tuning or sequestering, shown as a disfavored gray region
+  id: natural_mass_ordering
+  likelihood_available: 'no'
+  likelihood_reference: null
+  name: Natural axino-gravitino mass ordering
+  notes: null
+  observable_channel: supersymmetric axion naturalness
+  recasting_needed: not_applicable
+  robustness: medium
+  source_reference_ids:
+  - '1104_0692'
+- allowed_regions:
+  - negligible or safely decaying saxion abundance as assumed in the paper scan
+  applies: parameter_dependent
+  assumptions: []
+  benchmark_implications:
+  - Saxion constraints are noted as additional requirements beyond axino/gravitino yields.
+  caveats: []
+  constrained_parameters:
+  - saxion abundance
+  - saxion lifetime
+  - Delta N_eff
+  - T_R
+  constraint_type: cosmological
+  data_release: null
+  excluded_regions:
+  - saxion histories that overclose, disrupt BBN, or add excessive relativistic degrees of freedom
+  id: saxion_bbn_dark_radiation
+  likelihood_available: 'no'
+  likelihood_reference: null
+  name: Saxion overclosure, BBN, and dark-radiation checks
+  notes: null
+  observable_channel: late decays and extra radiation
+  recasting_needed: 'yes'
+  robustness: medium
+  source_reference_ids:
+  - '1104_0692'
+- allowed_regions:
+  - decays yielding cold enough gravitinos or a sufficiently small relativistic component
+  applies: 'yes'
+  assumptions: []
+  benchmark_implications:
+  - This bound carves out the subdominant-axino decay region.
+  caveats: []
+  constrained_parameters:
+  - tau_axino
+  - m_axino Y_axino
+  - T_NR
+  - m_3_2
+  constraint_type: astrophysical
+  data_release: WMAP/Lyman-alpha warm-dark-matter context
+  excluded_regions:
+  - axino decays producing too much relativistic gravitino energy before matter-radiation equality; paper
+    quotes m_axino Y_axino bound for lifetimes below about 1e13 s
+  id: relativistic_decay_structure_bound
+  likelihood_available: approximate
+  likelihood_reference: null
+  name: Relativistic gravitino structure-formation bound
+  notes: null
+  observable_channel: CMB, galaxy clustering, and Lyman-alpha forest
+  recasting_needed: partial
+  robustness: medium
+  source_reference_ids:
+  - '1104_0692'
+  - astro-ph0501562
+theory_to_observable_routing:
+  routes:
+  - agent_notes: The route is analytic/figure-based in this pass.
+    caveats:
+    - The results depend on superpartner spectrum assumptions and possible saxion histories.
+    constraint_ids:
+    - thermal_overclosure_reheat_bound
+    - natural_mass_ordering
+    - saxion_bbn_dark_radiation
+    - relativistic_decay_structure_bound
+    derived_quantities:
+    - Y_axino
+    - Y_gravitino
+    - tau_axino
+    - T_NR
+    - Omega_DM h^2
+    - region label
+    description: Compute thermal axino/gravitino yields, axino lifetime, and cosmological region labels
+      in the m_axino-m_3/2 plane.
+    forward_model_chain:
+    - inputs:
+      - T_R
+      - f_a
+      - superpartner masses
+      notes: null
+      outputs:
+      - Y_axino
+      - Y_gravitino
+      step_id: yields
+      step_type: analytic_formula
+      tool_or_code: null
+      validity: thermal production formulas in the primary paper
+    - inputs:
+      - m_axino
+      - m_3_2
+      notes: null
+      outputs:
+      - tau_axino
+      - T_NR
+      step_id: lifetime
+      step_type: analytic_formula
+      tool_or_code: null
+      validity: valid for axino -> gravitino + axion
+    - inputs:
+      - thermal yields
+      - lifetime
+      - BBN/structure bounds
+      notes: null
+      outputs:
+      - allowed region
+      - excluded region
+      step_id: cosmology
+      step_type: recasting
+      tool_or_code: null
+      validity: figure-level region classification
+    id: thermal_yield_lifetime_region_route
+    input_parameters:
+    - m_axino
+    - m_3_2
+    - f_a
+    - T_R
+    - superpartner spectrum
+    likelihoods: []
+    observable_ids:
+    - subdominant_axino_decay_relic
+    - relativistic_gravitino_warm_component
+    required_code_resources:
+    - thermal-yield calculator
+    - BBN/structure constraint tables
+    route_status: planned
+    source_model_features:
+    - supersymmetric QCD axion
+    - gravitino LSP
+    - axino NLSP or co-DM
+    validation_tests:
+    - reproduce f_a=1e9 and 1e12 GeV region plots
+    - check Omega_DM h^2 = rho0/s0 normalization

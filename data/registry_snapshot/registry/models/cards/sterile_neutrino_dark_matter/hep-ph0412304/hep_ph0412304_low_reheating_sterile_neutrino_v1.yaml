@@ -1,0 +1,679 @@
+_source:
+  shard: arXiv_src_0412_001_wds.tar
+  paper_id: hep-ph0412304
+  source_member: hep-ph0412304.json
+  enriched: true
+  enrichment_schema_version: dm_model_ocr_enrichment_smoke_v0
+schema_version: model_only_v0
+model_id: hep_ph0412304_low_reheating_sterile_neutrino_v1
+identity:
+  name: Low-reheating visible sterile-neutrino hot dark matter subcomponent
+  family: sterile_neutrino_dark_matter
+  aliases:
+  - visible sterile neutrinos in low reheating cosmology
+  short_description: Sterile neutrinos with relatively large active-sterile mixing are underproduced in
+    a low-reheating cosmology and can form only a hot dark matter subcomponent in the paper scenario.
+  historical_origin_or_motivation: Motivated by relaxing standard cosmological abundance bounds on experimentally
+    visible sterile neutrinos.
+  status: speculative
+  model_kind: phenomenological_parameterization
+theory:
+  theory_level: phenomenological_parameterization
+  parent_frameworks:
+  - Standard Model plus sterile neutrino
+  - low reheating cosmology
+  lagrangian_available: partial
+  renormalizable: 'yes'
+  eft_cutoff: null
+  embedded_in_larger_framework: 'yes'
+  notes: The text describes sterile neutrinos coupled through Higgs-active-neutrino mass terms but focuses
+    on cosmological production.
+particle_content:
+  dark_matter_candidate:
+    name: mostly sterile neutrino
+    spin: 1/2
+    statistics: fermion
+    elementary_or_composite: elementary
+    number_of_components: single_component
+  additional_dark_sector_particles: []
+  mediators:
+  - active-sterile neutrino mixing
+  - weak interactions of active neutrinos
+  dark_radiation_species: []
+  excited_or_degenerate_states:
+  - active neutrino mass eigenstates
+  long_lived_particles:
+  - sterile neutrino
+  unstable_parent_particles: []
+  standard_model_extension: minimal
+symmetries:
+  stabilizing_mechanism: No exact stabilizing symmetry is given; cosmological abundance relies on long-lived
+    sterile neutrinos with mixing-suppressed interactions.
+  symmetries:
+  - name: unknown
+    type: unknown
+    exact_or_approximate: unknown
+    breaking: not specified
+    breaking_scale: null
+  topological_defects_possible: 'no'
+interactions:
+  portals:
+  - neutrino
+  standard_model_targets:
+  - active neutrinos
+  - weak-interaction plasma
+  dark_sector_couplings:
+  - active-sterile mixing angle
+  mediator_types:
+  - neutrino mixing
+  interaction_operators:
+  - Higgs-active-sterile neutrino mass terms described qualitatively
+  annihilation_channels: []
+  decay_channels:
+  - radiative decays discussed as an astrophysical consideration
+  self_scattering_channels: []
+  tree_or_loop_level: unknown
+parameters:
+  core:
+  - name: sterile neutrino mass
+    symbol: m_s
+    description: Mass of the mostly sterile neutrino.
+    range: paper restricts examples to m_s below 1 MeV; hot-DM viable region has m_s much below keV
+    unit: eV to MeV
+    role: core
+    status: inferred
+    source_reference_ids: []
+  - name: active-sterile mixing
+    symbol: sin^2 2theta
+    description: Two-neutrino active-sterile mixing parameter controlling production.
+    range: visible-experiment mixings considered; abundance scales with this parameter
+    role: core
+    status: inferred
+    source_reference_ids: []
+  - name: reheating temperature
+    symbol: T_R
+    description: Temperature at the onset of radiation domination after low reheating.
+    range: around 5 MeV in displayed figures; much below 100 MeV in the scenario
+    unit: MeV
+    role: core
+    status: inferred
+    source_reference_ids: []
+  - name: sterile density
+    symbol: Omega_s h^2
+    description: Sterile-neutrino mass density in the low reheating scenario.
+    value: approximately 0.1 d_alpha (sin^2 2theta/10^-3) (m_s/1 keV) (T_R/5 MeV)^3
+    role: derived
+    status: inferred
+    source_reference_ids: []
+production:
+  mechanisms:
+  - nonthermal active-sterile oscillation production in low-reheating cosmology
+  thermal_equilibrium_with_standard_model: 'no'
+  thermal_equilibrium_with_hidden_sector: not_applicable
+  abundance_set_by:
+  - active-sterile mixing angle
+  - sterile mass
+  - reheating temperature
+  depends_on_reheating_temperature: 'yes'
+  can_produce_all_dark_matter: 'no'
+  nonthermal_momentum_distribution: 'yes'
+  notes: The text says the scenario can only provide hot dark matter in its viable region, not the bulk
+    dark matter.
+relic_density:
+  full_or_subcomponent: subcomponent
+  target_fraction:
+    name: example dark matter fraction
+    symbol: f_s
+    value: 10 percent line shown in the paper figures
+    unit: null
+    role: derived
+    status: inferred
+    source_reference_ids:
+    - hep-ph0412304
+  calculation_type: nonthermal
+  key_dependencies:
+  - m_s
+  - sin^2 2theta
+  - T_R
+  requires_entropy_dilution: unknown
+  overclosure_risk: parameter_dependent
+  underproduction_risk: 'yes'
+  tuning_assessment: unknown
+cosmological_history:
+  standard_history_assumed: false
+  nonstandard_features:
+  - low reheating temperature after inflation or entropy production
+  dark_sector_temperature: null
+  delta_neff: null
+  kinetic_decoupling: null
+  chemical_decoupling: null
+  phase_transitions: []
+  topological_defects: []
+  isocurvature_perturbations: unknown
+  bbn_relevance: high
+  cmb_relevance: medium
+phase_space:
+  distribution_type: nonthermal
+  distribution_function_available: 'yes'
+  f_of_p_or_q: f_s(E,T) proportional to (T_R/5 MeV)^3 sin^2(2theta) (E/T) f_active(E,T)
+  notes: The paper gives an approximate sterile-neutrino distribution in low reheating.
+structure_formation:
+  linear:
+    behaves_like_cdm: 'no'
+    transfer_function_shape: smooth_cutoff
+    small_scale_power_effect: suppression
+  nonlinear:
+    halo_mass_function_effect: unknown
+    subhalo_mass_function_effect: unknown
+    simulation_calibrated: unknown
+validity_domain:
+- id: validity_low_reheating
+  applies_to: cosmological_history
+  condition: Scenario requires low reheating temperature, with calculations shown for about 5 MeV.
+  valid_range: null
+  status: inferred
+  extrapolation_risk: high
+  caveats: []
+  source_reference_ids:
+  - hep-ph0412304
+  notes: null
+- id: validity_hot_subcomponent
+  applies_to: model
+  condition: Paper states viable sterile neutrinos in this scenario could only be part of hot dark matter;
+    WDM or CDM cases are disfavored in the discussed bounds.
+  valid_range: null
+  status: inferred
+  extrapolation_risk: medium
+  caveats: []
+  source_reference_ids:
+  - hep-ph0412304
+  notes: null
+assumptions:
+  global:
+  - id: low_reheating
+    description: The radiation-dominated era begins after a low-temperature reheating episode.
+    scope: cosmological_history
+    status: assumed
+    impact_if_violated: null
+    can_be_relaxed: unknown
+    source_reference_ids:
+    - hep-ph0412304
+    notes: null
+  - id: negligible_lepton_number
+    description: The sterile-production calculation assumes negligible primordial lepton number.
+    scope: production
+    status: assumed
+    impact_if_violated: null
+    can_be_relaxed: unknown
+    source_reference_ids:
+    - hep-ph0412304
+    notes: null
+associated_code:
+  has_associated_code: unknown
+  code_summary: No associated code is described in the paper text.
+provenance:
+  model_id: hep_ph0412304_low_reheating_sterile_neutrino_v1
+  model_name: Low-reheating visible sterile-neutrino hot dark matter subcomponent
+  model_family: sterile_neutrino_dark_matter
+  entry_version: 0.1.0
+  status: machine_extracted
+  created_at: '2026-05-30'
+  last_updated: '2026-05-30'
+  sources:
+    primary_papers:
+    - reference_id: hep-ph0412304
+      title: Cosmology of 'Visible' Sterile Neutrinos
+      authors:
+      - Graciela Gelmini
+      year: 2004
+      arxiv_id: hep-ph/0412304
+      doi: null
+      url: null
+      role: extension
+      notes: null
+    - arxiv_id: hep-ph/0412304
+      authors:
+      - Gelmini, Graciela B.
+      doi: 10.1142/S0217751X05028363
+      notes: Primary assigned low-reheating visible sterile-neutrino paper read from local SQLite full
+        text.
+      reference_id: src_hepph0412304_primary
+      role: original_model
+      title: Cosmology of "visible" Sterile Neutrinos
+      url: https://arxiv.org/abs/hep-ph/0412304
+      year: 2005
+    constraint_papers:
+    - arxiv_id: '0803.2735'
+      authors:
+      - Gelmini, Graciela
+      - Osoba, Efunwande
+      - Palomares-Ruiz, Sergio
+      - Pascoli, Silvia
+      doi: 10.1088/1475-7516/2008/10/029
+      notes: Related local full text read for MeV sterile neutrinos in low-reheating cosmologies.
+      reference_id: src_0803_2735_low_reheat_sterile
+      role: constraint
+      title: MeV sterile neutrinos in low reheating temperature cosmological scenarios
+      url: https://arxiv.org/abs/0803.2735
+      year: 2008
+    - arxiv_id: '0907.1694'
+      authors:
+      - Gelmini, Graciela B.
+      doi: 10.1016/j.nuclphysbps.2009.07.084
+      notes: Related local full text read for pre-BBN cosmology experimental signatures.
+      reference_id: src_0907_1694_prebbn_signatures
+      role: constraint
+      title: Experimental signatures of non-standard pre-BBN cosmologies
+      url: https://arxiv.org/abs/0907.1694
+      year: 2009
+    - arxiv_id: astro-ph/0101524
+      authors:
+      - Abazajian, Kevork
+      - Fuller, George M.
+      - Patel, Mitesh
+      doi: 10.1103/PhysRevD.64.023501
+      notes: Related local full text read for sterile-neutrino hot/warm/cold dark-matter constraints.
+      reference_id: src_astroph0101524_sterile_hwc
+      role: constraint
+      title: Sterile neutrino hot, warm, and cold dark matter
+      url: https://arxiv.org/abs/astro-ph/0101524
+      year: 2001
+    external_databases: []
+    review_papers: []
+  extraction:
+    method: llm_assisted
+    extracted_by: codex-gpt5-worker
+    extractor_name: Codex GPT-5 batch worker
+    extraction_date: '2026-05-30'
+    confidence: medium
+    source_chunks_or_sections:
+    - reference_id: hep-ph0412304
+      section: abstract and sterile neutrino cosmology
+      page: null
+      quote_or_summary: Low reheating suppresses sterile-neutrino abundance and weakens cosmological bounds.
+    - reference_id: hep-ph0412304
+      section: dark matter abundance discussion
+      page: null
+      quote_or_summary: The paper identifies a hot-dark-matter subcomponent region for sterile neutrinos.
+    unresolved_items:
+    - Precise sterile-neutrino exclusion curves from the figure were not digitized.
+    - The proceeding summarizes visible sterile-neutrino regions; use a modern kinetic calculation for
+      quantitative fits.
+  evidence:
+    particle_content:
+    - reference_id: hep-ph0412304
+      note: The paper studies one or more sterile neutrinos coupled to Higgs and active neutrinos through
+        terms yielding nonzero neutrino masses.
+      confidence: medium
+      section: introduction
+      page: null
+    interactions:
+    - reference_id: hep-ph0412304
+      note: Sterile neutrinos are produced through active-sterile mixing and active-neutrino weak interactions,
+        with no extra-SM interactions assumed.
+      confidence: high
+      section: production discussion
+      page: null
+    production_mechanism:
+    - reference_id: hep-ph0412304
+      note: Low reheating temperature below the usual production maximum suppresses sterile-neutrino production;
+        the paper gives f_s(E,T) proportional to (T_R/5 MeV)^3 sin^2 2theta.
+      confidence: high
+      section: production discussion
+      page: null
+    cosmological_history:
+    - reference_id: hep-ph0412304
+      note: The scenario requires a low reheating temperature after inflation or entropy production, with
+        T_R as low as a few MeV.
+      confidence: high
+      section: low reheating discussion
+      page: null
+    parameter_ranges:
+    - reference_id: hep-ph0412304
+      note: For T_R=5 MeV the paper shows mass and mixing values where sterile neutrinos constitute 10
+        percent of dark matter and says the allowed scenario is hot dark matter.
+      confidence: medium
+      section: dark matter abundance
+      page: null
+    validity_domain:
+    - reference_id: hep-ph0412304
+      note: The text restricts the calculation to T_R at least about 5 MeV and sterile-neutrino mass below
+        1 MeV.
+      confidence: medium
+      section: production discussion
+      page: null
+    constraints:
+    - confidence: high
+      note: Primary text states overclosure, BBN, DEBRA, Chandra, and SMM/SN1987A excluded regions.
+      page: null
+      reference_id: src_hepph0412304_primary
+      section: Figure discussion
+    - confidence: medium
+      note: Related pre-BBN text supports the sensitivity of dark-matter relics to low-temperature reheating
+        histories.
+      page: null
+      reference_id: src_0907_1694_prebbn_signatures
+      section: Low reheating discussion
+    observables:
+    - confidence: high
+      note: Primary text gives the low-reheating abundance scaling and hot-DM subcomponent conclusion.
+      page: null
+      reference_id: src_hepph0412304_primary
+      section: Abundance discussion
+    - confidence: high
+      note: Related text supports suppression of sterile-neutrino abundance in very low reheating scenarios.
+      page: null
+      reference_id: src_0803_2735_low_reheat_sterile
+      section: Abstract
+    - confidence: medium
+      note: Related sterile-neutrino text supports hot/warm/cold classifications and X-ray/free-streaming
+        constraints.
+      page: null
+      reference_id: src_astroph0101524_sterile_hwc
+      section: Abstract and constraints discussion
+    routes:
+    - confidence: high
+      note: Primary text gives the production-rate argument and density scaling used by the route.
+      page: null
+      reference_id: src_hepph0412304_primary
+      section: Production discussion
+  review:
+    human_reviewed: false
+    reviewed_by: null
+    review_date: null
+    expert_reviewed: false
+    expert_reviewer: null
+    expert_review_date: null
+    reviewer_notes: []
+    scientific_confidence: medium
+    implementation_confidence: medium
+  caveats:
+  - Accepted only as a dark matter subcomponent model; the paper explicitly says the bulk of dark matter
+    must originate in another way.
+robustness:
+  overall: medium
+  theory_robustness: medium
+  observational_robustness: low
+  computational_robustness: unknown
+  dominant_uncertainties:
+  - Borderline model-card status because the paper mainly opens cosmological parameter space for visible
+    sterile neutrinos.
+  - The paper says the viable sterile component is hot and not the bulk dark matter.
+  validation_status: expert_judgment_only
+  notes: null
+agent_failure_modes:
+  warnings:
+  - id: subcomponent_only
+    severity: high
+    category: assumption_mismatch
+    warning: Do not treat this low-reheating sterile-neutrino scenario as all of the dark matter; the
+      paper frames it as at most a hot subcomponent.
+    mitigation: null
+    source_reference_ids:
+    - hep-ph0412304
+observables:
+- caveats:
+  - The model is a hot/subcomponent dark-matter scenario in the viable region, not a full cold-DM solution.
+  channel: cosmology
+  effect_direction: suppression
+  environments:
+  - low-reheating early Universe
+  id: obs_low_reheat_sterile_density
+  key_quantities:
+  - description: Mostly sterile neutrino mass.
+    name: sterile neutrino mass
+    role: core
+    source_reference_ids:
+    - src_hepph0412304_primary
+    status: inferred
+    symbol: m_s
+    unit: eV to MeV
+    value: examples below 1 MeV; hot-DM viable region much below keV
+  - description: Mixing parameter controlling production and visible laboratory signatures.
+    name: active-sterile mixing
+    role: core
+    source_reference_ids:
+    - src_hepph0412304_primary
+    status: inferred
+    symbol: sin^2 2theta
+  - description: Benchmark low reheating temperature used in the figures.
+    name: reheating temperature
+    role: cosmological
+    source_reference_ids:
+    - src_hepph0412304_primary
+    status: inferred
+    symbol: T_R
+    unit: MeV
+    value: about 5
+  - description: Primary approximate abundance scaling.
+    name: sterile density
+    role: derived
+    source_reference_ids:
+    - src_hepph0412304_primary
+    status: inferred
+    symbol: Omega_s h^2
+    value: about 0.1 d_alpha (sin^2 2theta/1e-3) (m_s/1 keV) (T_R/5 MeV)^3
+  linked_constraints:
+  - con_sterile_low_reheat_overclosure_bbn
+  linked_routes:
+  - route_low_reheat_sterile_neutrino
+  name: Low-reheating sterile-neutrino abundance
+  notes: null
+  observability: medium
+  predicted_effect: A low reheating temperature far below 100 MeV suppresses sterile-neutrino production,
+    making the abundance scale approximately as sin^2 2theta, m_s, and T_R^3 rather than the standard
+    high-temperature result.
+  redshift_range: pre-BBN reheating through neutrino decoupling
+  relevance: critical
+  scale_range: null
+  source_reference_ids:
+  - src_hepph0412304_primary
+  - src_0803_2735_low_reheat_sterile
+  subchannel: active-sterile oscillation production
+- caveats:
+  - The primary conference text gives qualitative excluded regions rather than a machine-readable likelihood.
+  channel: lyman_alpha
+  effect_direction: suppression
+  environments:
+  - large-scale structure
+  - galaxy clusters
+  - diffuse extragalactic background radiation
+  id: obs_sterile_hotdm_structure_and_decay
+  key_quantities:
+  - description: Primary figures show a line where sterile neutrinos constitute 10 percent of dark matter.
+    name: hot-DM fraction
+    role: derived
+    source_reference_ids:
+    - src_hepph0412304_primary
+    status: inferred
+    symbol: f_s
+    value: 0.1 example line
+  - description: Controls diffuse background, X-ray, and SN1987A radiative-decay limits.
+    name: radiative decay rate
+    role: derived
+    source_reference_ids:
+    - src_hepph0412304_primary
+    - src_astroph0101524_sterile_hwc
+    status: unknown
+    symbol: Gamma_rad
+  linked_constraints:
+  - con_sterile_decay_xray_sn
+  linked_routes:
+  - route_low_reheat_sterile_neutrino
+  name: Hot sterile-neutrino free-streaming and radiative-decay signals
+  notes: null
+  observability: medium
+  predicted_effect: Sterile neutrinos with keV-scale or larger masses are disfavored as WDM/CDM in the
+    primary low-reheating scenario by supernova-cooling and radiative-decay constraints, while lighter
+    masses behave as a hot dark-matter subcomponent with structure-suppression signatures.
+  redshift_range: early Universe to z=0
+  relevance: high
+  scale_range: free-streaming scales and X-ray/DEBRA backgrounds
+  source_reference_ids:
+  - src_hepph0412304_primary
+  - src_astroph0101524_sterile_hwc
+  subchannel: hot/warm dark matter suppression and X-ray backgrounds
+constraints:
+- allowed_regions:
+  - Visible sterile-neutrino mixings can be cosmologically allowed when T_R is low enough to suppress
+    production; hot-DM subcomponent regions remain.
+  applies: 'yes'
+  assumptions:
+  - can_be_relaxed: 'yes'
+    description: The last reheating or entropy-production episode has T_R far below 100 MeV but high enough
+      for BBN.
+    id: low_reheating_history
+    impact_if_violated: A standard high-temperature history restores stronger sterile-neutrino abundance
+      bounds.
+    notes: null
+    scope: pre-BBN cosmology
+    source_reference_ids:
+    - src_hepph0412304_primary
+    - src_0907_1694_prebbn_signatures
+    status: assumed
+  benchmark_implications:
+  - The LSND-motivated sterile-neutrino region is claimed to avoid the usual cosmological abundance problem
+    in this low-reheating setup.
+  caveats:
+  - BBN lower limits on reheating temperature are model dependent near a few MeV.
+  constrained_parameters:
+  - Omega_s h^2
+  - T_R
+  - m_s
+  - sin^2 2theta
+  - Delta N_eff
+  constraint_type: cosmological
+  data_release: Primary low-reheating figures with T_R about 5 MeV and BBN extra-radiation bound
+  excluded_regions:
+  - The primary text rejects the region where Omega_s h^2 exceeds Omega_DM h^2 about 0.135 and maps a
+    BBN upper bound on extra energy density, Delta N_eff about 0.73, into an excluded band.
+  id: con_sterile_low_reheat_overclosure_bbn
+  likelihood_available: 'no'
+  likelihood_reference: null
+  name: Low-reheating abundance and BBN bounds
+  notes: null
+  observable_channel: relic density and extra radiation
+  recasting_needed: 'no'
+  robustness: medium
+  source_reference_ids:
+  - src_hepph0412304_primary
+  - src_0803_2735_low_reheat_sterile
+  - src_0907_1694_prebbn_signatures
+- allowed_regions:
+  - Much lighter sterile neutrinos can remain as a hot-DM subcomponent in the low-reheating scenario.
+  applies: parameter_dependent
+  assumptions:
+  - can_be_relaxed: partial
+    description: Radiative-decay constraints assume the standard sterile-neutrino decay mapping from mass
+      and mixing into photon backgrounds.
+    id: radiative_decay_mapping
+    impact_if_violated: Nonstandard decay channels or abundance fractions would shift the excluded regions.
+    notes: null
+    scope: astrophysical sterile-neutrino recast
+    source_reference_ids:
+    - src_hepph0412304_primary
+    - src_astroph0101524_sterile_hwc
+    status: assumed
+  benchmark_implications:
+  - The assigned model should be treated as a visible hot-DM subcomponent, not the dominant cold dark
+    matter.
+  caveats:
+  - The conference proceeding summarizes regions but does not provide likelihood tables.
+  constrained_parameters:
+  - m_s
+  - sin^2 2theta
+  - Gamma_rad
+  - f_s
+  constraint_type: astrophysical
+  data_release: DEBRA, Chandra X-ray, SMM/SN1987A bounds as summarized by primary and related sterile-neutrino
+    text
+  excluded_regions:
+  - Primary text says m_s above about 1 keV is disfavored or rejected as WDM/CDM by supernova cooling
+    and radiative-decay bounds, including DEBRA, Chandra cluster X-rays, and SMM/SN1987A regions.
+  id: con_sterile_decay_xray_sn
+  likelihood_available: 'no'
+  likelihood_reference: null
+  name: Radiative-decay, X-ray, and supernova bounds on sterile neutrinos
+  notes: null
+  observable_channel: diffuse backgrounds, clusters, and SN1987A
+  recasting_needed: 'yes'
+  robustness: medium
+  source_reference_ids:
+  - src_hepph0412304_primary
+  - src_astroph0101524_sterile_hwc
+theory_to_observable_routing:
+  routes:
+  - agent_notes: Route is reconstructable but no kinetic code was run.
+    caveats:
+    - Matter effects and flavor treatment need full kinetic equations for precision.
+    constraint_ids:
+    - con_sterile_low_reheat_overclosure_bbn
+    - con_sterile_decay_xray_sn
+    derived_quantities:
+    - Omega_s h^2
+    - f_s
+    - Delta N_eff
+    - radiative decay flux
+    - free-streaming classification
+    description: Integrate active-sterile production in a low-reheating cosmology and compare the resulting
+      abundance and decay signals with BBN, hot-DM, and radiative constraints.
+    forward_model_chain:
+    - inputs:
+      - m_s
+      - sin^2 2theta
+      - T_R
+      - weak rates
+      notes: Primary approximate formula can validate scaling.
+      outputs:
+      - sterile distribution
+      - n_s
+      step_id: production
+      step_type: boltzmann_solver
+      tool_or_code: null
+      validity: Low-reheating active-sterile production; valid for the specified pre-BBN history.
+    - inputs:
+      - n_s
+      - m_s
+      notes: Compare to Omega_DM h^2 about 0.135 in the primary text.
+      outputs:
+      - Omega_s h^2
+      - f_s
+      step_id: density
+      step_type: analytic_formula
+      tool_or_code: null
+      validity: Nonrelativistic density conversion for subcomponent bounds.
+    - inputs:
+      - f_s
+      - m_s
+      - mixing
+      - decay rate
+      notes: Use primary regions as qualitative structured constraints.
+      outputs:
+      - BBN/DEBRA/X-ray/SN exclusions
+      step_id: constraints
+      step_type: recasting
+      tool_or_code: null
+      validity: Requires updated observational curves for precision.
+    id: route_low_reheat_sterile_neutrino
+    input_parameters:
+    - m_s
+    - sin^2 2theta
+    - T_R
+    - active flavor
+    - lepton asymmetry if any
+    likelihoods:
+    - No likelihood supplied; compare to published exclusion curves
+    observable_ids:
+    - obs_low_reheat_sterile_density
+    - obs_sterile_hotdm_structure_and_decay
+    required_code_resources:
+    - sterile-neutrino quantum kinetic/Boltzmann solver
+    - radiative-decay flux calculator
+    route_status: planned
+    source_model_features:
+    - low reheating after inflation or entropy production
+    - sterile neutrino mixed with active flavors
+    - nonthermal suppressed abundance
+    validation_tests:
+    - recover Omega_s h^2 proportional to m_s sin^2 2theta T_R^3
+    - recover hot-DM-only conclusion for viable primary region

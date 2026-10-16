@@ -1,0 +1,464 @@
+_source:
+  shard: arXiv_src_1004_001_wds.tar
+  paper_id: '1004_0937'
+  source_member: 1004_0937.json
+schema_version: model_only_v0
+model_id: 1004_0937_exothermic_dark_matter_v1
+identity:
+  name: Exothermic dark matter
+  family: inelastic_dark_matter
+  aliases:
+  - exoDM
+  short_description: A light multi-state dark matter scenario in which a metastable excited state down-scatters
+    off nuclei to a lower state, depositing the dark-sector mass splitting as nuclear recoil energy.
+  historical_origin_or_motivation: The paper proposes exothermic downscattering as a direct-detection
+    mechanism that can fit DAMA/LIBRA with light dark matter while avoiding several low-threshold null
+    searches in the analyzed parameter region.
+  status: speculative
+  model_kind: simplified_model
+theory:
+  theory_level: simplified_model
+  parent_frameworks:
+  - inelastic dark matter
+  - kinetically mixed dark photon dark sector
+  lagrangian_available: partial
+  renormalizable: unknown
+  eft_cutoff:
+    name: contact-operator scale
+    symbol: Lambda
+    description: Scale of the low-energy inelastic scattering operators.
+    value: about 340
+    unit: GeV
+    role: core
+    status: inferred
+    source_reference_ids:
+    - '1004_0937'
+    notes: Quoted as the approximate scale needed for a cross section of order 10^-39 cm^2 for few-GeV
+      dark matter.
+  embedded_in_larger_framework: 'yes'
+  notes: The paper first uses effective inelastic operators, then sketches a dark photon with kinetic
+    mixing as a more complete realization.
+particle_content:
+  dark_matter_candidate:
+    name: two-state light dark matter particle
+    spin: unknown; effective operators allow fermion or scalar dark matter and later examples use the
+      fermion normalization
+    statistics: unknown
+    elementary_or_composite: elementary
+    number_of_components: multi_component
+  additional_dark_sector_particles:
+  - lower dark matter state
+  - metastable excited dark matter state
+  mediators:
+  - dark photon A' in the kinetic-mixing realization
+  dark_radiation_species: []
+  excited_or_degenerate_states:
+  - excited state split from the ground state by a few to ten keV
+  long_lived_particles:
+  - excited dark matter state
+  unstable_parent_particles: []
+  standard_model_extension: minimal
+symmetries:
+  stabilizing_mechanism: Dark matter is treated as cosmologically stable while the excited state is metastable;
+    in the dark-photon realization, the small splitting and suppressed decays make the excited state longer-lived
+    than the age of the Universe.
+  symmetries:
+  - name: dark U(1)'
+    type: gauge
+    exact_or_approximate: broken
+    breaking: massive kinetically mixed dark photon in the illustrative completion
+    breaking_scale:
+      name: dark photon mass
+      symbol: m_A'
+      description: Mediator mass in the kinetic-mixing realization.
+      value: about 100
+      unit: MeV
+      role: core
+      status: assumed
+      source_reference_ids:
+      - '1004_0937'
+      notes: The paper uses about 100 MeV as an example scale for naturally generating keV splittings.
+  topological_defects_possible: unknown
+interactions:
+  portals:
+  - vector
+  standard_model_targets:
+  - nucleons
+  - protons
+  - nuclei
+  - Standard Model U(1) via kinetic mixing
+  dark_sector_couplings:
+  - inelastic downscattering between excited and lower dark matter states
+  - dark gauge coupling alpha_D
+  - kinetic mixing epsilon
+  mediator_types:
+  - dark photon A'
+  - contact operator below the dark photon mass
+  interaction_operators:
+  - dimension-six inelastic operators chi1 chi2 q q / Lambda^2 or derivative scalar-current operator
+  - kinetically mixed dark photon completion
+  scattering:
+    elastic: 'no'
+    inelastic: 'yes'
+    momentum_dependence: mild
+    velocity_dependence: mild
+    spin_dependence: spin_independent
+  annihilation_channels:
+  - dark matter annihilation to two dark photons in the kinetic-mixing model
+  decay_channels:
+  - excited state decays to neutrinos or three photons are highly suppressed
+  self_scattering_channels:
+  - two excited states de-excite to two ground states through dark photon exchange
+  cp_structure: unknown
+  flavor_structure: The benchmark discussion often assumes nucleon couplings and notes a proton-only coupling
+    option in the dark-photon model.
+  tree_or_loop_level: unknown
+parameters:
+  core:
+  - name: dark matter mass
+    symbol: m_chi
+    description: Mass scale of the light exothermic dark matter states.
+    value: null
+    range: few GeV; preferred DAMA examples use about 2-5 GeV, often 2-4 GeV
+    unit: GeV
+    role: core
+    status: assumed
+    source_reference_ids:
+    - '1004_0937'
+    notes: null
+  - name: mass splitting
+    symbol: delta
+    description: Energy released when the excited state down-scatters to the lower state.
+    value: null
+    range: few to ten keV; preferred examples use about 5-10 keV
+    unit: keV
+    role: core
+    status: assumed
+    source_reference_ids:
+    - '1004_0937'
+    notes: The nuclear recoil peak is set mainly by the splitting and target nucleus mass.
+  - name: contact-operator scale
+    symbol: Lambda
+    description: Low-energy operator scale controlling the nucleon downscattering cross section.
+    value: about 340
+    range: null
+    unit: GeV
+    role: core
+    status: inferred
+    source_reference_ids:
+    - '1004_0937'
+    notes: The paper quotes this scale for a cross section near 10^-39 cm^2 for few-GeV dark matter.
+  - name: dark photon mass
+    symbol: m_A'
+    description: Mediator mass in the kinetic-mixing realization.
+    value: about 100
+    range: null
+    unit: MeV
+    role: core
+    status: assumed
+    source_reference_ids:
+    - '1004_0937'
+    notes: Used with alpha_D about 10^-4 to generate an order-10-keV splitting.
+  - name: dark fine-structure constant
+    symbol: alpha_D
+    description: Dark gauge coupling parameter in the kinetic-mixing realization.
+    value: about 10^-4
+    range: null
+    unit: null
+    role: core
+    status: assumed
+    source_reference_ids:
+    - '1004_0937'
+    notes: Also used in relic-abundance and deexcitation estimates.
+production:
+  mechanisms:
+  - thermal annihilation to two dark photons
+  - possible out-of-equilibrium production for larger dark-sector coupling
+  - freeze-out of deexcitation preserving an excited-state relic population
+  thermal_equilibrium_with_standard_model: unknown
+  thermal_equilibrium_with_hidden_sector: unknown
+  abundance_set_by:
+  - annihilation cross section to dark photons
+  - dark fine-structure constant
+  - excited-state deexcitation freeze-out
+  - excited-state lifetime
+  depends_on_reheating_temperature: unknown
+  can_produce_all_dark_matter: parameter_dependent
+  nonthermal_momentum_distribution: unknown
+  notes: The paper says a thermal relic abundance can be achieved in the kinetic-mixing model for suitable
+    alpha_D, while larger alpha_D may require out-of-equilibrium production.
+relic_density:
+  full_or_subcomponent: either
+  target_fraction: null
+  calculation_type: mixed
+  key_dependencies:
+  - m_chi
+  - delta
+  - alpha_D
+  - m_A'
+  - excited-state freeze-out temperature
+  requires_entropy_dilution: unknown
+  overclosure_risk: unknown
+  underproduction_risk: parameter_dependent
+  tuning_assessment: unknown
+cosmological_history:
+  standard_history_assumed: true
+  nonstandard_features:
+  - metastable excited-state relic abundance
+  - deexcitation must freeze out above the mass splitting
+  dark_sector_temperature: null
+  delta_neff: null
+  kinetic_decoupling: null
+  chemical_decoupling: null
+  phase_transitions: []
+  topological_defects: []
+  isocurvature_perturbations: unknown
+  bbn_relevance: unknown
+  cmb_relevance: unknown
+phase_space:
+  distribution_type: thermal
+  distribution_function_available: approximate
+  f_of_p_or_q: Direct-detection rates assume a Maxwell-Boltzmann halo distribution with v0 = 220 km/s
+    and escape velocity 480 km/s in benchmark plots.
+  average_momentum_relative_to_thermal: null
+  free_streaming_length: null
+  velocity_dispersion_today: null
+  phase_space_bounds: []
+  notes: The relic calculation is thermal in one realization, while halo phenomenology uses a standard
+    cold halo velocity distribution.
+structure_formation:
+  linear:
+    behaves_like_cdm: approximately
+    transfer_function_shape: cdm_like
+    small_scale_power_effect: none
+    half_mode_mass: null
+    thermal_wdm_mapping:
+      available: false
+      validity: unknown
+      warning: The paper does not provide a warm-dark-matter mapping.
+    impact_on_sigma8_s8: unknown
+  nonlinear:
+    halo_mass_function_effect: unknown
+    subhalo_mass_function_effect: unknown
+    infall_subhalo_mass_function_effect: unknown
+    present_day_bound_subhalo_mass_function_effect: unknown
+    concentration_mass_relation_effect: unknown
+    density_profile_effect: unknown
+    core_or_cusp_effect: unknown
+    subhalo_survival_effect: unknown
+    tidal_stripping_effect: unknown
+    smallest_galaxies_effect: unknown
+    simulation_calibrated: 'no'
+validity_domain:
+- id: exoDM-light-kev-splitting-regime
+  applies_to: model
+  condition: Designed for light few-GeV dark matter with a metastable excited state split by a few to
+    ten keV and elastic scattering suppressed relative to inelastic downscattering.
+  valid_range: m_chi about 2-5 GeV and delta about 5-10 keV in the paper's preferred DAMA examples
+  status: assumed
+  extrapolation_risk: medium
+  caveats:
+  - The direct-detection fit depends on low-energy detector response assumptions.
+  - The dark-photon completion is illustrative rather than unique.
+  source_reference_ids:
+  - '1004_0937'
+  notes: null
+- id: dark-photon-effective-theory
+  applies_to: EFT
+  condition: Low-energy contact operators are generated below the dark photon mass in the kinetic-mixing
+    realization.
+  valid_range: energies below m_A' in the illustrative completion
+  status: approximate
+  extrapolation_risk: medium
+  caveats:
+  - Additional model building or tuning may be needed away from the benchmark scales.
+  source_reference_ids:
+  - '1004_0937'
+  notes: null
+assumptions:
+  global:
+  - id: excited-state-relic
+    description: A cosmologically long-lived relic abundance of the excited state exists today.
+    scope: cosmological_history
+    status: assumed
+    impact_if_violated: The exothermic direct-detection signal would be absent or suppressed.
+    can_be_relaxed: 'no'
+    source_reference_ids:
+    - '1004_0937'
+    notes: The paper often assumes equal populations of the two mass states.
+  - id: elastic-scattering-suppressed
+    description: Operators causing elastic scattering are assumed to be highly suppressed compared with
+      inelastic operators.
+    scope: theory
+    status: assumed
+    impact_if_violated: Elastic-scattering signals would change the phenomenology and experimental comparison.
+    can_be_relaxed: unknown
+    source_reference_ids:
+    - '1004_0937'
+    notes: null
+associated_code:
+  has_associated_code: unknown
+  code_summary: No associated model code is identified in the assigned paper text.
+  primary_code_role: null
+  repositories: []
+  packages_or_modules: []
+  notebooks: []
+  scripts: []
+  containers_or_environments: []
+  expected_inputs: []
+  expected_outputs: []
+  caveats: []
+provenance:
+  model_id: 1004_0937_exothermic_dark_matter_v1
+  model_name: Exothermic dark matter
+  model_family: inelastic_dark_matter
+  entry_version: 0.1.0
+  status: machine_extracted
+  created_at: '2026-05-31'
+  last_updated: '2026-05-31'
+  sources:
+    primary_papers:
+    - reference_id: '1004_0937'
+      title: Exothermic Dark Matter
+      authors:
+      - Peter W. Graham
+      - Roni Harnik
+      - Surjeet Rajendran
+      - Prashant Saraswat
+      year: 2010
+      arxiv_id: '1004.0937'
+      doi: null
+      url: null
+      role: original_model
+      notes: Assigned full text from target_text.sqlite.
+  extraction:
+    method: llm_assisted
+    extracted_by: codex_batch_0011
+    extractor_name: Codex GPT-5.5 batch worker
+    extraction_date: '2026-05-31'
+    confidence: high
+    source_chunks_or_sections:
+    - reference_id: '1004_0937'
+      section: abstract/introduction
+      page: null
+      quote_or_summary: The paper proposes exothermic dark matter with at least two light states and few-keV
+        splittings; the excited state down-scatters to a lower state.
+    - reference_id: '1004_0937'
+      section: rate calculation
+      page: null
+      quote_or_summary: It writes effective inelastic operators for fermion or scalar dark matter and
+        assumes elastic operators are suppressed.
+    - reference_id: '1004_0937'
+      section: model building
+      page: null
+      quote_or_summary: A kinetically mixed dark photon realization is adapted to few-GeV masses and few-to-ten-keV
+        splittings.
+    - reference_id: '1004_0937'
+      section: relic abundance
+      page: null
+      quote_or_summary: The paper discusses thermal annihilation to dark photons and the conditions for
+        an excited-state relic abundance today.
+    unresolved_items:
+    - The paper leaves the exact UV completion and dark matter spin choice flexible.
+  evidence:
+    particle_content:
+    - reference_id: '1004_0937'
+      note: The abstract states that dark matter contains at least two light states with few-GeV masses
+        and about 5-keV splittings.
+      confidence: high
+      section: abstract
+      page: null
+    symmetries:
+    - reference_id: '1004_0937'
+      note: The model-building section introduces a light Abelian gauge boson A' kinetically mixed with
+        the Standard Model U(1).
+      confidence: medium
+      section: model building
+      page: null
+    interactions:
+    - reference_id: '1004_0937'
+      note: The defining interaction is exothermic inelastic downscattering of an excited state off a
+        nucleus into the lower state.
+      confidence: high
+      section: abstract/introduction
+      page: null
+    - reference_id: '1004_0937'
+      note: The paper gives dimension-six inelastic operators and a dark-photon completion generating
+        those operators below m_A'.
+      confidence: high
+      section: rate calculation/model building
+      page: null
+    production_mechanism:
+    - reference_id: '1004_0937'
+      note: In the kinetic-mixing model, dark matter can annihilate to two dark photons and achieve a
+        thermal relic abundance for suitable alpha_D.
+      confidence: medium
+      section: relic abundance
+      page: null
+    cosmological_history:
+    - reference_id: '1004_0937'
+      note: The exoDM scenario requires deexcitation processes to freeze out above the splitting and the
+        excited state to live longer than the age of the Universe.
+      confidence: high
+      section: relic abundance
+      page: null
+    parameter_ranges:
+    - reference_id: '1004_0937'
+      note: Preferred examples use light 2-4 or 2-5 GeV dark matter with roughly 5-10 keV splitting; the
+        dark-photon example uses m_A' around 100 MeV and alpha_D around 10^-4.
+      confidence: high
+      section: introduction/model building
+      page: null
+    validity_domain:
+    - reference_id: '1004_0937'
+      note: The paper assumes suppressed elastic scattering and focuses on light downscattering where
+        nuclear recoil energies are set by the splitting.
+      confidence: high
+      section: rate calculation
+      page: null
+  review:
+    human_reviewed: false
+    reviewed_by: null
+    review_date: null
+    expert_reviewed: false
+    expert_reviewer: null
+    expert_review_date: null
+    reviewer_notes: []
+    scientific_confidence: medium
+    implementation_confidence: medium
+  caveats:
+  - The row records the model-building content while leaving direct-detection limit details out of this
+    model-only pass for this model-only pass.
+  related_entries: []
+  external_links: {}
+robustness:
+  overall: medium
+  theory_robustness: medium
+  observational_robustness: unknown
+  computational_robustness: unknown
+  dominant_uncertainties:
+  - UV completion
+  - excited-state abundance
+  - suppression of elastic scattering
+  - low-energy detector-response assumptions
+  validation_status: unvalidated
+  notes: The particle setup and relic logic are explicit enough for a model-card candidate, but the model
+    remains phenomenological.
+agent_failure_modes:
+  warnings:
+  - id: do-not-collapse-to-standard-idm
+    severity: medium
+    category: invalid_mapping
+    warning: Exothermic downscattering is not the same as the usual endothermic upscattering inelastic
+      dark matter scenario.
+    mitigation: Keep the sign of the mass splitting and the metastable excited-state relic explicit.
+    source_reference_ids:
+    - '1004_0937'
+  - id: elastic-operator-assumption
+    severity: medium
+    category: assumption_mismatch
+    warning: The paper assumes elastic scattering operators are highly suppressed; adding them changes
+      the model phenomenology.
+    mitigation: Surface this assumption before using the card in direct-detection reasoning.
+    source_reference_ids:
+    - '1004_0937'

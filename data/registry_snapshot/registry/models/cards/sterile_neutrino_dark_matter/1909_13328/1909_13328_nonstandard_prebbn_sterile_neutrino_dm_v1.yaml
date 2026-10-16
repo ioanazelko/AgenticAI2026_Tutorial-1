@@ -1,0 +1,851 @@
+_source:
+  shard: arXiv_src_1909_043_wds.tar
+  paper_id: '1909_13328'
+  source_member: 1909_13328.json
+  enriched: true
+  enrichment_schema_version: dm_model_ocr_enrichment_smoke_v0
+schema_version: model_only_v0
+model_id: 1909_13328_nonstandard_prebbn_sterile_neutrino_dm_v1
+identity:
+  name: Non-resonantly produced sterile neutrino dark matter in non-standard pre-BBN cosmology
+  family: sterile_neutrino_dark_matter
+  aliases:
+  - Dodelson-Widrow sterile neutrino in non-standard cosmology
+  - pre-BBN sterile-neutrino warm dark matter
+  short_description: A sterile-neutrino dark matter variant where active-sterile oscillation freeze-in
+    is recalculated for non-standard cosmological expansion before BBN.
+  historical_origin_or_motivation: Uses sterile neutrinos as possible relic probes of the pre-BBN epoch
+    and keV sterile neutrinos as warm dark matter candidates.
+  status: speculative
+  model_kind: phenomenological_parameterization
+theory:
+  theory_level: phenomenological_parameterization
+  parent_frameworks:
+  - sterile neutrino dark matter
+  - Dodelson-Widrow non-resonant production
+  - non-standard pre-BBN cosmology
+  lagrangian_available: partial
+  renormalizable: 'yes'
+  eft_cutoff: null
+  embedded_in_larger_framework: 'yes'
+  notes: Particle physics is minimal sterile-neutrino mixing; the main model variation is the pre-BBN
+    expansion history.
+particle_content:
+  dark_matter_candidate:
+    name: sterile neutrino nu_s
+    spin: 1/2
+    statistics: fermion
+    elementary_or_composite: elementary
+    number_of_components: single_component
+  additional_dark_sector_particles: []
+  mediators:
+  - active-sterile neutrino mixing through weak interactions
+  dark_radiation_species: []
+  excited_or_degenerate_states: []
+  long_lived_particles:
+  - sterile neutrino
+  unstable_parent_particles: []
+  standard_model_extension: minimal
+symmetries:
+  stabilizing_mechanism: Small active-sterile mixing makes the sterile neutrino long-lived on cosmological
+    scales in the relevant parameter space.
+  symmetries: []
+  topological_defects_possible: unknown
+interactions:
+  portals:
+  - neutrino
+  standard_model_targets:
+  - active neutrinos
+  - weak plasma interactions
+  dark_sector_couplings: []
+  mediator_types:
+  - active-sterile mixing
+  - weak interactions of active neutrinos
+  interaction_operators:
+  - active-sterile mass mixing
+  annihilation_channels: []
+  decay_channels:
+  - radiative decay to active neutrino plus photon
+  - decays governed by active-sterile mixing
+  self_scattering_channels: []
+  cp_structure: unknown
+  flavor_structure: single sterile neutrino mixing with one active flavor, electron neutrino in figures
+  tree_or_loop_level: both
+parameters:
+  core:
+  - name: sterile neutrino mass
+    symbol: m_s
+    description: Mass of the sterile neutrino.
+    range: 10^-2 eV to 1 MeV in the paper; keV masses emphasized for WDM
+    unit: eV
+    role: core
+    status: unknown
+  - name: active-sterile mixing angle
+    symbol: sin^2(2 theta)
+    description: Vacuum active-sterile mixing parameter controlling production and decay.
+    role: core
+    status: unknown
+    notes: Figures assume mixing with electron neutrinos.
+  - name: transition temperature
+    symbol: T_tr
+    description: Temperature at which non-standard cosmology transitions to standard radiation domination.
+    value: '5'
+    unit: MeV
+    role: core
+    status: unknown
+  - name: pre-BBN Hubble scaling
+    symbol: H(T)
+    description: Parameterized non-standard expansion rate before BBN.
+    role: core
+    status: unknown
+    notes: Paper uses alpha/beta-like parameters and compares kination, scalar-tensor, and low-reheating
+      cases.
+production:
+  mechanisms:
+  - non-resonant active-sterile oscillation freeze-in
+  - collisional production in the early Universe
+  - Dodelson-Widrow mechanism modified by pre-BBN Hubble expansion
+  thermal_equilibrium_with_standard_model: 'no'
+  thermal_equilibrium_with_hidden_sector: not_applicable
+  abundance_set_by:
+  - sterile mass m_s
+  - mixing angle
+  - Hubble expansion rate H(T)
+  - transition/reheating temperature
+  - relativistic degrees of freedom
+  depends_on_reheating_temperature: 'yes'
+  can_produce_all_dark_matter: parameter_dependent
+  nonthermal_momentum_distribution: 'yes'
+  notes: Faster pre-BBN expansion can suppress production; some cosmologies can shift where all-DM lines
+    occur in mass-mixing space.
+relic_density:
+  full_or_subcomponent: either
+  target_fraction:
+    name: sterile neutrino DM fraction
+    symbol: f_s,DM
+    description: Fraction of dark matter in sterile neutrinos.
+    range:
+      min: 0
+      max: 1
+      inclusive_min: true
+      inclusive_max: true
+      unit: null
+      notes: Paper shows lines for f_s,DM = 1, 0.1, 0.01, 0.001.
+    role: core
+    status: unknown
+  calculation_type: nonthermal
+  key_dependencies:
+  - m_s
+  - sin^2(2 theta)
+  - pre-BBN H(T)
+  - T_tr
+  - g_*
+  requires_entropy_dilution: parameter_dependent
+  overclosure_risk: parameter_dependent
+  underproduction_risk: parameter_dependent
+  tuning_assessment: unknown
+cosmological_history:
+  standard_history_assumed: false
+  nonstandard_features:
+  - modified pre-BBN Hubble expansion
+  - kination-like cases
+  - scalar-tensor-like cases
+  - low reheating temperature model
+  dark_sector_temperature: null
+  delta_neff:
+    name: effective number of neutrino species contribution
+    symbol: N_eff
+    description: Sterile contribution constrained by BBN/CMB depending on mass and abundance.
+    value: parameter dependent
+    role: core
+    status: unknown
+  kinetic_decoupling: null
+  chemical_decoupling: null
+  phase_transitions:
+  - transition to standard cosmology at T_tr around 5 MeV
+  topological_defects: []
+  isocurvature_perturbations: unknown
+  bbn_relevance: high
+  cmb_relevance: medium
+phase_space:
+  distribution_type: nonthermal
+  distribution_function_available: 'yes'
+  f_of_p_or_q: Closed-form distribution functions are given for generic non-standard H(T) cases and specific
+    cosmologies.
+  average_momentum_relative_to_thermal: close to thermal shape with suppressed magnitude in several cases;
+    colder/warmer details depend on cosmology
+  free_streaming_length:
+    name: free-streaming scale
+    symbol: lambda_fs
+    description: Scale suppressing structure formation for warm sterile-neutrino DM.
+    range: order Mpc * (keV/m_s) times momentum-temperature factors
+    unit: Mpc
+    role: core
+    status: unknown
+  velocity_dispersion_today: null
+  phase_space_bounds:
+  - Lyman-alpha forest constraints discussed for keV warm dark matter
+  notes: For non-resonant production, the distribution is proportional to the active neutrino Fermi-Dirac
+    shape in the cases emphasized.
+structure_formation:
+  linear:
+    behaves_like_cdm: 'no'
+    transfer_function_shape: smooth_cutoff
+    small_scale_power_effect: suppression
+    half_mode_mass: null
+    thermal_wdm_mapping:
+      available: true
+      validity: approximate
+      warning: The paper discusses mapping Lyman-alpha WDM limits but the distribution and cosmology dependence
+        must be handled carefully.
+  nonlinear:
+    halo_mass_function_effect: warm-DM free streaming suppresses low-mass structure for keV sterile neutrinos.
+    subhalo_mass_function_effect: suppression expected for warm-DM masses; detailed simulation calibration
+      not supplied.
+    simulation_calibrated: 'no'
+validity_domain:
+- id: nonresonant_no_lepton_asymmetry
+  applies_to: production
+  condition: Applies to non-resonant active-sterile oscillation production without a significant primordial
+    lepton asymmetry.
+  valid_range: null
+  status: assumed
+  extrapolation_risk: high
+  caveats: []
+  source_reference_ids: []
+  notes: null
+- id: prebbn_transition
+  applies_to: cosmological_history
+  condition: Non-standard expansion must recover standard radiation domination by about 5 MeV to preserve
+    BBN.
+  valid_range: null
+  status: assumed
+  extrapolation_risk: medium
+  caveats: []
+  source_reference_ids: []
+  notes: null
+- id: single_flavor_mixing
+  applies_to: model
+  condition: Figures assume one sterile neutrino mixing with one active neutrino, taken as electron flavor.
+  valid_range: null
+  status: assumed
+  extrapolation_risk: medium
+  caveats: []
+  source_reference_ids: []
+  notes: null
+assumptions:
+  global:
+  - id: no_large_lepton_asymmetry
+    description: The sterile production calculation assumes no significant primordial lepton asymmetry.
+    scope: production
+    status: assumed
+    impact_if_violated: Resonant production would alter the momentum distribution and abundance.
+    can_be_relaxed: 'yes'
+    source_reference_ids: []
+    notes: null
+  - id: minimal_sterile_interactions
+    description: Sterile neutrinos have no additional interactions beyond active-neutrino mixing.
+    scope: theory
+    status: assumed
+    impact_if_violated: New interactions or parent decays would change relic production.
+    can_be_relaxed: 'yes'
+    source_reference_ids: []
+    notes: null
+  - id: bbn_safe_transition
+    description: The cosmology returns to standard radiation domination at T around 5 MeV.
+    scope: cosmological_history
+    status: assumed
+    impact_if_violated: BBN predictions may fail if the transition occurs too late.
+    can_be_relaxed: 'no'
+    source_reference_ids: []
+    notes: null
+associated_code:
+  has_associated_code: unknown
+  code_summary: No associated code was identified in the extracted paper text.
+  repositories: []
+  packages_or_modules: []
+  notebooks: []
+  scripts: []
+  caveats: []
+provenance:
+  model_id: 1909_13328_nonstandard_prebbn_sterile_neutrino_dm_v1
+  model_name: Non-resonantly produced sterile neutrino dark matter in non-standard pre-BBN cosmology
+  model_family: sterile_neutrino_dark_matter
+  entry_version: 0.1.0
+  status: machine_extracted
+  created_at: '2026-05-31'
+  last_updated: '2026-05-31'
+  sources:
+    primary_papers:
+    - reference_id: '1909_13328'
+      title: Sterile neutrino production in non-standard pre-BBN cosmologies
+      authors: []
+      year: 2019
+      arxiv_id: '1909.13328'
+      doi: null
+      url: null
+      role: extension
+      notes: Assigned SQLite full text was the only source used.
+    - arxiv_id: '1909.13328'
+      authors:
+      - Gelmini, Graciela B.
+      - Lu, Philip
+      - Takhistov, Volodymyr
+      doi: 10.1088/1475-7516/2019/12/047
+      notes: Primary paper text resolved locally and used as the support for structured enrichment claims.
+      reference_id: src_1909_13328_primary
+      role: original_model
+      title: Cosmological dependence of non-resonantly produced sterile neutrinos
+      url: https://arxiv.org/abs/1909.13328
+      year: 2019
+    constraint_papers: []
+    external_databases:
+    - name: NASA ADS
+      note: Used for primary metadata and bounded reference/citation discovery; metadata alone was not
+        used as scientific evidence.
+      url: https://ui.adsabs.harvard.edu/
+    review_papers: []
+  extraction:
+    method: llm_assisted
+    extracted_by: codex_batch_0011
+    extractor_name: null
+    extraction_date: '2026-05-31'
+    confidence: high
+    source_chunks_or_sections:
+    - reference_id: '1909_13328'
+      section: Introduction
+      page: null
+      quote_or_summary: The paper frames sterile neutrinos as possible warm dark matter and relic probes
+        of pre-BBN cosmology.
+    - reference_id: '1909_13328'
+      section: Boltzmann equation
+      page: null
+      quote_or_summary: The paper writes the active-sterile freeze-in Boltzmann equation and derives distribution
+        functions for non-standard cosmologies.
+    unresolved_items:
+    - Numeric mass-mixing exclusion contours were not transcribed.
+    - Applying Lyman-alpha limits requires a spectrum-specific recast for each non-standard cosmology.
+    - Laboratory reach is summarized qualitatively without detector response functions.
+  evidence:
+    particle_content:
+    - reference_id: '1909_13328'
+      note: The paper assumes sterile neutrinos without interactions beyond SM mixing and highlights keV
+        sterile neutrinos as warm dark matter candidates.
+      confidence: high
+      section: Introduction
+      page: null
+    interactions:
+    - reference_id: '1909_13328'
+      note: Sterile neutrinos couple to SM particles only through active-sterile mixing, with figures
+        assuming mixing with electron neutrinos.
+      confidence: high
+      section: Introduction
+      page: null
+    production_mechanism:
+    - reference_id: '1909_13328'
+      note: Non-resonant active-sterile oscillations and collisional processes produce sterile neutrinos;
+        the process is described as freeze-in.
+      confidence: high
+      section: Dodelson-Widrow mechanism
+      page: null
+    cosmological_history:
+    - reference_id: '1909_13328'
+      note: The paper parameterizes non-standard pre-BBN Hubble histories and compares standard, kination,
+        scalar-tensor, and low-reheating cases.
+      confidence: high
+      section: Non-standard pre-BBN cosmologies
+      page: null
+    parameter_ranges:
+    - reference_id: '1909_13328'
+      note: The analysis covers sterile-neutrino masses from 10^-2 eV to 1 MeV and mass-mixing regions
+        including keV warm-DM cases.
+      confidence: high
+      section: Introduction
+      page: null
+    validity_domain:
+    - reference_id: '1909_13328'
+      note: The calculation assumes no significant primordial lepton asymmetry and non-resonant production.
+      confidence: high
+      section: Production mechanism
+      page: null
+    constraints:
+    - confidence: high
+      note: Primary-paper text supports constraint con_bbn_transition_prebbn.
+      page: null
+      reference_id: src_1909_13328_primary
+      section: model, phenomenology, or constraints section
+    - confidence: high
+      note: Primary-paper text supports constraint con_lyman_xray_standard_dw.
+      page: null
+      reference_id: src_1909_13328_primary
+      section: model, phenomenology, or constraints section
+    - confidence: high
+      note: Primary-paper text supports constraint con_mass_mixing_cosmology_dependence.
+      page: null
+      reference_id: src_1909_13328_primary
+      section: model, phenomenology, or constraints section
+    - confidence: high
+      note: Primary-paper text supports constraint con_lab_mass_mixing_reach.
+      page: null
+      reference_id: src_1909_13328_primary
+      section: model, phenomenology, or constraints section
+    observables:
+    - confidence: high
+      note: Primary-paper text supports observable obs_nonstandard_sterile_abundance.
+      page: null
+      reference_id: src_1909_13328_primary
+      section: abstract/body/conclusion
+    - confidence: high
+      note: Primary-paper text supports observable obs_lyman_alpha_structure.
+      page: null
+      reference_id: src_1909_13328_primary
+      section: abstract/body/conclusion
+    - confidence: high
+      note: Primary-paper text supports observable obs_xray_decay_line.
+      page: null
+      reference_id: src_1909_13328_primary
+      section: abstract/body/conclusion
+    - confidence: high
+      note: Primary-paper text supports observable obs_beta_spectrum_lab_kinks.
+      page: null
+      reference_id: src_1909_13328_primary
+      section: abstract/body/conclusion
+    routes:
+    - confidence: high
+      note: Primary-paper text describes the modeling chain for route route_prebbn_boltzmann_to_limits.
+      page: null
+      reference_id: src_1909_13328_primary
+      section: analysis workflow
+  review:
+    human_reviewed: false
+    reviewed_by: null
+    review_date: null
+    expert_reviewed: false
+    expert_reviewer: null
+    expert_review_date: null
+    reviewer_notes: []
+    scientific_confidence: medium
+    implementation_confidence: medium
+robustness:
+  overall: medium
+  theory_robustness: medium
+  observational_robustness: medium
+  computational_robustness: medium
+  dominant_uncertainties:
+  - unknown pre-BBN expansion history
+  - sterile neutrino mass and mixing
+  - Lyman-alpha mapping for nonthermal distributions
+  validation_status: expert_judgment_only
+  notes: Accepted as a substantive production/cosmology variant of sterile-neutrino dark matter.
+agent_failure_modes:
+  warnings:
+  - id: resonant_vs_nonresonant
+    severity: high
+    category: assumption_mismatch
+    warning: Do not apply this card to Shi-Fuller resonant production or large lepton asymmetry cases.
+    mitigation: null
+    source_reference_ids: []
+  - id: wdm_mapping_context
+    severity: medium
+    category: extrapolation
+    warning: Thermal-WDM mappings are approximate and cosmology-dependent for this non-standard production
+      history.
+    mitigation: null
+    source_reference_ids: []
+observables:
+- caveats:
+  - Results depend strongly on the assumed H(T) and entropy history.
+  channel: cosmology
+  effect_direction: rate_change
+  environments:
+  - early Universe
+  id: obs_nonstandard_sterile_abundance
+  key_quantities:
+  - description: Mass of the mostly sterile state.
+    name: sterile neutrino mass
+    range: eV to keV regimes discussed
+    role: core
+    source_reference_ids:
+    - src_1909_13328_primary
+    status: inferred
+    symbol: m_s
+    unit: keV
+  - description: Mixing parameter controlling production and decay.
+    name: active-sterile mixing
+    role: core
+    scale: log
+    source_reference_ids:
+    - src_1909_13328_primary
+    status: inferred
+    symbol: sin^2(2theta)
+  - description: Temperature where non-standard cosmology becomes standard before BBN.
+    name: transition temperature
+    role: core
+    source_reference_ids:
+    - src_1909_13328_primary
+    status: inferred
+    symbol: T_tr
+    unit: MeV
+    value: '5'
+  linked_constraints:
+  - con_bbn_transition_prebbn
+  - con_mass_mixing_cosmology_dependence
+  linked_routes:
+  - route_prebbn_boltzmann_to_limits
+  name: Sterile-neutrino relic abundance and momentum distribution in non-standard pre-BBN cosmology
+  notes: null
+  observability: medium
+  predicted_effect: Changing the pre-BBN expansion rate or entropy history changes the non-resonantly
+    produced sterile-neutrino abundance and momentum distribution relative to standard Dodelson-Widrow
+    production.
+  redshift_range: pre-BBN production epoch
+  relevance: high
+  scale_range: homogeneous relic production and phase-space distribution
+  source_reference_ids:
+  - src_1909_13328_primary
+  subchannel: non-resonant freeze-in production
+- caveats:
+  - Thermal-equivalent mass mapping must be recomputed for non-standard spectra.
+  channel: lyman_alpha
+  effect_direction: suppression
+  environments:
+  - intergalactic medium
+  - large-scale structure
+  id: obs_lyman_alpha_structure
+  key_quantities:
+  - description: Fraction of dark matter in sterile neutrinos.
+    name: sterile-neutrino dark-matter fraction
+    role: core
+    source_reference_ids:
+    - src_1909_13328_primary
+    status: inferred
+    symbol: f_s
+  - description: Spectrum produced in the chosen pre-BBN cosmology.
+    name: momentum distribution
+    role: core
+    source_reference_ids:
+    - src_1909_13328_primary
+    status: inferred
+    symbol: f_s(p)
+  linked_constraints:
+  - con_lyman_xray_standard_dw
+  linked_routes:
+  - route_prebbn_boltzmann_to_limits
+  name: Warm-dark-matter suppression probed by Lyman-alpha and structure data
+  notes: null
+  observability: high
+  predicted_effect: KeV sterile neutrinos with near-thermal spectra suppress small-scale structure; Lyman-alpha
+    and related astrophysical limits constrain the mass-mixing plane when sterile neutrinos make up most
+    of the dark matter.
+  redshift_range: structure formation after production
+  relevance: high
+  scale_range: small-scale linear power
+  source_reference_ids:
+  - src_1909_13328_primary
+  subchannel: warm sterile-neutrino free streaming
+- caveats:
+  - X-ray limits constrain decay rate and abundance, not production history alone.
+  channel: indirect_detection
+  effect_direction: spectral_line
+  environments:
+  - galaxies
+  - clusters
+  id: obs_xray_decay_line
+  key_quantities:
+  - description: Line energy is approximately m_s/2 for radiative decay.
+    name: sterile-neutrino mass
+    role: core
+    source_reference_ids:
+    - src_1909_13328_primary
+    status: inferred
+    symbol: m_s
+    unit: keV
+  - description: Controls radiative decay rate.
+    name: mixing angle
+    role: core
+    source_reference_ids:
+    - src_1909_13328_primary
+    status: inferred
+    symbol: theta
+  linked_constraints:
+  - con_lyman_xray_standard_dw
+  linked_routes:
+  - route_prebbn_boltzmann_to_limits
+  name: Radiative sterile-neutrino decay X-ray signal
+  notes: null
+  observability: high
+  predicted_effect: Sterile-neutrino decay can produce an X-ray line; the paper discusses X-ray constraints
+    and the 3.5 keV line interpretation for a 7 keV sterile neutrino.
+  redshift_range: z=0 astrophysical targets
+  relevance: high
+  scale_range: galaxies and clusters in X-ray observations
+  source_reference_ids:
+  - src_1909_13328_primary
+  subchannel: X-ray line searches
+- caveats:
+  - Experimental reach is only summarized qualitatively here.
+  channel: precision_laboratory
+  effect_direction: rate_change
+  environments:
+  - laboratory experiments
+  id: obs_beta_spectrum_lab_kinks
+  key_quantities:
+  - description: Mass reach depends on the experimental channel.
+    name: sterile-neutrino mass
+    role: core
+    source_reference_ids:
+    - src_1909_13328_primary
+    status: inferred
+    symbol: m_s
+  - description: Mixing with electron neutrinos targeted by beta-spectrum searches.
+    name: electron-flavor mixing
+    role: core
+    source_reference_ids:
+    - src_1909_13328_primary
+    status: inferred
+    symbol: '|U_es|^2'
+  linked_constraints:
+  - con_lab_mass_mixing_reach
+  linked_routes:
+  - route_prebbn_boltzmann_to_limits
+  name: Laboratory beta-spectrum and capture probes of sterile neutrino mixing
+  notes: null
+  observability: medium
+  predicted_effect: Sterile states in eV to keV ranges can be tested by laboratory neutrino experiments
+    independently of some astrophysical abundance assumptions.
+  redshift_range: laboratory, z=0
+  relevance: medium
+  scale_range: beta-decay or neutrino-capture spectra
+  source_reference_ids:
+  - src_1909_13328_primary
+  subchannel: KATRIN, TRISTAN, HUNTER, and PTOLEMY-like probes
+constraints:
+- allowed_regions:
+  - The paper uses T_tr = 5 MeV benchmarks for non-standard-to-standard transitions before BBN.
+  applies: 'yes'
+  assumptions:
+  - can_be_relaxed: 'no'
+    description: The non-standard phase ends before the onset of BBN.
+    id: assume_standard_by_bbn
+    impact_if_violated: Later transitions would be constrained by light-element abundances and invalidate
+      benchmark production histories.
+    notes: null
+    scope: cosmological history
+    source_reference_ids:
+    - src_1909_13328_primary
+    status: assumed
+  benchmark_implications:
+  - Sterile-neutrino production before 5 MeV probes an otherwise unobserved cosmological epoch.
+  caveats:
+  - No detailed BBN likelihood is included.
+  constrained_parameters:
+  - T_tr
+  - H(T)
+  - entropy production
+  constraint_type: cosmological
+  data_release: null
+  excluded_regions:
+  - Transition temperatures that would alter successful light-element production.
+  id: con_bbn_transition_prebbn
+  likelihood_available: 'no'
+  likelihood_reference: null
+  name: Non-standard cosmology must transition to standard radiation domination before BBN
+  notes: null
+  observable_channel: pre-BBN expansion history
+  recasting_needed: partial
+  robustness: medium
+  source_reference_ids:
+  - src_1909_13328_primary
+- allowed_regions:
+  - Bounds are weakened for subdominant sterile-neutrino fractions and can shift under non-standard cosmologies.
+  applies: parameter_dependent
+  assumptions:
+  - can_be_relaxed: partial
+    description: Astrophysical limits are applied using the sterile-neutrino abundance and spectrum produced
+      by the chosen cosmology.
+    id: assume_distribution_specific_recast
+    impact_if_violated: Using a standard thermal mapping can misstate the allowed mass-mixing region.
+    notes: null
+    scope: structure and decay constraints
+    source_reference_ids:
+    - src_1909_13328_primary
+    status: assumed
+  benchmark_implications:
+  - The viable mass-mixing region is cosmology dependent rather than a single universal Dodelson-Widrow
+    curve.
+  caveats:
+  - No numeric exclusion contour is encoded from the primary paper.
+  constrained_parameters:
+  - m_s
+  - sin^2(2theta)
+  - f_s
+  - f_s(p)
+  constraint_type: astrophysical
+  data_release: null
+  excluded_regions:
+  - Standard non-resonant production making all or most of the dark matter is disfavored by the combined
+    Lyman-alpha and X-ray context described in the paper.
+  id: con_lyman_xray_standard_dw
+  likelihood_available: unknown
+  likelihood_reference: null
+  name: Lyman-alpha and X-ray limits on keV sterile-neutrino dark matter
+  notes: null
+  observable_channel: small-scale structure and X-ray decay
+  recasting_needed: 'yes'
+  robustness: medium
+  source_reference_ids:
+  - src_1909_13328_primary
+- allowed_regions:
+  - Faster expansion suppresses production; selected scalar-tensor histories can enhance production; low-reheating
+    histories shift production into the late standard phase.
+  applies: 'yes'
+  assumptions:
+  - can_be_relaxed: partial
+    description: The Boltzmann treatment assumes one active neutrino mixes with one sterile neutrino in
+      the figures discussed.
+    id: assume_two_flavor_mixing
+    impact_if_violated: Additional flavors or interactions would change production and limits.
+    notes: null
+    scope: production calculation
+    source_reference_ids:
+    - src_1909_13328_primary
+    status: assumed
+  benchmark_implications:
+  - Laboratory-visible regions depend on whether kination, scalar-tensor, or low-reheating cosmology is
+    assumed.
+  caveats:
+  - Only qualitative direction of cosmology dependence is encoded.
+  constrained_parameters:
+  - m_s
+  - sin^2(2theta)
+  - H(T)
+  - T_tr
+  constraint_type: cosmological
+  data_release: null
+  excluded_regions:
+  - Regions producing too much sterile-neutrino dark matter for the chosen pre-BBN cosmology.
+  id: con_mass_mixing_cosmology_dependence
+  likelihood_available: 'no'
+  likelihood_reference: null
+  name: Cosmology-dependent sterile-neutrino mass-mixing regions
+  notes: null
+  observable_channel: non-resonant production abundance
+  recasting_needed: 'yes'
+  robustness: medium
+  source_reference_ids:
+  - src_1909_13328_primary
+- allowed_regions: []
+  applies: parameter_dependent
+  assumptions:
+  - can_be_relaxed: partial
+    description: The sterile state mixes with electron-flavor neutrinos for beta-spectrum observability.
+    id: assume_electron_flavor_coupling
+    impact_if_violated: Different flavor structure changes laboratory sensitivity.
+    notes: null
+    scope: laboratory searches
+    source_reference_ids:
+    - src_1909_13328_primary
+    status: assumed
+  benchmark_implications:
+  - The paper notes KATRIN, TRISTAN, HUNTER, and PTOLEMY as probes of all or part of relevant eV/keV sterile-neutrino
+    parameter space.
+  caveats:
+  - No experimental response model is included.
+  constrained_parameters:
+  - m_s
+  - '|U_es|^2'
+  constraint_type: laboratory
+  data_release: null
+  excluded_regions: []
+  id: con_lab_mass_mixing_reach
+  likelihood_available: unknown
+  likelihood_reference: null
+  name: Laboratory reach for eV-to-keV sterile-neutrino mixing
+  notes: null
+  observable_channel: beta-spectrum and neutrino-capture probes
+  recasting_needed: 'yes'
+  robustness: medium
+  source_reference_ids:
+  - src_1909_13328_primary
+theory_to_observable_routing:
+  routes:
+  - agent_notes: This is the core route for comparing cosmology-dependent sterile-neutrino predictions.
+    caveats:
+    - Full numeric contours are not included.
+    constraint_ids:
+    - con_bbn_transition_prebbn
+    - con_lyman_xray_standard_dw
+    - con_mass_mixing_cosmology_dependence
+    - con_lab_mass_mixing_reach
+    derived_quantities:
+    - f_s(p)
+    - Omega_s h^2
+    - dark-matter fraction
+    - X-ray decay rate
+    - linear power suppression
+    description: Solve sterile-neutrino non-resonant production in a chosen pre-BBN cosmology, then route
+      abundance and spectrum to astrophysical and laboratory limits.
+    forward_model_chain:
+    - inputs:
+      - cosmology type
+      - T_tr
+      notes: null
+      outputs:
+      - H(T)
+      - entropy evolution
+      step_id: prebbn_history
+      step_type: analytic_formula
+      tool_or_code: null
+      validity: benchmark cosmologies described in the primary paper
+    - inputs:
+      - H(T)
+      - m_s
+      - mixing angle
+      - active-neutrino collision rate
+      notes: null
+      outputs:
+      - f_s(p)
+      - Omega_s h^2
+      step_id: sterile_boltzmann
+      step_type: boltzmann_solver
+      tool_or_code: null
+      validity: non-resonant production without significant primordial lepton asymmetry
+    - inputs:
+      - f_s(p)
+      - Omega_s h^2
+      - decay rate
+      notes: null
+      outputs:
+      - Lyman-alpha relevance
+      - X-ray constraints
+      - lab mass-mixing reach
+      step_id: limit_mapping
+      step_type: recasting
+      tool_or_code: null
+      validity: requires constraint-specific recasts
+    id: route_prebbn_boltzmann_to_limits
+    input_parameters:
+    - m_s
+    - sin^2(2theta)
+    - H(T)
+    - T_tr
+    - entropy history
+    likelihoods: []
+    observable_ids:
+    - obs_nonstandard_sterile_abundance
+    - obs_lyman_alpha_structure
+    - obs_xray_decay_line
+    - obs_beta_spectrum_lab_kinks
+    required_code_resources:
+    - sterile-neutrino production solver
+    - linear power or WDM mapping code
+    - X-ray decay recast
+    - laboratory response/reach curves
+    route_status: planned
+    source_model_features:
+    - sterile-active mixing
+    - non-standard H(T) before T_tr
+    - possible entropy production in low-reheating histories
+    validation_tests:
+    - Reproduce standard Dodelson-Widrow abundance and the paper benchmark trends for kination, scalar-tensor,
+      and low-reheating cosmologies.

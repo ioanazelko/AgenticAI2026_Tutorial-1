@@ -1,0 +1,764 @@
+_source:
+  shard: arXiv_src_2106_033_wds.tar
+  paper_id: '2106_05298'
+  source_member: 2106_05298.json
+  enriched: true
+  enrichment_schema_version: dm_model_ocr_enrichment_smoke_v0
+schema_version: model_only_v0
+model_id: 2106_05298_inverse_seesaw_sterile_freeze_in_dm_v1
+identity:
+  name: Inverse-seesaw sterile-neutrino freeze-in dark matter with dynamical lepton-number breaking
+  family: sterile_neutrino_dark_matter
+  aliases:
+  - inverse seesaw sterile neutrino freeze-in DM
+  - Majoron-assisted inverse seesaw DM
+  short_description: A keV-MeV mostly sterile Majorana state in a dynamically broken inverse-seesaw model
+    is populated by freeze-in decays of heavier pseudo-Dirac neutrinos and new scalar states.
+  historical_origin_or_motivation: The model links neutrino masses, a Majoron contribution to the Hubble
+    tension, and sterile-neutrino dark matter in a low-scale inverse-seesaw framework.
+  status: speculative
+  model_kind: simplified_model
+theory:
+  theory_level: simplified_model
+  parent_frameworks:
+  - inverse seesaw
+  - dynamical lepton-number breaking
+  - sterile neutrino dark matter
+  - Majoron cosmology
+  lagrangian_available: 'yes'
+  renormalizable: 'yes'
+  eft_cutoff: null
+  embedded_in_larger_framework: 'yes'
+  notes: The paper gives the fermion Yukawa/Majorana terms and a scalar potential with two singlet scalars
+    whose vevs dynamically break lepton number.
+particle_content:
+  dark_matter_candidate:
+    name: nu_4 sterile-neutrino mass eigenstate mostly aligned with n_L
+    spin: 1/2
+    statistics: fermion
+    elementary_or_composite: elementary
+    number_of_components: single_component
+  additional_dark_sector_particles:
+  - heavy pseudo-Dirac neutrino pairs N_+ and N_-
+  - singlet scalars phi_1 and phi_2
+  - Majoron J
+  - pseudoscalar A
+  mediators:
+  - singlet scalars phi_1 and phi_2
+  - Majoron J
+  - heavy pseudo-Dirac neutrinos
+  dark_radiation_species:
+  - Majoron J
+  excited_or_degenerate_states:
+  - heavy pseudo-Dirac neutrino pairs
+  long_lived_particles:
+  - nu_4 sterile-neutrino dark matter
+  unstable_parent_particles:
+  - heavy pseudo-Dirac neutrino pairs N_i
+  standard_model_extension: substantial
+symmetries:
+  stabilizing_mechanism: Approximate lepton-number symmetry and an additional small-parameter U(1) suppress
+    the couplings and decays of n_L, making the mostly sterile nu_4 long-lived.
+  symmetries:
+  - name: lepton number L
+    type: global
+    exact_or_approximate: approximate
+    breaking: Dynamically broken by singlet scalar vevs, with small L-violating parameters generating
+      neutrino masses.
+    breaking_scale:
+      name: L-breaking vev
+      symbol: v_2
+      range: keV to MeV for order-one Yukawas
+      unit: GeV
+      role: core
+      status: inferred
+  - name: additional U(1) for phi_1
+    type: global
+    exact_or_approximate: approximate
+    breaking: Broken by the small parameters mu, Y_Ls, and Y_Rs.
+    breaking_scale: null
+  topological_defects_possible: unknown
+interactions:
+  portals:
+  - neutrino
+  - higgs
+  - other
+  standard_model_targets:
+  - SM lepton doublets
+  - Higgs doublet
+  - active neutrinos
+  dark_sector_couplings:
+  - Y_Ls and Y_Rs couplings between n_L, heavy neutrinos, and phi_1
+  - Y_LL and Y_RR couplings to phi_2
+  - Majoron-neutrino coupling
+  mediator_types:
+  - heavy pseudo-Dirac neutrino
+  - singlet scalar
+  - Majoron
+  interaction_operators:
+  - L_L H Y_nu N_R
+  - N_L phi_2 Y_LL N_L^c
+  - N_R^c phi_2 Y_RR N_R
+  - N_L phi_1 Y_Ls n_L
+  - N_R^c phi_1^* Y_Rs n_L^c
+  annihilation_channels: []
+  decay_channels:
+  - N_i to nu_4 plus phi_1, phi_2, A, or J
+  - nu_4 to Majoron plus active neutrino if allowed by small mixing
+  self_scattering_channels: []
+  tree_or_loop_level: tree
+parameters:
+  core:
+  - name: dark matter mass
+    symbol: m_nu4
+    range: keV-MeV; Lyman-style estimate gives m_nu4 above about 7.5 keV for the reference mapping
+    unit: keV
+    role: core
+    status: inferred
+    notes: The state is mostly aligned with n_L and m_nu4 is approximately mu_ss.
+  - name: heavy pseudo-Dirac neutrino mass
+    symbol: m_N
+    range: around electroweak to not much above TeV
+    unit: GeV
+    role: core
+    status: inferred
+    notes: Large m_N suppresses freeze-in production.
+  - name: active-heavy mixing
+    symbol: theta
+    range: 10^-4 to 10^-2
+    role: core
+    status: inferred
+    notes: Must be large enough for heavy neutrinos to thermalize but below precision bounds discussed
+      in the paper.
+  - name: left scalar-induced Majorana scale
+    symbol: mu_LL
+    range: keV-MeV
+    unit: GeV
+    role: core
+    status: inferred
+    notes: Related to light neutrino masses through theta^2 mu_LL.
+  - name: dark matter coupling scales
+    symbol: mu_Ls and mu_Rs
+    range: eV-keV to around 1 keV
+    unit: eV
+    role: core
+    status: inferred
+    notes: Control active-DM mixing and freeze-in abundance.
+  - name: Majoron/Hubble-tension scalar mass
+    symbol: m_phi1
+    range: below about 1
+    unit: GeV
+    role: core
+    status: inferred
+    notes: Relevant for the Majoron thermal population in the paper.
+  - name: Higgs-singlet coupling
+    symbol: lambda_1H
+    range: 10^-4 to 10^-2
+    role: core
+    status: inferred
+    notes: Controls Majoron thermalization through phi_1-Higgs mixing.
+production:
+  mechanisms:
+  - freeze-in decays of thermalized heavy pseudo-Dirac neutrinos to sterile dark matter plus singlet scalar
+    or Majoron states
+  thermal_equilibrium_with_standard_model: 'no'
+  thermal_equilibrium_with_hidden_sector: partial
+  abundance_set_by:
+  - Y_Ls and Y_Rs or equivalent mu_Ls and mu_Rs
+  - m_nu4
+  - m_N
+  - scalar masses
+  - active-heavy mixing theta
+  depends_on_reheating_temperature: unknown
+  can_produce_all_dark_matter: 'yes'
+  nonthermal_momentum_distribution: 'yes'
+  notes: The heavy neutrinos thermalize with the SM plasma, while the feebly coupled mostly sterile state
+    is populated through out-of-equilibrium decays.
+relic_density:
+  full_or_subcomponent: full_dark_matter
+  target_fraction:
+    name: dark matter density
+    symbol: Omega_nu4 h^2
+    value: approximately 0.12-0.13
+    role: cosmological
+    status: inferred
+  calculation_type: nonthermal
+  key_dependencies:
+  - freeze-in decay rate Gamma_n_L
+  - m_nu4
+  - m_N
+  - mu_Ls
+  - mu_Rs
+  - theta
+  - scalar masses
+  requires_entropy_dilution: unknown
+  overclosure_risk: parameter_dependent
+  underproduction_risk: parameter_dependent
+  tuning_assessment: mild_tuning
+cosmological_history:
+  standard_history_assumed: true
+  nonstandard_features:
+  - light Majoron population contributing to radiation and later neutrino interactions
+  - nonthermal sterile-neutrino momentum distribution from decays
+  dark_sector_temperature: null
+  delta_neff:
+    name: Majoron contribution
+    symbol: Delta N_eff
+    range: 0.2-0.5 in the Hubble-tension region
+    role: cosmological
+    status: inferred
+  kinetic_decoupling: null
+  chemical_decoupling:
+    name: freeze-in production epoch
+    symbol: T ~ m_N
+    value: heavy-neutrino decay era
+    role: cosmological
+    status: inferred
+  phase_transitions:
+  - spontaneous lepton-number breaking in the singlet scalar sector
+  topological_defects: []
+  isocurvature_perturbations: unknown
+  bbn_relevance: medium
+  cmb_relevance: high
+phase_space:
+  distribution_type: decay_produced
+  distribution_function_available: approximate
+  average_momentum_relative_to_thermal: nonthermal distribution from nonrelativistic heavy-neutrino decays
+  notes: The paper maps the nonthermal distribution to warm-DM-style small-scale behavior.
+structure_formation:
+  linear:
+    behaves_like_cdm: 'no'
+    transfer_function_shape: smooth_cutoff
+    small_scale_power_effect: suppression
+  nonlinear:
+    halo_mass_function_effect: suppression expected for sufficiently warm decay-produced sterile neutrinos
+    subhalo_mass_function_effect: suppression expected
+    simulation_calibrated: 'no'
+validity_domain:
+- id: freeze_in_regime
+  applies_to: production
+  condition: Y_Ls and Y_Rs must remain small enough that nu_4 is never thermalized but large enough to
+    produce the desired abundance.
+  status: inferred
+  extrapolation_risk: medium
+  caveats: []
+- id: heavy_neutrino_thermalization
+  applies_to: production
+  condition: The active-heavy mixing must allow the pseudo-Dirac neutrinos to thermalize with the SM plasma.
+  status: inferred
+  extrapolation_risk: medium
+  caveats: []
+- id: approximate_l_symmetry
+  applies_to: theory
+  condition: Small lepton-number-breaking parameters are treated perturbatively.
+  status: inferred
+  extrapolation_risk: medium
+  caveats: []
+assumptions:
+  global:
+  - id: hierarchical_masses
+    description: The analysis assumes M is larger than m_D and that m_N controls the pseudo-Dirac pair
+      scale.
+    scope: theory
+    status: assumed
+  - id: small_symmetry_breaking
+    description: The small parameters mu, Y_Ls, and Y_Rs are technically natural due to an enhanced U(1)
+      symmetry when they vanish.
+    scope: theory
+    status: assumed
+  - id: thermal_heavy_neutrinos
+    description: The heavy pseudo-Dirac neutrinos are thermalized with the SM plasma before decaying into
+      dark matter.
+    scope: production
+    status: assumed
+associated_code:
+  has_associated_code: unknown
+  code_summary: No public model-specific code was identified in the assigned text.
+provenance:
+  model_id: 2106_05298_inverse_seesaw_sterile_freeze_in_dm_v1
+  model_name: Inverse-seesaw sterile-neutrino freeze-in dark matter with dynamical lepton-number breaking
+  model_family: sterile_neutrino_dark_matter
+  entry_version: 0.1.0
+  status: machine_extracted
+  created_at: '2026-05-31'
+  last_updated: '2026-05-31'
+  sources:
+    primary_papers:
+    - reference_id: '2106_05298'
+      title: Inverse Seesaw, dark matter and the Hubble tension
+      year: 2021
+      arxiv_id: '2106.05298'
+      doi: null
+      url: null
+      role: original_model
+      notes: Only the assigned SQLite full text was used for this machine extraction.
+    - arxiv_id: '2106.05298'
+      authors:
+      - Fernandez-Martinez, E.
+      - Pierre, M.
+      - Pinsard, E.
+      - Rosauro-Alcaraz, S.
+      doi: 10.1140/epjc/s10052-021-09760-y
+      notes: Primary assigned paper; full text resolved locally.
+      reference_id: 2106_05298_primary
+      role: original_model
+      title: Inverse Seesaw, dark matter and the Hubble tension
+      url: https://arxiv.org/abs/2106.05298
+      year: 2021
+    constraint_papers:
+    - arxiv_id: '2112.00759'
+      authors:
+      - Niedermann, Florian
+      - Sloth, Martin S.
+      doi: 10.1016/j.physletb.2022.137555
+      notes: Related full text resolved locally.
+      reference_id: 2106_05298_rel_2112_00759
+      role: extension
+      title: 'Hot new early dark energy: Towards a unified dark sector of neutrinos, dark energy and dark
+        matter'
+      url: https://arxiv.org/abs/2112.00759
+      year: 2022
+    - arxiv_id: '2107.02803'
+      authors:
+      - Abada, Asmaa
+      - Bernal, Nicolás
+      - Hernández, Antonio E. Cárcamo
+      - Marcano, Xabier
+      - Piazza, Gioacchino
+      doi: 10.1140/epjc/s10052-021-09535-5
+      notes: Related full text resolved locally.
+      reference_id: 2106_05298_rel_2107_02803
+      role: extension
+      title: Gauged inverse seesaw from dark matter
+      url: https://arxiv.org/abs/2107.02803
+      year: 2021
+    - arxiv_id: '2204.04672'
+      authors:
+      - Arias-Aragón, Fernando
+      - Martínez, Enrique Fernández
+      - González-López, Manuel
+      - Merlo, Luca
+      doi: 10.1007/JHEP09(2022)210
+      notes: Related full text resolved locally.
+      reference_id: 2106_05298_rel_2204_04672
+      role: extension
+      title: Dynamical Minimal Flavour Violating inverse seesaw
+      url: https://arxiv.org/abs/2204.04672
+      year: 2022
+    external_databases: []
+    review_papers: []
+  extraction:
+    method: llm_assisted
+    extracted_by: codex_batch_0011
+    extractor_name: Codex GPT-5 dark-matter model-card worker
+    extraction_date: '2026-05-31'
+    confidence: high
+    source_chunks_or_sections:
+    - reference_id: '2106_05298'
+      section: abstract/opening
+      page: null
+      quote_or_summary: The paper states that keV-MeV sterile neutrinos can account for all dark matter
+        if produced by freeze-in from heavier states.
+    - reference_id: '2106_05298'
+      section: model
+      page: null
+      quote_or_summary: The inverse-seesaw Lagrangian includes N_L, N_R, n_L, singlet scalars, and dynamical
+        lepton-number breaking.
+    - reference_id: '2106_05298'
+      section: dark matter production
+      page: null
+      quote_or_summary: The main dark matter production channel is freeze-in decays of heavy neutrinos
+        to nu_4 plus scalar/Majoron states.
+    unresolved_items:
+    - The exact public implementation status is not identified in the assigned text.
+    - No machine-readable likelihoods for X-ray line limits or Lyman-alpha transfer functions were extracted.
+    - Majoron thermal history should be recomputed before using Delta N_eff as a quantitative likelihood.
+  evidence:
+    particle_content:
+    - reference_id: '2106_05298'
+      note: The DM candidate is nu_4, approximately aligned with the sterile singlet n_L, with heavy pseudo-Dirac
+        neutrinos and singlet scalars also present.
+      section: model
+      confidence: high
+    symmetries:
+    - reference_id: '2106_05298'
+      note: Approximate lepton number and an additional U(1) protect the small parameters controlling
+        neutrino masses and DM stability.
+      section: model
+      confidence: high
+    interactions:
+    - reference_id: '2106_05298'
+      note: The paper writes the inverse-seesaw Yukawa and scalar interactions, including Y_Ls and Y_Rs
+        couplings connecting n_L to heavy neutrinos through phi_1.
+      section: model
+      confidence: high
+    production_mechanism:
+    - reference_id: '2106_05298'
+      note: The dominant nu_4 abundance comes from freeze-in decays of thermalized heavy neutrinos to
+        nu_4 plus phi_1, phi_2, A, or J.
+      section: dark matter production
+      confidence: high
+    cosmological_history:
+    - reference_id: '2106_05298'
+      note: The Majoron population and nonthermal sterile-neutrino production are part of the cosmological
+        setup.
+      section: Hubble tension and dark matter
+      confidence: medium
+    parameter_ranges:
+    - reference_id: '2106_05298'
+      note: The summary section gives ranges for theta, mu_LL, mu_Ls/mu_Rs, m_N, m_phi1, and lambda_1H
+        that can recover neutrino masses, DM abundance, and the Hubble-tension ingredients.
+      section: summary
+      confidence: medium
+    validity_domain:
+    - reference_id: '2106_05298'
+      note: The freeze-in result assumes heavy neutrinos thermalize while the mostly sterile DM state
+        remains feebly coupled.
+      section: dark matter production
+      confidence: medium
+    constraints:
+    - confidence: high
+      note: Primary paper states the X-ray, Lyman-alpha, and lifetime/N_eff consistency constraints used
+        here.
+      page: null
+      reference_id: 2106_05298_primary
+      section: dark matter decay and constraints
+    observables:
+    - confidence: high
+      note: Primary paper describes freeze-in sterile DM, X-ray lines, Lyman-alpha mapping, and Majoron
+        N_eff signatures.
+      page: null
+      reference_id: 2106_05298_primary
+      section: abstract and dark matter phenomenology
+    routes:
+    - confidence: high
+      note: Primary paper gives analytic relic-density and decay-rate scalings plus the Lyman-alpha mapping.
+      page: null
+      reference_id: 2106_05298_primary
+      section: freeze-in and constraints
+  review:
+    human_reviewed: false
+    reviewed_by: null
+    review_date: null
+    expert_reviewed: false
+    expert_reviewer: null
+    expert_review_date: null
+    reviewer_notes: []
+    scientific_confidence: high
+    implementation_confidence: high
+robustness:
+  overall: medium
+  notes: The model Lagrangian and freeze-in formulae are explicit, but several viable regions depend on
+    small symmetry-protected parameters.
+agent_failure_modes:
+  warnings:
+  - id: do_not_use_dodelson_widrow
+    severity: high
+    category: invalid_mapping
+    warning: The accepted production mode is freeze-in from heavier-state decays, not active-sterile oscillation
+      production.
+  - id: warm_phase_space
+    severity: medium
+    category: assumption_mismatch
+    warning: The decay-produced sterile neutrino can have nonthermal warm behavior; treating it as exactly
+      cold dark matter can be misleading.
+observables:
+- caveats:
+  - Line limits depend on the active admixture and on whether Majoron decay channels dominate the lifetime.
+  channel: indirect_detection
+  effect_direction: spectral_line
+  environments:
+  - Milky Way halo
+  - galaxy clusters
+  - dark-matter dominated targets
+  id: xray_line_from_sterile_decay
+  key_quantities:
+  - name: sterile-neutrino dark matter mass
+    range: keV-MeV
+    role: core
+    source_reference_ids:
+    - 2106_05298_primary
+    status: inferred
+    symbol: m_nu4
+    unit: keV
+  - name: active-sterile mixing
+    range: model-dependent; X-ray searches bound the viable region
+    role: core
+    source_reference_ids:
+    - 2106_05298_primary
+    status: inferred
+    symbol: U_alpha4
+  linked_constraints:
+  - xray_line_decay_limits
+  linked_routes:
+  - freeze_in_decay_to_xray_lya_route
+  name: Radiative sterile-neutrino decay line
+  notes: The primary paper specifically cites INTEGRAL, NuSTAR, and XMM-Newton line searches.
+  observability: medium
+  predicted_effect: Active-sterile mixing permits nu_4 -> nu + gamma, producing a monochromatic X-ray
+    line from dark-matter dominated regions.
+  redshift_range: null
+  relevance: critical
+  scale_range: null
+  source_reference_ids:
+  - 2106_05298_primary
+  subchannel: x-ray line searches
+- caveats:
+  - The mapping is approximate and depends on the nonthermal distribution and entropy degrees of freedom.
+  channel: lyman_alpha
+  effect_direction: suppression
+  environments:
+  - intergalactic medium
+  - linear-to-mildly nonlinear structure
+  id: lyman_alpha_free_streaming_cutoff
+  key_quantities:
+  - name: mapped thermal WDM mass
+    role: astrophysical
+    source_reference_ids:
+    - 2106_05298_primary
+    status: inferred
+    symbol: m_WDM^Ly
+    unit: keV
+    value: 3 keV reference mapping
+  - name: sterile-neutrino lower mass estimate
+    role: derived
+    source_reference_ids:
+    - 2106_05298_primary
+    status: inferred
+    symbol: m_nu4
+    unit: keV
+    value: about 7.5 keV for the reference mapping
+  linked_constraints:
+  - lyman_alpha_warmness_bound
+  linked_routes:
+  - freeze_in_decay_to_xray_lya_route
+  name: Warm-DM-like Lyman-alpha cutoff
+  notes: The paper translates thermal-WDM Lyman-alpha limits to this freeze-in spectrum.
+  observability: medium
+  predicted_effect: Freeze-in decays of nonrelativistic heavy neutrinos produce a nonthermal sterile-neutrino
+    momentum distribution that suppresses small-scale matter power similarly to warm dark matter.
+  redshift_range: null
+  relevance: high
+  scale_range: Lyman-alpha forest scales
+  source_reference_ids:
+  - 2106_05298_primary
+  subchannel: forest flux power / matter-power suppression
+- caveats:
+  - The Hubble-tension interpretation is model-dependent and tied to the light-scalar thermal history.
+  channel: cmb
+  effect_direction: enhancement
+  environments:
+  - early Universe plasma
+  id: majoron_neff_h0_signature
+  key_quantities:
+  - name: effective radiation contribution
+    range: roughly 0.2-0.5 in the discussed thermalization region
+    role: cosmological
+    source_reference_ids:
+    - 2106_05298_primary
+    status: inferred
+    symbol: Delta N_eff
+  - name: scalar-Higgs coupling
+    range: threshold for Majoron thermalization through scalar decays/scattering
+    role: core
+    source_reference_ids:
+    - 2106_05298_primary
+    status: inferred
+    symbol: lambda_1H
+  linked_constraints:
+  - majoron_neff_lifetime_consistency
+  linked_routes:
+  - freeze_in_decay_to_xray_lya_route
+  name: Majoron contribution to early radiation and late neutrino decays
+  notes: This is a cosmological observable of the same inverse-seesaw/Majoron setup, not a direct dark-matter
+    detection channel.
+  observability: low
+  predicted_effect: The dynamically generated Majoron population can raise the effective radiation content
+    and later decay to neutrinos, affecting CMB-inferred expansion parameters.
+  redshift_range: null
+  relevance: medium
+  scale_range: CMB acoustic and damping scales
+  source_reference_ids:
+  - 2106_05298_primary
+  subchannel: N_eff and expansion history
+constraints:
+- allowed_regions:
+  - Small active admixture and/or longer lifetime regions remain viable.
+  applies: parameter_dependent
+  assumptions:
+  - can_be_relaxed: 'yes'
+    description: nu_4 supplies the dark matter density used to interpret line-search limits.
+    id: sterile_fraction_full_dm
+    impact_if_violated: Subcomponent dark matter would weaken flux limits.
+    notes: null
+    scope: indirect searches
+    source_reference_ids:
+    - 2106_05298_primary
+    status: assumed
+  benchmark_implications:
+  - X-ray limits are stronger than the Majoron-lifetime bound in the benchmark regions discussed.
+  caveats:
+  - Line limits require target-dependent decay-flux modeling.
+  constrained_parameters:
+  - m_nu4
+  - U_alpha4
+  - tau_nu4
+  constraint_type: indirect_detection
+  data_release: INTEGRAL, NuSTAR, and XMM-Newton line searches cited in the primary paper
+  excluded_regions:
+  - Parameter regions where radiative decay exceeds INTEGRAL, NuSTAR, or XMM-Newton line limits.
+  id: xray_line_decay_limits
+  likelihood_available: unknown
+  likelihood_reference: null
+  name: X-ray decay limits on active-sterile mixing
+  notes: Primary-paper constraint summary; no likelihood table was extracted.
+  observable_channel: indirect_detection:xray_line
+  recasting_needed: 'yes'
+  robustness: medium
+  source_reference_ids:
+  - 2106_05298_primary
+- allowed_regions:
+  - m_nu4 above the mapped lower limit in the reference scenario.
+  applies: parameter_dependent
+  assumptions:
+  - can_be_relaxed: 'yes'
+    description: The nonthermal freeze-in spectrum can be approximately mapped to a thermal WDM mass.
+    id: thermal_wdm_mapping
+    impact_if_violated: A dedicated Boltzmann/transfer-function calculation can shift the bound.
+    notes: null
+    scope: Lyman-alpha reinterpretation
+    source_reference_ids:
+    - 2106_05298_primary
+    status: approximate
+  benchmark_implications:
+  - Benchmarks near the few-keV scale require a dedicated nonthermal transfer-function recast.
+  caveats:
+  - The mapping should not be used as a public likelihood without recomputing the transfer function.
+  constrained_parameters:
+  - m_nu4
+  - m_WDM^Ly
+  - g_star_s
+  constraint_type: astrophysical
+  data_release: Thermal-WDM Lyman-alpha bounds mapped in the primary paper
+  excluded_regions:
+  - Masses below the mapped lower limit, about m_nu4 < 7.5 keV for m_WDM^Ly = 3 keV and the reference
+    entropy choice.
+  id: lyman_alpha_warmness_bound
+  likelihood_available: unknown
+  likelihood_reference: null
+  name: Lyman-alpha lower-mass mapping for freeze-in sterile DM
+  notes: The paper gives an explicit scaling relation for the mapped lower mass.
+  observable_channel: lyman_alpha
+  recasting_needed: 'yes'
+  robustness: medium
+  source_reference_ids:
+  - 2106_05298_primary
+- allowed_regions:
+  - Scalar thermalization regions yielding an allowed Majoron contribution and sterile-DM lifetime longer
+    than the Universe age.
+  applies: parameter_dependent
+  assumptions: []
+  benchmark_implications:
+  - The Majoron solution to H0 tension coexists only in a restricted scalar/mixing parameter region.
+  caveats:
+  - The primary paper notes a detailed simultaneous thermalization treatment is beyond its scope.
+  constrained_parameters:
+  - Delta N_eff
+  - lambda_1H
+  - tau_nu4_to_Jnu
+  constraint_type: cosmological
+  data_release: CMB/BBN-motivated N_eff and lifetime consistency described in primary paper
+  excluded_regions:
+  - Regions where nu_4 -> J + nu gives a lifetime shorter than the age of the Universe.
+  id: majoron_neff_lifetime_consistency
+  likelihood_available: unknown
+  likelihood_reference: null
+  name: Majoron cosmology and sterile-DM lifetime consistency
+  notes: Structured as a consistency constraint rather than an external data likelihood.
+  observable_channel: cmb:n_eff_and_decay
+  recasting_needed: partial
+  robustness: medium
+  source_reference_ids:
+  - 2106_05298_primary
+theory_to_observable_routing:
+  routes:
+  - agent_notes: No public implementation was extracted from the paper text.
+    caveats:
+    - Nonthermal momentum and Majoron thermalization need dedicated numerical treatment.
+    constraint_ids:
+    - xray_line_decay_limits
+    - lyman_alpha_warmness_bound
+    - majoron_neff_lifetime_consistency
+    derived_quantities:
+    - Omega_nu4 h^2
+    - tau_nu4
+    - radiative line flux
+    - nonthermal momentum distribution
+    - mapped m_WDM
+    description: Map inverse-seesaw freeze-in parameters to sterile-DM abundance, decay observables, and
+      warmness constraints.
+    forward_model_chain:
+    - inputs:
+      - N_i thermal abundance
+      - decay widths to nu_4 plus scalars/Majoron
+      notes: Use the full decay-width expression rather than only scaling limits.
+      outputs:
+      - Omega_nu4 h^2
+      step_id: solve_freeze_in_yield
+      step_type: boltzmann_solver
+      tool_or_code: null
+      validity: Heavy neutrinos must thermalize with the SM plasma.
+    - inputs:
+      - m_nu4
+      - U_alpha4
+      - Majoron coupling scales
+      notes: Compare lifetime to line-search and age-of-Universe bounds.
+      outputs:
+      - radiative lifetime
+      - Majoron-neutrino lifetime
+      step_id: compute_decay_rates
+      step_type: analytic_formula
+      tool_or_code: null
+      validity: Valid for the small-mixing inverse-seesaw limit discussed in the paper.
+    - inputs:
+      - nonthermal momentum distribution
+      - entropy degrees of freedom
+      notes: The paper provides a reference WDM mapping.
+      outputs:
+      - mapped thermal WDM mass
+      - Lyman-alpha exclusion estimate
+      step_id: map_to_structure_bound
+      step_type: transfer_function
+      tool_or_code: null
+      validity: Approximate unless a dedicated transfer function is computed.
+    id: freeze_in_decay_to_xray_lya_route
+    input_parameters:
+    - m_nu4
+    - m_N
+    - U_alpha4
+    - mu_Ls
+    - mu_Rs
+    - v1
+    - v2
+    - lambda_1H
+    likelihoods:
+    - external X-ray line likelihoods
+    - Lyman-alpha forest likelihood after transfer-function recast
+    - CMB/BBN N_eff constraints
+    observable_ids:
+    - xray_line_from_sterile_decay
+    - lyman_alpha_free_streaming_cutoff
+    - majoron_neff_h0_signature
+    required_code_resources:
+    - Boltzmann solver for decays
+    - linear transfer-function computation
+    - line-flux calculator
+    route_status: planned
+    source_model_features:
+    - heavy pseudo-Dirac neutrino decays
+    - Majoron/lepton-number breaking sector
+    - active-sterile mixing
+    validation_tests:
+    - reproduce Omega h^2 ~ 0.12 scaling
+    - recover m_nu4 lower-bound mapping for m_WDM^Ly=3 keV
+    - check tau_nu4 exceeds Universe age

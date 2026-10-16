@@ -1,0 +1,690 @@
+_source:
+  shard: arXiv_src_1202_001_wds.tar
+  paper_id: '1202_0288'
+  source_member: 1202_0288.json
+  enriched: true
+  enrichment_schema_version: dm_model_ocr_enrichment_smoke_v0
+schema_version: model_only_v0
+model_id: 1202_0288_inert_doublet_multi_higgs_inflation_dm_v1
+identity:
+  name: Inert-doublet multi-Higgs-inflation dark matter
+  family: inert_doublet_dark_matter
+  aliases:
+  - multi-Higgs inflation inert Higgs dark matter
+  - heavy inert Higgs dark matter with approximate U(1)_H
+  short_description: A two-Higgs-doublet inert model variant in which nonminimal gravity couplings and
+    an approximate U(1)_H symmetry give multi-field Higgs inflation, while the lightest neutral inert
+    scalar H^0 is stabilized by the inert parity and can be dark matter only in the heavy, nearly degenerate
+    H^0/A^0 regime around 600 GeV.
+  historical_origin_or_motivation: Developed to connect extended Higgs inflation, vacuum stability, and
+    inert-doublet dark matter phenomenology.
+  status: speculative
+  model_kind: complete_theory
+theory:
+  theory_level: effective_field_theory
+  parent_frameworks:
+  - two Higgs doublet model
+  - inert doublet model
+  - Higgs inflation with nonminimal gravity couplings
+  lagrangian_available: 'yes'
+  renormalizable: 'no'
+  eft_cutoff:
+    name: unitarity scale from nonminimal gravity coupling
+    symbol: Lambda_U
+    description: Scale at which large nonminimal Higgs-gravity couplings can violate perturbative unitarity
+      in the vacuum.
+    value: min(1/xi_1, 1/xi_2) in Planck units
+    unit: null
+    role: core
+    status: inferred
+    source_reference_ids:
+    - '1202.0288'
+    notes: The paper imposes perturbativity and stability conditions at this scale.
+  embedded_in_larger_framework: 'yes'
+  notes: The scalar potential is the renormalizable two-Higgs-doublet potential with Z2 parity and nonminimal
+    gravity couplings, treated as an inflationary effective theory.
+particle_content:
+  dark_matter_candidate:
+    name: H^0
+    spin: '0'
+    statistics: scalar
+    elementary_or_composite: elementary
+    number_of_components: single_component
+  additional_dark_sector_particles:
+  - CP-odd inert scalar A^0 nearly degenerate with H^0
+  - charged inert scalars H^+ and H^-
+  - second Higgs doublet Phi_2
+  mediators:
+  - Standard Model Higgs h
+  - Z boson in coannihilation
+  - weak gauge bosons
+  dark_radiation_species: []
+  excited_or_degenerate_states:
+  - A^0 nearly degenerate with H^0 when lambda_5 is very small
+  long_lived_particles: []
+  unstable_parent_particles: []
+  standard_model_extension: substantial
+symmetries:
+  stabilizing_mechanism: An exact inert Z2 parity prevents the second Higgs doublet from coupling to Standard
+    Model fermions and stabilizes the lightest neutral inert scalar; an approximate U(1)_H keeps lambda_5
+    very small in the multi-Higgs inflation case.
+  symmetries:
+  - name: inert Z2 parity
+    type: discrete
+    exact_or_approximate: exact
+    breaking: Unbroken in the low-energy inert doublet setup used for dark matter.
+    breaking_scale: null
+  - name: U(1)_H
+    type: global
+    exact_or_approximate: approximate
+    breaking: Only tiny U(1)_H-breaking quartic couplings such as lambda_5 are allowed during multi-Higgs
+      inflation.
+    breaking_scale: null
+  topological_defects_possible: unknown
+interactions:
+  portals:
+  - higgs
+  - vector
+  standard_model_targets:
+  - Standard Model fermions
+  - W bosons
+  - Z bosons
+  - Higgs bosons
+  dark_sector_couplings:
+  - lambda_L + lambda_5 coupling controlling H^0 H^0 annihilation through the Higgs
+  - gauge coannihilation through Z exchange with A^0
+  - weak gauge interactions of the inert doublet
+  mediator_types:
+  - Standard Model Higgs
+  - Z boson
+  - weak gauge bosons
+  interaction_operators:
+  - two-Higgs-doublet scalar quartic terms lambda_i
+  - nonminimal gravity couplings xi_1 and xi_2
+  scattering:
+    elastic: 'yes'
+    inelastic: 'yes'
+    momentum_dependence: unknown
+    velocity_dependence: mild
+    spin_dependence: spin_independent
+  annihilation_channels:
+  - H^0 H^0 -> Standard Model fermion pairs through Higgs quartic coupling
+  - H^0 H^0 -> W W and Z Z when kinematically open
+  - coannihilation with A^0 through gauge interactions
+  decay_channels: []
+  self_scattering_channels: []
+  cp_structure: H^0 is CP-even and A^0 is CP-odd in the inert doublet notation used by the paper.
+  flavor_structure: The inert doublet is taken not to couple to Standard Model fermions, avoiding additional
+    flavor violation.
+  tree_or_loop_level: tree
+parameters:
+  core:
+  - name: dark matter mass
+    symbol: m_H0
+    description: Mass of the lightest neutral inert scalar in the multi-Higgs inflation dark matter regime.
+    range: around 600 GeV
+    unit: GeV
+    role: core
+    status: inferred
+    source_reference_ids:
+    - '1202.0288'
+    notes: The paper states that only heavy dark matter with mass around 600 GeV is possible in this approximate
+      U(1)_H case.
+  - name: CP-odd inert scalar mass
+    symbol: m_A0
+    description: Mass of the CP-odd inert scalar, nearly degenerate with H^0 when lambda_5 is tiny.
+    range: around 600 GeV and nearly degenerate with m_H0
+    unit: GeV
+    role: core
+    status: inferred
+    source_reference_ids:
+    - '1202.0288'
+    notes: The small splitting drives important coannihilation.
+  - name: U(1)_H-breaking quartic
+    symbol: lambda_5
+    description: Quartic coupling that controls the H^0/A^0 splitting and breaks U(1)_H.
+    range: typically less than about 1e-7 in most multi-Higgs-inflation parameter space
+    unit: null
+    role: core
+    status: inferred
+    source_reference_ids:
+    - '1202.0288'
+    notes: The paper says lambda_5 remains small under running because of approximate U(1)_H.
+  - name: nonminimal gravity couplings
+    symbol: xi_1, xi_2
+    description: Positive nonminimal couplings of the two Higgs doublets to gravity.
+    range: model dependent
+    unit: null
+    role: core
+    status: assumed
+    source_reference_ids:
+    - '1202.0288'
+    notes: These couplings define the inflationary dynamics.
+  nuisance: []
+  derived:
+  - name: relic abundance target band
+    symbol: Omega_H0 h^2
+    description: Thermal relic-density band used in the paper.
+    range: 0.094 to 0.136 for full WMAP-consistent abundance; also considers below 0.136 as a subcomponent
+    unit: null
+    role: derived
+    status: inferred
+    source_reference_ids:
+    - '1202.0288'
+    notes: The paper permits another dark matter component if H^0 is underabundant.
+production:
+  mechanisms:
+  - thermal WIMP freeze-out
+  - coannihilation with nearly degenerate A^0 through gauge interactions
+  - annihilation through Higgs quartic couplings and weak gauge channels
+  thermal_equilibrium_with_standard_model: 'yes'
+  thermal_equilibrium_with_hidden_sector: not_applicable
+  abundance_set_by:
+  - m_H0
+  - m_A0 - m_H0 splitting controlled by lambda_5
+  - lambda_L + lambda_5 Higgs coupling
+  - weak gauge coannihilation
+  depends_on_reheating_temperature: unknown
+  can_produce_all_dark_matter: parameter_dependent
+  nonthermal_momentum_distribution: 'no'
+  notes: The approximate U(1)_H case keeps lambda_5 tiny, making light H^0 over-efficiently coannihilate;
+    the paper says the viable case is heavy H^0 around 600 GeV.
+relic_density:
+  full_or_subcomponent: either
+  target_fraction: null
+  calculation_type: thermal
+  key_dependencies:
+  - thermal freeze-out cross section
+  - H^0/A^0 coannihilation
+  - Higgs quartic coupling
+  - weak gauge annihilation channels
+  requires_entropy_dilution: 'no'
+  overclosure_risk: parameter_dependent
+  underproduction_risk: parameter_dependent
+  tuning_assessment: unknown
+cosmological_history:
+  standard_history_assumed: false
+  nonstandard_features:
+  - multi-field Higgs inflation driven by Higgs modulus and pseudo-scalar direction
+  - nonminimal Higgs-gravity couplings
+  - approximate U(1)_H during inflation
+  dark_sector_temperature: null
+  delta_neff: null
+  kinetic_decoupling: null
+  chemical_decoupling:
+    name: thermal freeze-out temperature
+    symbol: T_F
+    description: Freeze-out temperature used in the paper's relic-density formula.
+    value: m_H0/20
+    unit: GeV
+    role: derived
+    status: inferred
+    source_reference_ids:
+    - '1202.0288'
+    notes: The paper uses x_F = m_H0/T_F = 20.
+  phase_transitions:
+  - electroweak symmetry breaking with only the Standard Model Higgs doublet taking a low-energy vev
+  topological_defects: []
+  isocurvature_perturbations: unknown
+  bbn_relevance: unknown
+  cmb_relevance: high
+phase_space:
+  distribution_type: thermal
+  distribution_function_available: approximate
+  f_of_p_or_q: thermal WIMP distribution assumed through freeze-out treatment
+  average_momentum_relative_to_thermal: null
+  free_streaming_length: null
+  velocity_dispersion_today: null
+  phase_space_bounds: []
+  notes: The inert scalar is cold on structure-formation scales.
+structure_formation:
+  linear:
+    behaves_like_cdm: 'yes'
+    transfer_function_shape: cdm_like
+    small_scale_power_effect: none
+    half_mode_mass: null
+    thermal_wdm_mapping:
+      available: false
+      validity: invalid
+      warning: The candidate is a heavy thermal WIMP, not a warm relic.
+    impact_on_sigma8_s8: unknown
+  nonlinear:
+    halo_mass_function_effect: unknown beyond CDM-like behavior
+    subhalo_mass_function_effect: unknown beyond CDM-like behavior
+    simulation_calibrated: 'no'
+validity_domain:
+- id: multi_higgs_inflation_heavy_dm_regime
+  applies_to: model
+  condition: Approximate U(1)_H keeps lambda_5 tiny, making H^0 and A^0 nearly degenerate; the paper's
+    viable dark matter regime is heavy H^0 around 600 GeV.
+  valid_range: m_H0 and m_A0 around 600 GeV with small splitting; lambda_5 typically less than about 1e-7
+  status: inferred
+  extrapolation_risk: medium
+  caveats:
+  - Light H^0 below 100 GeV is not viable in this variant because coannihilation is too large.
+  source_reference_ids:
+  - '1202.0288'
+  notes: Use this row for the approximate U(1)_H multi-Higgs-inflation variant only.
+assumptions:
+  global:
+  - id: exact_inert_parity
+    description: The Z2 symmetry is exact at low energy so Phi_2 does not couple to Standard Model fermions
+      and H^0 is stable.
+    scope: theory
+    status: assumed
+    impact_if_violated: The H^0 candidate would decay or induce flavor violation.
+    can_be_relaxed: 'no'
+    source_reference_ids:
+    - '1202.0288'
+    notes: The paper explicitly uses the inert doublet model for low-energy phenomenology.
+  - id: approximate_u1h
+    description: The multi-Higgs inflation case has an approximate U(1)_H that keeps U(1)_H-breaking quartics
+      tiny.
+    scope: theory
+    status: assumed
+    impact_if_violated: The H^0/A^0 mass splitting and coannihilation picture would change.
+    can_be_relaxed: 'yes'
+    source_reference_ids:
+    - '1202.0288'
+    notes: The single-Higgs variant is recorded separately.
+  - id: thermal_wimp_calculation
+    description: The relic abundance is computed as a thermal WIMP abundance, with micrOMEGAs used for
+      numerical analysis and analytic freeze-out estimates shown in the text.
+    scope: production
+    status: assumed
+    impact_if_violated: The quoted mass regimes would not directly apply.
+    can_be_relaxed: unknown
+    source_reference_ids:
+    - '1202.0288'
+    notes: The paper also allows H^0 to be a subcomponent.
+associated_code:
+  has_associated_code: partial
+  code_summary: The paper states that micrOMEGAs was adapted to the model to compute thermal WIMP relic
+    abundance and direct-detection cross sections; no dedicated public model package is identified.
+  primary_code_role: relic_density_calculation
+provenance:
+  model_id: 1202_0288_inert_doublet_multi_higgs_inflation_dm_v1
+  model_name: Inert-doublet multi-Higgs-inflation dark matter
+  model_family: inert_doublet_dark_matter
+  entry_version: 0.1.0
+  status: machine_extracted
+  created_at: '2026-05-31'
+  last_updated: '2026-05-31'
+  sources:
+    primary_papers:
+    - reference_id: '1202.0288'
+      title: unknown
+      authors: []
+      year: 2012
+      arxiv_id: '1202.0288'
+      doi: null
+      url: null
+      role: original_model
+      notes: The extracted text in target_text.sqlite did not preserve a clear title or author block;
+        the model content is from the assigned full text.
+    - arxiv_id: '1202.0288'
+      authors:
+      - Gong, Jinn-Ouk
+      - Lee, Hyun Min
+      - Kang, Sin Kyu
+      doi: 10.1007/JHEP04(2012)128
+      notes: Primary paper text resolved locally from configured SQLite caches.
+      reference_id: '1202.0288'
+      role: original_model
+      title: Inflation and dark matter in two Higgs doublet models
+      url: https://arxiv.org/abs/1202.0288
+      year: 2012
+    constraint_papers: []
+    external_databases: []
+    review_papers: []
+  extraction:
+    method: llm_assisted
+    extracted_by: codex_dark_matter_batch_worker
+    extractor_name: Codex
+    extraction_date: '2026-05-31'
+    confidence: medium
+    source_chunks_or_sections:
+    - reference_id: '1202.0288'
+      section: opening summary
+      page: null
+      quote_or_summary: The paper states that the lightest neutral scalar of the second Higgs doublet
+        can be dark matter and distinguishes multi-Higgs from single-Higgs inflation cases.
+    - reference_id: '1202.0288'
+      section: dark matter constraints and implications from multi-Higgs inflation
+      page: null
+      quote_or_summary: The text says approximate U(1)_H keeps lambda_5 tiny; light H^0 is not possible,
+        while H^0 and A^0 around 600 GeV can accommodate relic density.
+    unresolved_items:
+    - The title and authors were not clearly available in the extracted text.
+  evidence:
+    particle_content:
+    - reference_id: '1202.0288'
+      note: The low-energy inert doublet setup has H^0, A^0, and charged H^+- states, with H^0 taken as
+        dark matter for lambda_5 < 0.
+      confidence: high
+      section: low energy constraints
+      page: null
+    symmetries:
+    - reference_id: '1202.0288'
+      note: The Z2 symmetry keeps the second Higgs doublet from coupling to SM fermions; approximate U(1)_H
+        keeps lambda_5 very small in multi-Higgs inflation.
+      confidence: high
+      section: two-Higgs-doublet setup and implications
+      page: null
+    interactions:
+    - reference_id: '1202.0288'
+      note: The paper identifies gauge coannihilation and Higgs-quartic annihilation as the interactions
+        determining the relic density.
+      confidence: high
+      section: dark matter constraints
+      page: null
+    production_mechanism:
+    - reference_id: '1202.0288'
+      note: The relic-density calculation uses thermal freeze-out with x_F about 20 and includes coannihilation
+        when H^0 and A^0 are nearly degenerate.
+      confidence: high
+      section: dark matter constraints
+      page: null
+    parameter_ranges:
+    - reference_id: '1202.0288'
+      note: For multi-Higgs inflation, lambda_5 is usually below about 1e-7 and viable dark matter requires
+        heavy H^0 and A^0 around 600 GeV.
+      confidence: medium
+      section: implications from multi-Higgs inflation
+      page: null
+    validity_domain:
+    - reference_id: '1202.0288'
+      note: The authors state that light dark matter below 100 GeV is not possible in the multi-Higgs
+        case because of too-large coannihilation.
+      confidence: high
+      section: implications from multi-Higgs inflation
+      page: null
+    constraints:
+    - confidence: high
+      note: Primary local full text supports this constraint entry.
+      page: null
+      reference_id: '1202.0288'
+      section: primary text
+    - confidence: high
+      note: Primary local full text supports this constraint entry.
+      page: null
+      reference_id: '1202.0288'
+      section: primary text
+    - confidence: high
+      note: Primary local full text supports this constraint entry.
+      page: null
+      reference_id: '1202.0288'
+      section: primary text
+    observables:
+    - confidence: high
+      note: Primary local full text supports this observable entry.
+      page: null
+      reference_id: '1202.0288'
+      section: primary text
+    - confidence: high
+      note: Primary local full text supports this observable entry.
+      page: null
+      reference_id: '1202.0288'
+      section: primary text
+    - confidence: high
+      note: Primary local full text supports this observable entry.
+      page: null
+      reference_id: '1202.0288'
+      section: primary text
+    routes:
+    - confidence: medium
+      note: Route follows the calculation chain described in the primary paper.
+      page: null
+      reference_id: '1202.0288'
+      section: primary text
+  review:
+    human_reviewed: false
+    reviewed_by: null
+    review_date: null
+    expert_reviewed: false
+    expert_reviewer: null
+    expert_review_date: null
+    reviewer_notes: []
+    scientific_confidence: medium
+    implementation_confidence: medium
+robustness:
+  overall: medium
+  theory_robustness: medium
+  observational_robustness: unknown
+  computational_robustness: medium
+  constraint_robustness: not_applicable
+  dominant_uncertainties:
+  - Title and author metadata are missing from the extracted text.
+  - The card separates one of two model variants from a paper whose primary focus is inflation plus dark
+    matter phenomenology.
+  validation_status: expert_judgment_only
+  notes: The heavy-H^0 multi-Higgs variant is well supported by the paper text, but precise numerical
+    regions depend on the paper's scans.
+agent_failure_modes:
+  warnings:
+  - id: multi_vs_single_higgs_variant_mixup
+    severity: medium
+    category: notation_conflict
+    warning: Do not merge this approximate-U(1)_H multi-Higgs-inflation row with the Z2 single-Higgs-inflation
+      row; their viable H^0 mass regimes and lambda_5 assumptions differ.
+    mitigation: Check the symmetry assumption and mass range before using the card.
+    source_reference_ids:
+    - '1202.0288'
+observables:
+- caveats: []
+  channel: cosmology
+  effect_direction: rate_change
+  environments:
+  - early universe
+  id: coannihilation_relic
+  key_quantities:
+  - name: dark matter mass
+    range: around 600 GeV
+    status: inferred
+    symbol: m_H0
+    unit: GeV
+  - name: mass splitting
+    range: small
+    status: inferred
+    symbol: m_A0-m_H0
+  linked_constraints:
+  - heavy_window
+  linked_routes:
+  - coannihilation_route
+  name: Heavy nearly degenerate H0/A0 relic abundance
+  notes: null
+  observability: high
+  predicted_effect: Tiny lambda_5 in approximate U(1)_H makes H0 and A0 nearly degenerate, so gauge coannihilation
+    controls the heavy around-600 GeV branch.
+  redshift_range: null
+  relevance: critical
+  scale_range: null
+  source_reference_ids:
+  - '1202.0288'
+  subchannel: thermal coannihilation
+- caveats: []
+  channel: direct_detection
+  effect_direction: null_signal
+  environments:
+  - laboratory or detector
+  id: light_null
+  key_quantities:
+  - name: U(1)H-breaking quartic
+    range: <~1e-7 in most parameter space
+    status: inferred
+    symbol: lambda_5
+  - name: dark matter mass
+    range: <100 GeV excluded
+    status: inferred
+    symbol: m_H0
+  linked_constraints:
+  - light_exclusion
+  linked_routes:
+  - coannihilation_route
+  name: No viable light H0 branch
+  notes: null
+  observability: high
+  predicted_effect: The paper states m_H0 <100 GeV is not viable in most multi-Higgs parameter space because
+    coannihilation is too large and direct detection is incompatible.
+  redshift_range: null
+  relevance: critical
+  scale_range: null
+  source_reference_ids:
+  - '1202.0288'
+  subchannel: combined relic/direct-detection null
+- caveats: []
+  channel: cmb
+  effect_direction: shape_change
+  environments:
+  - early universe
+  id: multifield_cmb
+  key_quantities:
+  - name: effective quartic
+    status: inferred
+    symbol: lambda_eff
+  - name: nonminimal coupling
+    status: inferred
+    symbol: xi_eff
+  linked_constraints:
+  - inflation_region
+  linked_routes:
+  - coannihilation_route
+  name: Multi-field Higgs-inflation CMB observables
+  notes: null
+  observability: medium
+  predicted_effect: The Higgs modulus drives slow roll while a pseudo-scalar direction can modify inflationary
+    predictions and non-Gaussianity.
+  redshift_range: null
+  relevance: medium
+  scale_range: null
+  source_reference_ids:
+  - '1202.0288'
+  subchannel: inflation perturbations
+constraints:
+- allowed_regions:
+  - Heavy nearly degenerate H0/A0 around 600 GeV can work.
+  applies: 'yes'
+  assumptions: []
+  benchmark_implications:
+  - Distinguishes this variant from the single-Higgs case.
+  caveats: []
+  constrained_parameters:
+  - m_H0
+  - lambda_5
+  constraint_type: cosmological
+  data_release: null
+  excluded_regions:
+  - m_H0 <100 GeV excluded in most approximate-U(1)_H parameter space.
+  id: light_exclusion
+  likelihood_available: approximate
+  likelihood_reference: null
+  name: Light-H0 exclusion in multi-Higgs inflation
+  notes: null
+  observable_channel: cosmology/direct_detection
+  recasting_needed: partial
+  robustness: medium
+  source_reference_ids:
+  - '1202.0288'
+- allowed_regions:
+  - Around-600 GeV nearly degenerate spectra can satisfy relic and direct-detection requirements.
+  applies: parameter_dependent
+  assumptions: []
+  benchmark_implications:
+  - Gauge coannihilation is the key mechanism.
+  caveats: []
+  constrained_parameters:
+  - Omega_H0 h^2
+  - m_H0
+  - m_A0
+  constraint_type: cosmological
+  data_release: null
+  excluded_regions:
+  - Thermal-abundance failures outside the heavy branch are disfavored.
+  id: heavy_window
+  likelihood_available: approximate
+  likelihood_reference: null
+  name: Heavy inert-doublet relic-density window
+  notes: null
+  observable_channel: cosmology
+  recasting_needed: partial
+  robustness: medium
+  source_reference_ids:
+  - '1202.0288'
+- allowed_regions:
+  - Allowed WMAP7-era inflation regions remain in lambda_eff/lambda_5.
+  applies: 'yes'
+  assumptions: []
+  benchmark_implications:
+  - High-scale inflation conditions enforce the low-energy degeneracy.
+  caveats: []
+  constrained_parameters:
+  - lambda_i
+  - xi_i
+  - lambda_5
+  constraint_type: theoretical
+  data_release: null
+  excluded_regions:
+  - Quartics violating perturbativity or stability at the unitarity scale are excluded.
+  id: inflation_region
+  likelihood_available: 'no'
+  likelihood_reference: null
+  name: Inflationary stability/perturbativity region
+  notes: null
+  observable_channel: cmb
+  recasting_needed: partial
+  robustness: medium
+  source_reference_ids:
+  - '1202.0288'
+theory_to_observable_routing:
+  routes:
+  - agent_notes: null
+    caveats: []
+    constraint_ids:
+    - light_exclusion
+    - heavy_window
+    - inflation_region
+    derived_quantities:
+    - mass splitting
+    - coannihilation rate
+    - Omega_H0 h^2
+    - sigma_SI
+    description: Connect approximate U(1)_H inflation constraints to H0/A0 degeneracy, coannihilation,
+      and detector limits.
+    forward_model_chain:
+    - inputs:
+      - lambda_5
+      - m_H0
+      - m_A0
+      - lambda_L
+      - xi_i
+      notes: null
+      outputs:
+      - mass splitting
+      - coannihilation rate
+      - Omega_H0 h^2
+      - sigma_SI
+      step_id: compute
+      step_type: other
+      tool_or_code: null
+      validity: Primary-paper level route; precision recast requires dedicated implementation.
+    id: coannihilation_route
+    input_parameters:
+    - lambda_5
+    - m_H0
+    - m_A0
+    - lambda_L
+    - xi_i
+    likelihoods: []
+    observable_ids:
+    - coannihilation_relic
+    - light_null
+    - multifield_cmb
+    required_code_resources:
+    - micrOMEGAs
+    route_status: planned
+    source_model_features:
+    - approximate U(1)_H
+    - tiny lambda_5
+    - near-degenerate inert scalars
+    validation_tests:
+    - reproduce qualitative allowed/excluded regions quoted in the primary paper

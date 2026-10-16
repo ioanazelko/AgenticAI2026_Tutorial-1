@@ -1,0 +1,839 @@
+_source:
+  shard: arXiv_src_1809_018_wds.tar
+  paper_id: '1809_06382'
+  source_member: 1809_06382.json
+  enriched: true
+  enrichment_schema_version: dm_model_ocr_enrichment_smoke_v0
+schema_version: model_only_v0
+model_id: 1809_06382_string_axiverse_misalignment_dm_v1
+identity:
+  name: String-axiverse misalignment dark matter parameterization
+  family: axion_like_dark_matter
+  aliases:
+  - string axiverse ULA dark matter
+  - mixed axion dark matter scenario
+  short_description: A string-axiverse axion dark matter framework parameterized by SUSY-breaking scale,
+    instanton action, initial misalignment angle, and isocurvature fraction, with relic abundance from
+    misalignment constrained not to exceed CDM.
+  historical_origin_or_motivation: The paper develops a cosmological parameter inference window onto the
+    string axiverse and the supersymmetry-breaking scale using relic-density and isocurvature requirements.
+  status: emerging
+  model_kind: phenomenological_parameterization
+theory:
+  theory_level: effective_field_theory
+  parent_frameworks:
+  - string axiverse
+  - axion-like particles
+  - misalignment-produced dark matter
+  lagrangian_available: partial
+  renormalizable: not_applicable
+  embedded_in_larger_framework: 'yes'
+  notes: The paper gives an effective four-dimensional axion Lagrangian from compactification and parameterizes
+    mass/decay constant through instanton action and SUSY scale.
+particle_content:
+  dark_matter_candidate:
+    name: string axion / axion-like particle a
+    spin: '0'
+    statistics: boson
+    elementary_or_composite: elementary
+    number_of_components: single_component
+  additional_dark_sector_particles:
+  - possible axiverse population of other axions
+  mediators: []
+  dark_radiation_species: []
+  standard_model_extension: minimal
+symmetries:
+  stabilizing_mechanism: Approximate axion shift symmetry broken by non-perturbative instanton effects
+    gives a light, long-lived scalar field; decay-rate cuts require lifetime longer than the present expansion
+    time.
+  symmetries:
+  - name: axion shift symmetry
+    type: shift
+    exact_or_approximate: broken
+    breaking: Broken by string instantons generating the axion potential
+    breaking_scale: null
+  topological_defects_possible: unknown
+interactions:
+  portals:
+  - axion
+  - gravitational
+  standard_model_targets:
+  - photons through possible axion decay considered as a lifetime cut
+  - gravity/cosmological expansion
+  dark_sector_couplings: []
+  mediator_types: []
+  interaction_operators:
+  - effective kinetic term f_a^2 (partial theta)^2 / 2 and potential scale Lambda_a^4 theta^2 / 2 in small-angle
+    approximation
+  scattering:
+    elastic: not_applicable
+    inelastic: not_applicable
+    momentum_dependence: not_applicable
+    velocity_dependence: not_applicable
+    spin_dependence: not_applicable
+  decay_channels:
+  - two photons considered for lifetime requirement
+  tree_or_loop_level: unknown
+operators:
+  eft_operators:
+  - axion effective kinetic and potential terms from compactification
+  - a Tr G G / f_a for QCD-axion motivation
+  contact_or_light_mediator: not_applicable
+  coupling_types:
+  - shift-symmetry-suppressed axion couplings
+  - gravitational cosmological evolution
+parameters:
+  core:
+  - name: axion mass
+    symbol: m_a
+    description: Mass inferred from instanton action and SUSY scale; string-inspired posterior favors
+      about 10^-21.5 eV.
+    range: 10^-21.5(+1.3,-2.3)
+    unit: eV
+    role: core
+    status: inferred
+  - name: axion decay constant
+    symbol: f_a
+    description: Decay constant related to instanton action in the paper parameterization.
+    value: (5.1 +0.5 -0.9) x 10^-3 M_Pl
+    unit: M_Pl
+    role: core
+    status: inferred
+  - name: SUSY breaking scale
+    symbol: M_susy
+    description: SUSY-breaking scale entering the string axion mass relation; poorly constrained in the
+      main analysis.
+    role: core
+    status: unknown
+  - name: instanton action
+    symbol: S
+    description: Dimensionless action of string instantons that break the shift symmetry.
+    value: 198 +/- 28
+    role: core
+    status: inferred
+  - name: initial misalignment angle
+    symbol: theta_i
+    description: Initial axion misalignment angle sampled from the unit circle.
+    range: '[-pi, pi]'
+    role: core
+    status: assumed
+  - name: primordial isocurvature fraction
+    symbol: alpha
+    description: Parameter constrained by Planck and used in the likelihood.
+    role: cosmological
+    status: established
+production:
+  mechanisms:
+  - vacuum misalignment after Hubble rate drops below axion mass
+  thermal_equilibrium_with_standard_model: 'no'
+  thermal_equilibrium_with_hidden_sector: not_applicable
+  abundance_set_by:
+  - m_a
+  - f_a
+  - initial misalignment angle
+  - onset of oscillations at m_a approximately 3 H(a_osc)
+  depends_on_reheating_temperature: unknown
+  can_produce_all_dark_matter: parameter_dependent
+  nonthermal_momentum_distribution: 'yes'
+  notes: The authors do not require axions to be all of the dark matter and impose that axion density
+    not exceed measured CDM.
+relic_density:
+  full_or_subcomponent: either
+  calculation_type: nonthermal
+  key_dependencies:
+  - rho_a = (1/2) Lambda_a^4 theta_i^2 (a_osc/a_0)^3
+  - Planck CDM density bound
+  - isocurvature and tensor-to-scalar constraints
+  requires_entropy_dilution: unknown
+  overclosure_risk: parameter_dependent
+  underproduction_risk: parameter_dependent
+  tuning_assessment: unknown
+cosmological_history:
+  standard_history_assumed: true
+  nonstandard_features:
+  - single-field slow-roll inflation assumed for relation between H_I and tensor-to-scalar ratio
+  - axion present during inflation
+  - primordial isocurvature fluctuations from axion quantum fluctuations
+  dark_sector_temperature: null
+  bbn_relevance: unknown
+  cmb_relevance: high
+phase_space:
+  distribution_type: field_like
+  distribution_function_available: not_applicable
+  notes: Coherent axion field from misalignment, not a particle thermal distribution.
+structure_formation:
+  linear:
+    behaves_like_cdm: scale_dependent
+    transfer_function_shape: smooth_cutoff
+    small_scale_power_effect: suppression
+  nonlinear:
+    halo_mass_function_effect: unknown
+    subhalo_mass_function_effect: suppression expected for ULA-like masses but not modeled in this paper
+    simulation_calibrated: 'no'
+validity_domain:
+- id: axion_present_during_inflation
+  applies_to: cosmological_history
+  condition: The analysis assumes f_a > H_I/(2 pi) so the axion is present during inflation.
+  status: assumed
+  extrapolation_risk: medium
+- id: no_overclosure
+  applies_to: parameter
+  condition: The current axion energy density is required not to exceed the CDM density.
+  status: established
+  extrapolation_risk: medium
+- id: string_prior_dependence
+  applies_to: model
+  condition: The favored ULA mass range depends strongly on string-inspired priors and sub-Planckian M_susy.
+  status: inferred
+  extrapolation_risk: high
+assumptions:
+  global:
+  - id: mixed_dm_allowed
+    description: The axion need not make up all of dark matter; mixed dark matter is allowed.
+    scope: production
+    status: assumed
+  - id: gravity_only_inflaton_coupling
+    description: No couplings between axion and inflaton other than gravity are included.
+    scope: cosmological_history
+    status: assumed
+  - id: small_angle_effective_potential
+    description: The effective axion potential is represented in the quadratic small-angle form used by
+      the paper.
+    scope: theory
+    status: assumed
+associated_code:
+  has_associated_code: partial
+  code_summary: The paper uses MontePython configured as a generic sampler and mentions future axionCAMB
+    work, but no model-specific public code is extracted.
+  primary_code_role: other
+  packages_or_modules:
+  - name: MontePython
+    resource_type: package
+    availability: public
+    relationship_to_model: related_but_not_model_specific
+    purpose:
+    - other
+    url: null
+    repository_url: null
+    documentation_url: null
+    archive_url: null
+    doi: null
+    license: null
+    languages: []
+    version: null
+    commit: null
+    last_checked: '2026-05-31'
+    maintained: unknown
+    dependencies: []
+    supported_parameters:
+    - M_susy
+    - S
+    - theta_i
+    - alpha
+    - m_a
+    - f_a
+    supported_model_families:
+    - axion_like_dark_matter
+    supported_observables: []
+    inputs:
+    - priors and likelihoods
+    outputs:
+    - posterior distributions
+    validity_domain:
+    - Generic sampler configuration described in paper
+    citation_reference_ids:
+    - paper
+    notes: Used as a sampler, not as an official model implementation.
+robustness:
+  overall: medium
+  theory_robustness: medium
+  observational_robustness: medium
+  computational_robustness: medium
+  dominant_uncertainties:
+  - Strong prior dependence of inferred axion mass range
+  - Simplified cosmological likelihood rather than full precision data analysis
+  - Order-unity uncertainty in converting S to f_a
+  validation_status: expert_judgment_only
+agent_failure_modes:
+  warnings:
+  - id: prior_dependent_model
+    severity: high
+    category: assumption_mismatch
+    warning: The paper itself emphasizes that the favored m_a near 10^-22 eV is prior-dependent and partly
+      artificial.
+    mitigation: Do not treat the preferred mass range as a prior-independent prediction of the string
+      axiverse.
+    source_reference_ids:
+    - paper
+  - id: not_full_cdm_required
+    severity: medium
+    category: assumption_mismatch
+    warning: The analysis allows axions to be a subcomponent and only requires not exceeding CDM density.
+    mitigation: Check the target_fraction before assuming this model saturates dark matter.
+    source_reference_ids:
+    - paper
+provenance:
+  model_id: 1809_06382_string_axiverse_misalignment_dm_v1
+  model_name: String-axiverse misalignment dark matter parameterization
+  model_family: axion_like_dark_matter
+  entry_version: 0.1.0
+  status: machine_extracted
+  created_at: '2026-05-31'
+  last_updated: '2026-05-31'
+  sources:
+    primary_papers:
+    - reference_id: paper
+      title: Cosmological window onto the string axiverse and the supersymmetry breaking scale
+      year: 2018
+      arxiv_id: '1809.06382'
+      role: original_model
+      notes: Assigned full text from run SQLite database.
+    - arxiv_id: '1809.06382'
+      authors: []
+      doi: null
+      notes: Primary paper text resolved locally.
+      reference_id: src_1809_primary
+      role: original_model
+      title: Cosmological window onto the string axiverse and the supersymmetry breaking scale
+      url: https://arxiv.org/abs/1809.06382
+      year: 2019
+    constraint_papers:
+    - arxiv_id: '2007.12705'
+      authors: []
+      doi: null
+      notes: Related source text resolved and read locally; ADS metadata used for discovery.
+      reference_id: src_2007_12705_lya_ula
+      role: constraint
+      title: Strong Bound on Canonical Ultralight Axion Dark Matter from the Lyman-Alpha Forest
+      url: https://arxiv.org/abs/2007.12705
+      year: 2021
+    external_databases:
+    - name: NASA ADS
+      note: Used for sanitized primary/reference/citation discovery; scientific claims use local source
+        text.
+      url: https://ui.adsabs.harvard.edu/
+    review_papers:
+    - arxiv_id: '0905.4720'
+      authors: []
+      doi: null
+      notes: Related source text resolved and read locally; ADS metadata used for discovery.
+      reference_id: src_0905_4720_string_axiverse
+      role: review
+      title: String axiverse
+      url: https://arxiv.org/abs/0905.4720
+      year: 2010
+    - arxiv_id: '1510.07633'
+      authors: []
+      doi: null
+      notes: Related source text resolved and read locally; ADS metadata used for discovery.
+      reference_id: src_1510_07633_axion_cosmology
+      role: review
+      title: Axion cosmology
+      url: https://arxiv.org/abs/1510.07633
+      year: 2016
+  extraction:
+    method: llm_assisted
+    extracted_by: codex_batch_0014
+    extractor_name: Codex GPT-5 worker
+    extraction_date: '2026-05-31'
+    confidence: medium
+    source_chunks_or_sections:
+    - reference_id: paper
+      section: introduction
+      quote_or_summary: The paper characterizes string axiverse parameters M_susy, S, theta_i, and isocurvature
+        fraction and allows mixed dark matter.
+    - reference_id: paper
+      section: axion cosmology
+      quote_or_summary: Misalignment production begins when m_a is about 3H(a_osc), and rho_a must not
+        exceed Planck CDM density.
+    - reference_id: paper
+      section: string axions
+      quote_or_summary: An effective Lagrangian and relations for m_a and f_a in terms of instanton action
+        and SUSY scale are given.
+    unresolved_items:
+    - Prior dependence of M_susy and S should be retained in any posterior reuse.
+    - Lyman-alpha constraints require a mixed-fraction ultralight-axion transfer-function recast.
+    - Updated Planck/BICEP-era inflation and isocurvature likelihoods were not rerun.
+  evidence:
+    particle_content:
+    - reference_id: paper
+      note: The dark matter candidate is an axion or ALP; the string analysis focuses on axions from compactification.
+      confidence: medium
+      section: introduction
+    symmetries:
+    - reference_id: paper
+      note: String instantons break the axion shift symmetry and generate the potential.
+      confidence: medium
+      section: string axions
+    interactions:
+    - reference_id: paper
+      note: The extracted effective Lagrangian contains axion kinetic and potential terms; photon decay
+        is used as a lifetime cut.
+      confidence: medium
+      section: string axions
+    production_mechanism:
+    - reference_id: paper
+      note: The axion is frozen until H drops below the mass scale, then oscillates as nonrelativistic
+        matter.
+      confidence: medium
+      section: axion cosmology
+    cosmological_history:
+    - reference_id: paper
+      note: The paper assumes the axion is present during inflation and includes isocurvature fluctuations.
+      confidence: medium
+      section: axion cosmology
+    parameter_ranges:
+    - reference_id: paper
+      note: The string-inspired analysis finds S=198 +/- 28 and log10(m_a/eV)=-21.5 with asymmetric uncertainties.
+      confidence: medium
+      section: results
+    validity_domain:
+    - reference_id: paper
+      note: The authors warn the preferred ULA region depends on string-inspired priors and sub-Planckian
+        M_susy.
+      confidence: medium
+      section: results/conclusions
+    constraints:
+    - confidence: high
+      note: Primary paper supports CDM overclosure and Planck isocurvature constraints.
+      page: null
+      reference_id: src_1809_primary
+      section: null
+    - confidence: medium
+      note: Related text supports ULA Lyman-alpha recast need.
+      page: null
+      reference_id: src_2007_12705_lya_ula
+      section: null
+    observables:
+    - confidence: high
+      note: Primary paper supports misalignment abundance, isocurvature, and preferred axion parameter
+        ranges.
+      page: null
+      reference_id: src_1809_primary
+      section: null
+    - confidence: medium
+      note: Related review supports string-axiverse context.
+      page: null
+      reference_id: src_0905_4720_string_axiverse
+      section: null
+    - confidence: medium
+      note: Related review supports axion cosmology and misalignment/isocurvature context.
+      page: null
+      reference_id: src_1510_07633_axion_cosmology
+      section: null
+    - confidence: medium
+      note: Related text supports Lyman-alpha sensitivity to canonical ultralight axion dark matter.
+      page: null
+      reference_id: src_2007_12705_lya_ula
+      section: null
+    routes:
+    - confidence: high
+      note: Primary paper gives the misalignment and isocurvature likelihood route.
+      page: null
+      reference_id: src_1809_primary
+      section: null
+    - confidence: medium
+      note: Related text supports transfer-function/Lyman-alpha recast route.
+      page: null
+      reference_id: src_2007_12705_lya_ula
+      section: null
+  review:
+    human_reviewed: false
+    expert_reviewed: false
+    scientific_confidence: medium
+    implementation_confidence: medium
+    reviewer_notes: []
+observables:
+- caveats:
+  - Anthropic/string priors affect inferred posterior ranges.
+  channel: cosmology
+  effect_direction: rate_change
+  environments:
+  - early universe
+  - mixed dark matter cosmology
+  id: obs_axiverse_misalignment_relic
+  key_quantities:
+  - name: axion mass
+    range: log10(m_a/eV) = -21.5 +1.3/-2.3
+    role: core
+    source_reference_ids:
+    - src_1809_primary
+    status: inferred
+    symbol: m_a
+    unit: eV
+  - fiducial_value: (5.1 +0.5 -0.9) x 10^-3 M_Pl
+    name: axion decay constant
+    role: core
+    source_reference_ids:
+    - src_1809_primary
+    status: inferred
+    symbol: f_a
+    unit: M_Pl
+  - name: initial misalignment angle
+    range: '[-pi, pi]'
+    role: core
+    source_reference_ids:
+    - src_1809_primary
+    status: assumed
+    symbol: theta_i
+  linked_constraints:
+  - con_axion_cdm_overclosure
+  linked_routes:
+  - route_axion_misalignment_abundance
+  name: String-axion misalignment relic abundance
+  notes: null
+  observability: medium
+  predicted_effect: Axion energy density from vacuum misalignment depends on m_a, f_a, and the initial
+    angle; the paper imposes that the axion abundance not exceed the measured cold-dark-matter density
+    and finds a string-prior-preferred mass near 10^-21.5 eV.
+  redshift_range: onset of oscillations through today
+  relevance: high
+  scale_range: homogeneous background abundance
+  source_reference_ids:
+  - src_1809_primary
+  - src_0905_4720_string_axiverse
+  - src_1510_07633_axion_cosmology
+  subchannel: nonthermal axion relic density
+- caveats:
+  - Constraint assumes axions exist during inflation and a simple inflationary mapping.
+  channel: cmb
+  effect_direction: shape_change
+  environments:
+  - inflation
+  - cosmic microwave background
+  id: obs_axion_isocurvature_cmb
+  key_quantities:
+  - name: isocurvature fraction
+    range: < 0.02 at 95% CL in the Planck 2015 dataset quoted by the paper
+    role: cosmological
+    source_reference_ids:
+    - src_1809_primary
+    status: established
+    symbol: alpha
+  - description: Related to tensor-to-scalar ratio in the single-field slow-roll assumption.
+    name: inflationary Hubble scale
+    role: cosmological
+    source_reference_ids:
+    - src_1809_primary
+    status: inferred
+    symbol: H_I
+  linked_constraints:
+  - con_planck_isocurvature
+  linked_routes:
+  - route_cmb_isocurvature_likelihood
+  name: Primordial axion isocurvature in the CMB
+  notes: null
+  observability: high
+  predicted_effect: If the axion is present during inflation, quantum fluctuations source isocurvature
+    modes; the primary paper applies Planck isocurvature constraints together with tensor/inflation assumptions.
+  redshift_range: primordial to recombination
+  relevance: high
+  scale_range: CMB pivot scale k0 = 0.002 Mpc^-1 in the quoted constraint
+  source_reference_ids:
+  - src_1809_primary
+  - src_1510_07633_axion_cosmology
+  subchannel: uncorrelated isocurvature fraction
+- caveats:
+  - Exact applicability depends on whether the string axion is all or part of dark matter.
+  channel: lyman_alpha
+  effect_direction: suppression
+  environments:
+  - Lyman-alpha forest
+  - small halos
+  id: obs_ula_small_scale_power
+  key_quantities:
+  - description: Primary analysis allows mixed dark matter rather than requiring all DM.
+    name: axion dark-matter fraction
+    role: cosmological
+    source_reference_ids:
+    - src_1809_primary
+    status: inferred
+    symbol: Omega_a/Omega_cdm
+  - description: Derived from ultralight-axion perturbations.
+    name: half-mode/transfer cutoff
+    role: derived
+    source_reference_ids:
+    - src_2007_12705_lya_ula
+    status: inferred
+    symbol: k_cut
+  linked_constraints:
+  - con_lya_ula_mass_recast
+  linked_routes:
+  - route_ula_transfer_lya_recast
+  name: Ultralight-axion small-scale power suppression
+  notes: null
+  observability: high
+  predicted_effect: Masses near the paper preferred ultralight range can suppress small-scale structure
+    if the axion is a large dark-matter fraction; related Lyman-alpha work places strong bounds on canonical
+    all-DM ultralight axions.
+  redshift_range: linear growth to Lyman-alpha redshifts
+  relevance: medium
+  scale_range: Mpc and sub-Mpc matter-power scales
+  source_reference_ids:
+  - src_1809_primary
+  - src_2007_12705_lya_ula
+  subchannel: ULA/fuzzy-DM transfer-function cutoff
+constraints:
+- allowed_regions:
+  - Mixed dark-matter parameter points with Omega_a less than or comparable to Omega_cdm.
+  applies: 'yes'
+  assumptions:
+  - can_be_relaxed: unknown
+    description: Initial misalignment angle is sampled and the axion is present during inflation in the
+      main analysis.
+    id: asm_misalignment_initial_angle
+    impact_if_violated: Different pre-inflation/post-inflation histories change the abundance and isocurvature
+      constraints.
+    scope: misalignment cosmology
+    source_reference_ids:
+    - src_1809_primary
+    status: assumed
+  benchmark_implications:
+  - The string-inspired posterior favors log10(m_a/eV) around -21.5 but does not require axions to be
+    all DM.
+  caveats:
+  - Prior choices on string parameters materially affect posterior ranges.
+  constrained_parameters:
+  - m_a
+  - f_a
+  - theta_i
+  - M_susy
+  - S
+  constraint_type: cosmological
+  data_release: Planck-era CDM density constraint used in the primary paper
+  excluded_regions:
+  - Misalignment parameters for which the axion density exceeds the measured cold dark matter density.
+  id: con_axion_cdm_overclosure
+  likelihood_available: approximate
+  likelihood_reference: null
+  name: Cold-dark-matter overclosure bound on misalignment abundance
+  notes: null
+  observable_channel: relic abundance
+  recasting_needed: partial
+  robustness: high
+  source_reference_ids:
+  - src_1809_primary
+  - src_0905_4720_string_axiverse
+  - src_1510_07633_axion_cosmology
+- allowed_regions:
+  - Low-isocurvature parameter choices, including small axion fractions or lower inflationary fluctuation
+    amplitudes.
+  applies: parameter_dependent
+  assumptions: []
+  benchmark_implications:
+  - The quoted Planck 2015 isocurvature fraction is below about 0.02 at 95% CL in the primary setup.
+  caveats:
+  - Updated CMB likelihoods and correlated-mode choices would require a recast.
+  constrained_parameters:
+  - alpha
+  - H_I
+  - theta_i
+  - Omega_a/Omega_cdm
+  constraint_type: cosmological
+  data_release: Planck 2015 TT,TE,EE+lowP isocurvature context quoted by the primary paper
+  excluded_regions:
+  - Inflationary Hubble scales and misalignment angles yielding an isocurvature fraction above the Planck
+    upper limit.
+  id: con_planck_isocurvature
+  likelihood_available: partial
+  likelihood_reference: null
+  name: Planck isocurvature bound for axions present during inflation
+  notes: null
+  observable_channel: CMB isocurvature
+  recasting_needed: partial
+  robustness: high
+  source_reference_ids:
+  - src_1809_primary
+  - src_1510_07633_axion_cosmology
+- allowed_regions:
+  - Heavier axions or mixed/subdominant axion fractions can evade the all-DM Lyman-alpha bound.
+  applies: recast_required
+  assumptions: []
+  benchmark_implications:
+  - The primary-paper preferred mass range needs a fraction-aware transfer-function recast before claiming
+    viability as all dark matter.
+  caveats:
+  - The related bound is not automatically identical for a mixed string-axion component.
+  constrained_parameters:
+  - m_a
+  - Omega_a/Omega_cdm
+  - transfer function
+  constraint_type: cosmological
+  data_release: Related Lyman-alpha analysis of canonical ultralight axion dark matter
+  excluded_regions:
+  - Canonical all-DM ultralight axion masses that suppress too much Lyman-alpha-scale power.
+  id: con_lya_ula_mass_recast
+  likelihood_available: approximate
+  likelihood_reference: null
+  name: Lyman-alpha bound on canonical ultralight axion dark matter
+  notes: null
+  observable_channel: Lyman-alpha forest
+  recasting_needed: 'yes'
+  robustness: medium
+  source_reference_ids:
+  - src_2007_12705_lya_ula
+  - src_1809_primary
+theory_to_observable_routing:
+  routes:
+  - agent_notes: null
+    caveats:
+    - Temperature dependence and anharmonic corrections were not reconstructed in detail.
+    constraint_ids:
+    - con_axion_cdm_overclosure
+    derived_quantities:
+    - Omega_a h^2
+    - a_osc
+    - posterior weight
+    description: Compute axion abundance from misalignment using string-prior parameters and enforce the
+      CDM upper bound.
+    forward_model_chain:
+    - inputs:
+      - m_a
+      - f_a
+      - theta_i
+      - cosmological history
+      notes: null
+      outputs:
+      - Omega_a h^2
+      step_id: s1
+      step_type: analytic_formula
+      tool_or_code: misalignment abundance calculation
+      validity: small-angle/standard-history assumptions in the primary paper
+    - inputs:
+      - Omega_a h^2
+      notes: null
+      outputs:
+      - overclosure rejection or posterior weight
+      step_id: s2
+      step_type: likelihood
+      tool_or_code: CDM density likelihood
+      validity: density target and priors must match analysis
+    id: route_axion_misalignment_abundance
+    input_parameters:
+    - m_a
+    - f_a
+    - theta_i
+    - M_susy
+    - S
+    likelihoods:
+    - CDM relic-density upper bound
+    observable_ids:
+    - obs_axiverse_misalignment_relic
+    required_code_resources:
+    - misalignment calculator
+    - prior sampler
+    route_status: planned
+    source_model_features:
+    - string axiverse mass relation
+    - misalignment production
+    - mixed dark matter allowed
+    validation_tests:
+    - Recover the primary-paper preferred m_a and f_a ranges under the same priors
+  - agent_notes: null
+    caveats:
+    - Assumes axion is present during inflation.
+    constraint_ids:
+    - con_planck_isocurvature
+    derived_quantities:
+    - alpha
+    - isocurvature power
+    - tensor-to-scalar consistency
+    description: Map axion inflationary fluctuations into CMB isocurvature fraction and compare with Planck
+      constraints.
+    forward_model_chain:
+    - inputs:
+      - H_I
+      - theta_i
+      - f_a
+      - Omega_a fraction
+      notes: null
+      outputs:
+      - alpha
+      step_id: s1
+      step_type: analytic_formula
+      tool_or_code: axion isocurvature amplitude formula
+      validity: uncorrelated axion isocurvature assumption
+    - inputs:
+      - alpha
+      - adiabatic parameters
+      notes: null
+      outputs:
+      - allowed inflation/axion region
+      step_id: s2
+      step_type: likelihood
+      tool_or_code: Planck isocurvature likelihood
+      validity: data-release dependent
+    id: route_cmb_isocurvature_likelihood
+    input_parameters:
+    - H_I
+    - theta_i
+    - f_a
+    - Omega_a/Omega_cdm
+    - r
+    likelihoods:
+    - Planck CMB isocurvature
+    - tensor-to-scalar constraints
+    observable_ids:
+    - obs_axion_isocurvature_cmb
+    required_code_resources:
+    - isocurvature calculator
+    - CMB likelihood
+    route_status: planned
+    source_model_features:
+    - axion present during inflation
+    - single-field slow-roll inflation assumption
+    - mixed axion fraction
+    validation_tests:
+    - Recover alpha -> 0 limit for negligible axion fraction
+  - agent_notes: null
+    caveats:
+    - Related Lyman-alpha bound is for canonical ULA DM; mixed string-axion fractions need a dedicated
+      recast.
+    constraint_ids:
+    - con_lya_ula_mass_recast
+    derived_quantities:
+    - matter transfer function
+    - half-mode scale
+    - Lyman-alpha likelihood statistic
+    description: Compute ultralight-axion transfer suppression for the string-axion mass/fraction and
+      compare with Lyman-alpha bounds.
+    forward_model_chain:
+    - inputs:
+      - m_a
+      - axion fraction
+      - cosmology
+      notes: null
+      outputs:
+      - linear matter power spectrum
+      step_id: s1
+      step_type: transfer_function
+      tool_or_code: axionCAMB/CLASS ultralight-axion module
+      validity: linear perturbation regime
+    - inputs:
+      - linear power spectrum
+      notes: null
+      outputs:
+      - allowed mass/fraction region
+      step_id: s2
+      step_type: recasting
+      tool_or_code: Lyman-alpha likelihood comparison
+      validity: requires hydrodynamical calibration or emulator
+    id: route_ula_transfer_lya_recast
+    input_parameters:
+    - m_a
+    - Omega_a/Omega_cdm
+    - cosmological parameters
+    likelihoods:
+    - Lyman-alpha forest
+    observable_ids:
+    - obs_ula_small_scale_power
+    required_code_resources:
+    - axion Boltzmann solver
+    - Lyman-alpha emulator/recast
+    route_status: planned
+    source_model_features:
+    - ultralight axion mass
+    - mixed dark matter fraction
+    - wave-like pressure
+    validation_tests:
+    - Recover CDM power as m_a increases or fraction decreases

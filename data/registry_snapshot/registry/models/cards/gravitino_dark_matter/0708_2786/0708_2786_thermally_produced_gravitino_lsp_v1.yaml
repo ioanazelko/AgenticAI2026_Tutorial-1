@@ -1,0 +1,682 @@
+_source:
+  shard: arXiv_src_0708_002_wds.tar
+  paper_id: 0708_2786
+  source_member: 0708_2786.json
+  enriched: true
+  enrichment_schema_version: dm_model_ocr_enrichment_smoke_v0
+schema_version: model_only_v0
+model_id: 0708_2786_thermally_produced_gravitino_lsp_v1
+identity:
+  name: Thermally produced gravitino LSP dark matter
+  family: gravitino_dark_matter
+  aliases:
+  - gravitino LSP dark matter
+  - thermal gravitino dark matter
+  short_description: A supergravity/MSSM scenario in which a stable gravitino LSP is regenerated after
+    reheating by thermal scatterings and contributes to the present dark matter density.
+  historical_origin_or_motivation: The thesis extends thermal gravitino production calculations to include
+    complete Standard Model gauge-group contributions for gravitino dark matter cosmology.
+  status: speculative
+  model_kind: complete_theory
+theory:
+  theory_level: uv_complete
+  parent_frameworks:
+  - supergravity
+  - MSSM with conserved R parity
+  lagrangian_available: 'yes'
+  renormalizable: not_applicable
+  embedded_in_larger_framework: 'yes'
+  notes: The thesis derives a low-energy supergravity theory and Feynman rules, then computes thermal
+    production rates.
+particle_content:
+  dark_matter_candidate:
+    name: gravitino
+    spin: 3/2
+    statistics: fermion
+    elementary_or_composite: elementary
+    number_of_components: single_component
+  additional_dark_sector_particles:
+  - MSSM superpartners in the thermal plasma
+  mediators:
+  - gravitational and goldstino-strength supergravity interactions
+  dark_radiation_species: []
+  excited_or_degenerate_states: []
+  long_lived_particles:
+  - next-to-lightest supersymmetric particle before decay to gravitino, when included
+  unstable_parent_particles:
+  - NLSP in nonthermal decay component discussed for collider tests
+  standard_model_extension: substantial
+symmetries:
+  stabilizing_mechanism: Conserved R parity stabilizes the gravitino when it is the lightest supersymmetric
+    particle.
+  symmetries:
+  - name: R parity
+    type: discrete
+    exact_or_approximate: exact
+  topological_defects_possible: unknown
+interactions:
+  portals:
+  - gravitational
+  standard_model_targets:
+  - MSSM gauge and matter multiplets in the hot plasma
+  dark_sector_couplings:
+  - supergravity gravitino-gauge-gaugino interactions
+  mediator_types:
+  - graviton/gravitino supergravity sector
+  - MSSM gauge interactions in scattering amplitudes
+  annihilation_channels: []
+  decay_channels: []
+  tree_or_loop_level: both
+parameters:
+  core:
+  - name: gravitino mass
+    symbol: m_3/2
+    description: Mass acquired through spontaneous supersymmetry breaking.
+    role: core
+    status: established
+  - name: reheating temperature
+    symbol: T_R
+    description: Temperature after inflation controlling the thermal gravitino yield.
+    role: cosmological
+    status: inferred
+  - name: gaugino masses
+    symbol: M1, M2, M3
+    description: Gauge-sector soft masses entering the thermal production and relic-density result.
+    role: core
+    status: inferred
+  - name: MSSM effective relativistic degrees of freedom
+    symbol: g_*
+    description: The text uses the high-temperature MSSM value in the yield calculation.
+    value: 915/4
+    role: derived
+    status: inferred
+production:
+  mechanisms:
+  - thermal scattering production after reheating
+  - optional NLSP decay contribution
+  thermal_equilibrium_with_standard_model: 'no'
+  thermal_equilibrium_with_hidden_sector: not_applicable
+  abundance_set_by:
+  - Boltzmann collision term
+  - reheating temperature
+  - gaugino masses
+  - gravitino mass
+  depends_on_reheating_temperature: 'yes'
+  can_produce_all_dark_matter: parameter_dependent
+  nonthermal_momentum_distribution: parameter_dependent
+  notes: The primary model row records the thermally produced component; the text also discusses nonthermal
+    NLSP decays for collider tests.
+relic_density:
+  full_or_subcomponent: either
+  target_fraction: null
+  calculation_type: mixed
+  key_dependencies:
+  - T_R
+  - m_3/2
+  - M1
+  - M2
+  - M3
+  requires_entropy_dilution: 'no'
+  overclosure_risk: parameter_dependent
+  underproduction_risk: parameter_dependent
+  tuning_assessment: unknown
+cosmological_history:
+  standard_history_assumed: true
+  nonstandard_features:
+  - inflation dilutes initial gravitino population
+  - post-inflation reheating controls regeneration
+  dark_sector_temperature: null
+  delta_neff: null
+  kinetic_decoupling: null
+  chemical_decoupling: null
+  phase_transitions: []
+  topological_defects: []
+  isocurvature_perturbations: unknown
+  bbn_relevance: medium
+  cmb_relevance: medium
+phase_space:
+  distribution_type: nonthermal
+  distribution_function_available: approximate
+  notes: The gravitino abundance is produced out of equilibrium from a thermal plasma; the thesis integrates
+    the production rate rather than assuming equilibrium freeze-out.
+structure_formation:
+  linear:
+    behaves_like_cdm: approximately
+    transfer_function_shape: unknown
+    small_scale_power_effect: unknown
+  nonlinear:
+    halo_mass_function_effect: unknown
+    subhalo_mass_function_effect: unknown
+    simulation_calibrated: unknown
+validity_domain:
+- id: stable_lsp
+  applies_to: model
+  condition: The gravitino must be the LSP and stable due to R parity.
+  status: assumed
+  extrapolation_risk: high
+  caveats: []
+- id: high_temperature_mssm
+  applies_to: production
+  condition: Thermal production formula assumes an early hot MSSM plasma after reheating.
+  status: inferred
+  extrapolation_risk: medium
+  caveats: []
+- id: leading_order_gauge
+  applies_to: production
+  condition: Production rate is leading order in Standard Model gauge couplings.
+  status: established
+  extrapolation_risk: medium
+  caveats: []
+assumptions:
+  global:
+  - id: r_parity_conserved
+    description: R parity is conserved so that a gravitino LSP is stable.
+    scope: theory
+    status: assumed
+    can_be_relaxed: unknown
+    impact_if_violated: Without this assumption the stable dark matter interpretation fails.
+  - id: inflation_then_reheating
+    description: Inflation dilutes any initial gravitinos and regeneration starts after reheating.
+    scope: cosmological_history
+    status: assumed
+    can_be_relaxed: 'yes'
+    impact_if_violated: A different pre-BBN history changes the yield.
+  - id: mssm_thermal_plasma
+    description: All MSSM particles relevant to the calculation are treated as relativistic in the hot
+      plasma.
+    scope: production
+    status: assumed
+    can_be_relaxed: 'yes'
+    impact_if_violated: Thresholds or a different spectrum alter the collision term.
+associated_code:
+  has_associated_code: unknown
+  code_summary: No model-specific public code is identified in the assigned text.
+provenance:
+  model_id: 0708_2786_thermally_produced_gravitino_lsp_v1
+  model_name: Thermally produced gravitino LSP dark matter
+  model_family: gravitino_dark_matter
+  entry_version: 0.1.0
+  status: machine_extracted
+  created_at: '2026-05-31'
+  last_updated: '2026-05-31'
+  sources:
+    primary_papers:
+    - reference_id: 0708_2786
+      title: Electroweak Contributions to Thermal Gravitino Production
+      year: 2007
+      arxiv_id: '0708.2786'
+      doi: null
+      url: null
+      role: extension
+      notes: Only the assigned SQLite full text was used.
+      authors: []
+    - arxiv_id: '0708.2786'
+      authors:
+      - Pradler, Josef
+      doi: null
+      notes: Primary assigned paper read from local SQLite full text.
+      reference_id: arxiv:0708.2786
+      role: original_model
+      title: Electroweak Contributions to Thermal Gravitino Production
+      url: https://arxiv.org/abs/0708.2786
+      year: 2007
+    constraint_papers:
+    - arxiv_id: '0806.3266'
+      authors:
+      - Steffen, Frank Daniel
+      doi: null
+      notes: Related full text resolved locally and read for bounded enrichment.
+      reference_id: arxiv:0806.3266
+      role: constraint
+      title: Probing the Reheating Temperature at Colliders and with Primordial Nucleosynthesis
+      url: https://arxiv.org/abs/0806.3266
+      year: 2008
+    - arxiv_id: '1008.2858'
+      authors: []
+      doi: null
+      notes: Related full text resolved locally and read for bounded enrichment.
+      reference_id: arxiv:1008.2858
+      role: constraint
+      title: Gravitino dark matter and the lithium primordial abundance within a pre-BBN modified expansion
+      url: https://arxiv.org/abs/1008.2858
+      year: 2010
+    external_databases: []
+    review_papers:
+    - arxiv_id: '1002.2835'
+      authors:
+      - Ferrantelli, Andrea
+      doi: null
+      notes: Related full text resolved locally and read for bounded enrichment.
+      reference_id: arxiv:1002.2835
+      role: review
+      title: Gravitino phenomenology and cosmological implications of supergravity
+      url: https://arxiv.org/abs/1002.2835
+      year: 2010
+  extraction:
+    method: llm_assisted
+    extracted_by: codex_batch_0008
+    extractor_name: Codex GPT-5 batch worker
+    extraction_date: '2026-05-31'
+    confidence: high
+    source_chunks_or_sections:
+    - reference_id: 0708_2786
+      section: Introduction
+      page: null
+      quote_or_summary: A gravitino LSP is stable under R parity and can be dark matter; thermal production
+        begins after reheating.
+    - reference_id: 0708_2786
+      section: gravitino cosmology
+      page: null
+      quote_or_summary: The relic density of thermally produced gravitinos is calculated to leading order
+        in the Standard Model gauge couplings.
+    unresolved_items:
+    - No full MSSM spectrum scan or BBN cascade calculation was performed.
+    - The primary is a diploma-thesis text; publication metadata are ADS-derived.
+  evidence:
+    particle_content:
+    - reference_id: 0708_2786
+      note: The text identifies the gravitino as a spin-3/2 superpartner of the graviton and a dark matter
+        candidate if it is the LSP.
+      confidence: high
+      section: null
+      page: null
+    symmetries:
+    - reference_id: 0708_2786
+      note: R parity conservation makes the LSP stable, and the thesis focuses on stable gravitino LSP
+        scenarios.
+      confidence: high
+      section: null
+      page: null
+    interactions:
+    - reference_id: 0708_2786
+      note: Gravitino interactions are extremely weak and arise from supergravity; production is computed
+        from Standard Model gauge sectors in a hot SUSY plasma.
+      confidence: high
+      section: null
+      page: null
+    production_mechanism:
+    - reference_id: 0708_2786
+      note: The thesis computes thermal gravitino production from inelastic scatterings after reheating
+        and gives the Boltzmann collision term.
+      confidence: high
+      section: null
+      page: null
+    cosmological_history:
+    - reference_id: 0708_2786
+      note: Initial gravitinos are diluted by inflation; regeneration starts after reheating, and the
+        relic density is essentially linear in reheating temperature.
+      confidence: high
+      section: null
+      page: null
+    parameter_ranges:
+    - reference_id: 0708_2786
+      note: Parameters emphasized in the text include reheating temperature, gravitino mass, and gaugino
+        masses M1, M2, M3.
+      confidence: medium
+      section: null
+      page: null
+    validity_domain:
+    - reference_id: 0708_2786
+      note: The leading-order result assumes the high-temperature MSSM plasma and Standard Model gauge
+        group contributions.
+      confidence: high
+      section: null
+      page: null
+    constraints:
+    - confidence: high
+      note: Primary paper connects thermal leptogenesis T_R >= 3e9 GeV with upper limits on gaugino masses
+        from Omega_3/2^TP.
+      page: null
+      reference_id: arxiv:0708.2786
+      section: Cosmological implications
+    - confidence: medium
+      note: Related local text discusses gravitino relic density with BBN/lithium constraints in modified
+        expansion.
+      page: null
+      reference_id: arxiv:1008.2858
+      section: Introduction
+    observables:
+    - confidence: high
+      note: Primary paper states that full gauge-group thermal production enables calculation of Omega_3/2^TP
+        and comparison with observed dark matter density.
+      page: null
+      reference_id: arxiv:0708.2786
+      section: Introduction
+    - confidence: high
+      note: Related local text states collider slepton measurements can probe gravitino mass and reheating
+        temperature.
+      page: null
+      reference_id: arxiv:0806.3266
+      section: Abstract
+    routes:
+    - confidence: high
+      note: Primary paper derives the complete Standard Model gauge-group contribution to thermal gravitino
+        production.
+      page: null
+      reference_id: arxiv:0708.2786
+      section: Thermal production
+  review:
+    human_reviewed: false
+    expert_reviewed: false
+    reviewed_by: null
+    review_date: null
+    expert_reviewer: null
+    expert_review_date: null
+    reviewer_notes: []
+    scientific_confidence: high
+    implementation_confidence: high
+robustness:
+  overall: high
+  theory_robustness: medium
+  observational_robustness: unknown
+  computational_robustness: medium
+  dominant_uncertainties:
+  - reheating temperature
+  - superpartner spectrum
+  - thermal history
+  validation_status: partially_validated
+  notes: The paper gives a detailed production-rate calculation but collider-spectrum and thermal-history
+    assumptions remain model dependent.
+agent_failure_modes:
+  warnings:
+  - id: thermal_history_sensitive
+    severity: medium
+    category: assumption_mismatch
+    warning: The relic density scales with reheating temperature and relies on the assumed post-inflation
+      thermal history.
+    mitigation: Carry T_R and spectrum assumptions into any downstream use.
+observables:
+- caveats:
+  - Assumes inflation diluted any initial gravitino population.
+  channel: cosmology
+  effect_direction: model_dependent
+  environments:
+  - early-universe MSSM plasma
+  id: obs_thermal_gravitino_relic_density
+  key_quantities:
+  - description: Temperature after inflation controlling thermal gravitino production.
+    name: reheating temperature
+    role: core
+    source_reference_ids:
+    - arxiv:0708.2786
+    status: inferred
+    symbol: T_R
+    unit: GeV
+  - description: Gravitino LSP mass.
+    name: gravitino mass
+    role: core
+    source_reference_ids:
+    - arxiv:0708.2786
+    status: inferred
+    symbol: m_3/2
+    unit: GeV
+  - description: Bino, wino, and gluino masses entering the gauge-production rate.
+    name: gaugino masses
+    role: core
+    source_reference_ids:
+    - arxiv:0708.2786
+    status: inferred
+    symbol: M_i
+    unit: GeV
+  linked_constraints:
+  - con_gravitino_reheating_relic_density
+  linked_routes:
+  - route_gravitino_tr_to_cosmology
+  name: Thermally produced gravitino relic density
+  notes: null
+  observability: high
+  predicted_effect: Gravitino production in the MSSM thermal plasma grows with reheating temperature and
+    gauge/gaugino parameters; comparing Omega_3/2^TP to the observed dark matter density sets cosmological
+    bounds.
+  redshift_range: post-inflationary reheating through freeze-in-like thermal production
+  relevance: critical
+  scale_range: thermal MSSM plasma above electroweak scale
+  source_reference_ids:
+  - arxiv:0708.2786
+  subchannel: thermal production after reheating
+- caveats:
+  - The assigned model is gravitino LSP; NLSP identity controls the precise BBN recast.
+  channel: cosmology
+  effect_direction: shape_change
+  environments:
+  - primordial plasma
+  - BBN light elements
+  id: obs_gravitino_bbn_late_decays
+  key_quantities:
+  - description: Primary text notes unstable gravitinos lighter than about 20 TeV have lifetimes longer
+      than 1 s.
+    name: decay lifetime
+    range: '> 1 s for m_3/2 < about 20 TeV in primary discussion'
+    role: derived
+    source_reference_ids:
+    - arxiv:0708.2786
+    status: inferred
+    symbol: tau
+    unit: s
+  - description: BBN observables altered by late energy injection.
+    name: light-element abundances
+    role: derived
+    source_reference_ids:
+    - arxiv:0708.2786
+    - arxiv:1008.2858
+    status: inferred
+    symbol: D, He, Li
+  linked_constraints:
+  - con_gravitino_bbn_late_decay
+  linked_routes:
+  - route_gravitino_tr_to_cosmology
+  name: BBN response to late gravitino or NLSP decays
+  notes: null
+  observability: high
+  predicted_effect: Late decays of unstable gravitinos, or of long-lived superpartners in gravitino-LSP
+    scenarios, can perturb light-element abundances during or after BBN.
+  redshift_range: BBN epoch and later
+  relevance: high
+  scale_range: homogeneous light-element abundances
+  source_reference_ids:
+  - arxiv:0708.2786
+  - arxiv:1008.2858
+  subchannel: light-element abundances
+- caveats:
+  - Requires discovery and lifetime/mass measurements of superpartners.
+  channel: collider
+  effect_direction: model_dependent
+  environments:
+  - LHC/ILC-style superpartner searches
+  - primordial nucleosynthesis
+  id: obs_collider_probe_of_reheating
+  key_quantities:
+  - description: Related text uses long-lived charged slepton measurements to probe T_R.
+    name: slepton lifetime
+    role: core
+    source_reference_ids:
+    - arxiv:0806.3266
+    status: inferred
+    symbol: tau_slepton
+    unit: s
+  - description: Primary text emphasizes stronger gluino-mass limits from the full gauge-group production
+      result.
+    name: gluino mass
+    role: core
+    source_reference_ids:
+    - arxiv:0708.2786
+    status: inferred
+    symbol: M_3
+    unit: GeV
+  linked_constraints:
+  - con_gravitino_reheating_relic_density
+  - con_gravitino_bbn_late_decay
+  linked_routes:
+  - route_gravitino_tr_to_cosmology
+  name: Collider probe of reheating through superpartner spectrum
+  notes: null
+  observability: medium
+  predicted_effect: Measurements of gravitino or long-lived slepton properties can be combined with the
+    thermal-production calculation to infer or bound the post-inflationary reheating temperature.
+  redshift_range: collider measurements plus early-universe interpretation
+  relevance: medium
+  scale_range: weak to TeV superpartner masses
+  source_reference_ids:
+  - arxiv:0708.2786
+  - arxiv:0806.3266
+  subchannel: long-lived slepton/gaugino spectrum
+constraints:
+- allowed_regions:
+  - Lower reheating temperatures, heavier gravitinos, or spectra with acceptable Omega_3/2^TP remain viable.
+  applies: 'yes'
+  assumptions:
+  - can_be_relaxed: partial
+    description: Thermal production is computed in a standard radiation-dominated MSSM plasma after reheating.
+    id: standard-radiation-history
+    impact_if_violated: Modified expansion or entropy injection changes the T_R bound.
+    scope: relic-density calculation
+    source_reference_ids:
+    - arxiv:0708.2786
+    status: assumed
+  benchmark_implications:
+  - Electroweak contributions make the full gauge-group production calculation more restrictive than QCD-only
+    estimates.
+  caveats:
+  - No spectrum scan was rerun.
+  constrained_parameters:
+  - T_R
+  - m_3/2
+  - M_1
+  - M_2
+  - M_3
+  - Omega_3/2^TP
+  constraint_type: cosmological
+  data_release: observed dark matter density quoted by source
+  excluded_regions:
+  - Regions where thermally produced gravitinos exceed the observed dark matter density are excluded.
+  - Thermal leptogenesis with T_R >= 3e9 GeV combined with Omega_3/2^TP implies upper limits on gaugino
+    masses in the primary discussion.
+  id: con_gravitino_reheating_relic_density
+  likelihood_available: 'no'
+  likelihood_reference: null
+  name: Thermal gravitino relic-density upper bound on reheating and gaugino masses
+  notes: null
+  observable_channel: dark matter relic density
+  recasting_needed: 'yes'
+  robustness: high
+  source_reference_ids:
+  - arxiv:0708.2786
+  - arxiv:0806.3266
+- allowed_regions:
+  - Gravitino-LSP spectra with sufficiently small NLSP abundance, safe decay channels, or acceptable pre-BBN/late-decay
+    behavior.
+  applies: parameter_dependent
+  assumptions:
+  - can_be_relaxed: partial
+    description: A specific NLSP identity and branching fractions are needed for BBN recasting.
+    id: nlsp-decay-model
+    impact_if_violated: Different NLSPs produce different electromagnetic/hadronic showers.
+    scope: BBN constraint
+    source_reference_ids:
+    - arxiv:0708.2786
+    - arxiv:0806.3266
+    status: assumed
+  benchmark_implications:
+  - BBN can bound T_R and the superpartner spectrum in gravitino dark matter scenarios.
+  caveats:
+  - No BBN cascade calculation was performed.
+  constrained_parameters:
+  - tau
+  - decay branching fractions
+  - m_3/2
+  - NLSP abundance
+  constraint_type: cosmological
+  data_release: BBN light-element constraints cited by source papers
+  excluded_regions:
+  - Late decays during or after BBN that spoil light-element abundances are excluded.
+  id: con_gravitino_bbn_late_decay
+  likelihood_available: partial
+  likelihood_reference: null
+  name: BBN constraints on late superpartner/gravitino decays
+  notes: null
+  observable_channel: BBN light elements
+  recasting_needed: 'yes'
+  robustness: medium
+  source_reference_ids:
+  - arxiv:0708.2786
+  - arxiv:0806.3266
+  - arxiv:1008.2858
+theory_to_observable_routing:
+  routes:
+  - agent_notes: null
+    caveats:
+    - Nonstandard pre-BBN expansion can alter the bound.
+    constraint_ids:
+    - con_gravitino_reheating_relic_density
+    - con_gravitino_bbn_late_decay
+    derived_quantities:
+    - Omega_3/2^TP
+    - gravitino yield
+    - decay lifetime
+    - BBN light-element shifts
+    description: Convert MSSM thermal production rates into gravitino relic density, reheating-temperature
+      bounds, BBN constraints, and collider-interpretable spectrum targets.
+    forward_model_chain:
+    - inputs:
+      - gauge couplings
+      - gaugino masses
+      - T_R
+      - m_3/2
+      notes: Use complete SM gauge-group leading-order production result from primary paper.
+      outputs:
+      - thermal collision term
+      - gravitino yield
+      step_id: s1
+      step_type: analytic_formula
+      tool_or_code: null
+      validity: Thermal plasma far above electroweak scale.
+    - inputs:
+      - gravitino yield
+      - m_3/2
+      notes: Compare to observed dark matter density.
+      outputs:
+      - Omega_3/2^TP
+      step_id: s2
+      step_type: analytic_formula
+      tool_or_code: null
+      validity: Standard entropy history assumed.
+    - inputs:
+      - NLSP abundance
+      - decay lifetime
+      - branching fractions
+      notes: Apply BBN light-element constraints.
+      outputs:
+      - BBN exclusion
+      step_id: s3
+      step_type: recasting
+      tool_or_code: null
+      validity: Requires specific NLSP decay model.
+    id: route_gravitino_tr_to_cosmology
+    input_parameters:
+    - T_R
+    - m_3/2
+    - M_1
+    - M_2
+    - M_3
+    - NLSP properties
+    likelihoods:
+    - observed Omega_DM h^2 target
+    - BBN light-element likelihoods
+    - collider spectrum measurements
+    observable_ids:
+    - obs_thermal_gravitino_relic_density
+    - obs_gravitino_bbn_late_decays
+    - obs_collider_probe_of_reheating
+    required_code_resources:
+    - MSSM spectrum calculator
+    - gravitino thermal-production implementation
+    - BBN decay/recast code
+    route_status: planned
+    source_model_features:
+    - gravitino LSP dark matter
+    - MSSM gauge thermal production
+    - electroweak plus QCD contributions
+    - possible long-lived NLSP
+    validation_tests:
+    - recover T_R sensitivity of Omega_3/2^TP
+    - recover thermal-leptogenesis/gaugino-mass tension

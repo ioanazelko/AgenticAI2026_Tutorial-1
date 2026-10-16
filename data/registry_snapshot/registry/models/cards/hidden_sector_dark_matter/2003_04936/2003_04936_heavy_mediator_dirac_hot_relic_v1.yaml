@@ -1,0 +1,695 @@
+_source:
+  shard: arXiv_src_2003_018_wds.tar
+  paper_id: '2003_04936'
+  source_member: 2003_04936.json
+  enriched: true
+  enrichment_schema_version: dm_model_ocr_enrichment_smoke_v0
+schema_version: model_only_v0
+model_id: 2003_04936_heavy_mediator_dirac_hot_relic_v1
+identity:
+  name: Dirac heavy thermal hot relic with heavy scalar mediator
+  family: hidden_sector_dark_matter
+  aliases: []
+  short_description: An explicit heavy-thermal-hot-relic model where Dirac fermion dark matter annihilates
+    into lighter Dirac fermions through a heavier real scalar mediator and decouples relativistically
+    in a cooler hidden sector.
+  historical_origin_or_motivation: unknown
+  status: speculative
+  model_kind: simplified_model
+  reference_id: arxiv:2003.04936
+theory:
+  theory_level: simplified_model
+  parent_frameworks:
+  - hidden-sector heavy thermal hot relic
+  lagrangian_available: 'yes'
+  renormalizable: 'yes'
+  eft_cutoff: null
+  embedded_in_larger_framework: unknown
+  notes: First explicit realization of the heavy thermal hot relic framework.
+  reference_id: arxiv:2003.04936
+particle_content:
+  dark_matter_candidate:
+    name: Dirac fermion dark matter
+    spin: 1/2
+    statistics: fermion
+    elementary_or_composite: elementary
+    number_of_components: single_component
+    reference_id: arxiv:2003.04936
+  additional_dark_sector_particles:
+  - lighter Dirac fermions
+  mediators:
+  - heavy real scalar S
+  dark_radiation_species: []
+  excited_or_degenerate_states: []
+  long_lived_particles: []
+  unstable_parent_particles: []
+  standard_model_extension: substantial
+  reference_id: arxiv:2003.04936
+symmetries:
+  stabilizing_mechanism: Dark matter is taken to be stable apart from possible extremely feeble portal-induced
+    decays considered separately.
+  symmetries:
+  - name: unknown dark-sector stabilizing symmetry
+    type: unknown
+    exact_or_approximate: unknown
+    breaking: possible feeble portal-induced decay if a neutrino portal is present
+    breaking_scale: null
+    reference_id: arxiv:2003.04936
+  topological_defects_possible: unknown
+  reference_id: arxiv:2003.04936
+interactions:
+  portals:
+  - gravitational
+  - neutrino
+  - higgs
+  standard_model_targets:
+  - lepton doublet and Higgs only through tiny optional portal
+  dark_sector_couplings:
+  - y_DM
+  - yprime
+  mediator_types:
+  - heavy real scalar S
+  interaction_operators: []
+  scattering:
+    elastic: unknown
+    inelastic: unknown
+    momentum_dependence: unknown
+    velocity_dependence: unknown
+    spin_dependence: unknown
+    reference_id: arxiv:2003.04936
+  annihilation_channels:
+  - DM DM -> lighter hidden Dirac fermions through S
+  decay_channels:
+  - optional feeble portal decays to l W, h, or Z when neutrino portal is nonzero
+  self_scattering_channels: []
+  cp_structure: unknown
+  flavor_structure: unknown
+  tree_or_loop_level: unknown
+  reference_id: arxiv:2003.04936
+parameters:
+  core:
+  - name: dark matter mass
+    symbol: m_DM
+    description: Mass range can reach PeV scale; unitarity bound near tens of PeV.
+    range: keV to PeV, bounded near 38 PeV in this example
+    role: core
+    status: inferred
+    source_reference_ids:
+    - arxiv:2003.04936
+    reference_id: arxiv:2003.04936
+  - name: mediator mass
+    symbol: m_S
+    description: Heavy real scalar mediator mass above the relativistic-decoupling scale.
+    range: m_S greater than m_DM in relativistic regime
+    role: core
+    status: inferred
+    source_reference_ids:
+    - arxiv:2003.04936
+    reference_id: arxiv:2003.04936
+  - name: dark Yukawa coupling
+    symbol: y_DM
+    description: Coupling of DM to S.
+    range: perturbative
+    role: core
+    status: inferred
+    source_reference_ids:
+    - arxiv:2003.04936
+    reference_id: arxiv:2003.04936
+  - name: lighter-fermion coupling
+    symbol: yprime
+    description: Coupling of lighter hidden fermions to S.
+    range: perturbative
+    role: core
+    status: inferred
+    source_reference_ids:
+    - arxiv:2003.04936
+    reference_id: arxiv:2003.04936
+  nuisance: []
+  derived: []
+  reference_id: arxiv:2003.04936
+production:
+  mechanisms:
+  - hidden-sector thermalization
+  - relativistic decoupling through heavy scalar mediated annihilation
+  thermal_equilibrium_with_standard_model: 'no'
+  thermal_equilibrium_with_hidden_sector: 'yes'
+  abundance_set_by:
+  - hidden-sector thermalization
+  - relativistic decoupling through heavy scalar mediated annihilation
+  depends_on_reheating_temperature: unknown
+  can_produce_all_dark_matter: 'yes'
+  nonthermal_momentum_distribution: unknown
+  notes: The paper uses this model to illustrate relativistic hidden-sector decoupling and possible PeV
+    neutrino connections through a tiny portal.
+  reference_id: arxiv:2003.04936
+relic_density:
+  full_or_subcomponent: full_dark_matter
+  target_fraction: null
+  calculation_type: thermal
+  key_dependencies:
+  - dark matter mass
+  - mediator mass
+  - dark Yukawa coupling
+  - lighter-fermion coupling
+  requires_entropy_dilution: unknown
+  overclosure_risk: parameter_dependent
+  underproduction_risk: parameter_dependent
+  tuning_assessment: unknown
+  reference_id: arxiv:2003.04936
+cosmological_history:
+  standard_history_assumed: false
+  nonstandard_features:
+  - hidden bath cooler than SM bath
+  - SM-hidden portals tiny enough not to thermalize the sectors
+  dark_sector_temperature: null
+  delta_neff: null
+  kinetic_decoupling: null
+  chemical_decoupling: null
+  phase_transitions: []
+  topological_defects: []
+  isocurvature_perturbations: unknown
+  bbn_relevance: medium
+  cmb_relevance: medium
+  reference_id: arxiv:2003.04936
+phase_space:
+  distribution_type: thermal
+  distribution_function_available: approximate
+  average_momentum_relative_to_thermal: set by Tprime/T
+  notes: Thermal in the hidden sector; colder than the SM bath.
+  reference_id: arxiv:2003.04936
+structure_formation:
+  linear:
+    behaves_like_cdm: scale_dependent
+    transfer_function_shape: smooth_cutoff
+    small_scale_power_effect: suppression
+    reference_id: arxiv:2003.04936
+  nonlinear:
+    halo_mass_function_effect: unknown
+    subhalo_mass_function_effect: unknown
+    simulation_calibrated: unknown
+    reference_id: arxiv:2003.04936
+  reference_id: arxiv:2003.04936
+validity_domain:
+- id: heavy_mediator_regime
+  applies_to: parameter
+  condition: Applies for m_DM < Tprime_dec < m_S in the relativistic-decoupling calculation.
+  valid_range: null
+  status: inferred
+  extrapolation_risk: unknown
+  caveats: []
+  source_reference_ids:
+  - arxiv:2003.04936
+  notes: null
+  reference_id: arxiv:2003.04936
+- id: separate_sectors
+  applies_to: cosmological_history
+  condition: Requires visible and hidden sectors not to thermalize.
+  valid_range: null
+  status: inferred
+  extrapolation_risk: unknown
+  caveats: []
+  source_reference_ids:
+  - arxiv:2003.04936
+  notes: null
+  reference_id: arxiv:2003.04936
+assumptions:
+  global:
+  - id: heavy_mediator_hierarchy
+    description: The heavy scalar mediator is heavy enough that the cross section scales as Tprime^2 /
+      m_S^4 during relativistic decoupling.
+    scope: theory
+    status: assumed
+    impact_if_violated: null
+    can_be_relaxed: unknown
+    source_reference_ids:
+    - arxiv:2003.04936
+    notes: null
+    reference_id: arxiv:2003.04936
+  - id: tiny_portals
+    description: Optional neutrino or Higgs portals are tiny enough not to alter the relic density significantly.
+    scope: cosmological_history
+    status: assumed
+    impact_if_violated: null
+    can_be_relaxed: unknown
+    source_reference_ids:
+    - arxiv:2003.04936
+    notes: null
+    reference_id: arxiv:2003.04936
+  computation_specific: []
+  reference_id: arxiv:2003.04936
+associated_code:
+  has_associated_code: unknown
+  code_summary: null
+  reference_id: arxiv:2003.04936
+provenance:
+  model_id: 2003_04936_heavy_mediator_dirac_hot_relic_v1
+  model_name: Dirac heavy thermal hot relic with heavy scalar mediator
+  model_family: hidden_sector_dark_matter
+  entry_version: 0.1.0
+  status: machine_extracted
+  created_at: '2026-05-31'
+  last_updated: '2026-05-31'
+  sources:
+    primary_papers:
+    - reference_id: arxiv:2003.04936
+      title: Dark matter as a heavy thermal hot relic
+      authors: []
+      year: 2020
+      arxiv_id: '2003.04936'
+      doi: null
+      url: null
+      role: original_model
+      notes: Primary assigned paper text from target_text.sqlite.
+    - arxiv_id: '2003.04936'
+      authors:
+      - Hambye, Thomas
+      - Lucca, Matteo
+      - Vanderheyden, Laurent
+      doi: 10.1016/j.physletb.2020.135553
+      notes: Primary assigned paper read from local SQLite full text.
+      reference_id: arxiv:2003.04936
+      role: original_model
+      title: Dark matter as a heavy thermal hot relic
+      url: https://arxiv.org/abs/2003.04936
+      year: 2020
+    reference_id: arxiv:2003.04936
+    constraint_papers:
+    - arxiv_id: '1306.2314'
+      authors:
+      - Viel, Matteo
+      - Becker, George D.
+      - Bolton, James S.
+      - Haehnelt, Martin G.
+      doi: 10.1103/PhysRevD.88.043502
+      notes: Related full text resolved locally and read for Ly-alpha thermal-WDM constraints.
+      reference_id: arxiv:1306.2314
+      role: constraint
+      title: 'Warm dark matter as a solution to the small scale crisis: New constraints from high redshift
+        Lyman-α forest data'
+      url: https://arxiv.org/abs/1306.2314
+      year: 2013
+    - arxiv_id: astro-ph/0501562
+      authors:
+      - Viel, Matteo
+      - Lesgourgues, Julien
+      - Haehnelt, Martin G.
+      - Matarrese, Sabino
+      - Riotto, Antonio
+      doi: 10.1103/PhysRevD.71.063534
+      notes: Related full text resolved locally and read for earlier WMAP+Ly-alpha WDM constraints.
+      reference_id: arxiv:astro-ph/0501562
+      role: constraint
+      title: Constraining warm dark matter candidates including sterile neutrinos and light gravitinos
+        with WMAP and the Lyman-α forest
+      url: https://arxiv.org/abs/astro-ph/0501562
+      year: 2005
+    - arxiv_id: '2405.10792'
+      authors:
+      - Coy, Rupert
+      - Kimus, Jean
+      - Tytgat, Michel H. G.
+      doi: 10.1088/1475-7516/2025/02/077
+      notes: Related full text resolved locally and read for hot-dark-sector evolution context.
+      reference_id: arxiv:2405.10792
+      role: extension
+      title: 'Light from darkness: history of a hot dark sector'
+      url: https://arxiv.org/abs/2405.10792
+      year: 2025
+    external_databases: []
+    review_papers: []
+  extraction:
+    method: llm_assisted
+    extracted_by: codex_dark_matter_model_worker_batch_0005
+    extractor_name: codex
+    extraction_date: '2026-05-31'
+    confidence: high
+    source_chunks_or_sections:
+    - reference_id: arxiv:2003.04936
+      section: Abstract and introduction
+      page: null
+      quote_or_summary: An explicit heavy-thermal-hot-relic model where Dirac fermion dark matter annihilates
+        into lighter Dirac fermions through a heavier real scalar mediator and decouples relativistically
+        in a cooler hidden sector.
+    unresolved_items:
+    - No Ly-alpha likelihood or transfer-function recast was run; thermal-WDM limits are recast targets.
+    - Mediator mass/coupling perturbativity must be scanned before applying the broad hot-relic window.
+    reference_id: arxiv:2003.04936
+  evidence:
+    particle_content:
+    - reference_id: arxiv:2003.04936
+      note: The first explicit model has Dirac fermion DM, lighter Dirac fermions, and a heavier real
+        scalar S.
+      confidence: high
+      section: Explicit models
+      page: null
+    interactions:
+    - reference_id: arxiv:2003.04936
+      note: The Lagrangian includes y_DM DM DM S and yprime psi psi S interactions.
+      confidence: high
+      section: Explicit models
+      page: null
+    production_mechanism:
+    - reference_id: arxiv:2003.04936
+      note: The annihilation cross section scales as y_DM^2 yprime^2 Tprime^2/(2 m_S^4) for m_DM < Tprime
+        < m_S.
+      confidence: high
+      section: Explicit models
+      page: null
+    parameter_ranges:
+    - reference_id: arxiv:2003.04936
+      note: The paper derives bounds on m_DM and m_S/m_DM and notes PeV-scale candidates are viable.
+      confidence: high
+      section: Explicit models
+      page: null
+    reference_id: arxiv:2003.04936
+    constraints:
+    - confidence: high
+      note: Primary paper derives thermalization/unitarity upper mass bounds and explicit model examples.
+      page: null
+      reference_id: arxiv:2003.04936
+      section: Model-independent analysis
+    - confidence: high
+      note: Related analysis gives a 3.3 keV thermal-WDM lower limit from high-redshift Ly-alpha flux
+        power.
+      page: null
+      reference_id: arxiv:1306.2314
+      section: Results
+    - confidence: medium
+      note: Older WMAP+Ly-alpha analysis gives warm-relic context and earlier lower bounds.
+      page: null
+      reference_id: arxiv:astro-ph/0501562
+      section: Abstract
+    observables:
+    - confidence: high
+      note: Primary paper gives the cooler hidden-sector hot-relic abundance picture and mass range.
+      page: null
+      reference_id: arxiv:2003.04936
+      section: Introduction and model-independent bounds
+    - confidence: high
+      note: Related Ly-alpha paper gives thermal-WDM suppression limits for recast targets.
+      page: null
+      reference_id: arxiv:1306.2314
+      section: Abstract/Results
+    routes:
+    - confidence: high
+      note: Primary paper connects hidden-sector temperature ratio to abundance and thermalization limits.
+      page: null
+      reference_id: arxiv:2003.04936
+      section: Model-independent analysis
+  review:
+    human_reviewed: false
+    reviewed_by: null
+    review_date: null
+    expert_reviewed: false
+    expert_reviewer: null
+    expert_review_date: null
+    reviewer_notes: []
+    scientific_confidence: high
+    implementation_confidence: medium
+    reference_id: arxiv:2003.04936
+  caveats: []
+  related_entries: []
+  reference_id: arxiv:2003.04936
+robustness:
+  overall: medium
+  theory_robustness: medium
+  observational_robustness: unknown
+  computational_robustness: unknown
+  dominant_uncertainties: []
+  validation_status: expert_judgment_only
+  notes: null
+  reference_id: arxiv:2003.04936
+agent_failure_modes:
+  warnings:
+  - id: portal_decay_optional
+    severity: medium
+    category: assumption_mismatch
+    warning: The neutrino/Higgs portal is optional and must remain tiny; including it can make the DM
+      long-lived rather than absolutely stable.
+    mitigation: Separate relic-density assumptions from optional decay phenomenology.
+    source_reference_ids:
+    - arxiv:2003.04936
+    reference_id: arxiv:2003.04936
+  reference_id: arxiv:2003.04936
+reference_id: arxiv:2003.04936
+observables:
+- caveats:
+  - The temperature ratio is treated as an initial condition, plausibly set by inflation or reheating
+    physics.
+  channel: cosmology
+  effect_direction: model_dependent
+  environments:
+  - hidden thermal bath
+  - visible-sector radiation bath
+  id: obs_hidden_sector_hot_relic_density
+  key_quantities:
+  - description: Mass range for heavy thermal hot relic production.
+    name: dark matter mass
+    range: about 1 keV to 30 PeV model-independently; model examples have narrower perturbative regions
+    role: core
+    source_reference_ids:
+    - arxiv:2003.04936
+    status: inferred
+    symbol: m_DM
+  - description: Initial or decoupling temperature ratio of hidden and visible sectors.
+    name: hidden-to-visible temperature ratio
+    range: about 1e-1 to 1e-5 across the heavy-hot-relic mass range
+    role: cosmological
+    source_reference_ids:
+    - arxiv:2003.04936
+    - arxiv:2405.10792
+    status: inferred
+    symbol: Tprime/T
+  linked_constraints:
+  - con_hidden_hot_relic_mass_window
+  linked_routes:
+  - route_hidden_hot_relic_lss_recast
+  name: Hidden-sector hot-relic abundance set by temperature ratio
+  notes: null
+  observability: medium
+  predicted_effect: The model realizes the observed abundance through a Dirac fermion annihilating to
+    lighter fermions through a heavier scalar mediator; the relic density is mainly controlled by m_DM
+    and the hidden-to-visible temperature ratio Tprime/T.
+  redshift_range: early radiation era through matter-radiation equality
+  relevance: critical
+  scale_range: cosmological relic-density and transfer-function scales
+  source_reference_ids:
+  - arxiv:2003.04936
+  - arxiv:2405.10792
+  subchannel: thermal relic abundance in a cooler sector
+- caveats:
+  - Thermal-WDM limits cannot be applied directly without mapping the hidden-sector distribution to an
+    equivalent transfer function.
+  channel: lyman_alpha
+  effect_direction: suppression
+  environments:
+  - intergalactic medium
+  - small-scale matter distribution
+  id: obs_hot_relic_free_streaming_cutoff
+  key_quantities:
+  - description: Reference thermal relic mass for Ly-alpha comparison.
+    name: thermal-equivalent WDM mass
+    range: thermal relic lower limit 3.3 keV at 2 sigma in the related high-redshift Ly-alpha analysis
+    role: core
+    source_reference_ids:
+    - arxiv:1306.2314
+    status: inferred
+    symbol: m_WDM
+    unit: keV
+  linked_constraints:
+  - con_lya_thermal_wdm_recast
+  linked_routes:
+  - route_hidden_hot_relic_lss_recast
+  name: Warm/hot relic free-streaming cutoff
+  notes: null
+  observability: high
+  predicted_effect: Relativistically decoupled hidden-sector dark matter suppresses small-scale structure
+    according to its momentum distribution and cooler-sector temperature ratio; Ly-alpha bounds apply
+    only through a thermal-equivalent recast.
+  redshift_range: high-redshift Ly-alpha forest and late-time small-scale structure
+  relevance: high
+  scale_range: Ly-alpha flux power around k~1-40 h/Mpc; thermal-WDM suppression near k~10 h/Mpc in related
+    analysis
+  source_reference_ids:
+  - arxiv:2003.04936
+  - arxiv:1306.2314
+  - arxiv:astro-ph/0501562
+  subchannel: thermal-WDM-equivalent transfer-function suppression
+constraints:
+- allowed_regions:
+  - Primary model-independent window from about 1 keV to 30 PeV, subject to hidden-sector temperature
+    and degrees of freedom.
+  - The scalar-mediator example gives an upper mass near 38 PeV in the relativistic-decoupling/thermalization
+    estimate.
+  applies: 'yes'
+  assumptions:
+  - can_be_relaxed: partial
+    description: The dark matter thermalizes within a hidden sector that remains cooler than the Standard
+      Model bath.
+    id: hidden-sector-thermalization
+    impact_if_violated: If hidden-sector thermalization fails, the hot-relic abundance formula does not
+      apply.
+    notes: null
+    scope: production mechanism
+    source_reference_ids:
+    - arxiv:2003.04936
+    status: assumed
+  benchmark_implications:
+  - The scalar-mediator example gives an upper mass near 38 PeV in the relativistic-decoupling/thermalization
+    estimate.
+  caveats:
+  - Perturbativity and mediator details create model-specific subregions within the broad mass window.
+  constrained_parameters:
+  - m_DM
+  - Tprime/T
+  - annihilation cross section
+  - partial wave J
+  constraint_type: theoretical
+  data_release: null
+  excluded_regions:
+  - Masses or temperature ratios that cannot both thermalize in the hidden sector and reproduce the observed
+    abundance.
+  - Model-independent upper masses beyond roughly 30 PeV are disfavored by the primary unitarity/thermalization
+    argument.
+  id: con_hidden_hot_relic_mass_window
+  likelihood_available: 'no'
+  likelihood_reference: null
+  name: Hidden-sector hot-relic mass and thermalization window
+  notes: null
+  observable_channel: thermal relic abundance
+  recasting_needed: 'no'
+  robustness: medium
+  source_reference_ids:
+  - arxiv:2003.04936
+  - arxiv:2405.10792
+- allowed_regions:
+  - Hidden-sector hot relics require a transfer-function or momentum-distribution recast before applying
+    the thermal-WDM bound directly.
+  applies: recast_required
+  assumptions:
+  - can_be_relaxed: partial
+    description: A thermal-equivalent WDM mass can represent the hidden-sector momentum distribution for
+      Ly-alpha comparison.
+    id: thermal-wdm-equivalent-map
+    impact_if_violated: A nonthermal or cooler distribution can shift the equivalent mass limit.
+    notes: null
+    scope: small-scale-structure recast
+    source_reference_ids:
+    - arxiv:1306.2314
+    - arxiv:2003.04936
+    status: assumed
+  benchmark_implications:
+  - KeV-scale hidden-sector hot relic benchmarks must be checked against Ly-alpha free-streaming constraints.
+  caveats:
+  - IGM thermal history and transfer-function mapping dominate the uncertainty for direct application.
+  constrained_parameters:
+  - m_DM
+  - Tprime/T
+  - transfer function
+  - m_WDM
+  constraint_type: astrophysical
+  data_release: HIRES/MIKE high-redshift Ly-alpha forest flux power; older WMAP+Ly-alpha constraints read
+    as context.
+  excluded_regions:
+  - Related Ly-alpha analysis disfavors early-decoupled thermal relic WDM below 3.3 keV at 2 sigma; 1,
+    2, and 2.5 keV thermal relics are increasingly disfavored.
+  id: con_lya_thermal_wdm_recast
+  likelihood_available: 'no'
+  likelihood_reference: null
+  name: Ly-alpha thermal-WDM equivalent lower bound
+  notes: null
+  observable_channel: lyman_alpha
+  recasting_needed: 'yes'
+  robustness: medium
+  source_reference_ids:
+  - arxiv:2003.04936
+  - arxiv:1306.2314
+  - arxiv:astro-ph/0501562
+theory_to_observable_routing:
+  routes:
+  - agent_notes: The primary paper supports abundance and mass-window fields; Ly-alpha constraints are
+      explicitly marked as recast-required.
+    caveats:
+    - Thermal-equivalent mapping is model dependent.
+    constraint_ids:
+    - con_hidden_hot_relic_mass_window
+    - con_lya_thermal_wdm_recast
+    derived_quantities:
+    - Omega_DM h^2
+    - thermalization condition
+    - unitarity mass bound
+    - transfer function
+    - thermal-equivalent WDM mass
+    description: Map hidden-sector thermal history to relic abundance and transfer-function observables,
+      then recast Ly-alpha thermal-WDM limits.
+    forward_model_chain:
+    - inputs:
+      - m_DM
+      - Tprime/T
+      - g_DM
+      notes: Use primary hot-relic abundance scaling.
+      outputs:
+      - relic density
+      step_id: s1
+      step_type: analytic_formula
+      tool_or_code: null
+      validity: Relativistic or near-relativistic hidden-sector decoupling.
+    - inputs:
+      - annihilation cross section
+      - partial wave J
+      - thermalization condition
+      notes: null
+      outputs:
+      - upper mass bound
+      step_id: s2
+      step_type: analytic_formula
+      tool_or_code: null
+      validity: Unitary thermalization estimate of primary paper.
+    - inputs:
+      - phase-space distribution
+      - Tprime/T
+      - m_DM
+      notes: Not run in this batch.
+      outputs:
+      - matter transfer function
+      - thermal-WDM equivalent mass
+      step_id: s3
+      step_type: transfer_function
+      tool_or_code: Boltzmann solver or custom distribution integrator
+      validity: Needed for Ly-alpha recast.
+    - inputs:
+      - transfer function
+      - Ly-alpha flux-power likelihood
+      notes: Related Ly-alpha bound recorded as a target.
+      outputs:
+      - small-scale-structure exclusion
+      step_id: s4
+      step_type: likelihood
+      tool_or_code: null
+      validity: Requires IGM thermal-history marginalization.
+    id: route_hidden_hot_relic_lss_recast
+    input_parameters:
+    - m_DM
+    - Tprime/T
+    - g_DM
+    - hidden-sector couplings
+    - decoupling temperature
+    likelihoods:
+    - Ly-alpha likelihood not available in this batch
+    - analytic relic-density target
+    observable_ids:
+    - obs_hidden_sector_hot_relic_density
+    - obs_hot_relic_free_streaming_cutoff
+    required_code_resources:
+    - hidden-sector Boltzmann/thermal-history calculator
+    - linear-transfer-function solver
+    - Ly-alpha recast likelihood
+    route_status: planned
+    source_model_features:
+    - Dirac fermion dark matter
+    - heavier scalar mediator
+    - annihilation to lighter hidden fermions
+    validation_tests:
+    - recover 1 keV to 30 PeV broad window
+    - recover 30.3 PeV unitarity scale
+    - recover 3.3 keV thermal-WDM Ly-alpha target before recast

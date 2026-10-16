@@ -1,0 +1,744 @@
+_source:
+  shard: arXiv_src_1006_004_wds.tar
+  paper_id: '1006_4008'
+  source_member: 1006_4008.json
+  enriched: true
+  enrichment_schema_version: dm_model_ocr_enrichment_smoke_v0
+schema_version: model_only_v0
+model_id: 1006_4008_resonant_msm_sterile_neutrino_v1
+associated_code:
+  has_associated_code: unknown
+  code_summary: No associated code was identified in the assigned paper text.
+  repositories: []
+  packages_or_modules: []
+  notebooks: []
+  scripts: []
+  expected_inputs: []
+  expected_outputs: []
+  supported_observable_channels: []
+  caveats: []
+provenance:
+  model_id: 1006_4008_resonant_msm_sterile_neutrino_v1
+  model_name: null
+  model_family: null
+  entry_version: 0.1.0
+  status: machine_extracted
+  created_at: '2026-05-31'
+  last_updated: '2026-05-31'
+  sources:
+    primary_papers:
+    - reference_id: '1006_4008'
+      title: Resonant production of the sterile neutrino dark matter and fine-tunings in the MSM
+      authors:
+      - Ananda Roy
+      - Mikhail Shaposhnikov
+      year: 2010
+      arxiv_id: '1006.4008'
+      doi: null
+      url: null
+      role: extension
+      notes: Assigned SQLite full text used as sole source.
+    - arxiv_id: '1006.4008'
+      authors:
+      - Roy, Ananda
+      - Shaposhnikov, Mikhail
+      doi: 10.1103/PhysRevD.82.056014
+      notes: Primary assigned paper read from local SQLite full text.
+      reference_id: arxiv:1006.4008
+      role: original_model
+      title: Resonant production of the sterile neutrino dark matter and fine-tunings in the neutrino
+        minimal standard model
+      url: https://arxiv.org/abs/1006.4008
+      year: 2010
+    constraint_papers:
+    - arxiv_id: hep-ph/0612182
+      authors:
+      - Asaka, Takehiko
+      - Shaposhnikov, Mikhail
+      - Laine, Mikko
+      doi: 10.1088/1126-6708/2007/01/091
+      notes: Related full text resolved locally and read for bounded enrichment.
+      reference_id: arxiv:hep-ph/0612182
+      role: constraint
+      title: Lightest sterile neutrino abundance within the νMSM
+      url: https://arxiv.org/abs/hep-ph/0612182
+      year: 2007
+    - arxiv_id: '0804.4543'
+      authors:
+      - Laine, Mikko
+      - Shaposhnikov, Mikhail
+      doi: 10.1088/1475-7516/2008/06/031
+      notes: Related full text resolved locally and read for bounded enrichment.
+      reference_id: arxiv:0804.4543
+      role: constraint
+      title: Sterile neutrino dark matter as a consequence of νMSM-induced lepton asymmetry
+      url: https://arxiv.org/abs/0804.4543
+      year: 2008
+    - arxiv_id: '2011.12637'
+      authors:
+      - Eijima, S.
+      - Shaposhnikov, M.
+      - Timiryasov, I.
+      doi: 10.1088/1475-7516/2022/04/049
+      notes: Related full text resolved locally and read for later nuMSM lepton-asymmetry generation context.
+      reference_id: arxiv:2011.12637
+      role: extension
+      title: Freeze-in and freeze-out generation of lepton asymmetries after baryogenesis in the νMSM
+      url: https://arxiv.org/abs/2011.12637
+      year: 2022
+    external_databases: []
+    review_papers: []
+  extraction:
+    method: llm_assisted
+    extracted_by: codex_batch_0001
+    extractor_name: Codex GPT-5
+    extraction_date: '2026-05-31'
+    confidence: high
+    source_chunks_or_sections:
+    - reference_id: '1006_4008'
+      section: Introduction
+      page: null
+      quote_or_summary: N1 sterile neutrino dark matter is produced at about 100 MeV by active mixing
+        and depends on lepton asymmetry.
+    - reference_id: '1006_4008'
+      section: Higher-dimensional operators
+      page: null
+      quote_or_summary: The paper constructs an MSM extension where a small N2-N3 mass splitting is technically
+        natural.
+    unresolved_items:
+    - The paper focuses on the N2-N3 degeneracy required for resonant production rather than a complete
+      N1 distribution calculation.
+    - No sterile-neutrino production code, X-ray likelihood, or Ly-alpha likelihood was run.
+    - The exact viable mass-mixing region requires the nonthermal momentum distribution and up-to-date
+      data recasts.
+  evidence:
+    particle_content:
+    - reference_id: '1006_4008'
+      note: The MSM extends the SM by three singlet Majorana fermions; N1 is the sterile-neutrino dark
+        matter candidate in the 1-50 keV range.
+      confidence: high
+      section: Introduction
+      page: null
+    symmetries:
+    - reference_id: '1006_4008'
+      note: The technically natural extension uses approximate leptonic symmetry conditions at the Planck
+        scale to preserve the N2-N3 degeneracy.
+      confidence: medium
+      section: Higher-dimensional operators
+      page: null
+    interactions:
+    - reference_id: '1006_4008'
+      note: Sterile neutrinos interact through Yukawa mixing with lepton and Higgs doublets; dimension-five
+        operators are added in the extension.
+      confidence: high
+      section: MSM Lagrangian / Higher-dimensional operators
+      page: null
+    production_mechanism:
+    - reference_id: '1006_4008'
+      note: N1 dark matter is produced near 100 MeV through active-neutrino mixing, with abundance depending
+        on sterile mass, mixing angle, and lepton asymmetry.
+      confidence: high
+      section: Introduction
+      page: null
+    cosmological_history:
+    - reference_id: '1006_4008'
+      note: Nearly degenerate N2 and N3 generate a large low-temperature lepton asymmetry through oscillations
+        or decays, enabling resonant N1 production.
+      confidence: high
+      section: Fine-tuning / Summary
+      page: null
+    parameter_ranges:
+    - reference_id: '1006_4008'
+      note: The paper quotes N1 mass 1-50 keV and analyzes GeV-scale N2,N3 with very small physical mass
+        splittings for resonant leptogenesis.
+      confidence: high
+      section: Introduction / Scenario II
+      page: null
+    validity_domain:
+    - reference_id: '1006_4008'
+      note: The extension with higher-dimensional operators requires inverted active-neutrino hierarchy
+        and suppressed spoiling operators.
+      confidence: medium
+      section: Higher-dimensional operators / Summary
+      page: null
+    constraints:
+    - confidence: high
+      note: Primary paper gives required low-temperature lepton asymmetry L/B about 3e5 and extreme N2/N3
+        degeneracy conditions for resonant production.
+      page: null
+      reference_id: arxiv:1006.4008
+      section: Introduction/degeneracy analysis
+    - confidence: high
+      note: Related abundance paper compares active-sterile production with X-ray constraints and notes
+        tension with structure-formation lower bounds.
+      page: null
+      reference_id: arxiv:hep-ph/0612182
+      section: Abstract
+    - confidence: medium
+      note: Related nuMSM paper describes late-time lepton asymmetry as crucial for resonantly enhanced
+        sterile-neutrino DM production.
+      page: null
+      reference_id: arxiv:2011.12637
+      section: Introduction
+    observables:
+    - confidence: high
+      note: Primary text states sterile-neutrino abundance depends on mixing angle, sterile-neutrino mass,
+        and low-temperature lepton asymmetry.
+      page: null
+      reference_id: arxiv:1006.4008
+      section: Introduction
+    - confidence: high
+      note: Primary text identifies Ly-alpha and X-ray observations as constraining free streaming and
+        active-sterile mixing.
+      page: null
+      reference_id: arxiv:1006.4008
+      section: Introduction
+    - confidence: high
+      note: Related paper derives resonantly produced sterile-neutrino spectra from nuMSM-induced lepton
+        asymmetry for structure-formation input.
+      page: null
+      reference_id: arxiv:0804.4543
+      section: Abstract
+    routes:
+    - confidence: high
+      note: Primary paper links N2/N3 mass splitting, RG evolution, and low-temperature resonant leptogenesis
+        needed for sterile-neutrino DM.
+      page: null
+      reference_id: arxiv:1006.4008
+      section: Model analysis
+  review:
+    human_reviewed: false
+    reviewed_by: null
+    review_date: null
+    expert_reviewed: false
+    expert_reviewer: null
+    expert_review_date: null
+    reviewer_notes: []
+    scientific_confidence: high
+    implementation_confidence: high
+identity:
+  name: Resonant MSM sterile-neutrino dark matter with technically natural N2-N3 degeneracy
+  family: sterile_neutrino_dark_matter
+  aliases:
+  - nuMSM resonant sterile neutrino dark matter
+  - MSM Scenario II extension
+  short_description: An effective extension of the neutrino minimal standard model in which a keV sterile
+    neutrino is resonantly produced using a large low-temperature lepton asymmetry from nearly degenerate
+    heavier singlet fermions.
+  historical_origin_or_motivation: Developed to make the low-energy degeneracy needed for resonant sterile-neutrino
+    dark matter production technically natural under RG running.
+  status: speculative
+  model_kind: effective_field_theory
+theory:
+  theory_level: effective_field_theory
+  parent_frameworks:
+  - neutrino minimal standard model
+  - SM plus three singlet Majorana fermions
+  lagrangian_available: partial
+  renormalizable: 'no'
+  eft_cutoff:
+    name: higher-dimensional operator scale
+    symbol: Lambda
+    description: Scale suppressing the dimension-five operators; c_1 is quoted as about 1/(10^16 GeV).
+    range: around 10^16 GeV for the LL operator estimate
+    unit: GeV
+    role: core
+    status: inferred
+  embedded_in_larger_framework: 'yes'
+  notes: The base MSM is renormalizable, but the technically natural scenario described by the paper uses
+    dimension-five operators.
+particle_content:
+  dark_matter_candidate:
+    name: N1 sterile neutrino
+    spin: 1/2
+    statistics: fermion
+    elementary_or_composite: elementary
+    number_of_components: single_component
+  additional_dark_sector_particles:
+  - heavier singlet fermions N2 and N3
+  mediators:
+  - active neutrinos
+  - Higgs doublet
+  - lepton doublets
+  dark_radiation_species: []
+  excited_or_degenerate_states:
+  - nearly degenerate N2 and N3
+  long_lived_particles:
+  - N1 sterile neutrino
+  unstable_parent_particles:
+  - N2
+  - N3
+  standard_model_extension: minimal
+symmetries:
+  stabilizing_mechanism: N1 is sufficiently weakly mixed with active neutrinos to be cosmologically long
+    lived; the paper treats its influence on the N2-N3 degeneracy problem as negligible.
+  symmetries:
+  - name: approximate leptonic U(1)
+    type: global
+    exact_or_approximate: approximate
+    breaking: charged-lepton Yukawa couplings and higher-dimensional terms break exact degeneracy
+    breaking_scale: null
+  topological_defects_possible: unknown
+interactions:
+  portals:
+  - neutrino
+  standard_model_targets:
+  - lepton doublets
+  - Higgs doublet
+  - active neutrinos
+  dark_sector_couplings:
+  - sterile-active Yukawa couplings h
+  - Majorana mass terms for N2 and N3
+  - dimension-five LL, NN, and NL operators
+  mediator_types:
+  - active-sterile neutrino mixing
+  - Higgs-lepton Yukawa interaction
+  interaction_operators:
+  - h L N H
+  - Majorana mass terms
+  - dimension-five LL operator
+  - dimension-five NN and NL operators
+  annihilation_channels: []
+  decay_channels:
+  - N2 and N3 decays contributing to low-temperature lepton asymmetry
+  self_scattering_channels: []
+  tree_or_loop_level: both
+parameters:
+  core:
+  - name: dark matter sterile neutrino mass
+    symbol: M_1
+    description: Mass of N1 sterile-neutrino dark matter.
+    range: 1-50 keV
+    unit: keV
+    role: core
+    status: established
+  - name: sterile-active mixing angle
+    symbol: theta
+    description: Mixing angle controlling N1 production through active flavors.
+    range: model-dependent
+    role: core
+    status: established
+  - name: low-temperature lepton asymmetry
+    symbol: L
+    description: Lepton asymmetry at N1 production time.
+    range: much larger than baryon asymmetry; L/B about 3 x 10^5 quoted as required without modifications
+    role: core
+    status: established
+  - name: common heavier singlet mass
+    symbol: M
+    description: Common mass scale of N2 and N3.
+    range: GeV scale examples, especially M around 1-10 GeV and viable regions above a few GeV
+    unit: GeV
+    role: core
+    status: established
+  - name: physical N2-N3 mass splitting
+    symbol: delta m_phys
+    description: Physical mass difference required for resonant low-temperature leptogenesis.
+    range: far below active-neutrino mass differences; examples around 10^-18 to 10^-16 GeV for decoupling-era
+      resonance
+    unit: GeV
+    role: core
+    status: established
+  nuisance: []
+  derived:
+  - name: oscillation count before sphaleron freeze-out
+    symbol: x(T_sph)
+    description: Quantity used to estimate baryon asymmetry suppression relative to low-temperature lepton
+      asymmetry.
+    range: about 10^-7 to 10^-6 divided by epsilon in the paper estimate
+    role: derived
+    status: established
+production:
+  mechanisms:
+  - resonant active-sterile neutrino production around 100 MeV
+  - low-temperature lepton asymmetry generated by N2-N3 oscillations or decays
+  thermal_equilibrium_with_standard_model: 'no'
+  thermal_equilibrium_with_hidden_sector: not_applicable
+  abundance_set_by:
+  - N1 mass
+  - sterile-active mixing angle
+  - low-temperature lepton asymmetry
+  - N2-N3 mass degeneracy
+  depends_on_reheating_temperature: unknown
+  can_produce_all_dark_matter: parameter_dependent
+  nonthermal_momentum_distribution: 'yes'
+  notes: The paper studies the degeneracy and fine-tuning needed for resonant lepton asymmetry, not a
+    full numerical N1 abundance scan.
+relic_density:
+  full_or_subcomponent: full_dark_matter
+  target_fraction: null
+  calculation_type: nonthermal
+  key_dependencies:
+  - M1
+  - mixing angle
+  - lepton asymmetry at production
+  - N2-N3 physical mass splitting
+  requires_entropy_dilution: unknown
+  overclosure_risk: parameter_dependent
+  underproduction_risk: parameter_dependent
+  tuning_assessment: tuned
+cosmological_history:
+  standard_history_assumed: true
+  nonstandard_features:
+  - large low-temperature lepton asymmetry below electroweak scale
+  dark_sector_temperature: null
+  delta_neff: null
+  kinetic_decoupling: null
+  chemical_decoupling: null
+  phase_transitions:
+  - sphaleron freeze-out separates baryon and late lepton asymmetry generation
+  topological_defects: []
+  isocurvature_perturbations: unknown
+  bbn_relevance: unknown
+  cmb_relevance: medium
+phase_space:
+  distribution_type: resonant
+  distribution_function_available: unknown
+  average_momentum_relative_to_thermal: null
+  free_streaming_length: null
+  velocity_dispersion_today: null
+  phase_space_bounds:
+  - The paper notes that Lyman-alpha and X-ray observations constrain free streaming and mixing angle.
+  notes: Resonantly produced keV sterile-neutrino dark matter has nonthermal phase-space structure.
+structure_formation:
+  linear:
+    behaves_like_cdm: 'no'
+    transfer_function_shape: smooth_cutoff
+    small_scale_power_effect: suppression
+    half_mode_mass: null
+  nonlinear:
+    halo_mass_function_effect: unknown
+    subhalo_mass_function_effect: suppressed relative to CDM is plausible but not calculated in this paper
+    simulation_calibrated: 'no'
+validity_domain:
+- id: inverted_hierarchy_for_operator_example
+  applies_to: model
+  condition: The dimension-five LL-operator route to technical naturalness requires inverted active-neutrino
+    hierarchy.
+  valid_range: null
+  status: established
+  extrapolation_risk: medium
+  caveats: []
+  source_reference_ids:
+  - '1006_4008'
+  notes: null
+- id: tiny_n2_n3_splitting
+  applies_to: parameter
+  condition: Resonant production requires N2 and N3 physical mass splitting much smaller than active-neutrino
+    mass differences.
+  valid_range: null
+  status: established
+  extrapolation_risk: high
+  caveats: []
+  source_reference_ids:
+  - '1006_4008'
+  notes: null
+- id: suppressed_spoiling_operators
+  applies_to: EFT
+  condition: Other higher-dimensional operators must be small enough not to spoil the degeneracy relations.
+  valid_range: null
+  status: inferred
+  extrapolation_risk: medium
+  caveats: []
+  source_reference_ids:
+  - '1006_4008'
+  notes: null
+assumptions:
+  global:
+  - id: n1_negligible_for_degeneracy_rg
+    description: N1 is omitted from the N2-N3 Lagrangian because its effect on the studied degeneracy
+      is negligible.
+    scope: theory
+    status: assumed
+    impact_if_violated: null
+    can_be_relaxed: unknown
+    source_reference_ids:
+    - '1006_4008'
+    notes: null
+  - id: planck_scale_symmetry_conditions
+    description: The technically natural example assumes symmetry-motivated high-scale conditions M=0
+      and (h dagger h)_23=0.
+    scope: theory
+    status: assumed
+    impact_if_violated: null
+    can_be_relaxed: unknown
+    source_reference_ids:
+    - '1006_4008'
+    notes: null
+robustness:
+  overall: medium
+  theory_robustness: medium
+  observational_robustness: unknown
+  computational_robustness: medium
+  dominant_uncertainties:
+  - The paper emphasizes that the needed low-temperature degeneracy is fine-tuned in the minimal model.
+  - The full sterile-neutrino distribution is not computed in the extracted text.
+  validation_status: partially_validated
+  notes: null
+agent_failure_modes:
+  warnings:
+  - id: minimal_vs_extended_msm
+    severity: high
+    category: assumption_mismatch
+    warning: Do not treat the technically natural Scenario II as the minimal renormalizable MSM; it relies
+      on higher-dimensional operators and symmetry assumptions.
+    mitigation: Record whether the EFT extension is active.
+    source_reference_ids:
+    - '1006_4008'
+  - id: structure_mapping_not_calculated_here
+    severity: medium
+    category: extrapolation
+    warning: The paper mentions free-streaming relevance but does not provide a transfer-function calculation.
+    mitigation: Use dedicated structure calculations before deriving small-scale predictions.
+    source_reference_ids:
+    - '1006_4008'
+observables:
+- caveats:
+  - Line limits depend on dark-matter distribution and branching assumptions.
+  channel: indirect_detection
+  effect_direction: spectral_line
+  environments:
+  - galaxy clusters
+  - dwarf galaxies
+  - diffuse X-ray background
+  id: obs_sterile_neutrino_xray_decay
+  key_quantities:
+  - description: Mass of the dark matter sterile neutrino.
+    name: sterile-neutrino mass
+    range: 1-50 keV in primary nuMSM discussion
+    role: core
+    source_reference_ids:
+    - arxiv:1006.4008
+    status: inferred
+    symbol: M_1
+    unit: keV
+  - description: Controls production and radiative-decay rate.
+    name: active-sterile mixing angle
+    range: X-ray constrained
+    role: core
+    source_reference_ids:
+    - arxiv:1006.4008
+    - arxiv:hep-ph/0612182
+    status: inferred
+    symbol: theta
+  linked_constraints:
+  - con_xray_lya_sterile_neutrino
+  linked_routes:
+  - route_numsm_resonant_dm_constraints
+  name: Radiative-decay X-ray line from sterile-neutrino DM
+  notes: null
+  observability: high
+  predicted_effect: Active-sterile mixing makes keV sterile-neutrino DM radiatively decay, so X-ray observations
+    constrain the mixing angle for a given mass.
+  redshift_range: late-time halos
+  relevance: critical
+  scale_range: X-ray photon energy about M_1/2
+  source_reference_ids:
+  - arxiv:1006.4008
+  - arxiv:hep-ph/0612182
+  subchannel: X-ray line
+- caveats:
+  - Requires the non-equilibrium distribution, not a thermal-WDM proxy alone.
+  channel: lyman_alpha
+  effect_direction: suppression
+  environments:
+  - intergalactic medium
+  - small-scale matter power
+  id: obs_resonant_free_streaming_spectrum
+  key_quantities:
+  - description: Low-temperature lepton asymmetry at production.
+    name: lepton asymmetry
+    range: L/B about 3e5 required in primary discussion
+    role: core
+    source_reference_ids:
+    - arxiv:1006.4008
+    status: inferred
+    symbol: L
+  - description: Nonthermal spectrum from resonant production.
+    name: sterile-neutrino distribution
+    role: derived
+    source_reference_ids:
+    - arxiv:0804.4543
+    status: inferred
+    symbol: f_N1(p)
+  linked_constraints:
+  - con_xray_lya_sterile_neutrino
+  linked_routes:
+  - route_numsm_resonant_dm_constraints
+  name: Resonant-production momentum spectrum and free streaming
+  notes: null
+  observability: high
+  predicted_effect: A large low-temperature lepton asymmetry enables resonant sterile-neutrino production
+    with a nonthermal momentum distribution that must be tested against Ly-alpha/free-streaming data.
+  redshift_range: production around sub-electroweak temperatures through structure formation
+  relevance: critical
+  scale_range: Ly-alpha forest small scales
+  source_reference_ids:
+  - arxiv:1006.4008
+  - arxiv:0804.4543
+  subchannel: warm-DM transfer function
+constraints:
+- allowed_regions:
+  - Resonant production with sufficient lepton asymmetry can reduce the required mixing and alter the
+    momentum spectrum.
+  applies: 'yes'
+  assumptions:
+  - can_be_relaxed: partial
+    description: Ly-alpha mapping requires the actual resonantly produced momentum distribution.
+    id: nonthermal-spectrum-required
+    impact_if_violated: Thermal-equivalent mass bounds can misstate the viable region.
+    notes: null
+    scope: sterile-neutrino structure recast
+    source_reference_ids:
+    - arxiv:1006.4008
+    - arxiv:0804.4543
+    status: assumed
+  benchmark_implications:
+  - Primary requires L/B about 3e5 at low temperatures for viable resonant production in the minimal setup.
+  caveats:
+  - No X-ray or Ly-alpha likelihood was rerun.
+  constrained_parameters:
+  - M_1
+  - theta
+  - L
+  - f_N1(p)
+  constraint_type: cosmological
+  data_release: X-ray observations and Ly-alpha/free-streaming constraints cited by primary and related
+    abundance papers
+  excluded_regions:
+  - Nonresonant active-sterile production as the sole DM source is squeezed by X-ray upper limits and
+    structure-formation lower bounds in related analyses.
+  id: con_xray_lya_sterile_neutrino
+  likelihood_available: partial
+  likelihood_reference: null
+  name: X-ray mixing and Ly-alpha free-streaming bounds
+  notes: null
+  observable_channel: X-ray and Ly-alpha forest
+  recasting_needed: 'yes'
+  robustness: medium
+  source_reference_ids:
+  - arxiv:1006.4008
+  - arxiv:hep-ph/0612182
+  - arxiv:0804.4543
+- allowed_regions:
+  - Primary constructs a technically natural example, favoring the inverted hierarchy in its setup.
+  applies: 'yes'
+  assumptions:
+  - can_be_relaxed: partial
+    description: Only the minimal nuMSM fields and the paper's higher-dimensional/symmetry setup are assumed.
+    id: minimal-numsm-framework
+    impact_if_violated: Extra interactions can change the required degeneracy or production route.
+    notes: null
+    scope: technical naturalness
+    source_reference_ids:
+    - arxiv:1006.4008
+    status: assumed
+  benchmark_implications:
+  - For M around 1-10 GeV, primary estimates m_phys at decoupling of order 1e-18-1e-16 GeV and even smaller
+    for decay-era generation.
+  caveats:
+  - Fine-tuning statements are theoretical, not observational exclusions.
+  constrained_parameters:
+  - M
+  - delta m_phys
+  - Yukawa hierarchy
+  - neutrino mass hierarchy
+  constraint_type: theoretical
+  data_release: null
+  excluded_regions:
+  - Generic heavy-neutral-lepton mass splittings do not generate enough late lepton asymmetry for resonant
+    sterile-neutrino DM.
+  id: con_hnl_degeneracy_finetuning
+  likelihood_available: 'no'
+  likelihood_reference: null
+  name: N2-N3 degeneracy needed for low-temperature lepton asymmetry
+  notes: null
+  observable_channel: resonant leptogenesis
+  recasting_needed: 'no'
+  robustness: medium
+  source_reference_ids:
+  - arxiv:1006.4008
+  - arxiv:2011.12637
+theory_to_observable_routing:
+  routes:
+  - agent_notes: null
+    caveats:
+    - Resonant-production viability is sensitive to late-time lepton asymmetry generation.
+    constraint_ids:
+    - con_xray_lya_sterile_neutrino
+    - con_hnl_degeneracy_finetuning
+    derived_quantities:
+    - lepton asymmetry
+    - N1 momentum distribution
+    - radiative-decay rate
+    - transfer-function suppression
+    description: Connect heavy-neutral-lepton degeneracy to lepton asymmetry, sterile-neutrino production,
+      and X-ray/Ly-alpha limits.
+    forward_model_chain:
+    - inputs:
+      - M
+      - delta m_phys
+      - Yukawa couplings
+      notes: null
+      outputs:
+      - late lepton asymmetry
+      step_id: s1
+      step_type: boltzmann_solver
+      tool_or_code: null
+      validity: Requires nuMSM kinetic equations; primary analyzes degeneracy conditions.
+    - inputs:
+      - L
+      - M_1
+      - theta
+      notes: null
+      outputs:
+      - N1 abundance
+      - f_N1(p)
+      step_id: s2
+      step_type: boltzmann_solver
+      tool_or_code: null
+      validity: Related papers provide production-rate/spectrum calculations.
+    - inputs:
+      - f_N1(p)
+      notes: null
+      outputs:
+      - matter transfer function
+      step_id: s3
+      step_type: transfer_function
+      tool_or_code: null
+      validity: Needed for Ly-alpha recast.
+    - inputs:
+      - decay rate
+      - transfer function
+      notes: null
+      outputs:
+      - X-ray and Ly-alpha constraints
+      step_id: s4
+      step_type: likelihood
+      tool_or_code: null
+      validity: Not run in this batch.
+    id: route_numsm_resonant_dm_constraints
+    input_parameters:
+    - M_1
+    - theta
+    - L
+    - M
+    - delta m_phys
+    - Yukawa couplings
+    likelihoods:
+    - X-ray likelihood unavailable
+    - Ly-alpha likelihood unavailable
+    observable_ids:
+    - obs_sterile_neutrino_xray_decay
+    - obs_resonant_free_streaming_spectrum
+    required_code_resources:
+    - nuMSM kinetic-equation solver
+    - Boltzmann/transfer-function pipeline
+    route_status: planned
+    source_model_features:
+    - keV N1 sterile-neutrino DM
+    - nearly degenerate N2/N3 heavy neutral leptons
+    - low-temperature resonant leptogenesis
+    validation_tests:
+    - recover L/B about 3e5 requirement
+    - recover nonresonant production tension

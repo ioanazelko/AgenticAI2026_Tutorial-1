@@ -1,0 +1,825 @@
+_source:
+  shard: arXiv_src_1208_004_wds.tar
+  paper_id: '1208_2496'
+  source_member: 1208_2496.json
+  enriched: true
+  enrichment_schema_version: dm_model_ocr_enrichment_smoke_v0
+schema_version: model_only_v0
+model_id: 1208_2496_saxion_decay_axino_warm_dark_matter_v1
+identity:
+  name: Saxion-decay axino warm dark matter with axion dark radiation
+  family: warm_dark_matter
+  aliases:
+  - supersymmetric axion model with decaying saxion
+  - axino warm dark matter from saxion decay
+  short_description: A supersymmetric axion scenario in which late saxion decays produce relativistic
+    axions as dark radiation and nonthermally produced axinos as warm dark matter.
+  historical_origin_or_motivation: Proposed to address excess effective neutrino species and small-scale-structure
+    tensions by giving dark radiation and warm dark matter a common origin in late heavy-particle decays.
+  status: speculative
+  model_kind: simplified_model
+theory:
+  theory_level: simplified_model
+  parent_frameworks:
+  - supersymmetric axion model
+  - KSVZ-type axion model
+  lagrangian_available: partial
+  renormalizable: unknown
+  embedded_in_larger_framework: 'yes'
+  notes: The paper gives the axion-supermultiplet interactions relevant for saxion decays and states that
+    an explicit SUSY-breaking construction is beyond its scope.
+particle_content:
+  dark_matter_candidate:
+    name: axino
+    spin: 1/2
+    statistics: fermion
+    elementary_or_composite: elementary
+    number_of_components: single_component
+  additional_dark_sector_particles:
+  - saxion
+  - axion
+  mediators:
+  - saxion
+  dark_radiation_species:
+  - axion
+  excited_or_degenerate_states: []
+  long_lived_particles:
+  - axino
+  unstable_parent_particles:
+  - saxion
+  standard_model_extension: substantial
+symmetries:
+  stabilizing_mechanism: The extracted text treats the axino as the warm dark matter daughter of saxion
+    decay; the detailed stabilizing symmetry is not specified.
+  symmetries:
+  - name: U(1)_PQ
+    type: global
+    exact_or_approximate: broken
+    breaking: Spontaneously broken by the vacuum expectation value of a PQ-charged SM-neutral scalar field.
+    breaking_scale:
+      name: axion decay constant
+      symbol: F_a
+      range:
+        min: 3e12
+        max: 1e13
+        inclusive_min: true
+        inclusive_max: true
+        unit: GeV
+        notes: Viable overlap region quoted in the paper.
+      unit: GeV
+      role: core
+      status: inferred
+      source_reference_ids:
+      - '1208_2496'
+      notes: The broader setup also uses F_a near 1e12 GeV in lifetime estimates.
+  topological_defects_possible: unknown
+interactions:
+  portals:
+  - axion
+  - other
+  standard_model_targets:
+  - gauge fields through axion anomaly terms in the KSVZ example
+  dark_sector_couplings:
+  - saxion to axion pairs
+  - saxion to axino pairs
+  mediator_types:
+  - saxion
+  interaction_operators:
+  - s (partial a)^2 / F_a
+  - s axino axino coupling
+  - axion anomaly coupling to gauge fields
+  scattering:
+    elastic: unknown
+    inelastic: unknown
+    momentum_dependence: unknown
+    velocity_dependence: unknown
+    spin_dependence: unknown
+  annihilation_channels: []
+  decay_channels:
+  - saxion to two axions
+  - saxion to two axinos
+  self_scattering_channels: []
+  cp_structure: unknown
+  flavor_structure: KSVZ example ignores sizable saxion couplings to SM fermions.
+  tree_or_loop_level: unknown
+parameters:
+  core:
+  - name: saxion mass
+    symbol: m_s
+    range:
+      min: '100'
+      max: 1e3
+      inclusive_min: true
+      inclusive_max: true
+      unit: GeV
+      notes: Rendered in the extracted text as the viable overlap corresponding to 100 GeV to 1 TeV.
+    unit: GeV
+    role: core
+    status: inferred
+    source_reference_ids:
+    - '1208_2496'
+    notes: Controls the saxion lifetime and decay epoch.
+  - name: axion decay constant
+    symbol: F_a
+    range:
+      min: 3e12
+      max: 1e13
+      inclusive_min: true
+      inclusive_max: true
+      unit: GeV
+      notes: Viable region where dark radiation and warm-DM free streaming overlap.
+    unit: GeV
+    role: core
+    status: established
+    source_reference_ids:
+    - '1208_2496'
+    notes: null
+  - name: axino-to-saxion mass ratio
+    symbol: m_axino/m_s
+    value: '0.25'
+    unit: null
+    role: core
+    status: assumed
+    source_reference_ids:
+    - '1208_2496'
+    notes: Benchmark ratio used in the viable-region figure.
+  - name: saxion branching fraction to axinos
+    symbol: f_m
+    range:
+      min: '0.1'
+      max: '0.2'
+      inclusive_min: true
+      inclusive_max: true
+      unit: null
+      notes: Values marked on the line where saxion-produced axinos constitute most of dark matter.
+    unit: null
+    role: core
+    status: inferred
+    source_reference_ids:
+    - '1208_2496'
+    notes: null
+  derived:
+  - name: free-streaming length
+    symbol: lambda_FS
+    range:
+      min: '0.2'
+      max: '1.3'
+      inclusive_min: true
+      inclusive_max: true
+      unit: Mpc
+      notes: Adopted range corresponding to warm-DM behavior that can reduce small-scale structure.
+    unit: Mpc
+    role: derived
+    status: inferred
+    source_reference_ids:
+    - '1208_2496'
+    notes: null
+  - name: extra effective neutrino number
+    symbol: Delta N_eff
+    range:
+      min: '0.5'
+      max: '1.5'
+      inclusive_min: true
+      inclusive_max: true
+      unit: null
+      notes: Blue-band values used for the viable dark-radiation region.
+    unit: null
+    role: derived
+    status: inferred
+    source_reference_ids:
+    - '1208_2496'
+    notes: null
+production:
+  mechanisms:
+  - nonthermal production from late saxion decays
+  - saxion decays dominantly to axion pairs and subdominantly to axino pairs
+  thermal_equilibrium_with_standard_model: unknown
+  thermal_equilibrium_with_hidden_sector: unknown
+  abundance_set_by:
+  - saxion abundance
+  - saxion lifetime
+  - branching fraction to axinos
+  - axino-to-saxion mass ratio
+  depends_on_reheating_temperature: 'yes'
+  can_produce_all_dark_matter: parameter_dependent
+  nonthermal_momentum_distribution: 'yes'
+  notes: The paper imposes the observed dark matter abundance in its decaying-particle treatment and then
+    gives a supersymmetric axion realization.
+relic_density:
+  full_or_subcomponent: full_dark_matter
+  target_fraction:
+    name: dark matter relic abundance
+    symbol: Omega_DM h^2
+    value: '0.11'
+    unit: null
+    role: cosmological
+    status: assumed
+    source_reference_ids:
+    - '1208_2496'
+    notes: Used as the WMAP dark matter abundance target in the text.
+  calculation_type: nonthermal
+  key_dependencies:
+  - saxion decay branching fraction to axinos
+  - axino mass
+  - saxion abundance
+  - saxion lifetime
+  requires_entropy_dilution: unknown
+  overclosure_risk: parameter_dependent
+  underproduction_risk: parameter_dependent
+  tuning_assessment: unknown
+cosmological_history:
+  standard_history_assumed: false
+  nonstandard_features:
+  - late saxion decay after BBN
+  - dark radiation from axions
+  - warm nonthermal axinos
+  dark_sector_temperature: null
+  delta_neff:
+    name: extra effective neutrino number
+    symbol: Delta N_eff
+    range:
+      min: '0.5'
+      max: '1.5'
+      inclusive_min: true
+      inclusive_max: true
+      unit: null
+      notes: Viable dark-radiation contours shown in the paper.
+    unit: null
+    role: cosmological
+    status: inferred
+    source_reference_ids:
+    - '1208_2496'
+    notes: null
+  kinetic_decoupling: null
+  chemical_decoupling: null
+  phase_transitions:
+  - spontaneous PQ symmetry breaking
+  topological_defects: []
+  isocurvature_perturbations: unknown
+  bbn_relevance: high
+  cmb_relevance: high
+phase_space:
+  distribution_type: decay_produced
+  distribution_function_available: approximate
+  f_of_p_or_q: The paper tracks redshifting momenta of axinos from two-body saxion decays rather than
+    giving a full distribution function.
+  average_momentum_relative_to_thermal: mapped to thermal WDM with mass about 1-4 keV
+  free_streaming_length:
+    name: free-streaming length
+    symbol: lambda_FS
+    range:
+      min: '0.2'
+      max: '1.3'
+      inclusive_min: true
+      inclusive_max: true
+      unit: Mpc
+      notes: Quoted as the range adopted for solving small-scale-structure tensions.
+    unit: Mpc
+    role: derived
+    status: inferred
+    source_reference_ids:
+    - '1208_2496'
+    notes: null
+  velocity_dispersion_today: null
+  phase_space_bounds:
+  - Lyman-alpha forest bounds discussed through an approximate thermal-WDM mapping
+  notes: Axinos are born relativistic from saxion decay and become nonrelativistic later by redshifting.
+structure_formation:
+  linear:
+    behaves_like_cdm: 'no'
+    transfer_function_shape: smooth_cutoff
+    small_scale_power_effect: suppression
+    half_mode_mass: null
+    thermal_wdm_mapping:
+      available: true
+      validity: approximate
+      warning: The paper relates the free-streaming scale to a thermal WDM mass but does not provide a
+        full transfer-function calculation.
+    impact_on_sigma8_s8: unknown
+  nonlinear:
+    halo_mass_function_effect: Intended to reduce excessive small-scale substructure relative to cold
+      dark matter.
+    subhalo_mass_function_effect: Intended to reduce the overabundance of Milky-Way-size satellite subhalos.
+    infall_subhalo_mass_function_effect: unknown
+    present_day_bound_subhalo_mass_function_effect: unknown
+    concentration_mass_relation_effect: unknown
+    density_profile_effect: unknown
+    core_or_cusp_effect: unknown
+    subhalo_survival_effect: unknown
+    tidal_stripping_effect: unknown
+    smallest_galaxies_effect: suppresses formation of the smallest structures through warm free streaming
+    simulation_calibrated: 'no'
+validity_domain:
+- id: viable_saxion_axino_overlap
+  applies_to: model
+  condition: Saxion decay must produce Delta N_eff around 0.5-1.5, free-streaming length about 0.2-1.3
+    Mpc, and axinos making most of the dark matter.
+  valid_range: m_s roughly 100 GeV-1 TeV, F_a about 3e12-1e13 GeV, m_axino/m_s = 0.25 benchmark, f_m about
+    0.1-0.2 in the plotted overlap.
+  status: inferred
+  extrapolation_risk: high
+  caveats:
+  - The explicit SUSY-breaking construction is left for future work.
+  - BBN and CMB energy-injection bounds restrict the viable region.
+  source_reference_ids:
+  - '1208_2496'
+  notes: null
+assumptions:
+  global:
+  - id: dominant_saxion_to_axions
+    description: Saxions decay dominantly to nearly massless axion pairs and subdominantly to axino pairs.
+    scope: production
+    status: assumed
+    impact_if_violated: The dark-radiation abundance and nonthermal axino relic abundance would change.
+    can_be_relaxed: unknown
+    source_reference_ids:
+    - '1208_2496'
+    notes: null
+  - id: ksvz_example
+    description: The concrete example is KSVZ-like, so sizable saxion couplings to SM fermions are ignored.
+    scope: theory
+    status: assumed
+    impact_if_violated: Additional visible decay channels could alter BBN/CMB bounds and relic production.
+    can_be_relaxed: 'yes'
+    source_reference_ids:
+    - '1208_2496'
+    notes: null
+  - id: instantaneous_decay_approximation
+    description: The decaying-particle calculation uses an instantaneous decay approximation and small
+      branching ratio into dark matter pairs.
+    scope: cosmological_history
+    status: approximate
+    impact_if_violated: Detailed momentum distributions and abundances could shift.
+    can_be_relaxed: 'yes'
+    source_reference_ids:
+    - '1208_2496'
+    notes: null
+associated_code:
+  has_associated_code: unknown
+  code_summary: No associated model code is mentioned in the assigned text.
+  primary_code_role: null
+  repositories: []
+  packages_or_modules: []
+  notebooks: []
+  scripts: []
+  containers_or_environments: []
+  expected_inputs: []
+  expected_outputs: []
+  supported_observable_channels: []
+  caveats: []
+provenance:
+  model_id: 1208_2496_saxion_decay_axino_warm_dark_matter_v1
+  model_name: Saxion-decay axino warm dark matter with axion dark radiation
+  model_family: warm_dark_matter
+  entry_version: 0.1.0
+  status: machine_extracted
+  created_at: '2026-05-31'
+  last_updated: '2026-05-31'
+  sources:
+    primary_papers:
+    - reference_id: '1208_2496'
+      title: Dark radiation and small-scale structure problems with decaying particles
+      authors:
+      - Kiwoon Choi
+      - Ki-Young Choi
+      - Chang Sub Shin
+      year: 2012
+      arxiv_id: '1208.2496'
+      doi: null
+      url: null
+      role: original_model
+      notes: Assigned full text from target_text.sqlite.
+    - arxiv_id: '1208.2496'
+      authors:
+      - Choi, Kiwoon
+      - Choi, Ki-Young
+      - Shin, Chang Sub
+      doi: 10.1103/PhysRevD.86.083529
+      notes: Primary assigned paper read from local SQLite full text.
+      reference_id: arxiv:1208.2496
+      role: original_model
+      title: Dark radiation and small-scale structure problems with decaying particles
+      url: https://arxiv.org/abs/1208.2496
+      year: 2012
+    constraint_papers:
+    - arxiv_id: '1303.6267'
+      authors:
+      - Di Bari, Pasquale
+      - King, Stephen F.
+      - Merle, Alexander
+      doi: 10.1016/j.physletb.2013.06.003
+      notes: Related full text resolved locally and read for bounded enrichment.
+      reference_id: arxiv:1303.6267
+      role: constraint
+      title: Dark Radiation or Warm Dark Matter from long lived particle decays in the light of Planck
+      url: https://arxiv.org/abs/1303.6267
+      year: 2013
+    - arxiv_id: '1301.7428'
+      authors:
+      - Bae, Kyu Jung
+      - Baer, Howard
+      - Lessa, Andre
+      doi: 10.1088/1475-7516/2013/04/041
+      notes: Related full text resolved locally and read for bounded enrichment.
+      reference_id: arxiv:1301.7428
+      role: constraint
+      title: Dark radiation constraints on mixed Axion/Neutralino dark matter
+      url: https://arxiv.org/abs/1301.7428
+      year: 2013
+    - arxiv_id: '1107.4319'
+      authors:
+      - Hasenkamp, Jasper
+      doi: 10.1016/j.physletb.2011.12.017
+      notes: Related full text resolved locally and read for bounded enrichment.
+      reference_id: arxiv:1107.4319
+      role: constraint
+      title: Dark radiation from the axino solution of the gravitino problem
+      url: https://arxiv.org/abs/1107.4319
+      year: 2012
+    external_databases: []
+    review_papers: []
+  extraction:
+    method: llm_assisted
+    extracted_by: codex_batch_0001
+    extractor_name: Codex GPT-5
+    extraction_date: '2026-05-31'
+    confidence: high
+    source_chunks_or_sections:
+    - reference_id: '1208_2496'
+      section: abstract/introduction
+      page: null
+      quote_or_summary: The paper proposes producing both dark matter and dark radiation by late heavy-particle
+        decays.
+    - reference_id: '1208_2496'
+      section: supersymmetric axion model
+      page: null
+      quote_or_summary: The paper identifies saxion decays to axions and axinos as the concrete realization.
+    unresolved_items:
+    - Detailed stabilizing symmetry for the axino is not explicit in the extracted text.
+    - The explicit SUSY-breaking construction is stated to be outside the paper scope.
+    - Modern Planck N_eff and Lyman-alpha likelihoods should replace the older quoted constraints.
+    - Thermal-WDM mapping needs recast for the nonthermal axino spectrum.
+  evidence:
+    particle_content:
+    - reference_id: '1208_2496'
+      note: The model contains a PQ supermultiplet with saxion, axion, and axino; axinos from saxion decays
+        are warm dark matter.
+      confidence: high
+      section: supersymmetric axion model
+      page: null
+    symmetries:
+    - reference_id: '1208_2496'
+      note: The paper introduces a U(1)_PQ symmetry broken by a PQ-charged SM-neutral scalar with scale
+        F_a.
+      confidence: high
+      section: supersymmetric axion model
+      page: null
+    interactions:
+    - reference_id: '1208_2496'
+      note: The relevant Lagrangian includes saxion couplings to axions, axinos, and anomaly-induced gauge-field
+        terms.
+      confidence: high
+      section: supersymmetric axion model
+      page: null
+    production_mechanism:
+    - reference_id: '1208_2496'
+      note: Saxions decay dominantly to axions and also to axino pairs; nonthermally produced axinos are
+        the warm dark matter.
+      confidence: high
+      section: supersymmetric axion model
+      page: null
+    cosmological_history:
+    - reference_id: '1208_2496'
+      note: The scenario uses late massive-particle decay after BBN to source dark radiation and warm
+        dark matter.
+      confidence: high
+      section: decaying particle scenario
+      page: null
+    parameter_ranges:
+    - reference_id: '1208_2496'
+      note: The viable overlap is quoted around F_a = 3e12-1e13 GeV, m_s about 100 GeV-1 TeV, free-streaming
+        length 0.2-1.3 Mpc, and Delta N_eff 0.5-1.5.
+      confidence: medium
+      section: supersymmetric axion model
+      page: null
+    validity_domain:
+    - reference_id: '1208_2496'
+      note: The authors state that the parameter region satisfies the relevant cosmological bounds but
+        an explicit SUSY-breaking construction remains future work.
+      confidence: medium
+      section: conclusion
+      page: null
+    constraints:
+    - confidence: high
+      note: Primary text discusses BBN/CMB N_eff and Lyman-alpha WDM bounds.
+      page: null
+      reference_id: arxiv:1208.2496
+      section: Cosmological constraints
+    - confidence: medium
+      note: Related Planck-era decay paper supports the long-lived-particle dark-radiation/WDM framing.
+      page: null
+      reference_id: arxiv:1303.6267
+      section: Introduction
+    observables:
+    - confidence: high
+      note: Primary text states saxion decays produce axion dark radiation and axino warm DM.
+      page: null
+      reference_id: arxiv:1208.2496
+      section: Abstract
+    - confidence: high
+      note: Primary text maps decay kinematics to lambda_FS and thermal-equivalent WDM mass.
+      page: null
+      reference_id: arxiv:1208.2496
+      section: Small-scale structure
+    routes:
+    - confidence: high
+      note: Primary paper gives analytic decay, abundance and free-streaming relations.
+      page: null
+      reference_id: arxiv:1208.2496
+      section: Supersymmetric axion model
+  review:
+    human_reviewed: false
+    reviewed_by: null
+    review_date: null
+    expert_reviewed: false
+    expert_reviewer: null
+    expert_review_date: null
+    reviewer_notes: []
+    scientific_confidence: medium
+    implementation_confidence: medium
+robustness:
+  overall: medium
+  theory_robustness: medium
+  observational_robustness: medium
+  computational_robustness: unknown
+  constraint_robustness: medium
+  dominant_uncertainties:
+  - Explicit SUSY-breaking construction is not provided.
+  - Viability is parameter-dependent and relies on approximate free-streaming and decay treatments.
+  validation_status: expert_judgment_only
+  notes: Model-card fields are extracted from a concrete but not fully UV-specified supersymmetric axion
+    realization.
+agent_failure_modes:
+  warnings:
+  - id: do_not_treat_as_cold_dm
+    severity: high
+    category: assumption_mismatch
+    warning: This model is intentionally warm and decay-produced; mapping it to cold thermal relic dark
+      matter would erase the central small-scale-structure feature.
+    mitigation: Preserve the decay-produced phase-space and free-streaming assumptions.
+    source_reference_ids:
+    - '1208_2496'
+  - id: explicit_uv_completion_missing
+    severity: medium
+    category: extrapolation
+    warning: The paper states that an explicit SUSY-breaking construction is beyond its scope.
+    mitigation: Do not infer detailed mediation, spectra, or stabilizing symmetries beyond the text.
+    source_reference_ids:
+    - '1208_2496'
+observables:
+- caveats: []
+  channel: cmb
+  effect_direction: enhancement
+  environments:
+  - cosmic radiation bath
+  id: obs_saxion_dark_radiation
+  key_quantities:
+  - description: Axion dark-radiation contribution.
+    name: effective-neutrino excess
+    range: roughly 0.5 to 1.5 viable contours in model card
+    role: cosmological
+    source_reference_ids:
+    - arxiv:1208.2496
+    - arxiv:1303.6267
+    - arxiv:1301.7428
+    status: inferred
+    symbol: Delta N_eff
+  - description: Decay time controlling radiation injection.
+    name: saxion lifetime
+    range: order 1e5 s in KSVZ example
+    role: core
+    source_reference_ids:
+    - arxiv:1208.2496
+    status: inferred
+    symbol: tau_s
+    unit: s
+  linked_constraints:
+  - con_saxion_neff
+  linked_routes:
+  - route_saxion_decay
+  name: Axion dark radiation from late saxion decay
+  notes: null
+  observability: high
+  predicted_effect: Late saxion decays dominantly produce relativistic axions, increasing radiation density
+    between BBN and recombination.
+  redshift_range: after BBN and before recombination
+  relevance: critical
+  scale_range: CMB and light-element scales
+  source_reference_ids:
+  - arxiv:1208.2496
+  - arxiv:1303.6267
+  - arxiv:1301.7428
+  subchannel: Delta N_eff
+- caveats:
+  - Thermal-WDM mapping is approximate for decay-produced axinos.
+  channel: lyman_alpha
+  effect_direction: suppression
+  environments:
+  - Lyman-alpha forest
+  - Milky Way substructure
+  id: obs_axino_wdm
+  key_quantities:
+  - description: Comoving free-streaming scale.
+    name: free-streaming length
+    range: 0.2 to 1.3
+    role: core
+    source_reference_ids:
+    - arxiv:1208.2496
+    status: inferred
+    symbol: lambda_FS
+    unit: Mpc
+  - description: Mass used for Lyman-alpha comparison.
+    name: thermal-equivalent WDM mass
+    range: 1 to 4
+    role: core
+    source_reference_ids:
+    - arxiv:1208.2496
+    status: inferred
+    symbol: m_WDM
+    unit: keV
+  linked_constraints:
+  - con_axino_lyman
+  - con_saxion_abundance
+  linked_routes:
+  - route_saxion_decay
+  name: Warm axino free-streaming cutoff
+  notes: null
+  observability: high
+  predicted_effect: Axinos from saxion decays are born relativistic and suppress small-scale structure
+    similarly to keV thermal WDM.
+  redshift_range: decay epoch through equality
+  relevance: critical
+  scale_range: sub-Mpc to Mpc scales
+  source_reference_ids:
+  - arxiv:1208.2496
+  - arxiv:1303.6267
+  subchannel: thermal-equivalent WDM cutoff
+constraints:
+- allowed_regions:
+  - Primary saxion-decay regions produce dark radiation while satisfying known cosmological constraints.
+  applies: parameter_dependent
+  assumptions: []
+  benchmark_implications:
+  - N_eff target is coupled to saxion abundance and lifetime.
+  caveats:
+  - Primary predates final Planck constraints.
+  constrained_parameters:
+  - Delta N_eff
+  - tau_s
+  - m_s Y_s
+  constraint_type: cosmological
+  data_release: null
+  excluded_regions:
+  - Too much late radiation injection is excluded by BBN/CMB N_eff constraints.
+  id: con_saxion_neff
+  likelihood_available: partial
+  likelihood_reference: null
+  name: BBN/CMB dark-radiation consistency
+  notes: null
+  observable_channel: cmb
+  recasting_needed: 'yes'
+  robustness: medium
+  source_reference_ids:
+  - arxiv:1208.2496
+  - arxiv:1303.6267
+  - arxiv:1301.7428
+  - arxiv:1107.4319
+- allowed_regions:
+  - Primary adopts m_WDM = 1-4 keV and lambda_FS = 0.2-1.3 Mpc as target range.
+  applies: recast_required
+  assumptions:
+  - can_be_relaxed: partial
+    description: Decay-produced axino spectra are mapped to a thermal-WDM cutoff.
+    id: thermal_wdm_equivalence
+    impact_if_violated: The exact bound can shift for nonthermal spectra.
+    scope: Lyman-alpha comparison
+    source_reference_ids:
+    - arxiv:1208.2496
+    status: approximate
+  benchmark_implications: []
+  caveats: []
+  constrained_parameters:
+  - lambda_FS
+  - m_WDM
+  - m_axino/m_s
+  constraint_type: astrophysical
+  data_release: null
+  excluded_regions:
+  - Thermal-equivalent WDM below the adopted lower bound is disfavored.
+  id: con_axino_lyman
+  likelihood_available: 'no'
+  likelihood_reference: null
+  name: Lyman-alpha/free-streaming bound on warm axinos
+  notes: null
+  observable_channel: lyman_alpha
+  recasting_needed: 'yes'
+  robustness: medium
+  source_reference_ids:
+  - arxiv:1208.2496
+  - arxiv:1303.6267
+- allowed_regions:
+  - Primary imposes Omega_DM h^2 about 0.11.
+  applies: parameter_dependent
+  assumptions: []
+  benchmark_implications: []
+  caveats: []
+  constrained_parameters:
+  - Br(s->axino axino)
+  - m_axino
+  - m_s Y_s
+  constraint_type: cosmological
+  data_release: null
+  excluded_regions:
+  - Too large an axino branching fraction overproduces DM.
+  id: con_saxion_abundance
+  likelihood_available: 'no'
+  likelihood_reference: null
+  name: Axino relic-density target from saxion branching
+  notes: null
+  observable_channel: relic density
+  recasting_needed: 'yes'
+  robustness: medium
+  source_reference_ids:
+  - arxiv:1208.2496
+theory_to_observable_routing:
+  routes:
+  - agent_notes: null
+    caveats: []
+    constraint_ids:
+    - con_saxion_neff
+    - con_axino_lyman
+    - con_saxion_abundance
+    derived_quantities:
+    - Delta N_eff
+    - Omega_axino h^2
+    - lambda_FS
+    - m_WDM equivalent
+    description: Map late saxion decay to relativistic axions, nonthermal warm axinos, Delta N_eff, relic
+      abundance and small-scale cutoff observables.
+    forward_model_chain:
+    - inputs:
+      - m_s
+      - F_a
+      - tau_s
+      - Y_s
+      - m_axino
+      - branching fraction
+      notes: null
+      outputs:
+      - Delta N_eff
+      - Omega_axino h^2
+      step_id: s1
+      step_type: analytic_formula
+      tool_or_code: null
+      validity: Source-paper analytic mapping.
+    - inputs:
+      - Delta N_eff
+      - Omega_axino h^2
+      - lambda_FS
+      - m_WDM equivalent
+      notes: null
+      outputs:
+      - obs_saxion_dark_radiation
+      - obs_axino_wdm
+      - con_saxion_neff
+      - con_axino_lyman
+      - con_saxion_abundance
+      step_id: s2
+      step_type: recasting
+      tool_or_code: null
+      validity: Likelihood/simulation recast not rerun in this batch.
+    id: route_saxion_decay
+    input_parameters:
+    - m_s
+    - F_a
+    - tau_s
+    - Y_s
+    - m_axino
+    - branching fraction
+    likelihoods:
+    - CMB/BBN N_eff
+    - Lyman-alpha forest WDM limits
+    observable_ids:
+    - obs_saxion_dark_radiation
+    - obs_axino_wdm
+    required_code_resources:
+    - decay/free-streaming calculator
+    - modern N_eff and Lyman-alpha likelihoods
+    route_status: planned
+    source_model_features:
+    - KSVZ supersymmetric axion model
+    - late saxion decay
+    - axino WDM
+    validation_tests:
+    - recover lambda_FS contours
+    - recover Omega_DM target

@@ -1,0 +1,894 @@
+_source:
+  shard: arXiv_src_0905_003_wds.tar
+  paper_id: 0905_2964
+  source_member: 0905_2964.json
+  enriched: true
+  enrichment_schema_version: dm_model_ocr_enrichment_smoke_v0
+schema_version: model_only_v0
+model_id: 0905_2964_nmssm_pamela_neutralino_resonance_v1
+identity:
+  name: PAMELA-favored NMSSM neutralino with light pseudoscalar resonance
+  family: supersymmetric_dark_matter
+  aliases:
+  - NMSSM PAMELA neutralino scenario
+  - light pseudoscalar NMSSM dark matter
+  short_description: An NMSSM parameter-space scenario in which the LSP neutralino annihilates resonantly
+    through the heavier CP-odd scalar a_2 into h_1 plus a light a_1, with a_1 decaying mainly to leptons.
+  historical_origin_or_motivation: Built to test whether the PAMELA positron excess could be explained
+    within the NMSSM without an antiproton excess.
+  status: speculative
+  model_kind: complete_theory
+theory:
+  theory_level: uv_complete
+  parent_frameworks:
+  - Next-to-Minimal Supersymmetric Standard Model
+  - supersymmetry
+  lagrangian_available: partial
+  renormalizable: 'yes'
+  embedded_in_larger_framework: 'yes'
+  notes: The paper gives the NMSSM superpotential and soft terms, neutralino and Higgs-sector notation,
+    and analytic resonance annihilation formulae for the selected parameter-space corner.
+particle_content:
+  dark_matter_candidate:
+    name: lightest neutralino LSP
+    spin: 1/2
+    statistics: fermion
+    elementary_or_composite: elementary
+    number_of_components: single_component
+  additional_dark_sector_particles:
+  - gauge-singlet chiral supermultiplet S
+  - light CP-odd scalar a_1
+  - light CP-even scalar h_1
+  - heavier CP-odd scalar a_2
+  mediators:
+  - heavier CP-odd scalar a_2
+  - light CP-odd scalar a_1
+  - light CP-even scalar h_1
+  dark_radiation_species: []
+  excited_or_degenerate_states:
+  - heavier neutralinos in the NMSSM spectrum
+  long_lived_particles:
+  - late-decaying gravitino or modulus field in the nonthermal relic-density option
+  unstable_parent_particles:
+  - a_2 resonance
+  - a_1 pseudoscalar
+  - h_1 scalar
+  standard_model_extension: substantial
+symmetries:
+  stabilizing_mechanism: R parity is assumed so that the lightest neutralino is stable; an approximate
+    U(1)_R or Peccei-Quinn-like symmetry can protect the light a_1 mass.
+  symmetries:
+  - name: R parity
+    type: discrete
+    exact_or_approximate: exact
+    breaking: not broken in the scenario
+  - name: Z3 symmetry of the NMSSM superpotential
+    type: discrete
+    exact_or_approximate: broken
+    breaking: paper notes higher-dimension operators may explicitly break it to avoid the domain-wall
+      problem
+  - name: approximate U(1)_R
+    type: approximate
+    exact_or_approximate: approximate
+    breaking: small singlet-sector soft terms A_lambda and A_kappa
+  topological_defects_possible: unknown
+interactions:
+  portals:
+  - higgs
+  - other
+  standard_model_targets:
+  - muons
+  - taus
+  - bottom quarks
+  - Higgs doublets
+  dark_sector_couplings:
+  - lambda S H_u H_d
+  - kappa S^3
+  - neutralino-neutralino-a_2 coupling
+  - a_2-a_1-h_1 coupling
+  mediator_types:
+  - CP-odd scalar resonance
+  - CP-even scalar
+  - light pseudoscalar
+  interaction_operators:
+  - NMSSM superpotential W = lambda S H_u H_d + kappa S^3/3
+  - soft terms A_lambda S H_u H_d and A_kappa S^3/3
+  scattering:
+    elastic: 'yes'
+    inelastic: unknown
+    momentum_dependence: unknown
+    velocity_dependence: unknown
+    spin_dependence: both
+  annihilation_channels:
+  - neutralino neutralino to a_2 to a_1 h_1
+  - a_1 decays mainly to two muons in the sub-GeV case
+  - tau-rich final states in the alternate a_1 mass window
+  decay_channels:
+  - a_2 to a_1 h_1
+  - a_1 to muon pairs or tau pairs depending on mass
+  - h_1 to a_1 a_1 or b bbar depending on parameters
+  self_scattering_channels: []
+  cp_structure: CP-odd s-channel resonance is required because the Majorana neutralino pair initial state
+    is CP odd.
+  flavor_structure: Leptonic final states are selected kinematically by keeping a_1 light and a_2 below
+    the top threshold.
+  tree_or_loop_level: both
+parameters:
+  core:
+  - name: lightest neutralino mass
+    symbol: m_chi
+    range: around 160 GeV and below about 170 GeV in the PAMELA-favored corner
+    unit: GeV
+    role: core
+    status: inferred
+    source_reference_ids:
+    - 0905_2964
+  - name: light pseudoscalar mass
+    symbol: M_a1
+    range: 2 m_mu to 1 GeV for the muon-favored case; 2 m_tau to 2 m_b for the tau-favored case
+    unit: GeV
+    role: core
+    status: inferred
+    source_reference_ids:
+    - 0905_2964
+  - name: heavier CP-odd resonance mass
+    symbol: M_a2
+    range: near 2 m_chi for s-channel enhancement
+    unit: GeV
+    role: core
+    status: inferred
+    source_reference_ids:
+    - 0905_2964
+  - name: neutralino annihilation cross section to a_1 h_1
+    symbol: sigma_v
+    range: about 135-301 pb for the paper model points
+    unit: pb
+    role: derived
+    status: inferred
+    source_reference_ids:
+    - 0905_2964
+  - name: singlet-Higgs coupling
+    symbol: lambda
+    description: NMSSM superpotential coupling S H_u H_d
+    role: core
+    status: inferred
+    source_reference_ids:
+    - 0905_2964
+  - name: singlet cubic coupling
+    symbol: kappa
+    description: NMSSM superpotential coupling S^3
+    role: core
+    status: inferred
+    source_reference_ids:
+    - 0905_2964
+  nuisance: []
+  derived:
+  - name: effective higgsino mass parameter
+    symbol: mu_eff
+    description: mu_eff = lambda s in the paper notation
+    role: derived
+    status: inferred
+    source_reference_ids:
+    - 0905_2964
+production:
+  mechanisms:
+  - nonthermal late decay of gravitino or modulus fields into the neutralino LSP
+  - resonantly enhanced neutralino annihilation controls the present-day leptonic signal
+  thermal_equilibrium_with_standard_model: partial
+  thermal_equilibrium_with_hidden_sector: not_applicable
+  abundance_set_by:
+  - late-decaying modulus or gravitino abundance
+  - neutralino annihilation rate after nonthermal production
+  depends_on_reheating_temperature: unknown
+  can_produce_all_dark_matter: parameter_dependent
+  nonthermal_momentum_distribution: unknown
+  notes: The paper says the annihilation rates are much larger than the thermal relic value and suggests
+    nonthermal production from late decays as one way to obtain the present dark matter density.
+relic_density:
+  full_or_subcomponent: full_dark_matter
+  target_fraction:
+    name: observed dark matter relic density
+    symbol: Omega_DM
+    value: current dark matter relic density
+    role: derived
+    status: assumed
+  calculation_type: nonthermal
+  key_dependencies:
+  - late modulus or gravitino decay rate
+  - neutralino annihilation cross section
+  - a_2 resonance condition
+  - NMSSM singlet-sector parameters
+  requires_entropy_dilution: unknown
+  overclosure_risk: parameter_dependent
+  underproduction_risk: parameter_dependent
+  tuning_assessment: unknown
+cosmological_history:
+  standard_history_assumed: false
+  nonstandard_features:
+  - late nonthermal production from gravitino or modulus decay before about one second is suggested as
+    a relic-density mechanism
+  dark_sector_temperature: null
+  delta_neff: null
+  kinetic_decoupling: null
+  chemical_decoupling: null
+  phase_transitions: []
+  topological_defects: []
+  isocurvature_perturbations: unknown
+  bbn_relevance: medium
+  cmb_relevance: unknown
+phase_space:
+  distribution_type: nonthermal
+  distribution_function_available: unknown
+  average_momentum_relative_to_thermal: null
+  free_streaming_length: null
+  velocity_dispersion_today: null
+  phase_space_bounds: []
+  notes: No phase-space distribution is supplied; the candidate is a heavy neutralino LSP produced in
+    a nonthermal history suggested by the paper.
+structure_formation:
+  linear:
+    behaves_like_cdm: unknown
+    transfer_function_shape: unknown
+    small_scale_power_effect: unknown
+  nonlinear:
+    halo_mass_function_effect: unknown
+    subhalo_mass_function_effect: unknown
+    simulation_calibrated: unknown
+validity_domain:
+- id: 0905_2964_resonance_condition
+  applies_to: model
+  condition: The large annihilation rate requires the heavier CP-odd scalar a_2 to sit near twice the
+    neutralino mass.
+  valid_range: M_a2 approximately 2 m_chi
+  status: inferred
+  extrapolation_risk: high
+  caveats:
+  - Moving away from resonance removes the PAMELA-motivated large annihilation rate.
+  source_reference_ids:
+  - 0905_2964
+- id: 0905_2964_light_a1_window
+  applies_to: model
+  condition: The leptonic final state relies on a light a_1 with kinematically selected muon or tau decays.
+  valid_range: sub-GeV a_1 in the main muon case; tau window up to 2 m_b for the alternate case
+  status: inferred
+  extrapolation_risk: medium
+  caveats:
+  - The paper treats collider and flavor limits as shaping this corner.
+  source_reference_ids:
+  - 0905_2964
+- id: 0905_2964_nonthermal_relic
+  applies_to: cosmological_history
+  condition: Thermal freeze-out alone is not used because the annihilation cross section is far above
+    the canonical thermal value.
+  valid_range: late decay before roughly one second is mentioned as an example
+  status: assumed
+  extrapolation_risk: high
+  caveats:
+  - The paper sketches rather than fully builds the nonthermal cosmology.
+  source_reference_ids:
+  - 0905_2964
+assumptions:
+  global:
+  - id: 0905_2964_r_parity_lsp
+    description: The neutralino is the R-parity-stabilized LSP.
+    scope: theory
+    status: assumed
+    impact_if_violated: The neutralino would not be the dark matter candidate.
+    can_be_relaxed: 'no'
+    source_reference_ids:
+    - 0905_2964
+    notes: null
+  - id: 0905_2964_a2_resonance
+    description: The heavier CP-odd scalar is close enough to 2 m_chi to enhance annihilation.
+    scope: production
+    status: assumed
+    impact_if_violated: The large annihilation rate needed in the paper would be lost.
+    can_be_relaxed: unknown
+    source_reference_ids:
+    - 0905_2964
+    notes: null
+  - id: 0905_2964_nonthermal_abundance
+    description: A late-decaying gravitino or modulus can replenish the neutralino abundance despite the
+      large annihilation cross section.
+    scope: cosmological_history
+    status: speculative
+    impact_if_violated: The neutralino may be underabundant in a standard thermal history.
+    can_be_relaxed: 'yes'
+    source_reference_ids:
+    - 0905_2964
+    notes: The paper presents this as one possible explanation.
+associated_code:
+  has_associated_code: partial
+  code_summary: The paper reports use or modification of NMHDECAY, micrOMEGAs, and PYTHIA; no dedicated
+    public implementation for the model point is identified in the assigned text.
+  primary_code_role: relic_density_calculation
+  repositories: []
+  packages_or_modules:
+  - name: NMHDECAY
+    resource_type: package
+    availability: public
+    relationship_to_model: related_but_not_model_specific
+    purpose:
+    - define_lagrangian
+    - other
+    version: null
+    notes: Used to check NMSSM spectra and embedded experimental consistency checks.
+  - name: micrOMEGAs
+    resource_type: package
+    availability: public
+    relationship_to_model: related_but_not_model_specific
+    purpose:
+    - compute_relic_density
+    - compute_cross_sections
+    version: null
+    notes: Used for reported dark matter scattering calculations.
+  - name: PYTHIA
+    resource_type: package
+    availability: public
+    relationship_to_model: related_but_not_model_specific
+    purpose:
+    - other
+    version: null
+    notes: Used for fragmentation functions in the paper analysis.
+  notebooks: []
+  scripts: []
+  reproducibility:
+    reproducibility_level: partial
+    has_tests: unknown
+    has_examples: unknown
+    has_documentation: unknown
+    pinned_dependencies: unknown
+    notes: The paper names packages but does not provide a complete runnable environment.
+provenance:
+  model_id: 0905_2964_nmssm_pamela_neutralino_resonance_v1
+  model_name: PAMELA-favored NMSSM neutralino with light pseudoscalar resonance
+  model_family: supersymmetric_dark_matter
+  entry_version: 0.1.0
+  status: machine_extracted
+  created_at: '2026-05-31'
+  last_updated: '2026-05-31'
+  sources:
+    primary_papers:
+    - reference_id: 0905_2964
+      title: The PAMELA excess from neutralino annihilation in the NMSSM
+      authors:
+      - Yang Bai
+      - Marcela Carena
+      - Joseph Lykken
+      year: 2009
+      arxiv_id: '0905.2964'
+      doi: null
+      url: null
+      role: original_model
+      notes: Assigned full text from the run SQLite database.
+    - arxiv_id: '0905.2964'
+      authors:
+      - Bai, Yang
+      - Carena, Marcela
+      - Lykken, Joseph
+      doi: 10.1103/PhysRevD.80.055004
+      notes: Primary assigned paper read from local SQLite full text.
+      reference_id: arxiv:0905.2964
+      role: original_model
+      title: PAMELA excess from neutralino annihilation in the NMSSM
+      url: https://arxiv.org/abs/0905.2964
+      year: 2009
+    constraint_papers: []
+    external_databases: []
+    review_papers:
+    - arxiv_id: hep-ph/0509024
+      authors:
+      - Gunion, John F.
+      - Hooper, Dan
+      - McElrath, Bob
+      doi: 10.1103/PhysRevD.73.015011
+      notes: Related full text resolved locally and read for bounded enrichment.
+      reference_id: arxiv:hep-ph/0509024
+      role: constraint
+      title: Light neutralino dark matter in the next-to-minimal supersymmetric standard model
+      url: https://arxiv.org/abs/hep-ph/0509024
+      year: 2006
+    - arxiv_id: '1205.5081'
+      authors:
+      - Wang, Wenyu
+      doi: 10.48550/arXiv.1205.5081
+      notes: Related arXiv abstract page read through bounded web/arXiv fallback; used for context only.
+      reference_id: arxiv:1205.5081
+      role: review
+      title: 'A comparative study of dark matter in the MSSM and its singlet extensions: a mini review'
+      url: https://arxiv.org/abs/1205.5081
+      year: 2012
+  extraction:
+    method: llm_assisted
+    extracted_by: codex
+    extractor_name: GPT-5.5 dark-matter batch worker
+    extraction_date: '2026-05-31'
+    confidence: medium
+    source_chunks_or_sections:
+    - reference_id: 0905_2964
+      section: opening summary
+      page: null
+      quote_or_summary: The paper asks whether PAMELA can be explained by NMSSM neutralino annihilation
+        through h_1 and a_1 final states.
+    - reference_id: 0905_2964
+      section: model setup
+      page: null
+      quote_or_summary: It gives the NMSSM superpotential, neutralino/Higgs-sector notation, and two representative
+        model points.
+    - reference_id: 0905_2964
+      section: relic-density discussion
+      page: null
+      quote_or_summary: It says the large annihilation rate exceeds the thermal relic value and suggests
+        nonthermal late decays.
+    unresolved_items:
+    - The paper provides two representative a_1 decay regimes; this row treats them as one NMSSM resonance
+      scenario rather than separate registry variants.
+    - The PAMELA-era dark-matter interpretation is not updated against modern AMS-02/Fermi/LHC data.
+    - The astrophysical boost/profile needed to relax gamma-ray tension is not fixed.
+    - The bounded web/arXiv fallback source arxiv:1205.5081 was used for context only, not for a structured
+      numeric claim.
+  evidence:
+    particle_content:
+    - reference_id: 0905_2964
+      note: Identifies the NMSSM LSP neutralino as the dark matter candidate and a_1, h_1, and a_2 as
+        central light-sector states.
+      confidence: high
+      section: null
+      page: null
+    symmetries:
+    - reference_id: 0905_2964
+      note: Uses R parity for the LSP and notes approximate U(1)_R or U(1)_PQ protection for a very light
+        pseudoscalar.
+      confidence: medium
+      section: null
+      page: null
+    interactions:
+    - reference_id: 0905_2964
+      note: The main annihilation channel is neutralino neutralino through a_2 resonance into a_1 h_1,
+        with a_1 decaying leptonically.
+      confidence: high
+      section: null
+      page: null
+    production_mechanism:
+    - reference_id: 0905_2964
+      note: Because the annihilation rate is far above the thermal value, the paper suggests nonthermal
+        production from late gravitino or modulus decay.
+      confidence: medium
+      section: null
+      page: null
+    parameter_ranges:
+    - reference_id: 0905_2964
+      note: The favored corner has m_chi around 160 GeV, m_chi below about 170 GeV, and sub-GeV a_1 in
+        the muon case.
+      confidence: high
+      section: null
+      page: null
+    validity_domain:
+    - reference_id: 0905_2964
+      note: The model relies on the a_2 resonance, light a_1 kinematics, and a nonstandard abundance history.
+      confidence: medium
+      section: null
+      page: null
+    constraints:
+    - confidence: high
+      note: Primary text ties the absence of PAMELA antiprotons to light leptonic mediator decays and
+        m_chi below about 170 GeV.
+      page: null
+      reference_id: arxiv:0905.2964
+      section: Introduction/model constraints
+    - confidence: high
+      note: Primary text gives sigma v about 135 pb and 301 pb for benchmark points.
+      page: null
+      reference_id: arxiv:0905.2964
+      section: Annihilation cross section
+    observables:
+    - confidence: high
+      note: Primary abstract and discussion identify the PAMELA positron explanation, a2 resonance, a1
+        -> mu mu final state, and turnover near 70 GeV.
+      page: null
+      reference_id: arxiv:0905.2964
+      section: Abstract/introduction
+    - confidence: high
+      note: Primary gamma-ray section reports Fermi LAT tension and HESS evasion due to the low cutoff.
+      page: null
+      reference_id: arxiv:0905.2964
+      section: Gamma-ray spectrum
+    - confidence: high
+      note: Primary constraints section discusses BaBar, LEP, and D0 light-pseudoscalar constraints.
+      page: null
+      reference_id: arxiv:0905.2964
+      section: Constraints
+    routes:
+    - confidence: high
+      note: Primary paper provides the route from NMSSM spectrum to positron, gamma-ray, and collider
+        observables.
+      page: null
+      reference_id: arxiv:0905.2964
+      section: Model and phenomenology
+  review:
+    human_reviewed: false
+    reviewed_by: null
+    review_date: null
+    expert_reviewed: false
+    expert_reviewer: null
+    expert_review_date: null
+    reviewer_notes: []
+    scientific_confidence: medium
+    implementation_confidence: medium
+robustness:
+  overall: medium
+  theory_robustness: medium
+  observational_robustness: unknown
+  computational_robustness: medium
+  constraint_robustness: unknown
+  dominant_uncertainties:
+  - resonance tuning
+  - nonthermal relic history only sketched
+  - light pseudoscalar mass and branching-ratio assumptions
+  validation_status: partially_validated
+  notes: The model content is explicit, but the relic-density mechanism is presented as a possible nonthermal
+    completion rather than a complete cosmological calculation.
+agent_failure_modes:
+  warnings:
+  - id: 0905_2964_do_not_use_standard_thermal_abundance
+    severity: high
+    category: assumption_mismatch
+    warning: Do not infer a standard thermal relic density from the large present-day annihilation rate;
+      the paper invokes a nonthermal option.
+    mitigation: Keep the nonthermal-abundance assumption attached to the model card.
+    source_reference_ids:
+    - 0905_2964
+  - id: 0905_2964_variant_boundary
+    severity: medium
+    category: other
+    warning: The paper discusses both muon-favored and tau-favored a_1 mass windows; this entry groups
+      them as one resonance scenario.
+    mitigation: Split into separate variants only if a downstream registry wants benchmark-level granularity.
+    source_reference_ids:
+    - 0905_2964
+observables:
+- caveats:
+  - Solar modulation and local propagation parameters are source-level parameterizations.
+  channel: indirect_detection
+  effect_direction: enhancement
+  environments:
+  - Milky Way cosmic-ray propagation
+  id: obs_nmssm_pamela_positron_fraction
+  key_quantities:
+  - description: LSP neutralino mass in the PAMELA-favored corner.
+    name: neutralino mass
+    range: around 160 GeV and below about 170 GeV
+    role: core
+    source_reference_ids:
+    - arxiv:0905.2964
+    status: inferred
+    symbol: m_chi
+    unit: GeV
+  - description: Benchmark annihilation to a1 h1.
+    name: annihilation cross section
+    range: about 135-301 pb for the source model points
+    role: derived
+    source_reference_ids:
+    - arxiv:0905.2964
+    status: inferred
+    symbol: sigma v
+    unit: pb
+  - description: Muon-favored pseudoscalar mass range.
+    name: light pseudoscalar mass
+    range: 2 m_mu to 1 GeV
+    role: core
+    source_reference_ids:
+    - arxiv:0905.2964
+    - arxiv:hep-ph/0509024
+    status: inferred
+    symbol: M_a1
+  linked_constraints:
+  - con_pamela_antiproton_leptonic_window
+  linked_routes:
+  - route_nmssm_pamela_indirect_collider
+  name: PAMELA positron fraction from NMSSM neutralino annihilation
+  notes: null
+  observability: high
+  predicted_effect: Neutralinos annihilate resonantly through a2 to a1 h1; sub-GeV a1 decays mainly to
+    muons, generating energetic positrons with a predicted turnover near 70 GeV.
+  redshift_range: today
+  relevance: critical
+  scale_range: cosmic-ray energies 10-100 GeV
+  source_reference_ids:
+  - arxiv:0905.2964
+  - arxiv:hep-ph/0509024
+  subchannel: cosmic-ray positrons
+- caveats:
+  - Astrophysical profiles can change gamma-ray predictions by large factors.
+  channel: indirect_detection
+  effect_direction: enhancement
+  environments:
+  - Galactic center
+  - local cosmic-ray neighborhood
+  id: obs_nmssm_gamma_spectrum
+  key_quantities:
+  - description: Spectrum cuts off below the neutralino/top scale in the source discussion.
+    name: gamma-ray cutoff scale
+    range: below top-quark mass scale
+    role: derived
+    source_reference_ids:
+    - arxiv:0905.2964
+    status: inferred
+    symbol: E_gamma
+    unit: GeV
+  - description: Nearby-clump boost invoked as a possible resolution of gamma/antiproton tension.
+    name: astrophysical boost factor
+    role: core
+    source_reference_ids:
+    - arxiv:0905.2964
+    status: speculative
+    symbol: B
+  linked_constraints:
+  - con_fermi_gamma_tension
+  linked_routes:
+  - route_nmssm_pamela_indirect_collider
+  name: Associated gamma-ray spectrum from leptonic cascade
+  notes: null
+  observability: high
+  predicted_effect: Final-state radiation and radiative muon decays generate gamma rays; the paper reports
+    tension between the NMSSM prediction and preliminary Fermi LAT fluxes, while HESS is evaded by the
+    sub-top cutoff.
+  redshift_range: today
+  relevance: high
+  scale_range: GeV to sub-TeV gamma rays
+  source_reference_ids:
+  - arxiv:0905.2964
+  subchannel: gamma rays
+- caveats:
+  - Post-publication BaBar constraints are noted by the source but not fully recast here.
+  channel: collider
+  effect_direction: rate_change
+  environments:
+  - BaBar
+  - LEP
+  - D0/Tevatron
+  - LHC follow-up
+  id: obs_nmssm_light_pseudoscalar_colliders
+  key_quantities:
+  - description: Light CP-odd state protected by approximate symmetries.
+    name: pseudoscalar mass
+    range: below 1 GeV for muon case
+    role: core
+    source_reference_ids:
+    - arxiv:0905.2964
+    status: inferred
+    symbol: M_a1
+    unit: GeV
+  - description: Limited in the paper by D0 light-pseudoscalar searches.
+    name: h1 to a1 a1 branching
+    range: <1.2 percent for the highlighted muon case
+    role: core
+    source_reference_ids:
+    - arxiv:0905.2964
+    status: inferred
+    symbol: Br(h1 -> a1 a1)
+  linked_constraints:
+  - con_babar_d0_light_a1
+  linked_routes:
+  - route_nmssm_pamela_indirect_collider
+  name: Light pseudoscalar dimuon and exotic-Higgs signatures
+  notes: null
+  observability: high
+  predicted_effect: The same sub-GeV pseudoscalar needed for leptonic annihilation gives correlated BaBar,
+    LEP, Tevatron/D0, and exotic Higgs-decay signatures.
+  redshift_range: not_applicable
+  relevance: high
+  scale_range: B-factory and electroweak collider scales
+  source_reference_ids:
+  - arxiv:0905.2964
+  subchannel: light a1 searches
+constraints:
+- allowed_regions:
+  - Muon-favored a1 with 2 m_mu < M_a1 < 1 GeV, resonant M_a2 near 2 m_chi, and m_chi below about 170
+    GeV.
+  applies: parameter_dependent
+  assumptions:
+  - can_be_relaxed: 'yes'
+    description: The source solar-modulation and propagation parameterization describes the local charged-particle
+      data.
+    id: local_cosmic_ray_propagation
+    impact_if_violated: Different propagation can shift the required annihilation rate and turnover.
+    notes: null
+    scope: astrophysical propagation
+    source_reference_ids:
+    - arxiv:0905.2964
+    status: assumed
+  benchmark_implications:
+  - The source benchmark annihilation cross sections are about 135 pb and 301 pb.
+  caveats:
+  - The PAMELA interpretation is source-era and now requires a modern cosmic-ray background recast.
+  constrained_parameters:
+  - m_chi
+  - M_a1
+  - M_a2
+  - sigma v
+  - branching fractions
+  constraint_type: astrophysical
+  data_release: PAMELA positron and antiproton spectra as used by the source
+  excluded_regions:
+  - Heavy or hadronic mediator spectra that produce antiprotons or large t tbar widths are disfavored
+    by the PAMELA antiproton null result.
+  id: con_pamela_antiproton_leptonic_window
+  likelihood_available: 'no'
+  likelihood_reference: null
+  name: PAMELA positron excess with no antiproton excess
+  notes: null
+  observable_channel: cosmic_ray_positrons_antiprotons
+  recasting_needed: 'yes'
+  robustness: low
+  source_reference_ids:
+  - arxiv:0905.2964
+- allowed_regions:
+  - HESS above 200 GeV is automatically evaded by the source cutoff below the top-quark mass; Fermi tension
+    may be relaxed by local boost/profile choices.
+  applies: parameter_dependent
+  assumptions:
+  - can_be_relaxed: 'yes'
+    description: The gamma-ray prediction depends on Galactic profile and possible nearby clumps.
+    id: halo_profile_boost
+    impact_if_violated: Changing the profile or boost changes the flux by orders of magnitude.
+    notes: null
+    scope: indirect detection
+    source_reference_ids:
+    - arxiv:0905.2964
+    status: assumed
+  benchmark_implications:
+  - Gamma rays are a correlated test of the PAMELA explanation.
+  caveats:
+  - No gamma-ray likelihood was rerun.
+  constrained_parameters:
+  - sigma v
+  - halo profile
+  - boost factor
+  - M_a1
+  - m_chi
+  constraint_type: indirect_detection
+  data_release: Fermi LAT preliminary fluxes, HESS/EGRET context as used by the source
+  excluded_regions:
+  - Source benchmark gamma-ray fluxes that overshoot Fermi LAT preliminary data without an astrophysical
+    boost/profile adjustment are in tension.
+  id: con_fermi_gamma_tension
+  likelihood_available: 'no'
+  likelihood_reference: null
+  name: Fermi LAT gamma-ray tension for the PAMELA-fit benchmark
+  notes: null
+  observable_channel: gamma_rays
+  recasting_needed: 'yes'
+  robustness: low
+  source_reference_ids:
+  - arxiv:0905.2964
+- allowed_regions:
+  - The source-selected points pass NMHDECAY constraints and keep Br(h1 -> a1 a1) below about 1.2 percent
+    in the highlighted case.
+  applies: parameter_dependent
+  assumptions:
+  - can_be_relaxed: 'no'
+    description: The NMHDECAY and source-era collider constraints are the active constraint set.
+    id: nmssm_constraint_set
+    impact_if_violated: Later B-factory and LHC searches can further restrict the same light-a1 region.
+    notes: null
+    scope: collider recast
+    source_reference_ids:
+    - arxiv:0905.2964
+    status: assumed
+  benchmark_implications:
+  - A sub-GeV a1 is a key correlated collider prediction.
+  caveats:
+  - The source notes a new BaBar result after submission; this batch did not update the collider recast.
+  constrained_parameters:
+  - M_a1
+  - Br(h1 -> a1 a1)
+  - Upsilon -> gamma a1
+  - a1 -> mu mu
+  constraint_type: collider
+  data_release: BaBar, LEP, Tevatron/D0 searches referenced by the source
+  excluded_regions:
+  - Large light-pseudoscalar rates in Upsilon radiative decays or D0 dimuon searches are constrained.
+  id: con_babar_d0_light_a1
+  likelihood_available: partial
+  likelihood_reference: NMHDECAY constraints as used by the source
+  name: BaBar and D0 constraints on light a1
+  notes: null
+  observable_channel: light_pseudoscalar_searches
+  recasting_needed: 'yes'
+  robustness: medium
+  source_reference_ids:
+  - arxiv:0905.2964
+theory_to_observable_routing:
+  routes:
+  - agent_notes: null
+    caveats:
+    - Modern AMS/Fermi/LHC data are outside the bounded enrichment performed here.
+    constraint_ids:
+    - con_pamela_antiproton_leptonic_window
+    - con_fermi_gamma_tension
+    - con_babar_d0_light_a1
+    derived_quantities:
+    - sigma v
+    - positron fraction
+    - antiproton yield
+    - gamma-ray spectrum
+    - light-a1 collider rates
+    description: Route the PAMELA-favored NMSSM neutralino resonance through cosmic-ray positron/gamma
+      predictions and light-pseudoscalar collider tests.
+    forward_model_chain:
+    - inputs:
+      - NMSSM spectrum
+      - M_a2 - 2 m_chi
+      notes: Recover 135-301 pb benchmark cross sections.
+      outputs:
+      - resonant annihilation cross section
+      step_id: s1
+      step_type: analytic_formula
+      tool_or_code: null
+      validity: Valid near the a2 resonance and for source benchmark widths.
+    - inputs:
+      - a1/h1 decay spectra
+      - solar modulation
+      notes: Source uses a simple charge-dependent solar modulation parameterization.
+      outputs:
+      - PAMELA positron fraction
+      - antiproton spectrum
+      step_id: s2
+      step_type: data_transform
+      tool_or_code: null
+      validity: Requires cosmic-ray propagation assumptions.
+    - inputs:
+      - FSR
+      - radiative muon decays
+      - halo profile
+      notes: Compare to Fermi/HESS/EGRET context.
+      outputs:
+      - gamma-ray flux
+      step_id: s3
+      step_type: data_transform
+      tool_or_code: null
+      validity: Highly profile dependent.
+    - inputs:
+      - M_a1
+      - branching fractions
+      notes: NMHDECAY plus light-resonance recast.
+      outputs:
+      - BaBar/D0/LEP constraints
+      step_id: s4
+      step_type: recasting
+      tool_or_code: null
+      validity: Needs source-era and modern collider likelihoods.
+    id: route_nmssm_pamela_indirect_collider
+    input_parameters:
+    - m_chi
+    - M_a1
+    - M_a2
+    - lambda
+    - kappa
+    - A_lambda
+    - A_kappa
+    - halo profile
+    likelihoods:
+    - PAMELA positron/antiproton data
+    - Fermi LAT gamma-ray data
+    - BaBar and D0 light-pseudoscalar searches
+    observable_ids:
+    - obs_nmssm_pamela_positron_fraction
+    - obs_nmssm_gamma_spectrum
+    - obs_nmssm_light_pseudoscalar_colliders
+    required_code_resources:
+    - NMHDECAY/NMSSMTools
+    - cosmic-ray propagation model
+    - gamma-ray flux calculator
+    - collider-light-resonance recast
+    route_status: planned
+    source_model_features:
+    - NMSSM LSP neutralino
+    - a2 s-channel resonance
+    - sub-GeV a1 decaying to muons
+    - light h1 in final state
+    validation_tests:
+    - recover positron turnover near 70 GeV
+    - recover m_chi below about 170 GeV
+    - recover source gamma-ray tension statement

@@ -1,0 +1,638 @@
+_source:
+  shard: arXiv_src_2403_137_wds.tar
+  paper_id: '2403_15533'
+  source_member: 2403_15533.json
+  enriched: true
+  enrichment_schema_version: dm_model_ocr_enrichment_smoke_v0
+schema_version: model_only_v0
+model_id: 2403_15533_sterile_neutrino_strong_freeze_in_v1
+identity:
+  name: Sterile neutrino freeze-in at stronger coupling
+  family: sterile_neutrino_dark_matter
+  aliases:
+  - Boltzmann-suppressed sterile neutrino freeze-in
+  - stronger-coupling freeze-in sterile neutrino DM
+  short_description: A sterile-neutrino dark matter model where a right-handed Majorana neutrino couples
+    to a real singlet scalar mixed with the Higgs, allowing Boltzmann-suppressed freeze-in at comparatively
+    large couplings.
+  historical_origin_or_motivation: Motivated by avoiding uncertain initial conditions of high-temperature
+    freeze-in by lowering the reheating temperature below the dark matter mass.
+  status: speculative
+  model_kind: complete_theory
+theory:
+  theory_level: uv_complete
+  parent_frameworks:
+  - Higgs portal
+  - sterile neutrino dark matter
+  - freeze-in dark matter
+  lagrangian_available: 'yes'
+  renormalizable: 'yes'
+  eft_cutoff: null
+  embedded_in_larger_framework: 'yes'
+  notes: The relevant renormalizable Lagrangian contains a Majorana mass, sterile-neutrino coupling to
+    S, tiny active-neutrino Yukawa terms, and an H-S scalar potential.
+particle_content:
+  dark_matter_candidate:
+    name: right-handed Majorana sterile neutrino
+    spin: 1/2
+    statistics: fermion
+    elementary_or_composite: elementary
+    number_of_components: single_component
+  additional_dark_sector_particles:
+  - real scalar singlet S
+  - second scalar mass eigenstate h2
+  mediators:
+  - Higgs-like scalar h1
+  - singlet-like scalar h2
+  dark_radiation_species: []
+  excited_or_degenerate_states: []
+  long_lived_particles:
+  - sterile neutrino dark matter
+  unstable_parent_particles: []
+  standard_model_extension: substantial
+symmetries:
+  stabilizing_mechanism: Tiny active-sterile mixing and approximate Z2 parity suppress sterile-neutrino
+    decay on cosmological timescales.
+  symmetries:
+  - name: approximate Z2 parity
+    type: discrete
+    exact_or_approximate: approximate
+    breaking: tiny active-sterile Yukawa couplings
+    breaking_scale: null
+  topological_defects_possible: unknown
+interactions:
+  portals:
+  - higgs
+  standard_model_targets:
+  - Higgs boson
+  - Standard Model fermions
+  - nucleons through Higgs exchange
+  dark_sector_couplings:
+  - sterile-neutrino coupling to singlet scalar
+  - Higgs-singlet scalar mixing
+  mediator_types:
+  - scalar Higgs portal mediator
+  interaction_operators:
+  - renormalizable S sterile-neutrino coupling
+  - Higgs-singlet portal term S^2 H^dagger H
+  scattering:
+    elastic: 'yes'
+    inelastic: 'no'
+    momentum_dependence: mild
+    velocity_dependence: none
+    spin_dependence: spin_independent
+  annihilation_channels:
+  - thermal scalar bath annihilation to sterile neutrinos during freeze-in
+  decay_channels: []
+  self_scattering_channels: []
+  cp_structure: unknown
+  flavor_structure: active-sterile Yukawa couplings are assumed negligibly small
+  tree_or_loop_level: tree
+parameters:
+  core:
+  - name: sterile neutrino mass
+    symbol: M
+    description: Majorana mass of the dark matter sterile neutrino.
+    range: GeV to tens of TeV in the studied viable region
+    unit: GeV
+    role: core
+    status: established
+  - name: sterile-neutrino singlet coupling
+    symbol: lambda
+    description: Coupling between sterile neutrino and real scalar singlet.
+    range: up to order one in the stronger-coupling freeze-in regime
+    role: core
+    status: inferred
+  - name: singlet scalar mass
+    symbol: m_2
+    description: Mass of the second scalar eigenstate.
+    range: benchmark m_2 = 300 GeV for heavy-DM examples; varied in principle
+    unit: GeV
+    role: core
+    status: inferred
+  - name: Higgs-singlet mixing angle
+    symbol: theta
+    description: Mixing angle between the Higgs and singlet scalar.
+    range: limited by LHC scalar searches and direct detection
+    role: core
+    status: inferred
+  - name: reheating temperature
+    symbol: T_R
+    description: Maximum or reheating temperature of the Standard Model bath relevant for Boltzmann-suppressed
+      production.
+    range: below the dark matter mass in the stronger-coupling regime
+    unit: GeV
+    role: core
+    status: assumed
+  nuisance: []
+  derived:
+  - name: spin-independent nucleon cross section
+    symbol: sigma_SI
+    description: Direct-detection cross section mediated by Higgs-singlet mixing.
+    range: computed from theta, lambda, m1, and m2 in the paper
+    unit: cm^2
+    role: derived
+    status: inferred
+production:
+  mechanisms:
+  - Boltzmann-suppressed freeze-in from the Standard Model thermal bath
+  - scalar annihilation through singlet/Higgs portal
+  thermal_equilibrium_with_standard_model: 'no'
+  thermal_equilibrium_with_hidden_sector: partial
+  abundance_set_by:
+  - T_R or maximal Standard Model bath temperature
+  - sterile-neutrino mass
+  - singlet coupling
+  - scalar mixing and scalar masses
+  depends_on_reheating_temperature: 'yes'
+  can_produce_all_dark_matter: 'yes'
+  nonthermal_momentum_distribution: 'yes'
+  notes: The regime interpolates toward freeze-out at still larger couplings, but accepted rows here describe
+    the nonthermal freeze-in branch.
+relic_density:
+  full_or_subcomponent: full_dark_matter
+  target_fraction:
+    name: dark matter abundance
+    symbol: Omega h^2
+    description: Observed cold dark matter density targeted by the freeze-in calculation.
+    value: '0.12'
+    role: core
+    status: established
+  calculation_type: nonthermal
+  key_dependencies:
+  - M
+  - T_R
+  - lambda
+  - theta
+  - m_2
+  - scalar thermal abundance
+  requires_entropy_dilution: parameter_dependent
+  overclosure_risk: parameter_dependent
+  underproduction_risk: parameter_dependent
+  tuning_assessment: unknown
+cosmological_history:
+  standard_history_assumed: false
+  nonstandard_features:
+  - lowered reheating or maximal Standard Model bath temperature below dark matter mass
+  - possible inflaton-dominated dilution of gravitationally produced relics
+  dark_sector_temperature: null
+  delta_neff: null
+  kinetic_decoupling: null
+  chemical_decoupling: null
+  phase_transitions: []
+  topological_defects: []
+  isocurvature_perturbations: unknown
+  bbn_relevance: unknown
+  cmb_relevance: low
+phase_space:
+  distribution_type: nonthermal
+  distribution_function_available: 'no'
+  notes: Freeze-in creates a nonthermal sterile-neutrino population without reaching chemical equilibrium.
+structure_formation:
+  linear:
+    behaves_like_cdm: 'yes'
+    transfer_function_shape: cdm_like
+    small_scale_power_effect: none
+  nonlinear:
+    halo_mass_function_effect: unknown
+    subhalo_mass_function_effect: unknown
+    simulation_calibrated: unknown
+validity_domain:
+- id: boltzmann_suppressed_regime
+  applies_to: production
+  condition: The Standard Model bath temperature never exceeds the sterile neutrino mass during the relevant
+    production epoch.
+  valid_range: T_R or T_max below M
+  status: assumed
+  extrapolation_risk: high
+  caveats:
+  - If the bath temperature exceeds M, the calculation moves toward ordinary freeze-in or freeze-out.
+  source_reference_ids:
+  - '2403.15533'
+  notes: null
+assumptions:
+  global:
+  - id: tiny_active_sterile_mixing
+    description: Active-sterile neutrino mixing is negligible for production and small enough for cosmological
+      longevity.
+    scope: theory
+    status: assumed
+    impact_if_violated: The sterile neutrino may decay too quickly or production channels would change.
+    can_be_relaxed: unknown
+    source_reference_ids:
+    - '2403.15533'
+    notes: null
+  - id: low_reheating_temperature
+    description: Dark matter is heavier than the Standard Model bath temperature during production.
+    scope: cosmological_history
+    status: assumed
+    impact_if_violated: The stronger-coupling freeze-in regime no longer applies.
+    can_be_relaxed: 'no'
+    source_reference_ids:
+    - '2403.15533'
+    notes: null
+provenance:
+  model_id: 2403_15533_sterile_neutrino_strong_freeze_in_v1
+  model_name: Sterile neutrino freeze-in at stronger coupling
+  model_family: sterile_neutrino_dark_matter
+  entry_version: 0.1.0
+  status: machine_extracted
+  created_at: '2026-06-01'
+  last_updated: '2026-06-01'
+  sources:
+    primary_papers:
+    - reference_id: '2403.15533'
+      title: Probing sterile neutrino freeze-in at stronger coupling
+      role: original_model
+      year: 2024
+      arxiv_id: '2403.15533'
+      doi: null
+      url: null
+      notes: Source text read only from the assigned SQLite database.
+      authors:
+      - Niko Koivunen
+      - Oleg Lebedev
+      - Martti Raidal
+    - reference_id: p2403
+      title: Probing sterile neutrino freeze-in at stronger coupling
+      authors:
+      - Niko Koivunen
+      - Oleg Lebedev
+      - Martti Raidal
+      year: 2024
+      arxiv_id: '2403.15533'
+      doi: null
+      url: https://arxiv.org/abs/2403.15533
+      role: original_model
+      notes: Primary local full text read.
+    constraint_papers:
+    - reference_id: r2405_03760
+      title: 'Higgs portal dark matter freeze-in at stronger coupling: observational benchmarks'
+      authors:
+      - Tommi Alanne et al.
+      year: 2024
+      arxiv_id: '2405.03760'
+      doi: null
+      url: https://arxiv.org/abs/2405.03760
+      role: benchmark
+      notes: Related local full text read.
+    review_papers: []
+    external_databases:
+    - name: NASA ADS
+      url: https://ui.adsabs.harvard.edu/
+      note: Used for sanitized primary/reference/citation metadata discovery only.
+  extraction:
+    method: llm_assisted
+    extracted_by: codex
+    extractor_name: dark-matter model-card batch worker
+    extraction_date: '2026-06-01'
+    confidence: high
+    source_chunks_or_sections:
+    - reference_id: '2403.15533'
+      section: Abstract/Introduction
+      page: null
+      quote_or_summary: Studies Boltzmann-suppressed freeze-in at stronger coupling for sterile neutrino
+        DM.
+    - reference_id: '2403.15533'
+      section: Model setup
+      page: null
+      quote_or_summary: Extends the SM by a real scalar singlet S and a right-handed Majorana sterile
+        neutrino.
+    - reference_id: '2403.15533'
+      section: Relic abundance and constraints
+      page: null
+      quote_or_summary: For masses above 1 GeV, sterile neutrino DM can account for all DM while remaining
+        probeable by direct detection or invisible Higgs decay.
+    unresolved_items:
+    - No machine-readable direct-detection/collider likelihood was located.
+    - Active-sterile decay constraints are assumed satisfied by tiny mixing.
+  evidence:
+    particle_content:
+    - reference_id: '2403.15533'
+      note: The lightest right-handed Majorana sterile neutrino is the dark matter candidate, coupled
+        to a real singlet scalar.
+      confidence: high
+      section: Model setup
+      page: null
+    symmetries:
+    - reference_id: '2403.15533'
+      note: Negligible active-sterile Yukawa couplings are justified by an approximate Z2 parity, making
+        the sterile neutrino long lived.
+      confidence: medium
+      section: Model setup
+      page: null
+    interactions:
+    - reference_id: '2403.15533'
+      note: The singlet scalar mixes with the Higgs and provides Higgs-portal production and detection
+        channels.
+      confidence: high
+      section: Model setup
+      page: null
+    production_mechanism:
+    - reference_id: '2403.15533'
+      note: DM production is Boltzmann suppressed because the Standard Model bath temperature stays below
+        the dark matter mass.
+      confidence: high
+      section: Abstract/Introduction
+      page: null
+    parameter_ranges:
+    - reference_id: '2403.15533'
+      note: The text states that the DM mass can range from GeV to tens of TeV, with light GeV-scale cases
+        probed by invisible Higgs decay.
+      confidence: high
+      section: Abstract/results
+      page: null
+    validity_domain:
+    - reference_id: '2403.15533'
+      note: The stronger-coupling freeze-in regime assumes low reheating temperature or maximal temperature
+        below the DM mass.
+      confidence: high
+      section: Introduction/conclusion
+      page: null
+    observables:
+    - reference_id: p2403
+      note: Primary text identifies direct detection and invisible Higgs decay as efficient probes.
+      confidence: high
+      section: Abstract/constraints
+      page: null
+    - reference_id: r2405_03760
+      note: Related benchmark text studies the same stronger-coupling Higgs-portal observables.
+      confidence: medium
+      section: Abstract
+      page: null
+    constraints:
+    - reference_id: p2403
+      note: Primary text discusses direct-detection and invisible-Higgs bounds.
+      confidence: high
+      section: Relic abundance and constraints
+      page: null
+    routes:
+    - reference_id: p2403
+      note: Primary text supplies production and detection formulae.
+      confidence: high
+      section: Model/constraints
+      page: null
+  review:
+    human_reviewed: false
+    reviewed_by: null
+    review_date: null
+    expert_reviewed: false
+    expert_reviewer: null
+    expert_review_date: null
+    reviewer_notes: []
+    scientific_confidence: high
+    implementation_confidence: high
+associated_code:
+  has_associated_code: unknown
+  code_summary: No model-specific public code was identified in the assigned text.
+  repositories: []
+  packages_or_modules: []
+  notebooks: []
+  scripts: []
+robustness:
+  overall: medium
+  theory_robustness: medium
+  observational_robustness: unknown
+  computational_robustness: unknown
+  constraint_robustness: unknown
+  dominant_uncertainties: []
+  validation_status: expert_judgment_only
+  notes: Machine-extracted candidate row; requires human expert review.
+agent_failure_modes:
+  warnings:
+  - id: strong_freeze_in_temperature_assumption
+    severity: high
+    category: assumption_mismatch
+    warning: The model card is only for the low-temperature Boltzmann-suppressed freeze-in branch, not
+      for ordinary high-temperature freeze-in or freeze-out.
+    mitigation: Check the reheating/maximal temperature relative to M before applying relic-density logic.
+    source_reference_ids:
+    - '2403.15533'
+observables:
+- id: o_direct_detection
+  name: Higgs-portal nuclear recoil signal
+  channel: direct_detection
+  subchannel: spin-independent scattering
+  predicted_effect: Higgs-singlet mixing mediates elastic scattering of sterile-neutrino dark matter on
+    nucleons.
+  effect_direction: rate_change
+  key_quantities:
+  - name: sterile-neutrino mass
+    role: core
+    status: inferred
+    symbol: M
+    range: GeV to tens of TeV
+    unit: GeV
+    source_reference_ids:
+    - p2403
+  - name: spin-independent cross section
+    role: derived
+    status: inferred
+    symbol: sigma_SI
+    unit: cm^2
+    source_reference_ids:
+    - p2403
+    - r2405_03760
+  redshift_range: null
+  scale_range: null
+  environments:
+  - direct-detection targets
+  observability: high
+  relevance: high
+  linked_constraints:
+  - c_direct_detection
+  linked_routes:
+  - r_low_reheat_portal
+  caveats:
+  - Sensitivity weakens at very high mass and near neutrino-background limits.
+  source_reference_ids:
+  - p2403
+  - r2405_03760
+  notes: Primary text names XENONnT/DARWIN-like probes.
+- id: o_invisible_higgs
+  name: Invisible Higgs decay
+  channel: collider
+  subchannel: h1 -> NN
+  predicted_effect: For light dark matter, invisible Higgs decay becomes the main probe.
+  effect_direction: rate_change
+  key_quantities:
+  - name: sterile-neutrino mass
+    role: core
+    status: inferred
+    symbol: M
+    range: 1 to 6
+    unit: GeV
+    source_reference_ids:
+    - p2403
+  - name: invisible Higgs branching ratio
+    role: derived
+    status: inferred
+    symbol: BR_inv
+    range: FCC projection near 0.003 in primary text
+    source_reference_ids:
+    - p2403
+  redshift_range: null
+  scale_range: collider kinematics
+  environments:
+  - LHC
+  - future Higgs factories
+  observability: high
+  relevance: high
+  linked_constraints:
+  - c_invisible_higgs
+  linked_routes:
+  - r_low_reheat_portal
+  caveats:
+  - Depends on scalar mixing and low-temperature assumptions.
+  source_reference_ids:
+  - p2403
+  - r2405_03760
+  notes: Clean light-branch observable.
+constraints:
+- id: c_direct_detection
+  name: Direct-detection bounds on stronger-coupling freeze-in
+  constraint_type: direct_detection
+  observable_channel: nuclear recoil searches
+  applies: parameter_dependent
+  constrained_parameters:
+  - M
+  - lambda
+  - theta
+  - m_2
+  - sigma_SI
+  excluded_regions:
+  - Portal couplings producing sigma_SI above current recoil limits.
+  allowed_regions:
+  - Boltzmann-suppressed freeze-in below current direct-detection bounds.
+  benchmark_implications:
+  - Heavy branch can be tested by XENONnT/DARWIN-like searches.
+  likelihood_available: 'no'
+  likelihood_reference: null
+  data_release: LZ/XENON/DARWIN curves cited in texts
+  recasting_needed: partial
+  robustness: medium
+  assumptions:
+  - id: low_temperature
+    description: T_R or T_max stays below M during production.
+    scope: cosmological_history
+    status: assumed
+    impact_if_violated: If the bath exceeds M, ordinary freeze-in/freeze-out applies.
+    can_be_relaxed: 'no'
+    source_reference_ids:
+    - p2403
+  caveats:
+  - No machine-readable likelihood supplied.
+  source_reference_ids:
+  - p2403
+  - r2405_03760
+  notes: Requires experimental recast.
+- id: c_invisible_higgs
+  name: Invisible-Higgs bound for the light branch
+  constraint_type: collider
+  observable_channel: Higgs invisible width
+  applies: parameter_dependent
+  constrained_parameters:
+  - M
+  - lambda
+  - theta
+  - BR_inv
+  excluded_regions:
+  - BR_inv above collider limits.
+  allowed_regions:
+  - Primary benchmark curves below current limits; FCC can probe smaller BR_inv.
+  benchmark_implications:
+  - Light nonthermal DM may be visible in Higgs factories.
+  likelihood_available: approximate
+  likelihood_reference: null
+  data_release: LHC/FCC limits cited by primary paper
+  recasting_needed: partial
+  robustness: medium
+  assumptions:
+  - id: tiny_active_mixing
+    description: Active-sterile mixing is negligible and gives cosmological longevity.
+    scope: theory
+    status: assumed
+    impact_if_violated: Large mixing adds decay constraints and production channels.
+    can_be_relaxed: unknown
+    source_reference_ids:
+    - p2403
+  caveats:
+  - No full collider simulation included.
+  source_reference_ids:
+  - p2403
+  notes: Collider-width recast needed.
+theory_to_observable_routing:
+  routes:
+  - id: r_low_reheat_portal
+    description: Map low-reheating Higgs-portal freeze-in to relic abundance, direct detection, and invisible
+      Higgs width.
+    source_model_features:
+    - singlet scalar mixed with Higgs
+    - Majorana sterile-neutrino DM
+    - T_R below M
+    input_parameters:
+    - M
+    - lambda
+    - theta
+    - m_2
+    - T_R
+    derived_quantities:
+    - Omega h^2
+    - sigma_SI
+    - BR_inv
+    forward_model_chain:
+    - step_id: s1
+      step_type: boltzmann_solver
+      tool_or_code: primary Boltzmann equations
+      inputs:
+      - M
+      - lambda
+      - T_R
+      outputs:
+      - Y_N
+      - Omega h^2
+      validity: Boltzmann-suppressed regime.
+      notes: Tracks transition toward freeze-out.
+    - step_id: s2
+      step_type: analytic_formula
+      tool_or_code: Higgs-portal scattering
+      inputs:
+      - lambda
+      - theta
+      - m_2
+      outputs:
+      - sigma_SI
+      validity: Elastic scalar exchange.
+      notes: Compare to recoil limits.
+    - step_id: s3
+      step_type: analytic_formula
+      tool_or_code: invisible Higgs width
+      inputs:
+      - M
+      - lambda
+      - theta
+      outputs:
+      - BR_inv
+      validity: M < m_h/2.
+      notes: Light-branch collider probe.
+    observable_ids:
+    - o_direct_detection
+    - o_invisible_higgs
+    constraint_ids:
+    - c_direct_detection
+    - c_invisible_higgs
+    likelihoods:
+    - direct-detection curves
+    - Higgs invisible-width limits
+    required_code_resources:
+    - Boltzmann solver
+    - direct-detection limits
+    - collider width limits
+    validation_tests:
+    - reproduce relic curves
+    - check sigma_SI scaling
+    - check BR_inv scaling
+    route_status: planned
+    agent_notes: Formulae are explicit, but likelihoods are external.
+    caveats:
+    - Assumes tiny active-sterile mixing.

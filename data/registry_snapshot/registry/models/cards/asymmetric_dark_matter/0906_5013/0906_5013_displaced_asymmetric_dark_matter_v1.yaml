@@ -1,0 +1,320 @@
+_source:
+  shard: arXiv_src_0906_005_wds.tar
+  paper_id: 0906_5013
+  source_member: 0906_5013.json
+schema_version: model_only_v0
+model_id: 0906_5013_displaced_asymmetric_dark_matter_v1
+identity:
+  name: Displaced asymmetric dark matter
+  family: asymmetric_dark_matter
+  aliases:
+  - ADM with displaced NLSP decays
+  short_description: Dark matter X carries an asymmetry transferred from visible baryon/lepton number,
+    and the same weak transfer connection can make the visible-sector NLSP long-lived at colliders.
+  historical_origin_or_motivation: Develops collider displaced-vertex consequences of asymmetric dark
+    matter in a SUSY-like framework.
+  status: speculative
+  model_kind: phenomenological_parameterization
+theory:
+  theory_level: phenomenological_parameterization
+  parent_frameworks:
+  - asymmetric dark matter
+  - supersymmetry
+  - MSSM-like visible sector
+  lagrangian_available: 'no'
+  renormalizable: unknown
+  eft_cutoff: null
+  embedded_in_larger_framework: 'yes'
+  notes: The paper presents the asymmetric-production logic and collider decay phenomenology without a
+    complete operator basis.
+particle_content:
+  dark_matter_candidate:
+    name: X
+    spin: unknown
+    statistics: unknown
+    elementary_or_composite: unknown
+    number_of_components: single_component
+  additional_dark_sector_particles:
+  - anti-X asymmetry partner
+  mediators:
+  - asymmetry-transfer interaction
+  - visible-sector NLSP
+  dark_radiation_species: []
+  excited_or_degenerate_states: []
+  long_lived_particles:
+  - NLSP Y
+  unstable_parent_particles:
+  - NLSP Y
+  standard_model_extension: substantial
+symmetries:
+  stabilizing_mechanism: The dark matter abundance is an X particle-antiparticle asymmetry; stability
+    of X is assumed in the dark sector.
+  symmetries:
+  - name: dark matter number or asymmetry charge
+    type: global
+    exact_or_approximate: unknown
+    breaking: not specified
+    breaking_scale: null
+  - name: partner parity/R-parity
+    type: discrete
+    exact_or_approximate: unknown
+    breaking: not specified
+    breaking_scale: null
+  topological_defects_possible: unknown
+interactions:
+  portals:
+  - other
+  standard_model_targets:
+  - baryon asymmetry
+  - lepton asymmetry
+  - visible-sector NLSP decay products
+  dark_sector_couplings:
+  - asymmetry-transfer interaction between visible and dark sectors
+  mediator_types:
+  - transfer operator
+  - NLSP Y
+  interaction_operators:
+  - operator transferring baryon/lepton asymmetry to X, not explicitly specified
+  scattering:
+    elastic: unknown
+    inelastic: unknown
+    momentum_dependence: unknown
+    velocity_dependence: unknown
+    spin_dependence: unknown
+  annihilation_channels:
+  - symmetric X anti-X component depleted, channels not specified
+  decay_channels:
+  - NLSP Y -> X + visible particles
+  self_scattering_channels: []
+  cp_structure: unknown
+  flavor_structure: unknown
+  tree_or_loop_level: unknown
+parameters:
+  core:
+  - name: dark matter mass
+    symbol: m_X
+    description: Mass of the asymmetric dark matter particle X.
+    value: order 10
+    unit: GeV
+    role: core
+    status: inferred
+  - name: NLSP mass
+    symbol: m_Y
+    description: Mass of the visible-sector next-to-lightest SUSY partner.
+    role: core
+    status: inferred
+  - name: transfer decoupling temperature
+    symbol: T_dec
+    description: Temperature at which the asymmetry-transfer interaction leaves equilibrium.
+    value: of order m_X
+    role: core
+    status: inferred
+  - name: NLSP decay length
+    symbol: c tau_Y
+    description: Macroscopic decay length from the weak transfer interaction.
+    range: order 10 m for m_Y near 100 GeV in the paper estimate
+    unit: m
+    role: core
+    status: inferred
+production:
+  mechanisms:
+  - asymmetric relic density from visible-sector baryon/lepton asymmetry transfer
+  thermal_equilibrium_with_standard_model: partial
+  thermal_equilibrium_with_hidden_sector: unknown
+  abundance_set_by:
+  - particle-antiparticle asymmetry in X
+  - relation to baryon density
+  - m_X
+  depends_on_reheating_temperature: unknown
+  can_produce_all_dark_matter: parameter_dependent
+  nonthermal_momentum_distribution: unknown
+  notes: The paper gives Omega_X/Omega_B proportional to m_X/m_B after asymmetry transfer.
+relic_density:
+  full_or_subcomponent: full_dark_matter
+  target_fraction: null
+  calculation_type: nonthermal
+  key_dependencies:
+  - m_X/m_B
+  - efficiency of asymmetry transfer
+  - depletion of symmetric component
+  requires_entropy_dilution: unknown
+  overclosure_risk: parameter_dependent
+  underproduction_risk: parameter_dependent
+  tuning_assessment: unknown
+cosmological_history:
+  standard_history_assumed: true
+  nonstandard_features:
+  - visible-to-dark asymmetry transfer
+  - long-lived NLSP decay
+  dark_sector_temperature: null
+  delta_neff: null
+  kinetic_decoupling: null
+  chemical_decoupling: null
+  phase_transitions: []
+  topological_defects: []
+  isocurvature_perturbations: unknown
+  bbn_relevance: medium
+  cmb_relevance: unknown
+phase_space:
+  distribution_type: unknown
+  distribution_function_available: 'no'
+  average_momentum_relative_to_thermal: null
+  free_streaming_length: null
+  velocity_dispersion_today: null
+  phase_space_bounds: []
+  notes: The paper focuses on the number-density asymmetry rather than a phase-space distribution.
+structure_formation:
+  linear:
+    behaves_like_cdm: unknown
+    transfer_function_shape: unknown
+    small_scale_power_effect: unknown
+    half_mode_mass: null
+    impact_on_sigma8_s8: unknown
+  nonlinear:
+    halo_mass_function_effect: unknown
+    subhalo_mass_function_effect: unknown
+    simulation_calibrated: unknown
+validity_domain:
+- id: asymmetry_transfer_decoupling
+  applies_to: production
+  condition: Transfer interactions must leave equilibrium around T of order m_X to preserve the dark asymmetry.
+  status: inferred
+  extrapolation_risk: medium
+- id: collider_displaced_regime
+  applies_to: model
+  condition: Displaced-vertex conclusions apply when NLSP lifetimes yield decays inside or near detector
+    volumes.
+  status: inferred
+  extrapolation_risk: medium
+assumptions:
+  global:
+  - id: shared_asymmetry_origin
+    description: The visible baryon/lepton asymmetry and dark matter asymmetry are related by an early-universe
+      transfer interaction.
+    scope: production
+    status: assumed
+    can_be_relaxed: unknown
+  - id: stable_dark_asymmetry
+    description: The X asymmetry survives to late times and constitutes the dark matter abundance.
+    scope: cosmological_history
+    status: assumed
+    can_be_relaxed: unknown
+associated_code:
+  has_associated_code: 'no'
+  code_summary: No model-specific public code is specified in the paper.
+  repositories: []
+  packages_or_modules: []
+  notebooks: []
+  scripts: []
+  caveats: []
+provenance:
+  model_id: 0906_5013_displaced_asymmetric_dark_matter_v1
+  model_name: Displaced asymmetric dark matter
+  model_family: asymmetric_dark_matter
+  entry_version: 0.1.0
+  status: machine_extracted
+  created_at: '2026-05-31'
+  last_updated: '2026-05-31'
+  sources:
+    primary_papers:
+    - reference_id: 0906_5013
+      title: Displaced Dark Matter at Colliders
+      authors:
+      - Spencer Chang
+      - Markus A. Luty
+      year: 2009
+      arxiv_id: '0906.5013'
+      doi: null
+      url: null
+      role: original_model
+      notes: Assigned full text from run-local SQLite database.
+  extraction:
+    method: llm_assisted
+    extracted_by: codex_batch_0008
+    extractor_name: Codex GPT-5
+    extraction_date: '2026-05-31'
+    confidence: medium
+    source_chunks_or_sections:
+    - reference_id: 0906_5013
+      section: Introduction
+      page: null
+      quote_or_summary: ADM density follows from an X asymmetry related to baryon density, with m_X around
+        the weak scale.
+    unresolved_items:
+    - The exact transfer operator, dark charge assignment, and spin of X are not fixed in the text.
+  evidence:
+    particle_content:
+    - reference_id: 0906_5013
+      note: Defines dark matter particles X carrying a relic particle-antiparticle asymmetry.
+      confidence: high
+      section: Introduction
+      page: null
+    symmetries:
+    - reference_id: 0906_5013
+      note: The asymmetry in X is related to baryon/lepton asymmetry; stability is assumed in the dark
+        sector.
+      confidence: medium
+      section: Introduction
+      page: null
+    interactions:
+    - reference_id: 0906_5013
+      note: A transfer interaction equilibrates visible baryon/lepton asymmetry with the dark sector and
+        later allows NLSP decay.
+      confidence: high
+      section: Introduction
+      page: null
+    production_mechanism:
+    - reference_id: 0906_5013
+      note: The X relic abundance is set by an asymmetry transferred from the visible sector before the
+        transfer interaction decouples.
+      confidence: high
+      section: Introduction
+      page: null
+    cosmological_history:
+    - reference_id: 0906_5013
+      note: The transfer interaction is in equilibrium in the early universe and drops out at T of order
+        m_X.
+      confidence: high
+      section: Introduction
+      page: null
+    parameter_ranges:
+    - reference_id: 0906_5013
+      note: The paper notes the correct abundance arises for m_X around 10 GeV in the ADM relation to
+        baryon density.
+      confidence: medium
+      section: Introduction
+      page: null
+    validity_domain:
+    - reference_id: 0906_5013
+      note: The displaced-vertex connection relies on NLSP decays mediated by the same asymmetry-transfer
+        operator.
+      confidence: medium
+      section: Introduction
+      page: null
+  review:
+    human_reviewed: false
+    reviewed_by: null
+    review_date: null
+    expert_reviewed: false
+    expert_reviewer: null
+    expert_review_date: null
+    reviewer_notes: []
+    scientific_confidence: medium
+    implementation_confidence: medium
+robustness:
+  overall: medium
+  theory_robustness: medium
+  observational_robustness: unknown
+  computational_robustness: unknown
+  dominant_uncertainties:
+  - The asymmetry-transfer operator and X quantum numbers are not specified.
+  validation_status: expert_judgment_only
+  notes: This is a phenomenological model-card candidate for the displaced ADM branch developed in the
+    paper.
+agent_failure_modes:
+  warnings:
+  - id: transfer_operator_unspecified
+    severity: medium
+    category: missing_likelihood
+    warning: The transfer operator is not explicitly defined; do not use this card as a UV-complete ADM
+      model.

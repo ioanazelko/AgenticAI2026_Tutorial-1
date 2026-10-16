@@ -1,0 +1,799 @@
+_source:
+  shard: arXiv_src_1604_006_wds.tar
+  paper_id: '1604_02401'
+  source_member: 1604_02401.json
+  enriched: true
+  enrichment_schema_version: dm_model_ocr_enrichment_smoke_v0
+schema_version: model_only_v0
+model_id: 1604_02401_sterile_neutrino_freeze_in_dark_freezeout_v1
+identity:
+  name: Sterile-neutrino freeze-in/dark-freeze-out dark matter in a singlet scalar portal sector
+  family: sterile_neutrino_freeze_in_dark_matter
+  aliases:
+  - singlet fermion freeze-in dark matter
+  - 7 keV sterile neutrino hidden-sector freeze-in variant
+  short_description: A singlet fermion/sterile-neutrino dark matter variant where the Higgs portal produces
+    singlet scalars by freeze-in, scalars decay to fermions, and hidden-sector self-interactions can turn
+    the history into dark freeze-out.
+  historical_origin_or_motivation: Motivated by decoupled hidden sectors, sterile-neutrino dark matter,
+    self-interactions, and possible connection to the 3.5 keV X-ray feature.
+  status: speculative
+  model_kind: simplified_model
+theory:
+  theory_level: simplified_model
+  parent_frameworks:
+  - Higgs portal
+  - sterile-neutrino dark matter
+  - freeze-in dark matter
+  lagrangian_available: 'yes'
+  renormalizable: 'yes'
+  eft_cutoff: null
+  embedded_in_larger_framework: unknown
+  notes: The model is a renormalizable singlet scalar plus Dirac fermion sector with a feeble Higgs portal.
+particle_content:
+  dark_matter_candidate:
+    name: sterile-neutrino/Dirac fermion psi
+    spin: 1/2
+    statistics: fermion
+    elementary_or_composite: elementary
+    number_of_components: single_component
+  additional_dark_sector_particles:
+  - real singlet scalar mediator s
+  mediators:
+  - singlet scalar s
+  - SM Higgs through scalar portal
+  dark_radiation_species: []
+  excited_or_degenerate_states: []
+  long_lived_particles:
+  - psi dark matter with optional tiny active-neutrino mixing
+  unstable_parent_particles:
+  - s decays to psi psi when kinematically allowed
+  standard_model_extension: minimal
+symmetries:
+  stabilizing_mechanism: sterile fermion is effectively stable for the tiny mixing considered; exact stabilizing
+    symmetry is not specified for the fermion variant
+  symmetries:
+  - name: hidden-sector parity
+    type: discrete
+    exact_or_approximate: unknown
+    breaking: optional tiny active-sterile mixing can be added
+    breaking_scale: null
+  topological_defects_possible: unknown
+interactions:
+  portals:
+  - higgs
+  standard_model_targets:
+  - SM Higgs boson
+  - active neutrinos only in optional tiny-mixing extension
+  dark_sector_couplings:
+  - lambda_hs scalar portal
+  - g pseudoscalar Yukawa coupling
+  - lambda_s scalar self-coupling
+  mediator_types:
+  - singlet scalar mediator
+  interaction_operators:
+  - i g s psi gamma5 psi
+  - lambda_hs |H|^2 s^2
+  scattering:
+    elastic: 'yes'
+    inelastic: unknown
+    momentum_dependence: unknown
+    velocity_dependence: unknown
+    spin_dependence: unknown
+  annihilation_channels:
+  - psi number-changing processes mediated by s in thermalized dark sector
+  decay_channels:
+  - s -> psi psi
+  - optional psi -> active neutrino plus photon for tiny mixing
+  self_scattering_channels:
+  - psi self-interaction through scalar exchange
+  cp_structure: pseudoscalar Yukawa coupling
+  flavor_structure: sterile-active mixing optional and tiny
+  tree_or_loop_level: tree
+parameters:
+  core:
+  - name: sterile fermion mass
+    symbol: m_psi
+    description: Dark matter mass; 7.1 keV example discussed for the X-ray line.
+    range: keV to model-dependent hidden-sector masses
+    unit: GeV
+    role: core
+    status: inferred
+    source_reference_ids:
+    - paper
+  - name: singlet scalar mass
+    symbol: m_s
+    description: Mediator mass, with examples m_s = 10 m_psi and m_s = 100 m_psi.
+    range: above m_psi and below m_h in fermionic freeze-out setup
+    unit: GeV
+    role: core
+    status: inferred
+    source_reference_ids:
+    - paper
+  - name: Yukawa coupling
+    symbol: g
+    description: Pseudoscalar s psi psi coupling.
+    range: below about 0.004 for 7 keV freeze-in example; about 0.2 for m_s = 100 m_psi self-interacting
+      dark freeze-out example
+    role: core
+    status: inferred
+    source_reference_ids:
+    - paper
+  - name: Higgs portal coupling
+    symbol: lambda_hs
+    description: Feeble portal coupling controlling production of s.
+    value: about 4e-9 for the 7 keV freeze-in example
+    role: core
+    status: inferred
+    source_reference_ids:
+    - paper
+  - name: active-sterile mixing angle
+    symbol: sin^2(2 theta)
+    description: Optional value matching the 3.5 keV line intensity.
+    value: about 4.3e-11
+    role: nuisance
+    status: inferred
+    source_reference_ids:
+    - paper
+  nuisance: []
+  derived: []
+production:
+  mechanisms:
+  - Higgs-decay freeze-in to singlet scalars
+  - scalar decay to sterile fermions
+  - dark-sector freeze-in or dark freeze-out depending on self-interactions
+  thermal_equilibrium_with_standard_model: 'no'
+  thermal_equilibrium_with_hidden_sector: partial
+  abundance_set_by:
+  - lambda_hs production of s
+  - g-mediated s decays and fermion interactions
+  - lambda_s scalar self-thermalization
+  - mass hierarchy m_s/m_psi
+  depends_on_reheating_temperature: unknown
+  can_produce_all_dark_matter: 'yes'
+  nonthermal_momentum_distribution: parameter_dependent
+  notes: The 7 keV sterile-neutrino example is compatible with either freeze-in or dark freeze-out depending
+    on the hidden-sector mass hierarchy.
+relic_density:
+  full_or_subcomponent: full_dark_matter
+  target_fraction:
+    name: observed abundance
+    symbol: Omega_DM h^2
+    description: The sterile fermion can saturate the observed abundance in the examples discussed.
+    value: '0.12'
+    role: cosmological
+    status: inferred
+    source_reference_ids:
+    - paper
+  calculation_type: mixed
+  key_dependencies:
+  - lambda_hs
+  - g
+  - lambda_s
+  - m_s/m_psi hierarchy
+  requires_entropy_dilution: 'no'
+  overclosure_risk: parameter_dependent
+  underproduction_risk: parameter_dependent
+  tuning_assessment: unknown
+cosmological_history:
+  standard_history_assumed: true
+  nonstandard_features:
+  - decoupled hidden-sector temperature
+  - possible internal thermalization before fermion freeze-out
+  - possible primordial scalar-condensate isocurvature
+  dark_sector_temperature:
+    name: dark-sector temperature
+    symbol: T_D
+    description: Separate dark temperature if the hidden sector internally thermalizes.
+    value: model dependent
+    role: cosmological
+    status: inferred
+    source_reference_ids:
+    - paper
+  delta_neff:
+    name: dark radiation contribution
+    symbol: Delta N_eff
+    description: Paper states BBN N_eff bounds are avoided in otherwise allowed parameter space.
+    value: negligible
+    role: cosmological
+    status: inferred
+    source_reference_ids:
+    - paper
+  kinetic_decoupling: null
+  chemical_decoupling:
+    name: fermion dark freeze-out
+    description: Dark freeze-out or freeze-in in the singlet sector depending on g and lambda_s.
+    value: model dependent
+    role: cosmological
+    status: inferred
+    source_reference_ids:
+    - paper
+  phase_transitions: []
+  topological_defects: []
+  isocurvature_perturbations: parameter_dependent
+  bbn_relevance: low
+  cmb_relevance: medium
+phase_space:
+  distribution_type: mixed_cold_warm
+  distribution_function_available: 'no'
+  f_of_p_or_q: not provided
+  average_momentum_relative_to_thermal: depends on freeze-in versus dark-freeze-out regime
+  free_streaming_length: null
+  velocity_dispersion_today: null
+  phase_space_bounds:
+  - 7 keV sterile-neutrino example is in the warm-DM mass range
+  notes: The paper states nonresonant active-sterile oscillation production is expected to be only a few
+    percent in the 7 keV example.
+structure_formation:
+  linear:
+    behaves_like_cdm: 'no'
+    transfer_function_shape: smooth_cutoff
+    small_scale_power_effect: suppression
+    half_mode_mass: null
+    impact_on_sigma8_s8: unknown
+  nonlinear:
+    halo_mass_function_effect: warm or self-interacting behavior is parameter dependent
+    subhalo_mass_function_effect: unknown
+    simulation_calibrated: unknown
+validity_domain:
+- id: mass_hierarchy
+  applies_to: parameter
+  condition: Fermionic production discussion assumes m_psi < m_s < m_h for Higgs-produced scalars decaying
+    to fermions.
+  status: assumed
+  extrapolation_risk: medium
+  caveats: []
+  source_reference_ids:
+  - paper
+  notes: null
+- id: tiny_mixing
+  applies_to: model
+  condition: The optional active-neutrino mixing is small enough not to alter stability or the relic calculation
+    in the text.
+  status: inferred
+  extrapolation_risk: medium
+  caveats: []
+  source_reference_ids:
+  - paper
+  notes: null
+assumptions:
+  global:
+  - id: feeble_visible_portal
+    description: The hidden sector does not thermalize with the SM because the portal coupling is tiny.
+    scope: production
+    status: assumed
+    impact_if_violated: null
+    can_be_relaxed: unknown
+    source_reference_ids:
+    - paper
+    notes: null
+  - id: scalar_mediator_population
+    description: The sterile fermion abundance is seeded by the scalar population produced through Higgs
+      decays.
+    scope: production
+    status: assumed
+    impact_if_violated: null
+    can_be_relaxed: unknown
+    source_reference_ids:
+    - paper
+    notes: null
+associated_code:
+  has_associated_code: unknown
+  code_summary: No associated code is identified in the assigned text.
+  primary_code_role: null
+  repositories: []
+  packages_or_modules: []
+  notebooks: []
+  scripts: []
+  containers_or_environments: []
+  expected_inputs: []
+  expected_outputs: []
+  reproducibility:
+    reproducibility_level: unknown
+    has_tests: unknown
+    has_examples: unknown
+    has_documentation: unknown
+    pinned_dependencies: unknown
+    notes: null
+  validation:
+    validation_status: unknown
+    benchmark_references: []
+    validation_notes: null
+  caveats: []
+provenance:
+  model_id: 1604_02401_sterile_neutrino_freeze_in_dark_freezeout_v1
+  model_name: Sterile-neutrino freeze-in/dark-freeze-out dark matter in a singlet scalar portal sector
+  model_family: sterile_neutrino_freeze_in_dark_matter
+  entry_version: 0.1.0
+  status: machine_extracted
+  created_at: '2026-05-31'
+  last_updated: '2026-05-31'
+  sources:
+    primary_papers:
+    - reference_id: paper
+      title: Observational Constraints on Decoupled Hidden Sectors
+      authors:
+      - Matti Heikinheimo
+      - Tommi Tenkanen
+      - Kimmo Tuominen
+      - Ville Vaskonen
+      year: 2016
+      arxiv_id: '1604.02401'
+      doi: null
+      url: null
+      role: original_model
+      notes: null
+    - arxiv_id: '1604.02401'
+      authors:
+      - Heikinheimo, Matti
+      - Tenkanen, Tommi
+      - Tuominen, Kimmo
+      - Vaskonen, Ville
+      doi: 10.1103/PhysRevD.94.063506
+      notes: Primary assigned paper.
+      reference_id: src_1604_02401
+      role: original_model
+      title: Observational constraints on decoupled hidden sectors
+      url: https://arxiv.org/abs/1604.02401
+      year: 2016
+    constraint_papers:
+    - arxiv_id: '1402.2301'
+      authors:
+      - Bulbul, Esra
+      - Markevitch, Maxim
+      - Foster, Adam
+      - Smith, Randall K.
+      - Loewenstein, Michael
+      - Randall, Scott W.
+      doi: 10.1088/0004-637X/789/1/13
+      notes: Related full text resolved locally for bounded enrichment.
+      reference_id: src_1402_2301
+      role: constraint
+      title: Detection of an Unidentified Emission Line in the Stacked X-Ray Spectrum of Galaxy Clusters
+      url: https://arxiv.org/abs/1402.2301
+      year: 2014
+    - arxiv_id: '1510.08063'
+      authors:
+      - Bernal, Nicolás
+      - Chu, Xiaoyong
+      - Garcia-Cely, Camilo
+      - Hambye, Thomas
+      - Zaldivar, Bryan
+      doi: 10.1088/1475-7516/2016/03/018
+      notes: Related full text resolved locally for bounded enrichment.
+      reference_id: src_1510_08063
+      role: extension
+      title: Production regimes for Self-Interacting Dark Matter
+      url: https://arxiv.org/abs/1510.08063
+      year: 2016
+    external_databases:
+    - name: NASA ADS
+      note: Used for sanitized primary/reference/citation metadata discovery.
+      url: https://ui.adsabs.harvard.edu/
+    review_papers: []
+  extraction:
+    method: llm_assisted
+    extracted_by: codex_batch_0014
+    extractor_name: codex_gpt5_dark_matter_model_worker
+    extraction_date: '2026-05-31'
+    confidence: high
+    source_chunks_or_sections:
+    - reference_id: paper
+      section: model and fermionic freeze-out
+      page: null
+      quote_or_summary: The paper treats sterile-neutrino dark matter produced through a feebly coupled
+        singlet scalar sector and possible dark freeze-out.
+    unresolved_items:
+    - No source text gives a sterile-neutrino distribution function for this exact hidden-sector history.
+    - The 3.55 keV line remains an observational interpretation rather than a confirmed dark-matter signal.
+  evidence:
+    particle_content:
+    - reference_id: paper
+      note: The singlet sector contains a real scalar s and a sterile-neutrino/Dirac fermion psi with
+        pseudoscalar Yukawa coupling ig s psi gamma5 psi.
+      confidence: high
+      section: model section
+      page: null
+    interactions:
+    - reference_id: paper
+      note: The sterile neutrino couples to the SM only through the scalar portal sector; the scalar s
+        is produced by Higgs decays and can decay to psi psi.
+      confidence: high
+      section: fermionic freeze-out
+      page: null
+    production_mechanism:
+    - reference_id: paper
+      note: For m_psi < m_s < m_h, initial production is h -> s s followed by s -> psi psi, with possible
+        dark-sector thermalization and fermion dark freeze-out.
+      confidence: high
+      section: fermionic freeze-out
+      page: null
+    parameter_ranges:
+    - reference_id: paper
+      note: For a 7 keV sterile neutrino with m_s = 10 m_psi, the paper finds standard freeze-in with
+        g below about 0.004 and lambda_hs about 4e-9; m_s = 100 m_psi with g about 0.2 gives relativistic
+        dark freeze-out.
+      confidence: high
+      section: other constraints/conclusion
+      page: null
+    cosmological_history:
+    - reference_id: paper
+      note: The dark sector remains decoupled from the SM for a tiny scalar portal but can thermalize
+        internally depending on g and lambda_s.
+      confidence: high
+      section: fermionic freeze-out
+      page: null
+    validity_domain:
+    - reference_id: paper
+      note: The optional active-sterile mixing for the 3.5 keV line is tiny and does not affect stability
+        on relic-density timescales.
+      confidence: medium
+      section: other constraints
+      page: null
+    constraints:
+    - confidence: high
+      note: Primary paper states that small mixing does not affect the relic calculation and quotes the
+        line-fit benchmark.
+      page: null
+      reference_id: src_1604_02401
+      section: null
+    - confidence: medium
+      note: Related full text supplies the observational X-ray line context and earlier limits comparison.
+      page: null
+      reference_id: src_1402_2301
+      section: null
+    observables:
+    - confidence: high
+      note: Primary paper gives the 7.1 keV sterile-neutrino benchmark, the quoted mixing value, and the
+        Lyman-alpha mass floor.
+      page: null
+      reference_id: src_1604_02401
+      section: null
+    - confidence: medium
+      note: Related full text reports the weak unidentified 3.55-3.57 keV cluster line and sterile-neutrino
+        interpretation.
+      page: null
+      reference_id: src_1402_2301
+      section: null
+    routes:
+    - confidence: medium
+      note: Routes combine the primary production history with standard sterile-neutrino decay and structure-formation
+        recasts.
+      page: null
+      reference_id: src_1604_02401
+      section: null
+  review:
+    human_reviewed: false
+    reviewed_by: null
+    review_date: null
+    expert_reviewed: false
+    expert_reviewer: null
+    expert_review_date: null
+    reviewer_notes: []
+    scientific_confidence: high
+    implementation_confidence: medium
+  caveats: []
+  related_entries: []
+robustness:
+  overall: medium
+  theory_robustness: medium
+  observational_robustness: unknown
+  computational_robustness: medium
+  dominant_uncertainties:
+  - warm-DM phase-space distribution not explicitly given
+  - hidden-sector regime depends sensitively on g, lambda_s, and mass hierarchy
+  validation_status: expert_judgment_only
+  notes: null
+agent_failure_modes:
+  warnings:
+  - id: regime_dependence
+    severity: medium
+    category: assumption_mismatch
+    warning: The same particle content can realize freeze-in, dark freeze-in, or dark freeze-out depending
+      on hidden-sector couplings.
+    mitigation: Identify the regime before using relic estimates.
+    source_reference_ids:
+    - paper
+  - id: warm_distribution_missing
+    severity: medium
+    category: other
+    warning: The paper does not provide a full sterile-neutrino momentum distribution.
+    mitigation: Avoid precise structure-formation mapping without an additional calculation.
+    source_reference_ids:
+    - paper
+observables:
+- caveats:
+  - The line interpretation depends on the unresolved astrophysical status of the 3.5 keV feature.
+  channel: indirect_detection
+  effect_direction: spectral_line
+  environments:
+  - galaxy clusters
+  - dark-matter-dominated X-ray targets
+  id: obs_35kev_xray_line
+  key_quantities:
+  - name: sterile-neutrino mass
+    role: benchmark
+    source_reference_ids:
+    - src_1604_02401
+    - src_1402_2301
+    status: inferred
+    symbol: m_psi
+    unit: keV
+    value: '7.1'
+  - name: active-sterile mixing
+    role: core
+    source_reference_ids:
+    - src_1604_02401
+    status: inferred
+    symbol: sin^2(2 theta)
+    value: 4.3e-11 line-fit benchmark in primary paper
+  linked_constraints:
+  - con_xray_line_mixing
+  linked_routes:
+  - route_sterile_decay_flux
+  name: 3.55 keV X-ray decay line
+  notes: null
+  observability: medium
+  predicted_effect: A 7.1 keV sterile-neutrino component with small active mixing can radiatively decay
+    to a 3.55 keV photon line.
+  redshift_range: null
+  relevance: high
+  scale_range: null
+  source_reference_ids:
+  - src_1604_02401
+  - src_1402_2301
+  subchannel: sterile-neutrino radiative decay
+- caveats:
+  - No explicit sterile-neutrino momentum spectrum is tabulated.
+  channel: lyman_alpha
+  effect_direction: suppression
+  environments:
+  - intergalactic medium
+  - small halos
+  id: obs_sterile_wdm_cutoff
+  key_quantities:
+  - name: sterile-neutrino mass
+    role: benchmark
+    source_reference_ids:
+    - src_1604_02401
+    status: inferred
+    symbol: m_psi
+    unit: keV
+    value: '7.1'
+  - description: Hidden-sector temperature/history inherited from scalar freeze-in and decay.
+    name: production temperature history
+    role: derived
+    source_reference_ids:
+    - src_1604_02401
+    status: inferred
+    symbol: xi
+  linked_constraints:
+  - con_sterile_lyman_floor
+  linked_routes:
+  - route_sterile_freezein_transfer
+  name: Warm sterile-neutrino cutoff
+  notes: null
+  observability: medium
+  predicted_effect: The 7 keV sterile-neutrino benchmark lies in the warm-DM regime and can suppress small-scale
+    structure.
+  redshift_range: null
+  relevance: critical
+  scale_range: Lyman-alpha forest scales
+  source_reference_ids:
+  - src_1604_02401
+  subchannel: warm-DM suppression
+constraints:
+- allowed_regions:
+  - Very small mixing leaves the relic calculation effectively unchanged and can evade line bounds.
+  applies: parameter_dependent
+  assumptions:
+  - can_be_relaxed: 'yes'
+    description: A nonzero active-sterile mixing exists even though relic production is dominated by the
+      singlet-scalar history.
+    id: assume_radiative_mixing
+    impact_if_violated: With zero or much smaller mixing, the X-ray line observable disappears.
+    notes: null
+    scope: indirect_detection
+    source_reference_ids:
+    - src_1604_02401
+    status: assumed
+  benchmark_implications:
+  - The model can target the 3.55 keV line only in a narrow mass/mixing benchmark.
+  caveats:
+  - The observational line remains debated and source-dependent.
+  constrained_parameters:
+  - m_psi
+  - sin^2(2 theta)
+  - sterile-neutrino dark-matter fraction
+  constraint_type: indirect_detection
+  data_release: null
+  excluded_regions:
+  - Mixing angles above X-ray limits are excluded; the primary paper quotes sin^2(2 theta) about 4.3e-11
+    for a full-DM 7.1 keV line fit.
+  id: con_xray_line_mixing
+  likelihood_available: unknown
+  likelihood_reference: null
+  name: X-ray line and decay-rate mixing constraint
+  notes: null
+  observable_channel: xray_line
+  recasting_needed: partial
+  robustness: medium
+  source_reference_ids:
+  - src_1604_02401
+  - src_1402_2301
+- allowed_regions:
+  - The paper treats the 7 keV benchmark as above the approximate warm-DM floor, subject to its nonthermal
+    production history.
+  applies: parameter_dependent
+  assumptions:
+  - can_be_relaxed: 'yes'
+    description: The scalar-decay/free-in sterile spectrum can be compared approximately to a warm-DM
+      floor.
+    id: assume_nonthermal_mapping
+    impact_if_violated: A colder or hotter spectrum changes the Lyman-alpha limit.
+    notes: null
+    scope: structure_formation
+    source_reference_ids:
+    - src_1604_02401
+    status: approximate
+  benchmark_implications:
+  - A transfer-function recast is required before comparing directly to thermal sterile-neutrino bounds.
+  caveats:
+  - No distribution function is supplied.
+  constrained_parameters:
+  - m_psi
+  - production spectrum
+  constraint_type: cosmological
+  data_release: null
+  excluded_regions:
+  - Warm spectra equivalent to too-light thermal WDM are excluded by Lyman-alpha forest data.
+  id: con_sterile_lyman_floor
+  likelihood_available: unknown
+  likelihood_reference: null
+  name: Warm sterile-neutrino structure-formation bound
+  notes: null
+  observable_channel: lyman_alpha
+  recasting_needed: partial
+  robustness: medium
+  source_reference_ids:
+  - src_1604_02401
+- allowed_regions:
+  - Self-interactions large enough to satisfy the primary paper isocurvature condition can coexist with
+    scalar decay production.
+  applies: parameter_dependent
+  assumptions: []
+  benchmark_implications:
+  - The sterile-neutrino case inherits hidden-sector consistency conditions from the scalar mediator sector.
+  caveats:
+  - Mass hierarchy and inflation assumptions are model-dependent.
+  constrained_parameters:
+  - lambda_s
+  - g
+  - H_*
+  - m_s/m_psi
+  constraint_type: cosmological
+  data_release: null
+  excluded_regions:
+  - Hidden-sector parameters that leave too much primordial singlet-condensate isocurvature are disfavored.
+  id: con_sterile_hidden_isocurvature
+  likelihood_available: unknown
+  likelihood_reference: null
+  name: Hidden-sector isocurvature and self-coupling consistency
+  notes: null
+  observable_channel: cmb
+  recasting_needed: partial
+  robustness: medium
+  source_reference_ids:
+  - src_1604_02401
+theory_to_observable_routing:
+  routes:
+  - agent_notes: The primary paper discusses the benchmark but does not provide an X-ray likelihood.
+    caveats: []
+    constraint_ids:
+    - con_xray_line_mixing
+    derived_quantities:
+    - radiative decay rate
+    - line flux
+    description: Map sterile-neutrino mass and mixing to an X-ray decay flux.
+    forward_model_chain:
+    - inputs:
+      - m_psi
+      - sin^2(2 theta)
+      notes: null
+      outputs:
+      - Gamma(N -> nu gamma)
+      step_id: decay_rate
+      step_type: analytic_formula
+      tool_or_code: null
+      validity: Standard sterile-neutrino decay approximation.
+    - inputs:
+      - Gamma
+      - target dark-matter column density
+      notes: null
+      outputs:
+      - predicted 3.55 keV flux
+      step_id: flux_model
+      step_type: data_transform
+      tool_or_code: null
+      validity: Astrophysical target modeling required.
+    id: route_sterile_decay_flux
+    input_parameters:
+    - m_psi
+    - sin^2(2 theta)
+    - dark-matter column density
+    likelihoods:
+    - X-ray line likelihoods for clusters, galaxies, and blank sky
+    observable_ids:
+    - obs_35kev_xray_line
+    required_code_resources:
+    - X-ray spectral analysis pipeline
+    route_status: planned
+    source_model_features:
+    - 7.1 keV sterile neutrino
+    - small active-neutrino mixing
+    validation_tests:
+    - Recover the quoted 7.1 keV and sin^2(2 theta) benchmark before scanning.
+  - agent_notes: This route is the missing bridge from the model calculation to precision Lyman-alpha
+      constraints.
+    caveats: []
+    constraint_ids:
+    - con_sterile_lyman_floor
+    - con_sterile_hidden_isocurvature
+    derived_quantities:
+    - sterile abundance
+    - momentum distribution
+    - matter transfer function
+    description: Propagate scalar freeze-in and scalar decay into a sterile-neutrino transfer function.
+    forward_model_chain:
+    - inputs:
+      - lambda_hs
+      - m_s
+      notes: null
+      outputs:
+      - scalar phase-space population
+      step_id: parent_population
+      step_type: boltzmann_solver
+      tool_or_code: null
+      validity: Requires freeze-in source terms from Higgs decays.
+    - inputs:
+      - g
+      - m_s
+      - m_psi
+      - scalar population
+      notes: null
+      outputs:
+      - sterile-neutrino distribution
+      step_id: decay_distribution
+      step_type: boltzmann_solver
+      tool_or_code: null
+      validity: Must distinguish freeze-in from dark-freeze-out histories.
+    - inputs:
+      - sterile distribution
+      notes: null
+      outputs:
+      - linear transfer function
+      step_id: structure_recast
+      step_type: transfer_function
+      tool_or_code: CLASS/CAMB recast
+      validity: Needed for a real Lyman-alpha comparison.
+    id: route_sterile_freezein_transfer
+    input_parameters:
+    - lambda_hs
+    - lambda_s
+    - g
+    - m_s
+    - m_psi
+    likelihoods:
+    - Lyman-alpha nonthermal-DM likelihood
+    observable_ids:
+    - obs_sterile_wdm_cutoff
+    required_code_resources:
+    - Boltzmann solver
+    - linear cosmology solver
+    route_status: planned
+    source_model_features:
+    - Higgs-produced scalar parent
+    - hidden-sector self-interactions
+    - sterile-neutrino final state
+    validation_tests:
+    - Check that Omega_DM h^2 and the paper benchmark are reproduced.

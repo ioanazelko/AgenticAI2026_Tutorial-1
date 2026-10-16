@@ -1,0 +1,701 @@
+_source:
+  shard: arXiv_src_2106_045_wds.tar
+  paper_id: '2106_07122'
+  source_member: 2106_07122.json
+  enriched: true
+  enrichment_schema_version: dm_model_ocr_enrichment_smoke_v0
+agent_failure_modes:
+  warnings:
+  - category: invalid_mapping
+    id: w1
+    mitigation: Use a momentum-resolved treatment before mapping to Lyman-alpha limits.
+    severity: high
+    source_reference_ids: []
+    warning: Do not apply thermal-WDM mass bounds directly to this nonthermal freeze-in distribution.
+  - category: assumption_mismatch
+    id: w2
+    mitigation: Check channel dominance and spectrum before using the scaling relation.
+    severity: medium
+    source_reference_ids: []
+    warning: The analytic Delta N_eff/relic-density independence can fail if multiple channels dominate
+      or the mass hierarchy is not satisfied.
+associated_code:
+  code_summary: No associated model-specific public code is identified in the extracted text.
+  has_associated_code: unknown
+assumptions:
+  global:
+  - can_be_relaxed: unknown
+    description: The parent scalar is in thermal equilibrium while the dark matter fermion is feebly produced
+      and never thermalizes.
+    id: a1
+    impact_if_violated: null
+    notes: null
+    scope: production
+    source_reference_ids: []
+    status: assumed
+  - can_be_relaxed: unknown
+    description: Inverse decay and Pauli-blocking effects are neglected in the analytic freeze-in yield.
+    id: a2
+    impact_if_violated: null
+    notes: null
+    scope: production
+    source_reference_ids: []
+    status: approximate
+  - can_be_relaxed: unknown
+    description: The extra radiation contribution decouples before BBN so it can be represented by Delta
+      N_eff.
+    id: a3
+    impact_if_violated: null
+    notes: null
+    scope: cosmological_history
+    source_reference_ids: []
+    status: assumed
+cosmological_history:
+  bbn_relevance: high
+  chemical_decoupling:
+    description: Yield accumulation occurs around the parent scalar mass.
+    name: freeze-in production temperature
+    range: T_dec of order m_phi
+    role: derived
+    source_reference_ids: []
+    status: inferred
+    symbol: T_dec
+  cmb_relevance: high
+  dark_sector_temperature: null
+  delta_neff:
+    description: Extra radiation contribution from relativistic freeze-in dark matter before BBN.
+    name: BBN effective neutrino shift
+    range: O(0.1) current sensitivity and O(0.01) future sensitivity discussed
+    role: cosmological
+    source_reference_ids: []
+    status: inferred
+    symbol: Delta N_eff
+  isocurvature_perturbations: unknown
+  kinetic_decoupling: null
+  nonstandard_features:
+  - extra light hidden species contributing to Delta N_eff
+  - possible mixed cold-plus-warm dark matter
+  phase_transitions: []
+  standard_history_assumed: true
+  topological_defects: []
+identity:
+  aliases:
+  - thermal two-body decay freeze-in
+  - sub-keV warm freeze-in component
+  family: freeze_in_dark_matter
+  historical_origin_or_motivation: Motivated by testing light hidden freeze-in dark matter through BBN
+    and CMB sensitivity to extra radiation.
+  model_kind: simplified_model
+  name: Light freeze-in dark matter from thermal two-body scalar decay
+  short_description: A simplified freeze-in dark matter setup in which a thermal scalar with a feeble
+    Yukawa-like coupling decays into a light hidden fermion dark matter candidate and a non-DM fermion,
+    producing a nonthermal warm component whose relic density and BBN Delta N_eff scale mainly with the
+    DM mass.
+  status: speculative
+interactions:
+  annihilation_channels: []
+  cp_structure: unknown
+  dark_sector_couplings:
+  - feeble Yukawa-like coupling y
+  decay_channels:
+  - phi -> psi + chi
+  flavor_structure: single-channel chiral-fermion example
+  interaction_operators:
+  - y phi psi_L chi_R
+  mediator_types:
+  - scalar parent particle
+  portals:
+  - other
+  scattering:
+    elastic: unknown
+    inelastic: unknown
+    momentum_dependence: unknown
+    spin_dependence: unknown
+    velocity_dependence: unknown
+  self_scattering_channels: []
+  standard_model_targets:
+  - thermal bath scalar
+  - non-DM fermion
+  tree_or_loop_level: tree
+model_id: 2106_07122_light_freeze_in_two_body_decay_dm_v1
+parameters:
+  core:
+  - description: Mass of the light hidden fermion candidate controlling the Delta N_eff to relic-density
+      ratio.
+    name: dark matter mass
+    range: sub-keV to keV scale emphasized
+    role: core
+    source_reference_ids: []
+    status: inferred
+    symbol: m_chi
+    unit: keV
+  - description: Mass of the thermal scalar that decays to chi.
+    name: parent scalar mass
+    range: m_phi greater than about 1 MeV in the BBN discussion; cancels from the main ratio up to g_*
+    role: core
+    source_reference_ids: []
+    status: inferred
+    symbol: m_phi
+    unit: GeV
+  - description: Coupling governing freeze-in production from scalar decay.
+    name: feeble Yukawa-like coupling
+    range: y << 1
+    role: core
+    source_reference_ids: []
+    status: inferred
+    symbol: y
+  - description: Effective relativistic degrees of freedom near T_dec of order m_phi.
+    name: effective degrees of freedom at decoupling
+    range: 10.76 to 106.75 shown for 10 MeV to electroweak scale
+    role: cosmological
+    source_reference_ids: []
+    status: inferred
+    symbol: g_star_dec
+  - description: Main diagnostic ratio N_eff shift divided by Omega_chi h^2.
+    name: Delta N_eff to relic-density ratio
+    range: approximately 0.11 g_star_dec^(1/3) keV / m_chi
+    role: derived
+    source_reference_ids: []
+    status: inferred
+    symbol: R
+particle_content:
+  additional_dark_sector_particles:
+  - non-DM chiral fermion psi
+  dark_matter_candidate:
+    elementary_or_composite: elementary
+    name: light hidden fermion chi
+    number_of_components: single_component
+    spin: 1/2
+    statistics: fermion
+  dark_radiation_species:
+  - relativistic chi before becoming nonrelativistic
+  excited_or_degenerate_states: []
+  long_lived_particles:
+  - chi dark matter
+  mediators:
+  - thermal scalar phi
+  standard_model_extension: minimal
+  unstable_parent_particles:
+  - thermal scalar phi
+phase_space:
+  average_momentum_relative_to_thermal: nonthermal and model dependent
+  distribution_function_available: 'no'
+  distribution_type: nonthermal
+  f_of_p_or_q: The paper uses integrated number and energy Boltzmann equations rather than an unintegrated
+    momentum distribution.
+  free_streaming_length: null
+  notes: The nonthermal momentum distribution depends on the unknown mass spectrum m_phi and m_psi.
+  phase_space_bounds:
+  - Single-component warm freeze-in dark matter is expected to face O(1 keV) Lyman-alpha lower-mass pressure;
+    mixed cold-plus-warm fractions dilute this bound.
+  velocity_dispersion_today: null
+production:
+  abundance_set_by:
+  - m_chi
+  - m_phi
+  - y
+  - g_star_dec
+  - parent scalar equilibrium abundance
+  can_produce_all_dark_matter: parameter_dependent
+  depends_on_reheating_temperature: unknown
+  mechanisms:
+  - freeze-in from thermal scalar two-body decay
+  nonthermal_momentum_distribution: 'yes'
+  notes: The integrated Boltzmann treatment shows the ratio Delta N_eff / Omega_chi h^2 is essentially
+    independent of the parent mass and feeble coupling for the two-body decay hierarchy.
+  thermal_equilibrium_with_hidden_sector: unknown
+  thermal_equilibrium_with_standard_model: 'no'
+provenance:
+  caveats:
+  - This row treats the paper's definite freeze-in decay setup as a simplified model; the paper's main
+    purpose is a BBN sensitivity estimate rather than a UV-complete model construction.
+  created_at: '2026-05-31'
+  entry_version: 0.1.0
+  evidence:
+    cosmological_history:
+    - confidence: high
+      note: Relativistic freeze-in dark matter contributes to Delta N_eff at BBN and can be tested in
+        cold-plus-warm scenarios.
+      page: null
+      reference_id: '2106_07122'
+      section: BBN sensitivity
+    interactions:
+    - confidence: high
+      note: The paper writes a feeble Yukawa-like scalar decay interaction L = -y phi psi_L chi_R + h.c.
+      page: null
+      reference_id: '2106_07122'
+      section: Freeze-in calculation
+    parameter_ranges:
+    - confidence: medium
+      note: The paper discusses sub-keV to keV dark matter, m_phi above MeV, g_star_dec from 10.76 to
+        106.75, and Delta N_eff sensitivities O(0.1) to O(0.01).
+      page: null
+      reference_id: '2106_07122'
+      section: Results
+    particle_content:
+    - confidence: high
+      note: The simplified setup takes a thermal scalar, a non-DM fermion, and a light fermion chi as
+        the dark matter candidate.
+      page: null
+      reference_id: '2106_07122'
+      section: Freeze-in calculation
+    production_mechanism:
+    - confidence: high
+      note: The abundance is computed from integrated Boltzmann equations for thermal scalar decay freeze-in.
+      page: null
+      reference_id: '2106_07122'
+      section: Freeze-in calculation
+    symmetries:
+    - confidence: medium
+      note: The extracted text assumes chi is the dark matter but does not specify an explicit stabilizing
+        symmetry.
+      page: null
+      reference_id: '2106_07122'
+      section: Freeze-in calculation
+    validity_domain:
+    - confidence: high
+      note: The freeze-in independence holds when the production coupling factors out and the mass spectrum
+        satisfies the hierarchy m_phi much larger than final-state masses.
+      page: null
+      reference_id: '2106_07122'
+      section: Validity discussion
+    constraints:
+    - confidence: high
+      note: Primary text states O(0.1) Delta N_eff is not expected for all-warm DM under Lyman-alpha constraints
+        and O(0.01) can test subcomponents.
+      page: null
+      reference_id: '2106_07122'
+      section: null
+    - confidence: high
+      note: Related Lyman-alpha WDM paper supports thermal WDM forest constraints.
+      page: null
+      reference_id: '1306_2314'
+      section: null
+    - confidence: high
+      note: Related Lyman-alpha paper reports strengthened free-streaming constraints.
+      page: null
+      reference_id: '1702_01764'
+      section: null
+    observables:
+    - confidence: high
+      note: Primary paper gives the R estimate and the mixed cold-plus-warm CMB-S4/BBN target.
+      page: null
+      reference_id: '2106_07122'
+      section: null
+    - confidence: medium
+      note: Related FIMP text supports mapping FIMP parameters to WDM structure constraints.
+      page: null
+      reference_id: '1907_04558'
+      section: null
+    routes:
+    - confidence: high
+      note: Primary text defines the freeze-in R route.
+      page: null
+      reference_id: '2106_07122'
+      section: null
+    - confidence: medium
+      note: Related text motivates FIMP-to-WDM analytic mapping.
+      page: null
+      reference_id: '1907_04558'
+      section: null
+  extraction:
+    confidence: high
+    extracted_by: codex_dark_matter_batch_worker
+    extraction_date: '2026-05-31'
+    extractor_name: Codex GPT-5
+    method: llm_assisted
+    source_chunks_or_sections:
+    - page: null
+      quote_or_summary: The paper analyzes BBN sensitivity to light dark matter generated by thermal freeze-in.
+      reference_id: '2106_07122'
+      section: Opening
+    - page: null
+      quote_or_summary: For definiteness it assumes thermal scalar decay to two chiral fermions with chi
+        as dark matter.
+      reference_id: '2106_07122'
+      section: Freeze-in calculation
+    - page: null
+      quote_or_summary: The diagnostic ratio is nearly independent of parent mass and feeble coupling,
+        depending mainly on m_chi.
+      reference_id: '2106_07122'
+      section: Results
+    unresolved_items:
+    - No public Lyman-alpha likelihood or nonthermal transfer-function implementation was identified.
+  last_updated: '2026-05-31'
+  model_family: freeze_in_dark_matter
+  model_id: 2106_07122_light_freeze_in_two_body_decay_dm_v1
+  model_name: Light freeze-in dark matter from thermal two-body scalar decay
+  review:
+    expert_review_date: null
+    expert_reviewed: false
+    expert_reviewer: null
+    human_reviewed: false
+    implementation_confidence: medium
+    review_date: null
+    reviewed_by: null
+    reviewer_notes: []
+    scientific_confidence: high
+  sources:
+    primary_papers:
+    - arxiv_id: '2106.07122'
+      authors:
+      - Shao-Ping Li
+      - Xin-Qiang Li
+      - Xin-Shuai Yan
+      - Ya-Dong Yang
+      doi: null
+      notes: Source text taken from the assigned run SQLite database only.
+      reference_id: '2106_07122'
+      role: original_model
+      title: Simple estimate of BBN sensitivity to light freeze-in dark matter
+      url: null
+      year: 2021
+    constraint_papers:
+    - arxiv_id: '1907.04558'
+      authors: []
+      doi: null
+      notes: Local full text read.
+      reference_id: '1907_04558'
+      role: constraint
+      title: 'Constraining FIMP from the Structure Formation of the Universe: analytic mapping from m_WDM'
+      url: https://arxiv.org/abs/1907.04558
+      year: 2019
+    - arxiv_id: '1306.2314'
+      authors: []
+      doi: null
+      notes: Local full text read.
+      reference_id: '1306_2314'
+      role: constraint
+      title: 'Warm Dark Matter as a solution to the small scale crisis: new constraints from high redshift
+        Lyman-alpha forest data'
+      url: https://arxiv.org/abs/1306.2314
+      year: 2013
+    - arxiv_id: '1702.01764'
+      authors: []
+      doi: null
+      notes: Local full text read.
+      reference_id: '1702_01764'
+      role: constraint
+      title: New constraints on the free-streaming of warm dark matter from intermediate and small scale
+        Lyman-alpha forest data
+      url: https://arxiv.org/abs/1702.01764
+      year: 2017
+    external_databases: []
+    review_papers: []
+  status: machine_extracted
+relic_density:
+  calculation_type: nonthermal
+  full_or_subcomponent: either
+  key_dependencies:
+  - m_chi
+  - freeze-in yield
+  - g_star_dec
+  - fraction of total dark matter
+  overclosure_risk: parameter_dependent
+  requires_entropy_dilution: 'no'
+  target_fraction:
+    description: Present-day relic density of chi.
+    name: target dark matter density
+    role: derived
+    source_reference_ids: []
+    status: inferred
+    symbol: Omega_chi h^2
+    value: 0.120 for all-DM examples; smaller for cold-plus-warm mixtures
+  tuning_assessment: unknown
+  underproduction_risk: parameter_dependent
+robustness:
+  computational_robustness: medium
+  constraint_robustness: medium
+  dominant_uncertainties:
+  - unknown momentum distribution
+  - Lyman-alpha mapping for nonthermal subcomponents
+  - parent-sector identity
+  - validity of the mass hierarchy
+  notes: The analytic ratio is clear in the paper, but full structure-formation constraints require a
+    momentum-resolved analysis outside the text.
+  observational_robustness: medium
+  overall: medium
+  theory_robustness: medium
+  validation_status: expert_judgment_only
+schema_version: model_only_v0
+structure_formation:
+  linear:
+    behaves_like_cdm: 'no'
+    half_mode_mass: null
+    impact_on_sigma8_s8: unknown
+    small_scale_power_effect: suppression
+    thermal_wdm_mapping:
+      available: false
+      validity: misleading
+      warning: The paper emphasizes that nonthermal freeze-in momentum distributions are not simply thermal
+        WDM.
+    transfer_function_shape: smooth_cutoff
+  nonlinear:
+    concentration_mass_relation_effect: unknown
+    core_or_cusp_effect: unknown
+    density_profile_effect: unknown
+    halo_mass_function_effect: small-scale suppression possible for warm or mixed cold-plus-warm cases
+    infall_subhalo_mass_function_effect: unknown
+    present_day_bound_subhalo_mass_function_effect: unknown
+    simulation_calibrated: 'no'
+    smallest_galaxies_effect: Lyman-alpha/small-scale-structure limits motivate cold-plus-warm mixtures
+    subhalo_mass_function_effect: small-scale suppression possible for warm or mixed cold-plus-warm cases
+    subhalo_survival_effect: unknown
+    tidal_stripping_effect: unknown
+symmetries:
+  stabilizing_mechanism: The paper assumes the produced fermion is the dark matter candidate; an explicit
+    stabilizing symmetry is not specified in the extracted text.
+  symmetries: []
+  topological_defects_possible: unknown
+theory:
+  eft_cutoff: null
+  embedded_in_larger_framework: unknown
+  lagrangian_available: 'yes'
+  notes: For definiteness the paper assumes a thermal scalar decay to two chiral fermions through L =
+    -y phi psi_L chi_R + h.c., with chi treated as the dark matter candidate.
+  parent_frameworks:
+  - freeze-in dark matter
+  - feebly interacting light hidden particles
+  renormalizable: 'yes'
+  theory_level: simplified_model
+validity_domain:
+- applies_to: model
+  caveats: []
+  condition: The simple ratio assumes production by thermal two-body decay with mass hierarchy m_phi much
+    larger than final-state masses.
+  extrapolation_risk: medium
+  id: freeze_in_hierarchy
+  notes: null
+  source_reference_ids: []
+  status: assumed
+  valid_range: null
+- applies_to: parameter
+  caveats: []
+  condition: The Yukawa-like coupling must be feeble enough that chi is produced by freeze-in and inverse
+    decays/Pauli blocking are negligible.
+  extrapolation_risk: medium
+  id: feeble_coupling
+  notes: null
+  source_reference_ids: []
+  status: assumed
+  valid_range: y << 1
+- applies_to: computation
+  caveats: []
+  condition: The analysis uses integrated number and energy Boltzmann equations, not the full momentum
+    distribution.
+  extrapolation_risk: medium
+  id: integrated_boltzmann
+  notes: null
+  source_reference_ids: []
+  status: inferred
+  valid_range: null
+- applies_to: model
+  caveats: []
+  condition: Observable Delta N_eff is more plausible for a sub-keV warm subcomponent than for single-component
+    all-DM warm freeze-in under Lyman-alpha pressure.
+  extrapolation_risk: high
+  id: mixed_warm_fraction
+  notes: null
+  source_reference_ids: []
+  status: inferred
+  valid_range: null
+observables:
+- caveats:
+  - The simple ratio assumes the two-body thermal-parent hierarchy.
+  channel: cmb
+  effect_direction: enhancement
+  environments:
+  - BBN
+  - CMB
+  id: obs_delta_neff_freeze_in_decay
+  key_quantities:
+  - name: dark matter mass
+    range: sub-keV to keV scale
+    role: core
+    source_reference_ids:
+    - '2106_07122'
+    status: inferred
+    symbol: m_chi
+    unit: keV
+  - name: Delta N_eff ratio
+    range: 0.11 g_*_dec^(1/3) keV/m_chi
+    role: derived
+    source_reference_ids:
+    - '2106_07122'
+    status: inferred
+    symbol: R
+  linked_constraints:
+  - con_bbn_cmb_neff
+  linked_routes:
+  - route_freeze_in_neff_lyman
+  name: Delta N_eff from light freeze-in two-body decay
+  notes: null
+  observability: medium
+  predicted_effect: Thermal two-body decay freeze-in gives R = Delta N_eff/Omega_chi h^2 approximately
+    0.11 g_*_dec^(1/3) keV/m_chi, nearly independent of parent mass and coupling.
+  redshift_range: BBN through CMB last scattering
+  relevance: critical
+  scale_range: homogeneous radiation-density observable
+  source_reference_ids:
+  - '2106_07122'
+  subchannel: BBN and CMB effective radiation
+- caveats:
+  - Thermal relic limits require a nonthermal transfer-function mapping.
+  channel: lyman_alpha
+  effect_direction: suppression
+  environments:
+  - intergalactic medium
+  id: obs_lyman_warm_free_streaming
+  key_quantities:
+  - name: warm fraction
+    range: all DM or subcomponent
+    role: cosmological
+    source_reference_ids:
+    - '2106_07122'
+    status: inferred
+    symbol: f_warm
+  - name: equivalent thermal WDM mass
+    range: mapping required from nonthermal spectrum
+    role: derived
+    source_reference_ids:
+    - '1907_04558'
+    - '1306_2314'
+    - '1702_01764'
+    status: inferred
+    symbol: m_WDM
+    unit: keV
+  linked_constraints:
+  - con_lyman_warm_freeze_in
+  linked_routes:
+  - route_freeze_in_neff_lyman
+  name: Lyman-alpha free-streaming suppression
+  notes: null
+  observability: medium
+  predicted_effect: The light freeze-in component is warm; Lyman-alpha constraints disfavor all-DM warm
+    cases with too much free streaming, while mixed cold-plus-warm scenarios dilute the bound.
+  redshift_range: late-time structure formation
+  relevance: high
+  scale_range: Lyman-alpha forest scales
+  source_reference_ids:
+  - '2106_07122'
+  - '1907_04558'
+  - '1306_2314'
+  - '1702_01764'
+  subchannel: warm nonthermal matter power
+constraints:
+- allowed_regions:
+  - Future BBN+CMB-S4 at O(0.01) can test sub-keV freeze-in DM if it is a small warm component.
+  applies: parameter_dependent
+  assumptions:
+  - can_be_relaxed: partial
+    description: Parent scalar is thermal and decays through the two-body freeze-in hierarchy.
+    id: assume_thermal_two_body_decay
+    impact_if_violated: The quoted mapping or limit must be recomputed.
+    scope: model application
+    source_reference_ids:
+    - '2106_07122'
+    status: assumed
+  benchmark_implications:
+  - Mass controls the diagnostic ratio more strongly than m_phi or y.
+  caveats: []
+  constrained_parameters:
+  - m_chi
+  - g_*_dec
+  - Omega_chi h^2
+  constraint_type: cosmological
+  data_release: null
+  excluded_regions:
+  - O(0.1) Delta N_eff cannot come from a single all-warm DM component under the primary Lyman-alpha discussion.
+  id: con_bbn_cmb_neff
+  likelihood_available: unknown
+  likelihood_reference: null
+  name: BBN/CMB N_eff sensitivity
+  notes: null
+  observable_channel: Delta N_eff
+  recasting_needed: partial
+  robustness: medium
+  source_reference_ids:
+  - '2106_07122'
+- allowed_regions:
+  - Mixed cold-plus-warm scenarios can dilute Lyman-alpha constraints.
+  applies: parameter_dependent
+  assumptions: []
+  benchmark_implications:
+  - Use a FIMP-to-WDM transfer mapping before importing thermal WDM limits.
+  caveats: []
+  constrained_parameters:
+  - m_chi
+  - f_warm
+  - momentum distribution
+  constraint_type: cosmological
+  data_release: null
+  excluded_regions:
+  - Single-component warm freeze-in scenarios can be in tension with Lyman-alpha data.
+  id: con_lyman_warm_freeze_in
+  likelihood_available: unknown
+  likelihood_reference: null
+  name: Lyman-alpha free-streaming constraint
+  notes: null
+  observable_channel: Lyman-alpha forest
+  recasting_needed: 'yes'
+  robustness: high
+  source_reference_ids:
+  - '2106_07122'
+  - '1907_04558'
+  - '1306_2314'
+  - '1702_01764'
+theory_to_observable_routing:
+  routes:
+  - agent_notes: Needs a Boltzmann/transfer solver and chosen BBN/CMB/Lyman likelihoods.
+    caveats: []
+    constraint_ids:
+    - con_bbn_cmb_neff
+    - con_lyman_warm_freeze_in
+    derived_quantities:
+    - Y_chi
+    - Omega_chi h^2
+    - Delta N_eff
+    - transfer function
+    description: Compute freeze-in yield and R, then propagate the nonthermal distribution to Lyman-alpha
+      matter-power constraints.
+    forward_model_chain:
+    - inputs:
+      - m_chi
+      - g_*_dec
+      notes: null
+      outputs:
+      - R
+      - Delta N_eff
+      step_id: freeze_in_ratio
+      step_type: analytic_formula
+      tool_or_code: null
+      validity: Within the assumptions stated in the cited source text.
+    - inputs:
+      - momentum distribution
+      - f_warm
+      notes: null
+      outputs:
+      - matter transfer function
+      - equivalent m_WDM
+      step_id: distribution_transfer
+      step_type: transfer_function
+      tool_or_code: null
+      validity: Within the assumptions stated in the cited source text.
+    id: route_freeze_in_neff_lyman
+    input_parameters:
+    - m_chi
+    - m_phi
+    - y
+    - g_*_dec
+    - f_warm
+    likelihoods: []
+    observable_ids:
+    - obs_delta_neff_freeze_in_decay
+    - obs_lyman_warm_free_streaming
+    required_code_resources: []
+    route_status: planned
+    source_model_features:
+    - thermal scalar two-body decay
+    - light nonthermal warm DM
+    validation_tests:
+    - Reproduce the benchmark numbers quoted in the primary paper before applying external likelihoods.

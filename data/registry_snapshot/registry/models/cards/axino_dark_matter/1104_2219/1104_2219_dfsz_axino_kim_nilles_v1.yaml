@@ -1,0 +1,607 @@
+_source:
+  shard: arXiv_src_1104_003_wds.tar
+  paper_id: '1104_2219'
+  source_member: 1104_2219.json
+  enriched: true
+  enrichment_schema_version: dm_model_ocr_enrichment_smoke_v0
+schema_version: model_only_v0
+model_id: 1104_2219_dfsz_axino_kim_nilles_v1
+identity:
+  name: DFSZ axino dark matter in the Kim-Nilles mechanism
+  family: axino_dark_matter
+  aliases:
+  - Kim-Nilles DFSZ axino
+  short_description: Supersymmetric DFSZ axion realization in which the Kim-Nilles mu-term operator induces
+    axino-Higgsino-Higgs interactions that thermally regenerate stable axinos as dark matter.
+  historical_origin_or_motivation: The paper studies dark matter consequences of connecting the supersymmetric
+    mu term to the axion scale in the Kim-Nilles mechanism.
+  status: speculative
+  model_kind: complete_theory
+theory:
+  theory_level: simplified_model
+  parent_frameworks:
+  - supersymmetric DFSZ axion model
+  - Kim-Nilles mechanism
+  - MSSM with a Peccei-Quinn sector
+  lagrangian_available: partial
+  renormalizable: 'no'
+  embedded_in_larger_framework: 'yes'
+  notes: The paper gives the Planck-suppressed Kim-Nilles operator and effective axino-Higgsino-Higgs
+    and axino-top-stop couplings.
+particle_content:
+  dark_matter_candidate:
+    name: stable DFSZ axino
+    spin: 1/2
+    statistics: fermion
+    elementary_or_composite: elementary
+    number_of_components: single_component
+  additional_dark_sector_particles:
+  - axion
+  - saxion
+  mediators:
+  - Higgs bosons
+  - Higgsinos
+  - stops
+  dark_radiation_species: []
+  excited_or_degenerate_states: []
+  long_lived_particles:
+  - axino when it is the LSP
+  unstable_parent_particles: []
+  standard_model_extension: substantial
+symmetries:
+  stabilizing_mechanism: The axino is stable when it is the lightest supersymmetric particle; the axion
+    multiplet arises from broken Peccei-Quinn symmetry.
+  symmetries:
+  - name: U(1)_PQ
+    type: global
+    exact_or_approximate: broken
+    breaking: broken at the axion scale f_a
+  - name: R-parity
+    type: discrete
+    exact_or_approximate: unknown
+  topological_defects_possible: unknown
+interactions:
+  portals:
+  - higgs
+  - axion
+  - other
+  standard_model_targets:
+  - Higgs doublets
+  - top sector
+  - gluons through the QCD axion interaction
+  dark_sector_couplings:
+  - axino-Higgsino-Higgs coupling proportional to mu/f_a
+  - axino-top-stop coupling proportional to m_t/f_a
+  mediator_types:
+  - Higgs boson
+  - Higgsino
+  - stop
+  interaction_operators:
+  - S^2 H1 H2 / M_P
+  - effective axino-Higgsino-Higgs Yukawa interaction
+  annihilation_channels: []
+  decay_channels: []
+  self_scattering_channels: []
+  tree_or_loop_level: both
+parameters:
+  core:
+  - name: PQ scale
+    symbol: f_a
+    range: 10^10 to 10^12
+    unit: GeV
+    role: core
+    status: established
+    notes: Allowed axion-scale range used by the paper.
+  - name: axino mass
+    symbol: m_axino
+    range: O(0.1 keV) to O(10 MeV) depending on open production channels and f_a; electroweak-scale axinos
+      require low reheating
+    unit: GeV
+    role: core
+    status: approximate
+  - name: Higgsino mass parameter
+    symbol: mu
+    unit: GeV
+    role: core
+    status: unknown
+    notes: Controls the effective axino-Higgsino-Higgs coupling mu/f_a.
+  - name: reheat temperature
+    symbol: T_R
+    range: below O(10 GeV) for heavy stable axino at f_a = 10^10 GeV, otherwise parameter dependent
+    unit: GeV
+    role: cosmological
+    status: approximate
+production:
+  mechanisms:
+  - thermal regeneration from Higgs/Higgsino decays
+  - thermal regeneration through stop-related processes
+  - suppression by low reheating temperature for heavy stable axinos
+  thermal_equilibrium_with_standard_model: partial
+  thermal_equilibrium_with_hidden_sector: unknown
+  abundance_set_by:
+  - mu/f_a coupling
+  - f_a
+  - axino mass
+  - reheat temperature
+  depends_on_reheating_temperature: parameter_dependent
+  can_produce_all_dark_matter: parameter_dependent
+  nonthermal_momentum_distribution: unknown
+  notes: DFSZ axino regeneration is emphasized as independent of the high reheat temperature in the relevant
+    TeV-scale regime.
+relic_density:
+  full_or_subcomponent: full_dark_matter
+  target_fraction: null
+  calculation_type: thermal
+  key_dependencies:
+  - axino yield from Higgs/Higgsino or stop decays
+  - f_a
+  - m_axino
+  - T_R
+  requires_entropy_dilution: 'no'
+  overclosure_risk: 'yes'
+  underproduction_risk: unknown
+  tuning_assessment: tuned
+cosmological_history:
+  standard_history_assumed: true
+  nonstandard_features:
+  - low reheating temperature may be required for heavy stable axinos
+  bbn_relevance: unknown
+  cmb_relevance: unknown
+phase_space:
+  distribution_type: thermal
+  distribution_function_available: 'no'
+  notes: The paper computes yields and relic abundances but does not provide a full momentum distribution.
+structure_formation:
+  linear:
+    behaves_like_cdm: unknown
+    transfer_function_shape: unknown
+    small_scale_power_effect: unknown
+  nonlinear:
+    halo_mass_function_effect: unknown
+    subhalo_mass_function_effect: unknown
+    simulation_calibrated: unknown
+validity_domain:
+- id: valid_1104_2219_axino_1
+  applies_to: model
+  condition: Applies to supersymmetric DFSZ axion models where the Kim-Nilles operator sets the mu term
+    and the axino is stable.
+  status: inferred
+  extrapolation_risk: medium
+  caveats:
+  - Additional axino or saxion interactions could alter the relic-density estimate.
+  source_reference_ids:
+  - '1104_2219'
+assumptions:
+  global:
+  - id: assume_1104_2219_axino_lsp
+    description: The DFSZ axino is the lightest supersymmetric particle and is stable.
+    scope: theory
+    status: assumed
+    can_be_relaxed: 'yes'
+    source_reference_ids:
+    - '1104_2219'
+  - id: assume_1104_2219_kn_operator
+    description: The Kim-Nilles operator relates the mu term to the axion scale and controls the axino-Higgsino-Higgs
+      coupling.
+    scope: theory
+    status: assumed
+    can_be_relaxed: 'no'
+    source_reference_ids:
+    - '1104_2219'
+associated_code:
+  has_associated_code: unknown
+  code_summary: No model-specific public code is identified in the assigned paper text.
+provenance:
+  model_id: 1104_2219_dfsz_axino_kim_nilles_v1
+  model_name: DFSZ axino dark matter in the Kim-Nilles mechanism
+  model_family: axino_dark_matter
+  entry_version: 0.1.0
+  status: machine_extracted
+  created_at: '2026-05-31'
+  last_updated: '2026-05-31'
+  sources:
+    primary_papers:
+    - reference_id: '1104_2219'
+      title: Dark matter in the Kim-Nilles mechanism
+      role: original_model
+      year: 2011
+      arxiv_id: '1104.2219'
+      doi: null
+      url: null
+      notes: Assigned SQLite full text was the only source used.
+      authors:
+      - Eung Jin Chun
+    - arxiv_id: '1104.2219'
+      authors:
+      - Chun, Eung Jin
+      doi: 10.1103/PhysRevD.84.043509
+      notes: Primary assigned paper read from local SQLite full text.
+      reference_id: arxiv:1104.2219
+      role: original_model
+      title: Dark matter in the Kim-Nilles mechanism
+      url: https://arxiv.org/abs/1104.2219
+      year: 2011
+    constraint_papers:
+    - arxiv_id: '1707.06418'
+      authors:
+      - Bae, Kyu Jung
+      - Kamada, Ayuki
+      - Pei Liew, Seng
+      - Yanagi, Keisuke
+      doi: 10.1088/1475-7516/2018/01/054
+      notes: Related full text resolved locally and read for bounded enrichment.
+      reference_id: arxiv:1707.06418
+      role: constraint
+      title: 'Light axinos from freeze-in: production processes, phase space distributions, and Ly-α forest
+        constraints'
+      url: https://arxiv.org/abs/1707.06418
+      year: 2018
+    external_databases: []
+    review_papers:
+    - arxiv_id: '1301.7428'
+      authors:
+      - Bae, Kyu Jung
+      - Baer, Howard
+      - Lessa, Andre
+      doi: 10.1088/1475-7516/2013/04/041
+      notes: Related full text resolved locally and read for bounded enrichment.
+      reference_id: arxiv:1301.7428
+      role: review
+      title: Dark radiation constraints on mixed Axion/Neutralino dark matter
+      url: https://arxiv.org/abs/1301.7428
+      year: 2013
+  extraction:
+    method: llm_assisted
+    extracted_by: codex_batch_0018
+    extractor_name: Codex GPT-5 dark-matter model-card worker
+    extraction_date: '2026-05-31'
+    confidence: high
+    source_chunks_or_sections:
+    - reference_id: '1104_2219'
+      section: opening summary
+      page: null
+      quote_or_summary: The paper states that Kim-Nilles mu physics gives an axino-Higgsino-Higgs coupling
+        and can thermally produce axinos.
+    - reference_id: '1104_2219'
+      section: A light DFSZ axino
+      page: null
+      quote_or_summary: The paper derives axino yields and relic densities from Higgs/Higgsino and stop-related
+        processes.
+    unresolved_items:
+    - The paper does not discuss structure-formation transfer functions for light axinos.
+    - No entropy-dilution scenario was modeled.
+    - A model-specific nonthermal axino transfer function is needed before applying Ly-alpha limits.
+  evidence:
+    particle_content:
+    - reference_id: '1104_2219'
+      note: The axino is identified as the superpartner of the axion and can be the LSP dark matter candidate.
+      confidence: high
+      section: introduction
+      page: null
+    symmetries:
+    - reference_id: '1104_2219'
+      note: The construction uses the DFSZ axion/Peccei-Quinn sector and the Kim-Nilles mechanism.
+      confidence: high
+      section: introduction
+      page: null
+    interactions:
+    - reference_id: '1104_2219'
+      note: The effective axino-Higgsino-Higgs Yukawa term and axino-top-stop coupling are written explicitly.
+      confidence: high
+      section: model discussion
+      page: null
+    production_mechanism:
+    - reference_id: '1104_2219'
+      note: Thermal regeneration through DFSZ interactions is used to compute axino abundance.
+      confidence: high
+      section: A light DFSZ axino
+      page: null
+    parameter_ranges:
+    - reference_id: '1104_2219'
+      note: The text gives f_a in the 10^10 to 10^12 GeV range and stable-axino mass/reheat bounds.
+      confidence: high
+      section: opening summary
+      page: null
+    validity_domain:
+    - reference_id: '1104_2219'
+      note: Stable axino viability depends on the axino mass and reheating temperature.
+      confidence: medium
+      section: summary
+      page: null
+    constraints:
+    - confidence: high
+      note: Primary paper states stable axino must be order 0.1 keV or require low reheating to avoid
+        overclosure.
+      page: null
+      reference_id: arxiv:1104.2219
+      section: Abstract
+    - confidence: high
+      note: Related paper states that warmness of 7 keV freeze-in axino dark matter is in tension with
+        Ly-alpha data but needs direct distribution comparison.
+      page: null
+      reference_id: arxiv:1707.06418
+      section: Introduction
+    observables:
+    - confidence: high
+      note: Primary paper states stable axino overclosure conditions and gives DFSZ thermal regeneration
+        formulae.
+      page: null
+      reference_id: arxiv:1104.2219
+      section: Stable axino discussion
+    - confidence: high
+      note: Related paper computes freeze-in axino phase-space distributions and discusses Ly-alpha tension
+        for light axinos.
+      page: null
+      reference_id: arxiv:1707.06418
+      section: Abstract/introduction
+    routes:
+    - confidence: high
+      note: Source gives the Kim-Nilles coupling and thermal-production channels needed for a relic route.
+      page: null
+      reference_id: arxiv:1104.2219
+      section: DFSZ axino production
+  review:
+    human_reviewed: false
+    reviewed_by: null
+    review_date: null
+    expert_reviewed: false
+    expert_reviewer: null
+    expert_review_date: null
+    reviewer_notes: []
+    scientific_confidence: high
+    implementation_confidence: medium
+robustness:
+  overall: medium
+  theory_robustness: medium
+  observational_robustness: not_applicable
+  computational_robustness: unknown
+  dominant_uncertainties:
+  - axino mass model dependence
+  - unknown additional saxion/axino decay channels
+  - reheat history
+  validation_status: expert_judgment_only
+  notes: The relic-density logic is explicit, while several model-dependent interactions are left open.
+agent_failure_modes:
+  warnings:
+  - id: 1104_2219_dfsz_axino_kim_nilles_v1_warning_1
+    severity: medium
+    category: assumption_mismatch
+    warning: Do not treat the stable-axino mass window as universal; it depends on open decay channels,
+      f_a, and the reheat history.
+    mitigation: Check the assumptions and source paper before using the card outside model-cataloguing
+      tasks.
+    source_reference_ids:
+    - '1104_2219'
+observables:
+- caveats:
+  - The overclosure statement assumes the axino is stable and no late entropy dilution occurs.
+  channel: cosmology
+  effect_direction: rate_change
+  environments:
+  - early universe thermal bath
+  id: obs_dfsz_axino_thermal_regeneration
+  key_quantities:
+  - name: stable axino mass ceiling
+    range: order 0.1
+    role: core
+    source_reference_ids:
+    - arxiv:1104.2219
+    status: inferred
+    symbol: m_axino
+    unit: keV
+  - name: low reheating alternative
+    range: below order 10 GeV for f_a=1e10 GeV
+    role: core
+    source_reference_ids:
+    - arxiv:1104.2219
+    status: inferred
+    symbol: T_R
+    unit: GeV
+  - name: axion scale
+    range: 1e10-1e12
+    role: core
+    source_reference_ids:
+    - arxiv:1104.2219
+    status: inferred
+    symbol: f_a
+    unit: GeV
+  linked_constraints:
+  - con_stable_dfsz_axino_overclosure
+  linked_routes:
+  - route_dfsz_axino_freezein_to_relic_and_lya
+  name: DFSZ axino thermal-regeneration abundance
+  notes: null
+  observability: medium
+  predicted_effect: Kim-Nilles axino-Higgsino-Higgs interactions thermally regenerate stable axinos, creating
+    an overclosure risk unless the axino is very light or reheating is low.
+  redshift_range: reheating through electroweak epoch
+  relevance: critical
+  scale_range: thermal bath temperatures around Higgs/Higgsino/stop thresholds
+  source_reference_ids:
+  - arxiv:1104.2219
+  subchannel: freeze-in/freeze-out relic abundance
+- caveats:
+  - The related Ly-alpha result is not a direct likelihood for the Kim-Nilles benchmark.
+  channel: lyman_alpha
+  effect_direction: suppression
+  environments:
+  - Lyman-alpha forest
+  - linear matter power spectrum
+  id: obs_light_axino_warm_free_streaming
+  key_quantities:
+  - name: example axino mass
+    role: core
+    source_reference_ids:
+    - arxiv:1707.06418
+    status: inferred
+    symbol: m_axino
+    unit: keV
+    value: 7
+  - name: thermal-equivalent WDM lower bound
+    range: about 5.3 keV quoted in related Ly-alpha discussion
+    role: core
+    source_reference_ids:
+    - arxiv:1707.06418
+    status: inferred
+    symbol: m_WDM
+    unit: keV
+  linked_constraints:
+  - con_freezein_axino_lya_recast
+  linked_routes:
+  - route_dfsz_axino_freezein_to_relic_and_lya
+  name: Light freeze-in axino warmness and Ly-alpha sensitivity
+  notes: null
+  observability: high
+  predicted_effect: Light DFSZ axinos produced by freeze-in can have a warm nonthermal phase-space distribution
+    that suppresses small-scale power and must be compared to Ly-alpha bounds by recast.
+  redshift_range: linear structure era and Ly-alpha forest redshifts
+  relevance: high
+  scale_range: small-scale matter power
+  source_reference_ids:
+  - arxiv:1707.06418
+  subchannel: phase-space distribution and free streaming
+constraints:
+- allowed_regions:
+  - m_axino of order 0.1 keV, or low reheating temperature, or unstable axino decay scenario.
+  applies: 'yes'
+  assumptions:
+  - can_be_relaxed: partial
+    description: The axino is stable and no late entropy dilution reduces its abundance.
+    id: stable-axino-no-dilution
+    impact_if_violated: Entropy dilution or axino decay can evade overclosure.
+    notes: null
+    scope: stable axino relic bound
+    source_reference_ids:
+    - arxiv:1104.2219
+    status: assumed
+  benchmark_implications:
+  - A heavy stable axino is highly constrained in the source Kim-Nilles DFSZ setup.
+  caveats:
+  - Exact yield depends on Higgs/Higgsino and stop spectra.
+  constrained_parameters:
+  - m_axino
+  - T_R
+  - f_a
+  - Higgsino/Higgs decay yield
+  constraint_type: cosmological
+  data_release: null
+  excluded_regions:
+  - Stable axinos heavier than order 0.1 keV overclose unless reheating is below order 10 GeV for f_a
+    around 1e10 GeV.
+  id: con_stable_dfsz_axino_overclosure
+  likelihood_available: 'no'
+  likelihood_reference: null
+  name: Stable DFSZ axino overclosure bound
+  notes: null
+  observable_channel: dark matter relic abundance
+  recasting_needed: 'no'
+  robustness: medium
+  source_reference_ids:
+  - arxiv:1104.2219
+- allowed_regions:
+  - Process-dependent nonthermal distributions can weaken or change the thermal-WDM mapping.
+  applies: recast_required
+  assumptions:
+  - can_be_relaxed: partial
+    description: Ly-alpha limits are mapped through an effective warm-DM transfer function.
+    id: thermal-wdm-mapping
+    impact_if_violated: Different freeze-in channels give different distributions and bounds.
+    notes: null
+    scope: axino warmness recast
+    source_reference_ids:
+    - arxiv:1707.06418
+    status: assumed
+  benchmark_implications:
+  - The Kim-Nilles light axino case needs an explicit distribution and transfer-function recast.
+  caveats:
+  - No Boltzmann hierarchy or Ly-alpha likelihood was run here.
+  constrained_parameters:
+  - m_axino
+  - phase-space distribution
+  - transfer function
+  constraint_type: astrophysical
+  data_release: Ly-alpha forest constraints as discussed by related freeze-in axino paper
+  excluded_regions:
+  - A naive 7 keV warm-DM interpretation is in tension with Ly-alpha bounds in the related freeze-in axino
+    analysis.
+  id: con_freezein_axino_lya_recast
+  likelihood_available: 'no'
+  likelihood_reference: null
+  name: Ly-alpha recast need for freeze-in axino warmness
+  notes: null
+  observable_channel: lyman_alpha
+  recasting_needed: 'yes'
+  robustness: medium
+  source_reference_ids:
+  - arxiv:1707.06418
+theory_to_observable_routing:
+  routes:
+  - agent_notes: null
+    caveats:
+    - Entropy dilution and spectrum variations are not scanned.
+    constraint_ids:
+    - con_stable_dfsz_axino_overclosure
+    - con_freezein_axino_lya_recast
+    derived_quantities:
+    - axino yield
+    - Omega_axino h^2
+    - phase-space distribution
+    - free-streaming cutoff
+    description: Map Kim-Nilles DFSZ axino production channels to relic abundance and, for light axinos,
+      a Ly-alpha transfer-function recast.
+    forward_model_chain:
+    - inputs:
+      - f_a
+      - mu
+      - thermal spectra
+      notes: null
+      outputs:
+      - freeze-in yield
+      step_id: s1
+      step_type: analytic_formula
+      tool_or_code: null
+      validity: Source analytic yields for DFSZ channels.
+    - inputs:
+      - phase-space distribution
+      - m_axino
+      notes: Use related freeze-in axino distribution treatment.
+      outputs:
+      - matter-power suppression
+      step_id: s2
+      step_type: transfer_function
+      tool_or_code: null
+      validity: Needed for light axinos.
+    - inputs:
+      - transfer function
+      notes: null
+      outputs:
+      - Ly-alpha constraint
+      step_id: s3
+      step_type: likelihood
+      tool_or_code: null
+      validity: Requires dedicated Ly-alpha likelihood.
+    id: route_dfsz_axino_freezein_to_relic_and_lya
+    input_parameters:
+    - m_axino
+    - f_a
+    - mu
+    - T_R
+    - Higgs/Higgsino masses
+    - stop masses
+    likelihoods:
+    - relic-density target only
+    - Ly-alpha likelihood unavailable
+    observable_ids:
+    - obs_dfsz_axino_thermal_regeneration
+    - obs_light_axino_warm_free_streaming
+    required_code_resources:
+    - freeze-in collision-term calculator
+    - Boltzmann solver with nonthermal distribution support
+    route_status: planned
+    source_model_features:
+    - stable axino LSP
+    - axino-Higgsino-Higgs coupling mu/f_a
+    - thermal regeneration through decays and scatterings
+    validation_tests:
+    - recover stable axino overclosure ceiling near 0.1 keV
+    - recover related 7 keV freeze-in axino warmness comparison

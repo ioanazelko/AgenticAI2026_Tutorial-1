@@ -1,0 +1,893 @@
+_source:
+  shard: arXiv_src_2205_008_wds.tar
+  paper_id: '2205_01144'
+  source_member: 2205_01144.json
+  enriched: true
+  enrichment_schema_version: dm_model_ocr_enrichment_smoke_v0
+schema_version: model_only_v0
+model_id: 2205_01144_light_dirac_neutrino_portal_freeze_in_dm_v1
+identity:
+  name: Light Dirac neutrino portal freeze-in dark matter
+  family: freeze_in_dark_matter
+  aliases:
+  - FIMP dark matter via light Dirac neutrino portal
+  short_description: A minimal Standard Model extension with three right-handed neutrinos, a fermion singlet
+    dark matter candidate chi, and a complex scalar singlet phi; chi is produced non-thermally through
+    the light Dirac neutrino portal.
+  historical_origin_or_motivation: The paper connects freeze-in dark matter to light Dirac neutrino mass
+    and possible right-handed-neutrino dark radiation.
+  status: speculative
+  model_kind: simplified_model
+theory:
+  theory_level: simplified_model
+  parent_frameworks:
+  - Standard Model extension with light Dirac neutrinos
+  - freeze-in dark matter
+  lagrangian_available: 'yes'
+  renormalizable: 'yes'
+  eft_cutoff: null
+  embedded_in_larger_framework: unknown
+  notes: The text gives fermion and scalar Lagrangian terms for the minimal model and briefly sketches
+    neutrinophilic-two-Higgs-doublet and gauged B-L UV completions without detailed phenomenology.
+particle_content:
+  dark_matter_candidate:
+    name: fermion singlet chi
+    spin: 1/2
+    statistics: fermion
+    elementary_or_composite: elementary
+    number_of_components: single_component
+  additional_dark_sector_particles:
+  - complex scalar singlet phi
+  - three right-handed neutrinos nu_R
+  mediators:
+  - complex scalar singlet phi
+  - right-handed neutrino portal
+  dark_radiation_species:
+  - right-handed neutrinos nu_R
+  excited_or_degenerate_states: []
+  long_lived_particles: []
+  unstable_parent_particles:
+  - complex scalar singlet phi
+  standard_model_extension: substantial
+symmetries:
+  stabilizing_mechanism: An unbroken discrete Z4 symmetry forbids unwanted couplings and keeps the fermion
+    singlet dark matter stable.
+  symmetries:
+  - name: Z4
+    type: discrete
+    exact_or_approximate: exact
+    breaking: unbroken in the minimal model
+    breaking_scale: null
+  topological_defects_possible: unknown
+interactions:
+  portals:
+  - higgs
+  - neutrino
+  standard_model_targets:
+  - SM lepton doublets
+  - SM Higgs doublet
+  - Higgs boson
+  - SM fermions and gauge bosons through Higgs-portal scalar annihilation
+  dark_sector_couplings:
+  - y_chi phi chi nu_R
+  - lambda_Hphi (H^dagger H)(phi^dagger phi)
+  - Dirac Yukawa y_H L H nu_R
+  mediator_types:
+  - complex scalar singlet phi
+  - right-handed neutrino nu_R
+  - Higgs portal
+  interaction_operators:
+  - y_H L H nu_R
+  - y_chi phi chi nu_R
+  - lambda_Hphi (H^dagger H)(phi^dagger phi)
+  annihilation_channels:
+  - phi phi -> Standard Model final states through the Higgs portal
+  - h h -> phi phi in the nonthermal-phi regime when kinematically relevant
+  decay_channels:
+  - phi -> chi + nu_R
+  - h -> phi phi when m_phi < m_h/2
+  self_scattering_channels: []
+  cp_structure: unknown
+  flavor_structure: right-handed neutrinos couple through fine-tuned Dirac Yukawa couplings to generate
+    sub-eV Dirac neutrino masses
+  tree_or_loop_level: tree
+parameters:
+  core:
+  - name: dark matter mass
+    symbol: m_chi
+    description: Mass of the fermion singlet dark matter candidate.
+    value: null
+    range: 1 keV to 10 MeV in the case-II scan; 1 keV to 1 MeV in the case-III scan; structure-formation-compatible
+      points can require masses of order 100 keV or above.
+    unit: null
+    role: core
+    status: inferred
+    source_reference_ids:
+    - '2205_01144'
+    notes: The extracted text loses Greek symbols; chi denotes the fermion singlet DM candidate.
+  - name: scalar singlet mass
+    symbol: m_phi
+    description: Mass of the complex scalar singlet parent/mediator.
+    value: null
+    range: 200-2000 GeV in the freeze-out scan and 5-60 GeV in the nonthermal-scalar Higgs-decay scan.
+    unit: GeV
+    role: core
+    status: inferred
+    source_reference_ids:
+    - '2205_01144'
+    notes: The scalar may be in equilibrium, freeze out, or be freeze-in produced depending on the Higgs
+      portal.
+  - name: dark-sector Yukawa coupling
+    symbol: y_chi
+    description: Feeble coupling controlling phi decay into chi and nu_R.
+    value: 10^-10 in the numerical scans quoted for cases II and III
+    range: tiny enough for freeze-in production
+    unit: null
+    role: core
+    status: inferred
+    source_reference_ids:
+    - '2205_01144'
+    notes: This coupling also controls the timing of right-handed-neutrino production.
+  - name: Higgs portal scalar coupling
+    symbol: lambda_Hphi
+    description: Quartic coupling between the scalar singlet and the SM Higgs.
+    value: null
+    range: 10^-5 to 10^-3.5 in the scalar-freeze-out scan; 10^-9 to 10^-8 in the nonthermal-scalar scan;
+      around 10^-8 separates nonthermal phi behavior in the discussion.
+    unit: null
+    role: core
+    status: inferred
+    source_reference_ids:
+    - '2205_01144'
+    notes: The paper notation appears as lambda_H or similar after text extraction.
+  - name: Dirac neutrino Yukawa coupling
+    symbol: y_H
+    description: Coupling of left-handed lepton doublets, the SM Higgs, and right-handed neutrinos.
+    value: null
+    range: suppressed by the requirement of sub-eV Dirac neutrino masses
+    unit: null
+    role: core
+    status: inferred
+    source_reference_ids:
+    - '2205_01144'
+    notes: The paper treats this coupling as too small to dominate the DM and Delta N_eff phenomenology.
+  nuisance: []
+  derived:
+  - name: extra effective relativistic degrees of freedom
+    symbol: Delta N_eff
+    description: Contribution from relativistic right-handed neutrinos produced with dark matter.
+    value: null
+    range: minimal model typically pushed to O(10^-3) after free-streaming requirements; larger values
+      possible in sketched UV completions
+    unit: null
+    role: derived
+    status: inferred
+    source_reference_ids:
+    - '2205_01144'
+    notes: null
+production:
+  mechanisms:
+  - freeze-in from phi decay phi -> chi + nu_R
+  - superWIMP-like production after phi freeze-out
+  - freeze-in production of phi from Higgs decay or annihilation followed by phi decay
+  thermal_equilibrium_with_standard_model: partial
+  thermal_equilibrium_with_hidden_sector: partial
+  abundance_set_by:
+  - m_chi
+  - m_phi
+  - y_chi
+  - lambda_Hphi
+  - thermal history of phi
+  depends_on_reheating_temperature: unknown
+  can_produce_all_dark_matter: parameter_dependent
+  nonthermal_momentum_distribution: 'yes'
+  notes: 'The paper studies three regimes: phi in equilibrium, phi freezing out before decay, and phi
+    itself being freeze-in produced from the Higgs portal.'
+relic_density:
+  full_or_subcomponent: full_dark_matter
+  target_fraction:
+    name: Planck 2018 dark matter abundance
+    symbol: Omega_DM h^2
+    description: Observed abundance used to select viable parameter points.
+    value: 0.120 +/- 0.001
+    range: null
+    unit: null
+    role: cosmological
+    status: assumed
+    source_reference_ids:
+    - '2205_01144'
+    notes: null
+  calculation_type: nonthermal
+  key_dependencies:
+  - m_chi
+  - m_phi
+  - y_chi
+  - lambda_Hphi
+  - phi equilibrium/freeze-out/freeze-in regime
+  requires_entropy_dilution: unknown
+  overclosure_risk: parameter_dependent
+  underproduction_risk: parameter_dependent
+  tuning_assessment: unknown
+cosmological_history:
+  standard_history_assumed: true
+  nonstandard_features:
+  - right-handed neutrinos act as dark radiation
+  - nonthermal momentum distribution for decay-produced dark matter
+  dark_sector_temperature: null
+  delta_neff:
+    name: extra effective relativistic degrees of freedom
+    symbol: Delta N_eff
+    description: Right-handed neutrino contribution tracked by the paper.
+    value: null
+    range: O(10^-3) in the minimal structure-formation-compatible setup; potentially observable in nonminimal
+      completions
+    unit: null
+    role: derived
+    status: inferred
+    source_reference_ids:
+    - '2205_01144'
+    notes: null
+  kinetic_decoupling: null
+  chemical_decoupling: null
+  phase_transitions: []
+  topological_defects: []
+  isocurvature_perturbations: unknown
+  bbn_relevance: medium
+  cmb_relevance: high
+phase_space:
+  distribution_type: decay_produced
+  distribution_function_available: 'yes'
+  average_momentum_relative_to_thermal: null
+  free_streaming_length:
+    name: dark matter free-streaming length
+    symbol: lambda_FSL
+    description: Free-streaming length computed from the nonthermal distribution.
+    value: null
+    range: warm-DM criterion discussed as lambda_FSL < 0.1 Mpc; cold-DM scale discussed as lambda_FSL
+      < 0.01 Mpc
+    unit: Mpc
+    role: derived
+    status: inferred
+    source_reference_ids:
+    - '2205_01144'
+    notes: null
+  velocity_dispersion_today: null
+  phase_space_bounds:
+  - Generic fermion-DM lower mass around keV; production-dependent free-streaming can push viable masses
+    to order 100 keV in the minimal model.
+  notes: The paper solves Boltzmann equations for the distribution functions needed for free-streaming
+    estimates.
+structure_formation:
+  linear:
+    behaves_like_cdm: scale_dependent
+    transfer_function_shape: smooth_cutoff
+    small_scale_power_effect: suppression
+    half_mode_mass: null
+    thermal_wdm_mapping:
+      available: false
+      validity: unknown
+      warning: The paper uses free-streaming-length estimates rather than a calibrated thermal-WDM mapping.
+    impact_on_sigma8_s8: unknown
+  nonlinear:
+    halo_mass_function_effect: unknown
+    subhalo_mass_function_effect: suppressed small-scale structure is possible for light nonthermal DM,
+      but no nonlinear calibration is provided.
+    infall_subhalo_mass_function_effect: unknown
+    present_day_bound_subhalo_mass_function_effect: unknown
+    concentration_mass_relation_effect: unknown
+    density_profile_effect: unknown
+    core_or_cusp_effect: unknown
+    subhalo_survival_effect: unknown
+    tidal_stripping_effect: unknown
+    smallest_galaxies_effect: unknown
+    simulation_calibrated: 'no'
+validity_domain:
+- id: unbroken_z4
+  applies_to: model
+  condition: The Z4 symmetry remains unbroken and the scalar singlet has no vacuum expectation value.
+  valid_range: null
+  status: assumed
+  extrapolation_risk: high
+  caveats:
+  - Breaking Z4 would undermine the stated stability mechanism.
+  source_reference_ids:
+  - '2205_01144'
+  notes: null
+- id: freeze_in_regime
+  applies_to: production
+  condition: The dark-sector coupling is feeble enough that chi is never thermalized with the Standard
+    Model bath.
+  valid_range: y_chi tiny; scans use y_chi = 10^-10 for cases II and III.
+  status: assumed
+  extrapolation_risk: medium
+  caveats:
+  - Larger couplings would change the production regime.
+  source_reference_ids:
+  - '2205_01144'
+  notes: null
+- id: standard_radiation_dominated_history
+  applies_to: cosmological_history
+  condition: Boltzmann equations are evaluated in a radiation-dominated early universe with standard entropy
+    factors.
+  valid_range: null
+  status: assumed
+  extrapolation_risk: medium
+  caveats:
+  - Nonstandard expansion histories are not developed in the paper.
+  source_reference_ids:
+  - '2205_01144'
+  notes: null
+assumptions:
+  global:
+  - id: dirac_light_neutrinos
+    description: Light neutrinos are Dirac particles and require three right-handed neutrinos with very
+      small Yukawa couplings.
+    scope: theory
+    status: assumed
+    impact_if_violated: The right-handed-neutrino portal and dark-radiation link would not match the model
+      setup.
+    can_be_relaxed: unknown
+    source_reference_ids:
+    - '2205_01144'
+    notes: null
+  - id: minimal_dark_sector
+    description: Only a fermion singlet dark matter candidate and a complex scalar singlet are added to
+      the right-handed neutrinos in the minimal dark sector.
+    scope: theory
+    status: assumed
+    impact_if_violated: Additional fields can change Delta N_eff and production histories.
+    can_be_relaxed: 'yes'
+    source_reference_ids:
+    - '2205_01144'
+    notes: The paper sketches two nonminimal UV completions.
+  - id: phi_history_cases
+    description: 'The scalar singlet is treated in three possible histories: equilibrium, freeze-out,
+      or freeze-in from the Higgs portal.'
+    scope: production
+    status: established
+    impact_if_violated: Relic-density and momentum-distribution calculations would need different Boltzmann
+      equations.
+    can_be_relaxed: 'yes'
+    source_reference_ids:
+    - '2205_01144'
+    notes: null
+  constraint_specific: []
+  computation_specific: []
+associated_code:
+  has_associated_code: unknown
+  code_summary: The paper gives Boltzmann equations and numerical scans, but the assigned text does not
+    identify a public code release.
+  primary_code_role: null
+  repositories: []
+  packages_or_modules: []
+  notebooks: []
+  scripts: []
+  containers_or_environments: []
+  expected_inputs:
+  - model parameters
+  - thermal history case
+  expected_outputs:
+  - relic density
+  - Delta N_eff
+  - free-streaming length
+  supported_observable_channels: []
+  reproducibility:
+    reproducibility_level: unknown
+    has_tests: unknown
+    has_examples: unknown
+    has_documentation: unknown
+    pinned_dependencies: unknown
+    notes: null
+  validation:
+    validation_status: unknown
+    benchmark_references: []
+    validation_notes: null
+  caveats:
+  - No associated code was extracted from the paper text.
+provenance:
+  model_id: 2205_01144_light_dirac_neutrino_portal_freeze_in_dm_v1
+  model_name: Light Dirac neutrino portal freeze-in dark matter
+  model_family: freeze_in_dark_matter
+  entry_version: 0.1.0
+  status: machine_extracted
+  created_at: '2026-05-31'
+  last_updated: '2026-05-31'
+  sources:
+    primary_papers:
+    - reference_id: '2205_01144'
+      title: Freeze-in Dark Matter via Light Dirac Neutrino Portal
+      authors:
+      - Anirban Biswas
+      - Debasish Borah
+      - Nayan Das
+      - Dibyendu Nanda
+      year: 2022
+      arxiv_id: '2205.01144'
+      doi: null
+      url: null
+      role: original_model
+      notes: Assigned SQLite full text for batch-0013.
+    - arxiv_id: '2205.01144'
+      authors:
+      - Biswas, Anirban
+      - Borah, Debasish
+      - Das, Nayan
+      - Nanda, Dibyendu
+      doi: 10.1103/PhysRevD.107.015015
+      notes: Primary full text resolved locally; ADS used only for metadata discovery.
+      reference_id: '2205_01144'
+      role: original_model
+      title: Freeze-in dark matter via a light Dirac neutrino portal
+      url: https://arxiv.org/abs/2205.01144
+      year: 2023
+    constraint_papers: []
+    external_databases: []
+    review_papers: []
+  extraction:
+    method: llm_assisted
+    extracted_by: codex_batch_0013
+    extractor_name: GPT-5.5 dark-matter model-card extraction worker
+    extraction_date: '2026-05-31'
+    confidence: high
+    source_chunks_or_sections:
+    - reference_id: '2205_01144'
+      section: opening summary
+      page: null
+      quote_or_summary: The paper proposes nonthermal dark matter from a light Dirac neutrino portal.
+    - reference_id: '2205_01144'
+      section: sec:model
+      page: null
+      quote_or_summary: The minimal setup adds right-handed neutrinos, a fermion singlet DM candidate,
+        and a complex scalar singlet under unbroken Z4.
+    - reference_id: '2205_01144'
+      section: sec:model / Boltzmann equations
+      page: null
+      quote_or_summary: 'Three scalar histories are studied: equilibrium, freeze-out, and nonthermal production.'
+    - reference_id: '2205_01144'
+      section: conclusion
+      page: null
+      quote_or_summary: The same scalar decay produces DM and relativistic right-handed neutrinos, linking
+        relic abundance and Delta N_eff.
+    unresolved_items:
+    - Plain-text extraction drops some Greek symbols; chi and phi labels are normalized from the described
+      fermion singlet DM and scalar singlet.
+  evidence:
+    particle_content:
+    - reference_id: '2205_01144'
+      note: The model adds three right-handed neutrinos, a fermion singlet DM candidate, and a complex
+        scalar singlet.
+      confidence: high
+      section: sec:model
+      page: null
+    symmetries:
+    - reference_id: '2205_01144'
+      note: An unbroken Z4 is imposed to forbid unwanted couplings and stabilize DM.
+      confidence: high
+      section: sec:model
+      page: null
+    interactions:
+    - reference_id: '2205_01144'
+      note: The paper gives Yukawa interactions connecting chi, phi, and nu_R plus a Higgs-portal quartic
+        for phi.
+      confidence: high
+      section: sec:model
+      page: null
+    production_mechanism:
+    - reference_id: '2205_01144'
+      note: DM and nu_R are produced dominantly from phi decays, with phi treated as equilibrated, frozen
+        out, or freeze-in produced.
+      confidence: high
+      section: sec:model
+      page: null
+    relic_density:
+    - reference_id: '2205_01144'
+      note: The numerical scans select parameters satisfying the Planck 2018 dark-matter relic abundance.
+      confidence: high
+      section: numerical results
+      page: null
+    cosmological_history:
+    - reference_id: '2205_01144'
+      note: Right-handed neutrinos remain relativistic and contribute to Delta N_eff.
+      confidence: high
+      section: opening summary and conclusion
+      page: null
+    parameter_ranges:
+    - reference_id: '2205_01144'
+      note: Case-II scans use m_phi=200-2000 GeV, lambda_Hphi=10^-5 to 10^-3.5, m_chi=1 keV-10 MeV; case
+        III uses m_phi=5-60 GeV, lambda_Hphi=10^-9 to 10^-8, m_chi=1 keV-1 MeV.
+      confidence: medium
+      section: numerical results
+      page: null
+    structure_formation:
+    - reference_id: '2205_01144'
+      note: Free-streaming estimates can require DM masses of order 100 keV in the minimal model.
+      confidence: medium
+      section: free-streaming length discussion
+      page: null
+    validity_domain:
+    - reference_id: '2205_01144'
+      note: The minimal model assumes light Dirac neutrinos, unbroken Z4, and feeble portal couplings.
+      confidence: high
+      section: sec:model
+      page: null
+    constraints:
+    - confidence: high
+      note: The text quotes Planck+BAO, BBN, and CMB-S4 N_eff values.
+      page: null
+      reference_id: '2205_01144'
+      section: Introduction
+    - confidence: high
+      note: The paper states that free-streaming constraints can rule out masses up to O(100 keV) in the
+        setup.
+      page: null
+      reference_id: '2205_01144'
+      section: Abstract/Introduction
+    - confidence: high
+      note: The model parameter scan constrains freeze-in abundance with Planck 2018 data.
+      page: null
+      reference_id: '2205_01144'
+      section: Abstract
+    observables:
+    - confidence: high
+      note: The abstract and introduction state that right-handed neutrinos contribute to N_eff and that
+        extensions may make it observable.
+      page: null
+      reference_id: '2205_01144'
+      section: Abstract/Introduction
+    - confidence: high
+      note: The structure-formation discussion defines free-streaming length and quotes the 0.1 Mpc and
+        0.01 Mpc warm/cold guide values.
+      page: null
+      reference_id: '2205_01144'
+      section: Free-streaming length
+    routes:
+    - confidence: high
+      note: The paper describes coupled Boltzmann equations for freeze-in yields and a free-streaming
+        integral for structure constraints.
+      page: null
+      reference_id: '2205_01144'
+      section: Boltzmann equations and free-streaming
+  review:
+    human_reviewed: false
+    reviewed_by: null
+    review_date: null
+    expert_reviewed: false
+    expert_reviewer: null
+    expert_review_date: null
+    reviewer_notes: []
+    scientific_confidence: medium
+    implementation_confidence: medium
+  caveats:
+  - The paper briefly sketches UV completions, but this row records the minimal model whose phenomenology
+    is actually developed.
+robustness:
+  overall: medium
+  theory_robustness: medium
+  observational_robustness: unknown
+  computational_robustness: unknown
+  constraint_robustness: not_applicable
+  dominant_uncertainties:
+  - Plain-text symbol loss
+  - UV completions are only sketched
+  - Structure-formation treatment uses free-streaming estimates rather than simulations
+  validation_status: expert_judgment_only
+  notes: Extraction is well supported for the minimal particle content and production logic, but benchmark
+    details should be checked against the PDF notation before final registry use.
+agent_failure_modes:
+  warnings:
+  - id: symbol_loss
+    severity: medium
+    category: notation_conflict
+    warning: The SQLite plain text drops Greek symbols for the fermion and scalar fields; labels chi and
+      phi are normalized placeholders.
+    mitigation: Verify the original notation before canonicalizing field names.
+    source_reference_ids:
+    - '2205_01144'
+  - id: uv_completion_scope
+    severity: medium
+    category: assumption_mismatch
+    warning: The neutrinophilic-Higgs and gauged-B-L completions are sketched but not given the same relic-density
+      treatment as the minimal model.
+    mitigation: Do not split them into separately validated model cards without reading a dedicated development
+      paper.
+    source_reference_ids:
+    - '2205_01144'
+observables:
+- caveats:
+  - The minimal model can predict Delta N_eff below near-future sensitivity.
+  channel: cmb
+  effect_direction: enhancement
+  environments:
+  - CMB
+  - early universe
+  id: delta_neff_from_right_handed_neutrinos
+  key_quantities:
+  - description: Extra relativistic energy density from right-handed neutrinos.
+    name: Delta N_eff
+    range: minimal benchmark often O(1e-3); extensions may be observable
+    role: derived
+    source_reference_ids:
+    - '2205_01144'
+    status: inferred
+    symbol: Delta N_eff
+  - description: CMB+BAO value quoted in the paper.
+    name: Planck N_eff
+    role: experimental
+    source_reference_ids:
+    - '2205_01144'
+    status: established
+    symbol: N_eff
+    value: 2.99^{+0.34}_{-0.33} at 95% CL
+  linked_constraints:
+  - planck_bbn_neff_bounds
+  linked_routes:
+  - freezein_neff_route
+  name: Dark-radiation Delta N_eff from right-handed neutrinos
+  notes: null
+  observability: medium
+  predicted_effect: The same freeze-in interactions that produce dark matter also produce relativistic
+    right-handed neutrinos, yielding a model-dependent positive Delta N_eff.
+  redshift_range: BBN to recombination
+  relevance: high
+  scale_range: null
+  source_reference_ids:
+  - '2205_01144'
+  subchannel: effective number of relativistic species
+- caveats: []
+  channel: lyman_alpha
+  effect_direction: suppression
+  environments:
+  - Lyman-alpha forest
+  - small-scale structure
+  id: freezein_free_streaming_suppression
+  key_quantities:
+  - description: Comoving distance used to diagnose structure-formation viability.
+    name: free-streaming length
+    range: warm DM allowed roughly below 0.1 Mpc; CDM-like below 0.01 Mpc
+    role: astrophysical
+    source_reference_ids:
+    - '2205_01144'
+    status: inferred
+    symbol: lambda_FSL
+    unit: Mpc
+  - description: Light fermion dark matter mass constrained by the production history.
+    name: dark matter mass
+    range: structure bounds can disfavor up to O(100 keV) in the studied setup
+    role: core
+    source_reference_ids:
+    - '2205_01144'
+    status: inferred
+    symbol: m_DM
+    unit: keV
+  linked_constraints:
+  - structure_free_streaming_bound
+  linked_routes:
+  - freezein_fsl_route
+  name: Small-scale suppression from freeze-in free streaming
+  notes: null
+  observability: medium
+  predicted_effect: Freeze-in dark matter can remain warm enough for free streaming to suppress small-scale
+    structure, and the paper finds structure bounds more severe than the N_eff bound for light masses.
+  redshift_range: matter-radiation equality to low redshift
+  relevance: critical
+  scale_range: small cosmological scales
+  source_reference_ids:
+  - '2205_01144'
+  subchannel: free-streaming length and warm-dark-matter-like suppression
+constraints:
+- allowed_regions:
+  - Planck+BAO N_eff = 2.99^{+0.34}_{-0.33} at 95% CL and BBN 2.3 < N_eff < 3.4 are quoted as allowed
+    windows.
+  applies: parameter_dependent
+  assumptions:
+  - can_be_relaxed: 'yes'
+    description: The mapping from right-handed-neutrino yield to N_eff assumes the standard radiation-era
+      entropy history used in the paper.
+    id: thermal_history_standard
+    impact_if_violated: Nonstandard entropy injection would change Delta N_eff.
+    notes: null
+    scope: cosmology
+    source_reference_ids:
+    - '2205_01144'
+    status: assumed
+  benchmark_implications:
+  - Minimal light Dirac neutrino portal benchmarks often remain below CMB-S4 sensitivity, while extensions
+    can be tested.
+  caveats: []
+  constrained_parameters:
+  - Delta N_eff
+  - right-handed-neutrino yield
+  constraint_type: cosmological
+  data_release: Planck 2018 and BBN limits quoted in primary text
+  excluded_regions:
+  - Parameter points with too much right-handed-neutrino radiation exceed Planck or BBN N_eff limits.
+  id: planck_bbn_neff_bounds
+  likelihood_available: unknown
+  likelihood_reference: null
+  name: Planck/BBN bounds on extra radiation
+  notes: null
+  observable_channel: cmb
+  recasting_needed: 'yes'
+  robustness: medium
+  source_reference_ids:
+  - '2205_01144'
+- allowed_regions:
+  - Warm-like free streaming with lambda_FSL below about 0.1 Mpc is treated as viable; colder lambda_FSL
+    below about 0.01 Mpc is CDM-like.
+  applies: parameter_dependent
+  assumptions:
+  - can_be_relaxed: partial
+    description: Free-streaming length is used as a proxy for the full linear matter-power suppression.
+    id: fsl_proxy
+    impact_if_violated: A full transfer-function likelihood could move the mass boundary.
+    notes: null
+    scope: structure_formation
+    source_reference_ids:
+    - '2205_01144'
+    status: assumed
+  benchmark_implications:
+  - This is the dominant practical constraint for the lightest freeze-in dark matter benchmarks.
+  caveats:
+  - The paper does not provide a public Lyman-alpha likelihood.
+  constrained_parameters:
+  - m_DM
+  - lambda_FSL
+  - freeze-in momentum distribution
+  constraint_type: astrophysical
+  data_release: Lyman-alpha/free-streaming discussion in primary text
+  excluded_regions:
+  - The paper states that structure constraints can rule out dark matter masses all the way up to O(100
+    keV) in the studied freeze-in setup.
+  id: structure_free_streaming_bound
+  likelihood_available: unknown
+  likelihood_reference: null
+  name: Free-streaming and Lyman-alpha structure bound
+  notes: null
+  observable_channel: lyman_alpha
+  recasting_needed: 'yes'
+  robustness: medium
+  source_reference_ids:
+  - '2205_01144'
+- allowed_regions:
+  - Model parameters are scanned against the observed Planck 2018 dark matter abundance.
+  applies: 'yes'
+  assumptions: []
+  benchmark_implications:
+  - Relic density fixes combinations of feeble portal couplings and masses.
+  caveats: []
+  constrained_parameters:
+  - Omega_DM h^2
+  - portal couplings
+  - singlet-scalar mass
+  constraint_type: cosmological
+  data_release: Planck 2018 relic density quoted in primary text
+  excluded_regions:
+  - Freeze-in yields above the observed abundance overproduce dark matter.
+  id: planck_relic_density_target
+  likelihood_available: unknown
+  likelihood_reference: null
+  name: Planck 2018 relic-density target
+  notes: null
+  observable_channel: relic_density
+  recasting_needed: 'yes'
+  robustness: high
+  source_reference_ids:
+  - '2205_01144'
+theory_to_observable_routing:
+  routes:
+  - agent_notes: No reusable likelihood or code package is identified in the assigned text.
+    caveats: []
+    constraint_ids:
+    - planck_bbn_neff_bounds
+    - planck_relic_density_target
+    derived_quantities:
+    - Omega_DM h^2
+    - Delta N_eff
+    description: Solve freeze-in production of dark matter and right-handed neutrinos, then convert the
+      relativistic component to Delta N_eff.
+    forward_model_chain:
+    - inputs:
+      - masses
+      - portal couplings
+      - thermal history
+      notes: null
+      outputs:
+      - dark matter yield
+      - right-handed-neutrino yield
+      step_id: solve_boltzmann_yields
+      step_type: boltzmann_solver
+      tool_or_code: null
+      validity: Requires the same freeze-in collision terms used in the paper.
+    - inputs:
+      - right-handed-neutrino temperature or yield
+      notes: null
+      outputs:
+      - Delta N_eff
+      step_id: convert_to_neff
+      step_type: analytic_formula
+      tool_or_code: null
+      validity: Assumes standard entropy conservation after production.
+    - inputs:
+      - Delta N_eff
+      notes: null
+      outputs:
+      - allowed or excluded N_eff point
+      step_id: compare_cmb_bbn
+      step_type: likelihood
+      tool_or_code: null
+      validity: Use external Planck/BBN likelihoods for quantitative recasts.
+    id: freezein_neff_route
+    input_parameters:
+    - m_DM
+    - m_S
+    - portal couplings
+    - right-handed-neutrino yield
+    likelihoods:
+    - Planck N_eff likelihood external
+    observable_ids:
+    - delta_neff_from_right_handed_neutrinos
+    required_code_resources: []
+    route_status: planned
+    source_model_features:
+    - Dirac neutrino portal
+    - singlet scalar decay or annihilation production
+    - right-handed neutrino dark radiation
+    validation_tests:
+    - Reproduce the paper finding that minimal Delta N_eff can remain O(1e-3).
+  - agent_notes: The primary paper uses free-streaming length rather than a packaged transfer-function
+      likelihood.
+    caveats: []
+    constraint_ids:
+    - structure_free_streaming_bound
+    - planck_relic_density_target
+    derived_quantities:
+    - lambda_FSL
+    - warmness classification
+    description: Propagate the nonthermal freeze-in momentum distribution to a free-streaming-length structure
+      bound.
+    forward_model_chain:
+    - inputs:
+      - freeze-in collision terms
+      - m_DM
+      notes: null
+      outputs:
+      - f(p,T)
+      step_id: compute_distribution
+      step_type: boltzmann_solver
+      tool_or_code: null
+      validity: A phase-space calculation is preferred over a thermal proxy.
+    - inputs:
+      - f(p,T)
+      - expansion history
+      notes: null
+      outputs:
+      - lambda_FSL
+      step_id: integrate_free_streaming
+      step_type: analytic_formula
+      tool_or_code: null
+      validity: Uses the paper's free-streaming integral.
+    - inputs:
+      - lambda_FSL
+      notes: null
+      outputs:
+      - structure-formation viability
+      step_id: compare_structure_bound
+      step_type: likelihood
+      tool_or_code: null
+      validity: Lyman-alpha likelihood is external and not supplied.
+    id: freezein_fsl_route
+    input_parameters:
+    - m_DM
+    - production temperature
+    - momentum distribution
+    likelihoods:
+    - Lyman-alpha likelihood external
+    observable_ids:
+    - freezein_free_streaming_suppression
+    required_code_resources: []
+    route_status: planned
+    source_model_features:
+    - nonthermal freeze-in momentum distribution
+    - light fermion dark matter
+    validation_tests:
+    - Recover the quoted conclusion that structure bounds can disfavor masses up to O(100 keV).

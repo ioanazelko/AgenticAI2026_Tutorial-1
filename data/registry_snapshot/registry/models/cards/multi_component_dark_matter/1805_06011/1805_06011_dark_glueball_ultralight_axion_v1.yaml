@@ -1,0 +1,730 @@
+_source:
+  shard: arXiv_src_1805_017_wds.tar
+  paper_id: '1805_06011'
+  source_member: 1805_06011.json
+  enriched: true
+  enrichment_schema_version: dm_model_ocr_enrichment_smoke_v0
+schema_version: model_only_v0
+model_id: 1805_06011_dark_glueball_ultralight_axion_v1
+identity:
+  name: Dark glueballs with associated ultralight axion dark matter
+  family: multi_component_dark_matter
+  aliases:
+  - dark glueball plus fuzzy axion scenario
+  short_description: A string-motivated confining dark gauge sector in which relic dark glueballs form
+    a subcomponent and the associated axion can be ultralight fuzzy dark matter for suitable confinement
+    scale, decay constant, and dark-to-visible temperature ratio.
+  historical_origin_or_motivation: Motivated by ubiquitous hidden gauge sectors and axions in string compactifications
+    and by the dark glueball overabundance problem.
+  status: speculative
+  model_kind: complete_theory
+theory:
+  theory_level: uv_complete
+  parent_frameworks:
+  - string theory hidden gauge sectors
+  - pure Yang-Mills dark sector
+  - axion field coupled to hidden gauge field strength
+  lagrangian_available: partial
+  renormalizable: unknown
+  embedded_in_larger_framework: 'yes'
+  notes: The paper uses a dark pure Yang-Mills sector with gauge group G and a single axion coupled through
+    an a F F operator.
+particle_content:
+  dark_matter_candidate:
+    name: dark glueballs and associated ultralight axion
+    spin: 0 for glueball component; pseudoscalar for axion
+    statistics: boson
+    elementary_or_composite: unknown
+    number_of_components: multi_component
+  additional_dark_sector_particles:
+  - dark gluons before confinement
+  mediators:
+  - axion coupling to hidden gauge field
+  dark_radiation_species: []
+  standard_model_extension: substantial
+symmetries:
+  stabilizing_mechanism: Dark glueballs are long-lived for suppressed portals; axion longevity follows
+    from axion-like dynamics.
+  symmetries:
+  - name: hidden gauge symmetry G
+    type: gauge
+    exact_or_approximate: exact
+  - name: axion shift symmetry
+    type: shift
+    exact_or_approximate: broken
+    breaking: hidden-sector confinement generates the axion mass
+  topological_defects_possible: unknown
+interactions:
+  portals:
+  - axion
+  - gravitational
+  - other
+  standard_model_targets:
+  - gravity
+  - moduli
+  - axion mixing
+  - QCD axion mixing
+  dark_sector_couplings:
+  - hidden Yang-Mills self-interactions
+  - a F F coupling
+  mediator_types:
+  - axion
+  - moduli
+  - gravity
+  interaction_operators:
+  - a F F hidden gauge coupling
+  self_scattering_channels:
+  - glueball self-interactions estimated dimensionally
+  tree_or_loop_level: unknown
+parameters:
+  core:
+  - name: hidden confinement scale
+    symbol: Lambda
+    description: Confinement scale of the dark Yang-Mills sector.
+    range: of order 100 eV for the highlighted fuzzy-DM regime
+    unit: eV
+    role: core
+    status: inferred
+  - name: axion decay constant
+    symbol: f_a
+    description: Decay constant of the axion associated with the dark gauge sector.
+    range: of order 10^17 GeV
+    unit: GeV
+    role: core
+    status: inferred
+  - name: axion mass
+    symbol: m_a
+    description: Ultralight axion mass targeted for fuzzy dark matter.
+    range: 10^-23 eV to 10^-21 eV
+    unit: eV
+    role: core
+    status: inferred
+  - name: dark-to-visible temperature ratio
+    symbol: T_prime/T
+    description: Controls the glueball relic abundance and requires mild preferential visible-sector reheating.
+    role: core
+    status: inferred
+  - name: initial misalignment angle
+    symbol: theta_i
+    description: Initial axion misalignment angle entering the relic abundance estimate.
+    value: order one in the benchmark estimate
+    role: core
+    status: assumed
+  - name: gauge group
+    symbol: G
+    description: Hidden pure Yang-Mills gauge group.
+    role: core
+    status: inferred
+production:
+  mechanisms:
+  - dark-glueball freezeout after confinement
+  - axion misalignment production
+  thermal_equilibrium_with_standard_model: 'no'
+  thermal_equilibrium_with_hidden_sector: 'yes'
+  abundance_set_by:
+  - hidden confinement scale
+  - dark-sector temperature
+  - 3-to-2 glueball interactions
+  - axion mass
+  - axion decay constant
+  - initial misalignment angle
+  depends_on_reheating_temperature: 'yes'
+  can_produce_all_dark_matter: parameter_dependent
+  nonthermal_momentum_distribution: 'no'
+  notes: The total relic density is the sum of glueball and axion components and is compared to the observed
+    dark matter abundance.
+relic_density:
+  full_or_subcomponent: either
+  calculation_type: mixed
+  key_dependencies:
+  - Lambda
+  - T_prime/T
+  - m_a
+  - f_a
+  - theta_i
+  - hidden gauge degrees of freedom
+  requires_entropy_dilution: unknown
+  overclosure_risk: parameter_dependent
+  underproduction_risk: parameter_dependent
+  tuning_assessment: mild_tuning
+cosmological_history:
+  standard_history_assumed: true
+  nonstandard_features: []
+  bbn_relevance: unknown
+  cmb_relevance: unknown
+phase_space:
+  distribution_type: mixed_cold_warm
+  distribution_function_available: unknown
+structure_formation:
+  linear:
+    behaves_like_cdm: unknown
+    transfer_function_shape: unknown
+    small_scale_power_effect: unknown
+  nonlinear:
+    halo_mass_function_effect: unknown
+    subhalo_mass_function_effect: unknown
+    simulation_calibrated: unknown
+validity_domain:
+- id: string_hidden_sector_motivation
+  applies_to: model
+  condition: Motivated by hidden gauge sectors and axions common in string theory, but concrete vacuum
+    statistics are not computed.
+  status: inferred
+  extrapolation_risk: medium
+  caveats: []
+- id: long_lived_glueballs
+  applies_to: particle_content
+  condition: Glueball component assumes suppressed portals and sufficiently long lifetimes.
+  status: inferred
+  extrapolation_risk: medium
+  caveats: []
+- id: fdm_mass_window
+  applies_to: parameter
+  condition: Fuzzy-DM interpretation targets ultralight axion masses around 10^-23 to 10^-21 eV.
+  status: inferred
+  extrapolation_risk: medium
+  caveats: []
+assumptions:
+  global:
+  - id: preferential_visible_reheating
+    description: The dark sector is cooler than the visible sector by a modest temperature-ratio tuning.
+    scope: cosmological_history
+    status: assumed
+  - id: suppressed_visible_portals
+    description: Portals allowing glueballs to decay to Standard Model particles are sufficiently suppressed.
+    scope: theory
+    status: assumed
+  - id: minimal_qcd_axion_mixing
+    description: Mixing between the dark axion and QCD axion can be small enough to avoid electric dipole
+      moment issues.
+    scope: theory
+    status: assumed
+associated_code:
+  has_associated_code: unknown
+  code_summary: null
+provenance:
+  model_id: 1805_06011_dark_glueball_ultralight_axion_v1
+  model_name: null
+  model_family: multi_component_dark_matter
+  entry_version: 0.1.0
+  status: machine_extracted
+  created_at: '2026-05-31'
+  last_updated: '2026-05-31'
+  sources:
+    primary_papers:
+    - reference_id: primary
+      title: Dark glueballs and their ultralight axions
+      authors: []
+      year: 2018
+      arxiv_id: '1805.06011'
+      doi: null
+      url: null
+      role: original_model
+      notes: null
+    - reference_id: p1805
+      title: Dark glueballs and their ultralight axions
+      authors:
+      - James Halverson
+      - Brent D. Nelson
+      - Gustavo Salinas
+      - Fabian Ruehle
+      year: 2018
+      arxiv_id: '1805.06011'
+      doi: 10.1103/PhysRevD.98.043502
+      url: https://arxiv.org/abs/1805.06011
+      role: original_model
+      notes: Assigned primary paper.
+    constraint_papers:
+    - reference_id: r1805_glueball_revisited
+      title: Glueball Dark Matter Revisited
+      authors:
+      - Pierluca Carenza
+      - Roman Pasechnik
+      - Gustavo Salinas
+      - Zhi-Wei Wang
+      year: 2022
+      arxiv_id: '2207.13716'
+      doi: 10.1103/PhysRevLett.129.261302
+      url: https://arxiv.org/abs/2207.13716
+      role: extension
+      notes: Related local full text; glueball relic abundance with lattice-fit potential.
+    - reference_id: r1805_ultralight_axions
+      title: Cosmological production of ultralight dark matter axions
+      authors:
+      - Alberto Diez-Tejedor
+      - David J. E. Marsh
+      year: 2017
+      arxiv_id: '1702.02116'
+      doi: 10.48550/arXiv.1702.02116
+      url: https://arxiv.org/abs/1702.02116
+      role: extension
+      notes: Related local full text; ultralight axion relic density and constraints.
+    - reference_id: r1805_fdm_lyman
+      title: First Constraints on Fuzzy Dark Matter from Lyman-alpha Forest Data and Hydrodynamical Simulations
+      authors:
+      - Vid Irsic
+      - Matteo Viel
+      - Martin G. Haehnelt
+      - James S. Bolton
+      - George D. Becker
+      year: 2017
+      arxiv_id: '1703.04683'
+      doi: 10.1103/PhysRevLett.119.031302
+      url: https://arxiv.org/abs/1703.04683
+      role: constraint
+      notes: Related local full text; Lyman-alpha limits on fuzzy dark matter mass.
+    review_papers: []
+    external_databases: []
+  extraction:
+    method: llm_assisted
+    extracted_by: codex_batch_0002
+    extractor_name: gpt-5.5 dark-matter model worker
+    extraction_date: '2026-05-31'
+    confidence: high
+    source_chunks_or_sections:
+    - reference_id: primary
+      section: Abstract
+      page: null
+      quote_or_summary: Confining dark gauge sector gives dark glueballs as a DM fraction while the associated
+        axion realizes fuzzy dark matter.
+    - reference_id: primary
+      section: Relics
+      page: null
+      quote_or_summary: The paper computes dark axion and glueball relic abundances and compares the total
+        to observed dark matter.
+    unresolved_items:
+    - Fuzzy-DM Lyman-alpha limits are literature-dependent and fraction-dependent.
+    - Glueball lifetimes and portals require a concrete UV completion.
+    - No associated code or likelihood tables were identified.
+  evidence:
+    particle_content:
+    - reference_id: primary
+      note: The scenario contains dark glueballs from a confining dark gauge sector and an associated
+        axion.
+      confidence: high
+      section: Abstract
+    interactions:
+    - reference_id: primary
+      note: The axion couples to the hidden gauge field through the usual a F F operator.
+      confidence: high
+      section: Relics
+    production_mechanism:
+    - reference_id: primary
+      note: Glueballs freeze out after confinement; the axion abundance is estimated from misalignment.
+      confidence: high
+      section: Relics
+    parameter_ranges:
+    - reference_id: primary
+      note: The highlighted regime uses Lambda around 100 eV, f_a around 10^17 GeV, and m_a in the fuzzy-DM
+        window.
+      confidence: high
+      section: Parameter space
+    cosmological_history:
+    - reference_id: primary
+      note: The scenario requires a modest tuning of the dark-sector to visible-sector temperature ratio.
+      confidence: high
+      section: Abstract
+    observables:
+    - reference_id: p1805
+      note: Primary paper identifies glueball abundance, BBN dark-temperature, and fuzzy-axion Lyman-alpha
+        observables.
+      confidence: high
+      section: abstract/relic sections
+      page: null
+    - reference_id: r1805_ultralight_axions
+      note: Related full text supports ultralight axion relic-density and structure constraints.
+      confidence: medium
+      section: abstract
+      page: null
+    - reference_id: r1805_fdm_lyman
+      note: Related full text supports Lyman-alpha fuzzy-DM mass constraints.
+      confidence: high
+      section: abstract
+      page: null
+    constraints:
+    - reference_id: p1805
+      note: Primary paper states BBN temperature-ratio constraints and uncertain Lyman-alpha implications.
+      confidence: high
+      section: relic/parameter sections
+      page: null
+    - reference_id: r1805_glueball_revisited
+      note: Related full text supports glueball relic-abundance recalculation.
+      confidence: medium
+      section: abstract
+      page: null
+    - reference_id: r1805_fdm_lyman
+      note: Related full text supplies Lyman-alpha fuzzy-DM lower-limit context.
+      confidence: high
+      section: abstract
+      page: null
+    routes:
+    - reference_id: p1805
+      note: Primary paper supplies the two-component glueball-plus-axion relic framework.
+      confidence: high
+      section: relic sections
+      page: null
+    - reference_id: r1805_glueball_revisited
+      note: Related full text motivates improved glueball relic calculation.
+      confidence: medium
+      section: abstract
+      page: null
+  review:
+    human_reviewed: false
+    expert_reviewed: false
+    scientific_confidence: high
+    implementation_confidence: medium
+    reviewer_notes: []
+  caveats:
+  - The paper emphasizes assumptions about hidden-sector reheating, glueball longevity, and string-theory
+    realization.
+robustness:
+  overall: medium
+agent_failure_modes:
+  warnings:
+  - id: multi_component_fraction
+    severity: medium
+    category: assumption_mismatch
+    warning: The glueball and axion fractions are parameter dependent; do not collapse the entry to a
+      single-component model.
+  - id: glueball_lifetime
+    severity: medium
+    category: assumption_mismatch
+    warning: Glueball viability relies on suppressed decay portals and long lifetimes.
+mass_scales_and_hierarchies:
+  scales:
+  - name: hidden confinement scale
+    symbol: Lambda
+    range: of order 100 eV
+    unit: eV
+    role: core
+    status: inferred
+  - name: axion decay constant
+    symbol: f_a
+    range: of order 10^17 GeV
+    unit: GeV
+    role: core
+    status: inferred
+  - name: axion mass
+    symbol: m_a
+    range: 10^-23 to 10^-21 eV
+    unit: eV
+    role: core
+    status: inferred
+observables:
+- id: obs_fdm_lyman_matter_power
+  name: Fuzzy-axion suppression of small-scale matter power
+  channel: lyman_alpha
+  subchannel: Lyman-alpha forest flux power
+  predicted_effect: The ultralight axion component can suppress matter power on kiloparsec-to-Mpc scales;
+    Lyman-alpha forest data are the most direct structure observable for the fuzzy-DM mass window.
+  effect_direction: suppression
+  key_quantities:
+  - name: ultralight axion mass
+    symbol: m_a
+    description: Fuzzy-DM axion mass targeted by the scenario.
+    range: ~10^-23 to 10^-21
+    unit: eV
+    role: core
+    status: inferred
+    source_reference_ids:
+    - p1805
+  - name: axion dark-matter fraction
+    symbol: Omega_a/Omega_DM
+    description: Fraction of total dark matter in the ultralight axion.
+    role: derived
+    status: inferred
+    source_reference_ids:
+    - p1805
+    - r1805_fdm_lyman
+  redshift_range: z ~ 2-5
+  scale_range: kiloparsec to Mpc comoving scales
+  environments:
+  - intergalactic medium
+  - small-scale structure
+  observability: high
+  relevance: critical
+  linked_constraints:
+  - cons_fdm_lyman_mass
+  linked_routes:
+  - route_glueball_axion_two_component
+  caveats:
+  - Primary paper notes conflicting interpretations of Lyman-alpha bounds.
+  source_reference_ids:
+  - p1805
+  - r1805_ultralight_axions
+  - r1805_fdm_lyman
+  notes: null
+- id: obs_bbn_dark_temperature
+  name: BBN sensitivity to dark-sector radiation temperature
+  channel: cosmology
+  subchannel: dark radiation at BBN
+  predicted_effect: If the dark gauge sector is still relativistic near BBN, its temperature and degrees
+    of freedom affect light-element constraints; the primary paper expresses this as a bound on dark-sector
+    degrees and entropy/temperature ratio.
+  effect_direction: enhancement
+  key_quantities:
+  - name: hidden-to-visible temperature ratio
+    symbol: T'/T
+    description: Temperature ratio between dark gauge sector and visible sector.
+    role: core
+    status: inferred
+    source_reference_ids:
+    - p1805
+  - name: dark relativistic degrees of freedom
+    symbol: g_* dark
+    description: Dark-sector degrees contributing during BBN.
+    role: core
+    status: inferred
+    source_reference_ids:
+    - p1805
+  redshift_range: BBN epoch
+  scale_range: null
+  environments:
+  - early universe plasma
+  - hidden gauge sector
+  observability: medium
+  relevance: high
+  linked_constraints:
+  - cons_bbn_dark_radiation
+  linked_routes:
+  - route_glueball_axion_two_component
+  caveats:
+  - Requires a concrete reheating and confinement history.
+  source_reference_ids:
+  - p1805
+  notes: null
+- id: obs_glueball_relic_fraction
+  name: Dark-glueball relic subcomponent abundance
+  channel: cosmology
+  subchannel: 3-to-2 glueball freezeout
+  predicted_effect: The glueball abundance is set by hidden confinement, 3-to-2 number-changing reactions,
+    and the dark-to-visible temperature ratio; astrophysical viability depends on keeping this component
+    from overclosing or dominating where fuzzy axions are desired.
+  effect_direction: rate_change
+  key_quantities:
+  - name: dark confinement scale
+    symbol: Lambda
+    description: Sets glueball mass scale and relic abundance.
+    role: core
+    status: inferred
+    source_reference_ids:
+    - p1805
+    - r1805_glueball_revisited
+  - name: glueball fraction
+    symbol: Omega_g/Omega_DM
+    description: Fraction of total dark matter in glueballs.
+    role: derived
+    status: inferred
+    source_reference_ids:
+    - p1805
+  redshift_range: post-confinement dark sector
+  scale_range: cosmological background abundance
+  environments:
+  - hidden confining sector
+  observability: medium
+  relevance: high
+  linked_constraints:
+  - cons_glueball_fraction
+  linked_routes:
+  - route_glueball_axion_two_component
+  caveats:
+  - Glueball lifetimes depend on suppressed portals and light hidden states.
+  source_reference_ids:
+  - p1805
+  - r1805_glueball_revisited
+  notes: null
+constraints:
+- id: cons_fdm_lyman_mass
+  name: Lyman-alpha lower bound on fuzzy-axion mass/fraction
+  constraint_type: astrophysical
+  observable_channel: lyman_alpha
+  applies: recast_required
+  constrained_parameters:
+  - m_a
+  - Omega_a/Omega_DM
+  - thermal history nuisance parameters
+  excluded_regions:
+  - Sizable fuzzy-DM fractions with masses below the Lyman-alpha lower-limit range quoted in the primary/related
+    literature.
+  allowed_regions:
+  - Heavier ultralight axions or smaller fuzzy fractions that evade flux-power suppression bounds.
+  benchmark_implications:
+  - The target mass window around 10^-23 to 10^-21 eV is under pressure if the axion is most of the dark
+    matter.
+  likelihood_available: partial
+  likelihood_reference: null
+  data_release: Lyman-alpha forest hydrodynamical simulation constraints
+  recasting_needed: 'yes'
+  robustness: medium
+  assumptions:
+  - id: fdm_fraction_known
+    description: The fuzzy axion fraction is fixed when applying Lyman-alpha limits.
+    scope: structure_recast
+    status: assumed
+    impact_if_violated: Subcomponent fuzzy axions can weaken all-DM bounds.
+    can_be_relaxed: partial
+    source_reference_ids:
+    - p1805
+    - r1805_fdm_lyman
+  caveats:
+  - Primary paper explicitly notes disagreement in the literature about the exact bound.
+  source_reference_ids:
+  - p1805
+  - r1805_fdm_lyman
+  notes: null
+- id: cons_bbn_dark_radiation
+  name: BBN bound on hidden gauge-sector temperature/degrees
+  constraint_type: cosmological
+  observable_channel: bbn
+  applies: 'yes'
+  constrained_parameters:
+  - T_dark/T_visible
+  - g_* dark
+  - entropy ratio
+  excluded_regions:
+  - Dark sectors too hot or with too many relativistic degrees during BBN.
+  allowed_regions:
+  - Mild preferential reheating into the visible sector, as described by the primary paper.
+  benchmark_implications:
+  - The glueball scenario needs a dark/visible temperature ratio compatible with BBN before fitting the
+    relic density.
+  likelihood_available: unknown
+  likelihood_reference: null
+  data_release: primordial light-element abundance constraints
+  recasting_needed: 'yes'
+  robustness: high
+  assumptions:
+  - id: separate_entropy_conservation
+    description: Visible and hidden comoving entropies are separately conserved after reheating.
+    scope: cosmological_history
+    status: assumed
+    impact_if_violated: Entropy transfer would change both BBN and relic-density bounds.
+    can_be_relaxed: partial
+    source_reference_ids:
+    - p1805
+  caveats:
+  - Concrete hidden-sector matter content can change g_* dark.
+  source_reference_ids:
+  - p1805
+  notes: null
+- id: cons_glueball_fraction
+  name: Glueball overabundance and subcomponent constraint
+  constraint_type: cosmological
+  observable_channel: relic abundance
+  applies: parameter_dependent
+  constrained_parameters:
+  - Lambda
+  - T_dark/T_visible
+  - 3_to_2 rate
+  - glueball lifetime
+  excluded_regions:
+  - Glueball relic density exceeding the observed dark matter abundance or too large a fraction for the
+    desired axion-dominated fuzzy-DM scenario.
+  allowed_regions:
+  - Glueballs as a controlled subcomponent with total Omega_glueball + Omega_axion matching Omega_DM.
+  benchmark_implications:
+  - The model is viable only in the band where the glueball problem is solved and the axion component
+    remains ultralight.
+  likelihood_available: unknown
+  likelihood_reference: null
+  data_release: null
+  recasting_needed: 'yes'
+  robustness: medium
+  assumptions:
+  - id: long_lived_glueballs
+    description: Portals are sufficiently suppressed and no light hidden states permit rapid glueball
+      decay.
+    scope: particle_content
+    status: assumed
+    impact_if_violated: If glueballs decay, the relic-fraction constraint and signals change qualitatively.
+    can_be_relaxed: partial
+    source_reference_ids:
+    - p1805
+    - r1805_glueball_revisited
+  caveats:
+  - Strong-coupling relic calculations are approximate and gauge-group dependent.
+  source_reference_ids:
+  - p1805
+  - r1805_glueball_revisited
+  notes: null
+theory_to_observable_routing:
+  routes:
+  - id: route_glueball_axion_two_component
+    description: Combine dark-glueball 3-to-2 freezeout and ultralight-axion misalignment, then project
+      to BBN dark-temperature and fuzzy-DM structure constraints.
+    source_model_features:
+    - confining dark gauge sector
+    - stable dark glueballs
+    - associated ultralight axion
+    - hidden-to-visible temperature ratio
+    input_parameters:
+    - Lambda_dark
+    - T_dark_over_T_visible
+    - g_dark
+    - m_a
+    - f_a
+    - theta_i
+    - glueball_fraction
+    derived_quantities:
+    - Omega_glueball
+    - Omega_axion
+    - Delta_N_eff_BBN
+    - matter_power_suppression
+    forward_model_chain:
+    - step_id: glueball_freezeout
+      step_type: semi_analytic_model
+      tool_or_code: null
+      inputs:
+      - Lambda_dark
+      - T_dark_over_T_visible
+      - g_dark
+      - 3_to_2_rate
+      outputs:
+      - Omega_glueball
+      validity: Valid for the hidden pure-gauge assumptions and long-lived glueballs.
+      notes: Related glueball work refines the relic calculation.
+    - step_id: axion_misalignment
+      step_type: analytic_formula
+      tool_or_code: null
+      inputs:
+      - m_a
+      - f_a
+      - theta_i
+      outputs:
+      - Omega_axion
+      validity: Valid for ultralight axion misalignment with the assumed potential.
+      notes: Primary paper targets fuzzy-DM masses from string-scale decay constants.
+    - step_id: structure_bbn_projection
+      step_type: recasting
+      tool_or_code: null
+      inputs:
+      - Omega_axion
+      - Omega_glueball
+      - m_a
+      - T_dark_over_T_visible
+      outputs:
+      - Lyman_alpha_limit
+      - BBN_dark_radiation_limit
+      validity: Requires component fractions and thermal history.
+      notes: Primary paper notes Lyman-alpha controversy; use conservative recasting.
+    observable_ids:
+    - obs_fdm_lyman_matter_power
+    - obs_bbn_dark_temperature
+    - obs_glueball_relic_fraction
+    constraint_ids:
+    - cons_fdm_lyman_mass
+    - cons_bbn_dark_radiation
+    - cons_glueball_fraction
+    likelihoods:
+    - Lyman-alpha flux-power likelihood
+    - BBN Delta_N_eff/light-element constraints
+    required_code_resources:
+    - axionCAMB/ultralight-axion transfer solver
+    - glueball relic calculator
+    validation_tests:
+    - Recover observed total Omega_DM from component sum
+    - Check BBN dark-temperature bound before structure fits
+    route_status: planned
+    agent_notes: No associated code was identified in the assigned paper.
+    caveats:
+    - Glueball lifetime and axion fraction are model-dependent.

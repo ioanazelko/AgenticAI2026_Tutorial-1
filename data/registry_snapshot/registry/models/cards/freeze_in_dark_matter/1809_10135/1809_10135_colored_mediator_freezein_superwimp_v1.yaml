@@ -1,0 +1,721 @@
+_source:
+  shard: arXiv_src_1809_029_wds.tar
+  paper_id: '1809_10135'
+  source_member: 1809_10135.json
+  enriched: true
+  enrichment_schema_version: dm_model_ocr_enrichment_smoke_v0
+schema_version: model_only_v0
+model_id: 1809_10135_colored_mediator_freezein_superwimp_v1
+identity:
+  name: Colored t-channel mediator freeze-in plus superWIMP dark matter
+  family: freeze_in_dark_matter
+  aliases:
+  - SuperWIMP meets freeze-in colored mediator model
+  - top-philic colored scalar mediator FIMP model
+  short_description: A Z2-odd dark sector with a feebly interacting Majorana fermion dark matter particle
+    and a thermalized top-philic colored scalar mediator, where the relic density receives both freeze-in
+    and superWIMP contributions.
+  historical_origin_or_motivation: Built to study the interplay between freeze-in production and superWIMP
+    production and its connection to long-lived colored mediators.
+  status: speculative
+  model_kind: simplified_model
+theory:
+  theory_level: simplified_model
+  parent_frameworks:
+  - feebly interacting massive particle dark matter
+  - superWIMP dark matter
+  - colored t-channel mediator model
+  lagrangian_available: partial
+  renormalizable: 'yes'
+  embedded_in_larger_framework: 'yes'
+  notes: The paper notes possible supersymmetric embeddings such as a right-handed stop-like mediator
+    and hidden gaugino admixture.
+particle_content:
+  dark_matter_candidate:
+    name: Majorana fermion chi
+    spin: 1/2
+    statistics: fermion
+    elementary_or_composite: elementary
+    number_of_components: single_component
+  additional_dark_sector_particles:
+  - Z2-odd colored scalar mediator t_tilde
+  mediators:
+  - top-philic colored scalar t-channel mediator
+  dark_radiation_species: []
+  excited_or_degenerate_states: []
+  long_lived_particles:
+  - long-lived colored scalar mediator in much of the cosmologically viable parameter space
+  unstable_parent_particles:
+  - thermalized colored scalar mediator
+  standard_model_extension: substantial
+symmetries:
+  stabilizing_mechanism: A Z2 parity makes the dark sector odd, stabilizing the lightest odd particle
+    identified as dark matter.
+  symmetries:
+  - name: Z2 dark parity
+    type: discrete
+    exact_or_approximate: exact
+    breaking: none stated
+    breaking_scale: null
+  topological_defects_possible: unknown
+interactions:
+  portals:
+  - other
+  standard_model_targets:
+  - top quark
+  - QCD through the colored mediator
+  dark_sector_couplings:
+  - lambda coupling between Majorana dark matter, top quark, and colored scalar mediator
+  mediator_types:
+  - colored scalar t-channel mediator
+  interaction_operators:
+  - lambda * t_tilde * top * (1-gamma5)/2 * chi + h.c.
+  scattering:
+    elastic: unknown
+    inelastic: unknown
+    momentum_dependence: unknown
+    velocity_dependence: unknown
+    spin_dependence: unknown
+  annihilation_channels:
+  - freeze-in production from mediator decays and scatterings
+  - mediator annihilation before superWIMP decay
+  decay_channels:
+  - colored scalar mediator decays to top quark plus dark matter
+  self_scattering_channels: []
+  tree_or_loop_level: tree
+parameters:
+  core:
+  - name: dark matter mass
+    symbol: m_chi
+    description: Mass of the Majorana fermion dark matter candidate.
+    role: core
+    status: inferred
+    source_reference_ids: []
+  - name: colored mediator mass
+    symbol: m_tilde_t
+    description: Mass of the top-philic colored scalar mediator.
+    role: core
+    status: inferred
+    source_reference_ids: []
+  - name: dark coupling
+    symbol: lambda
+    description: Feeble coupling connecting dark matter, top quark, and mediator.
+    role: core
+    status: inferred
+    source_reference_ids: []
+  - name: reheating temperature
+    symbol: T_R
+    description: Assumed larger than the mediator mass in the main regime so the mediator thermalizes.
+    role: cosmological
+    status: inferred
+    source_reference_ids: []
+  derived:
+  - name: mediator lifetime
+    description: Determined by masses and lambda; controls superWIMP production and long-lived-particle
+      behavior.
+    role: derived
+    status: inferred
+    source_reference_ids: []
+  - name: freeze-in fraction
+    description: Relative contribution of freeze-in to the total dark matter abundance.
+    role: derived
+    status: inferred
+    source_reference_ids: []
+production:
+  mechanisms:
+  - freeze-in from bath processes and mediator decays
+  - superWIMP production from late decay of frozen-out mediator
+  thermal_equilibrium_with_standard_model: 'no'
+  thermal_equilibrium_with_hidden_sector: partial
+  abundance_set_by:
+  - feeble coupling lambda
+  - dark matter and mediator masses
+  - thermal freeze-out abundance of the mediator
+  - mediator lifetime
+  depends_on_reheating_temperature: parameter_dependent
+  can_produce_all_dark_matter: 'yes'
+  nonthermal_momentum_distribution: 'yes'
+  notes: The mediator is thermalized by gauge interactions while the dark matter particle is kept out
+    of equilibrium.
+relic_density:
+  full_or_subcomponent: full_dark_matter
+  target_fraction: null
+  calculation_type: mixed
+  key_dependencies:
+  - m_chi
+  - m_tilde_t
+  - lambda
+  - mediator freeze-out abundance
+  - freeze-in scattering and decay rates
+  requires_entropy_dilution: 'no'
+  overclosure_risk: parameter_dependent
+  underproduction_risk: parameter_dependent
+  tuning_assessment: unknown
+cosmological_history:
+  standard_history_assumed: true
+  nonstandard_features:
+  - late decays of a frozen-out mediator can affect BBN depending on lifetime
+  dark_sector_temperature: null
+  delta_neff: null
+  kinetic_decoupling: null
+  chemical_decoupling:
+    name: mediator freeze-out
+    symbol: null
+    description: The thermalized mediator freezes out before decaying into dark matter in the superWIMP
+      component.
+    source_reference_ids: []
+  phase_transitions: []
+  topological_defects: []
+  isocurvature_perturbations: unknown
+  bbn_relevance: high
+  cmb_relevance: unknown
+phase_space:
+  distribution_type: decay_produced
+  distribution_function_available: approximate
+  free_streaming_length:
+    name: free-streaming length
+    symbol: null
+    description: Discussed as important when superWIMP production gives a nonthermal momentum distribution.
+    source_reference_ids: []
+  notes: Freeze-in and superWIMP components can produce nonthermal momentum distributions.
+structure_formation:
+  linear:
+    behaves_like_cdm: scale_dependent
+    transfer_function_shape: smooth_cutoff
+    small_scale_power_effect: suppression
+  nonlinear:
+    halo_mass_function_effect: unknown
+    subhalo_mass_function_effect: suppression may follow from large free-streaming lengths in warm regimes
+    simulation_calibrated: 'no'
+validity_domain:
+- id: nonthermal_dm_regime
+  applies_to: production
+  condition: Applies for lambda small enough that chi never reaches thermal equilibrium with the SM bath.
+  status: assumed
+  extrapolation_risk: high
+  caveats: []
+  source_reference_ids: []
+- id: thermalized_mediator
+  applies_to: production
+  condition: Main analysis assumes reheating temperature above mediator mass so gauge interactions thermalize
+    the colored mediator.
+  status: assumed
+  extrapolation_risk: medium
+  caveats: []
+  source_reference_ids: []
+- id: top_philic_colored_mediator
+  applies_to: model
+  condition: Explicit parameter-space results are for the Majorana fermion plus colored scalar top-philic
+    t-channel mediator example.
+  status: inferred
+  extrapolation_risk: medium
+  caveats: []
+  source_reference_ids: []
+assumptions:
+  global:
+  - id: negligible_reheating_production
+    description: Particle production during reheating is assumed negligible.
+    scope: cosmological_history
+    status: assumed
+    can_be_relaxed: unknown
+    source_reference_ids: []
+  - id: high_reheating_temperature
+    description: The main calculation assumes T_R exceeds the mediator mass so the mediator is present
+      in the thermal bath.
+    scope: production
+    status: assumed
+    can_be_relaxed: unknown
+    source_reference_ids: []
+  - id: exact_z2
+    description: The Z2 symmetry keeps the dark matter particle stable.
+    scope: theory
+    status: assumed
+    can_be_relaxed: unknown
+    source_reference_ids: []
+associated_code:
+  has_associated_code: unknown
+  code_summary: No model-specific public code is identified in the assigned paper text.
+  repositories: []
+  packages_or_modules: []
+  notebooks: []
+  scripts: []
+  caveats: []
+provenance:
+  model_id: 1809_10135_colored_mediator_freezein_superwimp_v1
+  model_name: Colored t-channel mediator freeze-in plus superWIMP dark matter
+  model_family: freeze_in_dark_matter
+  entry_version: 0.1.0
+  status: machine_extracted
+  created_at: '2026-05-31'
+  last_updated: '2026-05-31'
+  sources:
+    primary_papers:
+    - reference_id: '1809_10135'
+      title: SuperWIMP meets Freeze-in
+      authors:
+      - Mathias Garny
+      - Jan Heisig
+      year: 2018
+      arxiv_id: '1809.10135'
+      doi: null
+      url: null
+      role: original_model
+      notes: Assigned SQLite full text was the only source used.
+    - arxiv_id: '1809.10135'
+      authors:
+      - Garny, Mathias
+      - Heisig, Jan
+      doi: 10.1103/PhysRevD.98.095031
+      notes: Primary assigned paper read locally.
+      reference_id: arxiv:1809.10135
+      role: original_model
+      title: Interplay of super-WIMP and freeze-in production of dark matter
+      url: https://arxiv.org/abs/1809.10135
+      year: 2018
+    constraint_papers:
+    - arxiv_id: '1306.2314'
+      authors:
+      - Viel, Matteo
+      - Becker, George D.
+      - Bolton, James S.
+      - Haehnelt, Martin G.
+      doi: 10.1103/PhysRevD.88.043502
+      notes: Related Ly-alpha thermal-WDM full text resolved locally and read.
+      reference_id: arxiv:1306.2314
+      role: constraint
+      title: 'Warm dark matter as a solution to the small scale crisis: New constraints from high redshift
+        Lyman-α forest data'
+      url: https://arxiv.org/abs/1306.2314
+      year: 2013
+    - arxiv_id: '1801.03509'
+      authors:
+      - Bélanger, G.
+      - Boudjema, F.
+      - Goudelis, A.
+      - Pukhov, A.
+      - Zaldívar, B.
+      doi: 10.1016/j.cpc.2018.04.027
+      notes: Related micrOMEGAs freeze-in implementation text resolved locally and read.
+      reference_id: arxiv:1801.03509
+      role: implementation
+      title: 'micrOMEGAs5.0 : Freeze-in'
+      url: https://arxiv.org/abs/1801.03509
+      year: 2018
+    external_databases: []
+    review_papers:
+    - arxiv_id: '1706.07442'
+      authors:
+      - Bernal, Nicolás
+      - Heikinheimo, Matti
+      - Tenkanen, Tommi
+      - Tuominen, Kimmo
+      - Vaskonen, Ville
+      doi: 10.1142/S0217751X1730023X
+      notes: Related FIMP review full text resolved locally and read.
+      reference_id: arxiv:1706.07442
+      role: review
+      title: 'The dawn of FIMP Dark Matter: A review of models and constraints'
+      url: https://arxiv.org/abs/1706.07442
+      year: 2017
+  extraction:
+    method: llm_assisted
+    extracted_by: codex_batch_worker
+    extractor_name: gpt-5.5_dark_matter_model_batch_worker
+    extraction_date: '2026-05-31'
+    confidence: high
+    source_chunks_or_sections:
+    - reference_id: '1809_10135'
+      section: abstract/introduction
+      page: null
+      quote_or_summary: Z2 odd dark sector production proceeds through freeze-in and superWIMP mechanisms.
+    - reference_id: '1809_10135'
+      section: model section
+      page: null
+      quote_or_summary: Explicit example has Majorana dark matter, colored scalar t-channel mediator,
+        and coupling lambda.
+    unresolved_items:
+    - No collider detector simulation, BBN cascade calculation, or Ly-alpha likelihood was rerun.
+    - The thermal-WDM bound is only a benchmark for the nonthermal mixed spectrum.
+    - Associated model-specific code was not identified in the primary text.
+  evidence:
+    particle_content:
+    - reference_id: '1809_10135'
+      note: The explicit example contains a Majorana fermion dark matter particle and a top-philic colored
+        scalar t-channel mediator.
+      confidence: high
+      section: model section
+    symmetries:
+    - reference_id: '1809_10135'
+      note: The dark sector is Z2 odd, with dark matter and mediator odd and the symmetry forbidding mediator
+        decay purely to SM particles.
+      confidence: high
+      section: abstract/introduction
+    interactions:
+    - reference_id: '1809_10135'
+      note: The interaction Lagrangian couples the Majorana dark matter fermion to the top quark and colored
+        scalar mediator with coupling lambda.
+      confidence: high
+      section: model section
+    production_mechanism:
+    - reference_id: '1809_10135'
+      note: Dark matter production proceeds through both freeze-in and superWIMP mechanisms when the mediator
+        thermalizes but dark matter does not.
+      confidence: high
+      section: abstract/introduction
+    cosmological_history:
+    - reference_id: '1809_10135'
+      note: The paper assumes reheating gives a SM thermal bath with T_R above the mediator mass for the
+        main analysis, so the mediator thermalizes through gauge interactions.
+      confidence: medium
+      section: model section
+    parameter_ranges:
+    - reference_id: '1809_10135'
+      note: 'The model introduces three main parameters: dark matter mass, mediator mass, and the feeble
+        coupling lambda.'
+      confidence: high
+      section: model section
+    validity_domain:
+    - reference_id: '1809_10135'
+      note: The focused regime requires lambda small enough that dark matter never reaches thermal equilibrium
+        with the SM bath.
+      confidence: high
+      section: model section
+    constraints:
+    - confidence: high
+      note: Primary paper quotes 1250 GeV current R-hadron exclusion and 2000/4050 GeV HL/HE-LHC projections.
+      page: null
+      reference_id: arxiv:1809.10135
+      section: Collider constraints
+    - confidence: high
+      note: Primary paper describes BBN hadronic decay and Ly-alpha free-streaming constraints.
+      page: null
+      reference_id: arxiv:1809.10135
+      section: Cosmological constraints
+    observables:
+    - confidence: high
+      note: Primary text connects long mediator lifetimes to R-hadrons, disappearing tracks, displaced
+        tops, BBN, and Ly-alpha free-streaming.
+      page: null
+      reference_id: arxiv:1809.10135
+      section: Introduction/results
+    - confidence: high
+      note: Related Ly-alpha paper quotes m_WDM > 3.3 keV at 2 sigma for thermal relic WDM.
+      page: null
+      reference_id: arxiv:1306.2314
+      section: Abstract
+    - confidence: medium
+      note: Related FIMP review identifies macroscopic lifetimes and displaced signatures as generic feebly
+        coupled dark-sector signals.
+      page: null
+      reference_id: arxiv:1706.07442
+      section: Collider discussion
+    routes:
+    - confidence: high
+      note: Primary paper computes mixed freeze-in/superWIMP relic density and phenomenological constraints.
+      page: null
+      reference_id: arxiv:1809.10135
+      section: Methods
+    - confidence: medium
+      note: Related implementation paper describes solving freeze-in Boltzmann equations in micrOMEGAs5.
+      page: null
+      reference_id: arxiv:1801.03509
+      section: Implementation
+  review:
+    human_reviewed: false
+    reviewed_by: null
+    review_date: null
+    expert_reviewed: false
+    expert_reviewer: null
+    expert_review_date: null
+    reviewer_notes: []
+    scientific_confidence: high
+    implementation_confidence: medium
+robustness:
+  overall: medium
+  theory_robustness: medium
+  observational_robustness: medium
+  computational_robustness: unknown
+  constraint_robustness: medium
+  dominant_uncertainties:
+  - The relative freeze-in and superWIMP fractions are parameter-dependent.
+  - Warm/nonthermal phase-space effects require dedicated distribution calculations.
+  validation_status: expert_judgment_only
+agent_failure_modes:
+  warnings:
+  - id: mixed_production
+    severity: medium
+    category: assumption_mismatch
+    warning: Do not treat this model as pure freeze-in or pure superWIMP; the paper emphasizes their simultaneous
+      contribution.
+    source_reference_ids: []
+    mitigation: Track both production components when using the entry.
+  - id: constraint_fields_omitted
+    severity: low
+    category: other
+    warning: The source paper discusses LHC, BBN, and Lyman-alpha bounds, but this extraction intentionally
+      omits constraints per run instructions.
+    source_reference_ids: []
+observables:
+- caveats:
+  - Collider bounds are recast from stop/R-hadron searches and depend on hadronization and lifetime.
+  channel: collider
+  effect_direction: rate_change
+  environments:
+  - ATLAS/CMS-like hadron collisions
+  - HL-LHC
+  - HE-LHC
+  id: obs_freezein_llp_collider
+  key_quantities:
+  - name: colored mediator mass
+    range: current R-hadron bound near 1250 GeV; HL/HE-LHC projections near 2000/4050 GeV in the primary
+      recast
+    role: core
+    source_reference_ids:
+    - arxiv:1809.10135
+    status: inferred
+    symbol: m_tilde_t
+    unit: GeV
+  - description: Macroscopic decay length set by lambda and phase space.
+    name: mediator decay length
+    role: derived
+    source_reference_ids:
+    - arxiv:1809.10135
+    - arxiv:1706.07442
+    status: inferred
+    symbol: c tau
+  - description: Controls freeze-in yield and mediator lifetime.
+    name: feeble dark coupling
+    role: core
+    source_reference_ids:
+    - arxiv:1809.10135
+    status: inferred
+    symbol: lambda
+  linked_constraints:
+  - con_lhc_rhadron_llp
+  linked_routes:
+  - route_freezein_superwimp_recast
+  name: Long-lived colored mediator signatures at hadron colliders
+  notes: null
+  observability: high
+  predicted_effect: The feeble coupling required by freeze-in plus superWIMP production makes the colored
+    scalar mediator long-lived over broad parameter regions, producing detector-stable or displaced signatures.
+  redshift_range: not_applicable
+  relevance: critical
+  scale_range: LHC detector scales from displaced tracker decays to detector-stable R-hadrons
+  source_reference_ids:
+  - arxiv:1809.10135
+  - arxiv:1706.07442
+  subchannel: R-hadrons, disappearing tracks, displaced tops
+- caveats:
+  - Thermal-WDM Ly-alpha limits require a nonthermal transfer-function recast for this model.
+  channel: lyman_alpha
+  effect_direction: suppression
+  environments:
+  - linear matter power spectrum
+  - high-redshift Ly-alpha forest
+  id: obs_nonthermal_free_streaming
+  key_quantities:
+  - name: dark matter mass
+    range: few-keV freeze-in-dominated regimes are constrained by the primary discussion
+    role: core
+    source_reference_ids:
+    - arxiv:1809.10135
+    status: inferred
+    symbol: m_chi
+  - description: Computed from the production redshift and typical momentum.
+    name: free-streaming length
+    role: derived
+    source_reference_ids:
+    - arxiv:1809.10135
+    status: inferred
+    symbol: lambda_fs
+  - name: thermal WDM reference mass
+    range: related Ly-alpha analysis quotes m_WDM > 3.3 keV at 2 sigma for thermal relics
+    role: benchmark
+    source_reference_ids:
+    - arxiv:1306.2314
+    status: inferred
+    symbol: m_WDM
+    unit: keV
+  linked_constraints:
+  - con_bbn_lya_nonthermal
+  linked_routes:
+  - route_freezein_superwimp_recast
+  name: Nonthermal free-streaming suppression from superWIMP and freeze-in components
+  notes: null
+  observability: high
+  predicted_effect: Late mediator decays and low-mass freeze-in production can give dark matter a large
+    free-streaming length, suppressing small-scale matter power probed by Ly-alpha forest data.
+  redshift_range: production epoch through z about 2-5 Ly-alpha forest
+  relevance: critical
+  scale_range: k around 10 h/Mpc is a related thermal-WDM benchmark scale
+  source_reference_ids:
+  - arxiv:1809.10135
+  - arxiv:1306.2314
+  subchannel: matter-power cutoff from nonthermal momentum distribution
+constraints:
+- allowed_regions:
+  - Large mediator masses or lifetimes outside current detector acceptance remain viable, with HL/HE-LHC
+    projected reach around 2000/4050 GeV in the primary study.
+  applies: parameter_dependent
+  assumptions:
+  - can_be_relaxed: partial
+    description: The colored scalar mediator is recast using stop/R-hadron search efficiencies and generic
+      hadronization assumptions.
+    id: stop_like_hadronization
+    impact_if_violated: Different hadronization or decay modes can change acceptance.
+    scope: collider recast
+    source_reference_ids:
+    - arxiv:1809.10135
+    status: assumed
+  benchmark_implications:
+  - For m_chi below roughly 100 keV, tracker decays can become important in addition to detector-stable
+    searches.
+  caveats:
+  - No detector simulation was run in this batch.
+  constrained_parameters:
+  - m_tilde_t
+  - lambda
+  - c tau
+  - m_chi
+  constraint_type: collider
+  data_release: CMS detector-stable top-squark/R-hadron search recast cited by primary paper
+  excluded_regions:
+  - Primary recast quotes current detector-stable stop/R-hadron searches excluding mediator masses up
+    to about 1250 GeV at 95% CL in the stable regime.
+  - Finite lifetimes weaken the stable-particle limit when decays occur inside the detector.
+  id: con_lhc_rhadron_llp
+  likelihood_available: 'no'
+  likelihood_reference: null
+  name: R-hadron and displaced-top limits on the colored mediator
+  notes: null
+  observable_channel: long_lived_colored_particles
+  recasting_needed: 'yes'
+  robustness: medium
+  source_reference_ids:
+  - arxiv:1809.10135
+  - arxiv:1706.07442
+- allowed_regions:
+  - Parameter points with short enough mediator lifetime and cold enough nonthermal momentum distribution
+    evade these cosmological limits.
+  applies: parameter_dependent
+  assumptions:
+  - can_be_relaxed: 'yes'
+    description: Thermal-WDM Ly-alpha limits are used as a benchmark proxy for nonthermal momentum distributions.
+    id: thermal_wdm_proxy
+    impact_if_violated: A full nonthermal distribution could move the exclusion contour.
+    scope: structure recast
+    source_reference_ids:
+    - arxiv:1809.10135
+    - arxiv:1306.2314
+    status: assumed
+  benchmark_implications:
+  - Thermal WDM m_WDM > 3.3 keV is a reference limit, not a direct exclusion without a transfer-function
+    recast.
+  caveats:
+  - No BBN cascade or Ly-alpha likelihood was rerun.
+  constrained_parameters:
+  - mediator lifetime
+  - mass splitting
+  - lambda_fs
+  - m_chi
+  - superWIMP fraction
+  constraint_type: cosmological
+  data_release: high-redshift Ly-alpha forest thermal-WDM constraints; BBN hadronic decay bounds cited
+    by primary paper
+  excluded_regions:
+  - Late hadronic decays of the metastable colored mediator during BBN constrain small splittings and
+    long lifetimes.
+  - Large free-streaming lengths from superWIMP production or few-keV freeze-in regimes are constrained
+    by Ly-alpha forest observations.
+  id: con_bbn_lya_nonthermal
+  likelihood_available: 'no'
+  likelihood_reference: null
+  name: BBN and Ly-alpha limits on late mediator decay and nonthermal warm components
+  notes: null
+  observable_channel: BBN+lyman_alpha
+  recasting_needed: 'yes'
+  robustness: medium
+  source_reference_ids:
+  - arxiv:1809.10135
+  - arxiv:1306.2314
+theory_to_observable_routing:
+  routes:
+  - agent_notes: null
+    caveats:
+    - No public model-specific code release was identified.
+    constraint_ids:
+    - con_lhc_rhadron_llp
+    - con_bbn_lya_nonthermal
+    derived_quantities:
+    - Omega_chi h^2
+    - freeze-in fraction
+    - superWIMP fraction
+    - c tau
+    - lambda_fs
+    - transfer function
+    description: Compute the freeze-in and superWIMP relic components, mediator lifetime, nonthermal free-streaming,
+      and collider/BBN/Ly-alpha exclusions for the colored t-channel mediator model.
+    forward_model_chain:
+    - inputs:
+      - masses
+      - lambda
+      - thermal mediator abundance
+      notes: Related micrOMEGAs paper implements generic freeze-in Boltzmann equations.
+      outputs:
+      - freeze-in yield
+      step_id: s1
+      step_type: boltzmann_solver
+      tool_or_code: micrOMEGAs5-style freeze-in calculation
+      validity: Valid for T_R above mediator mass and no chi thermalization.
+    - inputs:
+      - mediator freeze-out abundance
+      - decay width
+      notes: Primary paper computes the mixed relic condition.
+      outputs:
+      - superWIMP yield
+      - lifetime
+      - momentum distribution
+      step_id: s2
+      step_type: analytic_formula
+      tool_or_code: null
+      validity: Approximate phase-space treatment; exact distribution may be needed.
+    - inputs:
+      - lifetime
+      - m_tilde_t
+      - lambda_fs
+      notes: Batch records source recasts only.
+      outputs:
+      - LHC, BBN, Ly-alpha exclusions
+      step_id: s3
+      step_type: recasting
+      tool_or_code: null
+      validity: Requires experiment-specific likelihoods for precision.
+    id: route_freezein_superwimp_recast
+    input_parameters:
+    - m_chi
+    - m_tilde_t
+    - lambda
+    - T_R
+    - mass splitting
+    likelihoods:
+    - collider likelihood unavailable
+    - BBN hadronic-decay likelihood unavailable
+    - Ly-alpha transfer-function likelihood unavailable
+    observable_ids:
+    - obs_freezein_llp_collider
+    - obs_nonthermal_free_streaming
+    required_code_resources:
+    - micrOMEGAs5 freeze-in module or equivalent Boltzmann solver
+    - LLP collider recast tools
+    - nonthermal transfer-function/Ly-alpha recast
+    route_status: planned
+    source_model_features:
+    - Majorana fermion dark matter
+    - thermalized colored top-philic mediator
+    - feeble Z2-preserving coupling
+    - freeze-in plus late superWIMP decay
+    validation_tests:
+    - recover Omega_chi h^2=0.12 contour
+    - recover 1250 GeV stable R-hadron limit
+    - recover 3.3 keV thermal-WDM reference bound

@@ -1,0 +1,842 @@
+_source:
+  shard: arXiv_src_2307_109_wds.tar
+  paper_id: '2307_15565'
+  source_member: 2307_15565.json
+  enriched: true
+  enrichment_schema_version: dm_model_ocr_enrichment_smoke_v0
+schema_version: model_only_v0
+model_id: 2307_15565_scalar_self_interacting_sterile_neutrino_dm_v1
+identity:
+  name: Scalar-mediated self-interacting sterile neutrino dark matter
+  family: sterile_neutrino_dark_matter
+  aliases:
+  - sterile neutrino self-interactions
+  - secretly self-interacting sterile neutrino DM
+  short_description: A sterile Majorana neutrino dark-matter model where active-sterile oscillation production
+    is modified by a real scalar singlet mediator coupled through a sterile-sector Yukawa interaction.
+  historical_origin_or_motivation: Extends the excluded canonical Dodelson-Widrow sterile-neutrino dark-matter
+    scenario by adding sterile self-interactions over mediator masses from keV to GeV.
+  status: speculative
+  model_kind: simplified_model
+theory:
+  theory_level: simplified_model
+  parent_frameworks:
+  - sterile neutrino dark matter
+  - Dodelson-Widrow production with dark-sector self-interactions
+  lagrangian_available: partial
+  renormalizable: 'yes'
+  eft_cutoff: null
+  embedded_in_larger_framework: unknown
+  notes: The paper specifies an interaction L_int = y phi nu_s nu_s for a sterile Majorana neutrino and
+    real scalar singlet, plus active-sterile mixing.
+particle_content:
+  dark_matter_candidate:
+    name: sterile Majorana neutrino nu_s
+    spin: 1/2
+    statistics: fermion
+    elementary_or_composite: elementary
+    number_of_components: single_component
+  additional_dark_sector_particles:
+  - real scalar singlet mediator phi
+  mediators:
+  - real scalar singlet phi
+  dark_radiation_species: []
+  excited_or_degenerate_states: []
+  long_lived_particles:
+  - sterile neutrino dark matter
+  unstable_parent_particles: []
+  standard_model_extension: minimal
+symmetries:
+  stabilizing_mechanism: The sterile neutrino is cosmologically long-lived because active-sterile mixing
+    is tiny; no exact stabilizing symmetry is specified.
+  symmetries:
+  - name: unknown
+    type: unknown
+    exact_or_approximate: unknown
+    breaking: No explicit stabilizing symmetry is given in the assigned text.
+    breaking_scale: null
+  topological_defects_possible: unknown
+interactions:
+  portals:
+  - neutrino
+  - other
+  standard_model_targets:
+  - electron neutrino via active-sterile mixing
+  dark_sector_couplings:
+  - Yukawa coupling y phi nu_s nu_s
+  - sterile-sterile scattering nu_s nu_s -> nu_s nu_s
+  - number-changing sterile-sector processes in some regimes
+  mediator_types:
+  - real scalar singlet
+  interaction_operators:
+  - y phi nu_s nu_s
+  - active-sterile neutrino mixing
+  scattering:
+    elastic: 'yes'
+    inelastic: unknown
+    momentum_dependence: unknown
+    velocity_dependence: unknown
+    spin_dependence: unknown
+  annihilation_channels: []
+  decay_channels:
+  - nu_s -> 3 active neutrinos
+  - nu_s -> active neutrino plus photon at one loop
+  self_scattering_channels:
+  - nu_s nu_s -> nu_s nu_s
+  tree_or_loop_level: both
+parameters:
+  core:
+  - name: sterile neutrino mass
+    symbol: m_s
+    description: Mass of the sterile-neutrino dark-matter candidate.
+    range: O(keV)
+    unit: keV
+    role: core
+    status: inferred
+  - name: active-sterile mixing angle
+    symbol: theta
+    description: Mixing with the electron neutrino used for oscillation-driven production.
+    role: core
+    status: assumed
+  - name: Yukawa coupling
+    symbol: y
+    description: Scalar-mediated sterile-sector self-interaction coupling.
+    role: core
+    status: assumed
+  - name: scalar mediator mass
+    symbol: m_phi
+    description: Mass of the real scalar singlet mediator.
+    range: few keV to few GeV
+    unit: GeV
+    role: core
+    status: assumed
+  - name: mediator-to-sterile mass ratio
+    symbol: m_phi/m_s
+    description: The paper often takes m_phi at least about ten times m_s, and shows an example with m_phi/m_s
+      = 10.
+    value: 10 in benchmark parameter-space plot
+    role: benchmark
+    status: assumed
+production:
+  mechanisms:
+  - nonthermal active-sterile oscillation production
+  - scalar-mediated sterile self-interaction enhanced production
+  - Dodelson-Widrow seed followed by sterile-sector interaction driven production in some regimes
+  thermal_equilibrium_with_standard_model: 'no'
+  thermal_equilibrium_with_hidden_sector: partial
+  abundance_set_by:
+  - sterile mass m_s
+  - active-sterile mixing angle theta
+  - Yukawa coupling y
+  - scalar mediator mass m_phi
+  - Boltzmann evolution of sterile distribution
+  depends_on_reheating_temperature: unknown
+  can_produce_all_dark_matter: 'yes'
+  nonthermal_momentum_distribution: 'yes'
+  notes: The paper solves the full Boltzmann equation for oscillation-driven sterile production and identifies
+    multiple production regimes.
+relic_density:
+  full_or_subcomponent: full_dark_matter
+  target_fraction:
+    name: dark matter density
+    symbol: Omega_DM h^2
+    description: Observed dark-matter abundance target used in the paper.
+    value: '0.12'
+    role: cosmological
+    status: established
+  calculation_type: nonthermal
+  key_dependencies:
+  - oscillation conversion from active to sterile neutrinos
+  - sterile-sector scalar self-scattering rate
+  - resonant mediator effects
+  - possible number-changing sterile processes
+  requires_entropy_dilution: 'no'
+  overclosure_risk: parameter_dependent
+  underproduction_risk: parameter_dependent
+  tuning_assessment: unknown
+cosmological_history:
+  standard_history_assumed: true
+  nonstandard_features:
+  - dark-sector self-interactions during sterile-neutrino production
+  dark_sector_temperature:
+    name: sterile-sector temperature
+    symbol: T_s
+    description: Effective temperature used after sterile self-scattering thermalizes the sterile distribution
+      in simplified regimes.
+    role: derived
+    status: inferred
+  delta_neff: null
+  kinetic_decoupling: null
+  chemical_decoupling: null
+  phase_transitions: []
+  topological_defects: []
+  isocurvature_perturbations: unknown
+  bbn_relevance: unknown
+  cmb_relevance: unknown
+phase_space:
+  distribution_type: nonthermal
+  distribution_function_available: 'yes'
+  f_of_p_or_q: The sterile phase-space distribution f_s(p) is evolved with Boltzmann equations; simplified
+    regimes use a thermalized sterile-sector ansatz.
+  average_momentum_relative_to_thermal: computed for structure-formation discussion but not extracted
+    as a single universal value
+  free_streaming_length: null
+  velocity_dispersion_today:
+    name: velocity dispersion today
+    symbol: sigma_today
+    description: The paper estimates present-day velocity dispersion from the sterile momentum distribution.
+    role: derived
+    status: inferred
+  phase_space_bounds:
+  - Lyman-alpha sensitivity is discussed through average velocity/free-streaming behavior, but numerical
+    bounds are not exported in this model-only pass.
+  notes: The momentum distribution is model- and regime-dependent because self-interactions reshape sterile
+    production.
+structure_formation:
+  linear:
+    behaves_like_cdm: scale_dependent
+    transfer_function_shape: smooth_cutoff
+    small_scale_power_effect: suppression
+    thermal_wdm_mapping:
+      available: false
+      validity: unknown
+      warning: The extraction does not provide a universal thermal-WDM mapping; the paper uses velocity/free-streaming
+        reasoning for Lyman-alpha relevance.
+    impact_on_sigma8_s8: unknown
+  nonlinear:
+    halo_mass_function_effect: unknown
+    subhalo_mass_function_effect: unknown
+    simulation_calibrated: 'no'
+validity_domain:
+- id: single_flavor_mixing
+  applies_to: model
+  condition: The paper assumes mixing only with the electron neutrino for simplicity.
+  status: assumed
+  extrapolation_risk: medium
+- id: relativistic_production
+  applies_to: production
+  condition: The analysis takes the scalar mediator mass larger than the sterile mass, often m_phi about
+    10 m_s, so sterile masses can be neglected during production.
+  status: assumed
+  extrapolation_risk: medium
+- id: mediator_mass_scan
+  applies_to: parameter
+  condition: The model study scans mediator masses from a few keV to a few GeV.
+  status: established
+  extrapolation_risk: low
+- id: boltzmann_solution_scope
+  applies_to: production
+  condition: Production regimes are derived from the full Boltzmann equation for oscillation-driven sterile
+    production with sterile self-interactions.
+  status: established
+  extrapolation_risk: medium
+assumptions:
+  global:
+  - id: electron_neutrino_mixing_only
+    description: Only active-sterile mixing with the electron neutrino is included; more complex flavor
+      mixing is stated to be straightforward and minor for the considered phenomenology.
+    scope: theory
+    status: assumed
+    can_be_relaxed: unknown
+  - id: scalar_singlet_mediator
+    description: Sterile neutrinos couple to a real Standard Model singlet scalar through a Yukawa interaction.
+    scope: theory
+    status: assumed
+    can_be_relaxed: unknown
+  - id: full_dm_abundance_target
+    description: When mapping parameter space, the Yukawa coupling is chosen so sterile neutrinos make
+      up the full dark-matter abundance.
+    scope: production
+    status: assumed
+    can_be_relaxed: unknown
+associated_code:
+  has_associated_code: unknown
+  code_summary: null
+  primary_code_role: null
+  repositories: []
+  packages_or_modules: []
+  notebooks: []
+  scripts: []
+  containers_or_environments: []
+  expected_inputs:
+  - m_s
+  - theta
+  - y
+  - m_phi
+  expected_outputs:
+  - sterile_neutrino_distribution
+  - relic_density
+  - velocity_dispersion_today
+  caveats:
+  - No public code or repository was identified in the assigned full text.
+provenance:
+  model_id: 2307_15565_scalar_self_interacting_sterile_neutrino_dm_v1
+  model_name: Scalar-mediated self-interacting sterile neutrino dark matter
+  model_family: sterile_neutrino_dark_matter
+  entry_version: 0.1.0
+  status: machine_extracted
+  created_at: '2026-05-31'
+  last_updated: '2026-05-31'
+  sources:
+    primary_papers:
+    - reference_id: '2307_15565'
+      title: unknown
+      year: 2023
+      arxiv_id: '2307.15565'
+      doi: null
+      url: null
+      role: original_model
+      notes: The SQLite full text begins with the introduction rather than a visible title block.
+    - reference_id: 2307_15565_primary
+      title: Boosting the production of sterile neutrino dark matter with self-interactions
+      authors:
+      - Maria Dias Astros
+      - Stefan Vogl
+      year: 2024
+      arxiv_id: '2307.15565'
+      doi: 10.1007/JHEP03(2024)032
+      url: https://arxiv.org/abs/2307.15565
+      role: original_model
+      notes: Primary full text resolved locally.
+    constraint_papers:
+    - reference_id: '2307_15565_2310_07145'
+      title: Probing self-interacting sterile neutrino dark matter with the diffuse supernova neutrino
+        background
+      authors:
+      - A. Baha Balantekin
+      - George M. Fuller
+      - Anupam Ray
+      - Anna M. Suliga
+      year: 2023
+      arxiv_id: '2310.07145'
+      doi: 10.1103/PhysRevD.108.123011
+      url: https://arxiv.org/abs/2310.07145
+      role: constraint
+      notes: Related full text resolved locally and read within the per-paper cap.
+    - reference_id: '2307_15565_1910_04901'
+      title: Dodelson-Widrow Mechanism in the Presence of Self-Interacting Neutrinos
+      authors:
+      - Andre de Gouvea
+      - Manibrata Sen
+      - Walter Tangarife
+      - Yue Zhang
+      year: 2020
+      arxiv_id: '1910.04901'
+      doi: 10.1103/PhysRevLett.124.081802
+      url: https://arxiv.org/abs/1910.04901
+      role: constraint
+      notes: Related full text resolved locally and read within the per-paper cap.
+    - reference_id: '2307_15565_2112_00758'
+      title: 'Sterile neutrino dark matter production in presence of nonstandard neutrino self-interactions:
+        An EFT approach'
+      authors:
+      - Cristina Benso
+      - Werner Rodejohann
+      - Manibrata Sen
+      - Aaroodd Ujjayini Ramachandran
+      year: 2022
+      arxiv_id: '2112.00758'
+      doi: 10.1103/PhysRevD.105.055016
+      url: https://arxiv.org/abs/2112.00758
+      role: constraint
+      notes: Related full text resolved locally and read within the per-paper cap.
+    review_papers: []
+    external_databases: []
+  extraction:
+    method: llm_assisted
+    extracted_by: codex_batch_0008
+    extractor_name: Codex dark-matter extraction worker
+    extraction_date: '2026-05-31'
+    confidence: high
+    source_chunks_or_sections:
+    - reference_id: '2307_15565'
+      section: Introduction
+      page: null
+      quote_or_summary: Frames sterile neutrinos as dark matter and explains why canonical Dodelson-Widrow
+        production is excluded.
+    - reference_id: '2307_15565'
+      section: Model setup
+      page: null
+      quote_or_summary: Assumes a heavy sterile Majorana neutrino mixed with nu_e and coupled to a real
+        scalar singlet by y phi nu_s nu_s.
+    - reference_id: '2307_15565'
+      section: Production regimes and parameter space
+      page: null
+      quote_or_summary: Solves Boltzmann production with scalar-mediated self-interactions and identifies
+        new viable parameter regions.
+    unresolved_items:
+    - The assigned text does not provide a paper title in the opening metadata, so the provenance title
+      is set to unknown.
+    - No dedicated Lyman-alpha likelihood for the exact sterile spectrum was resolved.
+    - The DSNB dip probe remains a related-paper prospective recast.
+  evidence:
+    particle_content:
+    - reference_id: '2307_15565'
+      note: The model contains a sterile Majorana neutrino dark-matter candidate and a real scalar singlet
+        mediator.
+      confidence: high
+      section: Model setup
+      page: null
+    interactions:
+    - reference_id: '2307_15565'
+      note: The sterile state mixes with the electron neutrino and has a Yukawa self-interaction mediated
+        by the scalar singlet.
+      confidence: high
+      section: Model setup
+      page: null
+    production_mechanism:
+    - reference_id: '2307_15565'
+      note: Production is oscillation-driven and altered by sterile self-interactions, yielding several
+        regimes beyond Dodelson-Widrow.
+      confidence: high
+      section: Introduction/production regimes
+      page: null
+    cosmological_history:
+    - reference_id: '2307_15565'
+      note: The Boltzmann treatment evolves the sterile distribution in the early universe and includes
+        sterile-sector scattering effects.
+      confidence: high
+      section: Sterile-neutrino production
+      page: null
+    parameter_ranges:
+    - reference_id: '2307_15565'
+      note: The mediator mass range spans a few keV to a few GeV, with keV-scale sterile masses and theta,
+        y as core parameters.
+      confidence: high
+      section: Introduction/model setup
+      page: null
+    validity_domain:
+    - reference_id: '2307_15565'
+      note: The paper simplifies to electron-neutrino mixing and commonly takes m_phi around 10 m_s to
+        keep steriles relativistic during production.
+      confidence: high
+      section: Model setup
+      page: null
+    observables:
+    - reference_id: 2307_15565_primary
+      note: Primary text identifies X-ray decay and warm/free-streaming structure observables.
+      confidence: high
+      section: primary paper text
+      page: null
+    constraints:
+    - reference_id: 2307_15565_primary
+      note: Primary text discusses X-ray non-observation and structure/Lyman-alpha limits; related local
+        text supports DSNB probing.
+      confidence: high
+      section: constraints/phenomenology discussion
+      page: null
+    routes:
+    - reference_id: 2307_15565_primary
+      note: Primary methods/results support Boltzmann production and observable mapping routes.
+      confidence: high
+      section: methods/results
+      page: null
+  review:
+    human_reviewed: false
+    reviewed_by: null
+    review_date: null
+    expert_reviewed: false
+    expert_reviewer: null
+    expert_review_date: null
+    reviewer_notes: []
+    scientific_confidence: high
+    implementation_confidence: medium
+robustness:
+  overall: medium
+  theory_robustness: medium
+  observational_robustness: medium
+  computational_robustness: medium
+  dominant_uncertainties:
+  - Single-flavor mixing simplification
+  - Momentum-distribution dependence on production regime
+  - No associated code identified
+  validation_status: partially_validated
+  notes: The paper explicitly solves the production problem, but this row does not export observational
+    constraints.
+agent_failure_modes:
+  warnings:
+  - id: single_flavor_extrapolation
+    severity: medium
+    category: extrapolation
+    warning: The extraction should not be extrapolated to arbitrary active-neutrino flavor structures
+      without redoing the production calculation.
+    mitigation: Retain the electron-neutrino-mixing assumption unless another source supports a flavor-general
+      treatment.
+    source_reference_ids:
+    - '2307_15565'
+observables:
+- id: xray_decay_line
+  name: Radiative sterile-neutrino X-ray line
+  channel: indirect_detection
+  subchannel: nu_s -> nu_a + gamma
+  predicted_effect: Active-sterile mixing gives a one-loop radiative decay with a monoenergetic X-ray
+    photon near m_s/2; the predicted line flux scales with mixing angle and dark-matter column density.
+  effect_direction: spectral_line
+  key_quantities:
+  - name: sterile neutrino mass
+    symbol: m_s
+    description: Sets line energy.
+    unit: keV
+    role: core
+    status: assumed
+  - name: active-sterile mixing angle
+    symbol: theta
+    description: Controls radiative decay rate.
+    role: core
+    status: assumed
+  redshift_range: null
+  scale_range: null
+  environments:
+  - galaxy clusters
+  - Milky Way halo
+  - dwarf galaxies
+  observability: high
+  relevance: critical
+  linked_constraints:
+  - xray_line_nonobservation
+  linked_routes:
+  - sterile_decay_xray_route
+  caveats:
+  - Self-interactions alter production but not the radiative channel for nonzero mixing.
+  source_reference_ids:
+  - 2307_15565_primary
+  notes: null
+- id: warm_free_streaming_suppression
+  name: Warm/free-streaming structure suppression
+  channel: lyman_alpha
+  subchannel: thermal-WDM-equivalent velocity mapping
+  predicted_effect: Relativistically produced sterile neutrinos suppress small-scale structure; the primary
+    maps the Maxwell-Boltzmann sterile spectrum to a conservative thermal-WDM/Lyman-alpha proxy through
+    v_rms.
+  effect_direction: suppression
+  key_quantities:
+  - name: root-mean-square velocity today
+    symbol: v_rms
+    description: Velocity proxy used for thermal-WDM mapping.
+    unit: m/s
+    role: derived
+    status: approximate
+  - name: equivalent thermal WDM mass
+    symbol: m_WDM
+    description: Thermal proxy mass.
+    unit: keV
+    role: derived
+    status: established
+  redshift_range: null
+  scale_range: sub-Mpc to Mpc comoving scales
+  environments:
+  - intergalactic medium
+  - linear matter power
+  - small halos
+  observability: medium
+  relevance: critical
+  linked_constraints:
+  - lyman_alpha_wdm_bound
+  linked_routes:
+  - sterile_structure_route
+  caveats:
+  - Full Lyman-alpha simulations for the exact nonthermal distribution were not available.
+  source_reference_ids:
+  - 2307_15565_primary
+  notes: null
+- id: dsnb_resonant_dips
+  name: Prospective DSNB spectral dips
+  channel: indirect_detection
+  subchannel: diffuse supernova neutrino background
+  predicted_effect: Related local text shows that self-interacting sterile-neutrino relics can produce
+    energy-dependent dips in the diffuse supernova neutrino background, offering an independent future
+    probe.
+  effect_direction: shape_change
+  key_quantities:
+  - name: self-interaction strength
+    symbol: y
+    description: Sets sterile-sector scattering rate.
+    role: core
+    status: assumed
+  - name: mediator mass
+    symbol: m_phi
+    description: Scalar mediator mass.
+    role: core
+    status: assumed
+  redshift_range: null
+  scale_range: null
+  environments:
+  - diffuse supernova neutrino background
+  - future large neutrino detectors
+  observability: low
+  relevance: medium
+  linked_constraints:
+  - future_dsnb_dip_probe
+  linked_routes:
+  - dsnb_dip_recast_route
+  caveats:
+  - Prospective related-paper probe, not a primary-paper exclusion.
+  source_reference_ids:
+  - 2307_15565_primary
+  - '2307_15565_2310_07145'
+  notes: null
+constraints:
+- id: xray_line_nonobservation
+  name: X-ray line non-observation
+  constraint_type: indirect_detection
+  observable_channel: X-ray line searches
+  applies: parameter_dependent
+  constrained_parameters:
+  - m_s
+  - theta
+  excluded_regions:
+  - Large mixing angles for keV sterile-neutrino dark matter are excluded by absent X-ray lines; the primary
+    states canonical DW all-DM production is excluded when combined with structure bounds.
+  allowed_regions:
+  - Smaller mixing angles, altered production histories, or subdominant sterile abundance can survive.
+  benchmark_implications:
+  - Self-interaction-enhanced production must still satisfy line limits.
+  likelihood_available: unknown
+  likelihood_reference: null
+  data_release: null
+  recasting_needed: 'yes'
+  robustness: high
+  assumptions:
+  - id: xray_line_nonobservation_assumption
+    description: Standard cosmological history and the model-specific abundance fraction are used unless
+      otherwise stated.
+    scope: constraint interpretation
+    status: assumed
+    impact_if_violated: The numerical exclusion or projection would move if this assumption changes.
+    can_be_relaxed: partial
+    source_reference_ids:
+    - 2307_15565_primary
+    notes: null
+  caveats:
+  - No machine-readable likelihood was resolved in the bounded local read.
+  source_reference_ids:
+  - 2307_15565_primary
+  notes: null
+- id: lyman_alpha_wdm_bound
+  name: Conservative Lyman-alpha/WDM velocity bound
+  constraint_type: astrophysical
+  observable_channel: Lyman-alpha forest
+  applies: parameter_dependent
+  constrained_parameters:
+  - m_s
+  - v_rms
+  - m_WDM
+  excluded_regions:
+  - Spectra equivalent to thermal WDM below the conservative m_WDM > 1.9 keV proxy are rejected in the
+    primary analysis.
+  allowed_regions:
+  - Colder spectra below the corresponding v_rms threshold survive the approximate screen.
+  benchmark_implications:
+  - Viable self-interaction benchmarks need a cold enough final momentum distribution.
+  likelihood_available: unknown
+  likelihood_reference: null
+  data_release: null
+  recasting_needed: 'yes'
+  robustness: medium
+  assumptions:
+  - id: lyman_alpha_wdm_bound_assumption
+    description: Standard cosmological history and the model-specific abundance fraction are used unless
+      otherwise stated.
+    scope: constraint interpretation
+    status: assumed
+    impact_if_violated: The numerical exclusion or projection would move if this assumption changes.
+    can_be_relaxed: partial
+    source_reference_ids:
+    - 2307_15565_primary
+    notes: null
+  caveats:
+  - No machine-readable likelihood was resolved in the bounded local read.
+  source_reference_ids:
+  - 2307_15565_primary
+  notes: null
+- id: future_dsnb_dip_probe
+  name: Future DSNB dip probe
+  constraint_type: astrophysical
+  observable_channel: DSNB spectral distortions
+  applies: parameter_dependent
+  constrained_parameters:
+  - y
+  - m_phi
+  - m_s
+  - theta
+  excluded_regions:
+  - Future non-observation of predicted DSNB dips would constrain matched self-interaction rates.
+  allowed_regions:
+  - No current exclusion was extracted for the scalar model.
+  benchmark_implications:
+  - Potential cross-check for regions evading X-ray and structure bounds.
+  likelihood_available: unknown
+  likelihood_reference: null
+  data_release: null
+  recasting_needed: 'yes'
+  robustness: low
+  assumptions:
+  - id: future_dsnb_dip_probe_assumption
+    description: Standard cosmological history and the model-specific abundance fraction are used unless
+      otherwise stated.
+    scope: constraint interpretation
+    status: assumed
+    impact_if_violated: The numerical exclusion or projection would move if this assumption changes.
+    can_be_relaxed: partial
+    source_reference_ids:
+    - 2307_15565_primary
+    - '2307_15565_2310_07145'
+    notes: null
+  caveats:
+  - No machine-readable likelihood was resolved in the bounded local read.
+  source_reference_ids:
+  - 2307_15565_primary
+  - '2307_15565_2310_07145'
+  notes: null
+theory_to_observable_routing:
+  routes:
+  - id: sterile_decay_xray_route
+    description: Map sterile-neutrino mass and mixing to an X-ray line flux and compare with line-search
+      limits.
+    source_model_features:
+    - keV sterile neutrino
+    - active-sterile mixing
+    input_parameters:
+    - m_s
+    - theta
+    - dark-matter fraction
+    derived_quantities:
+    - E_gamma
+    - radiative decay rate
+    - line flux
+    forward_model_chain:
+    - step_id: decay_rate
+      step_type: analytic_formula
+      tool_or_code: null
+      inputs:
+      - m_s
+      - theta
+      outputs:
+      - Gamma(nu_s -> nu gamma)
+      validity: model dependent
+      notes: Use standard sterile-neutrino radiative-decay scaling.
+    - step_id: line_compare
+      step_type: recasting
+      tool_or_code: null
+      inputs:
+      - line flux
+      outputs:
+      - excluded mixing region
+      validity: model dependent
+      notes: Compare with external X-ray line-search curves.
+    observable_ids:
+    - xray_decay_line
+    constraint_ids:
+    - xray_line_nonobservation
+    likelihoods:
+    - external likelihood required for numerical exclusion
+    required_code_resources:
+    - published X-ray line-search curves
+    validation_tests:
+    - Reproduce a published sterile-neutrino X-ray limit before new recasts.
+    route_status: planned
+    agent_notes: Primary supports the channel; external data are needed.
+    caveats:
+    - Halo modeling affects flux limits.
+  - id: sterile_structure_route
+    description: Propagate the Boltzmann sterile distribution to a free-streaming proxy and Lyman-alpha
+      screen.
+    source_model_features:
+    - scalar-mediated sterile self-interactions
+    - nonthermal oscillation production
+    input_parameters:
+    - m_s
+    - theta
+    - y
+    - m_phi
+    derived_quantities:
+    - f_s(p)
+    - v_rms
+    - m_WDM equivalent
+    forward_model_chain:
+    - step_id: boltzmann_distribution
+      step_type: boltzmann_solver
+      tool_or_code: null
+      inputs:
+      - m_s
+      - theta
+      - y
+      - m_phi
+      outputs:
+      - f_s(p)
+      - Omega_s h^2
+      validity: model dependent
+      notes: Primary-paper Boltzmann setup.
+    - step_id: velocity_proxy
+      step_type: analytic_formula
+      tool_or_code: null
+      inputs:
+      - f_s(p)
+      outputs:
+      - v_rms
+      - m_WDM equivalent
+      validity: model dependent
+      notes: Thermal-WDM proxy used by the primary.
+    observable_ids:
+    - warm_free_streaming_suppression
+    constraint_ids:
+    - lyman_alpha_wdm_bound
+    likelihoods:
+    - external likelihood required for numerical exclusion
+    required_code_resources:
+    - thermal-WDM/Lyman-alpha proxy
+    validation_tests:
+    - Recover primary v_rms mapping for benchmark points.
+    route_status: partially_implemented
+    agent_notes: A full Lyman-alpha likelihood was not resolved.
+    caveats:
+    - Nonthermal shape information can matter.
+  - id: dsnb_dip_recast_route
+    description: Match scalar-mediated sterile self-interactions to related DSNB dip calculations.
+    source_model_features:
+    - relic sterile background
+    - scalar self-interaction
+    input_parameters:
+    - m_s
+    - m_phi
+    - y
+    - theta
+    derived_quantities:
+    - scattering optical depth
+    - DSNB spectral distortion
+    forward_model_chain:
+    - step_id: rate_match
+      step_type: analytic_formula
+      tool_or_code: null
+      inputs:
+      - m_s
+      - m_phi
+      - y
+      outputs:
+      - sterile scattering rate
+      validity: model dependent
+      notes: Match model conventions.
+    - step_id: dsnb_spectrum
+      step_type: semi_analytic_model
+      tool_or_code: null
+      inputs:
+      - rate
+      - DSNB flux model
+      outputs:
+      - spectral dips
+      validity: model dependent
+      notes: Requires future-detector sensitivity model.
+    observable_ids:
+    - dsnb_resonant_dips
+    constraint_ids:
+    - future_dsnb_dip_probe
+    likelihoods:
+    - external likelihood required for numerical exclusion
+    required_code_resources:
+    - DSNB flux and detector forecasts
+    validation_tests:
+    - Recover related-paper benchmark before scalar recast.
+    route_status: planned
+    agent_notes: Prospective route only.
+    caveats:
+    - DSNB flux uncertainty is important.

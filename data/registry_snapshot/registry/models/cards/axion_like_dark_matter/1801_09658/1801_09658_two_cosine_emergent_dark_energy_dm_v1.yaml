@@ -1,0 +1,713 @@
+_source:
+  shard: arXiv_src_1801_024_wds.tar
+  paper_id: '1801_09658'
+  source_member: 1801_09658.json
+  enriched: true
+  enrichment_schema_version: dm_model_ocr_enrichment_smoke_v0
+schema_version: model_only_v0
+model_id: 1801_09658_two_cosine_emergent_dark_energy_dm_v1
+identity:
+  name: Two-cosine emergent dark-energy dark matter
+  family: axion_like_dark_matter
+  aliases:
+  - emergent dark energy from dark matter
+  short_description: A minimally coupled scalar field with a structured two-cosine potential that evolves
+    from light axion-like dark matter into heavier dark matter plus an effective dark-energy component
+    after trapping in local minima.
+  historical_origin_or_motivation: Motivated by complex scalar potentials with multiple troughs and peaks,
+    analogous to axion-like fields in rich potential landscapes.
+  status: speculative
+  model_kind: phenomenological_parameterization
+theory:
+  theory_level: phenomenological_parameterization
+  parent_frameworks:
+  - axion-like scalar-field dark matter
+  - structured scalar potential
+  lagrangian_available: 'yes'
+  renormalizable: 'no'
+  embedded_in_larger_framework: unknown
+  notes: The paper gives a scalar-field action and studies a two-cosine potential as the simplest structured
+    example.
+particle_content:
+  dark_matter_candidate:
+    name: real scalar field phi
+    spin: '0'
+    statistics: boson
+    elementary_or_composite: elementary
+    number_of_components: single_component
+  additional_dark_sector_particles: []
+  mediators: []
+  dark_radiation_species: []
+  excited_or_degenerate_states:
+  - local-minimum excitations with heavier effective mass
+  long_lived_particles: []
+  unstable_parent_particles: []
+  standard_model_extension: minimal
+symmetries:
+  stabilizing_mechanism: Cosmological scalar oscillations in potential minima behave as cold dark matter;
+    the potential structure traps the field at late times.
+  symmetries:
+  - name: approximate periodic shift structure
+    type: shift
+    exact_or_approximate: broken
+    breaking: Two cosine terms define global and substructure scales.
+  topological_defects_possible: unknown
+interactions:
+  portals:
+  - gravitational
+  standard_model_targets: []
+  dark_sector_couplings:
+  - self-interactions from two-cosine scalar potential
+  mediator_types: []
+  interaction_operators:
+  - V(phi)=V0 + m^2 f^2[1-cos(phi/f)] + ... two-cosine substructure
+  self_scattering_channels: []
+  tree_or_loop_level: not_applicable
+parameters:
+  core:
+  - name: scalar mass scale
+    symbol: m
+    description: Mass scale in the global cosine potential.
+    role: core
+    status: inferred
+  - name: decay constant
+    symbol: f
+    description: Field range scale in the cosine potential.
+    role: core
+    status: inferred
+  - name: substructure amplitude
+    symbol: c
+    description: Relative amplitude of the short-period cosine.
+    role: core
+    status: inferred
+  - name: frequency ratio
+    symbol: n
+    description: Ratio controlling the short-period cosine.
+    role: core
+    status: assumed
+  - name: phase
+    symbol: delta
+    description: Relative phase in the two-cosine potential.
+    role: core
+    status: assumed
+production:
+  mechanisms:
+  - misalignment-like scalar oscillations followed by late trapping in local minima
+  thermal_equilibrium_with_standard_model: 'no'
+  thermal_equilibrium_with_hidden_sector: not_applicable
+  abundance_set_by:
+  - initial scalar displacement
+  - potential parameters
+  - time of trapping
+  depends_on_reheating_temperature: unknown
+  can_produce_all_dark_matter: parameter_dependent
+  nonthermal_momentum_distribution: 'yes'
+  notes: The paper treats coherent scalar-field evolution rather than particle freeze-out.
+relic_density:
+  full_or_subcomponent: either
+  calculation_type: nonthermal
+  key_dependencies:
+  - initial field displacement
+  - m
+  - f
+  - c
+  - n
+  - trapping redshift
+  requires_entropy_dilution: unknown
+  overclosure_risk: parameter_dependent
+  underproduction_risk: parameter_dependent
+  tuning_assessment: unknown
+cosmological_history:
+  standard_history_assumed: false
+  nonstandard_features:
+  - late trapping converts part of the scalar dark matter energy into an effective dark-energy component
+  - dark-sector densities can differ between recombination and today
+  dark_sector_temperature: null
+  delta_neff: null
+  kinetic_decoupling: null
+  chemical_decoupling: null
+  phase_transitions:
+  - field trapping in local minima
+  topological_defects:
+  - possible domain walls from inhomogeneous trapping
+  isocurvature_perturbations: parameter_dependent
+  bbn_relevance: unknown
+  cmb_relevance: medium
+phase_space:
+  distribution_type: field_like
+  distribution_function_available: not_applicable
+  notes: The dark matter is a coherent scalar field; the paper analyzes background and perturbation evolution.
+structure_formation:
+  linear:
+    behaves_like_cdm: scale_dependent
+    transfer_function_shape: scale_dependent_growth
+    small_scale_power_effect: suppression
+  nonlinear:
+    halo_mass_function_effect: unknown
+    subhalo_mass_function_effect: unknown
+    simulation_calibrated: 'no'
+validity_domain:
+- id: v1
+  applies_to: model
+  condition: The mechanism is studied for cn << 1 << cn^2, so the global cosine controls broad evolution
+    while the short-period term creates local substructure.
+  status: assumed
+  extrapolation_risk: high
+  caveats: []
+  source_reference_ids: []
+  notes: null
+- id: v2
+  applies_to: cosmological_history
+  condition: Phenomenology depends on the field trapping between recombination and today.
+  status: inferred
+  extrapolation_risk: medium
+  caveats: []
+  source_reference_ids: []
+  notes: null
+assumptions:
+  global:
+  - id: a1
+    description: The scalar field is minimally coupled and evolves in an FRW cosmology with the specified
+      structured potential.
+    scope: theory
+    status: assumed
+    can_be_relaxed: unknown
+    source_reference_ids: []
+  - id: a2
+    description: Late-time trapping can occur without unacceptable domain-wall domination.
+    scope: cosmological_history
+    status: speculative
+    can_be_relaxed: unknown
+    source_reference_ids: []
+associated_code:
+  has_associated_code: unknown
+  code_summary: null
+provenance:
+  model_id: 1801_09658_two_cosine_emergent_dark_energy_dm_v1
+  model_name: Two-cosine emergent dark-energy dark matter
+  model_family: axion_like_dark_matter
+  entry_version: 0.1.0
+  status: machine_extracted
+  created_at: '2026-05-31'
+  last_updated: '2026-05-31'
+  sources:
+    primary_papers:
+    - reference_id: arXiv:1801.09658
+      title: Emergent Dark Energy from Dark Matter
+      authors: []
+      year: 2018
+      arxiv_id: '1801.09658'
+      doi: null
+      url: null
+      role: original_model
+      notes: null
+    - arxiv_id: '1801.09658'
+      authors:
+      - Kobayashi, Takeshi
+      - Ferreira, Pedro G.
+      doi: 10.1103/PhysRevD.97.121301
+      notes: Primary assigned paper read from local SQLite full text.
+      reference_id: arxiv:1801.09658
+      role: original_model
+      title: Emergent dark energy from dark matter
+      url: https://arxiv.org/abs/1801.09658
+      year: 2018
+    constraint_papers:
+    - arxiv_id: '1703.04683'
+      authors:
+      - Iršič, Vid
+      - Viel, Matteo
+      - Haehnelt, Martin G.
+      - Bolton, James S.
+      - Becker, George D.
+      doi: 10.1103/PhysRevLett.119.031302
+      notes: Related full text resolved locally and read for bounded enrichment.
+      reference_id: arxiv:1703.04683
+      role: constraint
+      title: First Constraints on Fuzzy Dark Matter from Lyman-α Forest Data and Hydrodynamical Simulations
+      url: https://arxiv.org/abs/1703.04683
+      year: 2017
+    - arxiv_id: '1708.00015'
+      authors:
+      - Kobayashi, Takeshi
+      - Murgia, Riccardo
+      - De Simone, Andrea
+      - Iršič, Vid
+      - Viel, Matteo
+      doi: 10.1103/PhysRevD.96.123514
+      notes: Related arXiv abstract page fetched through bounded fallback and used only for claims supported
+        by that source text.
+      reference_id: arxiv:1708.00015
+      role: constraint
+      title: 'Lyman-α constraints on ultralight scalar dark matter: Implications for the early and late
+        universe'
+      url: https://arxiv.org/abs/1708.00015
+      year: 2017
+    - arxiv_id: '1304.0922'
+      authors:
+      - Kobayashi, Takeshi
+      - Kurematsu, Ryosuke
+      - Takahashi, Fuminobu
+      doi: 10.1088/1475-7516/2013/09/032
+      notes: Related arXiv abstract page fetched through bounded fallback and used only for claims supported
+        by that source text.
+      reference_id: arxiv:1304.0922
+      role: constraint
+      title: Isocurvature constraints and anharmonic effects on QCD axion dark matter
+      url: https://arxiv.org/abs/1304.0922
+      year: 2013
+    external_databases: []
+    review_papers: []
+  extraction:
+    method: llm_assisted
+    extracted_by: codex_batch_0010
+    extractor_name: GPT-5.5 dark-matter model-card worker
+    extraction_date: '2026-05-31'
+    confidence: medium
+    source_chunks_or_sections:
+    - reference_id: arXiv:1801.09658
+      section: Two-cosine model
+      page: null
+      quote_or_summary: The paper gives the scalar action and a two-cosine potential with global and substructure
+        scales.
+    - reference_id: arXiv:1801.09658
+      section: Conclusions
+      page: null
+      quote_or_summary: The scalar dark matter can become heavier and leave a dark-energy component after
+        late trapping.
+    unresolved_items:
+    - The Lyman-alpha and CMB isocurvature constraints need dedicated recasts for a time-dependent mass.
+    - Patch-dependent trapping/domain-wall formation is only flagged, not modeled.
+    - One additional arXiv fallback candidate was fetched and logged but not used after the three-source
+      cap was met.
+  evidence:
+    particle_content:
+    - reference_id: arXiv:1801.09658
+      note: The model is a minimally coupled real scalar field with a two-cosine potential.
+      confidence: medium
+      section: Two-cosine model
+    interactions:
+    - reference_id: arXiv:1801.09658
+      note: Interactions are encoded in a structured potential with global and substructure cosine terms.
+      confidence: medium
+      section: Two-cosine model
+    production_mechanism:
+    - reference_id: arXiv:1801.09658
+      note: The field first oscillates like light dark matter and later becomes trapped, changing the
+        dark matter and dark energy densities.
+      confidence: medium
+      section: Introduction and conclusions
+    cosmological_history:
+    - reference_id: arXiv:1801.09658
+      note: The paper emphasizes possible trapping between recombination and today and changed isocurvature/abundance
+        estimates.
+      confidence: medium
+      section: Conclusions
+    validity_domain:
+    - reference_id: arXiv:1801.09658
+      note: The two-cosine analysis focuses on cn << 1 << cn^2.
+      confidence: medium
+      section: Two-cosine model
+    constraints:
+    - confidence: high
+      note: Primary text gives trapping-window conditions and states standard Lyman-alpha scalar-DM bounds
+        do not directly apply to a time-dependent mass.
+      page: null
+      reference_id: arxiv:1801.09658
+      section: Parameter-space discussion
+    - confidence: medium
+      note: Related local text gives Lyman-alpha fuzzy-DM context for small-scale power constraints.
+      page: null
+      reference_id: arxiv:1703.04683
+      section: Introduction/conclusions
+    observables:
+    - confidence: high
+      note: Primary text describes evolution from light dark matter to heavier dark matter plus emergent
+        dark energy and discusses recombination-to-low-redshift density shifts.
+      page: null
+      reference_id: arxiv:1801.09658
+      section: Abstract/conclusions
+    - confidence: medium
+      note: Fallback arXiv abstract reports m >~ 1e-21 eV for scalar DM making up more than 30 percent
+        of total DM.
+      page: null
+      reference_id: arxiv:1708.00015
+      section: Abstract
+    - confidence: medium
+      note: Fallback arXiv abstract discusses axion isocurvature constraints and hilltop enhancement.
+      page: null
+      reference_id: arxiv:1304.0922
+      section: Abstract
+    routes:
+    - confidence: high
+      note: Primary paper lays out background and perturbation implications of late trapping.
+      page: null
+      reference_id: arxiv:1801.09658
+      section: Phenomenology/conclusions
+  review:
+    human_reviewed: false
+    reviewed_by: null
+    review_date: null
+    expert_reviewed: false
+    expert_reviewer: null
+    expert_review_date: null
+    reviewer_notes: []
+    scientific_confidence: medium
+    implementation_confidence: medium
+robustness:
+  overall: medium
+  theory_robustness: medium
+  observational_robustness: unknown
+  computational_robustness: unknown
+  dominant_uncertainties: []
+  validation_status: expert_judgment_only
+  notes: null
+agent_failure_modes:
+  warnings:
+  - id: w1
+    severity: high
+    category: assumption_mismatch
+    warning: This is not standard single-cosine axion dark matter; abundance and isocurvature estimates
+      differ after trapping.
+    mitigation: null
+    source_reference_ids: []
+observables:
+- caveats:
+  - The source proposes phenomenology; no MCMC fit to H0 or S8 data is included.
+  channel: cosmology
+  effect_direction: shape_change
+  environments:
+  - cosmic background expansion
+  - linear perturbations
+  id: obs_late_trapping_dark_sector_shift
+  key_quantities:
+  - description: Redshift at which the field is trapped in a local minimum.
+    name: trapping redshift
+    range: example around z_tr ~ 5 for f=1e16 GeV parameter window
+    role: cosmological
+    source_reference_ids:
+    - arxiv:1801.09658
+    status: inferred
+    symbol: z_tr
+  - description: Light pre-trapping mass scale.
+    name: initial scalar mass
+    range: example around 1e-21 eV in source discussion
+    role: core
+    source_reference_ids:
+    - arxiv:1801.09658
+    status: inferred
+    symbol: m
+    unit: eV
+  - description: Heavier effective dark matter mass after trapping.
+    name: post-trapping mass
+    range: example around 1e-20 eV in source discussion
+    role: core
+    source_reference_ids:
+    - arxiv:1801.09658
+    status: inferred
+    symbol: m0
+    unit: eV
+  linked_constraints:
+  - con_background_trapping_window
+  linked_routes:
+  - route_trapping_scalar_to_background_lss_cmb
+  name: Late trapping shifts dark matter and dark energy densities
+  notes: null
+  observability: medium
+  predicted_effect: A scalar initially behaving as light axion-like dark matter becomes trapped in a structured
+    potential, producing heavier axion-like dark matter plus an effective dark-energy component and decoupling
+    recombination-era and low-redshift dark-sector densities.
+  redshift_range: recombination to today for late-trapping examples
+  relevance: critical
+  scale_range: homogeneous background plus linear perturbations
+  source_reference_ids:
+  - arxiv:1801.09658
+  subchannel: background expansion and dark-sector density evolution
+- caveats:
+  - Direct thermal/fuzzy-DM limits assume time-independent mass and cannot be applied without a transfer-function
+    recast.
+  channel: lyman_alpha
+  effect_direction: suppression
+  environments:
+  - intergalactic medium
+  - linear matter power spectrum
+  id: obs_time_dependent_fuzzy_suppression
+  key_quantities:
+  - description: Mass controlling the early fuzzy-DM Jeans scale.
+    name: pre-trapping scalar mass
+    role: core
+    source_reference_ids:
+    - arxiv:1801.09658
+    status: inferred
+    symbol: m
+    unit: eV
+  - description: Fraction of total DM in ultralight scalar component.
+    name: scalar-DM fraction
+    range: fallback related source quotes m >~ 1e-21 eV when scalar DM is more than 30 percent of total
+      DM
+    role: cosmological
+    source_reference_ids:
+    - arxiv:1708.00015
+    status: inferred
+    symbol: f_sdm
+  linked_constraints:
+  - con_lya_ultralight_scalar_recast
+  linked_routes:
+  - route_trapping_scalar_to_background_lss_cmb
+  name: Time-dependent ultralight-scalar structure suppression
+  notes: null
+  observability: high
+  predicted_effect: Before trapping, the scalar can be lighter than today and suppress small-scale structure
+    more strongly; standard Lyman-alpha fuzzy-DM bounds are relevant but require recasting because the
+    mass is not time independent after equality.
+  redshift_range: pre-trapping era and high-redshift Lyman-alpha forest
+  relevance: high
+  scale_range: small scales probed by Lyman-alpha forest
+  source_reference_ids:
+  - arxiv:1801.09658
+  - arxiv:1703.04683
+  - arxiv:1708.00015
+  subchannel: fuzzy/scalar-DM matter-power cutoff
+- caveats:
+  - Requires a model-specific mapping between pre- and post-trapping perturbations.
+  channel: cmb
+  effect_direction: shape_change
+  environments:
+  - CMB anisotropies
+  id: obs_trapping_isocurvature_mapping
+  key_quantities:
+  - description: Controls axion-field quantum fluctuations and isocurvature.
+    name: inflationary Hubble rate
+    role: cosmological
+    source_reference_ids:
+    - arxiv:1801.09658
+    - arxiv:1304.0922
+    status: inferred
+    symbol: H_inf
+  - description: Pre-trapping field range scale entering isocurvature.
+    name: decay constant
+    role: core
+    source_reference_ids:
+    - arxiv:1801.09658
+    status: inferred
+    symbol: f
+  linked_constraints:
+  - con_axion_isocurvature_mapping
+  linked_routes:
+  - route_trapping_scalar_to_background_lss_cmb
+  name: Modified CMB isocurvature mapping after late trapping
+  notes: null
+  observability: medium
+  predicted_effect: If trapping happens after recombination, the CMB measures the pre-trapping dark-matter
+    isocurvature, so the usual axion isocurvature relation to the present-day decay constant can be modified.
+  redshift_range: inflation through recombination and late trapping
+  relevance: medium
+  scale_range: CMB large-scale isocurvature modes
+  source_reference_ids:
+  - arxiv:1801.09658
+  - arxiv:1304.0922
+  subchannel: dark-matter isocurvature
+constraints:
+- allowed_regions:
+  - For f=1e16 GeV, the source shows a white allowed region; one example has m about 1e-21 eV, m0 about
+    1e-20 eV, and z_tr about 5.
+  applies: parameter_dependent
+  assumptions:
+  - can_be_relaxed: partial
+    description: The background treatment assumes coherent trapping in the structured potential.
+    id: homogeneous-trapping
+    impact_if_violated: Patch-dependent trapping can create domain walls and change perturbations.
+    notes: null
+    scope: background evolution
+    source_reference_ids:
+    - arxiv:1801.09658
+    status: assumed
+  benchmark_implications:
+  - Late trapping can make the dark matter density inferred from recombination differ from the low-redshift
+    extrapolation.
+  caveats:
+  - No cosmological parameter fit was rerun.
+  constrained_parameters:
+  - m
+  - m0
+  - f
+  - c
+  - n
+  - z_tr
+  constraint_type: theoretical
+  data_release: null
+  excluded_regions:
+  - Regions violating the source trapping conditions, the lower bound for oscillations before equality,
+    or requiring trapping after today.
+  id: con_background_trapping_window
+  likelihood_available: 'no'
+  likelihood_reference: null
+  name: Allowed two-cosine trapping parameter window
+  notes: null
+  observable_channel: background dark-sector densities
+  recasting_needed: partial
+  robustness: medium
+  source_reference_ids:
+  - arxiv:1801.09658
+- allowed_regions:
+  - Parameter regions whose time-dependent transfer function avoids excess small-scale suppression.
+  applies: recast_required
+  assumptions:
+  - can_be_relaxed: partial
+    description: Standard fuzzy/scalar-DM Lyman-alpha limits assume the mass does not change after equality.
+    id: time-independent-bound-not-direct
+    impact_if_violated: Directly applying the bound can over- or under-estimate the allowed region.
+    notes: null
+    scope: Lyman-alpha recast
+    source_reference_ids:
+    - arxiv:1801.09658
+    - arxiv:1708.00015
+    status: assumed
+  benchmark_implications:
+  - A model with pre-trapping m around 1e-21 eV needs a dedicated transfer-function calculation before
+    borrowing fuzzy-DM bounds.
+  caveats:
+  - Transfer functions were not recomputed for the trapping model.
+  constrained_parameters:
+  - m
+  - m0
+  - z_tr
+  - scalar-DM fraction
+  - transfer function
+  constraint_type: astrophysical
+  data_release: Lyman-alpha forest analyses in related sources
+  excluded_regions:
+  - Related arXiv fallback source gives m >~ 1e-21 eV for scalar DM making up more than 30 percent of
+    total DM under its assumptions.
+  - Primary source notes recent Lyman-alpha studies constrain scalar-DM masses larger than about 1e-21
+    eV but do not directly apply because the mass changes after equality.
+  id: con_lya_ultralight_scalar_recast
+  likelihood_available: 'no'
+  likelihood_reference: null
+  name: Lyman-alpha recast for time-dependent ultralight scalar mass
+  notes: null
+  observable_channel: Lyman-alpha forest
+  recasting_needed: 'yes'
+  robustness: medium
+  source_reference_ids:
+  - arxiv:1801.09658
+  - arxiv:1703.04683
+  - arxiv:1708.00015
+- allowed_regions:
+  - Primary scenario can weaken the naive present-day axion isocurvature mapping if trapping occurs after
+    recombination.
+  applies: recast_required
+  assumptions:
+  - can_be_relaxed: 'yes'
+    description: Trapping after recombination changes the relation between CMB-era and present-day dark-matter
+      perturbations.
+    id: post-recombination-trapping
+    impact_if_violated: Earlier trapping restores a more conventional mapping.
+    notes: null
+    scope: isocurvature mapping
+    source_reference_ids:
+    - arxiv:1801.09658
+    status: assumed
+  benchmark_implications:
+  - The scenario needs a custom CMB isocurvature recast rather than direct use of conventional axion bounds.
+  caveats:
+  - No CMB likelihood was rerun.
+  constrained_parameters:
+  - H_inf
+  - f
+  - theta_i
+  - z_tr
+  - isocurvature fraction
+  constraint_type: cosmological
+  data_release: CMB isocurvature constraints discussed in source papers
+  excluded_regions:
+  - Related axion source reports tightened hilltop isocurvature bounds, including H_inf of order 100 GeV
+    for f_a below 1e10 GeV near the smaller end of the axion-DM window.
+  id: con_axion_isocurvature_mapping
+  likelihood_available: 'no'
+  likelihood_reference: null
+  name: CMB isocurvature constraints under late trapping
+  notes: null
+  observable_channel: CMB isocurvature
+  recasting_needed: 'yes'
+  robustness: medium
+  source_reference_ids:
+  - arxiv:1801.09658
+  - arxiv:1304.0922
+theory_to_observable_routing:
+  routes:
+  - agent_notes: null
+    caveats:
+    - Inhomogeneous trapping and domain walls are not modeled.
+    constraint_ids:
+    - con_background_trapping_window
+    - con_lya_ultralight_scalar_recast
+    - con_axion_isocurvature_mapping
+    derived_quantities:
+    - z_tr
+    - dark matter density at recombination
+    - effective dark-energy density
+    - time-dependent transfer function
+    - CMB isocurvature amplitude
+    description: Integrate the two-cosine scalar through trapping, then recast background, Lyman-alpha,
+      and isocurvature observables.
+    forward_model_chain:
+    - inputs:
+      - two-cosine potential parameters
+      notes: null
+      outputs:
+      - trapping conditions
+      - z_tr
+      step_id: s1
+      step_type: analytic_formula
+      tool_or_code: null
+      validity: Primary paper derives allowed regions and examples.
+    - inputs:
+      - time-dependent scalar mass
+      - background densities
+      notes: null
+      outputs:
+      - CMB spectra
+      - matter power
+      step_id: s2
+      step_type: boltzmann_solver
+      tool_or_code: CLASS/CAMB-style scalar perturbation solver
+      validity: Needed for a quantitative cosmological fit.
+    - inputs:
+      - matter transfer function
+      - isocurvature transfer
+      notes: null
+      outputs:
+      - Lyman-alpha and CMB constraints
+      step_id: s3
+      step_type: likelihood
+      tool_or_code: null
+      validity: Requires recast because source model violates standard time-independent assumptions.
+    id: route_trapping_scalar_to_background_lss_cmb
+    input_parameters:
+    - m
+    - m0
+    - f
+    - c
+    - n
+    - delta
+    - initial displacement
+    likelihoods:
+    - CMB background/isocurvature likelihood unavailable
+    - Lyman-alpha transfer-function likelihood unavailable
+    observable_ids:
+    - obs_late_trapping_dark_sector_shift
+    - obs_time_dependent_fuzzy_suppression
+    - obs_trapping_isocurvature_mapping
+    required_code_resources:
+    - scalar-field background integrator
+    - Boltzmann solver with time-dependent mass/equation of state
+    - Lyman-alpha likelihood
+    route_status: planned
+    source_model_features:
+    - structured two-cosine potential
+    - late trapping in local minima
+    - mass increase plus emergent dark energy
+    validation_tests:
+    - recover source z_tr example
+    - recover standard fuzzy-DM limit in no-trapping limit

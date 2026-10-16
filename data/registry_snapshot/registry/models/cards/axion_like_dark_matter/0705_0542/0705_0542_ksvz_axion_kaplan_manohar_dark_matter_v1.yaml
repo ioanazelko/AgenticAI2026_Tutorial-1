@@ -1,0 +1,454 @@
+_source:
+  shard: arXiv_src_0705_001_wds.tar
+  paper_id: '0705_0542'
+  source_member: 0705_0542.json
+schema_version: model_only_v0
+model_id: 0705_0542_ksvz_axion_kaplan_manohar_dark_matter_v1
+identity:
+  name: KSVZ axion dark matter with Kaplan-Manohar quark-mass ambiguity
+  family: axion_like_dark_matter
+  aliases:
+  - KSVZ axion dark matter
+  - QCD axion dark matter with variable E/N and z
+  short_description: A KSVZ QCD-axion dark-matter variant in which the Kaplan-Manohar ambiguity in light-quark
+    masses changes the axion-photon coupling, allowing KSVZ axions in the paper's ADMX mass window to
+    constitute the galactic dark-matter halo.
+  historical_origin_or_motivation: Motivated by the QCD strong-CP problem and by revisiting whether KSVZ
+    axions can make up the dark-matter halo once quark-mass uncertainties are included.
+  status: speculative
+  model_kind: complete_theory
+theory:
+  theory_level: uv_complete
+  parent_frameworks:
+  - KSVZ axion model
+  - Peccei-Quinn solution to the strong CP problem
+  - chiral Lagrangian with Kaplan-Manohar term
+  lagrangian_available: 'yes'
+  renormalizable: 'yes'
+  eft_cutoff: null
+  embedded_in_larger_framework: 'yes'
+  notes: The paper writes a KSVZ high-energy Lagrangian with a PQ scalar and colored PQ fermions, then
+    derives low-energy axion mass and coupling formulae including the Kaplan-Manohar ambiguity.
+particle_content:
+  dark_matter_candidate:
+    name: QCD axion
+    spin: '0'
+    statistics: boson
+    elementary_or_composite: elementary
+    number_of_components: single_component
+  additional_dark_sector_particles:
+  - complex Peccei-Quinn scalar field
+  - new colored PQ fermions
+  mediators:
+  - axion-photon coupling
+  - axion-gluon anomaly coupling
+  - axion-meson mixing
+  dark_radiation_species: []
+  excited_or_degenerate_states: []
+  long_lived_particles:
+  - cosmologically long-lived axion
+  unstable_parent_particles: []
+  standard_model_extension: substantial
+symmetries:
+  stabilizing_mechanism: The axion is protected by the spontaneously broken Peccei-Quinn symmetry and
+    has couplings suppressed by the axion decay constant; cosmological stability is implicit for the dark-matter
+    halo application.
+  symmetries:
+  - name: Peccei-Quinn symmetry
+    type: global
+    exact_or_approximate: broken
+    breaking: spontaneously broken by the scalar vacuum expectation value and explicitly affected by the
+      QCD anomaly
+    breaking_scale:
+      name: axion decay constant
+      symbol: f_a
+      description: PQ breaking/axion decay scale suppressing the axion mass and couplings.
+      range: about 10^12 GeV for axionic cold dark matter in the discussion
+      unit: GeV
+      role: core
+      status: inferred
+      source_reference_ids:
+      - primary
+  topological_defects_possible: 'yes'
+interactions:
+  portals:
+  - axion
+  standard_model_targets:
+  - photons
+  - gluons
+  - nucleons
+  - electrons
+  dark_sector_couplings:
+  - PQ Yukawa interaction between the scalar and new colored fermions
+  - anomaly-induced axion coupling to gauge fields
+  mediator_types:
+  - axion
+  - meson mixing
+  interaction_operators:
+  - a G tilde-G / f_a
+  - a F tilde-F / f_a with coefficient depending on E/N and light-quark mass ratios
+  scattering:
+    elastic: unknown
+    inelastic: not_applicable
+    momentum_dependence: unknown
+    velocity_dependence: unknown
+    spin_dependence: unknown
+  annihilation_channels: []
+  decay_channels:
+  - axion to two photons
+  self_scattering_channels: []
+  cp_structure: pseudoscalar axion coupled to CP-odd gauge-field combinations
+  flavor_structure: depends on light-quark mass ratios z = m_u/m_d and w = m_u/m_s in the chiral Lagrangian
+  tree_or_loop_level: both
+parameters:
+  core:
+  - name: axion decay constant
+    symbol: f_a
+    description: Scale suppressing the axion mass and couplings.
+    range: about 10^12 GeV for the cold-dark-matter window discussed
+    unit: GeV
+    role: core
+    status: inferred
+    source_reference_ids:
+    - primary
+  - name: axion mass
+    symbol: m_a
+    description: QCD axion mass; the paper focuses on the ADMX mass range rendered in the extracted text
+      as 1.9-3.3 eV.
+    range: 1.9-3.3 eV in the extracted source text
+    unit: eV
+    role: core
+    status: inferred
+    source_reference_ids:
+    - primary
+  - name: electromagnetic to color anomaly ratio
+    symbol: E/N
+    description: Controls the axion-photon coupling together with meson mixing; the paper contrasts E/N
+      = 0 KSVZ and E/N = 8/3 GUT/DFSZ-like values.
+    range: model-dependent; examples include 0 and 8/3
+    unit: null
+    role: core
+    status: inferred
+    source_reference_ids:
+    - primary
+  - name: up-to-down quark mass ratio
+    symbol: z
+    description: Light-quark mass ratio enlarged by the Kaplan-Manohar ambiguity, affecting axion mass
+      and photon coupling.
+    range: paper discusses values beyond the naive Weinberg value due to the Kaplan-Manohar term
+    unit: null
+    role: core
+    status: inferred
+    source_reference_ids:
+    - primary
+  nuisance: []
+  derived:
+  - name: axion-photon coupling
+    symbol: g_a_gamma_gamma
+    description: Coupling derived from anomaly and axion-meson mixing terms, with cancellations depending
+      on E/N and z.
+    role: derived
+    status: inferred
+    source_reference_ids:
+    - primary
+production:
+  mechanisms:
+  - coherent axion-field oscillations
+  - thermal axion relic production in alternative mass ranges
+  - topological-defect axion production if PQ breaking occurs after reheating
+  thermal_equilibrium_with_standard_model: partial
+  thermal_equilibrium_with_hidden_sector: not_applicable
+  abundance_set_by:
+  - axion mass
+  - axion decay constant
+  - cosmological history relative to PQ breaking
+  - possible entropy dilution
+  - topological defect production
+  depends_on_reheating_temperature: 'yes'
+  can_produce_all_dark_matter: parameter_dependent
+  nonthermal_momentum_distribution: parameter_dependent
+  notes: The paper states that axions can provide most or all of the dark matter in suitable mass ranges
+    and assumes the galactic halo can be composed completely of KSVZ axions for the ADMX comparison.
+relic_density:
+  full_or_subcomponent: either
+  target_fraction:
+    name: halo dark matter fraction
+    symbol: f_DM
+    description: The ADMX discussion assumes the galactic dark-matter halo is completely composed of axions.
+    value: 100%
+    role: cosmological
+    status: assumed
+    source_reference_ids:
+    - primary
+  calculation_type: mixed
+  key_dependencies:
+  - f_a
+  - m_a
+  - reheating temperature relative to f_a
+  - entropy production
+  - topological defects
+  requires_entropy_dilution: parameter_dependent
+  overclosure_risk: parameter_dependent
+  underproduction_risk: unknown
+  tuning_assessment: unknown
+cosmological_history:
+  standard_history_assumed: true
+  nonstandard_features:
+  - possible entropy production from particle decays
+  - possible PQ strings and domain walls if PQ breaking occurs after reheating
+  dark_sector_temperature: null
+  delta_neff: null
+  kinetic_decoupling: null
+  chemical_decoupling: null
+  phase_transitions:
+  - spontaneous PQ symmetry breaking
+  - QCD transition generating the axion potential
+  topological_defects:
+  - cosmic strings
+  - domain walls for models with N >= 2
+  isocurvature_perturbations: unknown
+  bbn_relevance: unknown
+  cmb_relevance: unknown
+phase_space:
+  distribution_type: field_like
+  distribution_function_available: unknown
+  f_of_p_or_q: not supplied for the halo axion population
+  average_momentum_relative_to_thermal: null
+  free_streaming_length: null
+  velocity_dispersion_today: null
+  phase_space_bounds: []
+  notes: The cold component is described as coherent oscillation of the axion field rather than by an
+    explicit particle distribution function.
+structure_formation:
+  linear:
+    behaves_like_cdm: 'yes'
+    transfer_function_shape: cdm_like
+    small_scale_power_effect: none
+    half_mode_mass: null
+    thermal_wdm_mapping:
+      available: false
+      validity: not_applicable
+      warning: No thermal-WDM mapping is discussed for the QCD axion cold-dark-matter case.
+    impact_on_sigma8_s8: unknown
+  nonlinear:
+    halo_mass_function_effect: unknown
+    subhalo_mass_function_effect: unknown
+    infall_subhalo_mass_function_effect: unknown
+    present_day_bound_subhalo_mass_function_effect: unknown
+    concentration_mass_relation_effect: unknown
+    density_profile_effect: unknown
+    core_or_cusp_effect: unknown
+    subhalo_survival_effect: unknown
+    tidal_stripping_effect: unknown
+    smallest_galaxies_effect: unknown
+    simulation_calibrated: unknown
+validity_domain:
+- id: kaplan_manohar_quark_mass_range
+  applies_to: model
+  condition: Axion mass and photon coupling formulae use light-quark mass ratios allowed by the Kaplan-Manohar
+    ambiguity.
+  valid_range: the paper's adopted range for z = m_u/m_d
+  status: inferred
+  extrapolation_risk: medium
+  caveats:
+  - The paper emphasizes that lattice QCD and higher-order chiral perturbation theory are needed to further
+    determine z.
+  source_reference_ids:
+  - primary
+  notes: null
+- id: ksvz_anomaly_assignment
+  applies_to: model
+  condition: The benchmark KSVZ case has SM fields uncharged under PQ symmetry and new colored fermions;
+    E/N can vary with PQ-fermion quantum numbers.
+  valid_range: examples include E/N = 0 and E/N near 8/3
+  status: inferred
+  extrapolation_risk: medium
+  caveats: []
+  source_reference_ids:
+  - primary
+  notes: null
+assumptions:
+  global:
+  - id: pq_solution
+    description: The strong-CP problem is solved dynamically by the Peccei-Quinn mechanism and the resulting
+      axion field.
+    scope: theory
+    status: assumed
+    impact_if_violated: null
+    can_be_relaxed: 'no'
+    source_reference_ids:
+    - primary
+    notes: null
+  - id: axion_halo_fraction
+    description: For the highlighted benchmark, the galactic halo density is assumed to be fully composed
+      of KSVZ axions.
+    scope: production
+    status: assumed
+    impact_if_violated: null
+    can_be_relaxed: 'yes'
+    source_reference_ids:
+    - primary
+    notes: null
+  - id: chiral_lagrangian_km_term
+    description: Kaplan-Manohar higher-order terms in the chiral Lagrangian are included when mapping
+      quark masses into axion properties.
+    scope: theory
+    status: assumed
+    impact_if_violated: null
+    can_be_relaxed: unknown
+    source_reference_ids:
+    - primary
+    notes: null
+associated_code:
+  has_associated_code: unknown
+  code_summary: No associated public code or implementation is described in the assigned text.
+  primary_code_role: null
+  repositories: []
+  packages_or_modules: []
+  notebooks: []
+  scripts: []
+  containers_or_environments: []
+  expected_inputs: []
+  expected_outputs: []
+  supported_observable_channels: []
+  caveats: []
+provenance:
+  model_id: 0705_0542_ksvz_axion_kaplan_manohar_dark_matter_v1
+  model_name: KSVZ axion dark matter with Kaplan-Manohar quark-mass ambiguity
+  model_family: axion_like_dark_matter
+  entry_version: 0.1.0
+  status: machine_extracted
+  created_at: '2026-05-31'
+  last_updated: '2026-05-31'
+  sources:
+    primary_papers:
+    - reference_id: primary
+      title: Quark mass uncertainties revive KSVZ axion dark matter
+      authors:
+      - Matthew R. Buckley
+      - Hitoshi Murayama
+      year: 2007
+      arxiv_id: '0705.0542'
+      doi: null
+      url: null
+      role: extension
+      notes: Assigned SQLite full text used as the only source; the underlying KSVZ model predates this
+        paper.
+  extraction:
+    method: llm_assisted
+    extracted_by: codex_batch_worker
+    extractor_name: Codex dark-matter model-card worker
+    extraction_date: '2026-05-31'
+    confidence: medium
+    source_chunks_or_sections:
+    - reference_id: primary
+      section: abstract/introduction
+      page: null
+      quote_or_summary: The paper says the Kaplan-Manohar ambiguity relaxes QCD-axion bounds and allows
+        KSVZ axions in the highlighted mass window to make up the galactic halo.
+    - reference_id: primary
+      section: formalism
+      page: null
+      quote_or_summary: It presents a KSVZ setup with a PQ scalar, colored fermions, and a high-energy
+        Lagrangian for PQ-charged fields.
+    - reference_id: primary
+      section: cosmological discussion
+      page: null
+      quote_or_summary: The text describes coherent axion-field oscillations, thermal relic axions, entropy
+        dilution, and topological-defect production as possible abundance logic.
+    unresolved_items:
+    - The extracted text drops some Greek/micro symbols, so the exact rendered axion mass unit should
+      be checked against the source PDF.
+  evidence:
+    particle_content:
+    - reference_id: primary
+      note: KSVZ contains a PQ scalar and new SU(3) triplet fermions; the resulting Nambu-Goldstone boson
+        is the axion.
+      confidence: high
+      section: formalism
+      page: null
+    symmetries:
+    - reference_id: primary
+      note: The model uses a global PQ symmetry broken by the scalar vev, with anomaly effects generating
+        the axion mass and couplings.
+      confidence: high
+      section: formalism
+      page: null
+    interactions:
+    - reference_id: primary
+      note: The axion-photon coupling depends on E/N and on axion-meson mixing controlled by quark mass
+        ratios.
+      confidence: high
+      section: formalism
+      page: null
+    production_mechanism:
+    - reference_id: primary
+      note: The paper identifies coherent oscillations, thermal relic production, and string/domain-wall
+        production as abundance routes in different cosmological histories.
+      confidence: medium
+      section: introduction/cosmology
+      page: null
+    cosmological_history:
+    - reference_id: primary
+      note: It notes that reheating relative to f_a determines whether topological defects form, and that
+        entropy production can dilute axions.
+      confidence: medium
+      section: cosmological discussion
+      page: null
+    parameter_ranges:
+    - reference_id: primary
+      note: Core quantities include f_a, m_a, E/N, and z = m_u/m_d, with z broadened by the Kaplan-Manohar
+        term.
+      confidence: high
+      section: formalism
+      page: null
+    validity_domain:
+    - reference_id: primary
+      note: The paper's main development is tied to the allowed quark-mass ambiguity and to KSVZ anomaly
+        assignments.
+      confidence: medium
+      section: formalism/results
+      page: null
+  review:
+    human_reviewed: false
+    reviewed_by: null
+    review_date: null
+    expert_reviewed: false
+    expert_reviewer: null
+    expert_review_date: null
+    reviewer_notes: []
+    scientific_confidence: medium
+    implementation_confidence: medium
+  caveats:
+  - Accepted as a substantive KSVZ axion dark-matter variant/reinterpretation, not as the original KSVZ
+    model proposal.
+robustness:
+  overall: medium
+  theory_robustness: medium
+  observational_robustness: unknown
+  computational_robustness: unknown
+  dominant_uncertainties:
+  - light-quark mass ratio z
+  - E/N anomaly assignment
+  - cosmological history relative to PQ breaking
+  - OCR loss of Greek/micro symbols in the extracted text
+  validation_status: expert_judgment_only
+  notes: The KSVZ field content and coupling logic are explicit, while the paper's novelty is a parameter/coupling
+    reinterpretation.
+agent_failure_modes:
+  warnings:
+  - id: not_original_ksvz_proposal
+    severity: medium
+    category: assumption_mismatch
+    warning: Do not cite this entry as the original KSVZ model proposal; the paper revisits a KSVZ dark-matter
+      parameter region using quark-mass uncertainties.
+    mitigation: Preserve the provenance role as extension and keep the Kaplan-Manohar caveat attached.
+    source_reference_ids:
+    - primary
+  - id: mass_unit_ocr
+    severity: medium
+    category: unit_convention
+    warning: The extracted text appears to drop Greek/micro symbols in axion mass ranges.
+    mitigation: Check the source PDF before using numerical axion mass units downstream.
+    source_reference_ids:
+    - primary

@@ -1,0 +1,359 @@
+_source:
+  shard: data/astro-ph-00014.tar
+  paper_id: '1001_0051'
+  source_member: 1001_0051.json
+schema_version: model_only_v0
+model_id: 1001_0051_lukewarm_ultralight_scalar_bec_v1
+identity:
+  name: Lukewarm ultralight scalar Bose-condensed dark matter
+  family: fuzzy_ultralight_dark_matter
+  aliases:
+  - lukewarm dark matter
+  - Bose condensation of ultralight particles
+  short_description: An ultralight scalar dark-matter scenario in which finite-temperature particles decouple
+    early, cool to about 0.9 K today, and form a Bose-condensed ground state that behaves as pressureless
+    matter while excited states are radiation-like.
+  historical_origin_or_motivation: Motivated by galactic-scale Compton wavelengths, stable halo formation,
+    suppression of excess dwarf-scale structure, and consistency with BBN and WMAP-era radiation bounds
+    without fine tuning.
+  status: speculative
+  model_kind: phenomenological_parameterization
+theory:
+  theory_level: effective_field_theory
+  parent_frameworks:
+  - scalar field dark matter
+  - Friedmann-Klein-Gordon cosmology
+  lagrangian_available: 'yes'
+  renormalizable: 'yes'
+  eft_cutoff: null
+  embedded_in_larger_framework: unknown
+  notes: The paper uses a massive scalar Klein-Gordon field in an expanding FRW universe and studies finite-temperature
+    Bose-Einstein condensation.
+particle_content:
+  dark_matter_candidate:
+    name: ultralight scalar particle
+    spin: '0'
+    statistics: scalar
+    elementary_or_composite: elementary
+    number_of_components: single_component
+  additional_dark_sector_particles: []
+  mediators: []
+  dark_radiation_species: []
+  excited_or_degenerate_states:
+  - thermally excited scalar states
+  long_lived_particles:
+  - ground-state scalar particles
+  unstable_parent_particles: []
+  standard_model_extension: minimal
+symmetries:
+  stabilizing_mechanism: The paper treats the scalar particles as stable dark matter; no explicit stabilizing
+    symmetry is specified.
+  symmetries: []
+  topological_defects_possible: unknown
+interactions:
+  portals:
+  - unknown
+  standard_model_targets: []
+  dark_sector_couplings: []
+  mediator_types: []
+  interaction_operators: []
+  scattering:
+    elastic: unknown
+    inelastic: unknown
+    momentum_dependence: unknown
+    velocity_dependence: unknown
+    spin_dependence: not_applicable
+  annihilation_channels: []
+  decay_channels: []
+  self_scattering_channels: []
+  cp_structure: unknown
+  flavor_structure: not_applicable
+  tree_or_loop_level: unknown
+parameters:
+  core:
+  - name: scalar mass
+    symbol: m
+    description: Ultralight particle mass with galactic-scale Compton wavelength.
+    value: ~10^-23
+    unit: eV
+    role: core
+    status: assumed
+    source_reference_ids:
+    - '1001_0051'
+    notes: Quoted in the abstract as the focus mass scale.
+  - name: present scalar temperature
+    symbol: T_phi
+    description: Temperature today after early decoupling from regular matter.
+    value: ~0.9
+    unit: K
+    role: cosmological
+    status: inferred
+    source_reference_ids:
+    - '1001_0051'
+    notes: The paper argues early decoupling before Standard Model annihilations gives this temperature.
+  - name: scalar field amplitude
+    symbol: phi
+    description: Massive scalar field evolved with the Friedmann-Klein-Gordon equations.
+    value: null
+    unit: null
+    role: core
+    status: unknown
+    source_reference_ids:
+    - '1001_0051'
+    notes: Initial conditions are adjusted in numerical examples.
+production:
+  mechanisms:
+  - early thermal decoupling from regular matter
+  - Bose-Einstein condensation of ultralight bosons
+  - cosmological scalar-field evolution
+  thermal_equilibrium_with_standard_model: partial
+  thermal_equilibrium_with_hidden_sector: unknown
+  abundance_set_by:
+  - decoupling temperature
+  - scalar mass
+  - initial scalar-field conditions
+  depends_on_reheating_temperature: unknown
+  can_produce_all_dark_matter: parameter_dependent
+  nonthermal_momentum_distribution: parameter_dependent
+  notes: The paper assumes interactions with normal matter turn off very early, leaving a colder scalar
+    population compatible with radiation-density bounds.
+relic_density:
+  full_or_subcomponent: full_dark_matter
+  target_fraction: null
+  calculation_type: mixed
+  key_dependencies:
+  - scalar temperature today
+  - scalar mass
+  - ground-state condensate fraction
+  - excited-state radiation contribution
+  requires_entropy_dilution: unknown
+  overclosure_risk: parameter_dependent
+  underproduction_risk: parameter_dependent
+  tuning_assessment: unknown
+cosmological_history:
+  standard_history_assumed: true
+  nonstandard_features:
+  - early decoupling of the scalar from regular matter
+  - finite-temperature Bose condensation
+  dark_sector_temperature:
+    name: scalar temperature today
+    symbol: T_phi
+    description: Present-day temperature of the scalar particles after early decoupling.
+    value: ~0.9
+    unit: K
+    role: cosmological
+    status: inferred
+    source_reference_ids:
+    - '1001_0051'
+  delta_neff: null
+  kinetic_decoupling: null
+  chemical_decoupling: null
+  phase_transitions:
+  - Bose-Einstein condensation
+  topological_defects: []
+  isocurvature_perturbations: unknown
+  bbn_relevance: medium
+  cmb_relevance: medium
+phase_space:
+  distribution_type: mixed_cold_warm
+  distribution_function_available: approximate
+  f_of_p_or_q: finite-temperature Bose distribution discussed qualitatively with condensate and excited
+    components
+  average_momentum_relative_to_thermal: null
+  free_streaming_length: null
+  velocity_dispersion_today: null
+  phase_space_bounds: []
+  notes: Ground-state particles mimic pressureless matter, while excited-state particles are radiation-like.
+structure_formation:
+  linear:
+    behaves_like_cdm: scale_dependent
+    transfer_function_shape: smooth_cutoff
+    small_scale_power_effect: suppression
+    half_mode_mass: null
+    thermal_wdm_mapping:
+      available: false
+      validity: unknown
+      warning: The paper discusses suppression of small-scale structure but does not provide a thermal-WDM
+        mapping.
+    impact_on_sigma8_s8: unknown
+  nonlinear:
+    halo_mass_function_effect: The model is argued to avoid over-abundance of dwarf galaxies.
+    subhalo_mass_function_effect: suppressed small-scale substructure is expected, but no calibrated subhalo
+      function is provided.
+    infall_subhalo_mass_function_effect: unknown
+    present_day_bound_subhalo_mass_function_effect: unknown
+    concentration_mass_relation_effect: unknown
+    density_profile_effect: stable halos can form from agglomerations of ultralight particles.
+    core_or_cusp_effect: unknown
+    subhalo_survival_effect: unknown
+    tidal_stripping_effect: unknown
+    smallest_galaxies_effect: suppression of excess dwarf-scale structure is part of the motivation.
+    simulation_calibrated: 'no'
+validity_domain:
+- id: early_decoupling
+  applies_to: production
+  condition: Scalar interactions with regular matter must turn off before Standard Model particle annihilations.
+  valid_range: null
+  status: assumed
+  extrapolation_risk: medium
+  caveats:
+  - The interaction responsible for earlier equilibrium and decoupling is not specified.
+  source_reference_ids:
+  - '1001_0051'
+  notes: null
+- id: ultralight_mass_scale
+  applies_to: parameter
+  condition: Mass near 10^-23 eV is used to obtain galactic-scale Compton wavelengths and halo effects.
+  valid_range: m approximately 10^-23 eV
+  status: assumed
+  extrapolation_risk: medium
+  caveats: []
+  source_reference_ids:
+  - '1001_0051'
+  notes: null
+assumptions:
+  global:
+  - id: stable_scalar_dm
+    description: The ultralight scalar particles are sufficiently stable to constitute dark matter today.
+    scope: theory
+    status: assumed
+    impact_if_violated: The model would not provide present-day dark matter.
+    can_be_relaxed: unknown
+    source_reference_ids:
+    - '1001_0051'
+    notes: null
+  - id: standard_background_history
+    description: The scalar evolves in a standard FRW radiation-to-matter cosmological background except
+      for its early decoupling and condensation.
+    scope: cosmological_history
+    status: assumed
+    impact_if_violated: The inferred scalar temperature and abundance history would change.
+    can_be_relaxed: unknown
+    source_reference_ids:
+    - '1001_0051'
+    notes: null
+associated_code:
+  has_associated_code: unknown
+  code_summary: The paper mentions numerical and approximate analytical solutions, but the text supplied
+    for this batch does not identify public code.
+  primary_code_role: null
+  repositories: []
+  packages_or_modules: []
+  notebooks: []
+  scripts: []
+provenance:
+  model_id: 1001_0051_lukewarm_ultralight_scalar_bec_v1
+  model_name: Lukewarm ultralight scalar Bose-condensed dark matter
+  model_family: fuzzy_ultralight_dark_matter
+  entry_version: 0.1.0
+  status: machine_extracted
+  created_at: '2026-05-28'
+  last_updated: '2026-05-28'
+  sources:
+    primary_papers:
+    - reference_id: '1001_0051'
+      title: 'Lukewarm dark matter: Bose condensation of ultralight particles'
+      authors:
+      - Andrew P. Lundgren
+      - Mihai Bondarescu
+      - Ruxandra Bondarescu
+      - Jayashree Balakrishna
+      year: 2010
+      arxiv_id: '1001.0051'
+      doi: null
+      url: null
+      role: original_model
+      notes: Assigned SQLite full text is the only source used.
+  extraction:
+    method: llm_assisted
+    extracted_by: codex_batch_0162
+    extractor_name: GPT-5 Codex
+    extraction_date: '2026-05-28'
+    confidence: high
+    source_chunks_or_sections:
+    - reference_id: '1001_0051'
+      section: abstract/introduction
+      page: null
+      quote_or_summary: The paper discusses thermal evolution and Bose-Einstein condensation of ultralight
+        dark matter particles.
+    - reference_id: '1001_0051'
+      section: Evolution Equations
+      page: null
+      quote_or_summary: A massive scalar Klein-Gordon field and its density and pressure are written in
+        FRW spacetime.
+    unresolved_items:
+    - No explicit stabilizing symmetry or portal interaction is specified in the supplied text.
+  evidence:
+    particle_content:
+    - reference_id: '1001_0051'
+      note: The text focuses on ultralight particles of mass about 10^-23 eV and treats them as scalar
+        field dark matter.
+      confidence: high
+      section: abstract
+      page: null
+    interactions:
+    - reference_id: '1001_0051'
+      note: The model assumes scalar interactions with normal matter turned off in the very early universe;
+        the detailed portal is not specified.
+      confidence: medium
+      section: thermal history discussion
+      page: null
+    production_mechanism:
+    - reference_id: '1001_0051'
+      note: Early decoupling before Standard Model annihilations gives a colder scalar temperature, followed
+        by Bose-Einstein condensation.
+      confidence: high
+      section: abstract and thermal history
+      page: null
+    cosmological_history:
+    - reference_id: '1001_0051'
+      note: The paper evolves the scalar with Friedmann-Klein-Gordon equations from the early universe
+        to matter domination.
+      confidence: high
+      section: Evolution Equations
+      page: null
+    parameter_ranges:
+    - reference_id: '1001_0051'
+      note: The abstract states m approximately 10^-23 eV and a present scalar temperature of about 0.9
+        K.
+      confidence: high
+      section: abstract
+      page: null
+    validity_domain:
+    - reference_id: '1001_0051'
+      note: Consistency with BBN and CMB radiation bounds relies on early decoupling and a low scalar
+        temperature.
+      confidence: medium
+      section: thermal history discussion
+      page: null
+  review:
+    human_reviewed: false
+    reviewed_by: null
+    review_date: null
+    expert_reviewed: false
+    expert_reviewer: null
+    expert_review_date: null
+    reviewer_notes: []
+    scientific_confidence: medium
+    implementation_confidence: medium
+robustness:
+  overall: medium
+  theory_robustness: medium
+  observational_robustness: low
+  computational_robustness: medium
+  constraint_robustness: not_applicable
+  dominant_uncertainties:
+  - unspecified scalar-SM interaction and decoupling microphysics
+  - limited structure-formation calibration in supplied text
+  validation_status: expert_judgment_only
+  notes: The paper gives a concrete scalar cosmology but not a complete particle-physics UV completion.
+agent_failure_modes:
+  warnings:
+  - id: no_portal_specified
+    severity: medium
+    category: assumption_mismatch
+    warning: Do not infer a specific Standard Model portal or detection rate; the supplied text only assumes
+      early decoupling from regular matter.
+    mitigation: Keep portal fields unknown unless another source is reviewed.
+    source_reference_ids:
+    - '1001_0051'

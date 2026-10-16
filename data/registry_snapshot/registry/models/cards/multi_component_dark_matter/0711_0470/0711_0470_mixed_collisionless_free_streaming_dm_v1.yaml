@@ -1,0 +1,815 @@
+_source:
+  shard: arXiv_src_0711_001_wds.tar
+  paper_id: '0711_0470'
+  source_member: 0711_0470.json
+  enriched: true
+  enrichment_schema_version: dm_model_ocr_enrichment_smoke_v0
+schema_version: model_only_v0
+model_id: 0711_0470_mixed_collisionless_free_streaming_dm_v1
+identity:
+  name: Mixed collisionless dark matter free-streaming model
+  family: multi_component_dark_matter
+  aliases:
+  - mixed dark matter free-streaming
+  - multicomponent collisionless dark matter
+  - Boltzmann-Vlasov mixed DM
+  short_description: A phenomenological multi-component dark-matter model in which fermionic and bosonic
+    relics, WIMPs, and sterile-neutrino components contribute fractions of the density and determine a
+    combined free-streaming scale through their decoupled distribution functions.
+  historical_origin_or_motivation: Developed to compute free streaming for mixtures of cold and warm components
+    without truncating their distribution functions, motivated by small-scale structure issues in pure
+    CDM.
+  status: speculative
+  model_kind: phenomenological_parameterization
+theory:
+  theory_level: phenomenological_parameterization
+  parent_frameworks:
+  - collisionless Boltzmann-Vlasov theory
+  - multicomponent dark matter
+  - linear gravitational perturbation theory
+  lagrangian_available: 'no'
+  renormalizable: not_applicable
+  eft_cutoff: null
+  embedded_in_larger_framework: unknown
+  notes: The paper specifies component distribution functions, decoupling histories, fractional abundances,
+    and gravitational collective response rather than a UV particle Lagrangian.
+particle_content:
+  dark_matter_candidate:
+    name: mixture of collisionless non-relativistic dark matter components
+    spin: component-dependent
+    statistics: unknown
+    elementary_or_composite: unknown
+    number_of_components: multi_component
+  additional_dark_sector_particles:
+  - fermionic thermal relics
+  - non-condensed bosonic thermal relics
+  - Bose-Einstein-condensed bosonic component
+  - heavy non-relativistic thermal relics (WIMPs)
+  - resonantly or non-resonantly produced sterile neutrinos
+  mediators:
+  - self-consistent Newtonian gravitational potential
+  dark_radiation_species: []
+  excited_or_degenerate_states: []
+  long_lived_particles:
+  - all components are treated as stable collisionless dark matter today
+  unstable_parent_particles: []
+  standard_model_extension: unknown
+symmetries:
+  stabilizing_mechanism: No particle-level stabilizing symmetry is specified; each component is assumed
+    stable and collisionless on cosmological timescales.
+  symmetries: []
+  topological_defects_possible: unknown
+interactions:
+  portals:
+  - gravitational
+  standard_model_targets:
+  - self-consistent gravitational potential
+  dark_sector_couplings:
+  - gravitational coupling through the total Newtonian potential sourced by all components
+  mediator_types:
+  - Newtonian gravitational potential
+  interaction_operators: []
+  scattering:
+    elastic: not_applicable
+    inelastic: not_applicable
+    momentum_dependence: not_applicable
+    velocity_dependence: not_applicable
+    spin_dependence: not_applicable
+  annihilation_channels: []
+  decay_channels: []
+  self_scattering_channels: []
+  cp_structure: not_applicable
+  flavor_structure: component-dependent and not specified
+  tree_or_loop_level: not_applicable
+parameters:
+  core:
+  - name: component mass
+    symbol: m_a
+    description: Mass of a dark-matter species contributing to the mixture.
+    range: component-dependent, including keV sterile-neutrino examples and 100 GeV WIMP examples
+    unit: eV to GeV
+    role: core
+    status: inferred
+    source_reference_ids:
+    - primary
+  - name: component dark-matter fraction
+    symbol: nu_a
+    description: Fraction of the total dark matter density in component a.
+    range: 0 to 1 with sum over components equal to 1
+    role: core
+    status: inferred
+    source_reference_ids:
+    - primary
+  - name: effective relativistic degrees of freedom at decoupling
+    symbol: g_d,a
+    description: Sets the temperature ratio and enters the relic-abundance/free-streaming formula.
+    range: component-dependent
+    role: core
+    status: inferred
+    source_reference_ids:
+    - primary
+  - name: decoupled distribution function
+    symbol: f_d,a(y)
+    description: Arbitrary isotropic distribution function inherited from decoupling, including LTE and
+      out-of-LTE cases.
+    role: core
+    status: established
+    source_reference_ids:
+    - primary
+  - name: distribution integral ratio
+    symbol: I_a
+    description: Dimensionless ratio of integrals over the decoupled distribution controlling velocity
+      dispersion and free streaming.
+    role: derived
+    status: established
+    source_reference_ids:
+    - primary
+  - name: WIMP decoupling temperature
+    symbol: T_d
+    description: Decoupling temperature for a heavy non-relativistic thermal relic component.
+    value: 10 MeV example for a 100 GeV WIMP
+    unit: MeV
+    role: cosmological
+    status: inferred
+    source_reference_ids:
+    - primary
+  nuisance: []
+  derived:
+  - name: comoving free-streaming length
+    symbol: lambda_fs(z)
+    description: Combined free-streaming scale of the dark-matter mixture at redshift z.
+    range: weighted by component fractions, masses, decoupling degrees of freedom, and distribution integrals
+    unit: kpc
+    role: derived
+    status: established
+    source_reference_ids:
+    - primary
+production:
+  mechanisms:
+  - relativistic thermal decoupling of fermionic and bosonic relics
+  - non-relativistic thermal decoupling of WIMP-like relics
+  - out-of-equilibrium resonant and non-resonant sterile-neutrino production
+  - possible Bose-Einstein condensation for bosonic components
+  thermal_equilibrium_with_standard_model: partial
+  thermal_equilibrium_with_hidden_sector: unknown
+  abundance_set_by:
+  - component masses
+  - decoupled distribution functions
+  - decoupling degrees of freedom
+  - component density fractions
+  depends_on_reheating_temperature: unknown
+  can_produce_all_dark_matter: parameter_dependent
+  nonthermal_momentum_distribution: parameter_dependent
+  notes: The paper gives relic-abundance relations for decoupled species and treats sterile-neutrino components
+    that decouple out of LTE.
+relic_density:
+  full_or_subcomponent: either
+  target_fraction: null
+  calculation_type: mixed
+  key_dependencies:
+  - m_a
+  - nu_a
+  - g_d,a
+  - f_d,a(y)
+  - internal degrees of freedom
+  requires_entropy_dilution: unknown
+  overclosure_risk: parameter_dependent
+  underproduction_risk: parameter_dependent
+  tuning_assessment: unknown
+cosmological_history:
+  standard_history_assumed: true
+  nonstandard_features: []
+  dark_sector_temperature:
+    name: decoupled component temperature
+    symbol: T_d(z)
+    description: Temperature of each decoupled component inferred from entropy conservation and g_d,a.
+    role: cosmological
+    status: inferred
+    source_reference_ids:
+    - primary
+  delta_neff: null
+  kinetic_decoupling:
+    name: component decoupling
+    symbol: T_d
+    description: Species decouple either relativistically, non-relativistically, or out of LTE depending
+      on component type.
+    role: cosmological
+    status: inferred
+    source_reference_ids:
+    - primary
+  chemical_decoupling: null
+  phase_transitions: []
+  topological_defects: []
+  isocurvature_perturbations: unknown
+  bbn_relevance: unknown
+  cmb_relevance: medium
+phase_space:
+  distribution_type: mixed_cold_warm
+  distribution_function_available: 'yes'
+  f_of_p_or_q: The model uses arbitrary isotropic f_d,a(y), with Fermi-Dirac, Bose-Einstein, Maxwell-Boltzmann,
+    resonant sterile-neutrino, and non-resonant sterile-neutrino examples.
+  average_momentum_relative_to_thermal: encoded through the I_a distribution-integral ratio for each component
+  free_streaming_length:
+    name: comoving free-streaming length
+    symbol: lambda_fs(z)
+    description: The paper derives a combined inverse-square free-streaming length as a weighted sum over
+      components.
+    range: examples include about 7 kpc*(keV/m) for non-resonant sterile neutrinos and 1.73 kpc*(keV/m)
+      for resonant sterile neutrinos
+    unit: kpc
+    role: derived
+    status: established
+    source_reference_ids:
+    - primary
+  velocity_dispersion_today: null
+  phase_space_bounds: []
+  notes: The formalism keeps full decoupled distribution functions rather than using a low-momentum truncation.
+structure_formation:
+  linear:
+    behaves_like_cdm: scale_dependent
+    transfer_function_shape: mixed_cold_warm
+    small_scale_power_effect: suppression
+    half_mode_mass: null
+    thermal_wdm_mapping:
+      available: false
+      validity: unknown
+      warning: The paper computes free-streaming scales directly for mixed components rather than giving
+        a thermal-WDM mapping.
+    impact_on_sigma8_s8: unknown
+  nonlinear:
+    halo_mass_function_effect: unknown
+    subhalo_mass_function_effect: unknown
+    infall_subhalo_mass_function_effect: unknown
+    present_day_bound_subhalo_mass_function_effect: unknown
+    concentration_mass_relation_effect: unknown
+    density_profile_effect: unknown
+    core_or_cusp_effect: unknown
+    subhalo_survival_effect: unknown
+    tidal_stripping_effect: unknown
+    smallest_galaxies_effect: unknown
+    simulation_calibrated: 'no'
+validity_domain:
+- id: collisionless_nonrelativistic_today
+  applies_to: model
+  condition: All components are treated as collisionless and non-relativistic at the epoch where the free-streaming
+    scale is evaluated.
+  valid_range: null
+  status: assumed
+  extrapolation_risk: medium
+  caveats:
+  - Relativistic or self-interacting components would require a different treatment.
+  source_reference_ids:
+  - primary
+  notes: null
+- id: isotropic_decoupled_distribution
+  applies_to: phase_space
+  condition: Each species has an isotropic decoupled distribution function evolved by Liouville flow.
+  valid_range: arbitrary isotropic f_d,a(y)
+  status: established
+  extrapolation_risk: medium
+  caveats:
+  - Anisotropic or late-interacting distributions are outside the paper's setup.
+  source_reference_ids:
+  - primary
+  notes: null
+- id: adiabatic_expansion_scaling
+  applies_to: cosmological_history
+  condition: The redshift dependence lambda_fs(z)=lambda_fs(0)/(1+z) is argued under slow, adiabatic expansion.
+  valid_range: low-redshift Newtonian regime with free-streaming length much smaller than the Hubble radius
+  status: approximate
+  extrapolation_risk: medium
+  caveats:
+  - The derivation first solves the non-expanding problem and restores redshift scaling a posteriori.
+  source_reference_ids:
+  - primary
+  notes: null
+assumptions:
+  global:
+  - id: collisionless_components
+    description: Each dark-matter component obeys a collisionless Boltzmann-Vlasov equation after decoupling.
+    scope: structure_formation
+    status: assumed
+    impact_if_violated: Self-interactions or collisions would alter the gravitational polarization function
+      and free-streaming scale.
+    can_be_relaxed: unknown
+    source_reference_ids:
+    - primary
+    notes: null
+  - id: fractions_sum_to_total_dm
+    description: The component fractions nu_a sum to the total dark matter density.
+    scope: production
+    status: assumed
+    impact_if_violated: The combined free-streaming formula would not represent the full dark matter sector.
+    can_be_relaxed: 'yes'
+    source_reference_ids:
+    - primary
+    notes: null
+  - id: newtonian_linear_regime
+    description: The free-streaming scale is extracted from the linearized Vlasov-Poisson system in the
+      Newtonian regime.
+    scope: structure_formation
+    status: assumed
+    impact_if_violated: Relativistic perturbation effects could change the quantitative mapping.
+    can_be_relaxed: unknown
+    source_reference_ids:
+    - primary
+    notes: null
+associated_code:
+  has_associated_code: unknown
+  code_summary: No associated public code or implementation is described in the assigned paper text.
+  primary_code_role: null
+  repositories: []
+  packages_or_modules: []
+  notebooks: []
+  scripts: []
+  containers_or_environments: []
+  expected_inputs: []
+  expected_outputs: []
+  supported_observable_channels: []
+  caveats: []
+provenance:
+  model_id: 0711_0470_mixed_collisionless_free_streaming_dm_v1
+  model_name: Mixed collisionless dark matter free-streaming model
+  model_family: multi_component_dark_matter
+  entry_version: 0.1.0
+  status: machine_extracted
+  created_at: '2026-05-31'
+  last_updated: '2026-05-31'
+  sources:
+    primary_papers:
+    - reference_id: primary
+      title: Free streaming in mixed dark matter
+      authors:
+      - Daniel Boyanovsky
+      year: 2007
+      arxiv_id: '0711.0470'
+      doi: null
+      url: null
+      role: original_model
+      notes: Assigned SQLite full text used as the only source.
+    - arxiv_id: '0711.0470'
+      authors:
+      - Boyanovsky, Daniel
+      doi: 10.1103/PhysRevD.77.023528
+      notes: Primary model paper read from local full text and discovered through ADS.
+      reference_id: 0711_0470_primary
+      role: original_model
+      title: Free streaming in mixed dark matter
+      url: https://arxiv.org/abs/0711.0470
+      year: 2008
+    constraint_papers:
+    - arxiv_id: '1008.0992'
+      authors:
+      - Boyanovsky, Daniel
+      - Wu, Jun
+      doi: 10.1103/PhysRevD.83.043524
+      notes: Related local full text on WDM free-streaming, transfer functions, acoustic oscillations,
+        and Lyman-alpha caveats.
+      reference_id: 0711_0470_rel_small_scale_wdm
+      role: constraint
+      title: 'Small scale aspects of warm dark matter: Power spectra and acoustic oscillations'
+      url: https://arxiv.org/abs/1008.0992
+      year: 2011
+    - arxiv_id: '0807.0646'
+      authors:
+      - Boyanovsky, D.
+      doi: 10.1103/PhysRevD.78.103505
+      notes: Related local full text on a nonthermal sterile-neutrino distribution and small-scale transfer
+        function.
+      reference_id: 0711_0470_rel_scalar_decay_sterile
+      role: extension
+      title: Clustering properties of a sterile neutrino dark matter candidate
+      url: https://arxiv.org/abs/0807.0646
+      year: 2008
+    - arxiv_id: '1812.06891'
+      authors:
+      - Erschfeld, Alaric
+      - Floerchinger, Stefan
+      doi: 10.1088/1475-7516/2019/06/039
+      notes: Related local full text on velocity-dispersion evolution in structure formation.
+      reference_id: 0711_0470_rel_velocity_dispersion
+      role: implementation
+      title: Evolution of dark matter velocity dispersion
+      url: https://arxiv.org/abs/1812.06891
+      year: 2019
+    external_databases: []
+    review_papers: []
+  extraction:
+    method: llm_assisted
+    extracted_by: codex_batch_worker
+    extractor_name: Codex dark-matter model-card worker
+    extraction_date: '2026-05-31'
+    confidence: medium
+    source_chunks_or_sections:
+    - reference_id: primary
+      section: abstract
+      page: null
+      quote_or_summary: The paper studies a mixture of collisionless non-relativistic dark matter particles
+        and derives the free-streaming length from the gravitational polarization function.
+    - reference_id: primary
+      section: summary of results
+      page: null
+      quote_or_summary: The main formula sums component fractions, masses, decoupling degrees of freedom,
+        and distribution integrals.
+    - reference_id: primary
+      section: decoupled distribution functions
+      page: null
+      quote_or_summary: The text relates decoupled distribution functions to relic abundances and velocity
+        dispersions.
+    unresolved_items:
+    - This is a phenomenological mixed-DM parameterization, not a UV-complete particle construction.
+    - No likelihood tables are provided for arbitrary mixed dark-matter compositions.
+    - Bose-Einstein-condensate thermalization and infrared behavior are noted by the primary paper as
+      requiring additional study.
+    - A current Planck/ACT/eBOSS-style cosmology update was not performed.
+  evidence:
+    particle_content:
+    - reference_id: primary
+      note: The modeled mixture includes fermionic relics, bosonic relics including BEC cases, heavy WIMPs,
+        and sterile neutrinos.
+      confidence: high
+      section: abstract/summary
+      page: null
+    symmetries:
+    - reference_id: primary
+      note: No stabilizing symmetry is specified; stability is an assumption of the collisionless dark-matter
+        components.
+      confidence: medium
+      section: model setup
+      page: null
+    interactions:
+    - reference_id: primary
+      note: The only common interaction in the formalism is through the self-consistent gravitational
+        potential sourced by all components.
+      confidence: high
+      section: Boltzmann-Vlasov setup
+      page: null
+    production_mechanism:
+    - reference_id: primary
+      note: Components decouple in or out of local thermal equilibrium, with examples for relativistic
+        thermal relics, nonrelativistic WIMPs, and sterile neutrinos.
+      confidence: high
+      section: introduction/summary
+      page: null
+    cosmological_history:
+    - reference_id: primary
+      note: The text uses entropy conservation to relate decoupling temperature to the CMB temperature
+        and assumes adiabatic redshift scaling of lambda_fs.
+      confidence: medium
+      section: decoupled distribution functions
+      page: null
+    parameter_ranges:
+    - reference_id: primary
+      note: Examples quote sterile-neutrino free-streaming scales proportional to keV/m and a WIMP example
+        with m_wimp around 100 GeV and T_d around 10 MeV.
+      confidence: medium
+      section: abstract/summary
+      page: null
+    validity_domain:
+    - reference_id: primary
+      note: The derivation assumes collisionless nonrelativistic components and arbitrary isotropic distribution
+        functions.
+      confidence: high
+      section: formalism
+      page: null
+    constraints:
+    - confidence: high
+      note: Primary text frames free streaming as the scale separating Landau-damped and Jeans-unstable
+        modes and gives relic-fraction bounds.
+      page: null
+      reference_id: 0711_0470_primary
+      section: Free-streaming and abundance discussion
+    - confidence: medium
+      note: Related local text provides an explicit sterile-neutrino scalar-decay example with X-ray/Lyman-alpha
+        tension.
+      page: null
+      reference_id: 0711_0470_rel_scalar_decay_sterile
+      section: Abstract/transfer-function discussion
+    observables:
+    - confidence: high
+      note: Primary text derives the mixed-component free-streaming length from the Vlasov/gravitational
+        polarization calculation.
+      page: null
+      reference_id: 0711_0470_primary
+      section: Summary of results
+    - confidence: medium
+      note: Related local text connects arbitrary WDM distribution functions to transfer functions, acoustic
+        oscillations, and Lyman-alpha caveats.
+      page: null
+      reference_id: 0711_0470_rel_small_scale_wdm
+      section: Abstract/introduction
+    routes:
+    - confidence: high
+      note: Primary paper supplies the distribution-integral to lambda_fs/k_fs route for mixtures.
+      page: null
+      reference_id: 0711_0470_primary
+      section: Vlasov/free-streaming derivation
+    - confidence: medium
+      note: Related local text supports treating velocity dispersion as a dynamical structure-formation
+        input.
+      page: null
+      reference_id: 0711_0470_rel_velocity_dispersion
+      section: Velocity-dispersion evolution
+  review:
+    human_reviewed: false
+    reviewed_by: null
+    review_date: null
+    expert_reviewed: false
+    expert_reviewer: null
+    expert_review_date: null
+    reviewer_notes: []
+    scientific_confidence: medium
+    implementation_confidence: medium
+  caveats:
+  - Accepted as a substantive dark-matter phenomenological model, not as a new UV particle model.
+robustness:
+  overall: medium
+  theory_robustness: medium
+  observational_robustness: unknown
+  computational_robustness: medium
+  dominant_uncertainties:
+  - component distribution functions
+  - fractional abundances
+  - validity of a posteriori redshift scaling
+  - absence of nonlinear calibration
+  validation_status: expert_judgment_only
+  notes: The analytic formalism is explicit, but the entry is phenomenological and component identities
+    are generic.
+agent_failure_modes:
+  warnings:
+  - id: not_uv_particle_model
+    severity: medium
+    category: assumption_mismatch
+    warning: Do not treat this entry as a UV-complete particle model with specified stabilizing symmetries.
+    mitigation: Use it only as a mixed-DM free-streaming parameterization unless a component-specific
+      UV model is supplied.
+    source_reference_ids:
+    - primary
+  - id: component_distribution_sensitive
+    severity: medium
+    category: extrapolation
+    warning: The free-streaming scale depends directly on the assumed distribution functions and component
+      fractions.
+    mitigation: Preserve f_d,a, I_a, and nu_a assumptions in downstream use.
+    source_reference_ids:
+    - primary
+  - id: linear_only
+    severity: low
+    category: extrapolation
+    warning: The paper derives a linear free-streaming scale and does not provide nonlinear simulation
+      calibration.
+    mitigation: Do not infer halo or subhalo mass functions directly from this card.
+    source_reference_ids:
+    - primary
+observables:
+- caveats:
+  - The paper does not provide a modern likelihood fit to Lyman-alpha forest or satellite data.
+  channel: small_scale_structure
+  effect_direction: model_dependent
+  environments:
+  - linear matter power spectrum
+  - dwarf-galaxy and satellite scales
+  id: obs_mixed_free_streaming_cutoff
+  key_quantities:
+  - name: free-streaming length
+    role: derived
+    source_reference_ids:
+    - 0711_0470_primary
+    status: established
+    symbol: lambda_fs(z)
+    unit: kpc
+    value: scales approximately as lambda_fs(0)/(1+z)
+  - name: component fraction
+    role: core
+    source_reference_ids:
+    - 0711_0470_primary
+    status: established
+    symbol: nu_a
+    value: 0 <= nu_a <= 1; sum_a nu_a = 1
+  - name: component mass
+    role: core
+    source_reference_ids:
+    - 0711_0470_primary
+    status: inferred
+    symbol: m_a
+    value: keV thermal/sterile examples and 100 GeV WIMP examples
+  - name: distribution integral
+    role: derived
+    source_reference_ids:
+    - 0711_0470_primary
+    status: established
+    symbol: I_a
+    value: dimensionless integral ratio determined by each decoupled distribution
+  linked_constraints:
+  - con_wdm_structure_recast
+  - con_component_relic_fraction
+  linked_routes:
+  - route_distribution_to_structure
+  name: Mixed-component free-streaming cutoff
+  notes: Useful as a general mapping from mixed dark-sector microphysics to a transfer-function cutoff.
+  observability: medium
+  predicted_effect: The component masses, fractional densities, decoupling degrees of freedom, and distribution
+    integrals combine into a single mixed free-streaming scale; modes below this scale are Landau-damped
+    while longer modes remain gravitationally unstable.
+  redshift_range: matter-radiation equality to late-time linear structure
+  relevance: high
+  scale_range: kpc to sub-Mpc free-streaming scales depending on mixture
+  source_reference_ids:
+  - 0711_0470_primary
+  - 0711_0470_rel_small_scale_wdm
+  subchannel: linear matter-power cutoff
+- caveats:
+  - Velocity moments must be propagated with the actual nonthermal distribution, not a generic thermal
+    relic template.
+  channel: large_scale_structure
+  effect_direction: shape_change
+  environments:
+  - linear perturbations
+  - N-body initial-condition scales
+  id: obs_velocity_dispersion_response
+  key_quantities:
+  - name: effective velocity dispersion
+    role: derived
+    source_reference_ids:
+    - 0711_0470_primary
+    - 0711_0470_rel_velocity_dispersion
+    status: inferred
+    symbol: V_eq
+    value: distribution dependent at equality
+  - name: free-streaming wave number
+    role: derived
+    source_reference_ids:
+    - 0711_0470_primary
+    - 0711_0470_rel_small_scale_wdm
+    status: inferred
+    symbol: k_fs
+    value: inverse scale associated with lambda_fs
+  linked_constraints:
+  - con_wdm_structure_recast
+  linked_routes:
+  - route_distribution_to_structure
+  name: Velocity-dispersion response of mixed dark matter
+  notes: null
+  observability: medium
+  predicted_effect: Warm or hot fractions increase the effective velocity dispersion and alter the transfer-function
+    shape relative to a purely cold component; WIMP- or condensate-dominated mixtures remain closer to
+    CDM.
+  redshift_range: linear era through matter domination
+  relevance: medium
+  scale_range: small-scale modes near and below k_fs
+  source_reference_ids:
+  - 0711_0470_primary
+  - 0711_0470_rel_velocity_dispersion
+  subchannel: dark-matter velocity moments
+constraints:
+- allowed_regions:
+  - CDM-dominated, WIMP-dominated, or sufficiently heavy/cold mixed components with small lambda_fs.
+  applies: recast_required
+  assumptions:
+  - can_be_relaxed: partial
+    description: A mixed free-streaming scale can be mapped onto observational small-scale-structure constraints.
+    id: assume_free_streaming_proxy
+    impact_if_violated: A full transfer-function likelihood can shift the allowed mixture fractions.
+    scope: constraint recast
+    source_reference_ids:
+    - 0711_0470_primary
+    - 0711_0470_rel_small_scale_wdm
+    status: approximate
+  benchmark_implications:
+  - The paper notes a 100 GeV WIMP example is effectively CDM-like, while sterile-neutrino-like components
+    can control the cutoff.
+  caveats:
+  - Related WDM work warns of degeneracy between mass, distribution function, and decoupling temperature.
+  constrained_parameters:
+  - lambda_fs
+  - k_fs
+  - nu_a
+  - m_a
+  - g_d,a
+  - I_a
+  constraint_type: cosmological
+  data_release: null
+  excluded_regions:
+  - Mixtures with warm/hot fractions large enough to erase observed small-scale structure.
+  id: con_wdm_structure_recast
+  likelihood_available: 'no'
+  likelihood_reference: null
+  name: Small-scale structure bound on mixed free streaming
+  notes: Treat this as a route target rather than a published exclusion curve for arbitrary mixtures.
+  observable_channel: Lyman-alpha/satellites/small-scale matter power
+  recasting_needed: 'yes'
+  robustness: medium
+  source_reference_ids:
+  - 0711_0470_primary
+  - 0711_0470_rel_small_scale_wdm
+  - 0711_0470_rel_scalar_decay_sterile
+- allowed_regions:
+  - Fractions satisfying 0 <= nu_a <= 1 and sum_a nu_a = 1 for the adopted relic distributions.
+  applies: 'yes'
+  assumptions:
+  - can_be_relaxed: partial
+    description: All mixture components are stable and collisionless on structure-formation timescales.
+    id: assume_stable_collisionless_components
+    impact_if_violated: Late decay or self-interaction would invalidate the simple relic-fraction sum.
+    scope: abundance accounting
+    source_reference_ids:
+    - 0711_0470_primary
+    status: assumed
+  benchmark_implications:
+  - The relic-abundance formula ties each mass and decoupling history to its allowed fractional contribution.
+  caveats:
+  - The abundance value should be updated for a current cosmology fit before precision use.
+  constrained_parameters:
+  - nu_a
+  - m_a
+  - g_d,a
+  - f_d,a
+  constraint_type: cosmological
+  data_release: CMB-era dark matter density value used in the primary paper
+  excluded_regions:
+  - Component masses and distributions that make sum_a nu_a exceed the total dark-matter abundance.
+  id: con_component_relic_fraction
+  likelihood_available: 'no'
+  likelihood_reference: null
+  name: Component relic-fraction accounting
+  notes: null
+  observable_channel: dark-matter abundance
+  recasting_needed: partial
+  robustness: high
+  source_reference_ids:
+  - 0711_0470_primary
+theory_to_observable_routing:
+  routes:
+  - agent_notes: The route is explicit through lambda_fs but observational likelihoods are external.
+    caveats:
+    - Do not substitute a thermal relic mapping for nonthermal distributions without recalibration.
+    constraint_ids:
+    - con_wdm_structure_recast
+    - con_component_relic_fraction
+    derived_quantities:
+    - lambda_fs(z)
+    - k_fs
+    - velocity dispersion at equality
+    - linear transfer function
+    description: Map each collisionless component distribution into a mixed free-streaming scale and then
+      into small-scale structure observables.
+    forward_model_chain:
+    - inputs:
+      - f_d,a(y)
+      - m_a
+      - g_d,a
+      notes: null
+      outputs:
+      - I_a
+      - velocity moments
+      step_id: integrate_distributions
+      step_type: analytic_formula
+      tool_or_code: distribution integral ratios I_a
+      validity: valid for the collisionless distributions considered in the primary paper
+    - inputs:
+      - I_a
+      - nu_a
+      notes: The primary paper treats the collective gravitational response by analogy with multicomponent
+        plasmas.
+      outputs:
+      - lambda_fs
+      - k_fs
+      step_id: solve_mixed_vlasov_response
+      step_type: semi_analytic_model
+      tool_or_code: linearized Boltzmann-Vlasov/gravitational polarization calculation
+      validity: linear perturbations in an expanding matter background
+    - inputs:
+      - k_fs
+      - transfer function
+      notes: null
+      outputs:
+      - allowed mixture fractions and masses
+      step_id: compare_structure_data
+      step_type: recasting
+      tool_or_code: transfer-function plus Lyman-alpha/satellite likelihood
+      validity: requires external likelihood and current data
+    id: route_distribution_to_structure
+    input_parameters:
+    - m_a
+    - nu_a
+    - g_d,a
+    - f_d,a(y)
+    - I_a
+    likelihoods:
+    - future Lyman-alpha forest likelihood
+    - satellite-count likelihood
+    observable_ids:
+    - obs_mixed_free_streaming_cutoff
+    - obs_velocity_dispersion_response
+    required_code_resources:
+    - distribution-integral evaluator
+    - linear transfer-function solver
+    - small-scale-structure likelihood
+    route_status: planned
+    source_model_features:
+    - multi-component collisionless dark matter
+    - decoupled distribution functions
+    - self-consistent Newtonian gravitational potential
+    validation_tests:
+    - reproduce the primary paper's lambda_fs scaling
+    - recover CDM-like limit for WIMP-dominated mixtures

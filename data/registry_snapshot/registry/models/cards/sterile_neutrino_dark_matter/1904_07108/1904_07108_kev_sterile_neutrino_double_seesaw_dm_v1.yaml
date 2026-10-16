@@ -1,0 +1,866 @@
+_source:
+  shard: arXiv_src_1904_022_wds.tar
+  paper_id: '1904_07108'
+  source_member: 1904_07108.json
+  enriched: true
+  enrichment_schema_version: dm_model_ocr_enrichment_smoke_v0
+schema_version: model_only_v0
+model_id: 1904_07108_kev_sterile_neutrino_double_seesaw_dm_v1
+identity:
+  name: keV sterile-neutrino double-seesaw freeze-in dark matter
+  family: sterile_neutrino_dark_matter
+  aliases:
+  - keV sterile neutrino plus singlet scalar model
+  - low-scale-leptogenesis sterile-neutrino DM
+  - double-seesaw sterile-neutrino dark matter
+  short_description: A type-I-seesaw extension with an extra singlet neutrino and singlet scalar in which
+    a 7.1 keV sterile neutrino is produced mainly by freeze-in from in-equilibrium scalar decay while
+    the same setup supports low-scale leptogenesis.
+  historical_origin_or_motivation: Motivated by combining tiny active-neutrino masses, keV sterile-neutrino
+    dark matter, and low-scale leptogenesis in one renormalizable framework.
+  status: speculative
+  model_kind: complete_theory
+theory:
+  theory_level: uv_complete
+  parent_frameworks:
+  - type-I seesaw
+  - double seesaw
+  - low-scale leptogenesis
+  - sterile-neutrino dark matter
+  lagrangian_available: 'yes'
+  renormalizable: 'yes'
+  eft_cutoff: null
+  embedded_in_larger_framework: 'yes'
+  notes: The paper describes a renormalizable model with singlet neutrino and scalar additions to the
+    type-I seesaw and gives the relevant Lagrangian, scalar potential, and neutrino mass matrix.
+particle_content:
+  dark_matter_candidate:
+    name: keV sterile singlet neutrino
+    spin: 1/2
+    statistics: fermion
+    elementary_or_composite: elementary
+    number_of_components: single_component
+  additional_dark_sector_particles:
+  - singlet scalar field
+  - heavy right-handed Majorana neutrinos
+  mediators:
+  - singlet scalar
+  - heavy right-handed neutrinos
+  - active-sterile neutrino mixing
+  dark_radiation_species: []
+  excited_or_degenerate_states: []
+  long_lived_particles:
+  - 7.1 keV sterile neutrino
+  unstable_parent_particles:
+  - singlet scalar field
+  - heavy Majorana neutrinos
+  standard_model_extension: substantial
+symmetries:
+  stabilizing_mechanism: A Z2 symmetry would make the lightest singlet neutrino stable if unbroken; after
+    the singlet scalar gets a VEV, the sterile neutrino remains a viable DM candidate because its lifetime
+    is much longer than the age of the Universe.
+  symmetries:
+  - name: Z2
+    type: discrete
+    exact_or_approximate: broken
+    breaking: Broken when the singlet scalar field acquires a nonzero vacuum expectation value.
+    breaking_scale:
+      name: singlet-scalar VEV
+      symbol: v_phi
+      description: VEV used in the benchmark scalar sector.
+      value: 100 GeV
+      unit: GeV
+      role: core
+      status: inferred
+      source_reference_ids: []
+  topological_defects_possible: unknown
+interactions:
+  portals:
+  - neutrino
+  - higgs
+  standard_model_targets:
+  - active neutrinos
+  - lepton doublets
+  - Standard Model Higgs
+  dark_sector_couplings:
+  - Y_D Dirac neutrino Yukawa coupling
+  - Y_phi singlet-neutrino--scalar Yukawa coupling
+  - small active-sterile mixing angle
+  mediator_types:
+  - singlet scalar
+  - heavy Majorana neutrino
+  - active-neutrino mixing
+  interaction_operators:
+  - M_N N_R^T N_R
+  - Y_D L H N_R
+  - Y_phi N_R singlet-neutrino scalar coupling
+  - Higgs-singlet scalar portal term
+  scattering:
+    elastic: unknown
+    inelastic: unknown
+    momentum_dependence: unknown
+    velocity_dependence: unknown
+    spin_dependence: unknown
+  annihilation_channels: []
+  decay_channels:
+  - radiative sterile-neutrino decay through active-sterile mixing
+  - singlet scalar decay to sterile-neutrino pairs
+  self_scattering_channels: []
+  cp_structure: Complex singlet-neutrino Yukawa couplings provide CP violation for low-scale leptogenesis.
+  flavor_structure: The construction uses a Dirac neutrino Yukawa matrix and heavy-neutrino-sector couplings
+    in a double-seesaw mass matrix.
+  tree_or_loop_level: both
+parameters:
+  core:
+  - name: sterile-neutrino mass
+    symbol: m_s
+    description: Mass used for the keV dark matter benchmark.
+    value: 7.1 keV
+    unit: keV
+    role: core
+    status: inferred
+    source_reference_ids: []
+  - name: active-sterile mixing
+    symbol: sin^2(2 theta)
+    description: Small mixing controlling sterile-neutrino lifetime and subdominant production through
+      active mixing.
+    value: about 1e-10 in the 7.1 keV lifetime discussion
+    role: core
+    status: inferred
+    source_reference_ids: []
+  - name: singlet scalar mass
+    symbol: m_phi
+    description: Scalar parent mass used in the relic-density benchmark.
+    value: 100 GeV
+    unit: GeV
+    role: core
+    status: inferred
+    source_reference_ids: []
+  - name: singlet scalar VEV
+    symbol: v_phi
+    description: VEV used in the benchmark scalar sector and effective decay interaction.
+    value: 100 GeV
+    unit: GeV
+    role: core
+    status: inferred
+    source_reference_ids: []
+  - name: heavy Majorana neutrino mass
+    symbol: M_N2
+    description: Heavy-neutrino scale used for the scalar-decay relic-density benchmark.
+    value: 10 TeV
+    unit: TeV
+    role: core
+    status: inferred
+    source_reference_ids: []
+  - name: singlet-neutrino Yukawa coupling
+    symbol: Y_phi2
+    description: Coupling value that reproduces the central Planck dark-matter abundance in the benchmark.
+    value: '2.8e-3'
+    role: core
+    status: inferred
+    source_reference_ids: []
+  - name: Dirac neutrino Yukawa scale
+    symbol: Y_D
+    description: Approximate scale producing the active-neutrino mass and sterile mixing benchmarks.
+    value: about 1e-6
+    role: core
+    status: inferred
+    source_reference_ids: []
+  - name: free-streaming length
+    symbol: lambda_FS
+    description: Free-streaming estimate for the benchmark sterile-neutrino distribution.
+    value: 0.044 Mpc
+    unit: Mpc
+    role: derived
+    status: inferred
+    source_reference_ids: []
+production:
+  mechanisms:
+  - freeze-in from in-equilibrium singlet scalar decay
+  - subdominant active-sterile mixing production
+  thermal_equilibrium_with_standard_model: 'no'
+  thermal_equilibrium_with_hidden_sector: partial
+  abundance_set_by:
+  - singlet scalar decay width
+  - Y_phi2
+  - v_phi
+  - M_N2
+  - m_phi
+  - entropy dilution factor
+  depends_on_reheating_temperature: unknown
+  can_produce_all_dark_matter: 'yes'
+  nonthermal_momentum_distribution: 'yes'
+  notes: The scalar parent is in equilibrium until freeze-out; the accepted benchmark chooses in-equilibrium
+    rather than out-of-equilibrium decay.
+relic_density:
+  full_or_subcomponent: full_dark_matter
+  target_fraction:
+    name: dark matter density
+    symbol: Omega_DM h^2
+    description: The benchmark reproduces the central Planck dark matter density quoted in the text.
+    value: '0.1199'
+    role: cosmological
+    status: inferred
+    source_reference_ids: []
+  calculation_type: nonthermal
+  key_dependencies:
+  - Boltzmann equation for scalar decay and active-sterile production
+  - Y_phi2 = 2.8e-3
+  - m_phi = v_phi = 100 GeV
+  - M_N2 = 10 TeV
+  - dilution factor about 27
+  requires_entropy_dilution: 'yes'
+  overclosure_risk: parameter_dependent
+  underproduction_risk: parameter_dependent
+  tuning_assessment: unknown
+cosmological_history:
+  standard_history_assumed: true
+  nonstandard_features:
+  - singlet scalar thermal population freezes out and decays into sterile neutrinos
+  - low-scale leptogenesis from heavy Majorana neutrino decay
+  dark_sector_temperature: null
+  delta_neff: null
+  kinetic_decoupling: null
+  chemical_decoupling:
+    name: scalar freeze-out ratio
+    symbol: r_f
+    description: The scalar freeze-out estimate gives r_f = m_phi/T_f.
+    value: about 13
+    role: cosmological
+    status: inferred
+    source_reference_ids: []
+  phase_transitions:
+  - singlet scalar obtains a VEV and breaks the Z2 symmetry
+  topological_defects: []
+  isocurvature_perturbations: unknown
+  bbn_relevance: low
+  cmb_relevance: medium
+phase_space:
+  distribution_type: decay_produced
+  distribution_function_available: 'yes'
+  average_momentum_relative_to_thermal: p/T = 2.477 divided by dilution factor^(1/3), colder than thermal
+    warm DM
+  free_streaming_length:
+    name: free-streaming length
+    symbol: lambda_FS
+    description: Computed for the benchmark sterile-neutrino distribution.
+    value: '0.044'
+    unit: Mpc
+    role: derived
+    status: inferred
+    source_reference_ids: []
+  phase_space_bounds:
+  - The text states the benchmark free-streaming length is below 0.11 Mpc.
+  notes: The paper solves for a nonthermal distribution from scalar decay and active-sterile mixing contributions.
+structure_formation:
+  linear:
+    behaves_like_cdm: scale_dependent
+    transfer_function_shape: smooth_cutoff
+    small_scale_power_effect: suppression
+  nonlinear:
+    halo_mass_function_effect: unknown
+    subhalo_mass_function_effect: unknown
+    simulation_calibrated: 'no'
+validity_domain:
+- id: sterile_in_equilibrium_decay
+  applies_to: production
+  condition: The 7 keV benchmark is taken from in-equilibrium scalar decay; the paper says out-of-equilibrium
+    decay gives too large a free-streaming length.
+  status: inferred
+  extrapolation_risk: high
+  caveats: []
+  source_reference_ids: []
+  notes: null
+- id: sterile_small_mixing
+  applies_to: parameter
+  condition: The active-sterile mixing must be small enough that sterile neutrinos were never in thermal
+    equilibrium and live longer than the age of the Universe.
+  status: inferred
+  extrapolation_risk: high
+  caveats: []
+  source_reference_ids: []
+  notes: null
+- id: sterile_benchmark_point
+  applies_to: parameter
+  condition: The quoted full-DM abundance uses m_s = 7.1 keV, m_phi = v_phi = 100 GeV, M_N2 = 10 TeV,
+    and Y_phi2 = 2.8e-3.
+  status: inferred
+  extrapolation_risk: medium
+  caveats: []
+  source_reference_ids: []
+  notes: null
+assumptions:
+  global:
+  - id: sterile_type_i_extension
+    description: The model extends type-I seesaw with one additional singlet neutrino and one singlet
+      scalar.
+    scope: theory
+    status: assumed
+    source_reference_ids: []
+  - id: sterile_scalar_equilibrium
+    description: The singlet scalar remains in equilibrium until freeze-out before decaying into sterile-neutrino
+      pairs.
+    scope: production
+    status: assumed
+    source_reference_ids: []
+  - id: sterile_low_scale_leptogenesis
+    description: The same heavy-neutrino sector can generate low-scale leptogenesis through CP-violating
+      Yukawa couplings.
+    scope: cosmological_history
+    status: assumed
+    source_reference_ids: []
+associated_code:
+  has_associated_code: unknown
+  code_summary: No associated code is identified in the assigned SQLite text.
+  repositories: []
+  packages_or_modules: []
+  notebooks: []
+  scripts: []
+  caveats: []
+provenance:
+  model_id: 1904_07108_kev_sterile_neutrino_double_seesaw_dm_v1
+  model_name: keV sterile-neutrino double-seesaw freeze-in dark matter
+  model_family: sterile_neutrino_dark_matter
+  entry_version: 0.1.0
+  status: machine_extracted
+  created_at: '2026-05-31'
+  last_updated: '2026-05-31'
+  sources:
+    primary_papers:
+    - reference_id: '1904_07108'
+      title: Roles of sterile neutrinos in particle physics and cosmology
+      authors:
+      - Sin Kyu Kang
+      year: 2019
+      arxiv_id: '1904.07108'
+      doi: null
+      url: null
+      role: original_model
+      notes: Assigned full text from target_text.sqlite.
+    - arxiv_id: '1904.07108'
+      authors:
+      - Kang, Sin Kyu
+      doi: 10.1142/S0217751X19300059
+      notes: Primary assigned paper read from local SQLite full text.
+      reference_id: arxiv:1904.07108
+      role: original_model
+      title: Roles of sterile neutrinos in particle physics and cosmology
+      url: https://arxiv.org/abs/1904.07108
+      year: 2019
+    constraint_papers:
+    - arxiv_id: astro-ph/0501562
+      authors:
+      - Viel, Matteo
+      - Lesgourgues, Julien
+      - Haehnelt, Martin G.
+      - Matarrese, Sabino
+      - Riotto, Antonio
+      doi: 10.1103/PhysRevD.71.063534
+      notes: Related full text resolved locally and read for bounded enrichment.
+      reference_id: arxiv:astro-ph/0501562
+      role: constraint
+      title: Constraining warm dark matter candidates including sterile neutrinos and light gravitinos
+        with WMAP and the Lyman-α forest
+      url: https://arxiv.org/abs/astro-ph/0501562
+      year: 2005
+    - arxiv_id: astro-ph/0605706
+      authors:
+      - Viel, Matteo
+      - Lesgourgues, Julien
+      - Haehnelt, Martin G.
+      - Matarrese, Sabino
+      - Riotto, Antonio
+      doi: 10.1103/PhysRevLett.97.071301
+      notes: Related full text resolved locally and read for bounded enrichment.
+      reference_id: arxiv:astro-ph/0605706
+      role: constraint
+      title: Can Sterile Neutrinos Be Ruled Out as Warm Dark Matter Candidates?
+      url: https://arxiv.org/abs/astro-ph/0605706
+      year: 2006
+    - arxiv_id: '1306.2314'
+      authors:
+      - Viel, Matteo
+      - Becker, George D.
+      - Bolton, James S.
+      - Haehnelt, Martin G.
+      doi: 10.1103/PhysRevD.88.043502
+      notes: Related full text resolved locally and read for bounded enrichment.
+      reference_id: arxiv:1306.2314
+      role: constraint
+      title: 'Warm dark matter as a solution to the small scale crisis: New constraints from high redshift
+        Lyman-α forest data'
+      url: https://arxiv.org/abs/1306.2314
+      year: 2013
+    external_databases: []
+    review_papers: []
+  extraction:
+    method: llm_assisted
+    extracted_by: codex_batch-0008
+    extractor_name: Codex dark-matter model-card worker
+    extraction_date: '2026-05-31'
+    confidence: medium
+    source_chunks_or_sections:
+    - reference_id: '1904_07108'
+      section: A Model for keV Sterile Neutrino DM
+      page: null
+      quote_or_summary: The paper gives a renormalizable keV sterile-neutrino model tied to low-scale
+        leptogenesis and double seesaw neutrino masses.
+    - reference_id: '1904_07108'
+      section: setup
+      page: null
+      quote_or_summary: The model adds a singlet neutrino and singlet scalar to type-I seesaw and writes
+        their Yukawa and mass terms.
+    - reference_id: '1904_07108'
+      section: Production of DM
+      page: null
+      quote_or_summary: The relic density is computed from in-equilibrium scalar decay into sterile-neutrino
+        pairs; the benchmark matches Omega_DM h^2.
+    unresolved_items:
+    - The exact scalar-decay momentum distribution was not propagated through a new Boltzmann/Lyman-alpha
+      likelihood.
+    - X-ray line limits require halo and background modeling beyond this batch.
+  evidence:
+    particle_content:
+    - reference_id: '1904_07108'
+      note: The model extends type-I seesaw by adding a singlet neutrino and a singlet scalar field; the
+        sterile neutrino is considered as keV-scale dark matter.
+      confidence: high
+      section: A Model for keV Sterile Neutrino DM
+      page: null
+    symmetries:
+    - reference_id: '1904_07108'
+      note: The Lagrangian has a Z2 under which the singlet neutrino and singlet scalar are odd; after
+        scalar symmetry breaking the sterile neutrino remains viable if its lifetime exceeds the age of
+        the Universe.
+      confidence: high
+      section: setup
+      page: null
+    interactions:
+    - reference_id: '1904_07108'
+      note: The Lagrangian includes heavy right-handed neutrino masses, Dirac Yukawa terms, and singlet-neutrino--scalar
+        Yukawa couplings that connect the sterile state to heavy neutrinos.
+      confidence: high
+      section: setup/Lagrangian
+      page: null
+    production_mechanism:
+    - reference_id: '1904_07108'
+      note: The paper focuses on production by in-equilibrium decay of the singlet scalar into sterile-neutrino
+        pairs, with active-sterile-mixing production subdominant.
+      confidence: high
+      section: Production of DM
+      page: null
+    cosmological_history:
+    - reference_id: '1904_07108'
+      note: The singlet scalar is in equilibrium until freeze-out; the sterile-neutrino distribution is
+        obtained from a Boltzmann equation and includes an entropy dilution factor.
+      confidence: high
+      section: Production of DM
+      page: null
+    parameter_ranges:
+    - reference_id: '1904_07108'
+      note: The benchmark takes m_s = 7.1 keV, v_phi = m_phi = 100 GeV, M_N2 = 10 TeV, and Y_phi2 = 2.8e-3
+        to reproduce the central Planck relic density.
+      confidence: high
+      section: Production of DM/light-neutrino masses
+      page: null
+    validity_domain:
+    - reference_id: '1904_07108'
+      note: The text states the 7-keV sterile neutrino is not realized through out-of-equilibrium scalar
+        decay because the free-streaming length would violate the Lyman-alpha bound.
+      confidence: high
+      section: Production of DM
+      page: null
+    constraints:
+    - confidence: high
+      note: Primary text states standard nonresonant sterile-neutrino production is excluded by structure,
+        X-ray, and Lyman-alpha constraints and quotes the scalar-decay benchmark.
+      page: null
+      reference_id: arxiv:1904.07108
+      section: Production/constraints
+    - confidence: medium
+      note: Related paper combines Lyman-alpha and X-ray limits and states standard sterile-neutrino production
+        is ruled out unless nonstandard mechanisms or dilution apply.
+      page: null
+      reference_id: arxiv:astro-ph/0605706
+      section: Abstract
+    observables:
+    - confidence: high
+      note: Primary text describes the 7.1 keV sterile-neutrino benchmark, 3.55 keV line, scalar decay
+        production, and free-streaming estimate.
+      page: null
+      reference_id: arxiv:1904.07108
+      section: keV sterile-neutrino DM section
+    - confidence: medium
+      note: Related Lyman-alpha paper reports a 3.3 keV lower limit for thermal relic WDM.
+      page: null
+      reference_id: arxiv:1306.2314
+      section: Abstract
+    routes:
+    - confidence: high
+      note: Primary paper connects double-seesaw masses, scalar-decay freeze-in, relic abundance, free
+        streaming, and X-ray decay.
+      page: null
+      reference_id: arxiv:1904.07108
+      section: Model section
+  review:
+    human_reviewed: false
+    reviewed_by: null
+    review_date: null
+    expert_reviewed: false
+    expert_reviewer: null
+    expert_review_date: null
+    reviewer_notes: []
+    scientific_confidence: medium
+    implementation_confidence: medium
+  caveats:
+  - 'Borderline acceptance: the article is review-like, but the assigned text includes a concrete ''A
+    Model for keV Sterile Neutrino DM'' section with Lagrangian, particle content, and relic-density calculation.'
+robustness:
+  overall: medium
+  theory_robustness: medium
+  dominant_uncertainties:
+  - review-like framing of the paper
+  - notation loss in converted text
+  - benchmark dependence of relic-density match
+  validation_status: expert_judgment_only
+  notes: Accepted because the paper text gives a concrete model construction and relic-density calculation,
+    despite review framing.
+agent_failure_modes:
+  warnings:
+  - id: sterile_review_framing
+    severity: medium
+    category: other
+    warning: The paper is framed as a review, so downstream use should verify whether this model was original
+      to this article or summarized from earlier work before assigning historical priority.
+    mitigation: Use this row as a paper-local model-card candidate, not as a final canonical registry
+      entry.
+    source_reference_ids:
+    - '1904_07108'
+  - id: sterile_not_dw_only
+    severity: medium
+    category: invalid_mapping
+    warning: Do not treat the accepted benchmark as pure Dodelson-Widrow active-mixing production; the
+      model's relic abundance is dominated by singlet-scalar decay.
+    mitigation: Use the in-equilibrium scalar-decay mechanism for the relic-density logic.
+    source_reference_ids:
+    - '1904_07108'
+observables:
+- caveats:
+  - The reported 3.5 keV line has astrophysical and instrumental-background uncertainties.
+  channel: indirect_detection
+  effect_direction: spectral_line
+  environments:
+  - galaxy clusters
+  - Milky Way halo
+  - Andromeda
+  - diffuse X-ray background
+  id: obs_sterile_xray_line
+  key_quantities:
+  - description: Benchmark mass producing a 3.55 keV photon.
+    name: sterile-neutrino mass
+    role: core
+    source_reference_ids:
+    - arxiv:1904.07108
+    status: inferred
+    symbol: m_s
+    unit: keV
+    value: 7.1
+  - description: Mixing controlling decay rate and active-oscillation production.
+    name: active-sterile mixing
+    range: about 1e-10 in the 7.1 keV line discussion
+    role: core
+    source_reference_ids:
+    - arxiv:1904.07108
+    status: inferred
+    symbol: sin^2(2 theta)
+  - description: Radiative-decay photon energy.
+    name: photon energy
+    role: derived
+    source_reference_ids:
+    - arxiv:1904.07108
+    status: inferred
+    symbol: E_gamma
+    unit: keV
+    value: 3.55
+  linked_constraints:
+  - con_xray_decay_mixing
+  linked_routes:
+  - route_double_seesaw_freezein_to_xray_lss
+  name: Radiative sterile-neutrino X-ray line
+  notes: null
+  observability: high
+  predicted_effect: Active-sterile mixing permits a loop-level radiative decay into an active neutrino
+    plus a photon at roughly half the sterile-neutrino mass; a 7.1 keV benchmark gives a 3.55 keV line.
+  redshift_range: late-time halos and diffuse extragalactic signal
+  relevance: critical
+  scale_range: galaxy clusters, galaxies, and diffuse X-ray background
+  source_reference_ids:
+  - arxiv:1904.07108
+  subchannel: monoenergetic X-ray decay line
+- caveats:
+  - A dedicated transfer-function likelihood for this exact freeze-in spectrum was not run.
+  channel: lyman_alpha
+  effect_direction: suppression
+  environments:
+  - Lyman-alpha forest
+  - linear matter power spectrum
+  id: obs_sterile_free_streaming
+  key_quantities:
+  - description: Approximate comoving free-streaming length quoted for the benchmark.
+    name: free-streaming length
+    role: derived
+    source_reference_ids:
+    - arxiv:1904.07108
+    status: approximate
+    symbol: lambda_FS
+    unit: Mpc
+    value: 0.044
+  - description: Singlet scalar mass in the relic-density benchmark.
+    name: scalar parent mass
+    role: core
+    source_reference_ids:
+    - arxiv:1904.07108
+    status: inferred
+    symbol: m_phi
+    unit: GeV
+    value: 100
+  - description: Entropy dilution factor entering the final abundance.
+    name: dilution factor
+    role: cosmological
+    source_reference_ids:
+    - arxiv:1904.07108
+    status: inferred
+    symbol: d
+    value: 27
+  linked_constraints:
+  - con_lya_free_streaming_sterile
+  linked_routes:
+  - route_double_seesaw_freezein_to_xray_lss
+  name: Free-streaming cutoff of scalar-decay sterile neutrinos
+  notes: null
+  observability: high
+  predicted_effect: Sterile neutrinos produced by scalar decay have a nonthermal momentum distribution;
+    the in-equilibrium decay benchmark is colder than thermal WDM and gives a quoted free-streaming length
+    about 0.044 Mpc.
+  redshift_range: radiation era production through high-redshift Lyman-alpha forest
+  relevance: critical
+  scale_range: k around 1-40 h Mpc^-1 for related Lyman-alpha analyses
+  source_reference_ids:
+  - arxiv:1904.07108
+  - arxiv:1306.2314
+  subchannel: warm-DM matter-power suppression
+constraints:
+- allowed_regions:
+  - The primary 7.1 keV, sin^2(2 theta) around 1e-10 benchmark is presented as long-lived enough to be
+    a viable DM candidate and possible 3.5 keV-line explanation.
+  applies: parameter_dependent
+  assumptions:
+  - can_be_relaxed: partial
+    description: The radiative decay rate scales with active-sterile mixing and m_s^5.
+    id: mixing-decay-channel
+    impact_if_violated: Additional decay channels or altered abundance change the mixing limit.
+    notes: null
+    scope: X-ray decay recast
+    source_reference_ids:
+    - arxiv:1904.07108
+    status: established
+  benchmark_implications:
+  - The benchmark lifetime is much longer than the age of the Universe in the primary discussion.
+  caveats:
+  - Line interpretation depends on astrophysical backgrounds and halo modeling.
+  constrained_parameters:
+  - m_s
+  - sin^2(2 theta)
+  - tau_s
+  - E_gamma
+  constraint_type: indirect_detection
+  data_release: Diffuse X-ray background, Coma, Andromeda, and galaxy-cluster searches as discussed in
+    source papers
+  excluded_regions:
+  - Large active-sterile mixing is constrained by non-observation of radiative-decay features in X-ray
+    backgrounds and halos.
+  id: con_xray_decay_mixing
+  likelihood_available: 'no'
+  likelihood_reference: null
+  name: X-ray decay limits on active-sterile mixing
+  notes: null
+  observable_channel: X-ray line and diffuse X-ray background
+  recasting_needed: 'yes'
+  robustness: medium
+  source_reference_ids:
+  - arxiv:1904.07108
+  - arxiv:astro-ph/0605706
+- allowed_regions:
+  - The in-equilibrium scalar-decay benchmark with lambda_FS about 0.044 Mpc is described as consistent
+    with the relevant Lyman-alpha/free-streaming constraint.
+  applies: recast_required
+  assumptions:
+  - can_be_relaxed: partial
+    description: Nonthermal sterile-neutrino spectra must be mapped to Lyman-alpha transfer-function limits.
+    id: thermal-equivalent-mapping
+    impact_if_violated: A colder or multi-component spectrum changes the inferred mass bound.
+    notes: null
+    scope: Lyman-alpha recast
+    source_reference_ids:
+    - arxiv:1904.07108
+    - arxiv:1306.2314
+    status: assumed
+  benchmark_implications:
+  - Historical related limits include 2.0 keV sterile-neutrino and 550 eV thermal-relic lower limits,
+    and later 3.3 keV thermal-relic lower limit.
+  caveats:
+  - Thermal relic limits are not directly identical to scalar-decay freeze-in spectra.
+  constrained_parameters:
+  - m_s
+  - lambda_FS
+  - momentum distribution
+  - m_WDM
+  constraint_type: astrophysical
+  data_release: WMAP/SDSS/HIRES/MIKE Lyman-alpha forest analyses in related papers
+  excluded_regions:
+  - Primary text states that the out-of-equilibrium scalar-decay version has too large a free-streaming
+    length and is ruled out by the Lyman-alpha bound.
+  - Standard-production sterile-neutrino WDM is strongly constrained or excluded when Lyman-alpha and
+    X-ray limits are combined.
+  id: con_lya_free_streaming_sterile
+  likelihood_available: 'no'
+  likelihood_reference: null
+  name: Lyman-alpha and structure limits on warm sterile-neutrino spectra
+  notes: null
+  observable_channel: Lyman-alpha forest matter power
+  recasting_needed: 'yes'
+  robustness: medium
+  source_reference_ids:
+  - arxiv:1904.07108
+  - arxiv:astro-ph/0501562
+  - arxiv:astro-ph/0605706
+  - arxiv:1306.2314
+- allowed_regions:
+  - Primary benchmark m_phi=v_phi=100 GeV, M_N2=10 TeV, Y_phi2=2.8e-3, dilution factor about 27 reproduces
+    Omega_DM h^2=0.1199.
+  applies: 'yes'
+  assumptions:
+  - can_be_relaxed: partial
+    description: The scalar parent remains in equilibrium until freeze-out and produces sterile neutrinos
+      mainly through in-equilibrium decay.
+    id: scalar-equilibrium-before-decay
+    impact_if_violated: Out-of-equilibrium decay gives a warmer spectrum and different abundance.
+    notes: null
+    scope: freeze-in abundance
+    source_reference_ids:
+    - arxiv:1904.07108
+    status: assumed
+  benchmark_implications:
+  - The same benchmark is used for low-scale leptogenesis and the 7.1 keV sterile-neutrino abundance.
+  caveats:
+  - No Boltzmann equation was re-solved in this batch.
+  constrained_parameters:
+  - m_phi
+  - v_phi
+  - M_N2
+  - Y_phi2
+  - dilution factor
+  - Omega_DM h^2
+  constraint_type: cosmological
+  data_release: Planck dark matter density as quoted by the primary paper
+  excluded_regions:
+  - Parameters that overproduce or underproduce the Planck dark matter density through scalar decay.
+  id: con_relic_density_benchmark
+  likelihood_available: 'no'
+  likelihood_reference: null
+  name: Freeze-in relic-density benchmark
+  notes: null
+  observable_channel: dark matter abundance
+  recasting_needed: 'no'
+  robustness: medium
+  source_reference_ids:
+  - arxiv:1904.07108
+theory_to_observable_routing:
+  routes:
+  - agent_notes: null
+    caveats:
+    - The 3.5 keV line status is observationally unsettled.
+    constraint_ids:
+    - con_xray_decay_mixing
+    - con_lya_free_streaming_sterile
+    - con_relic_density_benchmark
+    derived_quantities:
+    - Omega_DM h^2
+    - lambda_FS
+    - tau_s
+    - E_gamma
+    description: Map double-seesaw parameters to a keV sterile-neutrino abundance, decay line, and warm-DM
+      structure limits.
+    forward_model_chain:
+    - inputs:
+      - double-seesaw masses
+      - Yukawa couplings
+      notes: null
+      outputs:
+      - m_s
+      - active-sterile mixing
+      step_id: s1
+      step_type: analytic_formula
+      tool_or_code: null
+      validity: Primary paper provides benchmark mass and mixing relations.
+    - inputs:
+      - scalar decay width
+      - thermal history
+      notes: null
+      outputs:
+      - nonthermal sterile-neutrino distribution
+      - Omega_DM h^2
+      step_id: s2
+      step_type: boltzmann_solver
+      tool_or_code: null
+      validity: Primary paper solves/quotes Boltzmann abundance for benchmark.
+    - inputs:
+      - momentum distribution
+      - m_s
+      notes: null
+      outputs:
+      - free-streaming length
+      - matter-power cutoff
+      step_id: s3
+      step_type: transfer_function
+      tool_or_code: null
+      validity: Requires dedicated Lyman-alpha recast for exact spectrum.
+    - inputs:
+      - m_s
+      - mixing angle
+      - halo model
+      notes: null
+      outputs:
+      - X-ray line/background constraint
+      step_id: s4
+      step_type: likelihood
+      tool_or_code: null
+      validity: X-ray likelihood not run here.
+    id: route_double_seesaw_freezein_to_xray_lss
+    input_parameters:
+    - m_s
+    - sin^2(2 theta)
+    - m_phi
+    - v_phi
+    - M_N2
+    - Y_phi2
+    likelihoods:
+    - X-ray line/background likelihood unavailable
+    - Lyman-alpha thermal-equivalent recast required
+    observable_ids:
+    - obs_sterile_xray_line
+    - obs_sterile_free_streaming
+    required_code_resources:
+    - Boltzmann solver for scalar-decay distribution
+    - Lyman-alpha transfer-function likelihood
+    - X-ray decay-line likelihood
+    route_status: planned
+    source_model_features:
+    - extra singlet neutrino and singlet scalar
+    - double seesaw mass relation
+    - scalar-decay freeze-in
+    - active-sterile radiative decay
+    validation_tests:
+    - recover Omega_DM h^2=0.1199 benchmark
+    - recover lambda_FS about 0.044 Mpc
+    - recover E_gamma about 3.55 keV

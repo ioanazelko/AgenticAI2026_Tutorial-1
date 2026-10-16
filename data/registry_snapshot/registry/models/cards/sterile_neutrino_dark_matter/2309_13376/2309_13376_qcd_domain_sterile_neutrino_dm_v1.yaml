@@ -1,0 +1,849 @@
+_source:
+  shard: arXiv_src_2309_097_wds.tar
+  paper_id: '2309_13376'
+  source_member: 2309_13376.json
+  enriched: true
+  enrichment_schema_version: dm_model_ocr_enrichment_smoke_v0
+schema_version: model_only_v0
+model_id: 2309_13376_qcd_domain_sterile_neutrino_dm_v1
+identity:
+  name: Sterile neutrino dark matter from matter-antimatter separation at the QCD phase transition
+  family: sterile_neutrino_dark_matter
+  aliases:
+  - QCD-domain enhanced sterile neutrino production
+  - Omnes-type QCD phase-transition sterile neutrino dark matter
+  - nuMSM sterile-neutrino dark matter with QCD inhomogeneities
+  short_description: A keV sterile-neutrino dark matter production scenario in which temporary matter-antimatter
+    domains or QGP droplets during a first-order QCD phase transition enhance active-to-sterile conversion.
+  historical_origin_or_motivation: The paper seeks a way to produce the lightest HNL N_1 as all dark matter
+    with smaller lepton asymmetry than homogeneous Shi-Fuller production may require.
+  status: speculative
+  model_kind: phenomenological_parameterization
+theory:
+  theory_level: phenomenological_parameterization
+  parent_frameworks:
+  - minimal type-I seesaw
+  - nuMSM with lightest HNL N_1
+  - first-order QCD phase transition with matter-antimatter domains
+  lagrangian_available: partial
+  renormalizable: 'yes'
+  embedded_in_larger_framework: 'yes'
+  notes: The paper uses the sterile-neutrino/active-neutrino mixing framework and develops the cosmological
+    production mechanism in inhomogeneous QCD media rather than presenting a new microscopic Lagrangian.
+particle_content:
+  dark_matter_candidate:
+    name: N_1 keV sterile neutrino
+    spin: 1/2
+    statistics: fermion
+    elementary_or_composite: elementary
+    number_of_components: single_component
+  additional_dark_sector_particles:
+  - heavier HNLs N_2 and N_3 in the nuMSM
+  mediators:
+  - active-sterile neutrino mixing
+  - matter potential in baryon-rich QGP or hadronic domains
+  dark_radiation_species: []
+  excited_or_degenerate_states: []
+  long_lived_particles:
+  - N_1
+  unstable_parent_particles: []
+  standard_model_extension: minimal
+symmetries:
+  stabilizing_mechanism: The sterile neutrino is cosmologically long-lived because its active-neutrino
+    mixing angle is tiny; no exact stabilizing symmetry is introduced in the extracted text.
+  symmetries: []
+  topological_defects_possible: unknown
+interactions:
+  portals:
+  - neutrino
+  standard_model_targets:
+  - active neutrinos
+  - Higgs and lepton doublets through seesaw Yukawa couplings
+  - baryon-rich hadronic and QGP media through matter potentials
+  dark_sector_couplings:
+  - active-sterile mixing angle
+  - sterile neutrino mass M_1
+  mediator_types:
+  - active-sterile oscillation in matter
+  - MSW-like matter potential
+  interaction_operators:
+  - active-to-sterile conversion in medium
+  - HNL Yukawa couplings in the type-I seesaw framework
+  scattering:
+    elastic: unknown
+    inelastic: 'yes'
+    momentum_dependence: strong
+    velocity_dependence: unknown
+    spin_dependence: unknown
+  annihilation_channels: []
+  decay_channels:
+  - N_1 -> active neutrino + photon
+  self_scattering_channels: []
+  cp_structure: matter-antimatter separation may require CP-violating interphase properties in one scenario
+  flavor_structure: Lepton asymmetry flavor composition enters L_crit; benchmark uses equal flavor asymmetries
+    in the introductory discussion.
+  tree_or_loop_level: unknown
+parameters:
+  core:
+  - name: sterile neutrino mass
+    symbol: M_1
+    description: Benchmark lightest HNL mass.
+    value: '7'
+    unit: keV
+    role: core
+    status: assumed
+    source_reference_ids: []
+  - name: active-sterile mixing angle
+    symbol: sin^2(theta)
+    description: Benchmark mixing controlling N_1 production and decay.
+    value: 5e-11
+    role: core
+    status: assumed
+    notes: The paper also discusses a range around the putative 3.5 keV line.
+    source_reference_ids: []
+  - name: critical lepton asymmetry
+    symbol: L_crit
+    description: Reference asymmetry for resonant homogeneous production.
+    value: '6.6e-5'
+    role: core
+    status: inferred
+    source_reference_ids: []
+  - name: lepton asymmetry
+    symbol: L/s
+    description: Lepton asymmetry entering resonant production in domains or droplets.
+    range: can be below L_crit; examples include L_crit/4 and factors 10-100 below L_crit
+    role: core
+    status: assumed
+    source_reference_ids: []
+  - name: QCD phase-transition temperature
+    symbol: T_PT
+    description: Temperature scale of the proposed first-order QCD transition.
+    value: a few hundred MeV
+    unit: MeV
+    role: core
+    status: assumed
+    source_reference_ids: []
+  - name: phase-transition duration
+    symbol: t_PT/t_H
+    description: Duration of the QCD transition relative to Hubble time.
+    range: scenario-dependent; example t_PT about t_H/4
+    role: core
+    status: assumed
+    source_reference_ids: []
+  - name: QGP droplet fraction
+    symbol: F(t)
+    description: Time-dependent volume fraction of QGP droplets controlling baryon density and sterile-neutrino
+      production.
+    range: model-dependent sample functions including F0 and power-law forms
+    role: core
+    status: assumed
+    source_reference_ids: []
+  - name: local baryon excess in domains
+    symbol: eta_B^domain
+    description: Local matter-antimatter domain asymmetry can be much larger than the mean baryon asymmetry.
+    range: up to order unity in Omnes-type estimates
+    role: core
+    status: assumed
+    source_reference_ids: []
+production:
+  mechanisms:
+  - resonant active-neutrino to sterile-neutrino conversion in matter-antimatter domains
+  - MSW-like enhancement inside baryon-rich QGP droplets during a first-order QCD phase transition
+  - small-droplet vacuum-mimicking oscillation regime
+  thermal_equilibrium_with_standard_model: 'no'
+  thermal_equilibrium_with_hidden_sector: not_applicable
+  abundance_set_by:
+  - M_1
+  - active-sterile mixing angle
+  - local baryon asymmetry
+  - lepton asymmetry
+  - QGP droplet dynamics
+  - phase-transition duration
+  depends_on_reheating_temperature: unknown
+  can_produce_all_dark_matter: parameter_dependent
+  nonthermal_momentum_distribution: 'yes'
+  notes: The paper finds that an Omnes-type transition can accommodate all dark matter, while droplet
+    scenarios can enhance production even for lepton asymmetries below L_crit.
+relic_density:
+  full_or_subcomponent: full_dark_matter
+  target_fraction:
+    name: sterile neutrino fraction
+    symbol: Omega_N/Omega_DM
+    description: Target fraction in examples where N_1 supplies all dark matter.
+    value: 1
+    role: core
+    status: assumed
+    source_reference_ids: []
+  calculation_type: nonthermal
+  key_dependencies:
+  - M_1
+  - sin^2(theta)
+  - L/s
+  - domain baryon density
+  - F(t)
+  - t_PT
+  requires_entropy_dilution: unknown
+  overclosure_risk: parameter_dependent
+  underproduction_risk: parameter_dependent
+  tuning_assessment: unknown
+cosmological_history:
+  standard_history_assumed: false
+  nonstandard_features:
+  - temporary matter-antimatter domains at the QCD scale
+  - weak first-order QCD phase transition
+  - baryon-rich QGP droplets that shrink during the transition
+  dark_sector_temperature: null
+  delta_neff: null
+  kinetic_decoupling: null
+  chemical_decoupling: null
+  phase_transitions:
+  - first-order QCD phase transition
+  topological_defects: []
+  isocurvature_perturbations: unknown
+  bbn_relevance: high
+  cmb_relevance: unknown
+phase_space:
+  distribution_type: resonant
+  distribution_function_available: approximate
+  average_momentum_relative_to_thermal: The Omnes estimate gives a resonant momentum around 0.1 of the
+    typical active-neutrino momentum for an order-one baryon fraction.
+  free_streaming_length: null
+  velocity_dispersion_today: null
+  phase_space_bounds:
+  - The paper argues the produced distribution can be much cooler than active neutrinos in the Omnes scenario.
+  notes: Momentum distribution depends on resonance energy and droplet/domain evolution.
+structure_formation:
+  linear:
+    behaves_like_cdm: approximately
+    transfer_function_shape: cdm_like
+    small_scale_power_effect: none
+  nonlinear:
+    halo_mass_function_effect: unknown
+    subhalo_mass_function_effect: unknown
+    simulation_calibrated: unknown
+validity_domain:
+- id: first_order_qcd_assumption
+  applies_to: cosmological_history
+  condition: Requires a weak first-order QCD phase transition or another source of matter-antimatter domains
+    at T around 200 MeV.
+  status: speculative
+  extrapolation_risk: high
+  caveats:
+  - The authors state this goes against the current consensus from lattice QCD.
+  source_reference_ids: []
+- id: domain_size_bbn
+  applies_to: cosmological_history
+  condition: Matter-antimatter domains must be small enough to dissipate before BBN.
+  status: assumed
+  extrapolation_risk: high
+  caveats: []
+  source_reference_ids: []
+- id: benchmark_sterile_neutrino
+  applies_to: model
+  condition: Numerical examples often use M_1=7 keV and sin^2(theta)=5e-11, but equations are presented
+    for other choices.
+  status: inferred
+  extrapolation_risk: medium
+  caveats: []
+  source_reference_ids: []
+- id: droplet_dynamics_uncertain
+  applies_to: production
+  condition: Droplet-scenario abundance depends strongly on the unknown time evolution of QGP volume fraction
+    F(t).
+  status: speculative
+  extrapolation_risk: high
+  caveats: []
+  source_reference_ids: []
+assumptions:
+  global:
+  - id: weak_first_order_qcd
+    description: The QCD transition is assumed to be first order despite lattice evidence commonly interpreted
+      as a crossover.
+    scope: cosmological_history
+    status: speculative
+    impact_if_violated: Without this or another matter-antimatter separation mechanism, the paper-specific
+      enhancement mechanism is absent.
+    can_be_relaxed: unknown
+    source_reference_ids: []
+  - id: matter_antimatter_separation
+    description: Temporary domains or droplets with local baryon excess much larger than the cosmic mean
+      are assumed to form around the QCD epoch.
+    scope: production
+    status: speculative
+    impact_if_violated: The resonant matter potential and enhanced sterile-neutrino production would be
+      reduced or absent.
+    can_be_relaxed: unknown
+    source_reference_ids: []
+  - id: small_domain_bbn_safety
+    description: The domain sizes are assumed small enough not to spoil Big Bang Nucleosynthesis.
+    scope: cosmological_history
+    status: assumed
+    impact_if_violated: Large surviving domains would conflict with the stated cosmological consistency
+      requirement.
+    can_be_relaxed: unknown
+    source_reference_ids: []
+  - id: tiny_mixing_long_lifetime
+    description: The sterile neutrino mixing angle is assumed tiny enough for cosmological longevity while
+      allowing production.
+    scope: theory
+    status: assumed
+    impact_if_violated: Larger mixing changes decay and production rates; smaller mixing may underproduce
+      dark matter.
+    can_be_relaxed: unknown
+    source_reference_ids: []
+associated_code:
+  has_associated_code: 'no'
+  code_summary: The extracted text presents analytic estimates and figures but does not describe associated
+    public model code.
+  primary_code_role: null
+provenance:
+  model_id: 2309_13376_qcd_domain_sterile_neutrino_dm_v1
+  model_name: Sterile neutrino dark matter from matter-antimatter separation at the QCD phase transition
+  model_family: sterile_neutrino_dark_matter
+  entry_version: 0.1.0
+  status: machine_extracted
+  created_at: '2026-05-31'
+  last_updated: '2026-05-31'
+  sources:
+    primary_papers:
+    - reference_id: '2309_13376'
+      title: Sterile Neutrino Dark Matter, Matter Antimatter Separation, and the QCD Phase Transition
+      role: original_model
+      arxiv_id: '2309.13376'
+      doi: null
+      url: null
+      year: 2023
+      authors:
+      - Mikhail Shaposhnikov
+      - Alexei Yu. Smirnov
+    - arxiv_id: '2309.13376'
+      authors:
+      - Shaposhnikov, Mikhail
+      - Smirnov, Alexey Yu
+      doi: 10.1103/PhysRevD.110.063520
+      notes: Primary QCD-domain sterile-neutrino production paper resolved locally.
+      reference_id: src_2309_primary
+      role: original_model
+      title: Sterile neutrino dark matter, matter-antimatter separation, and the QCD phase transition
+      url: https://arxiv.org/abs/2309.13376
+      year: 2024
+    constraint_papers:
+    - arxiv_id: astro-ph/0101524
+      authors:
+      - Abazajian, Kevork
+      doi: 10.1103/PhysRevD.64.023501
+      notes: Related sterile-neutrino production and observational-constraint paper read locally.
+      reference_id: src_2309_abazajian2001
+      role: constraint
+      title: Sterile neutrino hot, warm, and cold dark matter
+      url: https://arxiv.org/abs/astro-ph/0101524
+      year: 2001
+    - arxiv_id: hep-ph/0609081
+      authors:
+      - Kusenko, Alexander
+      doi: 10.1103/PhysRevLett.97.241301
+      notes: Related sterile-neutrino X-ray/Lyman/collider context read locally.
+      reference_id: src_2309_kusenko2006
+      role: constraint
+      title: Sterile Neutrinos, Dark Matter, and Pulsar Velocities in Models with a Higgs Singlet
+      url: https://arxiv.org/abs/hep-ph/0609081
+      year: 2006
+    - arxiv_id: hep-ph/0612182
+      authors:
+      - Asaka, Takehiko
+      doi: 10.1088/1126-6708/2007/01/091
+      notes: Related nuMSM sterile-neutrino abundance and X-ray bound paper read locally.
+      reference_id: src_2309_asaka2007
+      role: constraint
+      title: Lightest sterile neutrino abundance within the nuMSM
+      url: https://arxiv.org/abs/hep-ph/0612182
+      year: 2007
+    external_databases: []
+    review_papers: []
+  extraction:
+    method: llm_assisted
+    extracted_by: codex
+    extractor_name: gpt-5.5-dark-matter-batch-worker
+    extraction_date: '2026-05-31'
+    confidence: high
+    source_chunks_or_sections:
+    - reference_id: '2309_13376'
+      section: abstract/introduction
+      page: null
+      quote_or_summary: The paper proposes that matter-antimatter domains at the QCD epoch enhance keV
+        sterile-neutrino production to the dark matter abundance.
+    - reference_id: '2309_13376'
+      section: sterile neutrino production
+      page: null
+      quote_or_summary: It develops Omnes-domain, large-droplet, and small-droplet production estimates
+        for N_1.
+    - reference_id: '2309_13376'
+      section: summary
+      page: null
+      quote_or_summary: The authors summarize that non-homogeneous QCD-era media can enhance sterile-neutrino
+        dark matter production.
+    unresolved_items:
+    - No X-ray likelihood, Lyman-alpha transfer function, or BBN inhomogeneity solver was reconstructed.
+    - The existence of the required first-order or Omnes-type QCD phase structure remains speculative
+      in the primary paper.
+    - The 3.5 keV line is recorded only as a possible motivation, not as established evidence.
+  evidence:
+    particle_content:
+    - reference_id: '2309_13376'
+      note: The dark matter candidate is the lightest HNL N_1 with mass in the keV range.
+      confidence: high
+      section: introduction
+    symmetries:
+    - reference_id: '2309_13376'
+      note: No exact stabilizing symmetry is introduced; longevity follows from tiny active-sterile mixing.
+      confidence: medium
+      section: introduction
+    interactions:
+    - reference_id: '2309_13376'
+      note: Production proceeds by active-to-sterile neutrino conversion in matter potentials generated
+        by local baryon/lepton asymmetry.
+      confidence: high
+      section: sterile production sections
+    production_mechanism:
+    - reference_id: '2309_13376'
+      note: Matter-antimatter domains, Omnes-type transition, and QGP droplets are analyzed as enhanced
+        production environments.
+      confidence: high
+      section: sterile production sections
+    cosmological_history:
+    - reference_id: '2309_13376'
+      note: The mechanism assumes temporary matter-antimatter domains at temperatures of a few hundred
+        MeV before BBN.
+      confidence: high
+      section: abstract/introduction
+    parameter_ranges:
+    - reference_id: '2309_13376'
+      note: Benchmarks include M_1=7 keV, sin^2(theta)=5e-11, L_crit=6.6e-5, and variable QGP fraction
+        F(t).
+      confidence: high
+      section: introduction and production sections
+    validity_domain:
+    - reference_id: '2309_13376'
+      note: The authors emphasize that the QCD first-order transition and matter-antimatter separation
+        are speculative and not derived from first principles.
+      confidence: high
+      section: summary
+    constraints:
+    - confidence: high
+      note: Primary text states the DW X-ray/Lyman tension, BBN domain-size condition, and Lcrit benchmark.
+      page: null
+      reference_id: src_2309_primary
+      section: Introduction and QCD-domain discussion
+    - confidence: medium
+      note: Related nuMSM paper gives abundance/mixing upper-bound context and DW mass caveat.
+      page: null
+      reference_id: src_2309_asaka2007
+      section: Abstract and constraints section
+    - confidence: medium
+      note: Related singlet-Higgs paper supports X-ray/Lyman/cold-production sterile-neutrino context.
+      page: null
+      reference_id: src_2309_kusenko2006
+      section: Abstract
+    observables:
+    - confidence: high
+      note: Primary paper describes QCD-domain resonant production, X-ray decay line motivation, and Lyman-alpha/free-streaming
+        constraints.
+      page: null
+      reference_id: src_2309_primary
+      section: Introduction and production sections
+    - confidence: medium
+      note: Related sterile-neutrino paper supports production-spectrum and HDM/WDM/CDM constraint context.
+      page: null
+      reference_id: src_2309_abazajian2001
+      section: Abstract and structure discussion
+    routes:
+    - confidence: high
+      note: Primary paper provides the domain-crossing production-rate and entropy-conservation abundance
+        chain.
+      page: null
+      reference_id: src_2309_primary
+      section: Production calculation
+  review:
+    human_reviewed: false
+    reviewed_by: null
+    review_date: null
+    expert_reviewed: false
+    expert_reviewer: null
+    expert_review_date: null
+    reviewer_notes: []
+    scientific_confidence: high
+    implementation_confidence: medium
+  caveats:
+  - The QCD phase-transition premise is explicitly speculative and contrary to the usual crossover interpretation.
+  - Droplet dynamics are not computed from first principles.
+robustness:
+  overall: low
+  theory_robustness: low
+  observational_robustness: unknown
+  computational_robustness: unknown
+  constraint_robustness: not_applicable
+  dominant_uncertainties: []
+  validation_status: expert_judgment_only
+  notes: The sterile-neutrino production logic is detailed, but the cosmological setting is intentionally
+    speculative.
+agent_failure_modes:
+  warnings:
+  - id: w_qcd_transition_speculative
+    severity: high
+    category: assumption_mismatch
+    warning: The production mechanism relies on a weak first-order QCD phase transition or other matter-antimatter
+      domain formation.
+    mitigation: Surface this assumption whenever using the abundance calculation.
+    source_reference_ids:
+    - '2309_13376'
+  - id: w_droplet_dynamics_uncertain
+    severity: medium
+    category: extrapolation
+    warning: Sterile-neutrino abundance in droplet scenarios is highly sensitive to unknown QGP droplet
+      evolution.
+    mitigation: Avoid applying the benchmark abundance outside the paper-defined scenarios without a new
+      droplet model.
+    source_reference_ids:
+    - '2309_13376'
+observables:
+- caveats:
+  - The 3.5 keV line is treated as a possible motivation, not an established detection.
+  - Flux scales with mixing angle and sterile-neutrino abundance.
+  channel: indirect_detection
+  effect_direction: spectral_line
+  environments:
+  - X-ray telescopes
+  id: sterile_decay_xray_line
+  key_quantities:
+  - name: sterile neutrino mass
+    role: core
+    source_reference_ids:
+    - src_2309_primary
+    status: assumed
+    symbol: M_1
+    unit: keV
+    value: '7'
+  - name: photon line energy
+    role: derived
+    source_reference_ids:
+    - src_2309_primary
+    status: inferred
+    symbol: E_gamma
+    unit: keV
+    value: M_1/2
+  - name: active-sterile mixing
+    role: core
+    source_reference_ids:
+    - src_2309_primary
+    status: assumed
+    symbol: sin^2(theta)
+    value: 5e-11
+  linked_constraints:
+  - xray_lyman_dw_tension
+  - numsm_mixing_upper_bound_context
+  linked_routes:
+  - qcd_domain_production_to_observables_route
+  name: Radiative sterile-neutrino decay X-ray line
+  notes: Main indirect-detection channel.
+  observability: medium
+  predicted_effect: The keV sterile neutrino is unstable through active mixing and can decay into an active
+    neutrino plus a photon; a 7 keV sterile neutrino would yield a 3.5 keV line.
+  redshift_range: present day
+  relevance: critical
+  scale_range: galaxy clusters, galaxies, diffuse X-ray backgrounds
+  source_reference_ids:
+  - src_2309_primary
+  - src_2309_asaka2007
+  subchannel: monoenergetic X-ray photon from N1 decay
+- caveats:
+  - The first-order or Omnes-type QCD phase structure is speculative.
+  - The paper notes present lattice evidence favors a smooth crossover at small chemical potential.
+  channel: cosmology
+  effect_direction: enhancement
+  environments:
+  - early-universe QCD plasma
+  id: qcd_domain_resonant_abundance
+  key_quantities:
+  - name: critical lepton asymmetry
+    role: core
+    source_reference_ids:
+    - src_2309_primary
+    status: approximate
+    symbol: L_crit
+    value: '6.6e-5'
+  - name: domain temperature scale
+    range: few hundred MeV
+    role: cosmological
+    source_reference_ids:
+    - src_2309_primary
+    status: approximate
+    symbol: T
+    unit: MeV
+  - description: Computed from production rate and entropy conservation in the primary paper.
+    name: sterile-neutrino abundance fraction
+    role: derived
+    source_reference_ids:
+    - src_2309_primary
+    status: inferred
+    symbol: Omega_N/Omega_DM
+  linked_constraints:
+  - bbn_domain_size_condition
+  - xray_lyman_dw_tension
+  linked_routes:
+  - qcd_domain_production_to_observables_route
+  name: QCD-domain-enhanced sterile-neutrino production abundance
+  notes: Core model mechanism.
+  observability: unknown
+  predicted_effect: Temporary baryon-rich and antibaryon-rich QCD domains can locally enhance the matter
+    potential and resonantly produce keV sterile neutrinos with an abundance compatible with the dark-matter
+    density.
+  redshift_range: QCD epoch, T of order 200 MeV
+  relevance: critical
+  scale_range: horizon-subscale QCD droplets/domains
+  source_reference_ids:
+  - src_2309_primary
+  subchannel: active-to-sterile conversion in matter-antimatter domains
+- caveats:
+  - A definitive constraint requires numerical transfer functions for the non-equilibrium momentum distribution.
+  channel: lyman_alpha
+  effect_direction: suppression
+  environments:
+  - Lyman-alpha forest
+  id: sterile_free_streaming_lyman
+  key_quantities:
+  - description: Nonthermal sterile-neutrino spectrum from resonant production.
+    name: momentum distribution
+    role: derived
+    source_reference_ids:
+    - src_2309_primary
+    - src_2309_abazajian2001
+    status: inferred
+    symbol: f_N(p)
+  - description: Controlled by M_1 and the nonthermal momentum spectrum.
+    name: free-streaming length
+    role: derived
+    source_reference_ids:
+    - src_2309_primary
+    status: inferred
+  linked_constraints:
+  - xray_lyman_dw_tension
+  linked_routes:
+  - qcd_domain_production_to_observables_route
+  name: Sterile-neutrino free-streaming imprint on Lyman-alpha structure
+  notes: null
+  observability: medium
+  predicted_effect: The momentum distribution produced by active-sterile conversion controls the free-streaming
+    length; X-ray-allowed nonresonant production can conflict with Lyman-alpha forest structure constraints,
+    while resonant/domain production can be cooler.
+  redshift_range: post-production structure formation
+  relevance: high
+  scale_range: Lyman-alpha forest small-scale modes
+  source_reference_ids:
+  - src_2309_primary
+  - src_2309_abazajian2001
+  - src_2309_asaka2007
+  subchannel: warm/cool dark matter small-scale suppression
+constraints:
+- allowed_regions:
+  - Large lepton asymmetry or QCD-domain resonant production may satisfy the X-ray and structure constraints
+    for keV sterile neutrino dark matter.
+  applies: parameter_dependent
+  assumptions:
+  - can_be_relaxed: 'no'
+    description: Lyman-alpha comparisons require translating the domain-produced nonthermal spectrum into
+      a transfer function.
+    id: nonthermal_spectrum_mapping
+    impact_if_violated: Using a thermal or DW spectrum would misstate the QCD-domain model.
+    notes: null
+    scope: structure constraint
+    source_reference_ids:
+    - src_2309_primary
+    - src_2309_asaka2007
+    status: inferred
+  benchmark_implications:
+  - The QCD-domain mechanism is designed to evade the homogeneous-production tension by altering production
+    and the momentum spectrum.
+  caveats:
+  - No transfer-function simulation or X-ray likelihood was reconstructed.
+  constrained_parameters:
+  - M_1
+  - sin^2(theta)
+  - f_N(p)
+  - Omega_N
+  constraint_type: cosmological
+  data_release: X-ray line searches and Lyman-alpha forest constraints as discussed in primary and related
+    sterile-neutrino papers
+  excluded_regions:
+  - Primary text states that in the small-lepton-asymmetry Dodelson-Widrow case the mixing needed for
+    abundance conflicts with X-ray and structure-formation constraints.
+  - Related nuMSM abundance work finds the Dodelson-Widrow scenario as all dark matter only possible below
+    about 3.5 keV, or up to about 6 keV under relaxed assumptions.
+  id: xray_lyman_dw_tension
+  likelihood_available: partial
+  likelihood_reference: null
+  name: X-ray and Lyman-alpha tension for nonresonant sterile-neutrino production
+  notes: null
+  observable_channel: indirect_detection/lyman_alpha
+  recasting_needed: 'yes'
+  robustness: medium
+  source_reference_ids:
+  - src_2309_primary
+  - src_2309_abazajian2001
+  - src_2309_asaka2007
+- allowed_regions:
+  - The primary text states that meter-scale inhomogeneities at T around 200 MeV and domains smaller than
+    the neutron diffusion length at BBN can dissipate before spoiling BBN.
+  applies: 'yes'
+  assumptions:
+  - can_be_relaxed: 'no'
+    description: QCD domains dissipate before BBN through neutrino inflation and neutron diffusion.
+    id: domain_dissipation_before_bbn
+    impact_if_violated: Long-lived or too-large domains would spoil standard BBN success.
+    notes: null
+    scope: early-universe history
+    source_reference_ids:
+    - src_2309_primary
+    status: assumed
+  benchmark_implications:
+  - Domain size and lifetime are not arbitrary nuisance parameters; they are central validity conditions.
+  caveats:
+  - The primary paper explores an exotic phase diagram and does not prove it is realized in QCD.
+  constrained_parameters:
+  - domain size
+  - baryon-to-entropy ratio
+  - neutron diffusion length
+  constraint_type: cosmological
+  data_release: BBN consistency discussion in primary text
+  excluded_regions:
+  - Matter-antimatter domains with order-unity local baryon asymmetry would be incompatible if they survived
+    too large into BBN.
+  id: bbn_domain_size_condition
+  likelihood_available: unknown
+  likelihood_reference: null
+  name: BBN survival condition for matter-antimatter QCD domains
+  notes: null
+  observable_channel: bbn
+  recasting_needed: 'yes'
+  robustness: medium
+  source_reference_ids:
+  - src_2309_primary
+- allowed_regions:
+  - Additional production mechanisms can remove a simple upper mass bound but require a model-specific
+    abundance calculation.
+  applies: recast_required
+  assumptions:
+  - can_be_relaxed: 'yes'
+    description: The related constraint assumes a nuMSM-like low-energy sterile-neutrino framework.
+    id: numsm_baseline
+    impact_if_violated: Extra interactions or QCD-domain production alter the abundance-mixing relation.
+    notes: null
+    scope: cross-model comparison
+    source_reference_ids:
+    - src_2309_asaka2007
+    - src_2309_kusenko2006
+    status: inferred
+  benchmark_implications:
+  - Use the related nuMSM constraints as context; the QCD-domain mechanism changes the production history.
+  caveats:
+  - Related constraints are not a direct exclusion of the QCD-domain scenario without recalculating production.
+  constrained_parameters:
+  - M_1
+  - sin^2(2 theta)
+  - sterile abundance
+  constraint_type: cosmological
+  data_release: Related nuMSM sterile-neutrino abundance calculations
+  excluded_regions:
+  - Thermal active-sterile production plus X-ray bounds restrict the mixing-mass plane; related work quotes
+    an absolute upper bound on mixing angles from not overproducing dark matter.
+  id: numsm_mixing_upper_bound_context
+  likelihood_available: partial
+  likelihood_reference: null
+  name: nuMSM sterile-neutrino abundance and mixing upper-bound context
+  notes: null
+  observable_channel: indirect_detection
+  recasting_needed: 'yes'
+  robustness: medium
+  source_reference_ids:
+  - src_2309_asaka2007
+  - src_2309_kusenko2006
+theory_to_observable_routing:
+  routes:
+  - agent_notes: Most of the route is analytic in the primary text but would need numerical spectra and
+      modern likelihoods for recasting.
+    caveats:
+    - The QCD phase-transition assumption is speculative.
+    constraint_ids:
+    - xray_lyman_dw_tension
+    - bbn_domain_size_condition
+    - numsm_mixing_upper_bound_context
+    derived_quantities:
+    - production probability per crossing
+    - sterile-neutrino momentum spectrum
+    - Omega_N/Omega_DM
+    - radiative decay flux
+    - linear transfer function
+    description: Route from QCD matter-antimatter domains to sterile-neutrino abundance, momentum distribution,
+      X-ray decay flux, and Lyman-alpha structure constraints.
+    forward_model_chain:
+    - inputs:
+      - domain baryon density
+      - lepton asymmetry
+      - M_1
+      - mixing angle
+      notes: Compute local resonant conversion.
+      outputs:
+      - matter potential and resonance condition
+      step_id: r1
+      step_type: analytic_formula
+      tool_or_code: null
+      validity: Valid only for the assumed QCD-domain phase structure.
+    - inputs:
+      - production rate over domain evolution
+      notes: Propagate the produced population to late times.
+      outputs:
+      - present sterile-neutrino abundance and f_N(p)
+      step_id: r2
+      step_type: data_transform
+      tool_or_code: null
+      validity: Requires entropy conservation and integration over the domain history.
+    - inputs:
+      - f_N(p)
+      - mixing angle
+      - X-ray observations
+      - Lyman-alpha data
+      notes: Compare to X-ray and structure constraints.
+      outputs:
+      - allowed or excluded mass-mixing-domain region
+      step_id: r3
+      step_type: likelihood
+      tool_or_code: null
+      validity: Planned; not implemented in this pass.
+    id: qcd_domain_production_to_observables_route
+    input_parameters:
+    - M_1
+    - mixing angle
+    - lepton asymmetry
+    - domain size distribution
+    - QCD temperature history
+    - X-ray target density profiles
+    likelihoods:
+    - X-ray decay-line likelihood
+    - Lyman-alpha transfer-function likelihood
+    - BBN inhomogeneity bound
+    observable_ids:
+    - sterile_decay_xray_line
+    - qcd_domain_resonant_abundance
+    - sterile_free_streaming_lyman
+    required_code_resources:
+    - sterile-neutrino production integrator
+    - Boltzmann/transfer-function solver
+    - X-ray target J/D-factor data
+    route_status: planned
+    source_model_features:
+    - keV sterile neutrino N1
+    - active-sterile mixing
+    - local baryon/lepton asymmetry in QCD domains
+    - resonant matter potential
+    validation_tests:
+    - Recover the primary benchmark abundance for M1=7 keV and sin^2(theta)=5e-11.
+    - Verify that the domain spectrum is not compared using a DW thermal proxy.

@@ -1,0 +1,369 @@
+_source:
+  shard: arXiv_src_1103_001_wds.tar
+  paper_id: '1103_0857'
+  source_member: 1103_0857.json
+schema_version: model_only_v0
+model_id: 1103_0857_tev_right_handed_neutrino_dm_v1
+identity:
+  name: TeV right-handed-neutrino dark matter in a radiative neutrino mass model
+  family: radiative_neutrino_mass_dark_matter
+  aliases:
+  - lightest right-handed neutrino DM in the Ma radiative neutrino mass model
+  - N_R1 dark matter scenario
+  short_description: A TeV-scale radiative neutrino-mass scenario in which the lightest Z2-odd right-handed
+    neutrino N_R1 is the dark matter candidate, studied together with thermal leptogenesis.
+  historical_origin_or_motivation: The paper contrasts the usual inert-doublet dark matter realization
+    of the Ma model with a TeV right-handed-neutrino dark matter scenario motivated by low-scale thermal
+    leptogenesis.
+  status: excluded
+  model_kind: complete_theory
+theory:
+  theory_level: uv_complete
+  parent_frameworks:
+  - radiative neutrino mass model
+  - Ma inert-doublet/right-handed-neutrino model
+  - low-scale resonant leptogenesis
+  lagrangian_available: 'yes'
+  renormalizable: 'yes'
+  embedded_in_larger_framework: 'yes'
+  notes: The paper writes the Z2-invariant Yukawa terms and scalar potential and studies a TeV-scale mass
+    ordering for the Z2-odd sector.
+particle_content:
+  dark_matter_candidate:
+    name: N_R1, the lightest right-handed neutrino
+    spin: 1/2
+    statistics: fermion
+    elementary_or_composite: elementary
+    number_of_components: single_component
+  additional_dark_sector_particles:
+  - two heavier right-handed neutrinos N_R2 and N_R3
+  - inert scalar doublet eta
+  mediators:
+  - inert scalar doublet eta
+  dark_radiation_species: []
+  excited_or_degenerate_states:
+  - nearly degenerate Z2-odd states N_R2 and eta in the thermal leptogenesis setup
+  long_lived_particles:
+  - N_R1 if the Z2 symmetry is exact
+  unstable_parent_particles:
+  - N_R2 in the thermal leptogenesis scenario
+  standard_model_extension: substantial
+symmetries:
+  stabilizing_mechanism: An exact Z2 parity makes the lightest Z2-odd particle stable; the studied DM
+    case takes N_R1 to be the lightest odd particle.
+  symmetries:
+  - name: Z2 parity
+    type: discrete
+    exact_or_approximate: exact
+    breaking: The minimal DM scenario assumes it is exact; the paper discusses possible Z2-violating Planck-suppressed
+      terms only as a way to abandon N_R1 DM.
+    breaking_scale: null
+  topological_defects_possible: unknown
+interactions:
+  portals:
+  - neutrino
+  - higgs
+  standard_model_targets:
+  - lepton doublets
+  - Higgs doublet
+  dark_sector_couplings:
+  - neutrino Yukawa couplings h_ij between N_R_i, eta, and lepton doublets
+  - scalar potential couplings lambda_1 through lambda_5
+  mediator_types:
+  - inert scalar doublet
+  interaction_operators:
+  - h_ij N_R_i eta^dagger L_j
+  - lambda_5 (phi^dagger eta)^2 plus hermitian conjugate
+  scattering:
+    elastic: unknown
+    inelastic: unknown
+    momentum_dependence: unknown
+    velocity_dependence: unknown
+    spin_dependence: unknown
+  annihilation_channels:
+  - N_R1 pair annihilation through neutrino Yukawa interactions
+  - coannihilation with N_R2 and eta is considered but insufficient in the minimal setup
+  decay_channels: []
+  self_scattering_channels: []
+  cp_structure: CP phases in the right-handed-neutrino sector drive the leptogenesis calculation.
+  flavor_structure: The paper assumes a specific flavor texture for h_ij to reproduce neutrino oscillation
+    data and suppress lepton flavor violation.
+  tree_or_loop_level: both
+parameters:
+  core:
+  - name: right-handed neutrino dark matter mass
+    symbol: M1
+    description: Mass of N_R1, the lightest Z2-odd particle.
+    range: TeV scale with M1 < M_eta < M2 < M3 in the studied spectrum.
+    unit: GeV
+    role: core
+    status: inferred
+    source_reference_ids:
+    - paper
+    notes: The abstract and parameter discussion describe TeV-region right-handed neutrinos.
+  - name: inert doublet mass
+    symbol: M_eta
+    description: Mass of the neutral inert-doublet state entering the radiative neutrino mass loop.
+    range: between M1 and M2 in the adopted spectrum
+    unit: GeV
+    role: core
+    status: inferred
+    source_reference_ids:
+    - paper
+  - name: neutrino Yukawa couplings
+    symbol: h_i
+    description: Yukawa couplings controlling neutrino masses, leptogenesis, and N_R1 annihilation.
+    range: order 10^-3 in the thermal-leptogenesis examples; order 1 would be needed for the desired N_R1
+      relic abundance
+    role: core
+    status: inferred
+    source_reference_ids:
+    - paper
+  - name: lepton-number-violating scalar coupling
+    symbol: lambda_5
+    description: Small scalar potential coupling generating one-loop neutrino masses.
+    range: small, model-dependent
+    role: core
+    status: inferred
+    source_reference_ids:
+    - paper
+  - name: target dark matter density
+    symbol: Omega_N_R1 h^2
+    description: Observed abundance value used for the N_R1 relic-density check.
+    value: '0.11'
+    role: core
+    status: established
+    source_reference_ids:
+    - paper
+production:
+  mechanisms:
+  - thermal freeze-out relic of N_R1 through Yukawa-mediated annihilation and coannihilation
+  - thermal leptogenesis from TeV right-handed-neutrino dynamics is studied for the same parameter set
+  thermal_equilibrium_with_standard_model: partial
+  thermal_equilibrium_with_hidden_sector: unknown
+  abundance_set_by:
+  - neutrino Yukawa annihilation rate
+  - coannihilation with nearby Z2-odd states
+  - mass degeneracy in the Z2-odd sector
+  depends_on_reheating_temperature: unknown
+  can_produce_all_dark_matter: 'no'
+  nonthermal_momentum_distribution: unknown
+  notes: In the minimal thermal-leptogenesis setup the Yukawa couplings required by neutrino and baryon-asymmetry
+    data are too small, so N_R1 overcloses the universe unless the model is further extended.
+relic_density:
+  full_or_subcomponent: full_dark_matter
+  target_fraction:
+    name: target fraction
+    description: N_R1 is intended to account for the dark matter abundance.
+    value: all dark matter
+    role: derived
+    status: assumed
+    source_reference_ids:
+    - paper
+  calculation_type: thermal
+  key_dependencies:
+  - h_1 Yukawa coupling
+  - M1 and nearby Z2-odd masses
+  - coannihilation with N_R2 and eta
+  - possible added annihilation interactions
+  requires_entropy_dilution: unknown
+  overclosure_risk: 'yes'
+  underproduction_risk: 'no'
+  tuning_assessment: tuned
+cosmological_history:
+  standard_history_assumed: true
+  nonstandard_features:
+  - resonant low-scale thermal leptogenesis with finely degenerate Z2-odd states
+  dark_sector_temperature: null
+  delta_neff: null
+  kinetic_decoupling: null
+  chemical_decoupling: null
+  phase_transitions: []
+  topological_defects: []
+  isocurvature_perturbations: unknown
+  bbn_relevance: unknown
+  cmb_relevance: unknown
+phase_space:
+  distribution_type: thermal
+  distribution_function_available: 'no'
+  notes: The assigned text discusses relic abundance rather than an explicit phase-space distribution.
+structure_formation:
+  linear:
+    behaves_like_cdm: unknown
+    transfer_function_shape: unknown
+    small_scale_power_effect: unknown
+  nonlinear:
+    halo_mass_function_effect: unknown
+    subhalo_mass_function_effect: unknown
+    simulation_calibrated: unknown
+    density_profile_effect: unknown
+    core_or_cusp_effect: unknown
+validity_domain:
+- id: mass_ordering
+  applies_to: model
+  condition: The studied right-handed-neutrino DM scenario assumes M1 < M_eta < M2 < M3 for Z2-odd fields.
+  status: inferred
+  extrapolation_risk: medium
+  source_reference_ids:
+  - paper
+- id: thermal_leptogenesis_viability
+  applies_to: production
+  condition: The TeV thermal-leptogenesis setup requires a finely degenerate spectrum but then makes the
+    N_R1 relic abundance too large in the minimal model.
+  status: established
+  extrapolation_risk: high
+  source_reference_ids:
+  - paper
+  caveats:
+  - The paper says extra interactions or a supersymmetric extension would be needed to restore a viable
+    DM scenario.
+assumptions:
+  global:
+  - id: exact_z2
+    description: The N_R1 dark matter interpretation assumes the Z2 parity stabilizing the lightest odd
+      particle is exact.
+    scope: global
+    status: assumed
+    source_reference_ids:
+    - paper
+    impact_if_violated: If violated, N_R1 may decay and cannot be the dark matter.
+    can_be_relaxed: 'yes'
+  - id: specific_flavor_texture
+    description: The neutrino Yukawa matrix is restricted to a texture chosen to reproduce neutrino oscillation
+      data and suppress lepton flavor violation.
+    scope: theory
+    status: assumed
+    source_reference_ids:
+    - paper
+    can_be_relaxed: 'yes'
+associated_code:
+  has_associated_code: unknown
+  code_summary: No associated public code is identified in the assigned paper text.
+provenance:
+  model_id: 1103_0857_tev_right_handed_neutrino_dm_v1
+  model_name: TeV right-handed-neutrino dark matter in a radiative neutrino mass model
+  model_family: radiative_neutrino_mass_dark_matter
+  entry_version: 0.1.0
+  status: machine_extracted
+  created_at: '2026-05-31'
+  last_updated: '2026-05-31'
+  sources:
+    primary_papers:
+    - reference_id: paper
+      title: Thermal leptogenesis in a TeV scale model for neutrino masses
+      authors:
+      - Daijiro Suematsu
+      year: 2011
+      arxiv_id: '1103.0857'
+      doi: null
+      url: null
+      role: extension
+      notes: The paper explores a TeV right-handed-neutrino dark matter scenario within the radiative
+        neutrino mass model.
+  extraction:
+    method: llm_assisted
+    extracted_by: codex_batch_0004
+    extractor_name: Codex GPT-5 batch worker
+    extraction_date: '2026-05-31'
+    confidence: medium
+    source_chunks_or_sections:
+    - reference_id: paper
+      section: Abstract and model setup
+      page: null
+      quote_or_summary: The paper explores TeV right-handed neutrinos with the lightest one as dark matter
+        in a Z2-odd radiative neutrino mass model.
+    - reference_id: paper
+      section: DM relic abundance discussion
+      page: null
+      quote_or_summary: N_R1 is stable but its thermal relic abundance is too large in the minimal thermal-leptogenesis
+        setup.
+    unresolved_items: []
+  evidence:
+    particle_content:
+    - reference_id: paper
+      note: The model extends the SM by an inert scalar doublet and three right-handed neutrinos N_R_i,
+        all odd under a Z2 symmetry.
+      confidence: high
+      section: model setup
+    - reference_id: paper
+      note: The paper adopts the case where N_R1 is the lightest Z2-odd particle and is stable to be dark
+        matter.
+      confidence: high
+      section: DM relic discussion
+    symmetries:
+    - reference_id: paper
+      note: All new fields are odd under a Z2 symmetry while SM fields are even; the same Z2 makes the
+        lightest odd particle stable.
+      confidence: high
+      section: model setup
+    interactions:
+    - reference_id: paper
+      note: The text gives Z2-invariant neutrino Yukawa couplings h_ij N_R_i eta^dagger L_j and a scalar
+        potential with lambda_5.
+      confidence: high
+      section: model setup
+    production_mechanism:
+    - reference_id: paper
+      note: The scenario studies thermal leptogenesis with TeV right-handed neutrinos and then checks
+        the thermal relic abundance of N_R1.
+      confidence: medium
+      section: leptogenesis and DM relic discussion
+    parameter_ranges:
+    - reference_id: paper
+      note: The adopted mass spectrum is M1 < M_eta < M2 < M3 with TeV-scale right-handed neutrinos and
+        small Yukawa couplings of order 10^-3 in sample points.
+      confidence: medium
+      section: parameter discussion
+    cosmological_history:
+    - reference_id: paper
+      note: The paper states that the N_R1 relic abundance should satisfy Omega_N_R1 h^2 = 0.11 but is
+        too large in the thermal-leptogenesis setup.
+      confidence: high
+      section: DM relic discussion
+    validity_domain:
+    - reference_id: paper
+      note: The authors conclude that additional interactions or another extension are needed because
+        N_R1 overcloses the universe in the minimal scenario.
+      confidence: high
+      section: summary
+  review:
+    human_reviewed: false
+    reviewed_by: null
+    review_date: null
+    expert_reviewed: false
+    expert_reviewer: null
+    expert_review_date: null
+    reviewer_notes: []
+    scientific_confidence: medium
+    implementation_confidence: medium
+  caveats:
+  - The extracted model is a paper-studied scenario that the paper itself finds nonviable without extra
+    interactions.
+robustness:
+  overall: medium
+  theory_robustness: medium
+  observational_robustness: unknown
+  computational_robustness: unknown
+  constraint_robustness: unknown
+  dominant_uncertainties:
+  - Viability depends on extensions that increase N_R1 annihilation or replace N_R1 dark matter.
+  - The paper presents no final viable relic-density solution within the minimal scenario.
+  validation_status: expert_judgment_only
+  notes: The model content is explicit, but its dark-matter abundance fails in the studied minimal setup.
+agent_failure_modes:
+  warnings:
+  - id: overclosure_not_viability
+    severity: high
+    category: assumption_mismatch
+    warning: Do not treat this row as a viable thermal relic model; the paper says N_R1 overcloses the
+      universe in the minimal thermal-leptogenesis setup.
+    source_reference_ids:
+    - paper
+    mitigation: Require an explicit added annihilation or decay mechanism before using it as viable DM.
+  - id: existing_framework
+    severity: medium
+    category: notation_conflict
+    warning: The paper develops a scenario within the pre-existing Ma radiative neutrino mass model; do
+      not label the whole framework as newly invented here.
+    source_reference_ids:
+    - paper

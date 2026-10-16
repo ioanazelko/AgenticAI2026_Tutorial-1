@@ -1,0 +1,840 @@
+_source:
+  shard: arXiv_src_2306_130_wds.tar
+  paper_id: '2306_17238'
+  source_member: 2306_17238.json
+  enriched: true
+  enrichment_schema_version: dm_model_ocr_enrichment_smoke_v0
+schema_version: model_only_v0
+model_id: 2306_17238_majorana_fimp_scalar_parent_reheating_v1
+identity:
+  name: Majorana FIMP dark matter with charged scalar parent during reheating
+  family: freeze_in_dark_matter
+  aliases:
+  - leptophilic Majorana FIMP with scalar parent
+  - minimal FI Majorana DM during non-instantaneous reheating
+  short_description: A singlet Majorana feebly interacting massive particle is produced by freeze-in from
+    decays of a heavier charged scalar parent that remains in the Standard Model bath, with the yield
+    modified by non-instantaneous monomial reheating after inflation.
+  historical_origin_or_motivation: The paper studies collider-friendly FIMP dark matter and shows that
+    low reheating temperatures and inflationary reheating dynamics alter the parent lifetime needed for
+    the observed relic density.
+  status: speculative
+  model_kind: simplified_model
+theory:
+  theory_level: simplified_model
+  parent_frameworks:
+  - minimal freeze-in dark matter
+  - long-lived particle collider phenomenology
+  - inflationary reheating with monomial potentials
+  lagrangian_available: 'yes'
+  renormalizable: 'yes'
+  eft_cutoff: null
+  embedded_in_larger_framework: 'yes'
+  notes: The appendix writes a Lagrangian with a Majorana singlet DM field, a charged scalar parent X
+    with right-handed SM-fermion quantum numbers, the inflaton, and a Yukawa interaction y_DM X chi f_R.
+particle_content:
+  dark_matter_candidate:
+    name: singlet Majorana fermion chi
+    spin: 1/2
+    statistics: fermion
+    elementary_or_composite: elementary
+    number_of_components: single_component
+  additional_dark_sector_particles:
+  - charged scalar parent X
+  - inflaton real scalar phi
+  mediators:
+  - charged scalar parent X
+  dark_radiation_species: []
+  excited_or_degenerate_states: []
+  long_lived_particles:
+  - charged scalar parent X can be long-lived on detector scales
+  unstable_parent_particles:
+  - charged scalar parent X decays to chi and a right-handed SM fermion
+  standard_model_extension: substantial
+symmetries:
+  stabilizing_mechanism: A Z_2 symmetry can make chi and X odd while SM fields and the inflaton are even;
+    chi is assumed lighter than X and is stable.
+  symmetries:
+  - name: Z_2 dark parity
+    type: discrete
+    exact_or_approximate: exact
+    breaking: not discussed; imposed to stabilize the lightest dark-sector particle
+    breaking_scale: null
+  topological_defects_possible: unknown
+interactions:
+  portals:
+  - other
+  standard_model_targets:
+  - right-handed SM fermion f_R
+  - SM gauge bosons through the charged scalar parent
+  dark_sector_couplings:
+  - Yukawa interaction y_DM X chi f_R
+  - inflaton coupling to charged scalars for bosonic reheating
+  mediator_types:
+  - charged scalar
+  interaction_operators:
+  - y_DM X chi f_R plus hermitian conjugate
+  - inflaton-scalar coupling phi |X|^2 or phi^2 |X|^2 terms in the reheating discussion
+  scattering:
+    elastic: unknown
+    inelastic: unknown
+    momentum_dependence: unknown
+    velocity_dependence: unknown
+    spin_dependence: not_applicable
+  annihilation_channels: []
+  decay_channels:
+  - X -> chi plus right-handed SM fermion
+  self_scattering_channels: []
+  cp_structure: not discussed
+  flavor_structure: leptophilic examples use right-handed lepton quantum numbers, with muonphilic assumptions
+    for some collider recasts
+  tree_or_loop_level: tree
+parameters:
+  core:
+  - name: dark matter mass
+    symbol: m_DM
+    description: Mass of the singlet Majorana FIMP.
+    range: benchmarks include 12 keV and 1 GeV in the displayed relic-density/lifetime plots
+    role: core
+    status: inferred
+    source_reference_ids:
+    - arxiv:2306.17238
+  - name: parent mass
+    symbol: m_P
+    description: Mass of the charged scalar parent particle X.
+    role: core
+    status: inferred
+    source_reference_ids:
+    - arxiv:2306.17238
+  - name: freeze-in Yukawa coupling
+    symbol: y_DM
+    description: Tiny trilinear coupling responsible for X decays into DM and a right-handed SM fermion.
+    role: core
+    status: inferred
+    source_reference_ids:
+    - arxiv:2306.17238
+  - name: parent decay width
+    symbol: Gamma_P
+    description: Decay width of the parent into DM, traded for the proper decay length in the analysis.
+    role: derived
+    status: inferred
+    source_reference_ids:
+    - arxiv:2306.17238
+  - name: reheating temperature
+    symbol: T_rh
+    description: Temperature defining the end of reheating; the paper emphasizes a consistent definition
+      for low-reheating scenarios.
+    range: examples include 20 GeV, 100 GeV, and 10^4 GeV
+    role: cosmological
+    status: inferred
+    source_reference_ids:
+    - arxiv:2306.17238
+  - name: monomial reheating exponent
+    symbol: k
+    description: Exponent of the inflaton potential V(phi) proportional to |phi|^k near its minimum.
+    range: k >= 2 with examples k = 2 and k = 4
+    role: cosmological
+    status: inferred
+    source_reference_ids:
+    - arxiv:2306.17238
+production:
+  mechanisms:
+  - freeze-in from decays of an equilibrated charged scalar parent
+  - production during radiation domination or during non-instantaneous reheating
+  thermal_equilibrium_with_standard_model: 'no'
+  thermal_equilibrium_with_hidden_sector: partial
+  abundance_set_by:
+  - m_DM
+  - m_P
+  - Gamma_P or parent decay length
+  - T_rh
+  - inflaton-potential exponent k
+  - bosonic versus fermionic reheating history
+  depends_on_reheating_temperature: 'yes'
+  can_produce_all_dark_matter: parameter_dependent
+  nonthermal_momentum_distribution: 'yes'
+  notes: DM begins from negligible abundance; the parent is assumed to remain in equilibrium with the
+    SM bath, and the Boltzmann equation is solved through reheating and radiation domination.
+relic_density:
+  full_or_subcomponent: full_dark_matter
+  target_fraction:
+    name: observed dark matter relic abundance
+    symbol: Omega_DM h^2
+    value: '0.12'
+    role: cosmological
+    status: assumed
+    source_reference_ids:
+    - arxiv:2306.17238
+  calculation_type: nonthermal
+  key_dependencies:
+  - parent decay length
+  - parent mass
+  - DM mass
+  - reheating temperature
+  - entropy injection during reheating
+  - monomial reheating exponent
+  requires_entropy_dilution: parameter_dependent
+  overclosure_risk: parameter_dependent
+  underproduction_risk: parameter_dependent
+  tuning_assessment: unknown
+cosmological_history:
+  standard_history_assumed: false
+  nonstandard_features:
+  - non-instantaneous reheating after inflation
+  - inflaton energy domination before radiation domination
+  - entropy injection during reheating
+  - bosonic or fermionic reheating from monomial potentials
+  dark_sector_temperature: null
+  delta_neff: null
+  kinetic_decoupling: null
+  chemical_decoupling:
+    name: freeze-in production peak
+    symbol: T ~ m_P / O(4-10)
+    value: null
+    role: cosmological
+    status: inferred
+    source_reference_ids:
+    - arxiv:2306.17238
+  phase_transitions: []
+  topological_defects: []
+  isocurvature_perturbations: unknown
+  bbn_relevance: medium
+  cmb_relevance: high
+phase_space:
+  distribution_type: decay_produced
+  distribution_function_available: approximate
+  free_streaming_length: null
+  velocity_dispersion_today: null
+  phase_space_bounds:
+  - Lyman-alpha lower bound on DM mass is quoted as 12 keV for the standard case, with reheating production
+    expected to relax it.
+  notes: The analysis focuses on the number density from parent decays rather than a full momentum distribution.
+structure_formation:
+  linear:
+    behaves_like_cdm: approximately
+    transfer_function_shape: unknown
+    small_scale_power_effect: suppression
+    half_mode_mass: null
+  nonlinear:
+    halo_mass_function_effect: not discussed in the model-card source text
+    subhalo_mass_function_effect: not discussed in the model-card source text
+    simulation_calibrated: unknown
+validity_domain:
+- id: freeze_in_condition
+  applies_to: production
+  condition: The portal coupling must be small enough that chi never thermalizes with the SM bath.
+  status: assumed
+  extrapolation_risk: high
+  caveats: []
+  source_reference_ids:
+  - arxiv:2306.17238
+- id: parent_equilibrium
+  applies_to: production
+  condition: Parent particles are assumed to stay in equilibrium with the SM bath through gauge interactions.
+  status: assumed
+  extrapolation_risk: medium
+  caveats:
+  - Pre-thermalization and finite-temperature effects are argued to be small in the considered parameter
+    space.
+  source_reference_ids:
+  - arxiv:2306.17238
+- id: low_reheating_relevance
+  applies_to: cosmological_history
+  condition: Reheating effects matter when the parent mass exceeds the reheating temperature, so production
+    occurs partly during reheating.
+  status: inferred
+  valid_range: m_P > T_rh
+  extrapolation_risk: medium
+  caveats: []
+  source_reference_ids:
+  - arxiv:2306.17238
+- id: majorana_fr_caveat
+  applies_to: model
+  condition: A pure Majorana-DM plus charged-scalar-parent setup does not itself provide fermionic reheating
+    without adding an extra vectorlike fermion species.
+  status: inferred
+  extrapolation_risk: medium
+  caveats:
+  - Fermionic reheating curves for this variant require additional reheating-sector content.
+  source_reference_ids:
+  - arxiv:2306.17238
+assumptions:
+  global:
+  - id: z2_stability
+    description: The dark-sector fields are odd under a Z_2 symmetry and the Majorana fermion is the lightest
+      dark-sector state.
+    scope: theory
+    status: assumed
+    can_be_relaxed: unknown
+    source_reference_ids:
+    - arxiv:2306.17238
+  - id: negligible_direct_inflaton_dm
+    description: Direct inflaton production of DM is neglected so that DM is created only through the
+      portal Yukawa interaction with SM fermions.
+    scope: production
+    status: assumed
+    can_be_relaxed: 'yes'
+    source_reference_ids:
+    - arxiv:2306.17238
+  - id: bbn_reheating_floor
+    description: The reheating temperature must remain above the BBN scale.
+    scope: cosmological_history
+    status: assumed
+    can_be_relaxed: 'no'
+    source_reference_ids:
+    - arxiv:2306.17238
+associated_code:
+  has_associated_code: unknown
+  code_summary: The paper reports numerical Boltzmann solutions and collider recasts but the extracted
+    text does not identify public model-specific code.
+  primary_code_role: null
+provenance:
+  model_id: 2306_17238_majorana_fimp_scalar_parent_reheating_v1
+  model_name: Majorana FIMP dark matter with charged scalar parent during reheating
+  model_family: freeze_in_dark_matter
+  entry_version: 0.1.0
+  status: machine_extracted
+  created_at: '2026-05-31'
+  last_updated: '2026-05-31'
+  sources:
+    primary_papers:
+    - reference_id: arxiv:2306.17238
+      title: Confronting Dark Matter Freeze-In during Reheating with Constraints from Inflation
+      authors:
+      - Mathias Becker
+      - Emanuele Copello
+      - Julia Harz
+      - Jonas Lang
+      - Yong Xu
+      year: 2023
+      arxiv_id: '2306.17238'
+      doi: null
+      url: null
+      role: extension
+      notes: Assigned SQLite full text used as the sole source.
+    - arxiv_id: '2306.17238'
+      authors:
+      - Becker, Mathias
+      - Copello, Emanuele
+      - Harz, Julia
+      - Lang, Jonas
+      - Xu, Yong
+      doi: 10.1088/1475-7516/2024/01/053
+      notes: Primary assigned paper; full text resolved locally.
+      reference_id: '2306_17238'
+      role: original_model
+      title: Confronting dark matter freeze-in during reheating with constraints from inflation
+      url: https://arxiv.org/abs/2306.17238
+      year: 2024
+    constraint_papers:
+    - arxiv_id: '2207.11218'
+      authors:
+      - Ahmed, Aqeel
+      - Grzadkowski, Bohdan
+      - Socha, Anna
+      doi: 10.1007/JHEP02(2023)196
+      notes: Local related text on reheating and frozen-in dark matter production.
+      reference_id: '2207_11218'
+      role: extension
+      title: Higgs boson induced reheating and ultraviolet frozen-in dark matter
+      url: https://arxiv.org/abs/2207.11218
+      year: 2023
+    external_databases: []
+    review_papers:
+    - arxiv_id: '1706.07442'
+      authors:
+      - Bernal, Nicolás
+      - Heikinheimo, Matti
+      - Tenkanen, Tommi
+      - Tuominen, Kimmo
+      - Vaskonen, Ville
+      doi: 10.1142/S0217751X1730023X
+      notes: Local related FIMP review text covering freeze-in and long-lived signatures.
+      reference_id: '1706_07442'
+      role: review
+      title: 'The dawn of FIMP Dark Matter: A review of models and constraints'
+      url: https://arxiv.org/abs/1706.07442
+      year: 2017
+    - arxiv_id: '2109.13280'
+      authors:
+      - Garcia, Marcos A. G.
+      - Kaneta, Kunio
+      - Mambrini, Yann
+      - Olive, Keith A.
+      - Verner, Sarunas
+      doi: 10.1088/1475-7516/2022/03/016
+      notes: Local related text on freeze-in during preheating.
+      reference_id: '2109_13280'
+      role: extension
+      title: Freeze-in from preheating
+      url: https://arxiv.org/abs/2109.13280
+      year: 2022
+  extraction:
+    method: llm_assisted
+    extracted_by: codex
+    extractor_name: gpt-5-codex
+    extraction_date: '2026-05-31'
+    confidence: high
+    source_chunks_or_sections:
+    - reference_id: arxiv:2306.17238
+      section: introduction/DM production
+      page: null
+      quote_or_summary: The paper defines a minimal freeze-in setup with a FIMP produced through decays
+        of a heavier SM-charged parent particle.
+    - reference_id: arxiv:2306.17238
+      section: appendix model descriptions
+      page: null
+      quote_or_summary: The Majorana model contains a singlet Majorana DM field, charged scalar parent
+        X, Z_2 stability, and the Yukawa interaction y_DM X chi f_R.
+    - reference_id: arxiv:2306.17238
+      section: relic-density calculation
+      page: null
+      quote_or_summary: The Boltzmann equation is solved through reheating and radiation domination, relating
+        the observed relic abundance to the parent decay length.
+    unresolved_items:
+    - Detailed collider exclusion regions are intentionally omitted from this model-only card.
+    - A dedicated Lyman-alpha likelihood for reheating-era phase-space distributions is still needed.
+    - Collider exclusions require a detector-level recast for the exact parent gauge representation.
+  evidence:
+    particle_content:
+    - reference_id: arxiv:2306.17238
+      note: The appendix states that the model extends the SM with a Majorana singlet fermion DM particle
+        and a charged scalar X with right-handed SM-fermion quantum numbers.
+      confidence: high
+      section: Majorana DM model
+      page: null
+    symmetries:
+    - reference_id: arxiv:2306.17238
+      note: The two dark-sector particles can be assigned a Z_2 symmetry under which they are odd, ensuring
+        stability of the lighter Majorana field.
+      confidence: high
+      section: Majorana DM model
+      page: null
+    interactions:
+    - reference_id: arxiv:2306.17238
+      note: The Yukawa term y_DM X chi f_R gives the parent decay channel responsible for freeze-in production.
+      confidence: high
+      section: Majorana DM model
+      page: null
+    production_mechanism:
+    - reference_id: arxiv:2306.17238
+      note: The collision operator for parent decays is used in a Boltzmann equation with the parent decay
+        width Gamma_P and internal degrees of freedom g_P.
+      confidence: high
+      section: DM production
+      page: null
+    cosmological_history:
+    - reference_id: arxiv:2306.17238
+      note: The paper considers non-instantaneous reheating driven by V(phi) proportional to |phi|^k,
+        with bosonic and fermionic reheating histories and entropy injection.
+      confidence: high
+      section: inflationary reheating
+      page: null
+    parameter_ranges:
+    - reference_id: arxiv:2306.17238
+      note: Benchmarks include m_DM = 12 keV and 1 GeV, T_rh values of 20 GeV, 100 GeV, and 10^4 GeV,
+        and k = 2 or 4.
+      confidence: medium
+      section: parent lifetime constraints
+      page: null
+    validity_domain:
+    - reference_id: arxiv:2306.17238
+      note: The text checks freeze-in conditions, assumes parent equilibrium with the SM, neglects gravitational
+        production, and requires reheating before BBN.
+      confidence: high
+      section: DM production
+      page: null
+    constraints:
+    - confidence: high
+      note: Primary text states CMB-derived decay-length limits, BBN reheating floor, and Lyman-alpha
+        mass-floor context.
+      page: null
+      reference_id: '2306_17238'
+      section: null
+    - confidence: medium
+      note: Related local text supports reheating as a controlling ingredient for frozen-in dark matter
+        production.
+      page: null
+      reference_id: '2207_11218'
+      section: null
+    observables:
+    - confidence: high
+      note: Primary text describes LLP signatures and Lyman-alpha/free-streaming issues for freeze-in
+        during reheating.
+      page: null
+      reference_id: '2306_17238'
+      section: null
+    - confidence: medium
+      note: Related review text supports the general FIMP freeze-in and long-lived-particle phenomenology.
+      page: null
+      reference_id: '1706_07442'
+      section: null
+    routes:
+    - confidence: high
+      note: Primary text gives the Boltzmann/reheating-to-decay-length mapping.
+      page: null
+      reference_id: '2306_17238'
+      section: null
+  review:
+    human_reviewed: false
+    reviewed_by: null
+    review_date: null
+    expert_reviewed: false
+    expert_reviewer: null
+    expert_review_date: null
+    reviewer_notes: []
+    scientific_confidence: high
+    implementation_confidence: medium
+  caveats:
+  - The card captures the Majorana-scalar-parent variant; the same paper also treats the scalar-singlet/vectorlike-parent
+    variant separately.
+robustness:
+  overall: medium
+  notes: Model definition and production equations are explicit; collider and CMB constraints are outside
+    the model-only extraction scope.
+agent_failure_modes:
+  warnings:
+  - id: do_not_instantaneous_reheating
+    severity: high
+    category: assumption_mismatch
+    warning: Using an instantaneous reheating approximation can mis-estimate the parent lifetime when
+      m_P exceeds T_rh.
+    mitigation: Use the reheating-aware yield calculation for low-reheating scenarios.
+  - id: fr_extra_content
+    severity: medium
+    category: other
+    warning: Fermionic reheating in the pure Majorana plus scalar-parent model requires extra fermionic
+      reheating-sector content not included in the minimal dark sector.
+    mitigation: Track the reheating-sector assumption separately from the DM portal model.
+observables:
+- caveats:
+  - Mapping collider lifetime to relic abundance depends strongly on the reheating history.
+  channel: collider
+  effect_direction: rate_change
+  environments:
+  - LHC detectors
+  - future LLP detectors
+  id: llp_parent_decay_signature
+  key_quantities:
+  - description: Inverse of the parent decay width into the FIMP and a Standard Model fermion.
+    fiducial_value: null
+    name: parent decay length
+    notes: The primary paper contrasts this charged-scalar-parent case with a vectorlike-fermion-parent
+      rate that is twice as large.
+    prior: null
+    range: null
+    role: experimental
+    scale: log
+    source_reference_ids:
+    - '2306_17238'
+    status: inferred
+    symbol: c tau_P
+    unit: length
+    value: null
+  - description: Mass of the charged scalar parent.
+    fiducial_value: null
+    name: parent mass
+    notes: null
+    prior: null
+    range: null
+    role: core
+    scale: log
+    source_reference_ids:
+    - '2306_17238'
+    status: assumed
+    symbol: m_P
+    unit: GeV
+    value: null
+  linked_constraints:
+  - cmb_reheating_decay_length_constraint
+  - llp_recast_constraint
+  linked_routes:
+  - reheating_freezein_llp_route
+  name: Long-lived charged scalar parent signature
+  notes: null
+  observability: medium
+  predicted_effect: The feeble coupling required for Majorana FIMP dark matter freeze-in maps to a macroscopic
+    parent decay length, making the SM-charged parent testable in LLP searches.
+  redshift_range: collider time today; cosmological interpretation set during reheating
+  relevance: high
+  scale_range: detector scale, from displaced vertices to detector-stable tracks
+  source_reference_ids:
+  - '2306_17238'
+  - '1706_07442'
+  subchannel: LLP tracks and displaced decays
+- caveats:
+  - Primary paper treats the Lyman-alpha reheating relaxation by estimate, not by a full dedicated likelihood.
+  channel: lyman_alpha
+  effect_direction: suppression
+  environments:
+  - intergalactic medium
+  - linear small-scale matter power
+  id: lyman_alpha_free_streaming
+  key_quantities:
+  - description: Mass controlling free-streaming length for the nonthermal FIMP population.
+    fiducial_value: null
+    name: FIMP mass
+    notes: null
+    prior: null
+    range: keV to heavier, model-dependent
+    role: core
+    scale: log
+    source_reference_ids:
+    - '2306_17238'
+    status: inferred
+    symbol: m_DM
+    unit: keV or GeV
+    value: null
+  linked_constraints:
+  - lyman_alpha_mass_floor
+  - bbn_reheating_floor
+  linked_routes:
+  - reheating_freezein_llp_route
+  name: Warmness/free-streaming of decay-produced FIMPs
+  notes: null
+  observability: medium
+  predicted_effect: FIMPs from two-body decays can be warm enough for Lyman-alpha bounds; production during
+    reheating redshifts the momentum more strongly and can relax the usual radiation-dominated limits.
+  redshift_range: post-production through matter-radiation equality
+  relevance: medium
+  scale_range: Lyman-alpha forest scales
+  source_reference_ids:
+  - '2306_17238'
+  - '1706_07442'
+  subchannel: small-scale matter power
+constraints:
+- allowed_regions:
+  - Allowed decay lengths depend on the inflation model, reheating regime, and parent mass.
+  applies: parameter_dependent
+  assumptions:
+  - can_be_relaxed: 'yes'
+    description: Inflaton oscillations are approximated by a monomial potential V(phi) proportional to
+      |phi|^k near the minimum.
+    id: monomial_reheating
+    impact_if_violated: Changing the reheating dynamics changes the dilution and therefore the required
+      decay length.
+    notes: null
+    scope: reheating cosmology
+    source_reference_ids:
+    - '2306_17238'
+    - '2207_11218'
+    status: assumed
+  benchmark_implications:
+  - LLP reach cannot be interpreted without specifying the reheating history.
+  caveats:
+  - The primary paper gives model-dependent lower limits rather than a single universal number.
+  constrained_parameters:
+  - parent decay length c tau_P
+  - reheating temperature T_rh
+  - inflaton potential exponent k
+  - parent mass m_P
+  constraint_type: cosmological
+  data_release: Planck-era CMB constraints as used by the source paper
+  excluded_regions:
+  - Decay lengths inconsistent with the CMB-allowed reheating history and observed relic density are excluded
+    in the primary scan.
+  id: cmb_reheating_decay_length_constraint
+  likelihood_available: partial
+  likelihood_reference: Primary-paper CMB/reheating scan
+  name: CMB-informed reheating bound on parent decay length
+  notes: Primary text states that latest CMB constraints imply lower limits on parent decay length and
+    that the limits differ by inflation model.
+  observable_channel: CMB constraints on inflationary reheating
+  recasting_needed: 'yes'
+  robustness: medium
+  source_reference_ids:
+  - '2306_17238'
+  - '2207_11218'
+- allowed_regions:
+  - The primary paper expects reheating-era production to relax these limits because momenta redshift
+    more strongly before radiation domination.
+  applies: parameter_dependent
+  assumptions:
+  - can_be_relaxed: 'yes'
+    description: The FIMP phase-space distribution is inherited from two-body parent decays.
+    id: decay_kinematics
+    impact_if_violated: Additional production channels can change the momentum distribution and Lyman-alpha
+      mapping.
+    notes: null
+    scope: small-scale structure
+    source_reference_ids:
+    - '2306_17238'
+    status: assumed
+  benchmark_implications:
+  - Very light FIMP benchmarks require a reheating-specific free-streaming recast.
+  caveats:
+  - The paper does not provide a full Lyman-alpha likelihood for reheating-era production.
+  constrained_parameters:
+  - FIMP mass m_DM
+  - production epoch
+  - parent mass m_P
+  constraint_type: astrophysical
+  data_release: null
+  excluded_regions:
+  - Radiation-dominated two-body decay production has quoted conservative/stringent FIMP lower-mass bounds
+    around 9.2/16 keV, with another CLASS-based result near 15 keV.
+  id: lyman_alpha_mass_floor
+  likelihood_available: 'no'
+  likelihood_reference: null
+  name: Lyman-alpha lower-mass/warmness floor for FIMP production
+  notes: null
+  observable_channel: Lyman-alpha forest small-scale power
+  recasting_needed: 'yes'
+  robustness: medium
+  source_reference_ids:
+  - '2306_17238'
+- allowed_regions:
+  - T_rh above the MeV-scale BBN floor is required.
+  applies: 'yes'
+  assumptions: []
+  benchmark_implications:
+  - The nonstandard expansion phase cannot extend through successful light-element production.
+  caveats: []
+  constrained_parameters:
+  - reheating temperature T_rh
+  constraint_type: cosmological
+  data_release: null
+  excluded_regions:
+  - Reheating temperatures below the onset of BBN are not allowed in the paper setup.
+  id: bbn_reheating_floor
+  likelihood_available: 'no'
+  likelihood_reference: null
+  name: BBN floor on reheating temperature
+  notes: Primary text states that reheating is limited by BBN with T_rh greater than the BBN temperature
+    scale.
+  observable_channel: early-universe expansion before nucleosynthesis
+  recasting_needed: 'no'
+  robustness: high
+  source_reference_ids:
+  - '2306_17238'
+- allowed_regions:
+  - Regions outside existing LLP acceptance remain targets for future LLP detectors.
+  applies: recast_required
+  assumptions:
+  - can_be_relaxed: partial
+    description: The charged scalar parent carries Standard Model gauge charge so it can be produced at
+      colliders.
+    id: charged_parent
+    impact_if_violated: A neutral parent would require a different production/search strategy.
+    notes: null
+    scope: collider phenomenology
+    source_reference_ids:
+    - '2306_17238'
+    status: assumed
+  benchmark_implications:
+  - A collider signal would probe both the feeble dark-sector coupling and the reheating history inferred
+    from relic density.
+  caveats:
+  - Detector efficiencies and the exact gauge representation are not encoded in the model card.
+  constrained_parameters:
+  - parent mass m_P
+  - parent decay length c tau_P
+  - parent gauge representation
+  constraint_type: collider
+  data_release: LHC LLP searches
+  excluded_regions:
+  - Published LLP searches can exclude parts of the parent mass/lifetime plane after model-specific recasting.
+  id: llp_recast_constraint
+  likelihood_available: partial
+  likelihood_reference: Published LLP searches discussed in the primary paper
+  name: Collider LLP reach for a SM-charged freeze-in parent
+  notes: The FIMP review text was read locally for the general connection between feeble couplings and
+    macroscopic lifetimes.
+  observable_channel: displaced or detector-stable parent signatures
+  recasting_needed: 'yes'
+  robustness: medium
+  source_reference_ids:
+  - '2306_17238'
+  - '1706_07442'
+theory_to_observable_routing:
+  routes:
+  - agent_notes: The primary paper contrasts this charged-scalar-parent case with a vectorlike-fermion-parent
+      rate that is twice as large.
+    caveats:
+    - A full phase-space distribution is needed for precision Lyman-alpha statements.
+    constraint_ids:
+    - cmb_reheating_decay_length_constraint
+    - lyman_alpha_mass_floor
+    - bbn_reheating_floor
+    - llp_recast_constraint
+    derived_quantities:
+    - FIMP yield
+    - relic density
+    - parent decay length
+    - free-streaming estimate
+    description: Compute Majorana FIMP dark matter production from charged scalar parent decays during
+      non-instantaneous reheating, solve for the decay width that gives the observed relic density, and
+      overlay cosmological and LLP constraints.
+    forward_model_chain:
+    - inputs:
+      - inflaton potential exponent k
+      - T_rh
+      notes: null
+      outputs:
+      - Hubble rate
+      - entropy dilution
+      step_id: reheating_background
+      step_type: semi_analytic_model
+      tool_or_code: null
+      validity: Applies to the monomial reheating histories considered in the paper.
+    - inputs:
+      - Gamma_P
+      - m_P
+      - m_DM
+      - Hubble rate
+      notes: null
+      outputs:
+      - Y_DM
+      - Omega_DM h^2
+      step_id: freezein_yield
+      step_type: boltzmann_solver
+      tool_or_code: custom Boltzmann integration
+      validity: Assumes parent remains thermalized with the SM bath.
+    - inputs:
+      - Gamma_P
+      notes: null
+      outputs:
+      - c tau_P
+      step_id: lifetime_mapping
+      step_type: data_transform
+      tool_or_code: null
+      validity: Direct relation c tau_P = Gamma_P^-1 in natural units.
+    - inputs:
+      - c tau_P
+      - m_P
+      - T_rh
+      notes: null
+      outputs:
+      - allowed/excluded regions
+      step_id: constraint_overlay
+      step_type: recasting
+      tool_or_code: LLP and cosmology recast
+      validity: Requires model-specific detector acceptance for final limits.
+    id: reheating_freezein_llp_route
+    input_parameters:
+    - m_DM
+    - m_P
+    - Gamma_P or c tau_P
+    - T_rh
+    - inflaton exponent k
+    - parent degrees of freedom
+    likelihoods:
+    - CMB/reheating likelihoods
+    - Lyman-alpha recast
+    - LLP search likelihoods
+    observable_ids:
+    - llp_parent_decay_signature
+    - lyman_alpha_free_streaming
+    required_code_resources:
+    - Boltzmann solver for reheating-era freeze-in
+    - LLP detector recast tools
+    - Lyman-alpha/free-streaming recast
+    route_status: planned
+    source_model_features:
+    - Majorana FIMP dark matter
+    - charged scalar parent
+    - Z2-stabilized feeble interaction y_DM P f_SM
+    - non-instantaneous reheating
+    validation_tests:
+    - Recover the radiation-dominated freeze-in limit when m_P < T_rh.
+    - Check the factor-of-two production-rate difference between scalar and Majorana variants.

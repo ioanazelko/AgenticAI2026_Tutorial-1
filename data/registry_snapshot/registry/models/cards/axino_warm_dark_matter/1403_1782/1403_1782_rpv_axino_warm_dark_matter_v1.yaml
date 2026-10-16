@@ -1,0 +1,669 @@
+_source:
+  shard: arXiv_src_1403_003_wds.tar
+  paper_id: '1403_1782'
+  source_member: 1403_1782.json
+  enriched: true
+  enrichment_schema_version: dm_model_ocr_enrichment_smoke_v0
+schema_version: model_only_v0
+model_id: 1403_1782_rpv_axino_warm_dark_matter_v1
+identity:
+  name: R-parity violating axino warm dark matter
+  family: axino_warm_dark_matter
+  aliases:
+  - decaying axino warm DM
+  short_description: A keV axino LSP in a supersymmetric axion model with R-parity violation, thermally
+    produced and decaying to a photon and neutrino.
+  historical_origin_or_motivation: Proposed as an explanation of a 3.5 keV X-ray line from 7 keV decaying
+    dark matter.
+  status: speculative
+  model_kind: complete_theory
+theory:
+  theory_level: uv_complete
+  parent_frameworks:
+  - supersymmetric axion model
+  - R-parity violating supersymmetry
+  lagrangian_available: partial
+  renormalizable: unknown
+  embedded_in_larger_framework: 'yes'
+  notes: The paper gives effective axino couplings derived from supersymmetric axion interactions.
+particle_content:
+  dark_matter_candidate:
+    name: axino
+    spin: 1/2
+    statistics: fermion
+    elementary_or_composite: elementary
+    number_of_components: single_component
+  additional_dark_sector_particles:
+  - axion sector supermultiplet
+  mediators:
+  - photon-neutrino final-state mixing through R-parity violation
+  unstable_parent_particles: []
+  long_lived_particles:
+  - axino
+  standard_model_extension: substantial
+symmetries:
+  stabilizing_mechanism: metastability from very weak axino interactions despite R-parity violation
+  symmetries:
+  - name: Peccei-Quinn symmetry
+    type: global
+    exact_or_approximate: broken
+    breaking: spontaneously broken at f_a
+    breaking_scale:
+      name: Peccei-Quinn scale
+      symbol: f_a
+      range: model dependent
+      unit: GeV
+      role: core
+      status: inferred
+  - name: R-parity
+    type: discrete
+    exact_or_approximate: broken
+    breaking: small R-parity violation permits axino decay
+    breaking_scale: null
+  topological_defects_possible: unknown
+interactions:
+  portals:
+  - axion
+  - neutrino
+  standard_model_targets:
+  - photon
+  - neutrino
+  - gauge bosons through effective axino operators
+  dark_sector_couplings:
+  - axino-gauge-gaugino effective couplings
+  - R-parity violating neutrino-neutralino mixing
+  mediator_types:
+  - supersymmetric axion effective operator
+  interaction_operators:
+  - axino gauge-field-strength effective operators
+  decay_channels:
+  - axino -> photon + neutrino
+  tree_or_loop_level: loop
+parameters:
+  core:
+  - name: axino mass
+    symbol: m_axino
+    value: about 7
+    unit: keV
+    role: core
+    status: inferred
+  - name: Peccei-Quinn scale
+    symbol: f_a
+    range: model dependent
+    unit: GeV
+    role: core
+    status: inferred
+  - name: reheating temperature
+    symbol: T_R
+    range: 1e6-1e7
+    unit: GeV
+    role: core
+    status: inferred
+  - name: axino lifetime
+    symbol: tau_axino
+    range: about 2e27-2e28
+    unit: s
+    role: core
+    status: inferred
+    notes: Lifetime range discussed for 7 keV decaying dark matter line interpretations.
+production:
+  mechanisms:
+  - thermal production after reheating
+  thermal_equilibrium_with_standard_model: 'no'
+  thermal_equilibrium_with_hidden_sector: unknown
+  abundance_set_by:
+  - reheating temperature
+  - Peccei-Quinn scale
+  - axino mass
+  depends_on_reheating_temperature: 'yes'
+  can_produce_all_dark_matter: parameter_dependent
+  nonthermal_momentum_distribution: unknown
+  notes: The paper estimates the axino yield and relic density from thermal production.
+relic_density:
+  full_or_subcomponent: full_dark_matter
+  calculation_type: nonthermal
+  key_dependencies:
+  - T_R
+  - f_a
+  - m_axino
+  - g_s
+  requires_entropy_dilution: unknown
+  overclosure_risk: parameter_dependent
+  underproduction_risk: parameter_dependent
+  tuning_assessment: unknown
+cosmological_history:
+  standard_history_assumed: true
+  nonstandard_features:
+  - late but very slow radiative axino decay from R-parity violation
+  dark_sector_temperature: null
+  delta_neff: null
+  kinetic_decoupling: null
+  chemical_decoupling: null
+  phase_transitions:
+  - Peccei-Quinn symmetry breaking
+  topological_defects: []
+  isocurvature_perturbations: unknown
+  bbn_relevance: low
+  cmb_relevance: medium
+phase_space:
+  distribution_type: nonthermal
+  distribution_function_available: approximate
+  notes: The paper treats the keV axino as warm dark matter from thermal production yield estimates.
+structure_formation:
+  linear:
+    behaves_like_cdm: 'no'
+    transfer_function_shape: smooth_cutoff
+    small_scale_power_effect: suppression
+  nonlinear:
+    halo_mass_function_effect: unknown
+    subhalo_mass_function_effect: unknown
+    simulation_calibrated: unknown
+validity_domain:
+- id: keV_axino_line
+  applies_to: model
+  condition: Targets a keV axino mass capable of producing a 3.5 keV photon line through axino decay.
+  status: inferred
+assumptions:
+  global:
+  - id: small_rpv
+    description: R-parity violation is small enough for cosmological axino longevity but large enough
+      for radiative decay.
+    scope: theory
+    status: assumed
+  - id: thermal_yield
+    description: Thermal axino production yield estimates determine the abundance.
+    scope: production
+    status: inferred
+associated_code:
+  has_associated_code: unknown
+  code_summary: No associated code was extracted.
+provenance:
+  model_id: 1403_1782_rpv_axino_warm_dark_matter_v1
+  model_name: null
+  model_family: null
+  entry_version: 0.1.0
+  status: machine_extracted
+  created_at: '2026-05-31'
+  last_updated: '2026-05-31'
+  sources:
+    primary_papers:
+    - reference_id: '1403_1782'
+      title: X-ray line signal from decaying axino warm dark matter
+      authors: []
+      year: 2014
+      arxiv_id: '1403.1782'
+      doi: null
+      url: null
+      role: original_model
+      notes: Only the local assigned paper text was used.
+    - arxiv_id: '1403.1782'
+      authors:
+      - Choi, Ki-Young
+      - Seto, Osamu
+      doi: 10.1016/j.physletb.2014.06.008
+      notes: Primary assigned paper read from local SQLite full text.
+      reference_id: arxiv:1403.1782
+      role: original_model
+      title: X-ray line signal from decaying axino warm dark matter
+      url: https://arxiv.org/abs/1403.1782
+      year: 2014
+    constraint_papers:
+    - arxiv_id: '1402.2301'
+      authors:
+      - Bulbul, Esra
+      - Markevitch, Maxim
+      - Foster, Adam
+      - Smith, Randall K.
+      - Loewenstein, Michael
+      - Randall, Scott W.
+      doi: 10.1088/0004-637X/789/1/13
+      notes: Related local full text read for the original stacked-cluster 3.5 keV line report.
+      reference_id: arxiv:1402.2301
+      role: constraint
+      title: Detection of an Unidentified Emission Line in the Stacked X-Ray Spectrum of Galaxy Clusters
+      url: https://arxiv.org/abs/1402.2301
+      year: 2014
+    - arxiv_id: '1707.06418'
+      authors:
+      - Bae, Kyu Jung
+      - Kamada, Ayuki
+      - Pei Liew, Seng
+      - Yanagi, Keisuke
+      doi: 10.1088/1475-7516/2018/01/054
+      notes: Related local full text read for 7 keV axino Ly-alpha warmness constraints.
+      reference_id: arxiv:1707.06418
+      role: constraint
+      title: 'Light axinos from freeze-in: production processes, phase space distributions, and Ly-α forest
+        constraints'
+      url: https://arxiv.org/abs/1707.06418
+      year: 2018
+    - arxiv_id: '1403.1536'
+      authors:
+      - Park, Jong-Chul
+      - Kong, Kyoungchul
+      - Park, Seong Chan
+      doi: 10.1016/j.physletb.2014.04.037
+      notes: Related local full text read for a contemporaneous 7 keV axino line model.
+      reference_id: arxiv:1403.1536
+      role: extension
+      title: X-ray line signal from 7 keV axino dark matter decay
+      url: https://arxiv.org/abs/1403.1536
+      year: 2014
+    external_databases: []
+    review_papers: []
+  extraction:
+    method: llm_assisted
+    extracted_by: codex_batch_0004
+    extractor_name: Codex
+    extraction_date: '2026-05-31'
+    confidence: high
+    source_chunks_or_sections:
+    - reference_id: '1403_1782'
+      section: Introduction
+      page: null
+      quote_or_summary: Considers axino warm dark matter in a supersymmetric axion model with R-parity
+        violation.
+    - reference_id: '1403_1782'
+      section: Axino production
+      page: null
+      quote_or_summary: Thermal production around reheating temperatures 1e6-1e7 GeV can yield keV axino
+        warm dark matter.
+    unresolved_items:
+    - The 3.5 keV line interpretation is observationally uncertain and may have atomic/systematic explanations.
+    - The OCR did not preserve every decay-rate symbol; structured rows use quoted benchmark values and
+      qualitative dependencies only.
+  evidence:
+    particle_content:
+    - reference_id: '1403_1782'
+      note: The dark matter candidate is an axino with mass near 7 keV.
+      confidence: high
+      section: Introduction
+      page: null
+    symmetries:
+    - reference_id: '1403_1782'
+      note: The setup is a supersymmetric axion model with R-parity violation and Peccei-Quinn breaking
+        scale f_a.
+      confidence: medium
+      section: Introduction
+      page: null
+    interactions:
+    - reference_id: '1403_1782'
+      note: Effective axino-gauge interactions and R-parity violating mixing allow axino decay to photon
+        plus neutrino.
+      confidence: high
+      section: Axino decay
+      page: null
+    production_mechanism:
+    - reference_id: '1403_1782'
+      note: Primordial axinos are thermally produced; the relic density formula depends on f_a, strong
+        coupling, and reheating temperature.
+      confidence: high
+      section: Axino production
+      page: null
+    parameter_ranges:
+    - reference_id: '1403_1782'
+      note: The paper uses m_axino about 7 keV and reheating temperature around 1e6-1e7 GeV for warm dark
+        matter.
+      confidence: high
+      section: Axino production
+      page: null
+    constraints:
+    - confidence: high
+      note: Primary text states the line interpretation targets m_DM around 7 keV and tau_DM around 2e27-2e28
+        s.
+      page: null
+      reference_id: arxiv:1403.1782
+      section: Introduction
+    - confidence: high
+      note: Primary paper states the neutrino mass bound implies the Bino mass is lighter than about 10
+        GeV.
+      page: null
+      reference_id: arxiv:1403.1782
+      section: Summary
+    - confidence: high
+      note: Related source explains that Ly-alpha limits require a phase-space/linear-power recast for
+        freeze-in axinos.
+      page: null
+      reference_id: arxiv:1707.06418
+      section: Abstract
+    observables:
+    - confidence: high
+      note: Primary paper proposes a 7 keV RPV axino decaying to photon plus neutrino as an origin of
+        the 3.5 keV line.
+      page: null
+      reference_id: arxiv:1403.1782
+      section: Introduction
+    - confidence: high
+      note: Related line-detection paper reports an unidentified 3.55-3.57 keV line in stacked cluster
+        spectra.
+      page: null
+      reference_id: arxiv:1402.2301
+      section: Abstract
+    - confidence: high
+      note: Related axino paper states 7 keV axinos from thermal-bath freeze-in can be warm and in tension
+        with Ly-alpha forest data.
+      page: null
+      reference_id: arxiv:1707.06418
+      section: Abstract
+    routes:
+    - confidence: high
+      note: Primary source links bilinear RPV mixing to axino radiative decay, relic density, and neutrino-mass
+        consistency.
+      page: null
+      reference_id: arxiv:1403.1782
+      section: Model discussion
+  review:
+    human_reviewed: false
+    reviewed_by: null
+    review_date: null
+    expert_reviewed: false
+    expert_reviewer: null
+    expert_review_date: null
+    reviewer_notes: []
+    scientific_confidence: high
+    implementation_confidence: high
+  caveats: []
+robustness:
+  overall: medium
+  theory_robustness: medium
+  observational_robustness: unknown
+  computational_robustness: unknown
+  constraint_robustness: not_applicable
+  dominant_uncertainties: []
+  validation_status: expert_judgment_only
+  notes: null
+agent_failure_modes:
+  warnings:
+  - id: line_motivated
+    severity: medium
+    category: other
+    warning: The extraction records a line-motivated decaying-DM scenario and does not encode observational
+      constraints.
+observables:
+- caveats:
+  - The original line detection is weak and subject to atomic-line/systematic modeling uncertainties.
+  channel: indirect_detection
+  effect_direction: spectral_line
+  environments:
+  - galaxy clusters
+  - Andromeda galaxy
+  id: obs_axino_35kev_line
+  key_quantities:
+  - description: A two-body decay to gamma+nu gives E_gamma about m_axino/2.
+    name: axino mass
+    role: core
+    source_reference_ids:
+    - arxiv:1403.1782
+    - arxiv:1403.1536
+    status: inferred
+    symbol: m_axino
+    unit: keV
+    value: 7
+  - description: Observed unidentified X-ray feature targeted by the model.
+    name: line energy
+    role: derived
+    source_reference_ids:
+    - arxiv:1403.1782
+    - arxiv:1402.2301
+    status: inferred
+    symbol: E_gamma
+    unit: keV
+    value: 3.5
+  - description: Lifetime range suggested for a dominant decaying-DM origin of the line.
+    name: dark matter lifetime
+    range: 2e27-2e28 s
+    role: core
+    source_reference_ids:
+    - arxiv:1403.1782
+    status: inferred
+    symbol: tau_DM
+    unit: s
+  linked_constraints:
+  - con_axino_xray_lifetime_window
+  linked_routes:
+  - route_axino_decay_flux_structure
+  name: 3.5 keV photon line from axino decay
+  notes: null
+  observability: high
+  predicted_effect: Bilinear R-parity violation mixes neutralinos with neutrinos, allowing a ~7 keV axino
+    to decay to gamma plus neutrino and produce a ~3.5 keV line.
+  redshift_range: low-redshift clusters and Andromeda observations
+  relevance: critical
+  scale_range: X-ray line energy near 3.5 keV
+  source_reference_ids:
+  - arxiv:1403.1782
+  - arxiv:1402.2301
+  - arxiv:1403.1536
+  subchannel: X-ray spectral line
+- caveats:
+  - The primary paper does not run a Ly-alpha likelihood.
+  channel: lyman_alpha
+  effect_direction: suppression
+  environments:
+  - intergalactic medium
+  - linear matter power spectrum
+  id: obs_axino_warm_free_streaming
+  key_quantities:
+  - description: Warm particle mass used in the X-ray-line benchmark.
+    name: axino mass
+    role: core
+    source_reference_ids:
+    - arxiv:1403.1782
+    - arxiv:1707.06418
+    status: inferred
+    symbol: m_axino
+    unit: keV
+    value: 7
+  - description: Production-dependent nonthermal distribution needed for Ly-alpha mapping.
+    name: phase-space distribution
+    role: derived
+    source_reference_ids:
+    - arxiv:1707.06418
+    status: inferred
+    symbol: f_axino(q)
+  linked_constraints:
+  - con_axino_lya_warmness_recast
+  linked_routes:
+  - route_axino_decay_flux_structure
+  name: Warm-axino structure suppression
+  notes: null
+  observability: medium
+  predicted_effect: A 7 keV axino produced from the thermal bath can be warm enough to affect Ly-alpha
+    forest scales, requiring a phase-space/transfer-function recast.
+  redshift_range: high-redshift Ly-alpha forest
+  relevance: high
+  scale_range: small/intermediate comoving scales
+  source_reference_ids:
+  - arxiv:1403.1782
+  - arxiv:1707.06418
+  subchannel: linear matter power
+constraints:
+- allowed_regions:
+  - The primary paper finds 7 keV axino benchmarks can have proper lifetime and relic density for the
+    X-ray line.
+  applies: parameter_dependent
+  assumptions:
+  - can_be_relaxed: partial
+    description: The photon line energy is approximately half the axino mass for axino -> gamma + neutrino.
+    id: two-body-line-kinematics
+    impact_if_violated: Additional final states or broadening change the line-energy relation.
+    notes: null
+    scope: line-energy mapping
+    source_reference_ids:
+    - arxiv:1403.1782
+    status: established
+  benchmark_implications:
+  - Bilinear RPV can explain the line with axino-only or mixed axino/axion dark matter.
+  caveats:
+  - Line origin remains observationally disputed and model dependent.
+  constrained_parameters:
+  - m_axino
+  - tau_DM
+  - xi_i
+  - f_a
+  constraint_type: indirect_detection
+  data_release: XMM-Newton cluster and Andromeda line reports cited by the primary
+  excluded_regions:
+  - Dominant-DM interpretations outside m_DM around 7 keV or tau_DM around 2e27-2e28 s do not match the
+    source line target.
+  id: con_axino_xray_lifetime_window
+  likelihood_available: 'no'
+  likelihood_reference: null
+  name: X-ray line mass-lifetime window
+  notes: null
+  observable_channel: X-ray spectral line
+  recasting_needed: 'yes'
+  robustness: medium
+  source_reference_ids:
+  - arxiv:1403.1782
+  - arxiv:1402.2301
+  - arxiv:1403.1536
+- allowed_regions:
+  - Bino masses lighter than about 10 GeV can satisfy the quoted neutrino-mass consistency condition in
+    the benchmark region.
+  applies: parameter_dependent
+  assumptions:
+  - can_be_relaxed: 'yes'
+    description: Neutralino-neutrino mixing is the source of both the axino radiative decay and the neutrino-mass
+      bound.
+    id: bilinear-rpv-neutralino-neutrino-mixing
+    impact_if_violated: Different RPV flavor structure changes the Bino bound.
+    notes: null
+    scope: RPV consistency
+    source_reference_ids:
+    - arxiv:1403.1782
+    status: assumed
+  benchmark_implications:
+  - The RPV mixing needed for the line is tied to neutrino masses and the neutralino sector.
+  caveats:
+  - The OCR text did not preserve all formula symbols cleanly.
+  constrained_parameters:
+  - M_1
+  - xi_i
+  - m_nu
+  constraint_type: theoretical
+  data_release: null
+  excluded_regions:
+  - The primary text states the neutrino mass bound implies a Bino mass below about 10 GeV for the relevant
+    mixing choices.
+  id: con_axino_bino_neutrino_bound
+  likelihood_available: 'no'
+  likelihood_reference: null
+  name: Bino-mass bound from neutrino mixing in bilinear RPV
+  notes: null
+  observable_channel: neutrino mass consistency
+  recasting_needed: 'no'
+  robustness: medium
+  source_reference_ids:
+  - arxiv:1403.1782
+- allowed_regions:
+  - Production mechanisms yielding colder phase-space distributions can alleviate the Ly-alpha tension.
+  applies: recast_required
+  assumptions:
+  - can_be_relaxed: partial
+    description: Ly-alpha constraints depend on the axino phase-space distribution, not only on the mass.
+    id: production-dependent-warmness
+    impact_if_violated: A colder distribution weakens the mapping to thermal WDM bounds.
+    notes: null
+    scope: structure recast
+    source_reference_ids:
+    - arxiv:1707.06418
+    status: assumed
+  benchmark_implications:
+  - The X-ray benchmark needs a production-dependent transfer-function recast before claiming structure
+    viability.
+  caveats:
+  - No Ly-alpha likelihood was run in this batch.
+  constrained_parameters:
+  - m_axino
+  - f_axino(q)
+  - T(k)
+  constraint_type: astrophysical
+  data_release: null
+  excluded_regions:
+  - Related freeze-in axino work states that 7 keV axinos from the thermal bath can be in tension with
+    Ly-alpha forest data.
+  id: con_axino_lya_warmness_recast
+  likelihood_available: unknown
+  likelihood_reference: null
+  name: Ly-alpha forest warmness recast for 7 keV axino
+  notes: null
+  observable_channel: lyman_alpha
+  recasting_needed: 'yes'
+  robustness: medium
+  source_reference_ids:
+  - arxiv:1707.06418
+theory_to_observable_routing:
+  routes:
+  - agent_notes: null
+    caveats:
+    - Line systematics and production history dominate the recast uncertainty.
+    constraint_ids:
+    - con_axino_xray_lifetime_window
+    - con_axino_bino_neutrino_bound
+    - con_axino_lya_warmness_recast
+    derived_quantities:
+    - E_gamma
+    - decay flux
+    - Omega_axino h^2
+    - linear transfer function
+    description: Route RPV axino parameters to X-ray line flux, relic density, and warm-structure constraints.
+    forward_model_chain:
+    - inputs:
+      - m_axino
+      notes: E_gamma about m_axino/2.
+      outputs:
+      - E_gamma
+      step_id: s1
+      step_type: analytic_formula
+      tool_or_code: null
+      validity: Two-body decay kinematics.
+    - inputs:
+      - xi_i
+      - f_a
+      - M_1
+      notes: OCR formulas partially garbled, so use quoted benchmark implications.
+      outputs:
+      - decay width
+      - tau_DM
+      - neutrino mass consistency
+      step_id: s2
+      step_type: analytic_formula
+      tool_or_code: null
+      validity: Bilinear RPV setup of primary paper.
+    - inputs:
+      - f_axino(q)
+      - m_axino
+      notes: Related axino freeze-in source supplies the recast motivation.
+      outputs:
+      - T(k)
+      - Ly-alpha recast target
+      step_id: s3
+      step_type: transfer_function
+      tool_or_code: Boltzmann/linear-power solver
+      validity: Requires production-specific phase-space distribution.
+    id: route_axino_decay_flux_structure
+    input_parameters:
+    - m_axino
+    - tau_DM
+    - xi_i
+    - f_a
+    - M_1
+    - production distribution
+    likelihoods:
+    - X-ray flux likelihood unavailable
+    - Ly-alpha likelihood unavailable
+    observable_ids:
+    - obs_axino_35kev_line
+    - obs_axino_warm_free_streaming
+    required_code_resources:
+    - X-ray decay-flux calculator
+    - linear Boltzmann solver for nonthermal WDM
+    route_status: planned
+    source_model_features:
+    - keV axino LSP
+    - bilinear R-parity violation
+    - axino -> gamma + neutrino decay
+    validation_tests:
+    - recover E_gamma ~= 3.5 keV for m_axino ~= 7 keV
+    - recover quoted tau_DM window

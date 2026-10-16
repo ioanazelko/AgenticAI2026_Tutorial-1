@@ -1,0 +1,865 @@
+_source:
+  shard: arXiv_src_2212_019_wds.tar
+  paper_id: '2212_02487'
+  source_member: 2212_02487.json
+  enriched: true
+  enrichment_schema_version: dm_model_ocr_enrichment_smoke_v0
+schema_version: model_only_v0
+model_id: 2212_02487_minimal_atomic_dark_matter_v1
+identity:
+  name: Minimal atomic dark matter
+  family: hidden_sector_dark_matter
+  aliases:
+  - aDM
+  - dark hydrogen model
+  short_description: A minimal atomic dark matter model with an unbroken hidden U(1), oppositely charged
+    dark proton and dark electron, massless dark photon, asymmetric abundance, dark recombination, and
+    dark acoustic oscillations.
+  historical_origin_or_motivation: unknown
+  status: speculative
+  model_kind: simplified_model
+theory:
+  theory_level: simplified_model
+  parent_frameworks:
+  - hidden U(1) dark sector
+  - atomic dark matter
+  lagrangian_available: 'yes'
+  renormalizable: 'yes'
+  embedded_in_larger_framework: unknown
+  notes: The paper writes a minimal aDM Lagrangian with dark fermions and a massless hidden U(1) gauge
+    boson.
+particle_content:
+  dark_matter_candidate:
+    name: dark hydrogen bound state of p_D and e_D
+    spin: unknown
+    statistics: unknown
+    elementary_or_composite: composite
+    number_of_components: subcomponent
+  additional_dark_sector_particles:
+  - dark proton p_D
+  - dark electron e_D
+  mediators:
+  - massless dark photon A_D
+  dark_radiation_species:
+  - massless dark photon
+  excited_or_degenerate_states:
+  - dark ionized plasma before recombination
+  long_lived_particles:
+  - dark hydrogen
+  unstable_parent_particles: []
+  standard_model_extension: substantial
+symmetries:
+  stabilizing_mechanism: Dark proton and dark electron carry equal and opposite charges under an unbroken
+    hidden U(1), forming stable dark hydrogen in an asymmetric relic sector.
+  symmetries:
+  - name: U(1)_D
+    type: gauge
+    exact_or_approximate: exact
+    breaking: unbroken in the minimal model
+    breaking_scale: null
+  topological_defects_possible: unknown
+interactions:
+  portals:
+  - gravitational
+  standard_model_targets: []
+  dark_sector_couplings:
+  - dark electromagnetic coupling alpha_D
+  - dark proton-dark electron Coulomb interaction
+  - dark photon radiation
+  mediator_types:
+  - massless dark photon
+  interaction_operators: []
+  scattering:
+    elastic: unknown
+    inelastic: unknown
+    momentum_dependence: unknown
+    velocity_dependence: unknown
+    spin_dependence: unknown
+  annihilation_channels: []
+  decay_channels: []
+  self_scattering_channels:
+  - dark atom and dark plasma self-interactions
+  tree_or_loop_level: tree
+parameters:
+  core:
+  - name: dark fine structure constant
+    symbol: alpha_D
+    description: Hidden U(1) fine structure constant e_D^2/4 pi
+    value: null
+    range: null
+    unit: null
+    role: core
+    status: inferred
+    source_reference_ids: []
+    notes: null
+  - name: dark proton mass
+    symbol: m_pD
+    description: Mass of heavier hidden U(1)-charged fermion
+    value: null
+    range: null
+    unit: null
+    role: core
+    status: inferred
+    source_reference_ids: []
+    notes: null
+  - name: dark electron mass
+    symbol: m_eD
+    description: Mass of lighter hidden U(1)-charged fermion
+    value: null
+    range: null
+    unit: null
+    role: core
+    status: inferred
+    source_reference_ids: []
+    notes: null
+  - name: atomic dark matter fraction
+    symbol: f_aDM
+    description: Fraction of total DM energy density in atomic DM
+    value: null
+    range: null
+    unit: null
+    role: core
+    status: inferred
+    source_reference_ids: []
+    notes: null
+  - name: dark radiation temperature parameter
+    symbol: N_D
+    description: Cosmological dark radiation/temperature parameter used in 5D model space
+    value: null
+    range: null
+    unit: null
+    role: core
+    status: inferred
+    source_reference_ids: []
+    notes: null
+production:
+  mechanisms:
+  - asymmetric relic abundance with dark recombination into dark hydrogen
+  thermal_equilibrium_with_standard_model: 'no'
+  thermal_equilibrium_with_hidden_sector: 'yes'
+  abundance_set_by:
+  - asymmetric relic abundance
+  - atomic dark matter fraction
+  - dark-sector temperature
+  depends_on_reheating_temperature: unknown
+  can_produce_all_dark_matter: parameter_dependent
+  nonthermal_momentum_distribution: unknown
+  notes: The paper makes no detailed assumption about production beyond requiring an asymmetric relic
+    abundance.
+relic_density:
+  full_or_subcomponent: either
+  target_fraction: null
+  calculation_type: phenomenological
+  key_dependencies:
+  - f_aDM
+  - N_D
+  - alpha_D
+  - m_pD
+  - m_eD
+  requires_entropy_dilution: unknown
+  overclosure_risk: parameter_dependent
+  underproduction_risk: parameter_dependent
+  tuning_assessment: unknown
+cosmological_history:
+  standard_history_assumed: false
+  nonstandard_features:
+  - dark-sector plasma before dark recombination
+  - dark hydrogen recombination
+  - dark radiation contribution
+  - dark acoustic oscillations
+  dark_sector_temperature:
+    name: dark-sector temperature at SM recombination
+    symbol: null
+    description: Taken as a free cosmological parameter through N_D
+    value: null
+    range: null
+    unit: null
+    role: core
+    status: inferred
+    source_reference_ids: []
+    notes: null
+  delta_neff: null
+  kinetic_decoupling: null
+  chemical_decoupling: null
+  phase_transitions: []
+  topological_defects: []
+  isocurvature_perturbations: unknown
+  bbn_relevance: medium
+  cmb_relevance: high
+phase_space:
+  distribution_type: mixed_cold_warm
+  distribution_function_available: approximate
+  average_momentum_relative_to_thermal: null
+  free_streaming_length: null
+  velocity_dispersion_today: null
+  phase_space_bounds: []
+  notes: Before recombination the dark sector is a tightly coupled plasma; after recombination dark atoms
+    behave as an interacting subcomponent.
+structure_formation:
+  linear:
+    behaves_like_cdm: scale_dependent
+    transfer_function_shape: oscillatory
+    small_scale_power_effect: suppression
+    half_mode_mass: null
+    thermal_wdm_mapping:
+      available: false
+      validity: unknown
+      warning: No thermal WDM mapping extracted.
+  nonlinear:
+    halo_mass_function_effect: possible suppression or DAO-induced changes below affected scales
+    subhalo_mass_function_effect: unknown
+    simulation_calibrated: partial
+validity_domain:
+- id: minimal_adm
+  applies_to: model
+  condition: Applies to the simplest atomic DM sector with unbroken U(1)_D, two oppositely charged fermions,
+    and massless dark photon.
+  valid_range: null
+  status: inferred
+  extrapolation_risk: medium
+  caveats: []
+  source_reference_ids: []
+  notes: null
+- id: gravitational_sm_coupling
+  applies_to: interaction
+  condition: Cosmological study assumes the dark sector only couples gravitationally to the Standard Model.
+  valid_range: null
+  status: inferred
+  extrapolation_risk: medium
+  caveats: []
+  source_reference_ids: []
+  notes: null
+assumptions:
+  global:
+  - id: asymmetric_relic
+    description: The aDM sector has an asymmetric relic abundance.
+    scope: global
+    status: assumed
+    impact_if_violated: null
+    can_be_relaxed: unknown
+    source_reference_ids: []
+    notes: null
+  - id: unbroken_u1d
+    description: The hidden U(1)_D gauge symmetry is unbroken.
+    scope: theory
+    status: assumed
+    impact_if_violated: null
+    can_be_relaxed: unknown
+    source_reference_ids: []
+    notes: null
+  - id: gravitational_only_sm
+    description: The dark sector couples to the Standard Model only gravitationally in the cosmological
+      analysis.
+    scope: theory
+    status: assumed
+    impact_if_violated: null
+    can_be_relaxed: unknown
+    source_reference_ids: []
+    notes: null
+associated_code:
+  has_associated_code: 'yes'
+  code_summary: The paper implemented atomic dark matter in the CLASS Boltzmann code, building on a previous
+    Mirror Twin Higgs-specific version.
+  primary_code_role: boltzmann_solver_patch
+  repositories:
+  - name: atomic dark matter CLASS implementation
+    resource_type: repository
+    availability: public
+    relationship_to_model: official_author_code
+    purpose:
+    - compute_matter_power_spectrum
+    - solve_boltzmann_equations
+    url: null
+    repository_url: https://github.com/srbPhy/class_twinadm
+    documentation_url: null
+    archive_url: null
+    doi: null
+    license: null
+    languages: []
+    version: null
+    commit: null
+    last_checked: '2026-05-31'
+    maintained: unknown
+    dependencies:
+    - CLASS
+    supported_parameters:
+    - alpha_D
+    - m_pD
+    - m_eD
+    - f_aDM
+    - N_D
+    supported_model_families:
+    - atomic dark matter
+    supported_observables: []
+    inputs:
+    - aDM model parameters
+    - cosmological parameters
+    outputs:
+    - matter power spectrum
+    - dark ionization history
+    validity_domain:
+    - minimal aDM cosmology
+    citation_reference_ids:
+    - '2212_02487'
+    notes: URL appears in the assigned paper text.
+  packages_or_modules: []
+  notebooks: []
+  scripts: []
+  containers_or_environments: []
+  expected_inputs:
+  - aDM microphysical parameters
+  - cosmological parameters
+  expected_outputs:
+  - dark recombination history
+  - matter power spectrum
+  supported_observable_channels: []
+  caveats: []
+provenance:
+  model_id: 2212_02487_minimal_atomic_dark_matter_v1
+  model_name: Minimal atomic dark matter
+  model_family: hidden_sector_dark_matter
+  entry_version: 0.1.0
+  status: machine_extracted
+  created_at: '2026-05-31'
+  last_updated: '2026-05-31'
+  sources:
+    primary_papers:
+    - reference_id: '2212_02487'
+      title: The nature of dark matter (DM) is one of the foremost mysteries of modern particle physics.
+        All attempts to identify it through direct detection have been stymied by negative resul
+      authors: []
+      year: 2022
+      arxiv_id: '2212.02487'
+      doi: null
+      url: null
+      role: original_model
+      notes: Primary assigned paper text from run SQLite database.
+    - arxiv_id: '2212.02487'
+      authors:
+      - Bansal, Saurabh
+      - Barron, Jared
+      - Curtin, David
+      - Tsai, Yuhsin
+      doi: 10.1007/JHEP10(2023)095
+      notes: Primary assigned paper read from local SQLite full text.
+      reference_id: arxiv:2212.02487
+      role: original_model
+      title: Precision cosmological constraints on atomic dark matter
+      url: https://arxiv.org/abs/2212.02487
+      year: 2023
+    constraint_papers:
+    - arxiv_id: '2304.06308'
+      authors:
+      - Zu, Lei
+      - Zhang, Chi
+      - Chen, Hou-Zun
+      - Wang, Wei
+      - Tsai, Yue-Lin Sming
+      - Tsai, Yuhsin
+      - Luo, Wentao
+      - Fan, Yi-Zhong
+      doi: 10.1088/1475-7516/2023/08/023
+      notes: Related full text resolved locally and read for bounded enrichment.
+      reference_id: arxiv:2304.06308
+      role: constraint
+      title: Exploring mirror twin Higgs cosmology with present and future weak lensing surveys
+      url: https://arxiv.org/abs/2304.06308
+      year: 2023
+    - arxiv_id: '1310.3278'
+      authors:
+      - Cyr-Racine, Francis-Yan
+      - de Putter, Roland
+      - Raccanelli, Alvise
+      - Sigurdson, Kris
+      doi: 10.1103/PhysRevD.89.063517
+      notes: Related full text resolved locally and read for bounded enrichment.
+      reference_id: arxiv:1310.3278
+      role: constraint
+      title: Constraints on large-scale dark acoustic oscillations from cosmology
+      url: https://arxiv.org/abs/1310.3278
+      year: 2014
+    - arxiv_id: '1907.01496'
+      authors:
+      - Archidiacono, Maria
+      - Hooper, Deanna C.
+      - Murgia, Riccardo
+      - Bohr, Sebastian
+      - Lesgourgues, Julien
+      - Viel, Matteo
+      doi: 10.1088/1475-7516/2019/10/055
+      notes: Related full text resolved locally and read for bounded enrichment.
+      reference_id: arxiv:1907.01496
+      role: constraint
+      title: Constraining Dark Matter-Dark Radiation interactions with CMB, BAO, and Lyman-α
+      url: https://arxiv.org/abs/1907.01496
+      year: 2019
+    external_databases: []
+    review_papers: []
+  extraction:
+    method: llm_assisted
+    extracted_by: codex_batch_0005
+    extractor_name: Codex GPT-5 extraction worker
+    extraction_date: '2026-05-31'
+    confidence: high
+    source_chunks_or_sections:
+    - reference_id: '2212_02487'
+      section: minimal simplified model
+      page: null
+      quote_or_summary: The text defines p_D, e_D, massless dark photon, U(1)_D, and the minimal aDM Lagrangian.
+    - reference_id: '2212_02487'
+      section: cosmology/implementation
+      page: null
+      quote_or_summary: The paper studies dark recombination and dark acoustic oscillations and implements
+        aDM in CLASS.
+    unresolved_items:
+    - CLASS/MontePython chains were not rerun in this batch.
+    - Lyman-alpha, 21-cm, SHMF, dark-disk, and direct-detection signatures require separate nonlinear
+      or portal-specific recasts.
+    - Tension-improvement claims are dataset- and prior-dependent.
+  evidence:
+    particle_content:
+    - reference_id: '2212_02487'
+      note: Minimal aDM contains two hidden U(1)-charged fermions, dark proton p_D and dark electron e_D,
+        forming dark hydrogen.
+      confidence: high
+      section: null
+      page: null
+    symmetries:
+    - reference_id: '2212_02487'
+      note: The hidden U(1) gauge group is taken to be unbroken with a massless dark photon.
+      confidence: high
+      section: null
+      page: null
+    interactions:
+    - reference_id: '2212_02487'
+      note: The cosmological study assumes only gravitational coupling to the SM and dark electromagnetic
+        interactions internally.
+      confidence: high
+      section: null
+      page: null
+    production_mechanism:
+    - reference_id: '2212_02487'
+      note: The paper requires an asymmetric relic abundance and tracks recombination of the dark plasma.
+      confidence: high
+      section: null
+      page: null
+    cosmological_history:
+    - reference_id: '2212_02487'
+      note: Dark recombination and dark acoustic oscillations modify the matter power spectrum.
+      confidence: high
+      section: null
+      page: null
+    parameter_ranges:
+    - reference_id: '2212_02487'
+      note: The minimal model is described as a 5D parameter space with three microphysical and two cosmological
+        parameters.
+      confidence: high
+      section: null
+      page: null
+    constraints:
+    - confidence: high
+      note: Primary text gives r_DAO constraints, N_D bound, and cautions about f_D > 0.1 for Lyman-alpha/SHMF.
+      page: null
+      reference_id: arxiv:2212.02487
+      section: Results and existing constraints
+    - confidence: medium
+      note: Related DM-DR study uses CMB, BAO, and Lyman-alpha data to constrain interacting dark sectors.
+      page: null
+      reference_id: arxiv:1907.01496
+      section: Introduction
+    observables:
+    - confidence: high
+      note: Primary paper defines the five-dimensional minimal aDM model and reports DAO/CMB/matter-power
+        signatures.
+      page: null
+      reference_id: arxiv:2212.02487
+      section: Introduction/results
+    - confidence: medium
+      note: Related DAO paper develops CMB and large-scale-structure constraints for DM coupled to dark
+        radiation.
+      page: null
+      reference_id: arxiv:1310.3278
+      section: Introduction
+    routes:
+    - confidence: high
+      note: Primary paper augments CLASS and uses MontePython MCMC to compare aDM to cosmological datasets.
+      page: null
+      reference_id: arxiv:2212.02487
+      section: Methodology
+  review:
+    human_reviewed: false
+    reviewed_by: null
+    review_date: null
+    expert_reviewed: false
+    expert_reviewer: null
+    expert_review_date: null
+    reviewer_notes: []
+    scientific_confidence: medium
+    implementation_confidence: medium
+  caveats: []
+robustness:
+  overall: high
+  theory_robustness: unknown
+  observational_robustness: not_applicable
+  computational_robustness: unknown
+  constraint_robustness: not_applicable
+  dominant_uncertainties: []
+  validation_status: expert_judgment_only
+  notes: Machine-extracted model-only candidate; constraints and observables intentionally omitted.
+agent_failure_modes:
+  warnings:
+  - id: model_only_scope
+    severity: medium
+    category: other
+    warning: This extraction intentionally omits constraints, observables, and routing fields.
+    mitigation: Consult the paper and full registry pass before using for phenomenological conclusions.
+    source_reference_ids:
+    - '2212_02487'
+observables:
+- caveats:
+  - Nonlinear Lyman-alpha and subhalo limits are not included in the primary likelihood.
+  channel: large_scale_structure
+  effect_direction: oscillatory
+  environments:
+  - CMB
+  - BAO
+  - linear large-scale structure
+  id: obs_adm_dark_acoustic_oscillations
+  key_quantities:
+  - description: Sound horizon at the dark drag epoch.
+    name: DAO sound horizon
+    range: about <10 Mpc for f_D=5 percent; <3 Mpc allows f_D up to unity in primary CMB-only discussion
+    role: core
+    source_reference_ids:
+    - arxiv:2212.02487
+    status: inferred
+    symbol: r_DAO
+    unit: Mpc
+  - description: Fraction of total dark matter in the atomic sector.
+    name: atomic-DM fraction
+    range: 0 to 1 in primary scans
+    role: core
+    source_reference_ids:
+    - arxiv:2212.02487
+    - arxiv:1310.3278
+    status: inferred
+    symbol: f_D
+  - description: Temperature/dark radiation parameter entering the five-dimensional aDM model.
+    name: dark radiation parameter
+    range: must satisfy usual CMB bound around 0.3 in the primary text
+    role: core
+    source_reference_ids:
+    - arxiv:2212.02487
+    status: inferred
+    symbol: N_D
+  linked_constraints:
+  - con_adm_cmb_bao_rdao_fraction
+  linked_routes:
+  - route_atomic_dm_precision_cosmology
+  name: Atomic-DM dark acoustic oscillations
+  notes: null
+  observability: high
+  predicted_effect: Dark protons and dark electrons coupled to a dark photon form a tightly coupled plasma
+    before dark recombination, imprinting DAO features and suppressing growth in the matter power spectrum.
+  redshift_range: dark recombination through z=0 linear structure
+  relevance: critical
+  scale_range: CMB modes and linear matter-power scales; k below about 0.1-0.2 h Mpc^-1 in primary likelihoods
+  source_reference_ids:
+  - arxiv:2212.02487
+  - arxiv:1310.3278
+  - arxiv:1907.01496
+  subchannel: linear matter power and CMB response
+- caveats:
+  - The result is a parameter-fit preference, not a decisive detection of atomic dark matter.
+  channel: cosmology
+  effect_direction: shape_change
+  environments:
+  - Planck CMB
+  - BAO surveys
+  - Type Ia supernovae
+  - weak lensing
+  id: obs_adm_h0_s8_response
+  key_quantities:
+  - description: Late-time-tension fit prefers dark recombination around this scale in the primary discussion.
+    name: dark recombination redshift
+    range: around 3e4
+    role: core
+    source_reference_ids:
+    - arxiv:2212.02487
+    status: inferred
+    symbol: z_Drec
+  - description: Late-time measurements prefer a nonzero value near the usual CMB upper range.
+    name: preferred dark radiation parameter
+    range: around 0.3 preferred with late-time data
+    role: core
+    source_reference_ids:
+    - arxiv:2212.02487
+    - arxiv:2304.06308
+    status: inferred
+    symbol: N_D
+  linked_constraints:
+  - con_adm_late_time_tension_fit
+  linked_routes:
+  - route_atomic_dm_precision_cosmology
+  name: Joint H0 and S8 response from dark radiation plus interactions
+  notes: null
+  observability: high
+  predicted_effect: Dark radiation can raise the CMB-inferred expansion rate while DM-dark-radiation interactions
+    reduce structure growth, allowing better accommodation of H0 and S8 late-time measurements than CDM
+    with dark radiation alone.
+  redshift_range: recombination to late-time large-scale structure
+  relevance: high
+  scale_range: CMB, BAO, supernova, and weak-lensing scales
+  source_reference_ids:
+  - arxiv:2212.02487
+  - arxiv:2304.06308
+  subchannel: parameter tensions
+- caveats:
+  - The primary paper explicitly leaves nonlinear small-scale constraints outside its MCMC analysis.
+  channel: lyman_alpha
+  effect_direction: suppression
+  environments:
+  - Lyman-alpha forest
+  - 21-cm surveys
+  - galaxy clusters
+  - galactic halos
+  id: obs_adm_small_scale_signatures
+  key_quantities:
+  - description: Primary text warns that additional Lyman-alpha and SHMF bounds can matter at larger fractions.
+    name: atomic-DM fraction caution threshold
+    range: caution for f_D > 0.1
+    role: core
+    source_reference_ids:
+    - arxiv:2212.02487
+    status: inferred
+    symbol: f_D
+  - description: Would open direct-detection and visible compact-object signatures, but is not part of
+      the baseline gravitational-only cosmology scan.
+    name: dark-sector kinetic mixing
+    range: not included in baseline scan
+    role: nuisance
+    source_reference_ids:
+    - arxiv:2212.02487
+    status: unknown
+    symbol: epsilon
+  linked_constraints:
+  - con_adm_lya_shmf_recast_needed
+  linked_routes:
+  - route_atomic_dm_precision_cosmology
+  name: Small-scale and dissipative atomic-DM signatures
+  notes: null
+  observability: medium
+  predicted_effect: At small scales, DAOs and dissipative atomic-DM dynamics can affect the Lyman-alpha
+    forest, 21-cm signal, halo mass function, halo shapes, dark disks, compact dark objects, and possible
+    direct-detection signals if kinetic mixing exists.
+  redshift_range: high-redshift Lyman-alpha/21-cm through z=0 halos
+  relevance: high
+  scale_range: sub-Mpc to galactic scales
+  source_reference_ids:
+  - arxiv:2212.02487
+  - arxiv:1907.01496
+  subchannel: Lyman-alpha, 21-cm, halo shape, dark disks
+constraints:
+- allowed_regions:
+  - If r_DAO is below about 3 Mpc, f_D up to unity is allowed by CMB data in the primary discussion.
+  applies: 'yes'
+  assumptions:
+  - can_be_relaxed: partial
+    description: Primary constraints use linear Boltzmann predictions and restrict nonlinear weak-lensing
+      use to conservative k ranges.
+    id: linear-cosmology-range
+    impact_if_violated: Including nonlinear structure data could tighten high-f_D bounds.
+    notes: null
+    scope: CMB/BAO/aDM MCMC
+    source_reference_ids:
+    - arxiv:2212.02487
+    status: assumed
+  benchmark_implications:
+  - The primary cosmological handle is when the atomic component stops being dragged by dark radiation.
+  caveats:
+  - The batch did not rerun CLASS/MontePython chains.
+  constrained_parameters:
+  - r_DAO
+  - f_D
+  - N_D
+  - alpha_D
+  - m_pD
+  - m_eD
+  constraint_type: cosmological
+  data_release: Planck CMB temperature/polarization/lensing, BAO, Type Ia supernovae; MontePython/CLASS
+    analysis in primary paper
+  excluded_regions:
+  - For f_D=5 percent, r_DAO larger than about 10 Mpc is disfavored by the primary Planck/BAO analysis.
+  - Regardless of r_DAO, N_D must obey the usual CMB dark-radiation bound around 0.3.
+  id: con_adm_cmb_bao_rdao_fraction
+  likelihood_available: partial
+  likelihood_reference: null
+  name: CMB/BAO constraint on DAO scale and atomic fraction
+  notes: null
+  observable_channel: cmb_bao
+  recasting_needed: partial
+  robustness: medium
+  source_reference_ids:
+  - arxiv:2212.02487
+  - arxiv:1310.3278
+- allowed_regions:
+  - No definitive allowed region is encoded here because the primary paper leaves these nonlinear bounds
+    outside its analysis.
+  applies: recast_required
+  assumptions:
+  - can_be_relaxed: partial
+    description: Nonlinear Lyman-alpha and SHMF mapping is not computed in the primary MCMC.
+    id: nonlinear-small-scale-not-modeled
+    impact_if_violated: A dedicated recast could exclude part of the high-f_D parameter space.
+    notes: null
+    scope: small-scale constraints
+    source_reference_ids:
+    - arxiv:2212.02487
+    - arxiv:1907.01496
+    status: assumed
+  benchmark_implications:
+  - High-f_D models should not be treated as complete without small-scale recasts.
+  caveats:
+  - Hydrodynamical simulations or calibrated transfer-function recasts are required.
+  constrained_parameters:
+  - f_D
+  - r_DAO
+  - matter power suppression
+  constraint_type: astrophysical
+  data_release: Lyman-alpha and SHMF constraints discussed as future/external recasts
+  excluded_regions:
+  - The primary text warns that for f_D above about 0.1, Lyman-alpha forest and SHMF measurements may
+    further constrain scenarios with significant matter-power suppression.
+  id: con_adm_lya_shmf_recast_needed
+  likelihood_available: 'no'
+  likelihood_reference: null
+  name: Lyman-alpha and subhalo-mass-function caution for large atomic fractions
+  notes: null
+  observable_channel: lyman_alpha
+  recasting_needed: 'yes'
+  robustness: low
+  source_reference_ids:
+  - arxiv:2212.02487
+  - arxiv:1907.01496
+- allowed_regions:
+  - Including late-time measurements favors dark recombination around z about 3e4 and N_D around 0.3 in
+    the primary analysis.
+  applies: parameter_dependent
+  assumptions: []
+  benchmark_implications:
+  - Atomic dark matter can fit H0 and S8 better than CDM with or without dark radiation, but this is a
+    model-comparison target rather than a discovery claim.
+  caveats:
+  - Tension metrics are dataset- and prior-dependent.
+  constrained_parameters:
+  - N_D
+  - z_Drec
+  - f_D
+  - r_DAO
+  constraint_type: cosmological
+  data_release: Planck, BAO, supernovae, and late-time H0/S8 measurements as used by the primary paper
+  excluded_regions:
+  - Dark radiation alone worsens S8 in the primary discussion; viable tension-motivated fits require interactions
+    that suppress structure growth.
+  id: con_adm_late_time_tension_fit
+  likelihood_available: partial
+  likelihood_reference: null
+  name: Late-time H0/S8 fit preference
+  notes: null
+  observable_channel: hubble_and_structure_tensions
+  recasting_needed: partial
+  robustness: medium
+  source_reference_ids:
+  - arxiv:2212.02487
+  - arxiv:2304.06308
+theory_to_observable_routing:
+  routes:
+  - agent_notes: null
+    caveats:
+    - Small-scale constraints are explicitly left for future work by the primary paper.
+    constraint_ids:
+    - con_adm_cmb_bao_rdao_fraction
+    - con_adm_lya_shmf_recast_needed
+    - con_adm_late_time_tension_fit
+    derived_quantities:
+    - dark binding energy
+    - dark recombination redshift
+    - r_DAO
+    - CMB spectra
+    - matter power spectrum
+    description: Route minimal atomic dark matter microphysics to CMB, BAO, H0/S8, and small-scale observables.
+    forward_model_chain:
+    - inputs:
+      - alpha_D
+      - m_pD
+      - m_eD
+      - N_D
+      notes: null
+      outputs:
+      - binding energy
+      - dark recombination history
+      step_id: s1
+      step_type: analytic_formula
+      tool_or_code: null
+      validity: Requires modified recombination treatment for broad parameter ranges.
+    - inputs:
+      - dark recombination
+      - f_D
+      - N_D
+      notes: null
+      outputs:
+      - CMB spectra
+      - linear matter power
+      step_id: s2
+      step_type: boltzmann_solver
+      tool_or_code: CLASS with ETHOS/aDM modifications
+      validity: Primary route used for precision constraints.
+    - inputs:
+      - CMB spectra
+      - matter power
+      - BAO/SN/H0/S8 datasets
+      notes: null
+      outputs:
+      - posterior constraints
+      step_id: s3
+      step_type: likelihood
+      tool_or_code: MontePython
+      validity: Primary paper performs MCMC; this batch records outputs only.
+    - inputs:
+      - small-scale transfer function
+      - atomic cooling
+      notes: null
+      outputs:
+      - Lyman-alpha/SHMF/dark-disk observables
+      step_id: s4
+      step_type: simulation
+      tool_or_code: null
+      validity: Planned only; nonlinear recast unavailable in primary analysis.
+    id: route_atomic_dm_precision_cosmology
+    input_parameters:
+    - alpha_D
+    - m_pD
+    - m_eD
+    - f_D
+    - N_D
+    likelihoods:
+    - Planck/BAO/SN/H0/S8 MontePython likelihoods
+    - Lyman-alpha/SHMF likelihood unavailable for full aDM space
+    observable_ids:
+    - obs_adm_dark_acoustic_oscillations
+    - obs_adm_h0_s8_response
+    - obs_adm_small_scale_signatures
+    required_code_resources:
+    - CLASS aDM/ETHOS modifications
+    - MontePython chains
+    - small-scale nonlinear recast pipeline
+    route_status: partially_implemented
+    source_model_features:
+    - unbroken hidden U(1)
+    - dark proton and dark electron
+    - dark photon bath
+    - dark recombination
+    - subcomponent fraction f_D
+    validation_tests:
+    - recover r_DAO < about 10 Mpc at f_D=5 percent
+    - recover f_D up to unity allowed when r_DAO < about 3 Mpc in CMB-only discussion

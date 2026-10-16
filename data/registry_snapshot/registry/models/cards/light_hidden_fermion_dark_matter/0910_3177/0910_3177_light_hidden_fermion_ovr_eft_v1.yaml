@@ -1,0 +1,390 @@
+_source:
+  shard: arXiv_src_0910_003_wds.tar
+  paper_id: 0910_3177
+  source_member: 0910_3177.json
+schema_version: model_only_v0
+model_id: 0910_3177_light_hidden_fermion_ovr_eft_v1
+identity:
+  name: Light hidden fermionic dark matter with the O_VR inelastic nucleon operator
+  family: light_hidden_fermion_dark_matter
+  aliases:
+  - light hidden fermionic dark matter
+  - O_VR light dark fermion EFT
+  short_description: A model-independent effective dark matter scenario in which a light Standard-Model-singlet
+    fermion f interacts with nucleons through the weakly constrained dimension-six operator O_VR, enabling
+    f p -> e+ n in neutrino detectors.
+  historical_origin_or_motivation: The paper proposes nontraditional direct detection of sub-weak-scale
+    hidden-sector dark matter through an inelastic nucleon process accessible to neutrino experiments.
+  status: speculative
+  model_kind: effective_field_theory
+theory:
+  theory_level: effective_field_theory
+  parent_frameworks:
+  - hidden-sector dark matter
+  - right-handed-neutrino-like singlet fermion EFT
+  lagrangian_available: partial
+  renormalizable: 'no'
+  eft_cutoff:
+    name: new physics scale suppressing O_VR
+    symbol: Lambda
+    description: Dimension-six scale probed by Super-K after lifetime constraints.
+    range: O(80-120 TeV) for m_f around 20-80 MeV in the paper estimates
+    unit: TeV
+    role: core
+    status: approximate
+    source_reference_ids:
+    - 0910_3177
+  embedded_in_larger_framework: unknown
+  notes: The paper lists gauge-invariant dimension-six operators and retains O_VR as the comparatively
+    weakly constrained operator, but states that a full model-building exploration is beyond scope.
+particle_content:
+  dark_matter_candidate:
+    name: f
+    spin: 1/2
+    statistics: fermion
+    elementary_or_composite: elementary
+    number_of_components: single_component
+  additional_dark_sector_particles: []
+  mediators: []
+  dark_radiation_species: []
+  excited_or_degenerate_states: []
+  long_lived_particles:
+  - f
+  unstable_parent_particles: []
+  standard_model_extension: minimal
+symmetries:
+  stabilizing_mechanism: The dark fermion must be long-lived; the paper says an additional unspecified
+    symmetry should forbid the dimension-four L f mixing operator.
+  symmetries:
+  - name: unspecified symmetry forbidding L f mixing
+    type: unknown
+    exact_or_approximate: unknown
+    breaking: not specified
+    breaking_scale: null
+  topological_defects_possible: unknown
+interactions:
+  portals:
+  - other
+  standard_model_targets:
+  - protons
+  - right-handed charged lepton and quarks
+  dark_sector_couplings: []
+  mediator_types:
+  - dimension-six contact operator
+  interaction_operators:
+  - O_VR = e_R gamma_mu f u_R gamma_mu d_R, suppressed by Lambda^2
+  scattering:
+    elastic: 'no'
+    inelastic: 'yes'
+    momentum_dependence: unknown
+    velocity_dependence: unknown
+    spin_dependence: unknown
+  annihilation_channels:
+  - additional low-scale annihilation to e+e- pairs or neutrinos is postulated for relic density but not
+    specified
+  decay_channels:
+  - loop-induced or mixing-induced f -> e+ e- channels considered as lifetime limits
+  self_scattering_channels: []
+  cp_structure: unknown
+  flavor_structure: right-handed first-generation lepton and quark fields in the displayed operator
+  tree_or_loop_level: both
+parameters:
+  core:
+  - name: dark fermion mass
+    symbol: m_f
+    description: Light dark matter mass range emphasized for neutrino-detector sensitivity.
+    range: approximately 20-100 MeV; the least constrained observable range is O(100 MeV)
+    unit: MeV
+    role: core
+    status: approximate
+    source_reference_ids:
+    - 0910_3177
+  - name: O_VR coefficient scale
+    symbol: Lambda/sqrt(C_VR)
+    description: Effective scale of the surviving dimension-six interaction.
+    range: about 80-120 TeV from Super-K-style estimates for m_f=20-80 MeV
+    unit: TeV
+    role: core
+    status: approximate
+    source_reference_ids:
+    - 0910_3177
+  - name: additional relic-density interaction scale
+    symbol: null
+    description: The paper states O_VR alone is too weak for the relic abundance and that another annihilation
+      interaction must be added.
+    range: order a few GeV
+    unit: GeV
+    role: core
+    status: speculative
+    source_reference_ids:
+    - 0910_3177
+  nuisance: []
+  derived:
+  - name: local f flux
+    symbol: Phi_f
+    description: Estimated from local dark matter density and f velocity when f comprises all dark matter.
+    value: 0.3 GeV/cm^3 times v_f divided by m_f
+    unit: cm^-2 s^-1
+    role: derived
+    status: approximate
+    source_reference_ids:
+    - 0910_3177
+production:
+  mechanisms:
+  - unspecified additional annihilation interaction needed to obtain the relic abundance
+  thermal_equilibrium_with_standard_model: unknown
+  thermal_equilibrium_with_hidden_sector: unknown
+  abundance_set_by:
+  - not O_VR alone; an additional low-scale interaction to e+e- or neutrinos is required
+  depends_on_reheating_temperature: unknown
+  can_produce_all_dark_matter: unknown
+  nonthermal_momentum_distribution: unknown
+  notes: The paper explicitly says the O_VR scale near O(100 TeV) is too high to give a compatible relic
+    density, so extra interactions must be postulated.
+relic_density:
+  full_or_subcomponent: either
+  target_fraction: null
+  calculation_type: unknown
+  key_dependencies:
+  - additional annihilation channel beyond O_VR
+  - m_f
+  - whether f is all or only part of dark matter
+  requires_entropy_dilution: unknown
+  overclosure_risk: parameter_dependent
+  underproduction_risk: unknown
+  tuning_assessment: unknown
+cosmological_history:
+  standard_history_assumed: true
+  nonstandard_features: []
+  dark_sector_temperature: null
+  delta_neff: null
+  kinetic_decoupling: null
+  chemical_decoupling: null
+  phase_transitions: []
+  topological_defects: []
+  isocurvature_perturbations: unknown
+  bbn_relevance: unknown
+  cmb_relevance: unknown
+phase_space:
+  distribution_type: unknown
+  distribution_function_available: unknown
+  average_momentum_relative_to_thermal: null
+  free_streaming_length: null
+  velocity_dispersion_today: null
+  phase_space_bounds: []
+  notes: The paper estimates a present-day local nonrelativistic flux but does not provide a cosmological
+    phase-space distribution.
+structure_formation:
+  linear:
+    behaves_like_cdm: unknown
+    transfer_function_shape: unknown
+    small_scale_power_effect: unknown
+    half_mode_mass: null
+  nonlinear:
+    halo_mass_function_effect: unknown
+    subhalo_mass_function_effect: unknown
+    simulation_calibrated: unknown
+validity_domain:
+- id: ovr_light_mass_window
+  applies_to: model
+  condition: O_VR remains comparatively weakly constrained only in the light-fermion mass range used for
+    neutrino-detector scattering estimates.
+  valid_range: m_f around 20-100 MeV, with tree-level charged-pion decay avoided by m_f below the relevant
+    threshold
+  status: approximate
+  extrapolation_risk: high
+  caveats:
+  - Other operators are much more strongly constrained by dark matter lifetime and visible decays.
+  source_reference_ids:
+  - 0910_3177
+- id: extra_relic_interaction_required
+  applies_to: production
+  condition: A relic-density completion must add interactions beyond O_VR because the O(100 TeV) O_VR
+    scale is too weak.
+  valid_range: null
+  status: established
+  extrapolation_risk: high
+  caveats:
+  - This card is an EFT candidate, not a complete relic-density model.
+  source_reference_ids:
+  - 0910_3177
+assumptions:
+  global:
+  - id: long_lived_f
+    description: The f particle is long-lived compared with the age of the universe and rarely decays
+      to visible final states.
+    scope: global
+    status: assumed
+    impact_if_violated: The particle would not be a viable dark matter candidate in the paper's setup.
+    can_be_relaxed: 'no'
+    source_reference_ids:
+    - 0910_3177
+  - id: symmetry_forbids_mixing
+    description: An unspecified symmetry forbids the dimension-four L f mixing operator that would make
+      f decay too quickly.
+    scope: theory
+    status: assumed
+    impact_if_violated: Fast decays to visible states would invalidate the dark matter interpretation.
+    can_be_relaxed: unknown
+    source_reference_ids:
+    - 0910_3177
+  - id: additional_relic_channel
+    description: Another low-scale interaction is assumed to set the f relic density because O_VR cannot
+      do so by itself.
+    scope: production
+    status: speculative
+    impact_if_violated: The EFT interaction by itself would not yield the observed relic abundance.
+    can_be_relaxed: unknown
+    source_reference_ids:
+    - 0910_3177
+  constraint_specific: []
+  computation_specific: []
+associated_code:
+  has_associated_code: unknown
+  code_summary: No associated public model code is described in the assigned text.
+  primary_code_role: null
+  repositories: []
+  packages_or_modules: []
+  notebooks: []
+  scripts: []
+  expected_inputs: []
+  expected_outputs: []
+  supported_observable_channels: []
+  caveats: []
+provenance:
+  model_id: 0910_3177_light_hidden_fermion_ovr_eft_v1
+  model_name: Light hidden fermionic dark matter with the O_VR inelastic nucleon operator
+  model_family: light_hidden_fermion_dark_matter
+  entry_version: 0.1.0
+  status: machine_extracted
+  created_at: '2026-05-31'
+  last_updated: '2026-05-31'
+  sources:
+    primary_papers:
+    - reference_id: 0910_3177
+      title: Light Hidden Fermionic Dark Matter in Neutrino Experiments
+      authors:
+      - Jennifer Kile
+      year: 2009
+      arxiv_id: '0910.3177'
+      doi: null
+      url: null
+      role: original_model
+      notes: Assigned full text from the run-local SQLite database.
+  extraction:
+    method: llm_assisted
+    extracted_by: codex batch-0013
+    extractor_name: GPT-5 Codex
+    extraction_date: '2026-05-31'
+    confidence: medium
+    source_chunks_or_sections:
+    - reference_id: 0910_3177
+      section: opening summary
+      page: null
+      quote_or_summary: The paper considers f p -> e+ n, where f is a dark fermion, using operators of
+        dimension six or less.
+    - reference_id: 0910_3177
+      section: operator basis
+      page: null
+      quote_or_summary: f is taken as a Standard-Model singlet fermion and the six gauge-invariant operators
+        are listed.
+    - reference_id: 0910_3177
+      section: relic-density discussion
+      page: null
+      quote_or_summary: The O_VR scale is too high to give the relic density, so another low-scale annihilation
+        interaction must exist.
+    unresolved_items:
+    - The stabilizing symmetry and relic-density completion are not specified in the paper.
+  evidence:
+    particle_content:
+    - reference_id: 0910_3177
+      note: The paper defines f as a fermion, a Standard-Model singlet, and the dark matter particle in
+        the effective-operator analysis.
+      confidence: high
+      section: operator basis
+      page: null
+    symmetries:
+    - reference_id: 0910_3177
+      note: The text says a symmetry should forbid the dimension-four L f operator to keep f long-lived,
+        but does not name the symmetry.
+      confidence: medium
+      section: discussion
+      page: null
+    interactions:
+    - reference_id: 0910_3177
+      note: O_VR couples f to right-handed e, u, and d fields and is the comparatively weakly constrained
+        operator for f p -> e+ n.
+      confidence: high
+      section: operator and limits sections
+      page: null
+    production_mechanism:
+    - reference_id: 0910_3177
+      note: The paper states O_VR alone cannot set a compatible relic density and requires another annihilation
+        interaction to e+e- or neutrinos.
+      confidence: high
+      section: discussion
+      page: null
+    cosmological_history:
+    - reference_id: 0910_3177
+      note: The model requires f to be cosmologically long-lived and estimates the local flux assuming
+        f comprises all dark matter.
+      confidence: medium
+      section: lifetime and neutrino-detector sections
+      page: null
+    parameter_ranges:
+    - reference_id: 0910_3177
+      note: The paper emphasizes m_f of order 100 MeV and O(80-120 TeV) sensitivity to the O_VR scale
+        for representative masses.
+      confidence: high
+      section: Super-K estimate
+      page: null
+    validity_domain:
+    - reference_id: 0910_3177
+      note: The effective row is valid only with an added relic-density interaction and a symmetry forbidding
+        fast f-neutrino mixing decays.
+      confidence: medium
+      section: discussion
+      page: null
+  review:
+    human_reviewed: false
+    reviewed_by: null
+    review_date: null
+    expert_reviewed: false
+    expert_reviewer: null
+    expert_review_date: null
+    reviewer_notes: []
+    scientific_confidence: medium
+    implementation_confidence: medium
+  caveats:
+  - Accepted as an EFT dark matter candidate row, not as a complete UV model.
+robustness:
+  overall: low
+  theory_robustness: low
+  observational_robustness: unknown
+  computational_robustness: unknown
+  constraint_robustness: not_applicable
+  dominant_uncertainties:
+  - unspecified stabilizing symmetry
+  - unspecified relic-density interaction
+  - operator-level rather than UV-complete model
+  validation_status: expert_judgment_only
+  notes: The paper is explicit about O_VR and the light dark fermion, but leaves the full model completion
+    unresolved.
+agent_failure_modes:
+  warnings:
+  - id: eft_not_complete_relic_model
+    severity: high
+    category: assumption_mismatch
+    warning: Do not treat O_VR alone as a complete relic-density model; the paper says an extra annihilation
+      interaction is required.
+    mitigation: Keep production and relic-density fields unresolved unless a UV completion is supplied.
+    source_reference_ids:
+    - 0910_3177
+  - id: not_all_operators_viable
+    severity: medium
+    category: invalid_mapping
+    warning: The paper lists several dimension-six operators, but only O_VR remains comparatively weakly
+      constrained for the observable neutrino-detector channel.
+    mitigation: Do not merge the strongly constrained operators into this model row.
+    source_reference_ids:
+    - 0910_3177

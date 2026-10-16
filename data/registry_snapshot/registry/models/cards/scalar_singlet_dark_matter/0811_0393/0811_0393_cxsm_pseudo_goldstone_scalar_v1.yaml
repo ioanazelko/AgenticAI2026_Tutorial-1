@@ -1,0 +1,373 @@
+_source:
+  shard: arXiv_src_0811_001_wds.tar
+  paper_id: 0811_0393
+  source_member: 0811_0393.json
+schema_version: model_only_v0
+model_id: 0811_0393_cxsm_pseudo_goldstone_scalar_v1
+identity:
+  name: Complex singlet pseudo-Goldstone scalar dark matter
+  family: scalar_singlet_dark_matter
+  aliases:
+  - cxSM single-component dark matter
+  - softly and spontaneously broken U(1) complex singlet model
+  - A scalar dark matter in cxSM
+  short_description: A complex-singlet Standard Model extension in which the singlet gets a vacuum expectation
+    value, the global U(1) is softly broken, and the massive pseudoscalar-like A field is stable dark
+    matter.
+  historical_origin_or_motivation: The paper presents this cxSM variant as a simple framework combining
+    viable scalar dark matter with ingredients for a strong first-order electroweak phase transition.
+  status: speculative
+  model_kind: complete_theory
+theory:
+  theory_level: uv_complete
+  parent_frameworks:
+  - Standard Model plus complex scalar singlet
+  - Higgs portal
+  - pseudo-Goldstone scalar dark matter
+  lagrangian_available: 'yes'
+  renormalizable: 'yes'
+  eft_cutoff: null
+  embedded_in_larger_framework: 'no'
+  notes: The scalar potential includes H dagger H |Phi|^2, |Phi|^4, and technically natural soft U(1)-breaking
+    a_1 and b_1 terms.
+particle_content:
+  dark_matter_candidate:
+    name: massive A component of the complex singlet
+    spin: '0'
+    statistics: boson
+    elementary_or_composite: elementary
+    number_of_components: single_component
+  additional_dark_sector_particles:
+  - real singlet component S mixed with the SM Higgs
+  mediators:
+  - H1 and H2 Higgs-singlet mixed scalars
+  dark_radiation_species: []
+  excited_or_degenerate_states:
+  - H1 and H2 scalar mass eigenstates
+  long_lived_particles: []
+  unstable_parent_particles: []
+  standard_model_extension: minimal
+symmetries:
+  stabilizing_mechanism: With real soft-breaking parameters and M_A^2 positive, the A field remains stable
+    in the spontaneously and softly broken U(1) case studied.
+  symmetries:
+  - name: global U(1) singlet symmetry
+    type: global
+    exact_or_approximate: broken
+    breaking: spontaneously by v_S and softly by a_1,b_1
+    breaking_scale: null
+  - name: CP-like A parity in real-parameter limit
+    type: discrete
+    exact_or_approximate: exact
+    breaking: CP-violating interactions are not considered
+    breaking_scale: null
+  topological_defects_possible: unknown
+interactions:
+  portals:
+  - higgs
+  standard_model_targets:
+  - Higgs-singlet mixed scalars
+  - Standard Model final states through scalar mixing
+  dark_sector_couplings:
+  - lambda_2 H dagger H |Phi|^2
+  - d_2 singlet quartic
+  - soft a_1 and b_1 terms
+  mediator_types:
+  - H1 and H2 mixed scalar states
+  interaction_operators:
+  - H^dagger H |Phi|^2
+  - '|Phi|^4'
+  - a_1 Phi linear soft term
+  - b_1 Phi^2 soft term
+  scattering:
+    elastic: 'yes'
+    inelastic: unknown
+    momentum_dependence: unknown
+    velocity_dependence: unknown
+    spin_dependence: spin_independent
+  annihilation_channels:
+  - AA to H_i H_j
+  - AA annihilation through Higgs-singlet scalar sector
+  decay_channels: []
+  self_scattering_channels:
+  - A scalar quartic interactions
+  cp_structure: CP-violating interactions are set aside; the studied real-parameter case keeps A stable.
+  flavor_structure: flavor universal Higgs portal
+  tree_or_loop_level: tree
+parameters:
+  core:
+  - name: singlet vacuum expectation value
+    symbol: v_S
+    description: Nonzero singlet vev in the spontaneously broken case.
+    unit: GeV
+    role: core
+    status: assumed
+    source_reference_ids: []
+  - name: soft linear breaking parameter
+    symbol: a_1
+    description: Technically natural U(1) and Z2 breaking linear term used to avoid domain walls.
+    role: core
+    status: assumed
+    source_reference_ids: []
+  - name: soft quadratic breaking parameter
+    symbol: b_1
+    description: Gives mass to A together with a_1/v_S.
+    role: core
+    status: assumed
+    source_reference_ids: []
+  - name: singlet-Higgs coupling
+    symbol: lambda_2
+    description: Controls mixing and annihilation through the scalar sector.
+    role: core
+    status: assumed
+    source_reference_ids: []
+  - name: singlet quartic coupling
+    symbol: d_2
+    description: Controls scalar masses, self-couplings, and relic density behavior.
+    role: core
+    status: assumed
+    source_reference_ids: []
+  - name: A scalar mass
+    symbol: M_A
+    description: Mass relation M_A^2 = |b_1| + 2|a_1|/v_S in the paper notation.
+    role: derived
+    status: inferred
+    source_reference_ids: []
+  nuisance: []
+  derived:
+  - name: Higgs-singlet mixing angle
+    symbol: theta
+    description: Mixes the real singlet with the neutral SU(2) scalar into H1 and H2.
+    role: derived
+    status: inferred
+    source_reference_ids: []
+production:
+  mechanisms:
+  - thermal freeze-out of A through Higgs-singlet scalar interactions
+  - annihilation into mixed scalar pairs when kinematically open
+  thermal_equilibrium_with_standard_model: 'yes'
+  thermal_equilibrium_with_hidden_sector: not_applicable
+  abundance_set_by:
+  - M_A
+  - lambda_2
+  - d_2
+  - v_S
+  - H1/H2 masses and mixing
+  depends_on_reheating_temperature: unknown
+  can_produce_all_dark_matter: parameter_dependent
+  nonthermal_momentum_distribution: 'no'
+  notes: The paper finds broad parameter regions that can accommodate the observed relic density while
+    allowing a strong first-order electroweak phase transition.
+relic_density:
+  full_or_subcomponent: full_dark_matter
+  target_fraction: null
+  calculation_type: thermal
+  key_dependencies:
+  - M_A
+  - v_S
+  - lambda_2
+  - d_2
+  - H1/H2 spectrum
+  - Higgs-singlet mixing
+  requires_entropy_dilution: 'no'
+  overclosure_risk: parameter_dependent
+  underproduction_risk: parameter_dependent
+  tuning_assessment: unknown
+cosmological_history:
+  standard_history_assumed: true
+  nonstandard_features:
+  - possible strong first-order electroweak phase transition from singlet scalar sector
+  dark_sector_temperature: null
+  delta_neff: null
+  kinetic_decoupling: null
+  chemical_decoupling: null
+  phase_transitions:
+  - electroweak phase transition affected by singlet vev
+  topological_defects: []
+  isocurvature_perturbations: unknown
+  bbn_relevance: low
+  cmb_relevance: low
+phase_space:
+  distribution_type: thermal
+  distribution_function_available: 'no'
+  notes: Cold scalar thermal relic; no phase-space distribution is given.
+structure_formation:
+  linear:
+    behaves_like_cdm: 'yes'
+    transfer_function_shape: cdm_like
+    small_scale_power_effect: none
+  nonlinear:
+    halo_mass_function_effect: unknown
+    subhalo_mass_function_effect: unknown
+    simulation_calibrated: unknown
+validity_domain:
+- id: nonzero_singlet_vev
+  description: The complex singlet obtains a zero-temperature vacuum expectation value.
+  scope: theory
+  status: assumed
+  impact_if_violated: null
+  can_be_relaxed: unknown
+  source_reference_ids:
+  - primary
+  notes: null
+- id: soft_u1_breaking
+  description: Soft a_1 and b_1 terms break the global U(1) and give A a mass.
+  scope: theory
+  status: assumed
+  impact_if_violated: null
+  can_be_relaxed: unknown
+  source_reference_ids:
+  - primary
+  notes: null
+- id: standard_freezeout
+  description: The scalar relic density is calculated in the standard thermal freeze-out setting.
+  scope: production
+  status: assumed
+  impact_if_violated: null
+  can_be_relaxed: unknown
+  source_reference_ids:
+  - primary
+  notes: null
+assumptions:
+  global:
+  - id: spontaneous_and_soft_breaking
+    applies_to: model
+    condition: The single-component A dark matter case requires nonzero v_S and soft U(1)-breaking terms
+      that make A massive but stable.
+    valid_range: null
+    status: assumed
+    extrapolation_risk: high
+    caveats: []
+    source_reference_ids:
+    - primary
+    notes: null
+  - id: real_parameter_limit
+    applies_to: model
+    condition: The extraction assumes the paper's CP-conserving real-parameter treatment; CP-violating
+      variants are not included.
+    valid_range: null
+    status: assumed
+    extrapolation_risk: medium
+    caveats: []
+    source_reference_ids:
+    - primary
+    notes: null
+  constraint_specific: []
+  computation_specific: []
+associated_code:
+  has_associated_code: unknown
+  code_summary: No model-specific public code is identified in the assigned paper text.
+provenance:
+  model_id: 0811_0393_cxsm_pseudo_goldstone_scalar_v1
+  model_name: Complex singlet pseudo-Goldstone scalar dark matter
+  model_family: null
+  entry_version: 0.1.0
+  status: machine_extracted
+  created_at: '2026-05-30'
+  last_updated: '2026-05-30'
+  sources:
+    primary_papers:
+    - reference_id: primary
+      title: Complex singlet pseudo-Goldstone scalar dark matter
+      authors:
+      - Vernon Barger
+      - Paul Langacker
+      - Mathew McCaskey
+      - Michael Ramsey-Musolf
+      - Gabe Shaughnessy
+      year: 2008
+      arxiv_id: '0811.0393'
+      doi: null
+      url: null
+      role: original_model
+      notes: Assigned SQLite full text was the only source used.
+  extraction:
+    method: llm_assisted
+    extracted_by: codex_batch_0002
+    extractor_name: Codex GPT-5 dark-matter model worker
+    extraction_date: '2026-05-30'
+    confidence: high
+    source_chunks_or_sections:
+    - reference_id: primary
+      section: Singlet VEV
+      page: null
+      quote_or_summary: Soft and spontaneous U(1) breaking yields H1/H2 mixed scalars plus a stable massive
+        A scalar.
+    - reference_id: primary
+      section: Single Component DM
+      page: null
+      quote_or_summary: The paper studies A relic density and the electroweak phase-transition motivation
+        for this variant.
+    unresolved_items: []
+  evidence:
+    particle_content:
+    - reference_id: primary
+      note: With a singlet vev and soft U(1) breaking, A is a massive stable scalar candidate while H1
+        and H2 are unstable Higgs-singlet mixtures.
+      confidence: high
+      section: Singlet VEV / spectra
+      page: null
+    symmetries:
+    - reference_id: primary
+      note: The global U(1) is spontaneously and softly broken; real soft terms avoid CP violation and
+        keep A stable in the studied case.
+      confidence: high
+      section: Case B2 discussion
+      page: null
+    interactions:
+    - reference_id: primary
+      note: Pairs of A scalars annihilate into H_i H_j states and interact through the Higgs-singlet scalar
+        sector.
+      confidence: high
+      section: Annihilation and relic density
+      page: null
+    production_mechanism:
+    - reference_id: primary
+      note: The paper calculates relic densities for this single-component scenario over v_S, lambda_2,
+        d_2, and scalar masses.
+      confidence: medium
+      section: Single Component DM
+      page: null
+    cosmological_history:
+    - reference_id: primary
+      note: The singlet vev can support a strong first-order electroweak phase transition while the scalar
+        relic density remains viable.
+      confidence: medium
+      section: Conclusion
+      page: null
+    parameter_ranges:
+    - reference_id: primary
+      note: The A mass is set by |b_1| + 2|a_1|/v_S, and H1/H2 masses depend on v, v_S, lambda_2, d_2,
+        and a_1.
+      confidence: high
+      section: Singlet VEV / spectra
+      page: null
+  review:
+    human_reviewed: false
+    reviewed_by: null
+    review_date: null
+    expert_reviewed: false
+    expert_reviewer: null
+    expert_review_date: null
+    reviewer_notes: []
+    scientific_confidence: high
+    implementation_confidence: high
+robustness:
+  overall: medium
+  theory_robustness: medium
+  computational_robustness: medium
+  dominant_uncertainties:
+  - The stability statement depends on the real-parameter/CP-conserving version studied.
+  - Collider and direct-detection constraints are not extracted in this model-only pass.
+  validation_status: expert_judgment_only
+  notes: Accepted as the paper-specific single-component cxSM dark-matter variant.
+agent_failure_modes:
+  warnings:
+  - id: u1_breaking_scope
+    severity: high
+    category: assumption_mismatch
+    warning: Do not assume all U(1)-broken complex-singlet potentials keep A stable; this row follows
+      the real soft-breaking case used in the assigned paper.
+    mitigation: null
+    source_reference_ids:
+    - primary

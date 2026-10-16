@@ -1,0 +1,828 @@
+_source:
+  shard: arXiv_src_2304_058_wds.tar
+  paper_id: '2304_07345'
+  source_member: 2304_07345.json
+  enriched: true
+  enrichment_schema_version: dm_model_ocr_enrichment_smoke_v0
+schema_version: model_only_v0
+model_id: 2304_07345_fermion_uv_freeze_in_baryogenesis_emd_v1
+identity:
+  name: Fermionic UV freeze-in baryogenesis with early matter domination
+  family: freeze_in_dark_matter
+  aliases:
+  - dimension-6 UV freeze-in baryogenesis fermion DM
+  short_description: A Dirac fermion dark matter EFT where UV freeze-in through a dimension-6 operator
+    produces DM and a lepton-sector asymmetry, with the viable parameter space generalized to an early
+    matter-dominated entropy-dilution era.
+  historical_origin_or_motivation: The model tests simultaneous DM and baryon-asymmetry production in
+    a nonstandard pre-BBN thermal history.
+  status: speculative
+  model_kind: effective_field_theory
+theory:
+  theory_level: effective_field_theory
+  parent_frameworks:
+  - UV freeze-in baryogenesis
+  - early matter domination
+  lagrangian_available: partial
+  renormalizable: 'no'
+  eft_cutoff:
+    name: EFT scale Lambda
+    symbol: Lambda
+    description: Suppression scale of the dimension-6 operator.
+    range: greater than about 3e14 GeV in the standard-history reference case
+    unit: GeV
+    role: core
+    status: inferred
+  embedded_in_larger_framework: unknown
+  notes: The paper works with a nonrenormalizable operator and does not specify the UV completion.
+particle_content:
+  dark_matter_candidate:
+    name: Dirac fermion
+    spin: 1/2
+    statistics: fermion
+    elementary_or_composite: elementary
+    number_of_components: single_component
+  additional_dark_sector_particles: []
+  mediators:
+  - vector-like fermions F_i charged under U(1)_Y
+  standard_model_extension: substantial
+symmetries:
+  stabilizing_mechanism: The local text treats the Dirac fermion as a DM candidate but does not spell
+    out the stabilizing symmetry for the dimension-6 case.
+  symmetries: []
+interactions:
+  portals:
+  - other
+  standard_model_targets:
+  - charged leptons
+  - thermal bath particles
+  dark_sector_couplings:
+  - lambda_1
+  - lambda_2
+  - lambda
+  mediator_types:
+  - vector-like fermions charged under U(1)_Y
+  interaction_operators:
+  - dimension-6 EFT operator responsible for Dirac DM pair production and lepton-sector asymmetries
+  annihilation_channels:
+  - bath-particle pair annihilations/scatterings producing Dirac DM
+  tree_or_loop_level: both
+parameters:
+  core:
+  - name: Dirac dark matter mass
+    symbol: m_chi
+    description: Mass of the fermionic DM candidate.
+    range: 4.6-18.1 in the standard-history reference case; higher values can be viable with EMD dilution
+    unit: keV
+    role: core
+    status: inferred
+  - name: EFT scale
+    symbol: Lambda
+    description: Scale suppressing the dimension-6 operator.
+    range: greater than about 3e14 in the standard-history reference case
+    unit: GeV
+    role: core
+    status: inferred
+  - name: reheating temperature
+    symbol: T_RH
+    description: Temperature controlling UV freeze-in production.
+    range: greater than about 3e13 GeV in standard radiation domination; values near 1e8 GeV can be viable
+      with late entropy injection in the two-model analysis
+    unit: GeV
+    role: cosmological
+    status: inferred
+  - name: EMD dilution factor
+    symbol: Delta_EMD
+    description: Entropy dilution from decay of the matter-dominating fluid.
+    range: 1 to 1e4 scanned in the paper
+    role: cosmological
+    status: inferred
+  - name: complex EFT couplings
+    symbol: lambda_i
+    description: Couplings and phases controlling production and CP-violating asymmetry.
+    range: benchmark-dependent
+    role: core
+    status: inferred
+production:
+  mechanisms:
+  - ultraviolet freeze-in via dimension-6 bath-particle processes
+  - simultaneous sector-wise lepton asymmetry generation
+  - late entropy dilution after a transient early matter-dominated era
+  thermal_equilibrium_with_standard_model: 'no'
+  abundance_set_by:
+  - T_RH
+  - Lambda
+  - DM mass
+  - complex EFT couplings
+  - EMD dilution factor
+  depends_on_reheating_temperature: 'yes'
+  can_produce_all_dark_matter: parameter_dependent
+  nonthermal_momentum_distribution: 'yes'
+  notes: The paper states that the n=2 yield scales differently from the baryon-minus-lepton asymmetry.
+relic_density:
+  full_or_subcomponent: full_dark_matter
+  target_fraction: null
+  calculation_type: nonthermal
+  key_dependencies:
+  - dimension-6 UV freeze-in yield
+  - late entropy injection
+  - DM non-thermalization
+  requires_entropy_dilution: parameter_dependent
+  overclosure_risk: parameter_dependent
+  underproduction_risk: parameter_dependent
+  tuning_assessment: unknown
+cosmological_history:
+  standard_history_assumed: false
+  nonstandard_features:
+  - transient early matter domination
+  - late entropy injection after freeze-in
+  dark_sector_temperature: null
+  delta_neff: null
+  phase_transitions: []
+  topological_defects: []
+  isocurvature_perturbations: unknown
+  bbn_relevance: high
+  cmb_relevance: medium
+phase_space:
+  distribution_type: nonthermal
+  distribution_function_available: unknown
+  average_momentum_relative_to_thermal: null
+  free_streaming_length: null
+  velocity_dispersion_today: null
+  phase_space_bounds: []
+  notes: The extracted text supports a keV-scale nonthermal freeze-in candidate but not a full distribution
+    function.
+structure_formation:
+  linear:
+    behaves_like_cdm: unknown
+    transfer_function_shape: unknown
+    small_scale_power_effect: unknown
+  nonlinear:
+    halo_mass_function_effect: unknown
+    subhalo_mass_function_effect: unknown
+    simulation_calibrated: unknown
+validity_domain:
+- id: eft_validity
+  applies_to: EFT
+  condition: Use of the EFT requires T_RH below the cutoff Lambda.
+  status: assumed
+  extrapolation_risk: high
+  source_reference_ids:
+  - '2304_07345'
+- id: freeze_in_validity
+  applies_to: production
+  condition: DM must not thermalize with the SM bath during production.
+  status: assumed
+  extrapolation_risk: high
+  source_reference_ids:
+  - '2304_07345'
+- id: pre_bbn_emd
+  applies_to: cosmological_history
+  condition: The EMD era and its decay must be compatible with the pre-BBN history assumed in the paper.
+  status: assumed
+  extrapolation_risk: medium
+  source_reference_ids:
+  - '2304_07345'
+assumptions:
+  global:
+  - id: a1
+    description: A transient pressureless fluid domination occurs after inflation and dilutes previously
+      produced abundances.
+    scope: cosmological_history
+    status: assumed
+    can_be_relaxed: unknown
+    source_reference_ids:
+    - '2304_07345'
+  - id: a2
+    description: The Dirac fermion is stable on cosmological timescales, although the stabilizing symmetry
+      is not explicit in the extracted dimension-6 passage.
+    scope: theory
+    status: inferred
+    can_be_relaxed: unknown
+    source_reference_ids:
+    - '2304_07345'
+  - id: a3
+    description: Electroweak sphalerons convert the SM-sector lepton asymmetry into baryon asymmetry.
+    scope: production
+    status: assumed
+    can_be_relaxed: unknown
+    source_reference_ids:
+    - '2304_07345'
+associated_code:
+  has_associated_code: unknown
+  code_summary: No public model-specific code is identified in the extracted text.
+  primary_code_role: null
+provenance:
+  model_id: 2304_07345_fermion_uv_freeze_in_baryogenesis_emd_v1
+  model_name: Fermionic UV freeze-in baryogenesis with early matter domination
+  model_family: freeze_in_dark_matter
+  entry_version: 0.1.0
+  status: machine_extracted
+  created_at: '2026-05-31'
+  last_updated: '2026-05-31'
+  sources:
+    primary_papers:
+    - reference_id: '2304_07345'
+      title: unknown
+      year: 2023
+      arxiv_id: '2304.07345'
+      role: original_model
+      notes: Primary source for this machine-extracted batch row.
+    - arxiv_id: '2304.07345'
+      authors:
+      - Dalianis, Ioannis
+      - Goudelis, Andreas
+      - Karamitros, Dimitrios
+      - Papachristou, Pantelis
+      - Spanos, Vassilis C.
+      doi: 10.1103/PhysRevD.108.055038
+      notes: Assigned primary paper; resolved and read from the local full-text cache.
+      reference_id: '2304_07345'
+      role: original_model
+      title: Freeze-in baryogenesis and early matter domination
+      url: https://arxiv.org/abs/2304.07345
+      year: 2023
+    constraint_papers:
+    - arxiv_id: '2204.13554'
+      authors:
+      - Goudelis, Andreas
+      - Karamitros, Dimitrios
+      - Papachristou, Pantelis
+      - Spanos, Vassilis C.
+      doi: 10.1103/PhysRevD.106.023515
+      notes: Resolved local related full text used for bounded enrichment evidence.
+      reference_id: '2204_13554'
+      role: constraint
+      title: Ultraviolet freeze-in baryogenesis
+      url: https://arxiv.org/abs/2204.13554
+      year: 2022
+    - arxiv_id: '2108.13136'
+      authors:
+      - Allahverdi, Rouzbeh
+      - Osiński, Jacek K.
+      doi: 10.1103/PhysRevD.105.023502
+      notes: Resolved local related full text used for bounded enrichment evidence.
+      reference_id: '2108_13136'
+      role: constraint
+      title: Early matter domination from long-lived particles in the visible sector
+      url: https://arxiv.org/abs/2108.13136
+      year: 2022
+    - arxiv_id: '2306.17238'
+      authors:
+      - Becker, Mathias
+      - Copello, Emanuele
+      - Harz, Julia
+      - Lang, Jonas
+      - Xu, Yong
+      doi: 10.1088/1475-7516/2024/01/053
+      notes: Resolved local related full text used for bounded enrichment evidence.
+      reference_id: '2306_17238'
+      role: constraint
+      title: Confronting dark matter freeze-in during reheating with constraints from inflation
+      url: https://arxiv.org/abs/2306.17238
+      year: 2024
+    external_databases:
+    - name: NASA ADS
+      note: Used for sanitized metadata discovery of primary records, references, and citations; not used
+        alone for structured scientific claims.
+      url: https://ui.adsabs.harvard.edu/
+    review_papers: []
+  extraction:
+    method: llm_assisted
+    extracted_by: codex_batch_0011
+    extractor_name: GPT-5.5 dark-matter model-card extraction worker
+    extraction_date: '2026-05-31'
+    confidence: medium
+    source_chunks_or_sections:
+    - reference_id: '2304_07345'
+      section: Dimension-6 operator
+      quote_or_summary: The paper introduces a Dirac fermion DM candidate produced through a dimension-6
+        operator.
+    - reference_id: '2304_07345'
+      section: Dimension-6 operator and late entropy production
+      quote_or_summary: Late entropy production modifies Lambda, T_RH, and m_chi relations.
+    - reference_id: '2304_07345'
+      section: Conclusions
+      quote_or_summary: The paper summarizes the fermion dimension-6 and scalar dimension-5 examples.
+    unresolved_items:
+    - Paper title and authors were not recoverable from the local extracted text head.
+    - The stabilizing symmetry of the dimension-6 Dirac fermion was not explicit in the extracted passage.
+    - The EMD-expanded viable region is figure/scan dependent; this row records the qualitative relaxation
+      and baseline standard-history numerical window.
+  evidence:
+    particle_content:
+    - reference_id: '2304_07345'
+      note: The dimension-6 case extends the SM by vector-like fermions F_i and a Dirac fermion that acts
+        as the DM candidate.
+      confidence: high
+      section: Dimension-6 operator
+    symmetries:
+    - reference_id: '2304_07345'
+      note: The text treats the Dirac fermion as the stable DM candidate; the stabilizing symmetry is
+        not specified in the extracted passage.
+      confidence: medium
+      section: Dimension-6 operator
+    interactions:
+    - reference_id: '2304_07345'
+      note: The paper gives a dimension-6 interaction Lagrangian involving the Dirac DM candidate, charged
+        leptons, and F_i fields.
+      confidence: high
+      section: Dimension-6 operator
+    production_mechanism:
+    - reference_id: '2304_07345'
+      note: The DM abundance is computed by the UV freeze-in yield with n=2 while related equations govern
+        the lepton asymmetries.
+      confidence: high
+      section: Dimension-6 operator
+    cosmological_history:
+    - reference_id: '2304_07345'
+      note: The paper reformulates the dimension-6 viable parameter space with late entropy production
+        from early matter domination.
+      confidence: high
+      section: Dimension-6 operator and late entropy production
+    parameter_ranges:
+    - reference_id: '2304_07345'
+      note: For standard radiation domination the paper quotes T_RH > 3e13 GeV, Lambda > 3e14 GeV, and
+        DM mass 4.6-18.1 keV; EMD can lower T_RH.
+      confidence: high
+      section: Dimension-6 operator
+    validity_domain:
+    - reference_id: '2304_07345'
+      note: The EFT remains bounded by T_RH < Lambda and the DM non-thermalization condition.
+      confidence: medium
+      section: Dimension-6 operator and late entropy production
+    constraints:
+    - confidence: high
+      note: Primary text states the dimension-6 fermion mass, reheating-temperature, Lambda, and EMD scan
+        constraints used here.
+      page: null
+      reference_id: '2304_07345'
+      section: Dimension operator and EMD discussion
+    observables:
+    - confidence: high
+      note: Primary text gives dimension-6 fermion standard-history ranges, Lyman-alpha mass bounds, EMD
+        dilution effects, and inflation-observable correlations.
+      page: null
+      reference_id: '2304_07345'
+      section: UV freeze-in baryogenesis / EMD sections
+    - confidence: high
+      note: Related local text supports the baseline ultraviolet freeze-in baryogenesis mechanism and
+        Lyman-alpha lower-mass discussion.
+      page: null
+      reference_id: '2204_13554'
+      section: Freeze-in baryogenesis / Lyman-alpha sections
+    - confidence: medium
+      note: Related local text supports early matter domination with entropy injection before BBN.
+      page: null
+      reference_id: '2108_13136'
+      section: Abstract / EMD discussion
+    - confidence: medium
+      note: Related local text supports freeze-in during reheating and inflation-constraint context.
+      page: null
+      reference_id: '2306_17238'
+      section: Abstract
+    routes:
+    - confidence: high
+      note: Primary text lays out the Boltzmann-yield, entropy-dilution, Lyman-alpha, and inflation-observable
+        routing.
+      page: null
+      reference_id: '2304_07345'
+      section: Main analysis sections
+  review:
+    human_reviewed: false
+    expert_reviewed: false
+    reviewer_notes: []
+    scientific_confidence: medium
+    implementation_confidence: medium
+robustness:
+  overall: medium
+  theory_robustness: medium
+  observational_robustness: unknown
+  computational_robustness: medium
+  dominant_uncertainties:
+  - EFT validity near T_RH comparable to Lambda
+  - unspecified stabilizing symmetry for the Dirac candidate
+  validation_status: expert_judgment_only
+  notes: The candidate row records the paper-local dimension-6 variant.
+agent_failure_modes:
+  warnings:
+  - id: w1
+    severity: medium
+    category: assumption_mismatch
+    warning: The card should not be used without tracking the EMD dilution history and the unspecified
+      stability assumption for the Dirac candidate.
+    mitigation: Verify the symmetry/stability assumption in the source before downstream use.
+    source_reference_ids:
+    - '2304_07345'
+observables:
+- caveats:
+  - The standard-history window assumes radiation domination after reheating; EMD modifies the viable
+    region.
+  channel: cosmology
+  effect_direction: rate_change
+  environments: []
+  id: fermion_uv_fibg_yields
+  key_quantities:
+  - name: fermion dark-matter mass
+    range: 4.6 < m_chi < 18.1
+    role: core
+    source_reference_ids:
+    - '2304_07345'
+    - '2204_13554'
+    status: inferred
+    symbol: m_chi
+    unit: keV
+  - name: reheating temperature
+    range: T_RH > 3e13
+    role: cosmological
+    source_reference_ids:
+    - '2304_07345'
+    status: inferred
+    symbol: T_RH
+    unit: GeV
+  - name: effective operator scale
+    range: '> 3e14'
+    role: core
+    source_reference_ids:
+    - '2304_07345'
+    status: inferred
+    symbol: Lambda
+    unit: GeV
+  linked_constraints:
+  - fermion_standard_history_window
+  - fermion_emd_dilution_window
+  linked_routes:
+  - fermion_uv_fibg_route
+  name: UV freeze-in production tied to baryogenesis
+  notes: null
+  observability: medium
+  predicted_effect: The dimension-6 fermion UV freeze-in setup produces dark matter and a lepton-sector
+    asymmetry through high-temperature scattering, with different yield scalings allowing simultaneous
+    relic abundance and baryogenesis.
+  redshift_range: null
+  relevance: critical
+  scale_range: null
+  source_reference_ids:
+  - '2304_07345'
+  - '2204_13554'
+  subchannel: freeze-in abundance and baryon asymmetry
+- caveats:
+  - A full Lyman-alpha likelihood requires the nonthermal momentum distribution, not only a mass rescaling.
+  channel: lyman_alpha
+  effect_direction: suppression
+  environments: []
+  id: fermion_lyman_free_streaming
+  key_quantities:
+  - name: fermion dark-matter mass
+    range: 4.6 < m_chi < 18.1
+    role: core
+    source_reference_ids:
+    - '2304_07345'
+    - '2204_13554'
+    status: inferred
+    symbol: m_chi
+    unit: keV
+  - name: entropy dilution factor
+    range: 1 to 1e4 scanned in the primary paper
+    role: cosmological
+    source_reference_ids:
+    - '2304_07345'
+    status: inferred
+    symbol: Delta_EMD
+  linked_constraints:
+  - fermion_lyman_mass_bound
+  linked_routes:
+  - fermion_structure_route
+  name: Lyman-alpha free-streaming bound on keV freeze-in dark matter
+  notes: null
+  observability: medium
+  predicted_effect: The fermion keV FIMP is produced relativistically, so Lyman-alpha structure constraints
+    set a lower mass scale in standard radiation domination; late entropy injection redshifts momenta
+    and can relax the bound approximately as Delta_EMD^(1/3).
+  redshift_range: null
+  relevance: high
+  scale_range: small-scale matter power / Lyman-alpha forest
+  source_reference_ids:
+  - '2304_07345'
+  - '2204_13554'
+  subchannel: warm-DM free streaming
+- caveats:
+  - This is a cosmology-completion observable rather than a direct dark-matter detection channel.
+  channel: cmb
+  effect_direction: shape_change
+  environments: []
+  id: fermion_inflation_shift_emd
+  key_quantities:
+  - name: entropy dilution factor
+    range: 1 to 1e4
+    role: cosmological
+    source_reference_ids:
+    - '2304_07345'
+    - '2108_13136'
+    status: inferred
+    symbol: Delta_EMD
+  - name: scalar spectral index
+    role: derived
+    source_reference_ids:
+    - '2304_07345'
+    - '2306_17238'
+    status: inferred
+    symbol: n_s
+  - name: tensor-to-scalar ratio
+    role: derived
+    source_reference_ids:
+    - '2304_07345'
+    - '2306_17238'
+    status: inferred
+    symbol: r
+  linked_constraints:
+  - fermion_emd_dilution_window
+  linked_routes:
+  - fermion_emd_cmb_route
+  name: Inflationary-observable shifts from early matter domination
+  notes: null
+  observability: low
+  predicted_effect: The early matter-dominated dilution era changes the postinflationary expansion history
+    and shifts the inflationary e-fold mapping, correlating the allowed freeze-in/baryogenesis region
+    with CMB observables such as n_s and r.
+  redshift_range: null
+  relevance: medium
+  scale_range: null
+  source_reference_ids:
+  - '2304_07345'
+  - '2108_13136'
+  - '2306_17238'
+  subchannel: n_s and tensor-to-scalar ratio
+constraints:
+- allowed_regions:
+  - Primary text gives T_RH > 3e13, Lambda > 3e14, and 4.6 < m_chi < 18.1 for simultaneous dark-matter
+    abundance and baryogenesis in standard radiation domination.
+  applies: 'yes'
+  assumptions: []
+  benchmark_implications:
+  - This window is the baseline before early-matter-domination dilution is applied.
+  caveats:
+  - Ranges are model-operator-specific and assume the simplified UV freeze-in baryogenesis setup.
+  constrained_parameters:
+  - m_chi
+  - T_RH
+  - Lambda
+  constraint_type: cosmological
+  data_release: Primary-paper analytic/numerical viability ranges
+  excluded_regions: []
+  id: fermion_standard_history_window
+  likelihood_available: 'no'
+  likelihood_reference: null
+  name: Standard radiation-history viability window for dimension-6 fermion freeze-in baryogenesis
+  notes: null
+  observable_channel: relic abundance plus baryon asymmetry
+  recasting_needed: 'no'
+  robustness: medium
+  source_reference_ids:
+  - '2304_07345'
+  - '2204_13554'
+- allowed_regions:
+  - With entropy injection, the primary text estimates the Lyman-alpha lower bound is relaxed by approximately
+    Delta_EMD^(1/3).
+  applies: parameter_dependent
+  assumptions: []
+  benchmark_implications:
+  - Heavier keV-scale masses become easier to reconcile with structure formation when EMD dilutes momenta.
+  caveats:
+  - A precise bound needs the nonthermal momentum distribution and a Lyman-alpha likelihood.
+  constrained_parameters:
+  - m_chi
+  - Delta_EMD
+  constraint_type: cosmological
+  data_release: Lyman-alpha constraints cited by primary paper
+  excluded_regions:
+  - Standard-history lower mass bound is about 4.6 keV in the primary text for this operator class.
+  id: fermion_lyman_mass_bound
+  likelihood_available: unknown
+  likelihood_reference: null
+  name: Lyman-alpha lower mass scale for fermion UV freeze-in dark matter
+  notes: null
+  observable_channel: Lyman-alpha forest
+  recasting_needed: 'yes'
+  robustness: medium
+  source_reference_ids:
+  - '2304_07345'
+  - '2204_13554'
+- allowed_regions:
+  - Primary text scans dilution factors from 1 to 1e4 and finds that late entropy injection can allow
+    heavier dark matter and lower reheating temperatures while preserving baryogenesis.
+  applies: parameter_dependent
+  assumptions: []
+  benchmark_implications:
+  - The mechanism remains viable only if the decaying matter component reheats before BBN and yields consistent
+    inflationary observables.
+  caveats:
+  - Requires a specified EMD source and decay history; BBN consistency is assumed through pre-BBN decay.
+  constrained_parameters:
+  - Delta_EMD
+  - T_RH
+  - m_chi
+  - Lambda
+  constraint_type: cosmological
+  data_release: Primary-paper EMD scan
+  excluded_regions: []
+  id: fermion_emd_dilution_window
+  likelihood_available: 'no'
+  likelihood_reference: null
+  name: Early-matter-domination entropy-dilution window for fermion freeze-in baryogenesis
+  notes: null
+  observable_channel: nonstandard pre-BBN expansion
+  recasting_needed: partial
+  robustness: medium
+  source_reference_ids:
+  - '2304_07345'
+  - '2108_13136'
+  - '2306_17238'
+theory_to_observable_routing:
+  routes:
+  - agent_notes: null
+    caveats: []
+    constraint_ids:
+    - fermion_standard_history_window
+    - fermion_emd_dilution_window
+    derived_quantities:
+    - Y_DM
+    - Y_B-L_SM
+    - Omega_DM h^2
+    - baryon asymmetry
+    description: Compute dimension-6 fermion UV freeze-in dark-matter yield and baryon asymmetry in standard
+      and diluted cosmologies.
+    forward_model_chain:
+    - inputs:
+      - T_RH
+      - Lambda
+      - lambda_i
+      notes: Operator dimension sets yield scaling.
+      outputs:
+      - DM production rate
+      - asymmetry source
+      step_id: rates
+      step_type: analytic_formula
+      tool_or_code: effective-operator scattering rates
+      validity: Valid below the EFT cutoff and outside thermal equilibrium.
+    - inputs:
+      - rates
+      - cosmological history
+      notes: Compare standard RD and EMD histories.
+      outputs:
+      - Y_DM
+      - Y_B-L_SM
+      step_id: boltzmann
+      step_type: boltzmann_solver
+      tool_or_code: yield/asymmetry Boltzmann equations
+      validity: Must include entropy dilution for EMD.
+    - inputs:
+      - Y_B-L_SM
+      notes: Freeze at sphaleron decoupling.
+      outputs:
+      - Y_B
+      step_id: sphaleron
+      step_type: analytic_formula
+      tool_or_code: sphaleron conversion
+      validity: Standard electroweak sphaleron conversion.
+    id: fermion_uv_fibg_route
+    input_parameters:
+    - m_chi
+    - T_RH
+    - Lambda
+    - lambda_i
+    - Delta_EMD
+    likelihoods:
+    - relic-density target
+    - baryon-asymmetry target
+    observable_ids:
+    - fermion_uv_fibg_yields
+    required_code_resources:
+    - Boltzmann yield solver
+    - EFT rate implementation
+    route_status: planned
+    source_model_features:
+    - UV-dominated freeze-in
+    - out-of-equilibrium CP-violating scatterings
+    - electroweak sphaleron conversion
+    validation_tests:
+    - Recover the primary standard-history mass/T_RH/Lambda windows.
+  - agent_notes: null
+    caveats: []
+    constraint_ids:
+    - fermion_lyman_mass_bound
+    derived_quantities:
+    - momentum distribution
+    - free-streaming scale
+    - transfer function
+    description: Map fermion nonthermal freeze-in momenta to small-scale structure constraints.
+    forward_model_chain:
+    - inputs:
+      - production rates
+      - cosmological history
+      notes: Entropy injection cools momenta relative to the plasma.
+      outputs:
+      - f(p)
+      step_id: distribution
+      step_type: boltzmann_solver
+      tool_or_code: phase-space Boltzmann calculation
+      validity: Needed for robust Lyman-alpha recast.
+    - inputs:
+      - f(p)
+      - cosmological parameters
+      notes: Thermal-equivalent mapping is only approximate.
+      outputs:
+      - transfer function
+      step_id: transfer
+      step_type: transfer_function
+      tool_or_code: linear matter-power solver
+      validity: Nonthermal input distribution required.
+    - inputs:
+      - transfer function
+      notes: Use conservative rescaling only as a first pass.
+      outputs:
+      - lower mass/exclusion
+      step_id: likelihood
+      step_type: likelihood
+      tool_or_code: Lyman-alpha flux-power likelihood
+      validity: Dataset-specific.
+    id: fermion_structure_route
+    input_parameters:
+    - m_chi
+    - production temperature
+    - Delta_EMD
+    likelihoods:
+    - Lyman-alpha forest likelihood
+    observable_ids:
+    - fermion_lyman_free_streaming
+    required_code_resources:
+    - CLASS/CAMB with nonthermal species
+    - Lyman-alpha emulator
+    route_status: planned
+    source_model_features:
+    - relativistic keV freeze-in production
+    - entropy dilution
+    validation_tests:
+    - Check Delta_EMD^(1/3) relaxation against a full transfer calculation.
+  - agent_notes: null
+    caveats: []
+    constraint_ids:
+    - fermion_emd_dilution_window
+    derived_quantities:
+    - N_*
+    - n_s
+    - r
+    description: Propagate the EMD decay history into inflationary e-fold and CMB-observable predictions
+      for fermion benchmarks.
+    forward_model_chain:
+    - inputs:
+      - Delta_EMD
+      - decay rate
+      notes: Ensure decay before BBN.
+      outputs:
+      - thermal history
+      - N_* shift
+      step_id: history
+      step_type: analytic_formula
+      tool_or_code: EMD expansion and entropy-dilution relations
+      validity: Valid for pressureless decaying fluid approximation.
+    - inputs:
+      - N_*
+      - inflation potential
+      notes: Primary compares representative large-field/small-field/plateau models.
+      outputs:
+      - n_s
+      - r
+      step_id: inflation
+      step_type: analytic_formula
+      tool_or_code: inflationary observable mapping
+      validity: Model-specific.
+    - inputs:
+      - n_s
+      - r
+      notes: ADS/web metadata alone should not be used for numerical contour updates.
+      outputs:
+      - compatibility flag
+      step_id: compare
+      step_type: likelihood
+      tool_or_code: CMB contour comparison
+      validity: Use current CMB contours when updating.
+    id: fermion_emd_cmb_route
+    input_parameters:
+    - Delta_EMD
+    - T_RH
+    - EMD decay temperature
+    - inflation model parameters
+    likelihoods:
+    - CMB n_s/r constraints
+    observable_ids:
+    - fermion_inflation_shift_emd
+    required_code_resources:
+    - inflation observable calculator
+    route_status: planned
+    source_model_features:
+    - early matter domination
+    - late entropy injection
+    - inflation reheating relation
+    validation_tests:
+    - Recover the primary qualitative separation between dimension-5 and dimension-6 predictions.

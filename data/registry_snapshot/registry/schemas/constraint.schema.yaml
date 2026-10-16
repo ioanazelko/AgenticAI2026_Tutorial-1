@@ -1,0 +1,85 @@
+$schema: "https://json-schema.org/draft/2020-12/schema"
+$id: "https://darkmatterfm.org/schemas/constraint.schema.yaml"
+title: "Constraint schema"
+description: "Reusable schema for constraints on BSM dark-matter models."
+type: object
+additionalProperties: false
+
+$defs:
+  constraint:
+    type: object
+    additionalProperties: false
+    properties:
+      id:
+        type: string
+        pattern: "^[a-z0-9_-]+$"
+      name:
+        type: string
+      constraint_type:
+        type: string
+        enum:
+          - direct_detection
+          - indirect_detection
+          - cosmological
+          - astrophysical
+          - collider
+          - laboratory
+          - theoretical
+          - numerical
+          - other
+          - unknown
+      observable_channel:
+        type: string
+      applies:
+        type: string
+        enum: ['yes', 'no', parameter_dependent, recast_required, unknown, not_applicable]
+      constrained_parameters:
+        type: array
+        items:
+          type: string
+      excluded_regions:
+        type: array
+        items:
+          type: string
+      allowed_regions:
+        type: array
+        items:
+          type: string
+      benchmark_implications:
+        type: array
+        items:
+          type: string
+      likelihood_available:
+        type: string
+        enum: ['yes', 'no', partial, approximate, unknown]
+      likelihood_reference:
+        type: [string, "null"]
+      data_release:
+        type: [string, "null"]
+      recasting_needed:
+        type: string
+        enum: ['yes', 'no', partial, unknown, not_applicable]
+      robustness:
+        type: string
+        enum: [low, medium, high, unknown]
+      assumptions:
+        type: array
+        items:
+          $ref: "common.schema.yaml#/$defs/assumption"
+      caveats:
+        type: array
+        items:
+          type: string
+      source_reference_ids:
+        type: array
+        items:
+          type: string
+      notes:
+        type: [string, "null"]
+    required:
+      - id
+      - name
+      - constraint_type
+      - observable_channel
+      - applies
+      - robustness

@@ -1,0 +1,786 @@
+_source:
+  shard: arXiv_src_2305_109_wds.tar
+  paper_id: '2305_14446'
+  source_member: 2305_14446.json
+  enriched: true
+  enrichment_schema_version: dm_model_ocr_enrichment_smoke_v0
+schema_version: model_only_v0
+model_id: 2305_14446_nonminimal_gravitational_scalar_dm_v1
+identity:
+  name: Non-minimally coupled gravitational scalar dark matter
+  family: gravitationally_produced_scalar_dark_matter
+  aliases:
+  - spectator scalar dark matter with non-minimal gravity coupling
+  - gravitationally produced scalar dark matter with xi R chi^2
+  short_description: A Z2-stable spectator scalar dark matter model with a non-minimal curvature coupling
+    that suppresses isocurvature and allows lighter gravitationally produced scalar dark matter.
+  historical_origin_or_motivation: The paper generalizes purely gravitational scalar dark matter by adding
+    a non-minimal coupling to gravity, opening parameter space below the usual superheavy minimally coupled
+    regime.
+  status: speculative
+  model_kind: complete_theory
+theory:
+  theory_level: simplified_model
+  parent_frameworks:
+  - gravitational particle production
+  - spectator scalar dark matter
+  - non-minimal coupling to curvature
+  - T-model inflation
+  lagrangian_available: 'yes'
+  renormalizable: unknown
+  eft_cutoff: null
+  embedded_in_larger_framework: unknown
+  notes: The action contains (M_P^2 - xi chi^2)R/2, an inflaton potential, and a massive spectator scalar
+    dark matter field.
+particle_content:
+  dark_matter_candidate:
+    name: spectator scalar dark matter field
+    spin: '0'
+    statistics: scalar
+    elementary_or_composite: elementary
+    number_of_components: single_component
+  additional_dark_sector_particles: []
+  mediators:
+  - graviton
+  - time-dependent curvature background
+  dark_radiation_species: []
+  excited_or_degenerate_states: []
+  long_lived_particles:
+  - Z2-stable scalar dark matter
+  unstable_parent_particles:
+  - inflaton background
+  - thermal Standard Model plasma during reheating
+  standard_model_extension: minimal
+symmetries:
+  stabilizing_mechanism: A Z2 symmetry of the dark matter potential stabilizes the spectator scalar.
+  symmetries:
+  - name: dark matter Z2
+    type: discrete
+    exact_or_approximate: exact
+    breaking: none stated in the assigned text
+    breaking_scale: null
+  topological_defects_possible: unknown
+interactions:
+  portals:
+  - gravitational
+  standard_model_targets:
+  - Standard Model thermal bath
+  - inflaton-generated curvature background
+  dark_sector_couplings:
+  - non-minimal curvature coupling xi R chi^2
+  - Planck-suppressed graviton-mediated SM scattering
+  mediator_types:
+  - graviton
+  - Ricci scalar background
+  interaction_operators:
+  - xi chi^2 R
+  - h_mu_nu T_SM^mu_nu / M_P
+  - h_mu_nu T_chi^mu_nu / M_P
+  scattering:
+    elastic: unknown
+    inelastic: unknown
+    momentum_dependence: unknown
+    velocity_dependence: unknown
+    spin_dependence: not_applicable
+  annihilation_channels:
+  - SM + SM to chi + chi through gravitational scattering during reheating
+  decay_channels: []
+  self_scattering_channels: []
+  tree_or_loop_level: tree
+parameters:
+  core:
+  - name: scalar dark matter mass
+    symbol: m_chi
+    description: Bare mass of the spectator scalar dark matter field.
+    range: sub-H_end light regime emphasized; lower bound discussed from Lyman-alpha and isocurvature
+      requirements
+    unit: eV or GeV depending on regime
+    role: core
+    status: inferred
+    source_reference_ids:
+    - '2305_14446'
+    notes: The extracted text renders the smallest lower-bound exponent ambiguously, while also quoting
+      a plateau around 34 eV for large xi.
+  - name: non-minimal curvature coupling
+    symbol: xi
+    description: Coupling between the scalar dark matter field and Ricci curvature.
+    range: roughly 0.1 < xi < O(100) in the combined allowed region discussed
+    role: core
+    status: inferred
+    source_reference_ids:
+    - '2305_14446'
+  - name: reheating temperature
+    symbol: T_reh
+    description: Temperature required to obtain the observed relic abundance for given m_chi and xi.
+    range: T_BBN <= T_reh <= T_max
+    unit: GeV
+    role: core
+    status: inferred
+    source_reference_ids:
+    - '2305_14446'
+  - name: Hubble scale at end of inflation
+    symbol: H_end
+    description: End-of-inflation Hubble scale in the T-model example.
+    value: 6.3e12
+    unit: GeV
+    role: core
+    status: inferred
+    source_reference_ids:
+    - '2305_14446'
+  - name: phase-space distribution
+    symbol: f(q)
+    description: Nonthermal scalar dark matter phase-space distribution computed from mode functions.
+    role: derived
+    status: inferred
+    source_reference_ids:
+    - '2305_14446'
+  nuisance: []
+  derived: []
+production:
+  mechanisms:
+  - pure gravitational particle production from the transition out of inflation
+  - parametric resonance for large non-minimal coupling
+  - subdominant thermal gravitational freeze-in from SM scattering during reheating
+  thermal_equilibrium_with_standard_model: 'no'
+  thermal_equilibrium_with_hidden_sector: 'no'
+  abundance_set_by:
+  - dark matter mass
+  - non-minimal coupling xi
+  - reheating temperature
+  - inflationary Hubble scale
+  - phase-space distribution
+  depends_on_reheating_temperature: 'yes'
+  can_produce_all_dark_matter: parameter_dependent
+  nonthermal_momentum_distribution: 'yes'
+  notes: The gravitationally produced component supplies the relic abundance in the viable parameter space;
+    thermal gravitational scattering is evaluated and found subdominant in the displayed region.
+relic_density:
+  full_or_subcomponent: full_dark_matter
+  target_fraction: null
+  calculation_type: mixed
+  key_dependencies:
+  - Omega_DM h^2 = 0.1198 imposed
+  - reheating temperature bounded by BBN and maximum reheating
+  - non-minimal coupling changes the phase-space distribution and isocurvature behavior
+  requires_entropy_dilution: unknown
+  overclosure_risk: parameter_dependent
+  underproduction_risk: parameter_dependent
+  tuning_assessment: unknown
+cosmological_history:
+  standard_history_assumed: true
+  nonstandard_features:
+  - spectator scalar production during inflation-to-reheating transition
+  - non-minimal curvature coupling suppresses IR modes and isocurvature
+  - parametric resonance for large xi
+  dark_sector_temperature: null
+  delta_neff: null
+  kinetic_decoupling: null
+  chemical_decoupling: null
+  phase_transitions: []
+  topological_defects: []
+  isocurvature_perturbations: parameter_dependent
+  bbn_relevance: medium
+  cmb_relevance: high
+phase_space:
+  distribution_type: nonthermal
+  distribution_function_available: 'yes'
+  f_of_p_or_q: The paper computes f(q) from mode functions and studies how the PSD changes with the non-minimal
+    coupling.
+  average_momentum_relative_to_thermal: null
+  free_streaming_length: null
+  velocity_dispersion_today: null
+  phase_space_bounds:
+  - Lyman-alpha bounds are translated through the second moment of the nonthermal distribution.
+  notes: For larger xi the IR modes are suppressed, while UV and resonance features control production.
+structure_formation:
+  linear:
+    behaves_like_cdm: scale_dependent
+    transfer_function_shape: smooth_cutoff
+    small_scale_power_effect: suppression
+    half_mode_mass: null
+    thermal_wdm_mapping:
+      available: true
+      validity: approximate
+      warning: The paper maps Lyman-alpha limits using the equation-of-state/second-moment method rather
+        than a full transfer-function calculation.
+    impact_on_sigma8_s8: not discussed
+  nonlinear:
+    halo_mass_function_effect: unknown
+    subhalo_mass_function_effect: unknown
+    simulation_calibrated: 'no'
+validity_domain:
+- id: nonminimal_coupling_allowed_region
+  applies_to: parameter
+  condition: Combined relic, isocurvature, BBN, and Lyman-alpha requirements constrain the non-minimal
+    coupling to roughly 0.1 < xi < O(100) in the studied light-scalar region.
+  valid_range: 0.1 < xi < O(100)
+  status: inferred
+  extrapolation_risk: medium
+  caveats:
+  - The upper region is limited by BBN/reheating and by backreaction for very large xi.
+  source_reference_ids:
+  - '2305_14446'
+  notes: null
+- id: large_xi_resonance_limit
+  applies_to: model
+  condition: For xi above about 70 the paper does not include lattice backreaction effects, so the analysis
+    is not extended further.
+  valid_range: xi <= about 70 for resonance analysis in the text
+  status: inferred
+  extrapolation_risk: high
+  caveats:
+  - Larger xi may fragment the inflaton condensate and require lattice simulations.
+  source_reference_ids:
+  - '2305_14446'
+  notes: null
+- id: light_scalar_isocurvature_escape
+  applies_to: model
+  condition: Non-minimal coupling suppresses the long-wavelength scalar modes that would otherwise violate
+    isocurvature constraints for light minimally coupled scalars.
+  valid_range: null
+  status: inferred
+  extrapolation_risk: medium
+  caveats:
+  - The precise lower mass bound has OCR ambiguity in the extracted text.
+  source_reference_ids:
+  - '2305_14446'
+  notes: null
+assumptions:
+  global:
+  - id: zero_initial_misalignment
+    description: The analysis assumes no initial misalignment for the dark matter scalar at the beginning
+      of inflation.
+    scope: cosmological_history
+    status: assumed
+    impact_if_violated: An initial homogeneous condensate could change isocurvature and relic density.
+    can_be_relaxed: 'yes'
+    source_reference_ids:
+    - '2305_14446'
+    notes: null
+  - id: spectator_subdominant
+    description: The dark matter scalar is treated as a spectator and its energy density is subdominant
+      during production.
+    scope: theory
+    status: assumed
+    impact_if_violated: Backreaction would invalidate the perturbative mode-function calculation.
+    can_be_relaxed: unknown
+    source_reference_ids:
+    - '2305_14446'
+    notes: null
+  - id: t_model_inflation_background
+    description: Numerical parameter-space results use a T-model inflationary potential and reheating
+      history.
+    scope: theory
+    status: assumed
+    impact_if_violated: Changing the inflation background changes H_end, the PSD, and relic-density mapping.
+    can_be_relaxed: 'yes'
+    source_reference_ids:
+    - '2305_14446'
+    notes: null
+  constraint_specific: []
+  computation_specific: []
+associated_code:
+  has_associated_code: unknown
+  code_summary: No public code repository is identified in the assigned text; the paper describes numerical
+    mode-function and Boltzmann calculations.
+  repositories: []
+  packages_or_modules: []
+  notebooks: []
+  scripts: []
+  containers_or_environments: []
+  expected_inputs: []
+  expected_outputs: []
+  supported_observable_channels: []
+  caveats: []
+provenance:
+  model_id: 2305_14446_nonminimal_gravitational_scalar_dm_v1
+  model_name: Non-minimally coupled gravitational scalar dark matter
+  model_family: gravitationally_produced_scalar_dark_matter
+  entry_version: 0.1.0
+  status: machine_extracted
+  created_at: '2026-05-31'
+  last_updated: '2026-05-31'
+  sources:
+    primary_papers:
+    - reference_id: '2305_14446'
+      title: A New Window into Gravitationally Produced Scalar Dark Matter
+      authors:
+      - Marcos A. G. Garcia
+      - Mathias Pierre
+      - Sarunas Verner
+      year: 2023
+      arxiv_id: '2305.14446'
+      doi: null
+      url: null
+      role: original_model
+      notes: Assigned paper used as the sole source for this model-card candidate.
+    - arxiv_id: '2305.14446'
+      authors:
+      - Garcia, Marcos A. G.
+      - Pierre, Mathias
+      - Verner, Sarunas
+      doi: 10.1103/PhysRevD.108.115024
+      notes: Primary assigned paper read from local SQLite full text.
+      reference_id: arxiv:2305.14446
+      role: original_model
+      title: New window into gravitationally produced scalar dark matter
+      url: https://arxiv.org/abs/2305.14446
+      year: 2023
+    constraint_papers:
+    - arxiv_id: '2303.07359'
+      authors:
+      - Garcia, Marcos A. G.
+      - Pierre, Mathias
+      - Verner, Sarunas
+      doi: 10.1103/PhysRevD.107.123508
+      notes: Related full text resolved locally and read for bounded enrichment.
+      reference_id: arxiv:2303.07359
+      role: constraint
+      title: Isocurvature constraints on scalar dark matter production from the inflaton
+      url: https://arxiv.org/abs/2303.07359
+      year: 2023
+    - arxiv_id: '2211.11773'
+      authors:
+      - Lebedev, Oleg
+      - Solomko, Timofey
+      - Yoon, Jong-Hyun
+      doi: 10.1088/1475-7516/2023/02/035
+      notes: Related full text resolved locally and read for bounded enrichment.
+      reference_id: arxiv:2211.11773
+      role: constraint
+      title: Dark matter production via a non-minimal coupling to gravity
+      url: https://arxiv.org/abs/2211.11773
+      year: 2023
+    - arxiv_id: '2206.08940'
+      authors:
+      - Garcia, Marcos A. G.
+      - Pierre, Mathias
+      - Verner, Sarunas
+      doi: 10.1103/PhysRevD.107.043530
+      notes: Related full text resolved locally and read for bounded enrichment.
+      reference_id: arxiv:2206.08940
+      role: constraint
+      title: Scalar dark matter production from preheating and structure formation constraints
+      url: https://arxiv.org/abs/2206.08940
+      year: 2023
+    external_databases: []
+    review_papers: []
+  extraction:
+    method: llm_assisted
+    extracted_by: codex_dark_matter_model_batch_worker
+    extractor_name: Codex GPT-5 batch worker
+    extraction_date: '2026-05-31'
+    confidence: medium
+    source_chunks_or_sections:
+    - reference_id: '2305_14446'
+      section: abstract/introduction
+      page: null
+      quote_or_summary: The paper explores scalar dark matter with a non-minimal coupling to gravity and
+        lighter viable masses.
+    - reference_id: '2305_14446'
+      section: framework
+      page: null
+      quote_or_summary: The action contains a spectator scalar dark matter field, bare mass m_chi, non-minimal
+        coupling xi, and a stabilizing Z2 symmetry.
+    - reference_id: '2305_14446'
+      section: results/supplement
+      page: null
+      quote_or_summary: The relic abundance is computed from the nonthermal phase-space distribution,
+        with thermal gravitational production checked separately.
+    unresolved_items:
+    - Precise OCR rendering of the smallest Lyman-alpha lower mass bound.
+    - The OCR text renders part of the minimal-coupling Lyman-alpha mass exponent ambiguously; only the
+      robust 34 eV plateau is used numerically.
+    - No Planck or Lyman-alpha likelihood was rerun in this batch.
+  evidence:
+    particle_content:
+    - reference_id: '2305_14446'
+      note: The dark matter field is a massive spectator scalar with a Z2-stabilized potential.
+      confidence: high
+      section: framework
+      page: null
+    symmetries:
+    - reference_id: '2305_14446'
+      note: The text states that the Z2 symmetry of the dark matter potential ensures stability.
+      confidence: high
+      section: framework
+      page: null
+    interactions:
+    - reference_id: '2305_14446'
+      note: The dark matter scalar couples non-minimally to Ricci curvature and also participates in graviton-mediated
+        SM scatterings.
+      confidence: high
+      section: framework/supplement
+      page: null
+    production_mechanism:
+    - reference_id: '2305_14446'
+      note: The paper computes purely gravitational production from the time-dependent background and
+        includes resonance effects for large xi.
+      confidence: high
+      section: framework/results
+      page: null
+    cosmological_history:
+    - reference_id: '2305_14446'
+      note: The relic-density calculation depends on reheating, bounded by T_BBN and T_max, after the
+        T-model inflationary phase.
+      confidence: medium
+      section: framework/results
+      page: null
+    parameter_ranges:
+    - reference_id: '2305_14446'
+      note: The combined viable region is summarized as roughly 0.1 < xi < O(100), with light scalar masses
+        allowed below the minimal-coupling superheavy regime.
+      confidence: medium
+      section: results
+      page: null
+    validity_domain:
+    - reference_id: '2305_14446'
+      note: The text limits the resonance analysis before the backreaction/lattice-simulation regime and
+        translates Lyman-alpha limits through the PSD second moment.
+      confidence: medium
+      section: results/supplement
+      page: null
+    constraints:
+    - confidence: high
+      note: Related scalar-DM analysis quotes Planck beta_iso < 0.038 and m_chi > 0.5 H_* for purely gravitational
+        production.
+      page: null
+      reference_id: arxiv:2303.07359
+      section: Introduction
+    - confidence: high
+      note: Primary text reports xi roughly 0.1 to O(100) and a Lyman-alpha plateau around m_chi > 34
+        eV.
+      page: null
+      reference_id: arxiv:2305.14446
+      section: Combined parameter space
+    observables:
+    - confidence: high
+      note: Primary text states that non-minimal coupling allows lighter gravitationally produced scalar
+        dark matter while imposing relic abundance, isocurvature, Lyman-alpha, and BBN constraints.
+      page: null
+      reference_id: arxiv:2305.14446
+      section: Abstract/introduction
+    - confidence: high
+      note: Related scalar-production paper derives Lyman-alpha structure-formation constraints from nonthermal
+        scalar phase-space distributions.
+      page: null
+      reference_id: arxiv:2206.08940
+      section: Abstract
+    routes:
+    - confidence: high
+      note: Primary paper computes scalar mode functions, phase-space distribution, relic density, isocurvature,
+        and Lyman-alpha mapping.
+      page: null
+      reference_id: arxiv:2305.14446
+      section: Framework/results
+  review:
+    human_reviewed: false
+    reviewed_by: null
+    review_date: null
+    expert_reviewed: false
+    expert_reviewer: null
+    expert_review_date: null
+    reviewer_notes: []
+    scientific_confidence: medium
+    implementation_confidence: medium
+  caveats:
+  - The exact lower mass bound is partially ambiguous in the extracted text because minus signs in exponents
+    are degraded.
+  - The row does not include the observational constraints as constraint objects per the run instructions.
+robustness:
+  overall: medium
+  theory_robustness: medium
+  observational_robustness: medium
+  computational_robustness: medium
+  constraint_robustness: not_applicable
+  dominant_uncertainties:
+  - OCR ambiguity in one quoted mass lower bound
+  - backreaction/lattice effects at large xi
+  - inflation-model dependence of the PSD
+  validation_status: expert_judgment_only
+  notes: The action, stabilizing symmetry, production mechanism, PSD, and relic-density logic are explicit
+    in the assigned text.
+agent_failure_modes:
+  warnings:
+  - id: minimal_coupling_limit_misuse
+    severity: high
+    category: assumption_mismatch
+    warning: Do not apply the light-scalar allowed region to minimally coupled scalar DM; the non-minimal
+      coupling is central to suppressing isocurvature.
+    mitigation: Track xi and the isocurvature validity condition in any downstream use.
+    source_reference_ids:
+    - '2305_14446'
+  - id: large_xi_backreaction
+    severity: medium
+    category: extrapolation
+    warning: For very large xi the paper says backreaction would require lattice simulations beyond its
+      scope.
+    mitigation: Avoid extrapolating the perturbative resonance treatment past the stated regime.
+    source_reference_ids:
+    - '2305_14446'
+observables:
+- caveats:
+  - Primary paper does not rerun a Planck likelihood in this batch.
+  - The extraction renders some exponents ambiguously, so mass bounds are recorded cautiously.
+  channel: cmb
+  effect_direction: suppression
+  environments:
+  - inflationary background
+  - cosmic microwave background
+  id: obs_scalar_isocurvature_suppression
+  key_quantities:
+  - description: Coupling in xi chi^2 R controlling the inflationary effective mass.
+    name: non-minimal curvature coupling
+    range: roughly 0.1 to O(100) in the combined primary allowed region
+    role: core
+    source_reference_ids:
+    - arxiv:2305.14446
+    status: inferred
+    symbol: xi
+  - description: Planck-style fractional isocurvature amplitude.
+    name: isocurvature fraction
+    range: < 0.038 at 95 percent C.L. in the related Planck-isocurvature discussion
+    role: derived
+    source_reference_ids:
+    - arxiv:2303.07359
+    status: inferred
+    symbol: beta_iso
+  - description: Bare spectator scalar mass.
+    name: dark matter mass
+    range: light sub-H_end masses can be viable when xi suppresses isocurvature
+    role: core
+    source_reference_ids:
+    - arxiv:2305.14446
+    status: inferred
+    symbol: m_chi
+    unit: eV or GeV
+  linked_constraints:
+  - con_planck_isocurvature_scalar
+  linked_routes:
+  - route_nonminimal_scalar_to_cmb_lya
+  name: Suppressed CMB isocurvature from non-minimal scalar mass
+  notes: null
+  observability: medium
+  predicted_effect: A positive non-minimal curvature contribution makes the spectator scalar effectively
+    heavy during inflation, suppressing the isocurvature problem that affects light minimally coupled
+    gravitational scalar dark matter.
+  redshift_range: inflationary initial conditions through CMB last scattering
+  relevance: critical
+  scale_range: CMB angular power spectrum isocurvature modes
+  source_reference_ids:
+  - arxiv:2305.14446
+  - arxiv:2303.07359
+  subchannel: dark-matter isocurvature
+- caveats:
+  - Thermal-WDM matching is a recast of a nonthermal spectrum.
+  - No transfer-function likelihood was rerun.
+  channel: lyman_alpha
+  effect_direction: suppression
+  environments:
+  - Lyman-alpha forest
+  - linear matter power spectrum
+  id: obs_nonthermal_scalar_free_streaming
+  key_quantities:
+  - description: Mode-function-derived nonthermal distribution.
+    name: dark matter phase-space distribution
+    role: derived
+    source_reference_ids:
+    - arxiv:2305.14446
+    - arxiv:2206.08940
+    status: inferred
+    symbol: f(q)
+  - description: Primary text reports a plateau around 34 eV for sufficiently large xi; the minimal-coupling
+      exponent is OCR-ambiguous.
+    name: Lyman-alpha free-streaming mass floor
+    range: about 34 eV plateau for xi above about 0.2; lower-xi expression ambiguous in extracted text
+    role: derived
+    source_reference_ids:
+    - arxiv:2305.14446
+    status: approximate
+    symbol: m_chi^Ly
+    unit: eV
+  - description: Temperature fixed by relic abundance for a given scalar mass and coupling.
+    name: reheating temperature
+    range: T_BBN <= T_reh <= T_max
+    role: core
+    source_reference_ids:
+    - arxiv:2305.14446
+    status: inferred
+    symbol: T_reh
+    unit: GeV
+  linked_constraints:
+  - con_lya_free_streaming_scalar
+  linked_routes:
+  - route_nonminimal_scalar_to_cmb_lya
+  name: Nonthermal scalar free-streaming cutoff
+  notes: null
+  observability: medium
+  predicted_effect: The out-of-equilibrium phase-space distribution can act as warm dark matter and suppress
+    small-scale matter power; the primary paper translates Lyman-alpha free-streaming limits into lower
+    bounds on m_chi.
+  redshift_range: linear perturbation era through high-redshift Lyman-alpha forest
+  relevance: high
+  scale_range: k_H(z=0) constrained to be above about 15 h Mpc^-1 in the source mapping
+  source_reference_ids:
+  - arxiv:2305.14446
+  - arxiv:2206.08940
+  subchannel: matter-power cutoff
+constraints:
+- allowed_regions:
+  - Non-minimal coupling around xi > 0.1 suppresses the primary isocurvature problem in the combined allowed
+    region.
+  applies: parameter_dependent
+  assumptions:
+  - can_be_relaxed: partial
+    description: The Planck isocurvature limit is mapped to the scalar spectator scenario through the
+      source mode-function calculation.
+    id: single-field-inflation-mapping
+    impact_if_violated: Changing inflationary dynamics can shift the effective mass and isocurvature mapping.
+    notes: null
+    scope: inflationary perturbations
+    source_reference_ids:
+    - arxiv:2305.14446
+    - arxiv:2303.07359
+    status: assumed
+  benchmark_implications:
+  - The model opens light gravitational-production parameter space that is closed for xi=0.
+  caveats:
+  - Requires a model-specific inflationary background and reheating history.
+  constrained_parameters:
+  - xi
+  - m_chi
+  - H_end
+  - beta_iso
+  constraint_type: cosmological
+  data_release: Planck isocurvature bound beta_iso < 0.038 quoted in related scalar-DM analysis
+  excluded_regions:
+  - Light minimally coupled spectator scalars with m_chi below the inflationary Hubble scale are in tension
+    with Planck isocurvature bounds.
+  id: con_planck_isocurvature_scalar
+  likelihood_available: partial
+  likelihood_reference: null
+  name: CMB isocurvature bound on light gravitational scalar production
+  notes: null
+  observable_channel: cmb isocurvature
+  recasting_needed: 'yes'
+  robustness: medium
+  source_reference_ids:
+  - arxiv:2305.14446
+  - arxiv:2303.07359
+- allowed_regions:
+  - Primary paper reports viable masses above the Lyman-alpha recast floor, including a large-xi plateau
+    around m_chi > 34 eV.
+  applies: recast_required
+  assumptions:
+  - can_be_relaxed: partial
+    description: The Lyman-alpha bound is applied by matching equation-of-state/free-streaming behavior
+      rather than by rerunning a nonthermal likelihood.
+    id: thermal-wdm-equivalent-matching
+    impact_if_violated: A dedicated transfer-function likelihood could alter the numerical lower bound.
+    notes: null
+    scope: nonthermal scalar to Lyman-alpha recast
+    source_reference_ids:
+    - arxiv:2305.14446
+    - arxiv:2206.08940
+    status: assumed
+  benchmark_implications:
+  - The exact mass floor is sensitive to the nonthermal phase-space distribution and xi.
+  caveats:
+  - The exponent in the extracted minimal-coupling mass limit is ambiguous.
+  constrained_parameters:
+  - m_chi
+  - f(q)
+  - T_reh
+  - xi
+  constraint_type: astrophysical
+  data_release: Thermal-WDM-equivalent Lyman-alpha free-streaming bound used by source
+  excluded_regions:
+  - Nonthermal scalar spectra with too large a pressure/free-streaming component suppress small-scale
+    power beyond Lyman-alpha limits.
+  id: con_lya_free_streaming_scalar
+  likelihood_available: 'no'
+  likelihood_reference: null
+  name: Lyman-alpha free-streaming lower bound for nonthermal scalar dark matter
+  notes: null
+  observable_channel: lyman_alpha
+  recasting_needed: 'yes'
+  robustness: medium
+  source_reference_ids:
+  - arxiv:2305.14446
+  - arxiv:2206.08940
+theory_to_observable_routing:
+  routes:
+  - agent_notes: null
+    caveats:
+    - Mass-bound OCR ambiguity retained in unresolved items.
+    constraint_ids:
+    - con_planck_isocurvature_scalar
+    - con_lya_free_streaming_scalar
+    derived_quantities:
+    - mode functions
+    - f(q)
+    - Omega_chi h^2
+    - beta_iso
+    - free-streaming cutoff
+    description: Propagate non-minimal gravitational scalar production into relic density, CMB isocurvature,
+      and Lyman-alpha free-streaming observables.
+    forward_model_chain:
+    - inputs:
+      - m_chi
+      - xi
+      - R(t)
+      - H_end
+      notes: null
+      outputs:
+      - effective mass
+      - mode equation
+      step_id: s1
+      step_type: analytic_formula
+      tool_or_code: null
+      validity: Valid for the source spectator-scalar action.
+    - inputs:
+      - effective mass
+      - inflation-to-reheating background
+      notes: null
+      outputs:
+      - phase-space distribution
+      - comoving number density
+      step_id: s2
+      step_type: simulation
+      tool_or_code: mode-function/Bogoliubov solver
+      validity: Requires the source inflationary history.
+    - inputs:
+      - f(q)
+      - Omega_chi h^2
+      notes: null
+      outputs:
+      - CMB isocurvature bound
+      - Lyman-alpha mass floor
+      step_id: s3
+      step_type: recasting
+      tool_or_code: null
+      validity: Thermal-WDM and Planck likelihoods are not rerun here.
+    id: route_nonminimal_scalar_to_cmb_lya
+    input_parameters:
+    - m_chi
+    - xi
+    - H_end
+    - T_reh
+    - inflationary potential
+    likelihoods:
+    - Planck isocurvature likelihood not included
+    - Lyman-alpha nonthermal recast target
+    observable_ids:
+    - obs_scalar_isocurvature_suppression
+    - obs_nonthermal_scalar_free_streaming
+    required_code_resources:
+    - scalar mode-function solver
+    - Boltzmann/transfer-function code for nonthermal spectra
+    route_status: planned
+    source_model_features:
+    - Z2-stable spectator scalar
+    - xi chi^2 R coupling
+    - gravitational production during inflation/reheating
+    validation_tests:
+    - recover xi lower bound from isocurvature
+    - recover 34 eV large-xi plateau

@@ -1,0 +1,330 @@
+_source:
+  shard: data/astro-ph-00014.tar
+  paper_id: '1002_1327'
+  source_member: 1002_1327.json
+schema_version: model_only_v0
+model_id: 1002_1327_tev_dm_cion_v1
+identity:
+  name: 8.1 TeV dm-cion dark matter particle
+  family: supersymmetric_dark_matter
+  aliases:
+  - DMP
+  - dm-cion
+  - lowest mass particle
+  short_description: A speculative weakly interacting dark matter particle whose mass is inferred from
+    the cosmic-ray knee scale using GLMR supersymmetry.
+  historical_origin_or_motivation: The paper connects a 3 PeV cosmic-ray knee mass scale to an 8.1 TeV
+    lowest-mass supersymmetric particle.
+  status: speculative
+  model_kind: phenomenological_parameterization
+theory:
+  theory_level: phenomenological_parameterization
+  parent_frameworks:
+  - GLMR supersymmetry
+  - AGN black-hole cosmic-ray emission scenario
+  lagrangian_available: 'no'
+  renormalizable: unknown
+  embedded_in_larger_framework: 'yes'
+  notes: The paper does not give a full particle Lagrangian; it infers a dark matter particle mass from
+    a supersymmetric mass ratio and the knee scale.
+particle_content:
+  dark_matter_candidate:
+    name: dm-cion
+    spin: unknown
+    statistics: unknown
+    elementary_or_composite: unknown
+    number_of_components: single_component
+  additional_dark_sector_particles:
+  - prime-cion or urcion at the 3 PeV knee scale
+  mediators: []
+  dark_radiation_species: []
+  excited_or_degenerate_states: []
+  long_lived_particles: []
+  unstable_parent_particles:
+  - 3 PeV knee-scale particle
+  standard_model_extension: substantial
+symmetries:
+  stabilizing_mechanism: Stable lowest-mass member of a supersymmetric multiplet, as described by the
+    paper.
+  symmetries:
+  - name: supersymmetric multiplet stability
+    type: unknown
+    exact_or_approximate: unknown
+    breaking: unknown
+    breaking_scale: null
+  topological_defects_possible: unknown
+interactions:
+  portals:
+  - other
+  standard_model_targets:
+  - ordinary particles
+  - photons
+  - atmospheric nuclei
+  dark_sector_couplings: []
+  mediator_types:
+  - unknown weak interaction mediator
+  interaction_operators: []
+  scattering:
+    elastic: unknown
+    inelastic: unknown
+    momentum_dependence: unknown
+    velocity_dependence: unknown
+    spin_dependence: unknown
+  annihilation_channels:
+  - DMP plus anti-DMP to two gamma rays
+  decay_channels: []
+  self_scattering_channels: []
+  tree_or_loop_level: unknown
+parameters:
+  core:
+  - name: dark matter particle mass
+    symbol: M_2
+    description: Mass inferred for the lowest-mass particle in the GLMR setup.
+    value: '8.1'
+    unit: TeV
+    role: core
+    status: inferred
+    notes: Paper also reports a HESS peak near 7.6 TeV as possible supporting evidence.
+    source_reference_ids: []
+  - name: knee-scale parent mass
+    symbol: m_3/2
+    description: Cosmic-ray knee mass scale identified with the high mass in the GLMR ratio.
+    value: '3'
+    unit: PeV
+    role: core
+    status: inferred
+    source_reference_ids: []
+  - name: GLMR mass ratio
+    symbol: M_2/m_3/2
+    description: Mass ratio used to map the knee scale to the DMP mass.
+    value: '2.7e-3'
+    role: core
+    status: inferred
+    source_reference_ids: []
+  nuisance: []
+  derived: []
+production:
+  mechanisms:
+  - AGN or black-hole emission in the paper cosmic-ray scenario
+  - decay of a proposed 3 PeV particle into the 8.1 TeV DMP
+  thermal_equilibrium_with_standard_model: unknown
+  thermal_equilibrium_with_hidden_sector: unknown
+  abundance_set_by:
+  - presence of DMP in AGN or black holes
+  - unspecified cosmological history
+  depends_on_reheating_temperature: unknown
+  can_produce_all_dark_matter: unknown
+  nonthermal_momentum_distribution: unknown
+  notes: The paper supplies an astrophysical production/detection scenario rather than a standard thermal
+    relic calculation.
+relic_density:
+  full_or_subcomponent: unknown
+  target_fraction: null
+  calculation_type: unknown
+  key_dependencies:
+  - 8.1 TeV mass inference
+  - weak interaction assumption
+  - DMP presence in AGN or black holes
+  requires_entropy_dilution: unknown
+  overclosure_risk: unknown
+  underproduction_risk: unknown
+  tuning_assessment: unknown
+cosmological_history:
+  standard_history_assumed: false
+  nonstandard_features:
+  - cosmic-ray knee interpreted as a radiation-to-matter transition scale
+  - AGN/black-hole emission of DMPs
+  dark_sector_temperature: null
+  delta_neff: null
+  kinetic_decoupling: null
+  chemical_decoupling: null
+  phase_transitions: []
+  topological_defects: []
+  isocurvature_perturbations: unknown
+  bbn_relevance: unknown
+  cmb_relevance: unknown
+phase_space:
+  distribution_type: nonthermal
+  distribution_function_available: 'no'
+  notes: The paper discusses a cosmic-ray-like spectrum for DMPs emitted from AGN rather than a cosmological
+    phase-space distribution.
+structure_formation:
+  linear:
+    behaves_like_cdm: unknown
+    transfer_function_shape: unknown
+    small_scale_power_effect: unknown
+  nonlinear:
+    halo_mass_function_effect: unknown
+    subhalo_mass_function_effect: unknown
+    simulation_calibrated: 'no'
+validity_domain:
+- id: mass_inference_domain
+  applies_to: model
+  condition: Mass estimate relies on identifying the 3 PeV knee scale with the high mass in the GLMR relation.
+  status: speculative
+  extrapolation_risk: high
+  caveats: []
+  source_reference_ids: []
+  notes: null
+- id: production_domain
+  applies_to: model
+  condition: Astrophysical DMP production is tied to the paper AGN/black-hole cosmic-ray model.
+  status: speculative
+  extrapolation_risk: high
+  caveats: []
+  source_reference_ids: []
+  notes: null
+assumptions:
+  global:
+  - id: supersymmetric_multiplet
+    description: The 3 PeV particle belongs to a supersymmetric multiplet with a stable lowest-mass particle.
+    scope: theory
+    status: assumed
+    impact_if_violated: null
+    can_be_relaxed: unknown
+    source_reference_ids: []
+    notes: null
+  - id: agn_dmp_presence
+    description: DMPs are present in AGN or black holes and are emitted with cosmic rays.
+    scope: production
+    status: assumed
+    impact_if_violated: null
+    can_be_relaxed: unknown
+    source_reference_ids: []
+    notes: null
+associated_code:
+  has_associated_code: unknown
+  code_summary: null
+  primary_code_role: null
+  repositories: []
+  packages_or_modules: []
+  notebooks: []
+  scripts: []
+provenance:
+  model_id: 1002_1327_tev_dm_cion_v1
+  model_name: 8.1 TeV dm-cion dark matter particle
+  model_family: supersymmetric_dark_matter
+  entry_version: 0.1.0
+  status: machine_extracted
+  created_at: '2026-05-28'
+  last_updated: '2026-05-28'
+  sources:
+    primary_papers:
+    - reference_id: '1002_1327'
+      title: Cosmic Rays from AGN, the Knee Energy Mass Scale and Dark Matter Particles
+      authors: []
+      year: 2010
+      arxiv_id: '1002.1327'
+      doi: null
+      url: null
+      role: original_model
+      notes: Assigned full text in target_text.sqlite.
+  extraction:
+    method: llm_assisted
+    extracted_by: codex_batch_0111
+    extractor_name: Codex GPT-5 batch worker
+    extraction_date: '2026-05-28'
+    confidence: medium
+    source_chunks_or_sections:
+    - reference_id: '1002_1327'
+      section: Opening summary
+      page: null
+      quote_or_summary: Suggests an 8.1 TeV dark matter particle using GLMR supersymmetry and the 3 PeV
+        knee scale.
+    - reference_id: '1002_1327'
+      section: DMP discussion
+      page: null
+      quote_or_summary: Describes a stable lowest-mass supersymmetric particle and AGN/black-hole emission
+        scenario.
+    unresolved_items:
+    - No full Lagrangian, spin assignment, or cosmological relic-density calculation is provided.
+  evidence:
+    particle_content:
+    - reference_id: '1002_1327'
+      note: Identifies an 8.1 TeV DMP, called dm-cion, as the lowest-mass particle from a supersymmetric
+        multiplet.
+      confidence: medium
+      section: null
+      page: null
+    symmetries:
+    - reference_id: '1002_1327'
+      note: Stability is attributed to being the lowest-mass member of the proposed supersymmetric multiplet.
+      confidence: low
+      section: null
+      page: null
+    interactions:
+    - reference_id: '1002_1327'
+      note: The DMP is described as weakly interacting and pair-produced; annihilation to gamma rays is
+        discussed.
+      confidence: medium
+      section: null
+      page: null
+    production_mechanism:
+    - reference_id: '1002_1327'
+      note: The paper ties DMP production to AGN/black-hole cosmic-ray emission and decay from the 3 PeV
+        scale particle.
+      confidence: medium
+      section: null
+      page: null
+    parameter_ranges:
+    - reference_id: '1002_1327'
+      note: Core numerical values are 3 PeV for the knee-scale particle and 8.1 TeV for the DMP.
+      confidence: medium
+      section: null
+      page: null
+    validity_domain:
+    - reference_id: '1002_1327'
+      note: The model depends on the GLMR mass ratio and the paper cosmic-ray knee interpretation.
+      confidence: low
+      section: null
+      page: null
+  review:
+    human_reviewed: false
+    reviewed_by: null
+    review_date: null
+    expert_reviewed: false
+    expert_reviewer: null
+    expert_review_date: null
+    reviewer_notes: []
+    scientific_confidence: low
+    implementation_confidence: low
+  caveats:
+  - No full Lagrangian, spin assignment, or cosmological relic-density calculation is provided.
+robustness:
+  overall: low
+  theory_robustness: low
+  observational_robustness: low
+  computational_robustness: unknown
+  constraint_robustness: unknown
+  dominant_uncertainties:
+  - DMP identity and cosmological abundance are not derived.
+  validation_status: expert_judgment_only
+  notes: Accepted as a paper-local speculative DMP proposal; many fields remain unknown.
+agent_failure_modes:
+  warnings:
+  - id: cosmic_ray_not_relic
+    severity: high
+    category: assumption_mismatch
+    warning: Do not treat the AGN cosmic-ray production scenario as a standard thermal relic calculation.
+    mitigation: Require a separate relic-density derivation before cosmology use.
+    source_reference_ids: []
+mass_scales_and_hierarchies:
+  scales:
+  - name: DMP mass
+    symbol: M_2
+    value: '8.1'
+    unit: TeV
+    role: core
+    status: inferred
+    source_reference_ids: []
+  - name: knee mass scale
+    symbol: m_3/2
+    value: '3'
+    unit: PeV
+    role: core
+    status: inferred
+    source_reference_ids: []
+  hierarchy_questions:
+  - question: How is the DMP mass below the knee scale?
+    answer: The paper uses the GLMR gaugino-to-gravitino mass ratio.
+    status: assumed

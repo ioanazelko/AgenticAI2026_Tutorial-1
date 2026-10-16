@@ -1,0 +1,347 @@
+_source:
+  shard: arXiv_src_0708_001_wds.tar
+  paper_id: 0708_0247
+  source_member: 0708_0247.json
+schema_version: model_only_v0
+model_id: 0708_0247_late_decaying_dark_matter_v1
+identity:
+  name: Late-decaying dark matter with soft photon lines
+  family: decaying_dark_matter
+  aliases:
+  - dark matter decaying now
+  - present-day decaying dark matter
+  short_description: A phenomenological dark matter scenario in which present-day dark matter particles
+    are unstable on timescales comparable to or longer than the age of the universe, with nearly degenerate
+    states producing soft photons through late decays.
+  historical_origin_or_motivation: The paper proposes that unstable dark matter in supersymmetry or extra-dimensional
+    frameworks can produce gamma-ray signals at energies much smaller than the dark matter mass.
+  status: speculative
+  model_kind: phenomenological_parameterization
+theory:
+  theory_level: phenomenological_parameterization
+  parent_frameworks:
+  - supersymmetry
+  - universal extra dimensions
+  - flexible brane-worlds
+  - generic decaying dark matter
+  lagrangian_available: 'no'
+  renormalizable: unknown
+  embedded_in_larger_framework: 'yes'
+  notes: The paper treats a generic late-decay framework and gives examples such as gravitinos, lightest
+    KK states, and branons rather than one UV-complete Lagrangian.
+particle_content:
+  dark_matter_candidate:
+    name: unstable dark matter particle
+    spin: unknown
+    statistics: unknown
+    elementary_or_composite: unknown
+    number_of_components: single_component
+  additional_dark_sector_particles:
+  - lighter nearly degenerate daughter state
+  mediators: []
+  dark_radiation_species: []
+  excited_or_degenerate_states:
+  - nearly degenerate parent and daughter dark-sector states
+  long_lived_particles:
+  - decaying dark matter particle with lifetime of order the age of the universe or longer
+  unstable_parent_particles:
+  - decaying dark matter particle
+  standard_model_extension: unknown
+symmetries:
+  stabilizing_mechanism: The model intentionally relaxes exact stability; decay is long-lived due to weak,
+    superweak, or gravitationally suppressed interactions and/or small mass splittings.
+  symmetries:
+  - name: approximate dark matter stability
+    type: approximate
+    exact_or_approximate: approximate
+    breaking: tiny decay width permits present-day decays
+    breaking_scale: null
+  topological_defects_possible: unknown
+interactions:
+  portals:
+  - gravitational
+  - other
+  standard_model_targets:
+  - photons
+  - positrons
+  - electrons
+  - neutrinos
+  dark_sector_couplings:
+  - two-body decay to a nearly degenerate daughter plus photon
+  mediator_types:
+  - gravitationally suppressed mediator
+  - model-dependent weak or brane-world mediator
+  interaction_operators:
+  - generic late two-body decay with photon energy set by mass splitting
+  scattering:
+    elastic: unknown
+    inelastic: unknown
+    momentum_dependence: unknown
+    velocity_dependence: unknown
+    spin_dependence: unknown
+  annihilation_channels: []
+  decay_channels:
+  - dark matter parent to daughter state plus photon
+  - decays producing photons, positrons, electrons, and neutrinos
+  self_scattering_channels: []
+  cp_structure: unknown
+  flavor_structure: unknown
+  tree_or_loop_level: unknown
+parameters:
+  core:
+  - name: dark matter lifetime
+    symbol: tau
+    description: Lifetime of the unstable dark matter particle.
+    value: of order the age of the universe or longer
+    range: tau comparable to or greater than t0 = 4.3 x 10^17 s in the scenarios emphasized
+    unit: s
+    role: core
+    status: inferred
+    source_reference_ids:
+    - 0708_0247
+    notes: The paper discusses asymptotic limits for lifetimes shorter or longer than the age of the universe.
+  - name: dark matter mass
+    symbol: M
+    description: Mass of the decaying dark matter particle.
+    value: null
+    range: null
+    unit: null
+    role: core
+    status: unknown
+    source_reference_ids:
+    - 0708_0247
+    notes: The paper leaves the mass model-dependent.
+  - name: mass splitting
+    symbol: Delta M
+    description: Energy release in a two-body decay, setting the photon line energy.
+    value: null
+    range: soft photon energies can be much smaller than the dark matter mass
+    unit: null
+    role: core
+    status: inferred
+    source_reference_ids:
+    - 0708_0247
+    notes: The paper emphasizes highly degenerate particles and soft photons.
+production:
+  mechanisms:
+  - thermal WIMP freeze-out for WIMP examples
+  - nonthermal superWIMP production from unstable WIMP parents
+  - model-dependent branon or extra-dimensional production
+  thermal_equilibrium_with_standard_model: partial
+  thermal_equilibrium_with_hidden_sector: unknown
+  abundance_set_by:
+  - WIMP freeze-out abundance
+  - superWIMP inheritance of parent WIMP abundance
+  - lifetime and survival fraction
+  depends_on_reheating_temperature: unknown
+  can_produce_all_dark_matter: parameter_dependent
+  nonthermal_momentum_distribution: parameter_dependent
+  notes: The paper reviews WIMPs that freeze out with the right abundance and superWIMPs that inherit
+    the abundance of unstable WIMPs; the late-decay parameterization itself does not compute a unique
+    relic abundance.
+relic_density:
+  full_or_subcomponent: either
+  target_fraction: null
+  calculation_type: mixed
+  key_dependencies:
+  - parent WIMP freeze-out abundance
+  - superWIMP nonthermal production
+  - dark matter lifetime
+  - decay survival fraction
+  requires_entropy_dilution: unknown
+  overclosure_risk: unknown
+  underproduction_risk: unknown
+  tuning_assessment: unknown
+cosmological_history:
+  standard_history_assumed: false
+  nonstandard_features:
+  - dark matter decays at late cosmic times
+  - highly degenerate decay products produce soft photons
+  - surviving dark matter may decay in the Galactic halo today
+  dark_sector_temperature: null
+  delta_neff: null
+  kinetic_decoupling: null
+  chemical_decoupling: null
+  phase_transitions: []
+  topological_defects: []
+  isocurvature_perturbations: unknown
+  bbn_relevance: unknown
+  cmb_relevance: unknown
+phase_space:
+  distribution_type: unknown
+  distribution_function_available: unknown
+  average_momentum_relative_to_thermal: null
+  free_streaming_length: null
+  velocity_dispersion_today: null
+  phase_space_bounds: []
+  notes: The paper focuses on late decay spectra, not the dark matter momentum distribution.
+structure_formation:
+  linear:
+    behaves_like_cdm: unknown
+    transfer_function_shape: unknown
+    small_scale_power_effect: unknown
+    half_mode_mass: null
+    thermal_wdm_mapping:
+      available: false
+      validity: unknown
+      warning: The paper does not map the generic decaying-DM parameterization to thermal WDM.
+    impact_on_sigma8_s8: unknown
+  nonlinear:
+    halo_mass_function_effect: unknown
+    subhalo_mass_function_effect: unknown
+    simulation_calibrated: unknown
+validity_domain:
+- id: late_decay_parameterization_scope
+  applies_to: model
+  condition: Use only for dark matter with lifetimes near or above the current age of the universe and
+    small mass splittings that generate low-energy photons from late decays.
+  valid_range: The paper emphasizes t0 = 4.3 x 10^17 s and explores tau regimes shorter and longer than
+    the age of the universe.
+  status: inferred
+  extrapolation_risk: medium
+  caveats:
+  - This is a generic phenomenological parameterization, not one unique particle model.
+  source_reference_ids:
+  - 0708_0247
+  notes: null
+assumptions:
+  global:
+  - id: late_decay_assumption
+    description: Dark matter is long lived but not exactly stable, and the decay products include photons
+      with energy set by a small parent-daughter mass splitting.
+    scope: theory
+    status: assumed
+    impact_if_violated: The late-decay phenomenology and soft photon-line picture would not apply.
+    can_be_relaxed: unknown
+    source_reference_ids:
+    - 0708_0247
+    notes: null
+associated_code:
+  has_associated_code: unknown
+  code_summary: null
+provenance:
+  model_id: 0708_0247_late_decaying_dark_matter_v1
+  model_name: Late-decaying dark matter with soft photon lines
+  model_family: decaying_dark_matter
+  entry_version: 0.1.0
+  status: machine_extracted
+  created_at: '2026-05-31'
+  last_updated: '2026-05-31'
+  sources:
+    primary_papers:
+    - reference_id: 0708_0247
+      title: Dark Matter Decaying Now
+      authors:
+      - Jose A. R. Cembranos
+      - Jonathan L. Feng
+      - Louis E. Strigari
+      year: 2007
+      arxiv_id: '0708.0247'
+      doi: null
+      url: null
+      role: original_model
+      notes: Assigned full text used as the sole source.
+  extraction:
+    method: llm_assisted
+    extracted_by: codex_batch_0013
+    extractor_name: GPT-5.5 dark-matter extraction worker
+    extraction_date: '2026-05-31'
+    confidence: medium
+    source_chunks_or_sections:
+    - reference_id: 0708_0247
+      section: Introduction
+      page: null
+      quote_or_summary: The paper points out that present dark matter particles can be unstable with lifetimes
+        of order the age of the universe or longer.
+    - reference_id: 0708_0247
+      section: Gamma-ray background
+      page: null
+      quote_or_summary: For two-body decays, the photon energy is set by the mass splitting between the
+        decaying particle and the produced state.
+    unresolved_items:
+    - The paper gives multiple candidate frameworks rather than choosing one particle identity.
+    - The spin and detailed stabilizing symmetry are not specified for the generic model.
+  evidence:
+    particle_content:
+    - reference_id: 0708_0247
+      note: The paper lists examples including gravitinos, lightest KK states, and branons, but treats
+        a generic unstable DM particle.
+      confidence: medium
+      section: Introduction
+      page: null
+    symmetries:
+    - reference_id: 0708_0247
+      note: The central assumption is that DM is not exactly stable but has a very long lifetime.
+      confidence: medium
+      section: Introduction
+      page: null
+    interactions:
+    - reference_id: 0708_0247
+      note: The paper discusses two-body decays producing photons with energy set by the parent-daughter
+        mass splitting, and other decay products in the Galactic halo.
+      confidence: high
+      section: Gamma-ray background and Galaxy sections
+      page: null
+    production_mechanism:
+    - reference_id: 0708_0247
+      note: The introduction describes WIMP freeze-out and superWIMPs that inherit the abundance of unstable
+        WIMPs as production routes for the candidate examples.
+      confidence: medium
+      section: Introduction
+      page: null
+    cosmological_history:
+    - reference_id: 0708_0247
+      note: The model requires late decays with lifetimes comparable to or longer than t0 = 4.3 x 10^17
+        s.
+      confidence: high
+      section: Gamma-ray background
+      page: null
+    parameter_ranges:
+    - reference_id: 0708_0247
+      note: Core parameters are the lifetime, mass, and mass splitting; the paper analyzes limits for
+        H0^2 tau^2 much less or greater than one.
+      confidence: medium
+      section: Gamma-ray background
+      page: null
+    validity_domain:
+    - reference_id: 0708_0247
+      note: The conclusion frames the main idea as decaying dark matter producing signals at scales much
+        smaller than its mass.
+      confidence: high
+      section: Conclusions
+      page: null
+  review:
+    human_reviewed: false
+    reviewed_by: null
+    review_date: null
+    expert_reviewed: false
+    expert_reviewer: null
+    expert_review_date: null
+    reviewer_notes: []
+    scientific_confidence: medium
+    implementation_confidence: medium
+  caveats:
+  - Accepted as a phenomenological dark matter model/parameterization, not as one complete UV particle
+    model.
+robustness:
+  overall: medium
+  theory_robustness: medium
+  observational_robustness: unknown
+  computational_robustness: unknown
+  constraint_robustness: not_applicable
+  dominant_uncertainties:
+  - generic particle identity
+  - model-dependent production history
+  - decay operator not specified
+  validation_status: expert_judgment_only
+  notes: The phenomenological structure is clear, but many particle-physics details remain framework-dependent.
+agent_failure_modes:
+  warnings:
+  - id: generic_not_uv_complete
+    severity: medium
+    category: invalid_mapping
+    warning: Do not map this generic late-decaying-DM row to a single UV completion without additional
+      source evidence.
+    mitigation: Preserve candidate examples as examples and keep unknown spin/symmetry fields unresolved.
+    source_reference_ids:
+    - 0708_0247

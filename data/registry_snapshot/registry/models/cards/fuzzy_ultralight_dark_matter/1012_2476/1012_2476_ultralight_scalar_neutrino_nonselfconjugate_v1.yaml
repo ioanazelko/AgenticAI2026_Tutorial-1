@@ -1,0 +1,568 @@
+_source:
+  shard: arXiv_src_1012_003_wds.tar
+  paper_id: '1012_2476'
+  source_member: 1012_2476.json
+  enriched: true
+  enrichment_schema_version: dm_model_ocr_enrichment_smoke_v0
+schema_version: model_only_v0
+model_id: 1012_2476_ultralight_scalar_neutrino_nonselfconjugate_v1
+identity:
+  name: Non-Self-Conjugate ultra-light scalar dark matter with neutrino mediator
+  family: fuzzy_ultralight_dark_matter
+  aliases:
+  - non-self-conjugate scalar field DM with neutrino coupling
+  short_description: A non-self-conjugate ultra-light scalar dark matter component coupled to neutrinos
+    through a heavy spin-one-half mediator, proposed to affect UHE neutrino propagation.
+  historical_origin_or_motivation: Motivated by ultra-light scalar field dark matter and by the possibility
+    that neutrino-DM interactions alter cosmological neutrino propagation.
+  status: speculative
+  model_kind: simplified_model
+theory:
+  theory_level: simplified_model
+  parent_frameworks:
+  - ultra-light scalar field dark matter
+  - neutrino-DM interaction model
+  lagrangian_available: partial
+  renormalizable: 'yes'
+  eft_cutoff: null
+  embedded_in_larger_framework: unknown
+  notes: The paper gives the interaction in Feynman-rule/Lagrangian form and computes elastic neutrino-DM
+    scattering in limiting cases.
+particle_content:
+  dark_matter_candidate:
+    name: non-self-conjugate ultra-light scalar field phi
+    spin: '0'
+    statistics: scalar
+    elementary_or_composite: elementary
+    number_of_components: single_component
+  additional_dark_sector_particles:
+  - new spin-one-half mediator F
+  mediators:
+  - spin-one-half fermion F
+  dark_radiation_species: []
+  excited_or_degenerate_states: []
+  long_lived_particles: []
+  unstable_parent_particles:
+  - spin-one-half fermion F
+  standard_model_extension: substantial
+symmetries:
+  stabilizing_mechanism: Cosmological stability of the ultra-light scalar dark matter is assumed; the
+    text does not specify a protecting symmetry.
+  symmetries:
+  - name: unknown scalar-field stability structure
+    type: unknown
+    exact_or_approximate: unknown
+    breaking: unknown
+    breaking_scale: null
+  topological_defects_possible: unknown
+interactions:
+  portals:
+  - neutrino
+  - other
+  standard_model_targets:
+  - neutrinos
+  dark_sector_couplings:
+  - Yukawa-type coupling g_phi involving scalar DM, neutrino, and mediator F
+  mediator_types:
+  - spin-one-half fermion F
+  interaction_operators:
+  - L_int approximately g_phi phi (F_bar P_R nu) + h.c.; paper notation gives the chiral Feynman rule
+    with P_R and mediator F
+  scattering:
+    elastic: 'yes'
+    inelastic: unknown
+    momentum_dependence: strong
+    velocity_dependence: unknown
+    spin_dependence: not_applicable
+  annihilation_channels: []
+  decay_channels: []
+  self_scattering_channels: []
+  tree_or_loop_level: tree
+  flavor_structure: neutrino coupling; detailed flavor structure not specified
+parameters:
+  core:
+  - name: scalar dark matter mass
+    symbol: m_phi
+    description: Mass of the ultra-light scalar field.
+    range: ultra-light; examples discuss m_phi less than about 1 eV and literature values near 1e-22 to
+      1e-24 eV
+    unit: eV
+    role: core
+    status: inferred
+    source_reference_ids: []
+  - name: neutrino-DM coupling
+    symbol: g_phi
+    description: Yukawa-type coupling strength in the neutrino-scalar-mediator interaction.
+    range: model dependent
+    role: core
+    status: inferred
+    source_reference_ids: []
+  - name: mediator mass
+    symbol: M_I
+    description: Mass of the new spin-one-half intermediate particle.
+    range: heavy-mediator/local limit assumed in cross-section estimates
+    unit: GeV
+    role: core
+    status: inferred
+    source_reference_ids: []
+  - name: ultra-light scalar dark matter fraction
+    symbol: f_phi
+    description: Fraction of the cosmic dark matter density carried by the scalar.
+    range: 1 for all DM or 0.1 example for a subcomponent
+    role: core
+    status: inferred
+    source_reference_ids: []
+  derived:
+  - name: elastic neutrino-DM cross section
+    symbol: sigma_nu_phi
+    description: Elastic scattering cross section; for this variant cross section scales as (g_phi/M_I)^4
+      m_phi E_nu in the stated limit.
+    range: energy and approximation dependent
+    role: derived
+    status: approximate
+    source_reference_ids: []
+production:
+  mechanisms:
+  - scalar-field cooling, decoupling, and condensation below a critical temperature
+  thermal_equilibrium_with_standard_model: unknown
+  thermal_equilibrium_with_hidden_sector: unknown
+  abundance_set_by:
+  - scalar mass m_phi
+  - charge density or asymmetry q when applicable
+  - chosen scalar dark matter fraction
+  depends_on_reheating_temperature: unknown
+  can_produce_all_dark_matter: parameter_dependent
+  nonthermal_momentum_distribution: 'yes'
+  notes: The paper treats the scalar as a nonrelativistic ultra-light field and allows either a full DM
+    component or a ten-percent component.
+relic_density:
+  full_or_subcomponent: either
+  target_fraction:
+    name: scalar fraction example
+    symbol: f_phi
+    description: Fraction of total dark matter in the scalar field.
+    value: 1 or 0.1 examples
+    role: core
+    status: assumed
+    source_reference_ids: []
+  calculation_type: nonthermal
+  key_dependencies:
+  - m_phi
+  - charge density q for condensation estimate
+  - assumed present dark matter density
+  requires_entropy_dilution: unknown
+  overclosure_risk: unknown
+  underproduction_risk: unknown
+  tuning_assessment: unknown
+cosmological_history:
+  standard_history_assumed: true
+  nonstandard_features:
+  - ultra-light scalar condensate
+  - possible multi-component dark matter fraction
+  dark_sector_temperature: null
+  delta_neff: null
+  kinetic_decoupling: null
+  chemical_decoupling: null
+  phase_transitions:
+  - scalar condensation below a critical temperature
+  topological_defects: []
+  isocurvature_perturbations: unknown
+  bbn_relevance: unknown
+  cmb_relevance: medium
+phase_space:
+  distribution_type: field_like
+  distribution_function_available: 'no'
+  notes: The scalar is treated as nonrelativistic ultra-light field dark matter rather than a thermal
+    particle gas.
+structure_formation:
+  linear:
+    behaves_like_cdm: scale_dependent
+    transfer_function_shape: smooth_cutoff
+    small_scale_power_effect: suppression
+  nonlinear:
+    halo_mass_function_effect: Motivated as an ultra-light scalar candidate that can affect galactic-scale
+      cusps and substructure.
+    subhalo_mass_function_effect: Motivated as an ultra-light scalar candidate that can affect galactic-scale
+      cusps and substructure.
+    simulation_calibrated: unknown
+validity_domain:
+- id: local_mediator_limit
+  applies_to: scattering
+  condition: The cross-section estimates assume s and u are small compared with M_I^2.
+  valid_range: null
+  status: assumed
+  extrapolation_risk: medium
+  caveats:
+  - Breakdown occurs for light mediators or high center-of-mass energy near the mediator scale.
+  source_reference_ids: []
+  notes: null
+- id: cosmological_homogeneity
+  applies_to: cosmological_history
+  condition: Source and dark matter distributions are approximated as homogeneous and isotropic over 100-1000
+    Mpc propagation distances.
+  valid_range: null
+  status: assumed
+  extrapolation_risk: medium
+  caveats: []
+  source_reference_ids: []
+  notes: null
+- id: variant_channel_structure
+  applies_to: interactions
+  condition: For the non-self-conjugate scalar case, only the u-channel mediator exchange contributes
+    in the local approximation.
+  valid_range: null
+  status: inferred
+  extrapolation_risk: medium
+  caveats: []
+  source_reference_ids: []
+  notes: null
+assumptions:
+  global:
+  - id: nonrelativistic_ultralight_field
+    description: The scalar dark matter is nonrelativistic during the propagation epoch.
+    scope: cosmological_history
+    status: assumed
+    impact_if_violated: Relativistic behavior would change the cross-section interpretation.
+    can_be_relaxed: unknown
+    source_reference_ids: []
+    notes: null
+  - id: heavy_mediator
+    description: The spin-one-half mediator is heavy enough for the local approximation used in the cross
+      section.
+    scope: theory
+    status: assumed
+    impact_if_violated: A light mediator would alter the energy dependence.
+    can_be_relaxed: unknown
+    source_reference_ids: []
+    notes: null
+  - id: component_fraction
+    description: The scalar may constitute all of dark matter or a selected subcomponent such as ten percent.
+    scope: production
+    status: assumed
+    impact_if_violated: Rates scale with the assumed scalar density.
+    can_be_relaxed: unknown
+    source_reference_ids: []
+    notes: null
+associated_code:
+  has_associated_code: unknown
+  code_summary: No associated code is mentioned in the assigned text.
+provenance:
+  model_id: 1012_2476_ultralight_scalar_neutrino_nonselfconjugate_v1
+  model_name: Non-Self-Conjugate ultra-light scalar dark matter with neutrino mediator
+  model_family: fuzzy_ultralight_dark_matter
+  entry_version: 0.1.0
+  status: machine_extracted
+  created_at: '2026-05-31'
+  last_updated: '2026-05-31'
+  sources:
+    primary_papers:
+    - reference_id: arxiv:1012.2476
+      title: UHE neutrino absorption by ultra-light scalar dark matter (title not explicit in local extracted
+        text)
+      year: 2010
+      arxiv_id: '1012.2476'
+      doi: null
+      url: null
+      role: extension
+      notes: The local text did not expose a formal title line; title here summarizes the assigned paper
+        content.
+    - arxiv_id: '1012.2476'
+      authors:
+      - Barranco, Juan
+      - Miranda, Omar G.
+      - Moura, Celio A.
+      - Rashba, Timur I.
+      - Rossi-Torres, Fernando
+      doi: 10.1088/1475-7516/2011/10/007
+      notes: Primary assigned paper resolved from local full-text cache; ADS metadata used for bibliographic
+        fields.
+      reference_id: primary
+      role: original_model
+      title: Confusing the extragalactic neutrino flux limit with a neutrino propagation limit
+      url: https://arxiv.org/abs/1012.2476
+      year: 2011
+    constraint_papers: []
+    external_databases: []
+    review_papers: []
+  extraction:
+    method: llm_assisted
+    extracted_by: codex_batch_0012
+    extractor_name: Codex GPT-5 batch worker
+    extraction_date: '2026-05-31'
+    confidence: medium
+    source_chunks_or_sections:
+    - reference_id: arxiv:1012.2476
+      section: Introduction and model setup
+      page: null
+      quote_or_summary: The text proposes UHE-neutrino suppression from interactions with nonrelativistic
+        ultra-light scalar dark matter.
+    - reference_id: arxiv:1012.2476
+      section: Scalar field dark matter
+      page: null
+      quote_or_summary: The model uses a spin-0 dark matter field with Yukawa coupling g_phi and spin-one-half
+        mediator F.
+    - reference_id: arxiv:1012.2476
+      section: Conclusions
+      page: null
+      quote_or_summary: The text distinguishes self-conjugate and non-self-conjugate scalar-field cases
+        and treats the scalar as all or part of the dark matter.
+    unresolved_items:
+    - No machine-readable UHE neutrino likelihood or source-population model was extracted.
+    - The non-self-conjugate channel-specific cross section should be rederived from the primary formulae
+      before numerical limits are quoted.
+  evidence:
+    particle_content:
+    - reference_id: arxiv:1012.2476
+      note: The dark matter component is an ultra-light spin-0 scalar field, considered as either all
+        of DM or a fractional component.
+      confidence: high
+      section: Introduction and scalar field dark matter
+      page: null
+    interactions:
+    - reference_id: arxiv:1012.2476
+      note: The interaction is a Yukawa-type coupling with strength g_phi, a chiral projector, and a new
+        spin-one-half mediator F.
+      confidence: high
+      section: Scalar field dark matter
+      page: null
+    production_mechanism:
+    - reference_id: arxiv:1012.2476
+      note: The text summarizes scalar-field cooling, decoupling, and condensation below a critical temperature
+        as the abundance picture.
+      confidence: medium
+      section: Scalar field dark matter
+      page: null
+    cosmological_history:
+    - reference_id: arxiv:1012.2476
+      note: The propagation calculation assumes homogeneous and isotropic source and dark-matter distributions
+        over cosmological distances.
+      confidence: medium
+      section: Propagation setup
+      page: null
+    parameter_ranges:
+    - reference_id: arxiv:1012.2476
+      note: Relevant parameters include scalar mass m_phi, coupling g_phi, mediator mass M_I, and the
+        scalar fraction of the dark matter density.
+      confidence: medium
+      section: Scalar field dark matter
+      page: null
+    validity_domain:
+    - reference_id: arxiv:1012.2476
+      note: Cross-section expressions are derived in local mediator limits and stated energy/mass approximations.
+      confidence: medium
+      section: Cross-section calculation
+      page: null
+    constraints:
+    - confidence: medium
+      note: Primary paper discusses constraint or allowed region uhe_flux_propagation_limit.
+      page: null
+      reference_id: primary
+      section: null
+    observables:
+    - confidence: high
+      note: Primary paper supports observable uhe_neutrino_attenuation.
+      page: null
+      reference_id: primary
+      section: null
+    routes:
+    - confidence: medium
+      note: Primary paper describes the ingredients for route neutrino_optical_depth_route.
+      page: null
+      reference_id: primary
+      section: null
+  review:
+    human_reviewed: false
+    reviewed_by: null
+    review_date: null
+    expert_reviewed: false
+    expert_reviewer: null
+    expert_review_date: null
+    reviewer_notes: []
+    scientific_confidence: medium
+    implementation_confidence: medium
+robustness:
+  overall: low
+  theory_robustness: medium
+  observational_robustness: unknown
+  computational_robustness: unknown
+  dominant_uncertainties:
+  - The paper develops a propagation mechanism more than a full cosmological UV completion.
+  - The mediator sector and scalar stabilization are only partially specified.
+  validation_status: expert_judgment_only
+  notes: Model content is sufficient for a candidate card, but relic-production details are schematic.
+agent_failure_modes:
+  warnings:
+  - id: propagation_focus_warning
+    severity: medium
+    category: assumption_mismatch
+    warning: The paper mainly develops neutrino propagation effects, so do not treat this as a complete
+      scalar-DM cosmology.
+    mitigation: Use only the model ingredients supported by the text.
+    source_reference_ids: []
+  - id: mediator_limit_warning
+    severity: medium
+    category: extrapolation
+    warning: The cross-section formulas rely on local heavy-mediator approximations.
+    mitigation: Check M_I and center-of-mass energy before reuse.
+    source_reference_ids: []
+observables:
+- caveats:
+  - Source flux normalization can mimic propagation suppression.
+  - the local approximation is dominated by the u-channel exchange for the non-self-conjugate scalar
+  channel: indirect_detection
+  effect_direction: suppression
+  environments:
+  - AGN and GRB source populations
+  - cosmological dark matter background
+  - IceCube and Auger searches
+  id: uhe_neutrino_attenuation
+  key_quantities:
+  - name: scalar dark matter mass
+    range: ultralight, below about 1 eV in the primary paper discussion
+    role: core
+    source_reference_ids:
+    - primary
+    status: inferred
+    symbol: m_phi
+    unit: eV
+  - name: neutrino-DM cross section
+    role: derived
+    source_reference_ids:
+    - primary
+    status: inferred
+    symbol: sigma_nu_phi
+  - name: source distance
+    range: 100-1000
+    role: astrophysical
+    source_reference_ids:
+    - primary
+    status: inferred
+    symbol: L
+    unit: Mpc
+  - name: neutrino-DM coupling
+    role: core
+    source_reference_ids:
+    - primary
+    status: inferred
+    symbol: g_phi
+  linked_constraints:
+  - uhe_flux_propagation_limit
+  linked_routes:
+  - neutrino_optical_depth_route
+  name: UHE neutrino attenuation by non-self-conjugate ultralight scalar DM
+  notes: null
+  observability: medium
+  predicted_effect: Elastic scattering of UHE neutrinos on ultralight scalar dark matter can reduce the
+    flux from sources 100-1000 Mpc away according to F(L)=F0 exp(-L/lambda), where lambda=(n_DM sigma)^-1.
+  redshift_range: nearby to cosmological extragalactic sources
+  relevance: critical
+  scale_range: UHE neutrino energies above about 1e15 eV
+  source_reference_ids:
+  - primary
+  subchannel: extragalactic UHE neutrino propagation
+constraints:
+- allowed_regions:
+  - Very small cross sections or sufficiently small scalar density fractions leave the UHE neutrino flux
+    effectively unsuppressed.
+  applies: parameter_dependent
+  assumptions: []
+  benchmark_implications:
+  - A ten-percent ultralight-DM component weakens the attenuation relative to the all-DM scalar case.
+  caveats:
+  - The primary paper emphasizes confusion between source flux limits and propagation limits rather than
+    a detector likelihood.
+  - SN1987A and CMB limits quoted for heavier MeV scalar cases are stated not to directly apply to this
+    ultralight setup.
+  constrained_parameters:
+  - sigma_nu_phi
+  - m_phi
+  - g_phi
+  - M_I
+  constraint_type: astrophysical
+  data_release: null
+  excluded_regions:
+  - Combinations of ultralight scalar mass and neutrino-DM cross section that give optical depth of order
+    unity over 100-1000 Mpc suppress extragalactic UHE neutrino flux below source expectations.
+  id: uhe_flux_propagation_limit
+  likelihood_available: 'no'
+  likelihood_reference: null
+  name: UHE neutrino flux propagation limit for non-self-conjugate scalar DM
+  notes: null
+  observable_channel: UHE neutrino flux
+  recasting_needed: 'yes'
+  robustness: low
+  source_reference_ids:
+  - primary
+theory_to_observable_routing:
+  routes:
+  - agent_notes: null
+    caveats:
+    - Detector acceptance and redshift evolution are not included in this smoke enrichment.
+    constraint_ids:
+    - uhe_flux_propagation_limit
+    derived_quantities:
+    - mean free path lambda
+    - optical depth tau=L/lambda
+    - attenuated flux F(L)
+    description: Compute non-self-conjugate scalar-DM attenuation of extragalactic UHE neutrinos.
+    forward_model_chain:
+    - inputs:
+      - m_phi
+      - g_phi
+      - M_I
+      - E_nu
+      - variant channel structure
+      notes: the local approximation is dominated by the u-channel exchange for the non-self-conjugate
+        scalar
+      outputs:
+      - sigma_nu_phi
+      step_id: cross_section
+      step_type: analytic_formula
+      tool_or_code: null
+      validity: local heavy-mediator limit s,u << M_I^2
+    - inputs:
+      - sigma_nu_phi
+      - rho_DM/m_phi
+      - L
+      notes: Use exponential attenuation from the primary paper.
+      outputs:
+      - F(L)/F0
+      step_id: propagation
+      step_type: semi_analytic_model
+      tool_or_code: null
+      validity: homogeneous and isotropic source/DM approximation over 100-1000 Mpc
+    - inputs:
+      - attenuated flux
+      - MPR or Waxman-Bahcall source benchmark
+      - detector upper limits
+      notes: Compare against UHE neutrino non-detections without treating them as pure source limits.
+      outputs:
+      - allowed or suppressed region
+      step_id: flux_comparison
+      step_type: recasting
+      tool_or_code: null
+      validity: source model dependent
+    id: neutrino_optical_depth_route
+    input_parameters:
+    - m_phi
+    - g_phi
+    - M_I
+    - sigma_nu_phi(E_nu)
+    - rho_DM
+    - source distance L
+    - scalar DM fraction
+    likelihoods: []
+    observable_ids:
+    - uhe_neutrino_attenuation
+    required_code_resources:
+    - analytic neutrino-scalar cross-section formulae
+    - UHE neutrino source-flux benchmark model
+    - IceCube/Auger exposure or limit data
+    route_status: planned
+    source_model_features:
+    - non-self-conjugate ultralight scalar dark matter
+    - spin-one-half intermediate mediator
+    - neutrino elastic scattering
+    validation_tests:
+    - Recover exponential attenuation curves for all-DM and ten-percent-DM cases.
+    - Verify self/non-self-conjugate matrix-element differences before recasting.

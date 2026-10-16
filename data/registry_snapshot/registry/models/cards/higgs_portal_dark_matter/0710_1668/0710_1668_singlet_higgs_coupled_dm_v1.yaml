@@ -1,0 +1,291 @@
+_source:
+  shard: arXiv_src_0710_001_wds.tar
+  paper_id: 0710_1668
+  source_member: 0710_1668.json
+schema_version: model_only_v0
+model_id: 0710_1668_singlet_higgs_coupled_dm_v1
+identity:
+  name: Electroweak-singlet Higgs-coupled fermion dark matter
+  family: higgs_portal_dark_matter
+  aliases: []
+  short_description: A non-chiral electroweak-singlet fermion dark matter candidate with an explicit mass
+    and higher-dimensional Higgs interactions that set its direct-detection coupling.
+  historical_origin_or_motivation: Electroweak-scale non-chiral fermions are proposed as WIMP dark matter
+    candidates that can evade tree-level direct-detection exclusions.
+  status: speculative
+  model_kind: simplified_model
+theory:
+  theory_level: simplified_model
+  parent_frameworks:
+  - Standard Model plus non-chiral electroweak fermion dark matter
+  lagrangian_available: partial
+  renormalizable: 'no'
+  eft_cutoff: null
+  embedded_in_larger_framework: unknown
+  notes: The singlet discussion is an effective Higgs-coupled parameterization with explicit mass and
+    higher-dimensional operators, not a UV completion.
+particle_content:
+  dark_matter_candidate:
+    name: singlet non-chiral fermion dark matter
+    spin: 1/2
+    statistics: fermion
+    elementary_or_composite: elementary
+    number_of_components: single_component
+  additional_dark_sector_particles: []
+  mediators:
+  - Higgs boson
+  dark_radiation_species: []
+  excited_or_degenerate_states: []
+  long_lived_particles: []
+  unstable_parent_particles: []
+  standard_model_extension: minimal
+symmetries:
+  stabilizing_mechanism: A stabilizing symmetry is not specified in the extracted text; stability is assumed
+    because the field is treated as dark matter.
+  symmetries: []
+  topological_defects_possible: unknown
+interactions:
+  portals:
+  - higgs
+  standard_model_targets:
+  - Higgs field
+  - quarks
+  - nucleons
+  dark_sector_couplings:
+  - higher-dimensional Higgs-dark-matter operators
+  mediator_types:
+  - Higgs boson
+  interaction_operators:
+  - c_n/Lambda_n^(2n-1) (H^dagger H)^n tower with one Higgs insertion giving h-DM coupling
+  scattering:
+    elastic: 'yes'
+    inelastic: not_applicable
+    momentum_dependence: unknown
+    velocity_dependence: unknown
+    spin_dependence: spin_independent
+  annihilation_channels:
+  - unknown
+  decay_channels: []
+  self_scattering_channels: []
+  cp_structure: unknown
+  flavor_structure: none specified
+  tree_or_loop_level: tree
+parameters:
+  core:
+  - name: dark matter mass
+    symbol: m_chi
+    description: Total singlet dark matter mass.
+    range: unknown; paper discusses examples above about 1 TeV for direct-detection reach
+    unit: GeV
+    role: core
+    status: unknown
+  - name: non-electroweak mass contribution
+    symbol: m_0
+    description: Mass not associated with electroweak symmetry breaking.
+    role: core
+    status: unknown
+  - name: electroweak mass contribution
+    symbol: m_ewsb
+    description: Mass contribution induced by Higgs operators after EWSB.
+    role: core
+    status: unknown
+  - name: EWSB mass fraction
+    symbol: f_m_ewsb
+    description: Fraction of dark matter mass obtained through electroweak symmetry breaking.
+    range: benchmark values 1, 10^-1, 10^-2, 10^-3, 10^-4 shown for direct-detection characterization
+    role: core
+    status: approximate
+  - name: dimension-five Higgs-operator scale
+    symbol: Lambda_1
+    description: Scale of the leading higher-dimensional Higgs operator for singlet DM.
+    role: core
+    status: unknown
+production:
+  mechanisms:
+  - thermal freeze-out
+  thermal_equilibrium_with_standard_model: unknown
+  thermal_equilibrium_with_hidden_sector: unknown
+  abundance_set_by:
+  - unknown; relic-density constraints are not included in the singlet discussion
+  depends_on_reheating_temperature: unknown
+  can_produce_all_dark_matter: unknown
+  nonthermal_momentum_distribution: unknown
+  notes: Generic WIMP freeze-out motivates the paper, but the singlet section does not calculate relic-density
+    constraints.
+relic_density:
+  full_or_subcomponent: unknown
+  target_fraction: null
+  calculation_type: unknown
+  key_dependencies:
+  - Higgs coupling scale and mass fraction; relic-density constraints not evaluated in the paper
+  requires_entropy_dilution: unknown
+  overclosure_risk: unknown
+  underproduction_risk: unknown
+  tuning_assessment: unknown
+cosmological_history:
+  standard_history_assumed: true
+  nonstandard_features: []
+  dark_sector_temperature: null
+  delta_neff: null
+  kinetic_decoupling: null
+  chemical_decoupling: null
+  phase_transitions: []
+  topological_defects: []
+  isocurvature_perturbations: unknown
+  bbn_relevance: unknown
+  cmb_relevance: unknown
+phase_space:
+  distribution_type: unknown
+  distribution_function_available: unknown
+  average_momentum_relative_to_thermal: null
+  free_streaming_length: null
+  velocity_dispersion_today: null
+  phase_space_bounds: []
+  notes: Phase-space distribution is not discussed for the singlet variant.
+structure_formation:
+  linear:
+    behaves_like_cdm: unknown
+    transfer_function_shape: unknown
+    small_scale_power_effect: unknown
+    half_mode_mass: null
+    impact_on_sigma8_s8: unknown
+  nonlinear:
+    halo_mass_function_effect: unknown
+    subhalo_mass_function_effect: unknown
+    simulation_calibrated: unknown
+validity_domain:
+- id: higgs_operator_dominance
+  applies_to: model
+  condition: The characterization assumes the dominant singlet coupling to the SM is through higher-dimensional
+    Higgs operators.
+  status: assumed
+  extrapolation_risk: medium
+- id: relic_not_computed
+  applies_to: parameter
+  condition: The paper explicitly does not include relic-density constraints on the singlet mass and EWSB
+    mass fraction.
+  status: established
+  extrapolation_risk: high
+assumptions:
+  global:
+  - id: stability_assumed
+    description: The singlet state is assumed stable, but the stabilizing symmetry is not specified in
+      the paper text.
+    scope: theory
+    status: unknown
+    can_be_relaxed: unknown
+  - id: dominant_dimension_five
+    description: The leading Higgs coupling is treated as a dimension-five operator generated by high-scale
+      new physics.
+    scope: theory
+    status: assumed
+    can_be_relaxed: unknown
+associated_code:
+  has_associated_code: unknown
+  code_summary: No associated model code is identified in the assigned paper text.
+provenance:
+  model_id: 0710_1668_singlet_higgs_coupled_dm_v1
+  model_name: Electroweak-singlet Higgs-coupled fermion dark matter
+  model_family: higgs_portal_dark_matter
+  entry_version: 0.1.0
+  status: machine_extracted
+  created_at: '2026-05-31'
+  last_updated: '2026-05-31'
+  sources:
+    primary_papers:
+    - reference_id: arxiv:0710.1668
+      title: Direct Detection of Non-Chiral Dark Matter
+      authors:
+      - Rouven Essig
+      year: 2007
+      arxiv_id: '0710.1668'
+      doi: null
+      url: null
+      role: original_model
+      notes: Assigned full text from target_text.sqlite for paper_id 0710_1668.
+  extraction:
+    method: llm_assisted
+    extracted_by: codex
+    extractor_name: gpt-5-codex
+    extraction_date: '2026-05-31'
+    confidence: medium
+    source_chunks_or_sections:
+    - reference_id: arxiv:0710.1668
+      section: Singlet dark matter discussion
+      page: null
+      quote_or_summary: Assumes a singlet DM fermion with explicit mass and higher-dimensional Higgs interactions.
+    - reference_id: arxiv:0710.1668
+      section: Introduction
+      page: null
+      quote_or_summary: Uses electroweak-scale WIMP thermal freeze-out as the general relic-density motivation.
+    unresolved_items:
+    - The paper does not compute a relic-density range for the singlet Higgs-coupled model.
+  evidence:
+    particle_content:
+    - reference_id: arxiv:0710.1668
+      note: The singlet variant is a fermion dark matter state neutral under SU(2)_L U(1)_Y with an explicit
+        mass term not tied to the electroweak scale.
+      confidence: medium
+      section: Singlet dark matter discussion
+    symmetries:
+    - reference_id: arxiv:0710.1668
+      note: The paper does not specify the stabilizing symmetry for the singlet beyond treating it as
+        dark matter.
+      confidence: low
+      section: Singlet dark matter discussion
+    interactions:
+    - reference_id: arxiv:0710.1668
+      note: The dominant singlet interaction is a non-renormalizable Higgs coupling expressed as a tower
+        of (H dagger H)^n operators.
+      confidence: high
+      section: Singlet dark matter discussion
+    production_mechanism:
+    - reference_id: arxiv:0710.1668
+      note: The introduction gives the generic WIMP thermal-freeze-out motivation; the singlet section
+        explicitly does not include relic-density constraints on its parameters.
+      confidence: medium
+      section: Introduction and singlet section
+    parameter_ranges:
+    - reference_id: arxiv:0710.1668
+      note: The direct-detection characterization uses the fraction f_m_ewsb of the DM mass obtained from
+        electroweak symmetry breaking and a scale Lambda_1 for the dimension-five Higgs operator.
+      confidence: high
+      section: Singlet dark matter discussion
+    validity_domain:
+    - reference_id: arxiv:0710.1668
+      note: The singlet characterization assumes no renormalizable Higgs coupling and no spontaneous mass
+        generation, with dominant higher-dimensional Higgs coupling.
+      confidence: high
+      section: Singlet dark matter discussion
+  review:
+    human_reviewed: false
+    reviewed_by: null
+    review_date: null
+    expert_reviewed: false
+    expert_reviewer: null
+    expert_review_date: null
+    reviewer_notes: []
+    scientific_confidence: medium
+    implementation_confidence: medium
+  caveats:
+  - Machine extracted from a direct-detection phenomenology paper; model-card details should be checked
+    by a domain expert.
+robustness:
+  overall: medium
+  theory_robustness: medium
+  observational_robustness: unknown
+  computational_robustness: unknown
+  constraint_robustness: unknown
+  dominant_uncertainties:
+  - Direct-detection rates depend on loop/effective coupling calculations and hadronic matrix elements.
+  validation_status: expert_judgment_only
+  notes: The paper supplies analytic estimates but this extraction did not independently reproduce them.
+agent_failure_modes:
+  warnings:
+  - id: singlet_relic_gap
+    severity: medium
+    category: other
+    warning: The singlet row captures the Higgs-coupled DM parameterization, but the paper does not compute
+      its relic abundance.
+    source_reference_ids:
+    - arxiv:0710.1668

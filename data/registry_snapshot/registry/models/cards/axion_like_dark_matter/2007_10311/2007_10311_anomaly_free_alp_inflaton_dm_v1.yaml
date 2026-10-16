@@ -1,0 +1,814 @@
+_source:
+  shard: arXiv_src_2007_039_wds.tar
+  paper_id: '2007_10311'
+  source_member: 2007_10311.json
+  enriched: true
+  enrichment_schema_version: dm_model_ocr_enrichment_smoke_v0
+schema_version: model_only_v0
+model_id: 2007_10311_anomaly_free_alp_inflaton_dm_v1
+identity:
+  name: Anomaly-free ALP inflaton dark matter for the XENON1T excess
+  family: axion_like_dark_matter
+  aliases:
+  - ALP miracle for XENON1T
+  - ALP inflaton dark matter
+  short_description: A keV anomaly-free axion-like particle that can act as both the inflaton and the
+    dark matter component invoked for the XENON1T electron-recoil excess.
+  historical_origin_or_motivation: Motivated by the match between XENON1T-favored ALP parameters and the
+    mass-decay-constant relation in ALP inflation.
+  status: speculative
+  model_kind: effective_field_theory
+theory:
+  theory_level: effective_field_theory
+  parent_frameworks:
+  - ALP inflation
+  - multi-natural inflation
+  - anomaly-free PQ/shift-symmetric ALP
+  lagrangian_available: partial
+  renormalizable: 'no'
+  embedded_in_larger_framework: 'yes'
+  notes: The paper gives an ALP inflation potential with two sinusoidal terms and an effective derivative-coupling
+    Lagrangian to SM fermions.
+particle_content:
+  dark_matter_candidate:
+    name: axion-like particle phi
+    spin: '0'
+    statistics: boson
+    elementary_or_composite: elementary
+    number_of_components: single_component
+  additional_dark_sector_particles:
+  - possible right-handed neutrino used for entropy production in one scenario
+  mediators: []
+  dark_radiation_species: []
+  excited_or_degenerate_states: []
+  long_lived_particles:
+  - keV ALP
+  unstable_parent_particles:
+  - lightest right-handed neutrino in the entropy-dilution example
+  standard_model_extension: substantial
+symmetries:
+  stabilizing_mechanism: Approximate ALP shift/PQ symmetry and anomaly-free SM charge assignment suppress
+    dangerous decay channels; cosmological longevity is assumed.
+  symmetries:
+  - name: PQ/shift symmetry
+    type: shift
+    exact_or_approximate: broken
+    breaking: ALP potential terms generate the mass and inflation potential.
+    breaking_scale: null
+  - name: anomaly-free SM coupling assignment
+    type: global
+    exact_or_approximate: unknown
+  topological_defects_possible: unknown
+interactions:
+  portals:
+  - axion
+  - other
+  standard_model_targets:
+  - electrons
+  - SM fermions
+  - thermal plasma
+  dark_sector_couplings:
+  - derivative ALP-fermion couplings proportional to C_ij/(2 f_phi)
+  - suppressed loop-induced photon coupling from electron threshold
+  mediator_types:
+  - axion-like particle field
+  interaction_operators:
+  - partial_mu phi times fermion axial currents divided by f_phi
+  scattering:
+    elastic: unknown
+    inelastic: not_applicable
+    momentum_dependence: unknown
+    velocity_dependence: unknown
+    spin_dependence: not_applicable
+  tree_or_loop_level: both
+parameters:
+  core:
+  - name: ALP mass
+    symbol: m_phi
+    description: XENON1T-favored ALP mass used in the scenario.
+    value: 2.3 +/- 0.2
+    unit: keV
+    role: core
+    status: inferred
+    notes: Quoted in the paper abstract/introduction.
+  - name: ALP decay constant per electron PQ charge
+    symbol: f_phi/q_e
+    description: Decay constant combination controlling the electron coupling.
+    value: about 2e10 times the ALP fraction factor
+    unit: GeV
+    role: core
+    status: inferred
+  - name: ALP dark matter fraction
+    symbol: Omega_phi/Omega_DM
+    description: Fraction of dark matter supplied by the ALP.
+    range: paper discusses fractions from roughly >0.01 up to all of DM, with warmness tension reduced
+      for subdominant fractions
+    role: core
+    status: inferred
+  - name: entropy dilution factor
+    symbol: Delta
+    description: Late entropy production factor needed for thermally produced ALPs.
+    value: order 10 dilution in the conclusion example
+    role: core
+    status: inferred
+  - name: ALP inflation harmonic index
+    symbol: n
+    description: Rational/integer parameter in the two-term ALP inflation potential.
+    value: 3
+    role: core
+    status: inferred
+    notes: The paper takes n=3 for numerical discussion but notes weak sensitivity.
+production:
+  mechanisms:
+  - coherent ALP inflaton oscillations after inflation
+  - diffusion/reheating into the thermal plasma
+  - thermal scattering production of ALPs
+  - late entropy dilution
+  thermal_equilibrium_with_standard_model: partial
+  thermal_equilibrium_with_hidden_sector: unknown
+  abundance_set_by:
+  - ALP mass and decay constant
+  - reheating/diffusion efficiency
+  - thermal production yield
+  - entropy dilution factor
+  depends_on_reheating_temperature: 'yes'
+  can_produce_all_dark_matter: parameter_dependent
+  nonthermal_momentum_distribution: parameter_dependent
+  notes: The thermally produced ALP can source the XENON1T interpretation after mild entropy dilution;
+    coherent condensate abundance is bounded separately.
+relic_density:
+  full_or_subcomponent: either
+  target_fraction:
+    name: ALP fraction
+    symbol: Omega_phi/Omega_DM
+    description: Dark matter fraction supplied by ALP.
+    range: subcomponent to full DM depending on dilution and warmness
+    role: core
+    status: inferred
+  calculation_type: mixed
+  key_dependencies:
+  - m_phi
+  - f_phi/q_e
+  - thermal scattering yield
+  - entropy dilution factor
+  requires_entropy_dilution: 'yes'
+  overclosure_risk: parameter_dependent
+  underproduction_risk: parameter_dependent
+  tuning_assessment: unknown
+cosmological_history:
+  standard_history_assumed: false
+  nonstandard_features:
+  - ALP-driven inflation
+  - rapid reheating/diffusion of the ALP condensate
+  - late entropy production example from right-handed neutrino decay
+  dark_sector_temperature: null
+  delta_neff: null
+  kinetic_decoupling: null
+  chemical_decoupling: null
+  phase_transitions:
+  - possible PQ phase transition timing discussed as model-dependent
+  topological_defects:
+  - possible PQ-sector defects if the phase transition is late
+  isocurvature_perturbations: unknown
+  bbn_relevance: medium
+  cmb_relevance: medium
+phase_space:
+  distribution_type: thermal
+  distribution_function_available: approximate
+  average_momentum_relative_to_thermal: thermal-like for the thermally produced ALP component
+  free_streaming_length: null
+  velocity_dispersion_today: null
+  phase_space_bounds: []
+  notes: The paper describes the keV thermally produced ALP as warm dark matter.
+structure_formation:
+  linear:
+    behaves_like_cdm: scale_dependent
+    transfer_function_shape: smooth_cutoff
+    small_scale_power_effect: suppression
+  nonlinear:
+    halo_mass_function_effect: unknown warm-DM impact
+    subhalo_mass_function_effect: unknown warm-DM impact
+    simulation_calibrated: unknown
+validity_domain:
+- id: alp_anomaly_free
+  applies_to: model
+  condition: ALP has no QED or QCD anomaly and photon coupling is sufficiently suppressed.
+  status: assumed
+  extrapolation_risk: high
+  caveats: []
+- id: entropy_dilution
+  applies_to: cosmological_history
+  condition: Late entropy production dilutes thermally produced ALPs to an allowed abundance.
+  status: assumed
+  extrapolation_risk: medium
+  caveats: []
+- id: keV_warm_component
+  applies_to: structure_formation
+  condition: A keV thermal ALP is warm; subdominant fractions reduce small-scale-structure tension.
+  status: inferred
+  extrapolation_risk: medium
+  caveats: []
+assumptions:
+  global:
+  - id: alp_identity
+    description: The same ALP responsible for the XENON1T interpretation also acts as the inflaton.
+    scope: theory
+    status: speculative
+    can_be_relaxed: unknown
+  - id: suppressed_anomalies
+    description: Anomaly-free couplings suppress the otherwise dangerous ALP-photon signal.
+    scope: theory
+    status: assumed
+    can_be_relaxed: unknown
+  - id: late_entropy
+    description: A late entropy source dilutes the thermally produced ALP abundance.
+    scope: cosmological_history
+    status: assumed
+    can_be_relaxed: unknown
+associated_code:
+  has_associated_code: unknown
+  code_summary: No model-specific public code was identified in the extracted paper text.
+provenance:
+  model_id: 2007_10311_anomaly_free_alp_inflaton_dm_v1
+  model_name: Anomaly-free ALP inflaton dark matter for the XENON1T excess
+  model_family: axion_like_dark_matter
+  entry_version: 0.1.0
+  status: machine_extracted
+  created_at: '2026-05-31'
+  last_updated: '2026-05-31'
+  sources:
+    primary_papers:
+    - reference_id: '2007_10311'
+      title: What if ALP dark matter for the XENON1T excess is the inflaton
+      authors:
+      - Fuminobu Takahashi
+      - Masaki Yamada
+      - Wen Yin
+      year: 2020
+      arxiv_id: '2007.10311'
+      doi: null
+      url: null
+      role: original_model
+      notes: null
+    constraint_papers: []
+    external_databases: []
+    review_papers:
+    - arxiv_id: '1510.07633'
+      authors:
+      - Marsh, David J. E.
+      doi: 10.1016/j.physrep.2016.06.005
+      notes: Related ADS candidate with local full text read for bounded context.
+      reference_id: '1510_07633'
+      role: extension
+      title: Axion cosmology
+      url: https://arxiv.org/abs/1510.07633
+      year: 2016
+    - arxiv_id: '2203.17212'
+      authors:
+      - Sakurai, Kodai
+      - Takahashi, Fuminobu
+      doi: 10.1007/JHEP07(2022)124
+      notes: Related ADS candidate with local full text read for bounded context.
+      reference_id: '2203_17212'
+      role: extension
+      title: Anomaly-free axion dark matter in three Higgs doublet model and its phenomenological implications
+      url: https://arxiv.org/abs/2203.17212
+      year: 2022
+    - arxiv_id: '1702.03284'
+      authors:
+      - Daido, Ryuji
+      - Takahashi, Fuminobu
+      - Yin, Wen
+      doi: 10.1088/1475-7516/2017/05/044
+      notes: Related ADS candidate with local full text read for bounded context.
+      reference_id: '1702_03284'
+      role: extension
+      title: 'The ALP miracle: unified inflaton and dark matter'
+      url: https://arxiv.org/abs/1702.03284
+      year: 2017
+  extraction:
+    method: llm_assisted
+    extracted_by: codex_batch_0015
+    extractor_name: Codex GPT-5 dark-matter model-card worker
+    extraction_date: '2026-05-31'
+    confidence: medium
+    source_chunks_or_sections:
+    - reference_id: '2007_10311'
+      section: abstract/introduction
+      page: null
+      quote_or_summary: Anomaly-free keV ALP dark matter for XENON1T is linked to ALP inflation.
+    - reference_id: '2007_10311'
+      section: ALP inflation
+      page: null
+      quote_or_summary: Two-term ALP potential and mass-decay-constant relation are discussed.
+    - reference_id: '2007_10311'
+      section: reheating/entropy
+      page: null
+      quote_or_summary: Thermal production and entropy dilution set the ALP abundance.
+    unresolved_items:
+    - The exact ALP warm-DM transfer function and modern Lyman-alpha likelihood were not computed.
+    - The XENON1T excess has possible background explanations; output records the paper scenario only.
+  evidence:
+    particle_content:
+    - reference_id: '2007_10311'
+      note: The paper identifies an anomaly-free axion-like particle with mass near 2.3 keV as the dark
+        matter component considered for the XENON1T excess.
+      confidence: high
+      section: abstract/introduction
+      page: null
+    symmetries:
+    - reference_id: '2007_10311'
+      note: The ALP is described as anomaly-free, with a continuous PQ/shift symmetry not broken by SM
+        interactions.
+      confidence: medium
+      section: specific ALP couplings
+      page: null
+    interactions:
+    - reference_id: '2007_10311'
+      note: The relevant SM interactions are derivative couplings to fermions; the electron coupling sets
+        the XENON1T-motivated decay constant.
+      confidence: high
+      section: specific ALP couplings
+      page: null
+    production_mechanism:
+    - reference_id: '2007_10311'
+      note: The paper studies reheating, diffusion of coherent ALP oscillations, thermal ALP production
+        from scattering, and late entropy dilution.
+      confidence: high
+      section: ALP inflation / reheating
+      page: null
+    cosmological_history:
+    - reference_id: '2007_10311'
+      note: A mild late entropy production scenario is introduced to dilute thermally produced keV ALPs.
+      confidence: high
+      section: entropy production discussion
+      page: null
+    parameter_ranges:
+    - reference_id: '2007_10311'
+      note: The text quotes m_phi = 2.3 +/- 0.2 keV and f_phi/q_e around 2e10 GeV times the ALP fraction
+        factor.
+      confidence: high
+      section: abstract/introduction
+      page: null
+    validity_domain:
+    - reference_id: '2007_10311'
+      note: The scenario relies on suppressed anomalous photon/gluon couplings and on entropy dilution
+        to avoid overabundance or warm-DM tension.
+      confidence: medium
+      section: discussion/conclusion
+      page: null
+    constraints:
+    - confidence: high
+      note: Constraints are taken from the primary paper discussion of XENON1T, X-ray line suppression,
+        warm-DM bounds, and entropy dilution.
+      page: null
+      reference_id: '2007_10311'
+      section: Phenomenological implications
+    observables:
+    - confidence: high
+      note: Primary paper gives the XENON1T ALP mass/coupling region, absorption interpretation, X-ray
+        suppression requirement, warmness discussion, and ALP-inflation motivation.
+      page: null
+      reference_id: '2007_10311'
+      section: Abstract, introduction, thermal history
+    routes:
+    - confidence: medium
+      note: Route links the paper calculations for ALP absorption, decay suppression, thermal production/dilution,
+        and ALP inflation.
+      page: null
+      reference_id: '2007_10311'
+      section: Model and thermal history sections
+  review:
+    human_reviewed: false
+    reviewed_by: null
+    review_date: null
+    expert_reviewed: false
+    expert_reviewer: null
+    expert_review_date: null
+    reviewer_notes: []
+    scientific_confidence: medium
+    implementation_confidence: low
+robustness:
+  overall: medium
+  theory_robustness: medium
+  observational_robustness: unknown
+  computational_robustness: unknown
+  constraint_robustness: unknown
+  dominant_uncertainties:
+  - late entropy dilution
+  - warm-DM fraction
+  - anomaly-free UV completion details
+  validation_status: expert_judgment_only
+  notes: The paper develops the cosmological scenario but several key ingredients are model-dependent.
+agent_failure_modes:
+  warnings:
+  - id: alp_xenon_context
+    severity: medium
+    category: assumption_mismatch
+    warning: Do not treat the XENON1T-motivated parameters as an established detection claim; this card
+      records the model scenario developed in the paper.
+observables:
+- caveats:
+  - The XENON1T excess also admits mundane backgrounds; this row records the paper interpretation, not
+    a confirmed signal.
+  channel: direct_detection
+  effect_direction: spectral_line
+  environments: []
+  id: alp_xenon1t_absorption_peak
+  key_quantities:
+  - description: XENON1T-favored mass
+    name: ALP mass
+    role: core
+    source_reference_ids:
+    - '2007_10311'
+    status: inferred
+    symbol: m_phi
+    unit: keV
+    value: 2.3 +/- 0.2
+  - description: Coupling inferred from the absorption interpretation
+    name: ALP-electron coupling
+    role: core
+    source_reference_ids:
+    - '2007_10311'
+    status: inferred
+    symbol: g_ae
+    value: about 3e-14 sqrt(Omega_DM/Omega_phi)
+  - description: Fraction of DM in ALPs
+    name: ALP fraction
+    range: greater than about 0.01 for the XENON1T interpretation in the paper
+    role: derived
+    source_reference_ids:
+    - '2007_10311'
+    status: inferred
+    symbol: Omega_phi/Omega_DM
+  linked_constraints:
+  - xenon1t_alp_favored_region
+  linked_routes:
+  - alp_absorption_and_cosmology_route
+  name: ALP absorption electron-recoil peak
+  notes: null
+  observability: medium
+  predicted_effect: A keV ALP coupled to electrons can be absorbed and produce a mono-energetic electron-recoil
+    feature at the ALP mass, matching the XENON1T excess region used by the paper.
+  redshift_range: null
+  relevance: high
+  scale_range: null
+  source_reference_ids:
+  - '2007_10311'
+  subchannel: electron recoil absorption
+- caveats:
+  - No X-ray likelihood is implemented; the source states the need for suppression.
+  channel: indirect_detection
+  effect_direction: spectral_line
+  environments: []
+  id: alp_xray_line_suppression
+  key_quantities:
+  - description: Must be extremely suppressed relative to naive anomalous expectations
+    name: ALP-photon coupling
+    role: core
+    source_reference_ids:
+    - '2007_10311'
+    status: assumed
+    symbol: g_agamma
+  - description: Sets X-ray photon energy E=m_phi/2
+    name: ALP mass
+    role: core
+    source_reference_ids:
+    - '2007_10311'
+    status: inferred
+    symbol: m_phi
+    unit: keV
+  linked_constraints:
+  - xray_photon_coupling_suppression
+  linked_routes:
+  - alp_absorption_and_cosmology_route
+  name: Suppressed ALP decay X-ray line
+  notes: null
+  observability: low
+  predicted_effect: A generic keV ALP with photon coupling would decay to photons and produce an X-ray
+    line at half the ALP mass; the anomaly-free construction suppresses that photon coupling.
+  redshift_range: null
+  relevance: high
+  scale_range: null
+  source_reference_ids:
+  - '2007_10311'
+  subchannel: X-ray line
+- caveats:
+  - The paper compares to sterile-neutrino warm-DM bounds only at order-of-magnitude level.
+  channel: lyman_alpha
+  effect_direction: suppression
+  environments: []
+  id: thermal_alp_warmness
+  key_quantities:
+  - description: Dominant fractions are more constrained; subdominant fractions relax warm-DM bounds
+    name: thermal ALP fraction
+    role: core
+    source_reference_ids:
+    - '2007_10311'
+    status: inferred
+    symbol: Omega_phi/Omega_DM
+  - description: keV-scale thermal relic mass
+    name: ALP mass
+    role: core
+    source_reference_ids:
+    - '2007_10311'
+    status: inferred
+    symbol: m_phi
+    unit: keV
+  - description: Late entropy production reducing thermal ALP abundance
+    name: entropy dilution factor
+    role: cosmological
+    source_reference_ids:
+    - '2007_10311'
+    status: inferred
+    symbol: dilution
+  linked_constraints:
+  - warm_dm_fraction_bound
+  - thermal_alp_entropy_dilution
+  linked_routes:
+  - alp_absorption_and_cosmology_route
+  name: Warm-DM free-streaming from thermally produced keV ALPs
+  notes: null
+  observability: medium
+  predicted_effect: Thermally produced keV ALPs have nonzero free-streaming velocities and can behave
+    as warm dark matter, suppressing small-scale structure if they are a dominant component.
+  redshift_range: null
+  relevance: high
+  scale_range: null
+  source_reference_ids:
+  - '2007_10311'
+  subchannel: small-scale structure
+- caveats:
+  - Detailed CMB likelihood extraction was not attempted.
+  channel: cmb
+  effect_direction: model_dependent
+  environments: []
+  id: alp_inflation_cmb
+  key_quantities:
+  - description: Decay constant in ALP-inflation relation
+    name: ALP decay constant
+    role: core
+    source_reference_ids:
+    - '2007_10311'
+    status: inferred
+    symbol: f_phi
+    unit: GeV
+  - description: Paper uses n=3 for numerical discussion
+    name: inflation harmonic index
+    role: core
+    source_reference_ids:
+    - '2007_10311'
+    status: inferred
+    symbol: n
+    value: 3
+  - description: Controls remnant condensate abundance and thermal history
+    name: reheating/diffusion efficiency
+    role: cosmological
+    source_reference_ids:
+    - '2007_10311'
+    status: inferred
+    symbol: epsilon
+  linked_constraints:
+  - alp_inflation_consistency
+  linked_routes:
+  - alp_absorption_and_cosmology_route
+  name: ALP-inflation CMB observables
+  notes: null
+  observability: unknown
+  predicted_effect: The same ALP potential can drive inflation, tying the XENON1T-favored mass/decay constant
+    to inflationary spectral predictions and reheating history.
+  redshift_range: null
+  relevance: medium
+  scale_range: null
+  source_reference_ids:
+  - '2007_10311'
+  subchannel: inflation observables
+constraints:
+- allowed_regions:
+  - m_phi = 2.3 +/- 0.2 keV and g_ae about 3e-14 sqrt(Omega_DM/Omega_phi) in the paper summary.
+  applies: parameter_dependent
+  assumptions: []
+  benchmark_implications:
+  - Requires Omega_phi/Omega_DM above roughly 0.01 in the paper discussion.
+  caveats: []
+  constrained_parameters:
+  - m_phi
+  - g_ae
+  - Omega_phi/Omega_DM
+  constraint_type: direct_detection
+  data_release: XENON1T electron-recoil excess as quoted in primary paper
+  excluded_regions: []
+  id: xenon1t_alp_favored_region
+  likelihood_available: 'no'
+  likelihood_reference: null
+  name: XENON1T ALP electron-recoil favored region
+  notes: The primary paper notes tritium and Ar-37 as possible mundane alternatives.
+  observable_channel: electron recoil
+  recasting_needed: 'yes'
+  robustness: medium
+  source_reference_ids:
+  - '2007_10311'
+- allowed_regions:
+  - Anomaly-free ALP with strongly suppressed photon coupling can evade the stated X-ray line issue.
+  applies: 'yes'
+  assumptions:
+  - can_be_relaxed: 'no'
+    description: The ALP has no QED or QCD anomaly, and loop-induced photon coupling remains small.
+    id: anomaly_free_alp
+    impact_if_violated: An unsuppressed photon coupling would generate excluded X-ray decays.
+    notes: null
+    scope: theory
+    source_reference_ids:
+    - '2007_10311'
+    status: assumed
+  benchmark_implications:
+  - The model must cancel/suppress QED and QCD anomalies.
+  caveats: []
+  constrained_parameters:
+  - g_agamma
+  - m_phi
+  - f_phi
+  constraint_type: indirect_detection
+  data_release: X-ray observations discussed in primary paper
+  excluded_regions:
+  - Naively anomalous photon couplings for a 2.3 keV ALP with the favored electron coupling are excluded
+    by X-ray line searches.
+  id: xray_photon_coupling_suppression
+  likelihood_available: unknown
+  likelihood_reference: null
+  name: X-ray line avoidance through anomaly-free ALP
+  notes: No numerical X-ray limit curve is included in the output.
+  observable_channel: X-ray decay line
+  recasting_needed: 'yes'
+  robustness: medium
+  source_reference_ids:
+  - '2007_10311'
+- allowed_regions:
+  - Subdominant ALP fractions below about 0.1 significantly relax the tension while fractions above about
+    0.01 can still explain XENON1T.
+  applies: parameter_dependent
+  assumptions: []
+  benchmark_implications:
+  - Scenario is testable by improved warm-DM bounds.
+  caveats: []
+  constrained_parameters:
+  - m_phi
+  - Omega_phi/Omega_DM
+  - thermal momentum distribution
+  constraint_type: astrophysical
+  data_release: Lyman-alpha, CMB, BAO, and dwarf-satellite constraints discussed qualitatively in primary
+    paper
+  excluded_regions:
+  - A dominant thermal ALP component near 2 keV is likely in tension with warm-DM observations according
+    to the paper.
+  id: warm_dm_fraction_bound
+  likelihood_available: unknown
+  likelihood_reference: null
+  name: Warm-DM fraction and small-scale-structure tension
+  notes: Exact mapping to an ALP thermal distribution is unresolved.
+  observable_channel: Lyman-alpha and small-scale structure
+  recasting_needed: 'yes'
+  robustness: medium
+  source_reference_ids:
+  - '2007_10311'
+- allowed_regions:
+  - Late entropy production can dilute the thermal ALP abundance to the desired fraction.
+  applies: 'yes'
+  assumptions: []
+  benchmark_implications:
+  - The conclusion-level scenario invokes mild/order-of-magnitude entropy dilution.
+  caveats: []
+  constrained_parameters:
+  - thermal ALP yield
+  - entropy dilution factor
+  - reheating temperature
+  constraint_type: cosmological
+  data_release: Relic abundance estimates in primary paper
+  excluded_regions:
+  - Undiluted thermally produced ALPs can exceed the observed dark matter density.
+  id: thermal_alp_entropy_dilution
+  likelihood_available: 'no'
+  likelihood_reference: null
+  name: Thermal ALP abundance and entropy dilution
+  notes: The precise dilution depends on the post-inflation thermal history.
+  observable_channel: relic abundance
+  recasting_needed: partial
+  robustness: medium
+  source_reference_ids:
+  - '2007_10311'
+- allowed_regions:
+  - The XENON1T-favored mass and decay constant are compatible with the relation f_phi approximately 10^3
+    sqrt(m_phi M_P) in the ALP-inflation scenario.
+  applies: parameter_dependent
+  assumptions: []
+  benchmark_implications:
+  - The same ALP may be both inflaton and dark matter only for a constrained thermal history.
+  caveats: []
+  constrained_parameters:
+  - f_phi
+  - m_phi
+  - n
+  - reheating efficiency
+  constraint_type: cosmological
+  data_release: CMB observations and ALP-inflation discussion in primary paper
+  excluded_regions: []
+  id: alp_inflation_consistency
+  likelihood_available: unknown
+  likelihood_reference: null
+  name: ALP-inflation consistency with CMB and reheating
+  notes: No Planck likelihood was run in this batch.
+  observable_channel: CMB inflation observables
+  recasting_needed: 'yes'
+  robustness: medium
+  source_reference_ids:
+  - '2007_10311'
+theory_to_observable_routing:
+  routes:
+  - agent_notes: A complete recast needs XENON1T electron-recoil likelihood, X-ray limits, warm-DM transfer
+      functions, and CMB inflation likelihoods.
+    caveats:
+    - XENON1T excess interpretation is not treated as established.
+    constraint_ids:
+    - xenon1t_alp_favored_region
+    - xray_photon_coupling_suppression
+    - warm_dm_fraction_bound
+    - thermal_alp_entropy_dilution
+    - alp_inflation_consistency
+    derived_quantities:
+    - XENON1T absorption rate
+    - X-ray decay rate
+    - thermal free-streaming velocity
+    - Omega_phi h^2
+    - inflation observables
+    description: Connect ALP mass/couplings to direct electron absorption, X-ray decay avoidance, warmness,
+      relic fraction, and inflation observables.
+    forward_model_chain:
+    - inputs:
+      - m_phi
+      - g_ae
+      - local ALP density fraction
+      notes: Normalize by the ALP dark-matter fraction.
+      outputs:
+      - electron recoil line rate
+      step_id: absorption_rate
+      step_type: analytic_formula
+      tool_or_code: null
+      validity: Valid for ALP absorption on electrons.
+    - inputs:
+      - m_phi
+      - g_agamma
+      notes: Use to enforce anomaly-free suppression.
+      outputs:
+      - two-photon lifetime
+      - X-ray line flux
+      step_id: xray_decay
+      step_type: analytic_formula
+      tool_or_code: null
+      validity: Requires photon coupling including anomaly cancellation.
+    - inputs:
+      - thermal production rate
+      - entropy dilution
+      - m_phi
+      notes: Primary paper gives estimates but not a public code.
+      outputs:
+      - Omega_phi h^2
+      - momentum distribution
+      step_id: thermal_history
+      step_type: boltzmann_solver
+      tool_or_code: null
+      validity: Needs model-specific reheating and dilution history.
+    - inputs:
+      - ALP potential parameters
+      - CMB data
+      notes: The source motivates compatibility rather than supplying a likelihood.
+      outputs:
+      - n_s
+      - r
+      - reheating constraints
+      step_id: inflation_fit
+      step_type: likelihood
+      tool_or_code: null
+      validity: Requires an inflation likelihood for modern constraints.
+    id: alp_absorption_and_cosmology_route
+    input_parameters:
+    - m_phi
+    - f_phi/q_e
+    - g_ae
+    - g_agamma
+    - Omega_phi/Omega_DM
+    - entropy dilution
+    - n
+    likelihoods: []
+    observable_ids:
+    - alp_xenon1t_absorption_peak
+    - alp_xray_line_suppression
+    - thermal_alp_warmness
+    - alp_inflation_cmb
+    required_code_resources: []
+    route_status: planned
+    source_model_features:
+    - keV anomaly-free ALP
+    - electron derivative coupling
+    - ALP-inflation potential
+    - thermal production plus entropy dilution
+    validation_tests: []

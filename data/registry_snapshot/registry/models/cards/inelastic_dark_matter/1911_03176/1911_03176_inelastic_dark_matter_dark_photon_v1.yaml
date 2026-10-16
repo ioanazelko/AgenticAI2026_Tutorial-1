@@ -1,0 +1,859 @@
+_source:
+  shard: arXiv_src_1911_010_wds.tar
+  paper_id: '1911_03176'
+  source_member: 1911_03176.json
+  enriched: true
+  enrichment_schema_version: dm_model_ocr_enrichment_smoke_v0
+schema_version: model_only_v0
+model_id: 1911_03176_inelastic_dark_matter_dark_photon_v1
+identity:
+  name: Inelastic dark matter with a dark photon mediator
+  family: inelastic_dark_matter
+  aliases:
+  - light thermal inelastic DM
+  - dark photon inelastic DM
+  short_description: A simplified light thermal dark matter setup with two Majorana states chi_1 and chi_2
+    coupled off-diagonally to a kinetically mixed dark photon.
+  historical_origin_or_motivation: The paper uses this setup to evade CMB and direct-detection difficulties
+    for light thermal dark matter and to define displaced-vertex targets.
+  status: speculative
+  model_kind: simplified_model
+theory:
+  theory_level: simplified_model
+  parent_frameworks:
+  - spontaneously broken U(1)_X dark sector
+  - dark photon kinetic mixing
+  lagrangian_available: 'yes'
+  renormalizable: 'yes'
+  eft_cutoff: null
+  embedded_in_larger_framework: unknown
+  notes: The paper writes a dark-sector fermion and scalar Lagrangian and a renormalizable kinetic-mixing
+    Lagrangian for the dark photon.
+particle_content:
+  dark_matter_candidate:
+    name: chi_1
+    spin: 1/2
+    statistics: fermion
+    elementary_or_composite: elementary
+    number_of_components: single_component
+  additional_dark_sector_particles:
+  - heavier Majorana state chi_2
+  - dark-sector scalar phi
+  mediators:
+  - dark photon A'
+  dark_radiation_species: []
+  excited_or_degenerate_states:
+  - chi_2
+  long_lived_particles:
+  - chi_2
+  unstable_parent_particles:
+  - chi_2
+  - A' in the chosen invisible-decay hierarchy
+  standard_model_extension: substantial
+symmetries:
+  stabilizing_mechanism: The lighter Majorana state chi_1 is the stable dark matter state; the setup assumes
+    the dark charge structure and mass hierarchy leave no lighter decay channel.
+  symmetries:
+  - name: U(1)_X
+    type: gauge
+    exact_or_approximate: broken
+    breaking: spontaneously broken by a dark scalar that generates Majorana masses and may give mass to
+      the gauge boson
+    breaking_scale: null
+  topological_defects_possible: unknown
+interactions:
+  portals:
+  - vector
+  standard_model_targets:
+  - electromagnetic current
+  - charged Standard Model fermions
+  - electrons
+  - hadrons through photon mixing
+  dark_sector_couplings:
+  - off-diagonal chi_1-chi_2-A' coupling
+  - dark gauge coupling g_X
+  mediator_types:
+  - dark photon A'
+  interaction_operators:
+  - kinetic mixing between U(1)_X and hypercharge
+  - off-diagonal vector coupling A' chi_1 chi_2
+  annihilation_channels:
+  - chi_1 chi_2 -> A' -> Standard Model states
+  - chi_1 chi_2 -> e+ e-
+  - chi_1 chi_2 -> hadrons
+  decay_channels:
+  - chi_2 -> chi_1 plus a lepton pair or hadrons
+  - A' -> chi_1 chi_2 for m_A' > m_chi1 + m_chi2
+  self_scattering_channels: []
+  cp_structure: unknown
+  flavor_structure: Kinetic mixing couples approximately to electric charge in the light dark photon limit.
+  tree_or_loop_level: tree
+parameters:
+  core:
+  - name: dark photon mass
+    symbol: m_A'
+    description: Mass of the physical dark photon mediator.
+    range: m_A' > m_chi1 + m_chi2; benchmarks include m_A' = 2.5 m_chi1 and 3 m_chi1.
+    unit: GeV
+    role: core
+    status: inferred
+    source_reference_ids: []
+    notes: null
+  - name: lighter dark matter mass
+    symbol: m_chi1
+    description: Mass of the stable lighter Majorana state.
+    range: m_chi1 > 10 MeV in the thermal target discussion.
+    unit: GeV
+    role: core
+    status: inferred
+    source_reference_ids: []
+    notes: null
+  - name: mass splitting
+    symbol: Delta
+    description: Mass difference m_chi2 - m_chi1.
+    range: 2 m_e < Delta < 0.5 m_chi1; benchmark Delta = 0.1 m_chi1.
+    unit: GeV
+    role: core
+    status: inferred
+    source_reference_ids: []
+    notes: null
+  - name: kinetic mixing
+    symbol: epsilon
+    description: Visible-sector coupling of the dark photon induced by kinetic mixing.
+    range: model-dependent
+    unit: null
+    role: core
+    status: inferred
+    source_reference_ids: []
+    notes: null
+  - name: dark fine-structure constant
+    symbol: alpha_D
+    description: Dark gauge coupling alpha_D = g_X^2/(4 pi).
+    range: perturbative values assumed.
+    unit: null
+    role: core
+    status: inferred
+    source_reference_ids: []
+    notes: null
+  nuisance: []
+  derived:
+  - name: thermal target
+    symbol: null
+    description: Coupling combination that reproduces the observed relic abundance by coannihilation.
+    range: computed with micrOMEGAs/CalcHEP/FeynRules in the paper.
+    unit: null
+    role: derived
+    status: inferred
+    source_reference_ids: []
+    notes: null
+  - name: chi_2 decay length
+    symbol: null
+    description: Decay length of the heavier state relevant for displaced vertices.
+    range: depends on mass splitting, dark photon mass, and kinetic mixing.
+    unit: null
+    role: derived
+    status: inferred
+    source_reference_ids: []
+    notes: null
+production:
+  mechanisms:
+  - thermal freeze-out via chi_1 chi_2 coannihilation through an off-shell or on-shell dark photon
+  thermal_equilibrium_with_standard_model: 'yes'
+  thermal_equilibrium_with_hidden_sector: 'yes'
+  abundance_set_by:
+  - epsilon^2 alpha_D
+  - Boltzmann-suppressed chi_2 abundance
+  - m_A'/m_chi1
+  - mass splitting Delta
+  depends_on_reheating_temperature: unknown
+  can_produce_all_dark_matter: parameter_dependent
+  nonthermal_momentum_distribution: unknown
+  notes: The paper identifies thermal targets where the measured relic abundance is reproduced by coannihilation.
+relic_density:
+  full_or_subcomponent: full_dark_matter
+  target_fraction:
+    name: dark matter relic density
+    symbol: Omega h^2
+    description: Observed relic density target used in the paper.
+    range: '0.12'
+    unit: null
+    role: cosmological
+    status: assumed
+    source_reference_ids: []
+    notes: null
+  calculation_type: thermal
+  key_dependencies:
+  - coannihilation cross section
+  - epsilon
+  - alpha_D
+  - m_A'
+  - m_chi1
+  - Delta
+  requires_entropy_dilution: unknown
+  overclosure_risk: parameter_dependent
+  underproduction_risk: parameter_dependent
+  tuning_assessment: unknown
+cosmological_history:
+  standard_history_assumed: true
+  nonstandard_features:
+  - spontaneous breaking of U(1)_X in the dark sector
+  dark_sector_temperature: null
+  delta_neff: null
+  kinetic_decoupling: null
+  chemical_decoupling: null
+  phase_transitions:
+  - dark-sector symmetry breaking
+  topological_defects: []
+  isocurvature_perturbations: unknown
+  bbn_relevance: medium
+  cmb_relevance: critical
+phase_space:
+  distribution_type: thermal
+  distribution_function_available: 'no'
+  f_of_p_or_q: unknown
+  average_momentum_relative_to_thermal: null
+  free_streaming_length: null
+  velocity_dispersion_today: null
+  phase_space_bounds: []
+  notes: The paper discusses thermal freeze-out targets but not a detailed phase-space distribution.
+structure_formation:
+  linear:
+    behaves_like_cdm: unknown
+    transfer_function_shape: unknown
+    small_scale_power_effect: unknown
+    half_mode_mass: null
+    impact_on_sigma8_s8: unknown
+  nonlinear:
+    halo_mass_function_effect: unknown
+    subhalo_mass_function_effect: unknown
+    simulation_calibrated: unknown
+validity_domain:
+- id: valid_hierarchy
+  applies_to: model
+  condition: The extracted setup uses m_A' > m_chi1 + m_chi2 so A' -> chi_1 chi_2 is kinematically allowed.
+  status: assumed
+  extrapolation_risk: high
+  caveats: []
+  source_reference_ids: []
+  notes: null
+- id: thermal_target_range
+  applies_to: parameter
+  condition: The paper focuses on m_chi1 above about 10 MeV and mass splittings above 2 m_e but below
+    about 0.5 m_chi1.
+  status: inferred
+  extrapolation_risk: medium
+  caveats: []
+  source_reference_ids: []
+  notes: null
+- id: dominant_vector_portal
+  applies_to: model
+  condition: Scalar mixing is neglected; kinetic mixing is assumed to dominate the coupling to the Standard
+    Model.
+  status: assumed
+  extrapolation_risk: medium
+  caveats: []
+  source_reference_ids: []
+  notes: null
+assumptions:
+  global:
+  - id: dominant_kinetic_mixing
+    description: The vector portal dominates over possible scalar mixing in the mass range studied.
+    scope: theory
+    status: assumed
+    impact_if_violated: A sizable scalar portal would change production and decay phenomenology.
+    can_be_relaxed: 'yes'
+    source_reference_ids: []
+    notes: null
+  - id: standard_thermal_history
+    description: Thermal freeze-out is treated in a standard cosmological history with no entropy dilution
+      specified.
+    scope: cosmological_history
+    status: assumed
+    impact_if_violated: The thermal target would move if the early expansion or entropy history differs.
+    can_be_relaxed: unknown
+    source_reference_ids: []
+    notes: null
+  - id: short_lived_excited_state_by_recombination
+    description: The heavier state chi_2 is sufficiently depleted or decayed by recombination so coannihilation
+      is inactive at late times.
+    scope: production
+    status: assumed
+    impact_if_violated: Late chi_2 abundance would reintroduce CMB energy-injection issues.
+    can_be_relaxed: unknown
+    source_reference_ids: []
+    notes: null
+associated_code:
+  has_associated_code: partial
+  code_summary: Relic abundance targets are computed with micrOMEGAs v5.0.6 using a CalcHEP model file
+    implemented via FeynRules v2.3.32; no dedicated public repository is identified in the extracted text.
+  primary_code_role: relic_density_calculation
+  repositories: []
+  packages_or_modules:
+  - name: micrOMEGAs v5.0.6
+    resource_type: package
+    availability: unknown
+    relationship_to_model: related_but_not_model_specific
+    purpose:
+    - compute_relic_density
+    url: null
+    repository_url: null
+    documentation_url: null
+    archive_url: null
+    doi: null
+    license: null
+    languages: []
+    version: 5.0.6
+    commit: null
+    last_checked: '2026-05-31'
+    maintained: unknown
+    dependencies: []
+    supported_parameters: []
+    supported_model_families:
+    - inelastic_dark_matter
+    supported_observables: []
+    inputs:
+    - model parameters
+    outputs:
+    - relic density
+    validity_domain: []
+    citation_reference_ids:
+    - primary
+    notes: Mentioned as the relic-density tool used in the paper.
+  - name: CalcHEP model file via FeynRules v2.3.32
+    resource_type: module
+    availability: unknown
+    relationship_to_model: unknown
+    purpose:
+    - define_lagrangian
+    - compute_relic_density
+    url: null
+    repository_url: null
+    documentation_url: null
+    archive_url: null
+    doi: null
+    license: null
+    languages: []
+    version: FeynRules v2.3.32
+    commit: null
+    last_checked: '2026-05-31'
+    maintained: unknown
+    dependencies:
+    - CalcHEP
+    - FeynRules
+    supported_parameters:
+    - m_A'
+    - m_chi1
+    - Delta
+    - epsilon
+    - alpha_D
+    supported_model_families:
+    - inelastic_dark_matter
+    supported_observables: []
+    inputs:
+    - Lagrangian
+    - model parameters
+    outputs:
+    - annihilation cross sections
+    - relic density
+    validity_domain: []
+    citation_reference_ids:
+    - primary
+    notes: The extracted text does not say whether the model file is public.
+  notebooks: []
+  scripts: []
+  containers_or_environments: []
+  expected_inputs:
+  - dark-sector masses
+  - kinetic mixing
+  - dark gauge coupling
+  - mass splitting
+  expected_outputs:
+  - thermal relic target
+  - annihilation cross section
+  supported_observable_channels: []
+  reproducibility:
+    reproducibility_level: partial
+    has_tests: unknown
+    has_examples: unknown
+    has_documentation: unknown
+    pinned_dependencies: partial
+    notes: Tool versions are stated, but no dedicated code release is identified in the assigned text.
+  validation:
+    validation_status: unknown
+    benchmark_references:
+    - primary
+    validation_notes: The paper reports an improved thermal-target calculation; no independent validation
+      details were extracted.
+  caveats:
+  - Associated code availability is unknown from the assigned text.
+provenance:
+  model_id: 1911_03176_inelastic_dark_matter_dark_photon_v1
+  model_name: Inelastic dark matter with a dark photon mediator
+  model_family: inelastic_dark_matter
+  entry_version: 0.1.0
+  status: machine_extracted
+  created_at: '2026-05-31'
+  last_updated: '2026-05-31'
+  sources:
+    primary_papers:
+    - reference_id: primary
+      title: unknown
+      authors: []
+      year: 2019
+      arxiv_id: '1911.03176'
+      doi: null
+      url: null
+      role: extension
+      notes: Title and author metadata were not present in the assigned extracted text.
+    - arxiv_id: '1911.03176'
+      authors:
+      - Duerr, Michael
+      - Ferber, Torben
+      - Hearty, Christopher
+      - Kahlhoefer, Felix
+      - Schmidt-Hoberg, Kai
+      - Tunney, Patrick
+      doi: 10.1007/JHEP02(2020)039
+      notes: Primary paper for this model-card row.
+      reference_id: src-1911-03176
+      role: original_model
+      title: Invisible and displaced dark matter signatures at Belle II
+      url: https://arxiv.org/abs/1911.03176
+      year: 2020
+    constraint_papers:
+    - arxiv_id: '1703.06881'
+      authors:
+      - Izaguirre, Eder
+      - Kahn, Yonatan
+      - Krnjaic, Gordan
+      - Moschella, Matthew
+      doi: 10.1103/PhysRevD.96.055007
+      notes: Locally resolved related text read for context or constraints.
+      reference_id: src-1703-06881
+      role: constraint
+      title: Testing light dark matter coannihilation with fixed-target experiments
+      url: https://arxiv.org/abs/1703.06881
+      year: 2017
+    - arxiv_id: '2012.08595'
+      authors:
+      - Duerr, Michael
+      - Ferber, Torben
+      - Garcia-Cely, Camilo
+      - Hearty, Christopher
+      - Schmidt-Hoberg, Kai
+      doi: 10.1007/JHEP04(2021)146
+      notes: Locally resolved related text read for context or constraints.
+      reference_id: src-2012-08595
+      role: constraint
+      title: Long-lived dark Higgs and inelastic dark matter at Belle II
+      url: https://arxiv.org/abs/2012.08595
+      year: 2021
+    - arxiv_id: '1911.03490'
+      authors:
+      - Filimonova, Anastasiia
+      - Schäfer, Ruth
+      - Westhoff, Susanne
+      doi: 10.1103/PhysRevD.101.095006
+      notes: Locally resolved related text read for context or constraints.
+      reference_id: src-1911-03490
+      role: constraint
+      title: Probing dark sectors with long-lived particles at Belle II
+      url: https://arxiv.org/abs/1911.03490
+      year: 2020
+    external_databases: []
+    review_papers: []
+  extraction:
+    method: llm_assisted
+    extracted_by: codex
+    extractor_name: GPT-5 Codex
+    extraction_date: '2026-05-31'
+    confidence: medium
+    source_chunks_or_sections:
+    - reference_id: primary
+      section: A simple model
+      page: null
+      quote_or_summary: Defines the dark-sector fermion, scalar, mass matrix, and off-diagonal coupling.
+    - reference_id: primary
+      section: Relic density and thermal targets
+      page: null
+      quote_or_summary: Computes thermal targets for coannihilation-driven freeze-out.
+    unresolved_items:
+    - The paper is partly a collider-sensitivity study, so this row treats the inelastic DM setup and
+      improved thermal target as the model-development content.
+    - No detector simulation was run by this worker; recast fields are route descriptions and paper-level
+      constraints.
+    - Precise numeric epsilon-mass contours were not transcribed into structured ranges.
+  evidence:
+    particle_content:
+    - reference_id: primary
+      note: The paper defines a dark-sector fermion split into two Majorana mass eigenstates chi_1 and
+        chi_2 plus a dark scalar.
+      confidence: high
+      section: A simple model
+      page: null
+    symmetries:
+    - reference_id: primary
+      note: The construction uses a dark U(1)_X gauge group broken by a scalar vacuum expectation value.
+      confidence: high
+      section: A simple model
+      page: null
+    interactions:
+    - reference_id: primary
+      note: The model has an off-diagonal chi_1-chi_2 coupling to X/A' and kinetic mixing with hypercharge.
+      confidence: high
+      section: Couplings to the Standard Model
+      page: null
+    production_mechanism:
+    - reference_id: primary
+      note: The paper states freeze-out is dominated by chi_1 chi_2 coannihilation into Standard Model
+        states.
+      confidence: high
+      section: Relic density and thermal targets
+      page: null
+    cosmological_history:
+    - reference_id: primary
+      note: The text motivates inelastic splitting because chi_2 is absent at recombination, avoiding
+        late coannihilation.
+      confidence: medium
+      section: Light thermal dark matter
+      page: null
+    parameter_ranges:
+    - reference_id: primary
+      note: The analysis focuses on m_A' > m_chi1 + m_chi2, m_chi1 above about 10 MeV, and Delta below
+        about 0.5 m_chi1.
+      confidence: medium
+      section: Relic density and thermal targets
+      page: null
+    validity_domain:
+    - reference_id: primary
+      note: Scalar mixing is neglected and kinetic mixing is assumed to dominate the Standard Model coupling.
+      confidence: medium
+      section: Couplings to the Standard Model
+      page: null
+    constraints:
+    - confidence: high
+      note: Primary text discusses BaBar monophoton recast, Belle II displaced sensitivity, thermal targets,
+        and partial exclusions for benchmark mass ratios.
+      page: null
+      reference_id: src-1911-03176
+      section: phenomenology and conclusion
+    observables:
+    - confidence: high
+      note: Primary text identifies photon plus missing energy and a displaced lepton/hadron pair as the
+        key inelastic-DM signature.
+      page: null
+      reference_id: src-1911-03176
+      section: introduction
+    - confidence: medium
+      note: Related Belle II dark-sector text discusses long-lived dark-sector states and inelastic-DM
+        relevance.
+      page: null
+      reference_id: src-2012-08595
+      section: model/context sections
+    routes:
+    - confidence: high
+      note: Primary text describes relic-target calculation and BaBar/Belle II recast ingredients.
+      page: null
+      reference_id: src-1911-03176
+      section: theory and Belle II sections
+  review:
+    human_reviewed: false
+    reviewed_by: null
+    review_date: null
+    expert_reviewed: false
+    expert_reviewer: null
+    expert_review_date: null
+    reviewer_notes: []
+    scientific_confidence: medium
+    implementation_confidence: medium
+robustness:
+  overall: medium
+  theory_robustness: medium
+  observational_robustness: unknown
+  computational_robustness: medium
+  constraint_robustness: not_applicable
+  dominant_uncertainties:
+  - public availability of the model file
+  - sensitivity of thermal targets to mass hierarchy and mass splitting
+  validation_status: partially_validated
+  notes: The Lagrangian and relic-density calculation are explicit, but the paper's main emphasis is experimental
+    reach.
+agent_failure_modes:
+  warnings:
+  - id: forecast_not_registry_constraint
+    severity: medium
+    category: other
+    warning: Do not import the paper's Belle II reach curves as model-card constraints in this model-only
+      pass.
+    mitigation: Keep search sensitivities outside this model card.
+    source_reference_ids: []
+  - id: hierarchy_sensitive_target
+    severity: medium
+    category: assumption_mismatch
+    warning: The thermal target depends sensitively on m_A'/m_chi1 and Delta.
+    mitigation: Check the hierarchy before reusing any benchmark.
+    source_reference_ids: []
+observables:
+- caveats:
+  - Sensitivity depends strongly on displaced-vertex triggers and detector acceptances.
+  channel: collider
+  effect_direction: rate_change
+  environments:
+  - Belle II
+  - electron-positron collider
+  id: belle-ii-displaced-photon-vertex
+  key_quantities:
+  - description: Controls A-prime production and chi2 lifetime.
+    name: kinetic mixing
+    notes: null
+    role: core
+    scale: null
+    source_reference_ids:
+    - src-1911-03176
+    status: inferred
+    symbol: epsilon
+    unit: null
+  - description: m_chi2 - m_chi1; benchmark Delta=0.1 m_chi1 and allowed region above dilepton threshold.
+    name: mass splitting
+    notes: null
+    role: core
+    scale: null
+    source_reference_ids:
+    - src-1911-03176
+    status: inferred
+    symbol: Delta
+    unit: null
+  - description: Mediator mass; benchmark ratios include 2.5 and 3 times m_chi1.
+    name: dark photon mass
+    notes: null
+    role: core
+    scale: null
+    source_reference_ids:
+    - src-1911-03176
+    status: inferred
+    symbol: m_A'
+    unit: null
+  linked_constraints:
+  - belle-ii-thermal-target-projection
+  linked_routes:
+  - belle-ii-inelastic-dm-recast-route
+  name: Belle II photon plus displaced dilepton/hadron vertex
+  notes: Primary and related local texts identify Belle II displaced signatures as central probes of inelastic
+    dark sectors.
+  observability: high
+  predicted_effect: The heavier state chi2 can decay inside the detector, producing a single photon plus
+    missing energy and a displaced pair of electrons, muons, or hadrons.
+  redshift_range: not_applicable
+  relevance: critical
+  scale_range: Belle II detector length scales and e+e- center-of-mass energy
+  source_reference_ids:
+  - src-1911-03176
+  - src-2012-08595
+  - src-1911-03490
+  subchannel: e+e- -> gamma A-prime -> gamma chi1 chi2 with chi2 displaced decay
+- caveats:
+  - Mono-photon recasts must evaluate experiment-specific photon and veto acceptances.
+  channel: collider
+  effect_direction: rate_change
+  environments:
+  - BaBar
+  - Belle II
+  id: invisible-monophoton-long-lived-chi2
+  key_quantities:
+  - description: Determines whether the event is displaced or invisible.
+    name: chi2 decay length
+    notes: null
+    role: derived
+    scale: null
+    source_reference_ids:
+    - src-1911-03176
+    status: inferred
+    symbol: c tau_chi2
+    unit: null
+  - description: Sets dark-sector coupling in the thermal target.
+    name: dark fine-structure constant
+    notes: null
+    role: core
+    scale: null
+    source_reference_ids:
+    - src-1911-03176
+    status: inferred
+    symbol: alpha_D
+    unit: null
+  linked_constraints:
+  - babar-monophoton-recast
+  - belle-ii-thermal-target-projection
+  linked_routes:
+  - belle-ii-inelastic-dm-recast-route
+  name: Invisible monophoton signature for long-lived chi2
+  notes: The primary paper uses BaBar/Belle II monophoton logic for regions where chi2 escapes or is effectively
+    invisible.
+  observability: high
+  predicted_effect: If chi2 decays outside the detector or its decay products are too soft, the event
+    resembles a dark-photon invisible monophoton search.
+  redshift_range: not_applicable
+  relevance: high
+  scale_range: BaBar and Belle II detector acceptances
+  source_reference_ids:
+  - src-1911-03176
+  - src-1703-06881
+  subchannel: mono-photon plus missing energy
+constraints:
+- allowed_regions:
+  - Regions with shorter chi2 decay length migrate from invisible monophoton acceptance into displaced-vertex
+    signatures.
+  applies: parameter_dependent
+  assumptions:
+  - can_be_relaxed: partial
+    description: The monophoton limit applies when chi2 escapes the detector or its decay products fail
+      reconstruction.
+    id: escape-or-soft-decay
+    impact_if_violated: If visible decay products pass vetoes, the monophoton acceptance drops.
+    notes: null
+    scope: detector recast
+    source_reference_ids:
+    - src-1911-03176
+    status: assumed
+  benchmark_implications:
+  - Current exclusions depend on detector escape probability and soft-decay veto assumptions.
+  caveats:
+  - The primary paper does not provide a general public likelihood; recasting is needed for new benchmarks.
+  constrained_parameters:
+  - epsilon
+  - m_A'
+  - m_chi1
+  - Delta
+  - alpha_D
+  - c tau_chi2
+  constraint_type: collider
+  data_release: BaBar monophoton search
+  excluded_regions:
+  - Parameter points with sufficient A-prime production and effectively invisible chi2 are constrained
+    by the BaBar monophoton recast.
+  id: babar-monophoton-recast
+  likelihood_available: approximate
+  likelihood_reference: Primary-paper recast of BaBar monophoton acceptance.
+  name: BaBar monophoton recast for inelastic dark matter
+  notes: Structured as a recast constraint because the primary text explicitly discusses BaBar monophoton
+    acceptances.
+  observable_channel: mono-photon missing-energy search
+  recasting_needed: 'yes'
+  robustness: medium
+  source_reference_ids:
+  - src-1911-03176
+- allowed_regions:
+  - The combination of displaced-decay and monophoton searches can probe the thermal target across broad
+    masses and splittings in the paper benchmarks.
+  applies: parameter_dependent
+  assumptions:
+  - can_be_relaxed: 'yes'
+    description: Projection plots use benchmark mass ratios and often Delta=0.1 m_chi1.
+    id: benchmark-splitting
+    impact_if_violated: Different mass ratios can move the target between excluded, visible, and invisible
+      regions.
+    notes: null
+    scope: thermal target projection
+    source_reference_ids:
+    - src-1911-03176
+    status: assumed
+  benchmark_implications:
+  - Projected reach assumes Belle II luminosity and trigger strategy; the displaced-vertex trigger is
+    central.
+  caveats:
+  - Projection, not a completed Belle II measurement in the primary paper.
+  constrained_parameters:
+  - epsilon
+  - m_A'
+  - m_chi1
+  - Delta
+  - alpha_D
+  constraint_type: collider
+  data_release: Belle II projection, including 50 ab^-1 ultimate-luminosity comparison
+  excluded_regions:
+  - For some mass ratios, the paper notes the thermal target can already be partly excluded by existing
+    constraints.
+  id: belle-ii-thermal-target-projection
+  likelihood_available: 'no'
+  likelihood_reference: null
+  name: Belle II projected reach for the inelastic thermal target
+  notes: Kept as projected sensitivity with recast requirements, not as an observed exclusion.
+  observable_channel: displaced photon plus vertex and monophoton projections
+  recasting_needed: 'yes'
+  robustness: medium
+  source_reference_ids:
+  - src-1911-03176
+  - src-2012-08595
+  - src-1911-03490
+theory_to_observable_routing:
+  routes:
+  - agent_notes: Local text supports the chain, but a full detector recast was not run in this batch.
+    caveats:
+    - Trigger assumptions dominate projected reach.
+    constraint_ids:
+    - babar-monophoton-recast
+    - belle-ii-thermal-target-projection
+    derived_quantities:
+    - thermal relic target
+    - chi2 decay length
+    - monophoton acceptance
+    - displaced-vertex efficiency
+    description: Compute the thermal target and detector-level displaced/invisible acceptances for inelastic
+      dark matter at BaBar and Belle II.
+    forward_model_chain:
+    - inputs:
+      - model parameters
+      notes: Primary model card notes these tools.
+      outputs:
+      - epsilon thermal target
+      step_id: thermal-target
+      step_type: recasting
+      tool_or_code: FeynRules/CalcHEP/micrOMEGAs-style chain
+      validity: thermal freeze-out benchmark
+    - inputs:
+      - epsilon
+      - m_A'
+      - m_chi1
+      - Delta
+      notes: Needs detector geometry.
+      outputs:
+      - gamma+missing/displaced rates
+      step_id: event-rate
+      step_type: simulation
+      tool_or_code: e+e- production and decay simulation
+      validity: Belle II/BaBar kinematics
+    - inputs:
+      - event kinematics
+      - c tau_chi2
+      notes: Primary paper emphasizes displaced-vertex trigger needs.
+      outputs:
+      - excluded or projected sensitivity
+      step_id: acceptance
+      step_type: recasting
+      tool_or_code: BaBar/Belle II acceptance recast
+      validity: analysis-specific vetoes and triggers
+    id: belle-ii-inelastic-dm-recast-route
+    input_parameters:
+    - epsilon
+    - alpha_D
+    - m_A'
+    - m_chi1
+    - Delta
+    - integrated luminosity
+    - detector geometry
+    likelihoods:
+    - BaBar monophoton
+    - Belle II displaced/invisible projection
+    observable_ids:
+    - belle-ii-displaced-photon-vertex
+    - invisible-monophoton-long-lived-chi2
+    required_code_resources:
+    - FeynRules/CalcHEP/micrOMEGAs or equivalent
+    - detector acceptance recast
+    route_status: planned
+    source_model_features:
+    - off-diagonal chi1-chi2-A-prime coupling
+    - kinetic mixing with electromagnetism
+    - long-lived chi2 decay
+    validation_tests:
+    - recover invisible/displaced transition as chi2 lifetime varies
+    - compare m_A prime/m_chi1 benchmark ratios 2.5 and 3

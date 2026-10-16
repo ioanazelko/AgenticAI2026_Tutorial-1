@@ -1,0 +1,711 @@
+_source:
+  shard: arXiv_src_1311_005_wds.tar
+  paper_id: '1311_3090'
+  source_member: 1311_3090.json
+  enriched: true
+  enrichment_schema_version: dm_model_ocr_enrichment_smoke_v0
+schema_version: model_only_v0
+model_id: 1311_3090_modulated_hilltop_p4_pbh_dm_v1
+identity:
+  name: Modulated p=4 hilltop inflation PBH dark matter
+  family: primordial_black_holes
+  aliases:
+  - modulated hilltop inflation PBH dark matter
+  short_description: A p=4 hilltop inflation potential with a superimposed periodic modulation, shown
+    in the paper to remain consistent with data while allowing long-lived PBH formation.
+  historical_origin_or_motivation: The paper tests whether periodic modulations of inflationary potentials
+    can generate enough small-scale power for long-lived PBH dark matter after Planck.
+  status: speculative
+  model_kind: phenomenological_parameterization
+theory:
+  theory_level: phenomenological_parameterization
+  parent_frameworks:
+  - single-field slow-roll inflation with superimposed periodic modulation
+  lagrangian_available: partial
+  renormalizable: not_applicable
+  embedded_in_larger_framework: unknown
+  notes: Specified through an inflaton potential and slow-roll observables rather than a full UV completion.
+particle_content:
+  dark_matter_candidate:
+    name: long-lived primordial black holes
+    spin: not_applicable
+    statistics: black_hole
+    elementary_or_composite: macroscopic
+    number_of_components: subcomponent
+  additional_dark_sector_particles:
+  - inflaton field
+  mediators: []
+  dark_radiation_species: []
+  excited_or_degenerate_states: []
+  long_lived_particles:
+  - primordial black holes with mass greater than about 10^15 g
+  unstable_parent_particles: []
+  standard_model_extension: none
+symmetries:
+  stabilizing_mechanism: Longevity against Hawking evaporation for PBHs heavier than about 10^15 g.
+  symmetries: []
+  topological_defects_possible: unknown
+interactions:
+  portals:
+  - gravitational
+  standard_model_targets: []
+  dark_sector_couplings: []
+  mediator_types:
+  - metric perturbations
+  interaction_operators: []
+  scattering:
+    elastic: not_applicable
+    inelastic: not_applicable
+    momentum_dependence: not_applicable
+    velocity_dependence: not_applicable
+    spin_dependence: not_applicable
+  annihilation_channels: []
+  decay_channels:
+  - Hawking evaporation for lighter PBHs; negligible for the long-lived mass range considered
+  self_scattering_channels: []
+  tree_or_loop_level: not_applicable
+parameters:
+  core:
+  - name: inflation-potential exponent
+    symbol: p
+    description: Power/exponent defining the hilltop potential variant.
+    value: 4
+    role: core
+    status: inferred
+    source_reference_ids:
+    - primary
+  - name: modulation period
+    symbol: f
+    description: Sub-Planckian period of the superimposed periodic term.
+    role: core
+    status: inferred
+    notes: The text assumes f < 1.
+    source_reference_ids:
+    - primary
+  - name: modulation amplitude
+    symbol: Lambda^4
+    description: Amplitude of the periodic modulation term.
+    role: core
+    status: inferred
+    source_reference_ids:
+    - primary
+  - name: spectral index on PBH scale
+    symbol: n_s(k_PBH)
+    description: Value estimated at k_PBH about 10^15 Mpc^-1.
+    value: '4.91'
+    role: derived
+    status: inferred
+    source_reference_ids:
+    - primary
+production:
+  mechanisms:
+  - collapse of enhanced primordial curvature perturbations into PBHs after inflation
+  - small-scale power growth from the running of the running of the spectral index in a modulated inflation
+    potential
+  thermal_equilibrium_with_standard_model: 'no'
+  thermal_equilibrium_with_hidden_sector: not_applicable
+  abundance_set_by:
+  - inflationary power spectrum on PBH scales
+  - PBH collapse threshold and mass scale
+  depends_on_reheating_temperature: unknown
+  can_produce_all_dark_matter: parameter_dependent
+  nonthermal_momentum_distribution: 'yes'
+  notes: The paper checks whether the power spectrum reaches the order needed for long-lived PBH formation
+    rather than computing a detailed present-day fraction.
+relic_density:
+  full_or_subcomponent: either
+  target_fraction: null
+  calculation_type: phenomenological
+  key_dependencies:
+  - P_R(k_PBH) reaching about 10^-3
+  - n_s(k_PBH) above the cited threshold near 1.37
+  - PBH mass above about 10^15 g
+  requires_entropy_dilution: unknown
+  overclosure_risk: parameter_dependent
+  underproduction_risk: parameter_dependent
+  tuning_assessment: unknown
+cosmological_history:
+  standard_history_assumed: true
+  nonstandard_features:
+  - inflationary potential contains a superimposed periodic modulation
+  dark_sector_temperature: null
+  delta_neff: null
+  kinetic_decoupling: null
+  chemical_decoupling: null
+  phase_transitions: []
+  topological_defects: []
+  isocurvature_perturbations: unknown
+  bbn_relevance: unknown
+  cmb_relevance: high
+phase_space:
+  distribution_type: not_applicable
+  distribution_function_available: not_applicable
+  f_of_p_or_q: PBHs are macroscopic compact objects produced from primordial perturbations, not a particle
+    phase-space distribution.
+  average_momentum_relative_to_thermal: null
+  free_streaming_length: null
+  velocity_dispersion_today: null
+  phase_space_bounds: []
+  notes: Particle momentum distribution is not the relevant description.
+structure_formation:
+  linear:
+    behaves_like_cdm: approximately
+    transfer_function_shape: unknown
+    small_scale_power_effect: enhancement
+    thermal_wdm_mapping:
+      available: false
+      validity: invalid
+      warning: PBH production from enhanced small-scale primordial power is not a thermal WDM mapping.
+  nonlinear:
+    halo_mass_function_effect: unknown
+    subhalo_mass_function_effect: unknown
+    simulation_calibrated: 'no'
+validity_domain:
+- id: slow_roll
+  applies_to: inflation calculation
+  condition: Slow-roll approximations are assumed in deriving the spectral parameters and power spectra.
+  status: assumed
+  extrapolation_risk: medium
+  source_reference_ids:
+  - primary
+- id: pbh_scale
+  applies_to: production
+  condition: PBH dark matter formation is assessed near k_PBH about 10^15 Mpc^-1 and masses above about
+    10^15 g.
+  status: inferred
+  extrapolation_risk: medium
+  source_reference_ids:
+  - primary
+assumptions:
+  global:
+  - id: single_field_modulated_inflation
+    description: The inflaton potential can be decomposed into a smooth term plus a smaller periodic modulation.
+    scope: theory
+    status: assumed
+    source_reference_ids:
+    - primary
+  - id: radiation_era_pbh_formation
+    description: PBHs form when enhanced perturbations reenter the horizon during the radiation-dominated
+      era.
+    scope: production
+    status: assumed
+    source_reference_ids:
+    - primary
+associated_code:
+  has_associated_code: unknown
+  code_summary: The paper describes numerical solutions for the inflaton and Friedmann equations, but
+    no associated public model code is identified in the extracted text.
+provenance:
+  model_id: 1311_3090_modulated_hilltop_p4_pbh_dm_v1
+  model_name: Modulated p=4 hilltop inflation PBH dark matter
+  model_family: primordial_black_holes
+  entry_version: 0.1.0
+  status: machine_extracted
+  created_at: '2026-05-31'
+  last_updated: '2026-05-31'
+  sources:
+    primary_papers:
+    - reference_id: primary
+      title: Modulated Inflation Models and Primordial Black Holes
+      authors:
+      - Encieh Erfani
+      year: 2013
+      arxiv_id: '1311.3090'
+      doi: null
+      url: null
+      role: original_model
+      notes: Assigned full text from run-local SQLite database.
+    - arxiv_id: '1311.3090'
+      authors:
+      - Erfani, Encieh
+      doi: 10.1103/PhysRevD.89.083511
+      notes: Primary assigned paper read from local SQLite full text.
+      reference_id: arxiv:1311.3090
+      role: original_model
+      title: Modulated inflation models and primordial black holes
+      url: https://arxiv.org/abs/1311.3090
+      year: 2014
+    constraint_papers:
+    - arxiv_id: '1102.2340'
+      authors:
+      - Drees, Manuel
+      - Erfani, Encieh
+      doi: 10.1088/1475-7516/2011/04/005
+      notes: Related local full text read for running-mass inflation and PBH formation context.
+      reference_id: arxiv:1102.2340
+      role: constraint
+      title: Running-mass inflation model and primordial black holes
+      url: https://arxiv.org/abs/1102.2340
+      year: 2011
+    - arxiv_id: '2009.10424'
+      authors:
+      - Bhaumik, Nilanjandev
+      - Jain, Rajeev Kumar
+      doi: 10.1103/PhysRevD.104.023531
+      notes: Related local full text read for induced-GW and PBH lower-mass-bound context.
+      reference_id: arxiv:2009.10424
+      role: constraint
+      title: Small scale induced gravitational waves from primordial black holes, a stringent lower mass
+        bound, and the imprints of an early matter to radiation transition
+      url: https://arxiv.org/abs/2009.10424
+      year: 2021
+    - arxiv_id: '1907.04125'
+      authors:
+      - Bhaumik, Nilanjandev
+      - Jain, Rajeev Kumar
+      doi: 10.1088/1475-7516/2020/01/037
+      notes: Related local full text read for inflationary PBH dark-matter mass-window context.
+      reference_id: arxiv:1907.04125
+      role: constraint
+      title: Primordial black holes dark matter from inflection point models of inflation and the effects
+        of reheating
+      url: https://arxiv.org/abs/1907.04125
+      year: 2020
+    external_databases: []
+    review_papers: []
+  extraction:
+    method: llm_assisted
+    extracted_by: codex_batch_0005
+    extractor_name: Codex GPT-5 batch worker
+    extraction_date: '2026-05-31'
+    confidence: medium
+    source_chunks_or_sections:
+    - reference_id: primary
+      section: Abstract and introduction
+      page: null
+      quote_or_summary: The paper studies PBH formation in inflation potentials with superimposed periodic
+        oscillations as a possible dark matter source.
+    - reference_id: primary
+      section: Model analysis
+      page: null
+      quote_or_summary: For the p=4 hilltop model, the paper reports n_s(k_PBH) about 4.91, above 1.37,
+        and states that PBHs can form, unlike the p=3 inflection-point case.
+    - reference_id: primary
+      section: Discussion and conclusions
+      page: null
+      quote_or_summary: The authors conclude that selected modulated inflation models can form long-lived
+        PBHs, while the inflection-point variant cannot.
+    unresolved_items:
+    - The OCR text renders the PBH power threshold as 10^3; physics context indicates the usual curvature-power
+      threshold is about 10^-3, so this is kept as a cautious note.
+    - No modern CMB likelihood, PBH abundance recast, or induced-GW calculation was rerun.
+  evidence:
+    particle_content:
+    - reference_id: primary
+      note: Dark matter candidate is long-lived primordial black holes with masses above the Hawking evaporation
+        threshold, discussed as cold dark matter or a subcomponent.
+      confidence: medium
+      section: PBH formation
+    interactions:
+    - reference_id: primary
+      note: 'The model is gravitational: PBHs arise from collapse of enhanced primordial density perturbations
+        after inflation.'
+      confidence: medium
+      section: PBH formation
+    production_mechanism:
+    - reference_id: primary
+      note: For the p=4 hilltop model, the paper reports n_s(k_PBH) about 4.91, above 1.37, and states
+        that PBHs can form, unlike the p=3 inflection-point case.
+      confidence: medium
+      section: Inflation models with superimposed periodic modulation
+    cosmological_history:
+    - reference_id: primary
+      note: PBH formation is tied to small-scale perturbations reentering the horizon during the radiation-dominated
+        era after inflation.
+      confidence: medium
+      section: PBH formation
+    parameter_ranges:
+    - reference_id: primary
+      note: The paper evaluates p=4 and finds n_s(k_PBH) about 4.91, above the cited PBH-formation threshold
+        1.37.
+      confidence: medium
+      section: Model analysis
+    validity_domain:
+    - reference_id: primary
+      note: The treatment assumes slow-roll approximations and uses the requirement that the power spectrum
+        reach about 10^-3 on PBH scales.
+      confidence: medium
+      section: Model analysis
+    constraints:
+    - confidence: high
+      note: Primary paper gives nonproduction bounds on beta_s around 0.0025 or 0.0017 and notes long-lived
+        PBHs require masses above about 10^15 g.
+      page: null
+      reference_id: arxiv:1311.3090
+      section: PBH formation and bounds
+    - confidence: medium
+      note: Related inflationary PBH paper summarizes PBH dark-matter mass windows and reheating dependence.
+      page: null
+      reference_id: arxiv:1907.04125
+      section: PBH constraints
+    observables:
+    - confidence: high
+      note: Primary paper reports modulated p=4 hilltop inflation with n_s(k_PBH)=4.91 above 1.37 and
+        PBH formation possible.
+      page: null
+      reference_id: arxiv:1311.3090
+      section: Modulated inflation models
+    - confidence: medium
+      note: Related paper states enhanced scalar perturbations in inflationary PBH scenarios induce a
+        stochastic GW background.
+      page: null
+      reference_id: arxiv:2009.10424
+      section: Abstract
+    routes:
+    - confidence: high
+      note: Primary paper computes slow-roll parameters and numerically solves the inflaton/Friedmann
+        equations for modulated potentials.
+      page: null
+      reference_id: arxiv:1311.3090
+      section: Model analysis
+  review:
+    human_reviewed: false
+    expert_reviewed: false
+    scientific_confidence: medium
+    implementation_confidence: medium
+    reviewer_notes: []
+  caveats:
+  - The extracted card records the PBH-production model only; observational constraints are intentionally
+    omitted for this run.
+robustness:
+  overall: medium
+  theory_robustness: medium
+  observational_robustness: unknown
+  computational_robustness: unknown
+  constraint_robustness: not_applicable
+  dominant_uncertainties:
+  - PBH abundance fraction is not extracted as a full calculation.
+  - Slow-roll/modulated-potential assumptions control the small-scale extrapolation.
+  validation_status: expert_judgment_only
+  notes: Accepted because the paper develops PBH production in explicit modulated inflation variants.
+agent_failure_modes:
+  warnings:
+  - id: pbh_fraction_not_fixed
+    severity: medium
+    category: extrapolation
+    warning: Do not treat this card as fixing the PBH fraction of dark matter; the paper mainly checks
+      formation conditions.
+    source_reference_ids:
+    - primary
+    mitigation: Use the paper-specific power-spectrum calculation before assigning an abundance.
+  - id: constraints_omitted
+    severity: low
+    category: other
+    warning: Constraints and observable signatures were deliberately not extracted in this model-only
+      pass.
+    source_reference_ids:
+    - primary
+observables:
+- caveats:
+  - The paper uses slow-roll and numerical power-spectrum checks; no modern Planck likelihood was rerun.
+  channel: cosmology
+  effect_direction: enhancement
+  environments:
+  - inflationary perturbations
+  - early radiation era
+  id: obs_modulated_power_growth
+  key_quantities:
+  - description: Power in the unmodulated potential variant.
+    name: inflation-potential exponent
+    role: core
+    source_reference_ids:
+    - arxiv:1311.3090
+    status: inferred
+    symbol: p
+    value: 4
+  - description: Source value at the PBH formation scale for this model variant.
+    name: spectral index on PBH scale
+    role: core
+    source_reference_ids:
+    - arxiv:1311.3090
+    status: inferred
+    symbol: n_s(k_PBH)
+    value: 4.91
+  - description: The source states PBH formation requires the power spectrum to reach about 10^-3, despite
+      OCR rendering as 10^3.
+    name: curvature power at PBH scale
+    range: about 10^-3 threshold for DM PBH formation
+    role: core
+    source_reference_ids:
+    - arxiv:1311.3090
+    status: inferred
+    symbol: P_R(k_PBH)
+  linked_constraints:
+  - con_running_bound_from_no_long_lived_pbh
+  linked_routes:
+  - route_modulated_inflation_to_pbh_abundance
+  name: modulated p=4 hilltop inflation small-scale curvature-power growth
+  notes: null
+  observability: medium
+  predicted_effect: A periodic modulation of the inflaton potential drives a positive running-of-running
+    contribution that can raise the small-scale curvature power enough for long-lived PBH formation.
+  redshift_range: inflation through radiation-era horizon re-entry
+  relevance: critical
+  scale_range: PBH-forming comoving scales around k_PBH ~ 10^15 Mpc^-1 in the source discussion
+  source_reference_ids:
+  - arxiv:1311.3090
+  - arxiv:1102.2340
+  subchannel: inflationary curvature power spectrum on PBH scales
+- caveats:
+  - PBH abundance bounds depend strongly on mass spectrum and reheating history.
+  channel: black_holes
+  effect_direction: enhancement
+  environments:
+  - early Universe
+  - PBH dark matter population
+  id: obs_long_lived_pbh_abundance
+  key_quantities:
+  - description: PBHs heavier than about 10^15 g survive to the present in the source discussion.
+    name: PBH survival mass
+    range:
+      inclusive_max: true
+      inclusive_min: true
+      max: null
+      min: 1e15
+      notes: Approximate Hawking-survival threshold cited by the primary paper.
+      unit: g
+    role: core
+    source_reference_ids:
+    - arxiv:1311.3090
+    status: inferred
+    symbol: M_PBH
+  - description: Fraction of dark matter in PBHs after collapse.
+    name: PBH dark matter fraction
+    range: 0 to 1 depending on abundance and constraints
+    role: core
+    source_reference_ids:
+    - arxiv:1907.04125
+    status: inferred
+    symbol: f_PBH
+  linked_constraints:
+  - con_pbh_mass_window_and_induced_gw
+  linked_routes:
+  - route_modulated_inflation_to_pbh_abundance
+  name: modulated p=4 hilltop inflation long-lived PBH abundance
+  notes: null
+  observability: medium
+  predicted_effect: Enhanced small-scale perturbations can collapse into PBHs with masses above the Hawking-evaporation
+    survival threshold, making them dark-matter candidates or subcomponents.
+  redshift_range: formation after inflation; survival to z=0 for M_PBH > 10^15 g
+  relevance: high
+  scale_range: PBH mass windows set by horizon re-entry scale
+  source_reference_ids:
+  - arxiv:1311.3090
+  - arxiv:1907.04125
+  - arxiv:2009.10424
+  subchannel: PBH dark-matter abundance
+- caveats:
+  - The related induced-GW result is a route/constraint target, not a calculation performed for each modulation
+    benchmark here.
+  channel: gravitational_waves
+  effect_direction: enhancement
+  environments:
+  - future stochastic GW searches
+  id: obs_induced_gw_from_pbh_scale
+  key_quantities:
+  - description: Scalar-induced stochastic gravitational-wave background from PBH-scale perturbations.
+    name: induced GW energy density
+    role: derived
+    source_reference_ids:
+    - arxiv:2009.10424
+    status: inferred
+    symbol: Omega_GW
+  - description: Non-instantaneous reheating changes the induced-GW signal and lower-mass bound in the
+      related study.
+    name: reheating history
+    role: cosmological
+    source_reference_ids:
+    - arxiv:2009.10424
+    status: inferred
+    symbol: T_reh
+  linked_constraints:
+  - con_pbh_mass_window_and_induced_gw
+  linked_routes:
+  - route_modulated_inflation_to_pbh_abundance
+  name: modulated p=4 hilltop inflation induced stochastic gravitational waves
+  notes: null
+  observability: medium
+  predicted_effect: The large scalar perturbations needed for inflationary PBH formation generically induce
+    a stochastic gravitational-wave background at smaller scales.
+  redshift_range: post-inflationary radiation era to present-day GW propagation
+  relevance: medium
+  scale_range: PTA, LISA/DECIGO/ET, and advanced-LIGO-like frequencies depending on PBH mass scale
+  source_reference_ids:
+  - arxiv:2009.10424
+  - arxiv:1311.3090
+  subchannel: scalar-induced stochastic background
+constraints:
+- allowed_regions:
+  - The primary paper quotes approximate nonproduction bounds beta_s(k0) < 0.0025 or 0.0017 depending
+    on the Planck fit choice.
+  applies: 'yes'
+  assumptions:
+  - can_be_relaxed: partial
+    description: The PBH-scale power is inferred from an expansion of n_s(k) plus numerical checks of
+      the modulated potential.
+    id: spectral-index-expansion
+    impact_if_violated: A full primordial-spectrum calculation or updated CMB data could shift the beta_s
+      bound.
+    notes: null
+    scope: inflation-to-PBH extrapolation
+    source_reference_ids:
+    - arxiv:1311.3090
+    status: assumed
+  benchmark_implications:
+  - This modulated p=4 hilltop inflation benchmark has n_s(k_PBH)=4.91, above the source threshold 1.37,
+    so PBH formation is possible in the paper analysis.
+  caveats:
+  - The paper predates later CMB releases and current PBH constraint compilations.
+  constrained_parameters:
+  - beta_s
+  - alpha_s
+  - n_s(k_PBH)
+  - P_R(k_PBH)
+  constraint_type: cosmological
+  data_release: Planck-era spectral-index constraints as used by the source
+  excluded_regions:
+  - Running-of-running values that make the power spectrum exceed the PBH-formation threshold overproduce
+    long-lived PBHs.
+  id: con_running_bound_from_no_long_lived_pbh
+  likelihood_available: 'no'
+  likelihood_reference: null
+  name: Upper bound on running-of-running from nonproduction of long-lived PBHs
+  notes: null
+  observable_channel: PBH nonproduction and CMB spectral-index expansion
+  recasting_needed: 'yes'
+  robustness: medium
+  source_reference_ids:
+  - arxiv:1311.3090
+  - arxiv:1102.2340
+- allowed_regions:
+  - Asteroid-mass PBH windows can still be viable in related inflationary PBH studies after constraint
+    recasts.
+  applies: parameter_dependent
+  assumptions:
+  - can_be_relaxed: partial
+    description: PBH mass-window statements depend on whether the mass function is monochromatic or extended.
+    id: monochromatic-vs-extended-pbh-spectrum
+    impact_if_violated: An extended spectrum may violate constraints even if a monochromatic benchmark
+      lies in a window.
+    notes: null
+    scope: PBH constraint comparison
+    source_reference_ids:
+    - arxiv:1907.04125
+    - arxiv:2009.10424
+    status: assumed
+  benchmark_implications:
+  - A modern version of this benchmark should compute the induced-GW background and apply current PBH
+    mass-window constraints.
+  caveats:
+  - No induced-GW spectrum or PBH abundance likelihood was rerun.
+  constrained_parameters:
+  - M_PBH
+  - f_PBH
+  - Omega_GW
+  - reheating history
+  constraint_type: astrophysical
+  data_release: null
+  excluded_regions:
+  - PBHs below the survival threshold evaporate by today; PBH abundance windows are constrained by lensing,
+    evaporation, compact-object, and induced-GW bounds.
+  id: con_pbh_mass_window_and_induced_gw
+  likelihood_available: 'no'
+  likelihood_reference: null
+  name: PBH mass-window and induced-GW consistency target
+  notes: null
+  observable_channel: PBH abundance plus stochastic gravitational waves
+  recasting_needed: 'yes'
+  robustness: medium
+  source_reference_ids:
+  - arxiv:2009.10424
+  - arxiv:1907.04125
+  - arxiv:1311.3090
+theory_to_observable_routing:
+  routes:
+  - agent_notes: null
+    caveats:
+    - Updated CMB and PBH constraints are needed for a current exclusion statement.
+    constraint_ids:
+    - con_running_bound_from_no_long_lived_pbh
+    - con_pbh_mass_window_and_induced_gw
+    derived_quantities:
+    - P_R(k)
+    - n_s(k_PBH)
+    - PBH formation fraction
+    - PBH mass function
+    - Omega_GW
+    description: Map a modulated inflation potential to PBH-scale curvature power, PBH abundance, and
+      induced-GW observables.
+    forward_model_chain:
+    - inputs:
+      - V(phi)
+      - modulation period
+      - modulation amplitude
+      notes: null
+      outputs:
+      - slow-roll parameters
+      - n_s alpha_s beta_s
+      step_id: s1
+      step_type: analytic_formula
+      tool_or_code: null
+      validity: Valid while slow-roll expansion and source potential parameterization hold.
+    - inputs:
+      - inflaton equation of motion
+      - Friedmann equation
+      notes: null
+      outputs:
+      - numerical P_R(k) on CMB and PBH scales
+      step_id: s2
+      step_type: simulation
+      tool_or_code: null
+      validity: Source performs numerical checks for the power spectrum.
+    - inputs:
+      - P_R(k_PBH)
+      - collapse threshold
+      notes: null
+      outputs:
+      - PBH abundance
+      - survival mass window
+      step_id: s3
+      step_type: semi_analytic_model
+      tool_or_code: null
+      validity: Requires PBH formation prescription and Hawking-survival threshold.
+    - inputs:
+      - PBH abundance
+      - induced GW spectrum
+      - PBH mass constraints
+      notes: null
+      outputs:
+      - allowed benchmark region
+      step_id: s4
+      step_type: recasting
+      tool_or_code: null
+      validity: Modern recast target; not run in batch.
+    id: route_modulated_inflation_to_pbh_abundance
+    input_parameters:
+    - p
+    - f
+    - Lambda^4
+    - n_s
+    - alpha_s
+    - beta_s
+    likelihoods:
+    - Planck-era spectral-parameter comparison
+    - PBH abundance recast unavailable
+    - induced-GW likelihood unavailable
+    observable_ids:
+    - obs_modulated_power_growth
+    - obs_long_lived_pbh_abundance
+    - obs_induced_gw_from_pbh_scale
+    required_code_resources:
+    - inflation perturbation solver
+    - PBH abundance calculator
+    - induced-GW calculator
+    route_status: planned
+    source_model_features:
+    - modulated p=4 hilltop inflation
+    - periodic modulation of inflaton potential
+    - positive running of the running on PBH scales
+    validation_tests:
+    - recover n_s(k_PBH)=4.91
+    - recover beta_s nonproduction bounds 0.0025 and 0.0017

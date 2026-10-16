@@ -1,0 +1,105 @@
+$schema: "https://json-schema.org/draft/2020-12/schema"
+$id: "https://darkmatterfm.org/schemas/observable.schema.yaml"
+title: "Observable schema"
+description: "Reusable observable-channel definition for BSM dark-matter model entries."
+type: object
+additionalProperties: false
+
+$defs:
+  observable:
+    type: object
+    additionalProperties: false
+    properties:
+      id:
+        type: string
+        pattern: "^[a-z0-9_-]+$"
+      name:
+        type: string
+      channel:
+        type: string
+        enum:
+          - cosmology
+          - cmb
+          - lyman_alpha
+          - large_scale_structure
+          - small_scale_structure
+          - milky_way_satellites
+          - stellar_streams
+          - strong_lensing
+          - dwarf_galaxies
+          - clusters
+          - direct_detection
+          - indirect_detection
+          - collider
+          - precision_laboratory
+          - gravitational_waves
+          - black_holes
+          - other
+          - unknown
+      subchannel:
+        type: [string, "null"]
+      predicted_effect:
+        type: string
+        description: "Qualitative effect expected in this observable."
+      effect_direction:
+        type: string
+        enum:
+          - suppression
+          - enhancement
+          - oscillatory
+          - shape_change
+          - rate_change
+          - spectral_line
+          - morphology_change
+          - null_signal
+          - model_dependent
+          - unknown
+          - not_applicable
+      key_quantities:
+        type: array
+        items:
+          $ref: "common.schema.yaml#/$defs/parameter"
+      redshift_range:
+        anyOf:
+          - $ref: "common.schema.yaml#/$defs/parameter_range"
+          - type: string
+          - type: "null"
+      scale_range:
+        anyOf:
+          - $ref: "common.schema.yaml#/$defs/parameter_range"
+          - type: string
+          - type: "null"
+      environments:
+        type: array
+        items:
+          type: string
+      observability:
+        type: string
+        enum: [low, medium, high, unknown, not_applicable]
+      relevance:
+        $ref: "common.schema.yaml#/$defs/relevance"
+      linked_constraints:
+        type: array
+        items:
+          type: string
+      linked_routes:
+        type: array
+        items:
+          type: string
+      caveats:
+        type: array
+        items:
+          type: string
+      source_reference_ids:
+        type: array
+        items:
+          type: string
+      notes:
+        type: [string, "null"]
+    required:
+      - id
+      - name
+      - channel
+      - predicted_effect
+      - effect_direction
+      - relevance

@@ -1,0 +1,895 @@
+_source:
+  shard: arXiv_src_1008_003_wds.tar
+  paper_id: '1008_1997'
+  source_member: 1008_1997.json
+  enriched: true
+  enrichment_schema_version: dm_model_ocr_enrichment_smoke_v0
+agent_failure_modes:
+  warnings:
+  - category: assumption_mismatch
+    id: requires_messengers
+    mitigation: null
+    severity: medium
+    source_reference_ids:
+    - '1008_1997'
+    warning: Do not apply the high-scale transfer relation without the chiral messenger sector.
+  - category: other
+    id: extra_hidden_states_needed
+    mitigation: null
+    severity: medium
+    source_reference_ids:
+    - '1008_1997'
+    warning: The paper notes the high-scale model needs added light hidden states for efficient symmetric-abundance
+      removal.
+associated_code:
+  caveats: []
+  code_summary: No model-specific public code is identified in the assigned paper text.
+  containers_or_environments: []
+  expected_inputs: []
+  expected_outputs: []
+  has_associated_code: unknown
+  notebooks: []
+  packages_or_modules: []
+  primary_code_role: unknown
+  repositories: []
+  scripts: []
+  supported_observable_channels: []
+assumptions:
+  computation_specific: []
+  constraint_specific: []
+  global:
+  - can_be_relaxed: unknown
+    description: Messenger fields carry SU(2)_L and U(1)_D charges so U(1)_D is anomalous under electroweak
+      sphalerons.
+    id: chiral_messengers
+    scope: theory
+    source_reference_ids: []
+    status: assumed
+  - can_be_relaxed: unknown
+    description: Electroweak sphalerons remain active after the dark phase transition and transfer part
+      of D into B and L.
+    id: sphaleron_reprocessing
+    scope: production
+    source_reference_ids: []
+    status: assumed
+  - can_be_relaxed: unknown
+    description: Additional Y, Ybar, and Z states are introduced to remove the symmetric abundance.
+    id: extra_light_hidden_states
+    scope: production
+    source_reference_ids: []
+    status: assumed
+  - can_be_relaxed: unknown
+    description: The DM state has only a small messenger doublet component.
+    id: small_messenger_fraction
+    scope: theory
+    source_reference_ids: []
+    status: assumed
+cosmological_history:
+  bbn_relevance: medium
+  chemical_decoupling: null
+  cmb_relevance: unknown
+  dark_sector_temperature:
+    description: Required to be cooler than the SM for light z fermions to satisfy BBN considerations.
+    name: hidden-sector temperature
+    role: core
+    status: assumed
+  delta_neff: null
+  isocurvature_perturbations: unknown
+  kinetic_decoupling: null
+  nonstandard_features:
+  - high-scale dark first-order phase transition
+  - electroweak sphaleron reprocessing
+  - light hidden z fermions
+  - hidden sector cooler than the Standard Model
+  phase_transitions:
+  - SU(2)_D first-order transition above the electroweak phase transition
+  - electroweak phase transition
+  standard_history_assumed: false
+  topological_defects: []
+identity:
+  aliases:
+  - high-scale dark baryogenesis
+  - nonperturbative-transfer darkogenesis
+  - leptodark messenger darkogenesis
+  family: asymmetric_dark_matter
+  historical_origin_or_motivation: Constructed as the nonperturbative transfer variant of darkogenesis,
+    using electroweak sphalerons instead of a direct baryon-transfer operator.
+  model_kind: complete_theory
+  name: High-scale darkogenesis with leptodark messenger sphaleron transfer
+  short_description: An asymmetric dark-matter model where a dark first-order phase transition occurs
+    before electroweak symmetry breaking and electroweak sphalerons transfer dark number to baryon number
+    through chiral messenger fields.
+  status: speculative
+interactions:
+  annihilation_channels:
+  - X X -> z z
+  cp_structure: CP-violating dark-sector interactions with bubble walls
+  dark_sector_couplings:
+  - W_M messenger Yukawa couplings
+  - W_int = Z X_D X_M
+  - W_Y = m_Y Y Ybar + lambda_Y Z X_D Y
+  decay_channels:
+  - scalar X -> X plus gravitino
+  - Z scalar -> light z fermions
+  flavor_structure: messenger fields have lepton-like Standard Model charges
+  interaction_operators:
+  - W_M = y_eM+ L_M+ H_u e_M+ + y_eM- L_M- H_d e_M- + y_XM+ L_M+ H_d X_M + y_XM- L_M- H_u X_M
+  - W_int = Z X_D X_M
+  - W_Y = m_Y Y Ybar + lambda_Y Z X_D Y
+  mediator_types:
+  - leptodark messenger
+  - electroweak sphaleron
+  - dark Higgs
+  - singlet Z
+  portals:
+  - higgs
+  - other
+  - vector
+  scattering:
+    elastic: 'yes'
+    inelastic: unknown
+    momentum_dependence: unknown
+    spin_dependence: spin_independent
+    velocity_dependence: unknown
+  self_scattering_channels: []
+  standard_model_targets:
+  - electroweak SU(2)_L sector
+  - MSSM Higgs doublets
+  tree_or_loop_level: tree
+mass_scales_and_hierarchies:
+  hierarchy_questions:
+  - answer: At high transition scale the minimal sector does not naturally annihilate the symmetric abundance
+      efficiently.
+    question: Why add light hidden states?
+    status: inferred
+  scales:
+  - description: Dark transition occurs above the electroweak phase transition.
+    name: high dark phase-transition scale
+    range: above electroweak scale
+    role: core
+    status: assumed
+  - description: Concrete sphaleron-transfer relation predicts about 1 GeV.
+    name: predicted DM mass
+    role: core
+    status: inferred
+    symbol: m_X
+    unit: GeV
+    value: approximately 1
+model_id: 1008_1997_high_scale_messenger_darkogenesis_v1
+operators:
+  contact_or_light_mediator: light_mediator
+  coupling_types:
+  - dark gauge
+  - electroweak sphaleron
+  - Yukawa
+  - Higgs mixing
+  eft_operators: []
+  renormalizable_terms:
+  - W_M messenger Yukawa terms
+  - Z X_D X_M
+  - m_Y Y Ybar
+  - lambda_Y Z X_D Y
+parameters:
+  core:
+  - description: Predicted for the concrete high-scale sphaleron-transfer case.
+    name: dark matter mass
+    role: core
+    status: inferred
+    symbol: m_X
+    unit: GeV
+    value: approximately 1
+  - description: Chemical relation for the specified sphaleron-decoupling assumptions.
+    name: baryon-to-dark asymmetry ratio
+    role: derived
+    status: inferred
+    symbol: B/D
+    value: 33/127
+  - description: Small electroweak messenger fraction of the DM state.
+    name: messenger-doublet admixture
+    range: theta^4 less than about 1e-3
+    role: core
+    status: assumed
+    symbol: theta
+  - description: Controls annihilation of X X to z z in the added light hidden sector.
+    name: Y-sector coupling
+    role: core
+    status: assumed
+    symbol: lambda_Y
+  - description: Mass entering the X X -> z z annihilation estimate.
+    name: Y multiplet mass
+    role: core
+    status: assumed
+    symbol: m_Y
+  derived: []
+  nuisance: []
+particle_content:
+  additional_dark_sector_particles:
+  - SU(2)_D doublets L_D
+  - dark singlets X_D
+  - dark Higgs doublets
+  - messenger doublets L_M
+  - messenger singlets e_M and X_M
+  - additional hidden multiplets Y and Ybar
+  - singlet Z
+  - light z fermions
+  dark_matter_candidate:
+    elementary_or_composite: elementary
+    name: fermionic X_D dark matter with small messenger-doublet admixture
+    number_of_components: single_component
+    spin: 1/2
+    statistics: fermion
+  dark_radiation_species:
+  - light z fermions
+  excited_or_degenerate_states:
+  - scalar superpartner of X
+  long_lived_particles: []
+  mediators:
+  - dark SU(2)_D gauge bosons
+  - electroweak sphalerons
+  - leptodark messenger fields
+  - singlet Z
+  standard_model_extension: substantial
+  unstable_parent_particles:
+  - messenger fields
+  - hidden scalars
+phase_space:
+  average_momentum_relative_to_thermal: null
+  distribution_function_available: 'no'
+  distribution_type: nonthermal
+  f_of_p_or_q: unknown
+  free_streaming_length: null
+  notes: The surviving X abundance is an asymmetric, cold GeV-scale population.
+  phase_space_bounds: []
+  velocity_dispersion_today: null
+production:
+  abundance_set_by:
+  - dark asymmetry
+  - electroweak sphaleron chemical potentials
+  - messenger-sector equilibrium
+  - symmetric-component annihilation
+  can_produce_all_dark_matter: 'yes'
+  depends_on_reheating_temperature: unknown
+  mechanisms:
+  - dark sphaleron asymmetry at a high-scale first-order SU(2)_D phase transition
+  - electroweak sphaleron reprocessing through leptodark messengers
+  - annihilation of the symmetric component to light z fermions
+  nonthermal_momentum_distribution: unknown
+  notes: The final abundance is asymmetric; electroweak sphalerons relate D to B and L before freeze-out.
+  thermal_equilibrium_with_hidden_sector: 'yes'
+  thermal_equilibrium_with_standard_model: partial
+provenance:
+  caveats:
+  - The high-scale variant requires extra hidden-sector structure beyond the minimal sector to remove
+    the symmetric abundance.
+  created_at: '2026-05-31'
+  entry_version: 0.1.0
+  evidence:
+    cosmological_history:
+    - confidence: medium
+      note: The paper adds light hidden fields Y, Ybar, and Z so the symmetric dark matter abundance can
+        annihilate to light z fermions.
+      page: null
+      reference_id: '1008_1997'
+      section: Mirror Messengers
+    interactions:
+    - confidence: medium
+      note: The messenger superpotential W_M and a Z X_D X_M communication term connect the dark and electroweak
+        sectors.
+      page: null
+      reference_id: '1008_1997'
+      section: Mirror Messengers
+    parameter_ranges:
+    - confidence: medium
+      note: For a concrete high-scale case the paper gives B/D = 33/127 and predicts a dark matter mass
+        of approximately 1 GeV.
+      page: null
+      reference_id: '1008_1997'
+      section: Mirror Messengers
+    particle_content:
+    - confidence: medium
+      note: The high-scale model keeps fermionic dark matter made from a dark singlet X_D paired with
+        a dark doublet component, with possible messenger-doublet admixture.
+      page: null
+      reference_id: '1008_1997'
+      section: Mirror Messengers and High Scale Dark Baryogenesis
+    production_mechanism:
+    - confidence: medium
+      note: A dark asymmetry produced before the electroweak phase transition is reprocessed into baryon
+        and lepton number by electroweak sphalerons.
+      page: null
+      reference_id: '1008_1997'
+      section: Mirror Messengers
+    symmetries:
+    - confidence: medium
+      note: Messenger fields carry SU(2)_L and U(1)_D charges so that electroweak sphalerons violate a
+        combination involving dark number.
+      page: null
+      reference_id: '1008_1997'
+      section: Mirror Messengers
+    validity_domain:
+    - confidence: medium
+      note: The model requires messenger electroweak doublets, small messenger admixture in the DM state,
+        and hidden-sector conditions compatible with BBN.
+      page: null
+      reference_id: '1008_1997'
+      section: Mirror Messengers
+    constraints:
+    - confidence: medium
+      note: Primary paper gives precision/LEP limits, Z-width mixing, and BBN assumptions for hidden radiation.
+      page: null
+      reference_id: src_primary_1008_1997
+      section: null
+    observables:
+    - confidence: high
+      note: Primary paper supports sphaleron transfer, leptodark, BBN, direct-detection, and GW observables
+        for the high-scale model.
+      page: null
+      reference_id: src_primary_1008_1997
+      section: null
+    routes:
+    - confidence: medium
+      note: Route follows high-scale messenger darkogenesis from dark phase transition through electroweak
+        sphalerons and searches.
+      page: null
+      reference_id: src_primary_1008_1997
+      section: null
+  extraction:
+    confidence: high
+    extracted_by: codex_batch_0009
+    extraction_date: '2026-05-31'
+    extractor_name: Codex GPT-5
+    method: llm_assisted
+    source_chunks_or_sections:
+    - page: null
+      quote_or_summary: The high-scale variant introduces leptodark messengers and uses electroweak sphalerons
+        to transfer the asymmetry.
+      reference_id: '1008_1997'
+      section: Mirror Messengers and High Scale Dark Baryogenesis
+    - page: null
+      quote_or_summary: The paper contrasts the direct-transfer low-scale model with the messenger-sector
+        high-scale model.
+      reference_id: '1008_1997'
+      section: Conclusion
+    unresolved_items:
+    - Modern LHC constraints on leptodark messengers were not read in this bounded pass.
+    - The gravitational-wave reach is qualitative in the primary paper.
+    - A full Delta N_eff calculation for hidden z fermions is not provided.
+  last_updated: '2026-05-31'
+  model_family: asymmetric_dark_matter
+  model_id: 1008_1997_high_scale_messenger_darkogenesis_v1
+  model_name: High-scale darkogenesis with leptodark messenger sphaleron transfer
+  review:
+    expert_review_date: null
+    expert_reviewed: false
+    expert_reviewer: null
+    human_reviewed: false
+    implementation_confidence: medium
+    review_date: null
+    reviewed_by: null
+    reviewer_notes: []
+    scientific_confidence: high
+  sources:
+    constraint_papers: []
+    external_databases: []
+    primary_papers:
+    - arxiv_id: '1008.1997'
+      authors:
+      - Jessie Shelton
+      - Kathryn M. Zurek
+      doi: null
+      notes: Assigned SQLite full text was the only source used for this extraction.
+      reference_id: '1008_1997'
+      role: original_model
+      title: Darkogenesis
+      url: null
+      year: 2010
+    - arxiv_id: '1008.1997'
+      authors:
+      - Shelton, Jessie
+      - Zurek, Kathryn M.
+      doi: 10.1103/PhysRevD.82.123512
+      notes: Primary paper full text resolved locally; ADS used for metadata.
+      reference_id: src_primary_1008_1997
+      role: original_model
+      title: 'Darkogenesis: A baryon asymmetry from the dark matter sector'
+      url: https://arxiv.org/abs/1008.1997
+      year: 2010
+    review_papers: []
+  status: machine_extracted
+relic_density:
+  calculation_type: mixed
+  full_or_subcomponent: full_dark_matter
+  key_dependencies:
+  - B/D relation
+  - messenger content
+  - sphaleron decoupling
+  - annihilation to z fermions
+  overclosure_risk: parameter_dependent
+  requires_entropy_dilution: unknown
+  target_fraction: null
+  tuning_assessment: unknown
+  underproduction_risk: parameter_dependent
+robustness:
+  computational_robustness: low
+  constraint_robustness: not_applicable
+  dominant_uncertainties:
+  - messenger spectrum
+  - sphaleron decoupling assumptions
+  - light hidden radiation cosmology
+  notes: The model is explicit but relies on a chosen messenger sector and additional light hidden states.
+  observational_robustness: not_applicable
+  overall: medium
+  theory_robustness: medium
+  validation_status: expert_judgment_only
+schema_version: model_only_v0
+structure_formation:
+  linear:
+    behaves_like_cdm: approximately
+    half_mode_mass: null
+    impact_on_sigma8_s8: unknown
+    small_scale_power_effect: none
+    transfer_function_shape: cdm_like
+  nonlinear:
+    halo_mass_function_effect: unknown
+    simulation_calibrated: unknown
+    subhalo_mass_function_effect: unknown
+symmetries:
+  stabilizing_mechanism: Dark number U(1)_D stabilizes the lightest dark-sector state while anomalous
+    sphaleron processes redistribute the generated asymmetry.
+  symmetries:
+  - breaking: first-order dark Higgs phase transition above the electroweak phase transition
+    breaking_scale: null
+    exact_or_approximate: broken
+    name: SU(2)_D
+    type: gauge
+  - breaking: anomalous under SU(2)_D and, through messengers, under SU(2)_L
+    breaking_scale: null
+    exact_or_approximate: broken
+    name: U(1)_D dark number
+    type: global
+  - breaking: electroweak phase transition
+    breaking_scale:
+      description: Relevant for sphaleron decoupling.
+      name: electroweak scale
+      role: core
+      status: established
+    exact_or_approximate: broken
+    name: SU(2)_L electroweak
+    type: gauge
+  topological_defects_possible: unknown
+theory:
+  eft_cutoff: null
+  embedded_in_larger_framework: 'yes'
+  lagrangian_available: partial
+  notes: The paper gives the dark-sector basis and a chiral electroweak messenger sector; additional light
+    hidden states are introduced to remove the symmetric abundance.
+  parent_frameworks:
+  - asymmetric dark matter
+  - supersymmetric hidden sector
+  - electroweak sphaleron transfer
+  renormalizable: unknown
+  theory_level: uv_complete
+validity_domain:
+- applies_to: production
+  caveats: []
+  condition: The dark phase transition must occur above the electroweak phase transition so electroweak
+    sphalerons can reprocess the asymmetry.
+  extrapolation_risk: medium
+  id: sphaleron_timing
+  source_reference_ids: []
+  status: assumed
+- applies_to: particle_content
+  caveats: []
+  condition: The messenger doublet admixture in the DM state must be small enough to avoid invisible-Z-width
+    issues.
+  extrapolation_risk: medium
+  id: messenger_mixing
+  source_reference_ids: []
+  status: assumed
+- applies_to: cosmological_history
+  caveats: []
+  condition: Light z fermions are viable only if the hidden sector is sufficiently cooler than the SM.
+  extrapolation_risk: medium
+  id: light_hidden_bbn
+  source_reference_ids: []
+  status: assumed
+observables:
+- caveats:
+  - B/D depends on species lighter than the electroweak phase transition and sphaleron decoupling details.
+  channel: cosmology
+  effect_direction: model_dependent
+  environments:
+  - early universe
+  id: high_scale_sphaleron_transfer_density
+  key_quantities:
+  - name: baryon-to-dark asymmetry ratio
+    role: core
+    source_reference_ids:
+    - src_primary_1008_1997
+    status: inferred
+    symbol: B/D
+    value: 33/127 benchmark
+  - name: dark matter mass
+    role: core
+    source_reference_ids:
+    - src_primary_1008_1997
+    status: inferred
+    symbol: m_X
+    unit: GeV
+    value: approximately 1 GeV benchmark
+  linked_constraints: []
+  linked_routes:
+  - high_scale_darkogenesis_route
+  name: Electroweak-sphaleron transfer of dark asymmetry
+  notes: null
+  observability: medium
+  predicted_effect: A high-scale dark phase transition above the electroweak phase transition transfers
+    dark asymmetry to B and L through leptodark messengers and electroweak sphalerons.
+  redshift_range: above electroweak phase transition through sphaleron decoupling
+  relevance: critical
+  scale_range: null
+  source_reference_ids:
+  - src_primary_1008_1997
+  subchannel: ADM density relation
+- caveats:
+  - Limits should be modernized before strong exclusion claims.
+  channel: collider
+  effect_direction: rate_change
+  environments:
+  - LEP
+  - colliders
+  id: high_scale_leptodark_collider
+  key_quantities:
+  - name: charged leptodark mass
+    range: '>100.8'
+    role: core
+    source_reference_ids:
+    - src_primary_1008_1997
+    status: inferred
+    symbol: m_L
+    unit: GeV
+  - name: neutral leptodark mass
+    range: '>45.0'
+    role: core
+    source_reference_ids:
+    - src_primary_1008_1997
+    status: inferred
+    symbol: m_N
+    unit: GeV
+  - name: S parameter
+    role: core
+    source_reference_ids:
+    - src_primary_1008_1997
+    status: inferred
+    symbol: S
+    value: about 0.11 for degenerate leptodarks
+  linked_constraints:
+  - high_scale_leptodark_precision_lep
+  - high_scale_z_width_mixing
+  linked_routes:
+  - high_scale_darkogenesis_route
+  name: Leptodark precision and collider signals
+  notes: null
+  observability: medium
+  predicted_effect: The chiral messenger leptodarks carry SU(2)_L and U(1)_D quantum numbers, contributing
+    to precision electroweak observables and direct-production limits.
+  redshift_range: null
+  relevance: high
+  scale_range: electroweak scale
+  source_reference_ids:
+  - src_primary_1008_1997
+  subchannel: electroweak messenger sector
+- caveats:
+  - No numeric Delta N_eff likelihood is given.
+  channel: cosmology
+  effect_direction: null_signal
+  environments:
+  - early universe
+  id: high_scale_bbn_extra_dof
+  key_quantities:
+  - name: annihilation cross section to z fermions
+    role: core
+    source_reference_ids:
+    - src_primary_1008_1997
+    status: inferred
+    symbol: <sigma v>_XX->zz
+    unit: cm^3/s
+    value: about 2e-24 cm^3/s benchmark scaling
+  linked_constraints:
+  - high_scale_bbn_hidden_radiation
+  linked_routes:
+  - high_scale_darkogenesis_route
+  name: Cool hidden-sector radiation and BBN
+  notes: null
+  observability: medium
+  predicted_effect: Additional light z fermions used for symmetric-annihilation removal are harmless for
+    BBN if sufficiently light and cooler than the SM.
+  redshift_range: BBN epoch
+  relevance: medium
+  scale_range: null
+  source_reference_ids:
+  - src_primary_1008_1997
+  subchannel: extra degrees of freedom
+- caveats:
+  - This scattering is tied to the messenger admixture, not fixed by darkogenesis alone.
+  channel: direct_detection
+  effect_direction: rate_change
+  environments:
+  - direct-detection targets
+  - colliders
+  id: high_scale_z_mediated_direct_detection
+  key_quantities:
+  - name: DM-neutron cross section
+    role: core
+    source_reference_ids:
+    - src_primary_1008_1997
+    status: inferred
+    symbol: sigma_n
+    unit: cm^2
+    value: about 5e-42 cm^2 times mixing factors
+  - name: messenger mixing
+    role: core
+    source_reference_ids:
+    - src_primary_1008_1997
+    status: inferred
+    symbol: epsilon
+  linked_constraints:
+  - high_scale_z_width_mixing
+  linked_routes:
+  - high_scale_darkogenesis_route
+  name: Z-mediated scattering from messenger admixture
+  notes: null
+  observability: medium
+  predicted_effect: A messenger-doublet fraction permits Z-mediated scattering; the paper quotes a benchmark
+    DM-neutron cross section around 5e-42 cm^2 times mixing factors and notes monojet constraints.
+  redshift_range: null
+  relevance: medium
+  scale_range: nuclear recoil and collider missing-energy scales
+  source_reference_ids:
+  - src_primary_1008_1997
+  subchannel: nuclear recoil / monojet-adjacent
+- caveats:
+  - The paper does not compute a detector-specific spectrum.
+  channel: gravitational_waves
+  effect_direction: enhancement
+  environments:
+  - future gravitational-wave observatories
+  id: high_scale_phase_transition_gravitational_waves
+  key_quantities:
+  - name: dark phase transition temperature
+    range: below 100 GeV to 100 TeV
+    role: core
+    source_reference_ids:
+    - src_primary_1008_1997
+    status: inferred
+    symbol: T_*
+    unit: GeV-TeV
+  linked_constraints: []
+  linked_routes:
+  - high_scale_darkogenesis_route
+  name: First-order dark phase transition gravitational waves
+  notes: null
+  observability: medium
+  predicted_effect: The first-order hidden-sector phase transition could yield a gravitational-wave signal
+    for transition temperatures below 100 GeV to 100 TeV.
+  redshift_range: phase transition epoch
+  relevance: medium
+  scale_range: stochastic gravitational-wave frequencies
+  source_reference_ids:
+  - src_primary_1008_1997
+  subchannel: stochastic background
+constraints:
+- allowed_regions:
+  - For degenerate charged and neutral leptodarks, the paper quotes S=1/3pi about 0.11 and T=U=0, compatible
+    at 95 percent CL.
+  applies: 'yes'
+  assumptions:
+  - can_be_relaxed: partial
+    description: Hypercharge assignments or bound states avoid stable fractionally charged leptodarks
+      after electroweak symmetry breaking.
+    id: integral_charge_assignment
+    impact_if_violated: null
+    notes: null
+    scope: model building
+    source_reference_ids:
+    - src_primary_1008_1997
+    status: assumed
+  benchmark_implications:
+  - Mass splittings can improve agreement with precision data.
+  caveats:
+  - Collider limits are historical values quoted by the 2010 paper and require updating for modern searches.
+  constrained_parameters:
+  - leptodark masses
+  - S
+  - T
+  - U
+  constraint_type: collider
+  data_release: LEP and precision electroweak limits as quoted in primary paper
+  excluded_regions:
+  - Charged leptodarks must exceed the LEP limit m_L > 100.8 GeV and neutral leptodarks m_N > 45.0 GeV
+    as quoted in the paper.
+  id: high_scale_leptodark_precision_lep
+  likelihood_available: 'no'
+  likelihood_reference: null
+  name: Leptodark electroweak precision and LEP limits
+  notes: null
+  observable_channel: precision electroweak and direct production
+  recasting_needed: 'yes'
+  robustness: medium
+  source_reference_ids:
+  - src_primary_1008_1997
+- allowed_regions:
+  - Small messenger admixture keeps the DM dominantly singlet/dark-doublet.
+  applies: 'yes'
+  assumptions:
+  - can_be_relaxed: partial
+    description: The dark matter mass eigenstate has only a small neutral messenger-doublet component.
+    id: small_messenger_admixture
+    impact_if_violated: null
+    notes: null
+    scope: collider
+    source_reference_ids:
+    - src_primary_1008_1997
+    status: assumed
+  benchmark_implications:
+  - Z-mediated scattering can be large enough to be constrained by monojet searches for benchmark mixing.
+  caveats:
+  - The text does not supply a full collider likelihood.
+  constrained_parameters:
+  - messenger doublet component
+  - mixing angle
+  constraint_type: collider
+  data_release: null
+  excluded_regions:
+  - The messenger-doublet component of the DM state should be small, quoted as fourth power below about
+    10^-3, to avoid invisible Z-width constraints.
+  id: high_scale_z_width_mixing
+  likelihood_available: 'no'
+  likelihood_reference: null
+  name: Invisible Z-width bound on messenger-doublet admixture
+  notes: null
+  observable_channel: Z invisible width and monojet
+  recasting_needed: 'yes'
+  robustness: medium
+  source_reference_ids:
+  - src_primary_1008_1997
+- allowed_regions:
+  - The massless z fermion is stated not to cause BBN problems if it is sufficiently light and the hidden
+    sector is much cooler than the SM after decoupling before QCD.
+  applies: parameter_dependent
+  assumptions:
+  - can_be_relaxed: unknown
+    description: The hidden sector decoupled from the visible sector before the QCD phase transition and
+      is cooler than the SM at BBN.
+    id: cool_hidden_sector
+    impact_if_violated: null
+    notes: null
+    scope: cosmology
+    source_reference_ids:
+    - src_primary_1008_1997
+    status: assumed
+  benchmark_implications:
+  - Additional hidden light states can remove the symmetric abundance while remaining BBN-safe under the
+    cooler-hidden-sector assumption.
+  caveats:
+  - A full Delta N_eff calculation is not provided in the primary text.
+  constrained_parameters:
+  - hidden-sector temperature
+  - z fermion mass
+  constraint_type: cosmological
+  data_release: null
+  excluded_regions: []
+  id: high_scale_bbn_hidden_radiation
+  likelihood_available: 'no'
+  likelihood_reference: null
+  name: BBN condition for light hidden-sector radiation
+  notes: null
+  observable_channel: extra relativistic degrees of freedom
+  recasting_needed: partial
+  robustness: medium
+  source_reference_ids:
+  - src_primary_1008_1997
+theory_to_observable_routing:
+  routes:
+  - agent_notes: The high-scale route is analytically specified but needs modern recasts for data use.
+    caveats:
+    - Messenger limits and monojet statements are from the 2010-era primary paper.
+    constraint_ids:
+    - high_scale_leptodark_precision_lep
+    - high_scale_z_width_mixing
+    - high_scale_bbn_hidden_radiation
+    derived_quantities:
+    - baryon asymmetry
+    - m_X
+    - precision electroweak observables
+    - Delta N_eff estimate
+    - direct-detection cross section
+    - GW target
+    description: Route high-scale messenger darkogenesis through electroweak sphaleron transfer, messenger
+      constraints, BBN, direct detection, and gravitational waves.
+    forward_model_chain:
+    - inputs:
+      - dark Higgs potential
+      - dark sphalerons
+      notes: null
+      outputs:
+      - dark number asymmetry
+      step_id: generate_dark_asymmetry
+      step_type: semi_analytic_model
+      tool_or_code: null
+      validity: Paper gives analytic model requirements.
+    - inputs:
+      - leptodark field content
+      - sphaleron equilibrium assumptions
+      notes: null
+      outputs:
+      - B/D
+      - m_X
+      step_id: ew_sphaleron_transfer
+      step_type: analytic_formula
+      tool_or_code: null
+      validity: Primary paper gives B/D=33/127 and m_X about 1 GeV for its benchmark.
+    - inputs:
+      - leptodark masses
+      - mass splittings
+      - messenger mixing
+      notes: null
+      outputs:
+      - S,T,U
+      - LEP limits
+      - Z-width constraints
+      step_id: messenger_constraints
+      step_type: recasting
+      tool_or_code: null
+      validity: Modern collider recast required.
+    - inputs:
+      - Y,Ybar,z sector
+      - hidden temperature
+      notes: null
+      outputs:
+      - annihilation rate
+      - BBN viability
+      step_id: symmetric_abundance_and_bbn
+      step_type: analytic_formula
+      tool_or_code: null
+      validity: Primary text provides benchmark annihilation and BBN assumptions.
+    - inputs:
+      - Z/Higgs portal admixtures
+      - T_*
+      notes: null
+      outputs:
+      - direct-detection/collider rates
+      - GW reach
+      step_id: searches
+      step_type: recasting
+      tool_or_code: null
+      validity: Detector-specific likelihoods are absent.
+    id: high_scale_darkogenesis_route
+    input_parameters:
+    - messenger masses
+    - messenger mixing
+    - B/D
+    - hidden-sector light states
+    - phase-transition temperature
+    likelihoods: []
+    observable_ids:
+    - high_scale_sphaleron_transfer_density
+    - high_scale_leptodark_collider
+    - high_scale_bbn_extra_dof
+    - high_scale_z_mediated_direct_detection
+    - high_scale_phase_transition_gravitational_waves
+    required_code_resources:
+    - sphaleron chemical-potential solver
+    - collider recast
+    - Delta N_eff calculation
+    - GW phase-transition calculator
+    route_status: planned
+    source_model_features:
+    - first-order hidden-sector phase transition above EWPT
+    - leptodark messenger sector
+    - U(1)_D anomaly under SU(2)_L
+    - electroweak sphaleron transfer
+    validation_tests:
+    - recover B/D=33/127 and m_X about 1 GeV
+    - apply quoted LEP limits
+    - check hidden-sector BBN assumption

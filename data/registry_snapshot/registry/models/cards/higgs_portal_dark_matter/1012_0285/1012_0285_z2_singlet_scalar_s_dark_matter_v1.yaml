@@ -1,0 +1,623 @@
+_source:
+  shard: arXiv_src_1012_001_wds.tar
+  paper_id: '1012_0285'
+  source_member: 1012_0285.json
+  enriched: true
+  enrichment_schema_version: dm_model_ocr_enrichment_smoke_v0
+schema_version: model_only_v0
+model_id: 1012_0285_z2_singlet_scalar_s_dark_matter_v1
+identity:
+  name: Z2-odd singlet scalar S dark matter with low-scale leptogenesis
+  family: higgs_portal_dark_matter
+  aliases:
+  - singlet scalar S thermal relic
+  short_description: A real gauge-singlet scalar S stabilized by a Z2 symmetry, coupled to the Higgs and
+    singlet Majorana fermions in a model that also lowers the leptogenesis scale.
+  historical_origin_or_motivation: The paper combines singlet-scalar thermal dark matter with singlet-fermion
+    leptogenesis and imposes a Z2 symmetry to connect the sectors.
+  status: speculative
+  model_kind: complete_theory
+theory:
+  theory_level: uv_complete
+  parent_frameworks:
+  - Standard Model plus real singlet scalar
+  - type-I seesaw with gauge-singlet Majorana fermions
+  lagrangian_available: 'yes'
+  renormalizable: 'yes'
+  embedded_in_larger_framework: 'yes'
+  notes: The Lagrangian includes L_SM, Majorana N_i, a real scalar potential V(H,S), an extra Majorana
+    N, and S N_i N couplings.
+particle_content:
+  dark_matter_candidate:
+    name: real gauge-singlet scalar S
+    spin: '0'
+    statistics: scalar
+    elementary_or_composite: elementary
+    number_of_components: single_component
+  additional_dark_sector_particles:
+  - Z2-odd Majorana singlet fermion N
+  - right-handed Majorana neutrinos N_i
+  mediators:
+  - Higgs boson
+  - singlet scalar S in interactions with N
+  - right-handed Majorana neutrinos N_i
+  dark_radiation_species: []
+  excited_or_degenerate_states:
+  - N may be the heavier Z2-odd state when m_N > m_S
+  long_lived_particles: []
+  unstable_parent_particles:
+  - N_i heavy singlet fermions involved in leptogenesis
+  standard_model_extension: substantial
+symmetries:
+  stabilizing_mechanism: An exact Z2 symmetry under which S and N are odd makes the lighter odd particle
+    stable.
+  symmetries:
+  - name: Z2
+    type: discrete
+    exact_or_approximate: exact
+    breaking: unbroken; S -> -S and N -> -N
+  topological_defects_possible: unknown
+interactions:
+  portals:
+  - higgs
+  - neutrino
+  standard_model_targets:
+  - Higgs boson
+  - W bosons
+  - Z bosons
+  - SM fermions through Higgs exchange
+  - lepton doublets through singlet-neutrino interactions
+  dark_sector_couplings:
+  - lambda_HS |H|^2 S^2
+  - lambda_S S^4
+  - alpha_i S N_i N
+  mediator_types:
+  - Higgs boson
+  - right-handed Majorana neutrinos N_i
+  interaction_operators:
+  - '|H|^2 S^2'
+  - S N_i N
+  - H N_i L_j
+  scattering:
+    elastic: unknown
+    inelastic: unknown
+    momentum_dependence: unknown
+    velocity_dependence: unknown
+    spin_dependence: not_applicable
+  annihilation_channels:
+  - S S -> H H
+  - S S -> W+ W-
+  - S S -> Z Z
+  - S S -> f fbar
+  decay_channels: []
+  self_scattering_channels:
+  - S S self-interaction via lambda_S
+  tree_or_loop_level: tree
+parameters:
+  core:
+  - name: singlet scalar mass
+    symbol: m_S
+    description: m_S^2=m_s^2+lambda_HS <H>^2 after electroweak symmetry breaking.
+    role: core
+    status: inferred
+  - name: Z2-odd singlet fermion mass
+    symbol: m_N
+    description: For this variant m_N > m_S.
+    role: core
+    status: inferred
+  - name: Higgs portal coupling
+    symbol: lambda_HS
+    description: Controls S annihilation into SM final states and relic density.
+    role: core
+    status: inferred
+  - name: singlet self-coupling
+    symbol: lambda_S
+    description: Quartic self-coupling of S.
+    role: core
+    status: inferred
+  - name: singlet-fermion couplings
+    symbol: alpha_i
+    description: Couplings in S N_i N that also enter leptogenesis.
+    role: core
+    status: inferred
+  - name: right-handed-neutrino masses
+    symbol: M_i
+    description: Masses of Majorana N_i; low-scale leptogenesis can have N_1 as low as O(TeV) in suitable
+      regions.
+    role: core
+    status: inferred
+  nuisance: []
+  derived:
+  - name: thermal annihilation cross section
+    symbol: <sigma v>
+    description: Computed for S S final states into H H, W W, Z Z, and fermions.
+    role: derived
+    status: inferred
+production:
+  mechanisms:
+  - thermal freeze-out of S through Higgs-portal annihilation
+  thermal_equilibrium_with_standard_model: 'yes'
+  thermal_equilibrium_with_hidden_sector: partial
+  abundance_set_by:
+  - S S annihilation cross sections into SM particles
+  - lambda_HS
+  - m_S
+  depends_on_reheating_temperature: unknown
+  can_produce_all_dark_matter: parameter_dependent
+  nonthermal_momentum_distribution: 'no'
+  notes: The paper gives Boltzmann-equation relic-density formulae for the real scalar S.
+relic_density:
+  full_or_subcomponent: full_dark_matter
+  target_fraction:
+    name: dark matter abundance
+    symbol: Omega_S
+    description: Relic density of S from thermal freeze-out.
+    value: matched in viable parameter regions
+    status: inferred
+  calculation_type: thermal
+  key_dependencies:
+  - lambda_HS
+  - m_S
+  - Higgs mass and width
+  - annihilation final states HH, WW, ZZ, f fbar
+  requires_entropy_dilution: unknown
+  overclosure_risk: parameter_dependent
+  underproduction_risk: parameter_dependent
+  tuning_assessment: unknown
+cosmological_history:
+  standard_history_assumed: true
+  nonstandard_features:
+  - low-scale leptogenesis from heavy singlet-fermion decays in the same model
+  dark_sector_temperature: null
+  delta_neff: null
+  kinetic_decoupling: null
+  chemical_decoupling:
+    name: S freeze-out temperature
+    symbol: T_fs
+    description: Temperature appearing in the S relic-density expression.
+    value: null
+    status: inferred
+  phase_transitions: []
+  topological_defects: []
+  isocurvature_perturbations: unknown
+  bbn_relevance: unknown
+  cmb_relevance: unknown
+phase_space:
+  distribution_type: thermal
+  distribution_function_available: 'no'
+  notes: The paper treats S as a thermal relic but does not give a full distribution function.
+structure_formation:
+  linear:
+    behaves_like_cdm: unknown
+    transfer_function_shape: unknown
+    small_scale_power_effect: unknown
+  nonlinear:
+    halo_mass_function_effect: unknown
+    subhalo_mass_function_effect: unknown
+    simulation_calibrated: unknown
+validity_domain:
+- id: scalar_lighter_than_n
+  applies_to: model
+  condition: This variant assumes m_N > m_S so S is the stable Z2-odd relic.
+  status: assumed
+  extrapolation_risk: high
+  source_reference_ids:
+  - '1012.0285'
+- id: z2_unbroken
+  applies_to: model
+  condition: The Z2 symmetry under which S and N are odd remains unbroken.
+  status: assumed
+  extrapolation_risk: high
+  source_reference_ids:
+  - '1012.0285'
+- id: thermal_freezeout_formulae
+  applies_to: computation
+  condition: Relic-density formulae apply to the annihilation channels and equilibrium assumptions used
+    in the paper.
+  status: approximate
+  extrapolation_risk: medium
+  source_reference_ids:
+  - '1012.0285'
+assumptions:
+  global:
+  - id: z2_exact
+    description: S and N are the only Z2-odd fields and the lighter of them is stable.
+    scope: theory
+    status: assumed
+    can_be_relaxed: unknown
+    source_reference_ids:
+    - '1012.0285'
+  - id: scalar_variant_mass_ordering
+    description: The singlet scalar is lighter than the Z2-odd singlet fermion.
+    scope: theory
+    status: assumed
+    can_be_relaxed: unknown
+    source_reference_ids:
+    - '1012.0285'
+  - id: thermal_relic
+    description: S remains in thermal contact long enough for freeze-out to set the abundance.
+    scope: production
+    status: assumed
+    can_be_relaxed: unknown
+    source_reference_ids:
+    - '1012.0285'
+  constraint_specific: []
+  computation_specific: []
+associated_code:
+  has_associated_code: unknown
+  code_summary: No model-specific public code is described in the assigned paper text.
+  repositories: []
+  packages_or_modules: []
+  notebooks: []
+  scripts: []
+provenance:
+  model_id: 1012_0285_z2_singlet_scalar_s_dark_matter_v1
+  model_name: Z2-odd singlet scalar S dark matter with low-scale leptogenesis
+  model_family: higgs_portal_dark_matter
+  entry_version: 0.1.0
+  status: machine_extracted
+  created_at: '2026-05-31'
+  last_updated: '2026-05-31'
+  sources:
+    primary_papers:
+    - reference_id: '1012.0285'
+      title: Low-scale Leptogenesis and Dark Matter
+      authors:
+      - Wei-Chih Huang
+      year: 2010
+      arxiv_id: '1012.0285'
+      doi: null
+      url: null
+      role: original_model
+      notes: Assigned paper text from run-local SQLite database.
+    - arxiv_id: '1012.0285'
+      authors:
+      - Huang, Wei-Chih
+      doi: 10.48550/arXiv.1012.0285
+      notes: Primary paper full text resolved from local SQLite cache; ADS used for sanitized metadata.
+      reference_id: primary_1012_0285
+      role: original_model
+      title: Low-scale Leptogenesis and Dark Matter
+      url: https://arxiv.org/abs/1012.0285
+      year: 2010
+    constraint_papers:
+    - arxiv_id: '0811.0658'
+      authors:
+      - He, Xiao-Gang
+      - Li, Tong
+      - Li, Xue-Qian
+      - Tandean, Jusak
+      - Tsai, Ho-Chin
+      doi: 10.1103/PhysRevD.79.023521
+      notes: Resolved related text read for scalar Higgs-portal direct-detection constraints.
+      reference_id: scalar_direct_constraints_2009
+      role: constraint
+      title: Constraints on scalar dark matter from direct experimental searches
+      url: https://arxiv.org/abs/0811.0658
+      year: 2009
+    external_databases: []
+    review_papers:
+    - arxiv_id: hep-ph/0309342
+      authors:
+      - Pilaftsis, Apostolos
+      - Underwood, Thomas E. J.
+      doi: 10.1016/j.nuclphysb.2004.05.029
+      notes: Resolved related text read for low-scale/resonant leptogenesis context.
+      reference_id: resonant_leptogenesis_2004
+      role: review
+      title: Resonant leptogenesis
+      url: https://arxiv.org/abs/hep-ph/0309342
+      year: 2004
+  extraction:
+    method: llm_assisted
+    extracted_by: codex_batch_0006
+    extractor_name: Codex GPT-5 batch worker
+    extraction_date: '2026-05-31'
+    confidence: high
+    source_chunks_or_sections:
+    - reference_id: '1012.0285'
+      section: Formalism
+      page: null
+      quote_or_summary: The model adds a real singlet scalar S, singlet Majorana fermions N_i and N, and
+        a Z2 under which S and N are odd.
+    - reference_id: '1012.0285'
+      section: Dark matter candidate
+      page: null
+      quote_or_summary: The lighter of S and N can be a thermal relic; the paper computes S and N relic
+        abundances separately.
+    unresolved_items:
+    - Direct-detection exclusions from the related darkon paper are not direct exclusions of this full
+      leptogenesis model.
+    - Exact scalar masses/couplings allowed by both relic density and low-scale leptogenesis were not
+      digitized from figures.
+  evidence:
+    particle_content:
+    - reference_id: '1012.0285'
+      note: The paper introduces S, N_i, and N, with S and N odd under Z2; the lighter odd particle is
+        the dark matter.
+      confidence: high
+      section: Formalism
+    symmetries:
+    - reference_id: '1012.0285'
+      note: The Lagrangian preserves S -> -S and N -> -N, forbidding cubic S terms and H L N.
+      confidence: high
+      section: Formalism
+    interactions:
+    - reference_id: '1012.0285'
+      note: The scalar potential includes lambda_HS |H|^2 S^2 and the new interaction S N_i N.
+      confidence: high
+      section: Formalism
+    production_mechanism:
+    - reference_id: '1012.0285'
+      note: For S DM, the paper computes thermal annihilation into H H, W W, Z Z, and fermion pairs.
+      confidence: high
+      section: Dark matter candidate
+    cosmological_history:
+    - reference_id: '1012.0285'
+      note: The model links the Z2 relic to low-scale leptogenesis from singlet-fermion interactions.
+      confidence: high
+      section: Leptogenesis and dark matter
+    parameter_ranges:
+    - reference_id: '1012.0285'
+      note: The paper identifies lambda_HS and m_S as key relic-density controls for S DM.
+      confidence: medium
+      section: Dark matter candidate
+    validity_domain:
+    - reference_id: '1012.0285'
+      note: The scalar-DM branch is explicitly labeled S as dark matter with m_N > m_S.
+      confidence: high
+      section: Dark matter candidate
+    constraints:
+    - confidence: high
+      note: Primary paper provides relic-density setup for S.
+      page: null
+      reference_id: primary_1012_0285
+      section: dark matter candidate section
+    - confidence: medium
+      note: Related paper provides historical XENON10/CDMSII exclusions for a minimal real singlet scalar.
+      page: null
+      reference_id: scalar_direct_constraints_2009
+      section: abstract
+    observables:
+    - confidence: high
+      note: Primary text identifies S as a thermal Higgs-portal dark-matter candidate and lists annihilation
+        channels.
+      page: null
+      reference_id: primary_1012_0285
+      section: dark matter candidate section
+    - confidence: medium
+      note: Related scalar-Higgs-portal paper supports using nuclear-recoil constraints as a recast target.
+      page: null
+      reference_id: scalar_direct_constraints_2009
+      section: abstract
+    routes:
+    - confidence: high
+      note: Primary paper gives analytic annihilation channels and freeze-out relation for S.
+      page: null
+      reference_id: primary_1012_0285
+      section: dark matter candidate section
+  review:
+    human_reviewed: false
+    reviewed_by: null
+    review_date: null
+    expert_reviewed: false
+    expert_reviewer: null
+    expert_review_date: null
+    reviewer_notes: []
+    scientific_confidence: high
+    implementation_confidence: medium
+robustness:
+  overall: medium
+  theory_robustness: medium
+  observational_robustness: unknown
+  computational_robustness: medium
+  dominant_uncertainties:
+  - Flavor effects in leptogenesis are only discussed qualitatively.
+  - Phenomenological constraints on S are cited but not extracted here.
+  validation_status: expert_judgment_only
+  notes: The particle content, symmetry, interactions, and relic calculation are all explicit in the paper
+    text.
+agent_failure_modes:
+  warnings:
+  - id: do_not_merge_variants
+    severity: medium
+    category: other
+    warning: The same paper also studies N as the dark matter; keep the S and N mass-ordering branches
+      distinct.
+    source_reference_ids:
+    - '1012.0285'
+observables:
+- caveats: []
+  channel: cosmology
+  effect_direction: rate_change
+  environments: []
+  id: scalar_s_freezeout
+  key_quantities:
+  - name: scalar mass
+    role: core
+    status: inferred
+    symbol: m_S
+    unit: GeV
+  - name: Higgs portal coupling
+    role: core
+    status: inferred
+    symbol: lambda_HS
+  - name: annihilation cross section
+    role: derived
+    status: inferred
+    symbol: <sigma v>
+  linked_constraints:
+  - scalar_s_relic_density
+  linked_routes:
+  - scalar_s_leptogenesis_route
+  name: Singlet-scalar freeze-out abundance
+  notes: Primary text gives the scalar-annihilation channels and freeze-out relation.
+  observability: medium
+  predicted_effect: Z2-odd real scalar S annihilates through the Higgs portal into HH, WW, ZZ, and fermion
+    pairs, setting its thermal relic abundance.
+  redshift_range: null
+  relevance: high
+  scale_range: null
+  source_reference_ids:
+  - primary_1012_0285
+  subchannel: thermal relic abundance
+- caveats:
+  - Requires recast because the related constraint paper studies a minimal darkon model.
+  channel: direct_detection
+  effect_direction: rate_change
+  environments: []
+  id: scalar_s_direct_detection
+  key_quantities:
+  - name: spin-independent cross section
+    role: derived
+    status: inferred
+    symbol: sigma_SI
+  - name: Higgs portal coupling
+    role: core
+    status: inferred
+    symbol: lambda_HS
+  - name: scalar mass
+    role: core
+    status: inferred
+    symbol: m_S
+    unit: GeV
+  linked_constraints:
+  - scalar_higgs_portal_direct_detection
+  linked_routes:
+  - scalar_s_leptogenesis_route
+  name: Singlet-scalar Higgs-portal nuclear recoil
+  notes: Direct-detection constraint is inferred from the related scalar-Higgs-portal constraint paper
+    and the primary Higgs-portal coupling.
+  observability: medium
+  predicted_effect: The same Higgs portal coupling that controls S annihilation also produces spin-independent
+    nuclear recoils.
+  redshift_range: null
+  relevance: high
+  scale_range: null
+  source_reference_ids:
+  - scalar_direct_constraints_2009
+  - primary_1012_0285
+  subchannel: spin-independent scalar-nucleon scattering through Higgs exchange
+constraints:
+- allowed_regions:
+  - S can be viable when its Higgs-portal annihilation rate produces the required abundance and remains
+    compatible with the leptogenesis setup.
+  applies: 'yes'
+  assumptions: []
+  benchmark_implications:
+  - Relic density fixes lambda_HS for a chosen m_S and Higgs mass.
+  caveats: []
+  constrained_parameters:
+  - m_S
+  - lambda_HS
+  - <sigma v>
+  constraint_type: cosmological
+  data_release: WMAP-era relic-density and baryon-asymmetry targets in primary paper
+  excluded_regions: []
+  id: scalar_s_relic_density
+  likelihood_available: unknown
+  likelihood_reference: null
+  name: Thermal relic-density consistency for S
+  notes: Primary paper treats S as the lighter Z2-odd particle when m_N > m_S.
+  observable_channel: thermal relic density
+  recasting_needed: partial
+  robustness: medium
+  source_reference_ids:
+  - primary_1012_0285
+- allowed_regions:
+  - Primary model remains viable only in regions where its Higgs portal coupling evades analogous direct-detection
+    limits.
+  applies: recast_required
+  assumptions: []
+  benchmark_implications:
+  - Direct detection can remove the same Higgs-portal parameter space that would otherwise set the scalar
+    relic abundance.
+  caveats: []
+  constrained_parameters:
+  - m_S
+  - lambda_HS
+  - sigma_SI
+  constraint_type: direct_detection
+  data_release: XENON10/CDMSII scalar-Higgs-portal constraints in related paper
+  excluded_regions:
+  - A related real-singlet scalar analysis reports XENON10/CDMSII exclusions for darkon masses from about
+    10 GeV up to 50/70/75 GeV for Higgs masses 120/200/350 GeV.
+  id: scalar_higgs_portal_direct_detection
+  likelihood_available: unknown
+  likelihood_reference: null
+  name: Scalar Higgs-portal direct-detection bounds
+  notes: Use only as a recast target, not as a direct exclusion of the 1012.0285 scalar model.
+  observable_channel: direct_detection
+  recasting_needed: 'yes'
+  robustness: medium
+  source_reference_ids:
+  - scalar_direct_constraints_2009
+  - primary_1012_0285
+theory_to_observable_routing:
+  routes:
+  - agent_notes: Separate the scalar relic calculation from the fermion-N relic branch.
+    caveats: []
+    constraint_ids:
+    - scalar_s_relic_density
+    - scalar_higgs_portal_direct_detection
+    derived_quantities:
+    - SS annihilation rates
+    - Omega_S h^2
+    - allowed leptogenesis parameter region
+    description: Jointly evaluate S freeze-out and its role in the low-scale leptogenesis model.
+    forward_model_chain:
+    - inputs:
+      - m_S
+      - lambda_HS
+      - m_h
+      notes: Use a factor appropriate to real scalar S.
+      outputs:
+      - SS -> HH, WW, ZZ, f fbar cross sections
+      step_id: annihilation
+      step_type: analytic_formula
+      tool_or_code: null
+      validity: Primary paper provides tree-level formulae.
+    - inputs:
+      - annihilation cross sections
+      notes: The primary paper references the Boltzmann equation for precision.
+      outputs:
+      - Omega_S h^2
+      step_id: freezeout
+      step_type: boltzmann_solver
+      tool_or_code: Boltzmann equation or freeze-out approximation
+      validity: Valid when S is the stable thermal relic.
+    - inputs:
+      - lambda_HS
+      - m_S
+      - Higgs/nucleon matrix elements
+      notes: Related scalar-Higgs-portal paper supplies an older constraint target.
+      outputs:
+      - sigma_SI and direct-detection compatibility
+      step_id: direct_detection_recast
+      step_type: recasting
+      tool_or_code: null
+      validity: Requires external direct-detection likelihoods.
+    id: scalar_s_leptogenesis_route
+    input_parameters:
+    - m_S
+    - lambda_HS
+    - lambda_i
+    - m_Ni
+    - m_N
+    likelihoods:
+    - thermal relic-density target
+    - scalar direct-detection upper limits
+    observable_ids:
+    - scalar_s_freezeout
+    - scalar_s_direct_detection
+    required_code_resources:
+    - Boltzmann solver
+    - Higgs-portal direct-detection recast
+    route_status: planned
+    source_model_features:
+    - Z2-odd real scalar S
+    - Higgs portal
+    - S-N-N_i interactions
+    validation_tests:
+    - recover primary freeze-out formulae
+    - recast against scalar direct-detection constraints

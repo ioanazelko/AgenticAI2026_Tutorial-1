@@ -1,0 +1,273 @@
+$schema: "https://json-schema.org/draft/2020-12/schema"
+$id: "https://darkmatterfm.org/schemas/common.schema.yaml"
+title: "Common reusable schema definitions"
+description: >
+  Shared definitions used across the DarkMatterFM BSM dark-matter theory
+  registry schemas.
+type: object
+additionalProperties: false
+
+$defs:
+  confidence_level:
+    type: string
+    enum: [low, medium, high, unknown]
+
+  relevance:
+    type: string
+    description: "How relevant a phenomenon, constraint, or observable is for this model."
+    enum: [none, low, medium, high, critical, unknown, not_applicable]
+
+  status:
+    type: string
+    description: "Generic evidence or implementation status."
+    enum:
+      - established
+      - inferred
+      - assumed
+      - approximate
+      - speculative
+      - disputed
+      - excluded
+      - deprecated
+      - specified
+      - derived
+      - benchmark
+      - unknown
+      - not_applicable
+
+  yes_no_unknown:
+    type: string
+    enum: ['yes', 'no', partial, unknown, not_applicable]
+
+  scalar_or_string:
+    anyOf:
+      - type: number
+      - type: string
+      - type: boolean
+      - type: "null"
+
+  numeric_or_symbolic_value:
+    anyOf:
+      - type: number
+      - type: string
+      - type: "null"
+      - type: array
+        items:
+          anyOf:
+            - type: number
+            - type: string
+            - type: "null"
+      - type: object
+        additionalProperties: true
+
+  parameter_range:
+    type: object
+    additionalProperties: false
+    properties:
+      min:
+        $ref: "#/$defs/numeric_or_symbolic_value"
+      max:
+        $ref: "#/$defs/numeric_or_symbolic_value"
+      inclusive_min:
+        type: boolean
+      inclusive_max:
+        type: boolean
+      unit:
+        type: [string, "null"]
+      notes:
+        type: [string, "null"]
+    required: [min, max]
+
+  parameter:
+    type: object
+    additionalProperties: false
+    description: >
+      A physical, nuisance, derived, computational, or phenomenological parameter.
+      Values may be numeric, symbolic, null, or structured when the allowed range is
+      model-dependent.
+    properties:
+      name:
+        type: string
+      symbol:
+        type: [string, "null"]
+      description:
+        type: [string, "null"]
+      value:
+        $ref: "#/$defs/numeric_or_symbolic_value"
+      fiducial_value:
+        $ref: "#/$defs/numeric_or_symbolic_value"
+      range:
+        anyOf:
+          - $ref: "#/$defs/parameter_range"
+          - type: array
+            minItems: 2
+            maxItems: 2
+            items:
+              $ref: "#/$defs/numeric_or_symbolic_value"
+          - type: string
+          - type: "null"
+      unit:
+        type: [string, "null"]
+      prior:
+        type: [string, "null"]
+        examples: [linear_uniform, log_uniform, literature_informed, fixed, derived]
+      scale:
+        type: [string, "null"]
+        enum: [linear, log, log10, natural_log, categorical, derived, null]
+      role:
+        type: [string, "null"]
+        enum: [core, nuisance, derived, benchmark, computational, cosmological, astrophysical, experimental, phenomenological, null]
+      status:
+        $ref: "#/$defs/status"
+      source_reference_ids:
+        type: array
+        items:
+          type: string
+      notes:
+        type: [string, "null"]
+    required: [name]
+
+  assumption:
+    type: object
+    additionalProperties: false
+    properties:
+      id:
+        type: string
+      description:
+        type: string
+      scope:
+        type: string
+        description: >
+          Free-form scope label; extraction uses a rich vocabulary
+          (e.g. "direct detection", "Lyman-alpha recast").
+        examples:
+          - global
+          - theory
+          - cosmological_history
+          - production
+          - structure_formation
+          - observable
+          - constraint
+          - computation
+          - emulator
+          - likelihood
+          - other
+      status:
+        $ref: "#/$defs/status"
+      impact_if_violated:
+        type: [string, "null"]
+      can_be_relaxed:
+        type: string
+        enum: ['yes', 'no', partial, unknown, not_applicable]
+      source_reference_ids:
+        type: array
+        items:
+          type: string
+      notes:
+        type: [string, "null"]
+    required: [id, description, scope, status]
+
+  validity_entry:
+    type: object
+    additionalProperties: false
+    properties:
+      id:
+        type: string
+      applies_to:
+        type: string
+        examples: [model, parameter, observable, likelihood, emulator, transfer_function, EFT]
+      condition:
+        type: string
+      valid_range:
+        anyOf:
+          - $ref: "#/$defs/parameter_range"
+          - type: string
+          - type: "null"
+      status:
+        $ref: "#/$defs/status"
+      extrapolation_risk:
+        type: string
+        enum: [low, medium, high, unknown, not_applicable]
+      caveats:
+        type: array
+        items:
+          type: string
+      source_reference_ids:
+        type: array
+        items:
+          type: string
+      notes:
+        type: [string, "null"]
+    required: [id, applies_to, condition, status]
+
+  robustness:
+    type: object
+    additionalProperties: false
+    properties:
+      overall:
+        type: string
+        enum: [low, medium, high, unknown]
+      theory_robustness:
+        type: string
+        enum: [low, medium, high, unknown, not_applicable]
+      observational_robustness:
+        type: string
+        enum: [low, medium, high, unknown, not_applicable]
+      computational_robustness:
+        type: string
+        enum: [low, medium, high, unknown, not_applicable]
+      constraint_robustness:
+        type: string
+        enum: [low, medium, high, unknown, not_applicable]
+      dominant_uncertainties:
+        type: array
+        items:
+          type: string
+      validation_status:
+        type: string
+        enum:
+          - validated
+          - partially_validated
+          - smoke_test_only
+          - unvalidated
+          - expert_judgment_only
+          - unknown
+      notes:
+        type: [string, "null"]
+    required: [overall]
+
+  agent_warning:
+    type: object
+    additionalProperties: false
+    description: >
+      A failure mode or caution that an automated agent should surface before
+      using this model entry in reasoning, routing, or inference.
+    properties:
+      id:
+        type: string
+      severity:
+        type: string
+        enum: [low, medium, high, critical, unknown]
+      category:
+        type: string
+        enum:
+          - invalid_mapping
+          - extrapolation
+          - assumption_mismatch
+          - missing_likelihood
+          - approximate_constraint
+          - disputed_claim
+          - code_unvalidated
+          - degeneracy
+          - unit_convention
+          - notation_conflict
+          - other
+      warning:
+        type: string
+      mitigation:
+        type: [string, "null"]
+      source_reference_ids:
+        type: array
+        items:
+          type: string
+    required: [id, severity, category, warning]

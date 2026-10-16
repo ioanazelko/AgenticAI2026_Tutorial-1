@@ -1,0 +1,863 @@
+_source:
+  shard: arXiv_src_1201_002_wds.tar
+  paper_id: '1201_0906'
+  source_member: 1201_0906.json
+  enriched: true
+  enrichment_schema_version: dm_model_ocr_enrichment_smoke_v0
+schema_version: model_only_v0
+model_id: 1201_0906_degenerate_leptophilic_radiative_neutrino_dm_v1
+identity:
+  name: Degenerate leptophilic radiative-neutrino-mass dark matter
+  family: radiative_neutrino_mass_dark_matter
+  aliases:
+  - Ma-model right-handed-neutrino dark matter
+  - leptophilic inelastic dark matter
+  short_description: A Z2-odd electroweak-scale radiative neutrino mass model in which the lightest right-handed
+    neutrino N_1 is stable dark matter and nearly degenerate N_2 enables coannihilation and loop-induced
+    inelastic photon-mediated nuclear scattering.
+  historical_origin_or_motivation: The paper studies a Ma radiative neutrino mass setup as a joint TeV-scale
+    origin for neutrino masses and dark matter, emphasizing the nearly degenerate N_1/N_2 leptophilic
+    direct-detection regime.
+  status: speculative
+  model_kind: complete_theory
+theory:
+  theory_level: uv_complete
+  parent_frameworks:
+  - Ma radiative neutrino mass model
+  - inert scalar doublet plus singlet fermions
+  lagrangian_available: 'yes'
+  renormalizable: 'yes'
+  embedded_in_larger_framework: unknown
+  notes: The paper gives the invariant Lagrangian and scalar potential for three right-handed neutrinos,
+    an inert Higgs doublet, and a Z2 symmetry.
+particle_content:
+  dark_matter_candidate:
+    name: N_1 right-handed neutrino
+    spin: 1/2
+    statistics: fermion
+    elementary_or_composite: elementary
+    number_of_components: single_component
+  additional_dark_sector_particles:
+  - N_2 nearly degenerate right-handed neutrino
+  - N_3 right-handed neutrino
+  - inert scalar doublet eta
+  mediators:
+  - inert scalar doublet eta
+  - loop-induced photon exchange
+  dark_radiation_species: []
+  excited_or_degenerate_states:
+  - N_2 nearly degenerate with N_1
+  long_lived_particles: []
+  unstable_parent_particles: []
+  standard_model_extension: substantial
+symmetries:
+  stabilizing_mechanism: Exact Z2 parity makes the lightest new Z2-odd particle stable; the paper takes
+    N_1 as that particle.
+  symmetries:
+  - name: Z2
+    type: discrete
+    exact_or_approximate: exact
+    breaking: unbroken because the inert doublet has zero vacuum expectation value
+    breaking_scale: null
+  - name: right-handed-neutrino number for N_1/N_2 degeneracy
+    type: approximate
+    exact_or_approximate: approximate
+    breaking: small mass splitting between N_1 and N_2 from symmetry-violating operators
+    breaking_scale: null
+  topological_defects_possible: unknown
+interactions:
+  portals:
+  - neutrino
+  - vector
+  - other
+  standard_model_targets:
+  - lepton doublets
+  - charged leptons in loops
+  - nuclei through photon exchange
+  dark_sector_couplings:
+  - Yukawa couplings h_i between N_i, lepton doublets, and the inert scalar doublet
+  - lambda_5 scalar coupling controlling radiative neutrino masses
+  mediator_types:
+  - inert scalar doublet
+  - loop-induced photon
+  interaction_operators:
+  - Yukawa interaction h_i L eta N_i
+  - transition charge and dipole operators between N_1 and N_2 induced at one loop
+  scattering:
+    elastic: 'no'
+    inelastic: 'yes'
+    momentum_dependence: strong
+    velocity_dependence: unknown
+    spin_dependence: both
+  annihilation_channels:
+  - N_1 N_2 coannihilation to charged leptons
+  - N_1/N_2 coannihilation with inert-doublet states when nearly degenerate
+  decay_channels: []
+  self_scattering_channels: []
+  cp_structure: relative phase Im(h_2^* h_1) controls coannihilation and transition operators
+  flavor_structure: Yukawa texture chosen to give near tri-bimaximal neutrino mixing and suppress charged
+    lepton-flavour violation
+  tree_or_loop_level: both
+parameters:
+  core:
+  - name: dark matter mass
+    symbol: M_1
+    description: Mass of the stable right-handed neutrino N_1.
+    range: Allowed regions include TeV-scale masses once neutrino, lepton-flavour, perturbativity, and
+      relic-density requirements are imposed.
+    unit: GeV
+    role: core
+    status: inferred
+    source_reference_ids:
+    - '1201.0906'
+  - name: inert scalar doublet mass
+    symbol: M_eta
+    description: Mass scale of the inert scalar doublet mediating Yukawa interactions.
+    range: Paper scans M_eta/M_1, with no allowed parameter space for M_eta/M_1 greater than about 9.8
+      under its perturbativity and relic-density assumptions.
+    unit: GeV
+    role: core
+    status: inferred
+    source_reference_ids:
+    - '1201.0906'
+  - name: right-handed-neutrino mass splitting
+    symbol: Delta M = M_2 - M_1
+    description: Small N_2-N_1 splitting controlling inelastic scattering and coannihilation.
+    range: Less than a few 100 keV is needed for sizable inelastic direct-detection scattering in the
+      paper's discussion.
+    unit: keV
+    role: core
+    status: inferred
+    source_reference_ids:
+    - '1201.0906'
+  - name: coannihilation and transition phase parameter
+    symbol: Im(h_2^* h_1)
+    description: Yukawa phase combination controlling N_1-N_2 coannihilation and loop-induced effective
+      interactions with nuclei.
+    value: model-dependent
+    unit: null
+    role: core
+    status: inferred
+    source_reference_ids:
+    - '1201.0906'
+  - name: radiative neutrino mass scalar coupling
+    symbol: lambda_5
+    description: Small scalar coupling needed to obtain radiative Majorana neutrino masses.
+    range: The paper estimates lambda_5 around 1e-9 for its benchmark h_3 and M_3 choice.
+    unit: null
+    role: core
+    status: inferred
+    source_reference_ids:
+    - '1201.0906'
+production:
+  mechanisms:
+  - thermal freeze-out
+  - N_1-N_2 coannihilation
+  - coannihilation with inert scalar doublet when M_eta is close to M_1
+  thermal_equilibrium_with_standard_model: 'yes'
+  thermal_equilibrium_with_hidden_sector: not_applicable
+  abundance_set_by:
+  - Yukawa-driven annihilation and coannihilation rates
+  - mass degeneracy among Z2-odd states
+  depends_on_reheating_temperature: unknown
+  can_produce_all_dark_matter: parameter_dependent
+  nonthermal_momentum_distribution: 'no'
+  notes: The paper uses micrOMEGAs and analytic Boltzmann-equation approximations to find parameter regions
+    with the correct thermal relic abundance.
+relic_density:
+  full_or_subcomponent: full_dark_matter
+  target_fraction:
+    name: observed cold dark matter density
+    symbol: Omega h^2
+    description: WMAP target used in the paper.
+    value: 0.11260 +/- 0.0036
+    unit: null
+    role: cosmological
+    status: established
+    source_reference_ids:
+    - '1201.0906'
+  calculation_type: thermal
+  key_dependencies:
+  - M_1
+  - M_eta/M_1
+  - Delta M
+  - Im(h_2^* h_1)
+  - coannihilations with N_2 or eta
+  requires_entropy_dilution: 'no'
+  overclosure_risk: parameter_dependent
+  underproduction_risk: parameter_dependent
+  tuning_assessment: unknown
+cosmological_history:
+  standard_history_assumed: true
+  nonstandard_features: []
+  dark_sector_temperature: null
+  delta_neff: null
+  kinetic_decoupling: null
+  chemical_decoupling:
+    name: thermal freeze-out temperature
+    symbol: T_f
+    description: Freeze-out temperature entering x_f = M_1/T_f.
+    value: solved in relic-density calculation
+    unit: GeV
+    role: derived
+    status: inferred
+    source_reference_ids:
+    - '1201.0906'
+  phase_transitions: []
+  topological_defects: []
+  isocurvature_perturbations: unknown
+  bbn_relevance: low
+  cmb_relevance: unknown
+phase_space:
+  distribution_type: thermal
+  distribution_function_available: approximate
+  f_of_p_or_q: Thermal freeze-out treatment for relic density; Maxwell-Boltzmann halo velocity distribution
+    used for direct-detection rates.
+  average_momentum_relative_to_thermal: null
+  free_streaming_length: null
+  velocity_dispersion_today: null
+  phase_space_bounds: []
+  notes: No dedicated structure-formation phase-space calculation is provided.
+structure_formation:
+  linear:
+    behaves_like_cdm: unknown
+    transfer_function_shape: unknown
+    small_scale_power_effect: unknown
+    half_mode_mass: null
+    thermal_wdm_mapping:
+      available: false
+      validity: unknown
+      warning: No warm-dark-matter mapping is discussed.
+    impact_on_sigma8_s8: unknown
+  nonlinear:
+    halo_mass_function_effect: unknown
+    subhalo_mass_function_effect: unknown
+    simulation_calibrated: unknown
+validity_domain:
+- id: v1_z2_lightest
+  applies_to: model
+  condition: N_1 must be the lightest Z2-odd particle for the stated dark matter candidate.
+  status: assumed
+  extrapolation_risk: high
+  caveats:
+  - If an inert scalar or another singlet is lighter, the model card no longer describes the paper's chosen
+    DM candidate.
+  source_reference_ids:
+  - '1201.0906'
+  notes: Paper explicitly assumes N_1 is the DM particle.
+- id: v1_near_degeneracy
+  applies_to: direct detection and relic density
+  condition: N_1 and N_2 are highly degenerate; inelastic scattering is sizable only for splittings below
+    a few 100 keV.
+  status: inferred
+  extrapolation_risk: medium
+  caveats:
+  - Larger splittings suppress the direct-detection scattering rate.
+  source_reference_ids:
+  - '1201.0906'
+  notes: Near degeneracy also supports coannihilation.
+- id: v1_thermal_history
+  applies_to: relic_density
+  condition: Standard thermal freeze-out with important coannihilations is assumed.
+  status: assumed
+  extrapolation_risk: medium
+  caveats:
+  - Nonstandard cosmology is not analyzed.
+  source_reference_ids:
+  - '1201.0906'
+  notes: null
+assumptions:
+  global:
+  - id: a1_ma_model_field_content
+    description: The model field content is the Ma setup with three right-handed neutrinos and one inert
+      scalar doublet.
+    scope: theory
+    status: established
+    impact_if_violated: The extracted particle-content and symmetry blocks would no longer apply.
+    can_be_relaxed: unknown
+    source_reference_ids:
+    - '1201.0906'
+    notes: null
+  - id: a2_flavor_texture
+    description: The paper uses a specific Yukawa flavor structure to satisfy neutrino oscillation and
+      lepton-flavour violation requirements.
+    scope: theory
+    status: assumed
+    impact_if_violated: Allowed parameter regions and transition couplings can change.
+    can_be_relaxed: 'yes'
+    source_reference_ids:
+    - '1201.0906'
+    notes: The paper briefly discusses deviations relevant to nonzero theta_13.
+  - id: a3_standard_freezeout
+    description: The relic-density extraction assumes a standard thermal freeze-out history.
+    scope: production
+    status: assumed
+    impact_if_violated: The coannihilation parameter regions may not yield the observed abundance.
+    can_be_relaxed: unknown
+    source_reference_ids:
+    - '1201.0906'
+    notes: null
+associated_code:
+  has_associated_code: unknown
+  code_summary: The paper states that micrOMEGAs is used to calculate the relic abundance, but no model-specific
+    public code release is described.
+  primary_code_role: relic_density_calculation
+  repositories: []
+  packages_or_modules: []
+  notebooks: []
+  scripts: []
+  containers_or_environments: []
+  expected_inputs:
+  - model masses
+  - Yukawa couplings
+  - mass splittings
+  expected_outputs:
+  - relic abundance
+  supported_observable_channels: []
+  reproducibility:
+    reproducibility_level: unknown
+    has_tests: unknown
+    has_examples: unknown
+    has_documentation: unknown
+    pinned_dependencies: unknown
+    notes: Only the use of micrOMEGAs is stated in the paper text.
+  validation:
+    validation_status: unknown
+    benchmark_references: []
+    validation_notes: null
+  caveats:
+  - No associated model files or repository are given in the assigned text.
+provenance:
+  model_id: 1201_0906_degenerate_leptophilic_radiative_neutrino_dm_v1
+  model_name: Degenerate leptophilic radiative-neutrino-mass dark matter
+  model_family: radiative_neutrino_mass_dark_matter
+  entry_version: 0.1.0
+  status: machine_extracted
+  created_at: '2026-05-31'
+  last_updated: '2026-05-31'
+  sources:
+    primary_papers:
+    - reference_id: '1201.0906'
+      title: Direct Detection of Leptophilic Dark Matter in a Model with Radiative Neutrino Masses
+      authors:
+      - Daniel Schmidt
+      - Thomas Schwetz
+      - Takashi Toma
+      year: 2012
+      arxiv_id: '1201.0906'
+      doi: null
+      url: null
+      role: extension
+      notes: Assigned paper text from target_text.sqlite.
+    - arxiv_id: '1201.0906'
+      authors:
+      - Schmidt, Daniel
+      - Schwetz, Thomas
+      - Toma, Takashi
+      doi: 10.1103/PhysRevD.85.073009
+      notes: Primary assigned paper read from local SQLite full text.
+      reference_id: arxiv:1201.0906
+      role: original_model
+      title: Direct detection of leptophilic dark matter in a model with radiative neutrino masses
+      url: https://arxiv.org/abs/1201.0906
+      year: 2012
+    constraint_papers:
+    - arxiv_id: '1404.3676'
+      authors:
+      - Modak, Kamakshya Prasad
+      doi: 10.1007/JHEP03(2015)064
+      notes: Related full text resolved locally and read for bounded enrichment.
+      reference_id: arxiv:1404.3676
+      role: extension
+      title: 3.5 keV X-ray line signal from decay of right-handed neutrino due to transition magnetic
+        moment
+      url: https://arxiv.org/abs/1404.3676
+      year: 2015
+    - arxiv_id: '1305.6467'
+      authors:
+      - Law, Sandy S. C.
+      - McDonald, Kristian L.
+      doi: 10.1007/JHEP09(2013)092
+      notes: Related full text resolved locally and read for bounded enrichment.
+      reference_id: arxiv:1305.6467
+      role: extension
+      title: A class of inert N-tuplet models with radiative neutrino mass and dark matter
+      url: https://arxiv.org/abs/1305.6467
+      year: 2013
+    - arxiv_id: '1207.0864'
+      authors:
+      - Okada, Hiroshi
+      - Toma, Takashi
+      doi: 10.1103/PhysRevD.86.033011
+      notes: Related full text resolved locally and read for bounded enrichment.
+      reference_id: arxiv:1207.0864
+      role: extension
+      title: Fermionic dark matter in radiative inverse seesaw model with U(1)B-L
+      url: https://arxiv.org/abs/1207.0864
+      year: 2012
+    external_databases: []
+    review_papers: []
+  extraction:
+    method: llm_assisted
+    extracted_by: codex batch-0006
+    extractor_name: GPT-5.5 dark-matter model-card worker
+    extraction_date: '2026-05-31'
+    confidence: high
+    source_chunks_or_sections:
+    - reference_id: '1201.0906'
+      section: Abstract and introduction
+      page: null
+      quote_or_summary: Paper considers an electroweak-scale DM and radiative neutrino mass model with
+        loop-induced photon exchange.
+    - reference_id: '1201.0906'
+      section: Neutrino masses and mixing
+      page: null
+      quote_or_summary: The model adds three right-handed neutrinos and an inert doublet, all odd under
+        exact Z2.
+    - reference_id: '1201.0906'
+      section: DM relic abundance
+      page: null
+      quote_or_summary: N_1 is stable DM, N_2 is nearly degenerate, and coannihilations are important
+        for the correct relic density.
+    - reference_id: '1201.0906'
+      section: Conclusions
+      page: null
+      quote_or_summary: The paper summarizes N_1 DM, thermal freeze-out, coannihilations, and inelastic
+        loop-induced scattering.
+    unresolved_items:
+    - The paper develops a specific regime of an existing Ma model rather than introducing the original
+      model.
+    - No public model implementation is identified in the assigned text.
+    - Modern XENON/LZ and MEG-II style limits were not applied.
+    - The micrOMEGAs calculation and detector response were not rerun.
+  evidence:
+    particle_content:
+    - reference_id: '1201.0906'
+      note: The text states that the SM is extended by three fermion singlets N_i and an inert scalar
+        doublet, and that N_1 is the DM particle.
+      confidence: high
+      section: Neutrino masses and mixing / Conclusions
+      page: null
+    symmetries:
+    - reference_id: '1201.0906'
+      note: The new particles are Z2-odd while SM particles are even; the inert doublet VEV is zero so
+        the Z2 remains exact and stabilizes DM.
+      confidence: high
+      section: Neutrino masses and mixing
+      page: null
+    interactions:
+    - reference_id: '1201.0906'
+      note: DM is leptophilic through Yukawa couplings, with nucleus scattering induced at one loop through
+        photon exchange via transition charge and dipole operators.
+      confidence: high
+      section: Effective interactions
+      page: null
+    production_mechanism:
+    - reference_id: '1201.0906'
+      note: The relic abundance is obtained by thermal freeze-out with important N_1-N_2 and sometimes
+        N_1-eta coannihilations.
+      confidence: high
+      section: DM relic abundance
+      page: null
+    parameter_ranges:
+    - reference_id: '1201.0906'
+      note: The paper identifies M_1, M_eta, M_2-M_1, and Im(h_2^* h_1) as a compact parameter set after
+        neutrino and lepton-flavour restrictions.
+      confidence: high
+      section: Lepton flavour violation / DM relic abundance
+      page: null
+    validity_domain:
+    - reference_id: '1201.0906'
+      note: Sizable inelastic scattering requires N_1 and N_2 mass splittings below a few 100 keV; larger
+        splittings weaken the rate.
+      confidence: high
+      section: Conclusions
+      page: null
+    constraints:
+    - confidence: high
+      note: Primary text quotes XENON100 reach, WMAP relic density, and charged-LFV benchmark restrictions.
+      page: null
+      reference_id: arxiv:1201.0906
+      section: Phenomenology
+    observables:
+    - confidence: high
+      note: Primary abstract and model sections state loop-induced photon exchange, XENON100/XENON1T reach,
+        LFV, and thermal coannihilation.
+      page: null
+      reference_id: arxiv:1201.0906
+      section: Abstract, LFV, relic abundance, direct detection
+    routes:
+    - confidence: high
+      note: Primary paper links the same masses/Yukawas to neutrino masses, LFV, relic density, and direct
+        detection.
+      page: null
+      reference_id: arxiv:1201.0906
+      section: Model and phenomenology
+  review:
+    human_reviewed: false
+    reviewed_by: null
+    review_date: null
+    expert_reviewed: false
+    expert_reviewer: null
+    expert_review_date: null
+    reviewer_notes: []
+    scientific_confidence: medium
+    implementation_confidence: medium
+  caveats:
+  - This is an extraction of a paper-specific degenerate inelastic regime of the Ma model, not a claim
+    that the paper invented the original Ma model.
+robustness:
+  overall: medium
+  theory_robustness: medium
+  observational_robustness: not_applicable
+  computational_robustness: unknown
+  constraint_robustness: not_applicable
+  dominant_uncertainties:
+  - Machine extraction from flattened paper text
+  - Paper-specific flavor texture and degeneracy assumptions
+  validation_status: expert_judgment_only
+  notes: Physics blocks are well supported, but the original model predates this paper.
+agent_failure_modes:
+  warnings:
+  - id: w1_existing_model_variant
+    severity: medium
+    category: other
+    warning: Do not treat this paper as the original introduction of the Ma radiative neutrino mass model;
+      it substantially develops a degenerate leptophilic inelastic DM regime.
+    mitigation: Cite this assigned paper for the extracted regime and use the provenance caveat when merging
+      with any canonical registry entry.
+    source_reference_ids:
+    - '1201.0906'
+  - id: w2_constraints_omitted
+    severity: low
+    category: other
+    warning: Direct-detection exclusions and DAMA/XENON/KIMS comparisons were intentionally not extracted
+      into constraints or observables in this model-only run.
+    mitigation: Use only the model, production, and provenance fields from this row.
+    source_reference_ids:
+    - '1201.0906'
+observables:
+- caveats:
+  - Elastic scattering is extremely suppressed; detector response depends on inelastic N2 production and
+    decay.
+  channel: direct_detection
+  effect_direction: rate_change
+  environments:
+  - XENON100
+  - XENON1T
+  - KIMS
+  - DAMA
+  id: obs_leptophilic_loop_direct_detection
+  key_quantities:
+  - description: Lightest right-handed neutrino mass.
+    name: DM mass
+    range: model scan parameter
+    role: core
+    source_reference_ids:
+    - arxiv:1201.0906
+    status: inferred
+    symbol: M_1
+    unit: GeV
+  - description: Small splitting controlling inelastic scattering and coannihilation.
+    name: mass splitting
+    range: small / nearly degenerate
+    role: core
+    source_reference_ids:
+    - arxiv:1201.0906
+    status: inferred
+    symbol: M_2 - M_1
+    unit: GeV
+  - description: Phase parameter entering dipole interactions and relic abundance.
+    name: Yukawa phase
+    range: scan parameter
+    role: core
+    source_reference_ids:
+    - arxiv:1201.0906
+    status: inferred
+    symbol: Im(h_2^* h_1)
+  linked_constraints:
+  - con_leptophilic_xenon_loop_dd
+  linked_routes:
+  - route_leptophilic_loop_dd_relic
+  name: Loop-induced inelastic nuclear scattering
+  notes: null
+  observability: high
+  predicted_effect: Although the dark matter is leptophilic, N1-to-N2 nuclear scattering is induced at
+    loop level through photon exchange, producing charge-charge, dipole-charge, and dipole-dipole recoil
+    channels.
+  redshift_range: null
+  relevance: critical
+  scale_range: nuclear recoil and inelastic up-scattering energies
+  source_reference_ids:
+  - arxiv:1201.0906
+  subchannel: photon-mediated charge and dipole interactions
+- caveats:
+  - Flavour structure with texture zeros relaxes some LFV channels.
+  channel: precision_laboratory
+  effect_direction: rate_change
+  environments:
+  - low-energy flavour experiments
+  id: obs_leptophilic_lfv
+  key_quantities:
+  - description: Mass of the electroweak scalar mediator.
+    name: charged scalar mass
+    range: scan parameter
+    role: core
+    source_reference_ids:
+    - arxiv:1201.0906
+    status: inferred
+    symbol: M_eta
+    unit: GeV
+  - description: Benchmark value used in the primary scan.
+    name: third right-handed neutrino mass
+    role: core
+    source_reference_ids:
+    - arxiv:1201.0906
+    status: inferred
+    symbol: M_3
+    unit: GeV
+    value: 6000
+  - description: Benchmark value used to satisfy LFV constraints.
+    name: Yukawa coupling benchmark
+    role: core
+    source_reference_ids:
+    - arxiv:1201.0906
+    status: inferred
+    symbol: '|h_3|'
+    value: 0.3
+  linked_constraints:
+  - con_leptophilic_lfv_yukawa
+  linked_routes:
+  - route_leptophilic_loop_dd_relic
+  name: Charged lepton-flavour violation
+  notes: null
+  observability: medium
+  predicted_effect: The same neutrino Yukawa couplings that generate radiative neutrino masses produce
+    charged lepton-flavour-violating decays such as mu -> e gamma.
+  redshift_range: null
+  relevance: high
+  scale_range: charged-lepton decay experiments
+  source_reference_ids:
+  - arxiv:1201.0906
+  subchannel: radiative charged-lepton decays
+- caveats:
+  - micrOMEGAs calculation in the source was not rerun.
+  channel: cosmology
+  effect_direction: rate_change
+  environments:
+  - early universe
+  id: obs_leptophilic_coannihilation_relic
+  key_quantities:
+  - description: WMAP value used in the primary paper.
+    name: relic density
+    role: core
+    source_reference_ids:
+    - arxiv:1201.0906
+    status: inferred
+    symbol: Omega h^2
+    value: 0.11260 +/- 0.0036
+  - description: Negligible in the analytic coannihilation expression.
+    name: mass splitting
+    range: small compared with M_1
+    role: core
+    source_reference_ids:
+    - arxiv:1201.0906
+    status: inferred
+    symbol: M_2 - M_1
+    unit: GeV
+  linked_constraints:
+  - con_leptophilic_thermal_relic
+  linked_routes:
+  - route_leptophilic_loop_dd_relic
+  name: Degenerate N1-N2 thermal coannihilation
+  notes: null
+  observability: medium
+  predicted_effect: The correct thermal relic abundance relies on coannihilations between nearly degenerate
+    N1 and N2, with helicity suppression when the relevant Yukawa phase vanishes.
+  redshift_range: thermal freeze-out
+  relevance: high
+  scale_range: electroweak-scale masses
+  source_reference_ids:
+  - arxiv:1201.0906
+  subchannel: thermal relic abundance
+constraints:
+- allowed_regions:
+  - Regions consistent with neutrino masses, LFV, perturbativity, and relic density remain but are significantly
+    probed by XENON1T projections.
+  applies: 'yes'
+  assumptions:
+  - can_be_relaxed: partial
+    description: N1 and N2 are nearly degenerate so inelastic scattering dominates the event rate.
+    id: inelastic-degenerate-pair
+    impact_if_violated: If the splitting is too large, the predicted recoil and N2-decay rate changes
+      strongly.
+    notes: null
+    scope: direct detection
+    source_reference_ids:
+    - arxiv:1201.0906
+    status: assumed
+  benchmark_implications:
+  - Loop-induced photon exchange can make an otherwise leptophilic model visible in nuclear recoil experiments.
+  caveats:
+  - Detector likelihoods were not rerun.
+  constrained_parameters:
+  - M_1
+  - M_2 - M_1
+  - M_eta
+  - Im(h_2^* h_1)
+  constraint_type: direct_detection
+  data_release: XENON100; XENON1T projection; KIMS and DAMA comparisons in primary paper
+  excluded_regions:
+  - Current XENON100 data start to constrain certain allowed regions in the primary scan.
+  id: con_leptophilic_xenon_loop_dd
+  likelihood_available: 'no'
+  likelihood_reference: null
+  name: XENON100 and XENON1T loop-direct-detection reach
+  notes: null
+  observable_channel: inelastic nuclear recoils
+  recasting_needed: 'yes'
+  robustness: medium
+  source_reference_ids:
+  - arxiv:1201.0906
+- allowed_regions:
+  - Primary benchmark M_3=6000 GeV and |h_3|=0.3 leaves all M_eta values allowed in the scan.
+  applies: 'yes'
+  assumptions: []
+  benchmark_implications:
+  - For M_eta below about 1 TeV the primary text predicts mu -> e gamma close to the then-current bound.
+  caveats:
+  - Modern LFV limits were not updated.
+  constrained_parameters:
+  - h_i
+  - M_eta
+  - M_3
+  constraint_type: laboratory
+  data_release: charged lepton flavour violation limits cited by primary paper
+  excluded_regions:
+  - Yukawa/mass combinations exceeding the quoted mu -> e gamma-style bounds are excluded.
+  id: con_leptophilic_lfv_yukawa
+  likelihood_available: 'no'
+  likelihood_reference: null
+  name: Lepton-flavour-violation bounds on neutrino Yukawas
+  notes: null
+  observable_channel: radiative charged-lepton decay
+  recasting_needed: 'yes'
+  robustness: medium
+  source_reference_ids:
+  - arxiv:1201.0906
+- allowed_regions:
+  - Colored scan regions satisfying neutrino data, LFV, perturbativity, and Omega h^2=0.11260 +/- 0.0036.
+  applies: 'yes'
+  assumptions:
+  - can_be_relaxed: partial
+    description: The dark matter abundance is produced thermally with N1-N2 coannihilations.
+    id: thermal-freezeout
+    impact_if_violated: Nonthermal production or a larger mass splitting would change the allowed parameter
+      space.
+    notes: null
+    scope: early-universe abundance
+    source_reference_ids:
+    - arxiv:1201.0906
+    status: assumed
+  benchmark_implications:
+  - Coannihilation and a nonzero phase difference are important for obtaining the correct relic density.
+  caveats:
+  - The micrOMEGAs setup was not rerun in this batch.
+  constrained_parameters:
+  - M_1
+  - M_2 - M_1
+  - M_eta
+  - h_i
+  constraint_type: cosmological
+  data_release: WMAP relic-density value used by primary paper
+  excluded_regions:
+  - Regions that over- or underproduce the WMAP relic density after coannihilations.
+  id: con_leptophilic_thermal_relic
+  likelihood_available: partial
+  likelihood_reference: micrOMEGAs calculation in primary paper
+  name: WMAP relic density with coannihilations
+  notes: null
+  observable_channel: thermal relic density
+  recasting_needed: 'yes'
+  robustness: medium
+  source_reference_ids:
+  - arxiv:1201.0906
+theory_to_observable_routing:
+  routes:
+  - agent_notes: null
+    caveats:
+    - Modern direct-detection and LFV limits need an update before quantitative reuse.
+    constraint_ids:
+    - con_leptophilic_xenon_loop_dd
+    - con_leptophilic_lfv_yukawa
+    - con_leptophilic_thermal_relic
+    derived_quantities:
+    - loop photon form factors
+    - direct-detection event rate
+    - LFV branching ratios
+    - effective coannihilation cross section
+    description: Route the radiative-neutrino leptophilic DM parameters to loop direct detection, charged
+      LFV, and thermal relic density.
+    forward_model_chain:
+    - inputs:
+      - M_1
+      - M_2 - M_1
+      - M_eta
+      - h_i
+      notes: null
+      outputs:
+      - charge-charge and dipole amplitudes
+      - LFV branching ratios
+      step_id: s1
+      step_type: analytic_formula
+      tool_or_code: null
+      validity: Valid for the radiative neutrino model assumptions.
+    - inputs:
+      - masses
+      - Yukawa couplings
+      notes: null
+      outputs:
+      - thermal relic density
+      step_id: s2
+      step_type: boltzmann_solver
+      tool_or_code: micrOMEGAs
+      validity: Primary paper used micrOMEGAs; not rerun here.
+    - inputs:
+      - event rate
+      - LFV branching ratios
+      - Omega h^2
+      notes: null
+      outputs:
+      - XENON/LFV/relic constraints
+      step_id: s3
+      step_type: likelihood
+      tool_or_code: null
+      validity: Likelihood recast needed for modern limits.
+    id: route_leptophilic_loop_dd_relic
+    input_parameters:
+    - M_1
+    - M_2 - M_1
+    - M_eta
+    - h_i
+    - Im(h_2^* h_1)
+    likelihoods:
+    - XENON100 likelihood unavailable
+    - LFV likelihood unavailable
+    - micrOMEGAs setup not rerun
+    observable_ids:
+    - obs_leptophilic_loop_direct_detection
+    - obs_leptophilic_lfv
+    - obs_leptophilic_coannihilation_relic
+    required_code_resources:
+    - loop form-factor implementation
+    - micrOMEGAs model file
+    - direct-detection detector response
+    route_status: planned
+    source_model_features:
+    - right-handed-neutrino Majorana DM
+    - nearly degenerate N1 and N2
+    - leptophilic Yukawa couplings
+    - radiative neutrino masses
+    validation_tests:
+    - recover XENON100-constrained regions
+    - recover WMAP relic-density colored region

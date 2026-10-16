@@ -1,0 +1,885 @@
+_source:
+  shard: arXiv_src_1912_036_wds.tar
+  paper_id: '1912_10859'
+  source_member: 1912_10859.json
+  enriched: true
+  enrichment_schema_version: dm_model_ocr_enrichment_smoke_v0
+schema_version: model_only_v0
+model_id: 1912_10859_nonadiabatic_gravitational_uldm_v1
+identity:
+  name: Non-adiabatically produced gravitational ultra-light scalar dark matter
+  family: fuzzy_ultralight_dark_matter
+  aliases:
+  - non-adiabatic ULDM
+  - gravitationally produced ultra-light scalar dark matter
+  short_description: A free real ultra-light scalar spectator field whose relic abundance is generated
+    by non-adiabatic gravitational particle production during cosmological expansion.
+  historical_origin_or_motivation: Motivated as a non-misalignment lower-bound abundance for generic ultra-light
+    scalar and axion-like dark matter candidates.
+  status: speculative
+  model_kind: phenomenological_parameterization
+theory:
+  theory_level: phenomenological_parameterization
+  parent_frameworks:
+  - ultra-light scalar dark matter
+  - quantum field theory in curved spacetime
+  - inflationary spectator field
+  lagrangian_available: partial
+  renormalizable: 'yes'
+  eft_cutoff: null
+  embedded_in_larger_framework: unknown
+  notes: The field is treated as a free minimally coupled scalar in a prescribed cosmological background,
+    not as a full UV completion.
+particle_content:
+  dark_matter_candidate:
+    name: free real ultra-light scalar
+    spin: '0'
+    statistics: boson
+    elementary_or_composite: elementary
+    number_of_components: single_component
+  additional_dark_sector_particles: []
+  mediators:
+  - gravity
+  dark_radiation_species: []
+  excited_or_degenerate_states: []
+  long_lived_particles:
+  - ultra-light scalar
+  unstable_parent_particles: []
+  standard_model_extension: minimal
+symmetries:
+  stabilizing_mechanism: The candidate is stable in the paper because the field is free and has no couplings
+    to other fields beyond gravity.
+  symmetries: []
+  topological_defects_possible: unknown
+interactions:
+  portals:
+  - gravitational
+  standard_model_targets:
+  - stress-energy through gravity
+  dark_sector_couplings: []
+  mediator_types:
+  - gravity
+  interaction_operators:
+  - minimal gravitational coupling of a free scalar in an expanding spacetime
+  annihilation_channels: []
+  decay_channels: []
+  self_scattering_channels: []
+  cp_structure: not_applicable
+  flavor_structure: not_applicable
+  tree_or_loop_level: not_applicable
+parameters:
+  core:
+  - name: ultra-light scalar mass
+    symbol: m
+    description: Mass of the real scalar dark matter candidate.
+    value: about 1.5e-5 for full abundance in the quoted benchmark
+    range: null
+    unit: eV
+    role: core
+    status: inferred
+    source_reference_ids:
+    - arxiv:1912.10859
+    notes: The quoted value applies when the inflation scale is near the Planck upper bound used in the
+      paper.
+  - name: inflationary Hubble scale
+    symbol: H_dS
+    description: Hubble scale during the de Sitter inflationary stage.
+    value: null
+    range: bounded by Planck; benchmark normalized to 1e13 GeV
+    unit: GeV
+    role: core
+    status: assumed
+    source_reference_ids:
+    - arxiv:1912.10859
+    notes: null
+  - name: Hubble scale at radiation era
+    symbol: H_R
+    description: Hubble scale entering the post-inflation radiation-dominated calculation.
+    value: null
+    range: null
+    unit: null
+    role: core
+    status: assumed
+    source_reference_ids:
+    - arxiv:1912.10859
+    notes: null
+  - name: distribution variable
+    symbol: z
+    description: Dimensionless comoving momentum variable used for N_k.
+    value: null
+    range: z = k / sqrt(2 m H_R) in the paper notation
+    unit: null
+    role: computational
+    status: established
+    source_reference_ids:
+    - arxiv:1912.10859
+    notes: null
+  nuisance: []
+  derived:
+  - name: equation of state parameter
+    symbol: w
+    description: Late-time equation of state of the produced dark matter component.
+    value: about 1e-14 for the benchmark
+    range: null
+    unit: null
+    role: derived
+    status: inferred
+    source_reference_ids:
+    - arxiv:1912.10859
+    notes: null
+  - name: free-streaming length
+    symbol: lambda_fs
+    description: Free-streaming length of the produced component.
+    value: about 70
+    range: null
+    unit: pc
+    role: derived
+    status: inferred
+    source_reference_ids:
+    - arxiv:1912.10859
+    notes: null
+production:
+  mechanisms:
+  - non-adiabatic gravitational particle production from cosmological expansion
+  thermal_equilibrium_with_standard_model: 'no'
+  thermal_equilibrium_with_hidden_sector: not_applicable
+  abundance_set_by:
+  - scalar mass
+  - inflationary Hubble scale
+  - radiation-era Hubble scale
+  - infrared-enhanced distribution function
+  depends_on_reheating_temperature: parameter_dependent
+  can_produce_all_dark_matter: parameter_dependent
+  nonthermal_momentum_distribution: 'yes'
+  notes: The production is explicitly not a misalignment mechanism because the scalar expectation value
+    is assumed to vanish.
+relic_density:
+  full_or_subcomponent: either
+  target_fraction: null
+  calculation_type: nonthermal
+  key_dependencies:
+  - m
+  - H_dS
+  - H_R
+  - infrared distribution N_k
+  requires_entropy_dilution: unknown
+  overclosure_risk: parameter_dependent
+  underproduction_risk: parameter_dependent
+  tuning_assessment: unknown
+cosmological_history:
+  standard_history_assumed: true
+  nonstandard_features:
+  - exact de Sitter inflation approximation
+  - instantaneous reheating approximation
+  - Bunch-Davies initial state
+  dark_sector_temperature: null
+  delta_neff: null
+  kinetic_decoupling: null
+  chemical_decoupling: null
+  phase_transitions:
+  - instantaneous transition from inflation to radiation domination
+  topological_defects: []
+  isocurvature_perturbations: parameter_dependent
+  bbn_relevance: low
+  cmb_relevance: medium
+phase_space:
+  distribution_type: nonthermal
+  distribution_function_available: 'yes'
+  f_of_p_or_q: N_k expressed as a function of z = k / sqrt(2 m H_R); infrared-enhanced and peaked at low
+    comoving momentum.
+  average_momentum_relative_to_thermal: cold benchmark with w about 1e-14
+  free_streaming_length:
+    name: free-streaming length
+    symbol: lambda_fs
+    description: Paper benchmark free-streaming length.
+    value: about 70
+    range: null
+    unit: pc
+    role: derived
+    status: inferred
+    source_reference_ids:
+    - arxiv:1912.10859
+    notes: null
+  velocity_dispersion_today: null
+  phase_space_bounds: []
+  notes: The paper concludes the produced component behaves as cold dark matter for the quoted benchmark.
+structure_formation:
+  linear:
+    behaves_like_cdm: approximately
+    transfer_function_shape: smooth_cutoff
+    small_scale_power_effect: suppression
+    half_mode_mass: null
+    thermal_wdm_mapping:
+      available: false
+      validity: unknown
+      warning: The paper gives a free-streaming scale but does not provide a thermal-WDM mapping.
+    impact_on_sigma8_s8: unknown
+  nonlinear:
+    halo_mass_function_effect: unknown
+    subhalo_mass_function_effect: unknown
+    infall_subhalo_mass_function_effect: unknown
+    present_day_bound_subhalo_mass_function_effect: unknown
+    concentration_mass_relation_effect: unknown
+    density_profile_effect: unknown
+    core_or_cusp_effect: unknown
+    subhalo_survival_effect: unknown
+    tidal_stripping_effect: unknown
+    smallest_galaxies_effect: unknown
+    simulation_calibrated: 'no'
+validity_domain:
+- id: free_spectator_scalar
+  applies_to: theory
+  condition: The scalar field is free, real, minimally coupled, and has no expectation value.
+  valid_range: null
+  status: assumed
+  extrapolation_risk: high
+  caveats:
+  - Adding self-interactions or a misalignment condensate changes the production history.
+  source_reference_ids:
+  - arxiv:1912.10859
+  notes: null
+- id: instantaneous_reheating
+  applies_to: cosmological_history
+  condition: The calculation assumes instantaneous transition from de Sitter inflation to radiation domination.
+  valid_range: null
+  status: assumed
+  extrapolation_risk: medium
+  caveats:
+  - A detailed reheating stage could modify the abundance.
+  source_reference_ids:
+  - arxiv:1912.10859
+  notes: null
+- id: superhorizon_modes
+  applies_to: production
+  condition: The analysis focuses on wavelengths superhorizon at the end of inflation and relevant for
+    structure formation.
+  valid_range: null
+  status: assumed
+  extrapolation_risk: medium
+  caveats: []
+  source_reference_ids:
+  - arxiv:1912.10859
+  notes: null
+assumptions:
+  global:
+  - id: no_misalignment
+    description: The scalar has vanishing expectation value, excluding a misalignment production contribution.
+    scope: production
+    status: assumed
+    impact_if_violated: A nonzero expectation value would add a separate abundance component.
+    can_be_relaxed: 'yes'
+    source_reference_ids:
+    - arxiv:1912.10859
+    notes: null
+  - id: gravitational_only
+    description: The scalar does not couple to the inflaton, Standard Model, or itself, and only interacts
+      gravitationally.
+    scope: theory
+    status: assumed
+    impact_if_violated: Additional couplings could thermalize or decay the candidate.
+    can_be_relaxed: 'yes'
+    source_reference_ids:
+    - arxiv:1912.10859
+    notes: null
+  - id: bunch_davies_initial_state
+    description: The ultralight field starts in the Bunch-Davies vacuum during exact de Sitter inflation.
+    scope: cosmological_history
+    status: assumed
+    impact_if_violated: Different initial states can alter non-adiabatic production.
+    can_be_relaxed: unknown
+    source_reference_ids:
+    - arxiv:1912.10859
+    notes: null
+  constraint_specific: []
+  computation_specific: []
+associated_code:
+  has_associated_code: unknown
+  code_summary: No associated public model code was identified in the assigned paper text.
+  primary_code_role: null
+  repositories: []
+  packages_or_modules: []
+  notebooks: []
+  scripts: []
+  containers_or_environments: []
+  expected_inputs: []
+  expected_outputs: []
+  supported_observable_channels: []
+  caveats: []
+provenance:
+  model_id: 1912_10859_nonadiabatic_gravitational_uldm_v1
+  model_name: Non-adiabatically produced gravitational ultra-light scalar dark matter
+  model_family: fuzzy_ultralight_dark_matter
+  entry_version: 0.1.0
+  status: machine_extracted
+  created_at: '2026-05-31'
+  last_updated: '2026-05-31'
+  sources:
+    primary_papers:
+    - reference_id: arxiv:1912.10859
+      title: Non-adiabatic cosmological production of ultra-light Dark Matter
+      authors:
+      - Nathan Herring
+      - Daniel Boyanovsky
+      - Andrew R. Zentner
+      year: 2019
+      arxiv_id: '1912.10859'
+      doi: null
+      url: null
+      role: original_model
+      notes: Primary paper text from assigned SQLite database.
+    - arxiv_id: '1912.10859'
+      authors:
+      - Herring, Nathan
+      - Boyanovsky, Daniel
+      - Zentner, Andrew R.
+      doi: 10.1103/PhysRevD.101.083516
+      notes: Primary assigned paper read from local SQLite full text.
+      reference_id: arxiv:1912.10859
+      role: original_model
+      title: Nonadiabatic cosmological production of ultralight dark matter
+      url: https://arxiv.org/abs/1912.10859
+      year: 2020
+    constraint_papers:
+    - arxiv_id: '1703.04683'
+      authors:
+      - Iršič, Vid
+      - Viel, Matteo
+      - Haehnelt, Martin G.
+      - Bolton, James S.
+      - Becker, George D.
+      doi: 10.1103/PhysRevLett.119.031302
+      notes: Related full text resolved locally and read for bounded enrichment.
+      reference_id: arxiv:1703.04683
+      role: constraint
+      title: First Constraints on Fuzzy Dark Matter from Lyman-α Forest Data and Hydrodynamical Simulations
+      url: https://arxiv.org/abs/1703.04683
+      year: 2017
+    - arxiv_id: '1810.03227'
+      authors:
+      - Porayko, Nataliya K.
+      - Zhu, Xingjiang
+      - Levin, Yuri
+      - Hui, Lam
+      - Hobbs, George
+      - Grudskaya, Aleksandra
+      - Postnov, Konstantin
+      - Bailes, Matthew
+      - Bhat, N. D. Ramesh
+      - Coles, William
+      - Dai, Shi
+      - Dempsey, James
+      - Keith, Michael J.
+      - Kerr, Matthew
+      - Kramer, Michael
+      - Lasky, Paul D.
+      - Manchester, Richard N.
+      - Osłowski, Stefan
+      - Parthasarathy, Aditya
+      - Ravi, Vikram
+      - Reardon, Daniel J.
+      - Rosado, Pablo A.
+      - Russell, Christopher J.
+      - Shannon, Ryan M.
+      - Spiewak, Renée
+      - van Straten, Willem
+      - Toomey, Lawrence
+      - Wang, Jingbo
+      - Wen, Linqing
+      - You, Xiaopeng
+      - PPTA Collaboration
+      doi: 10.1103/PhysRevD.98.102002
+      notes: Related full text resolved locally and read for bounded enrichment.
+      reference_id: arxiv:1810.03227
+      role: constraint
+      title: Parkes Pulsar Timing Array constraints on ultralight scalar-field dark matter
+      url: https://arxiv.org/abs/1810.03227
+      year: 2018
+    external_databases: []
+    review_papers:
+    - arxiv_id: '1912.07064'
+      authors:
+      - Niemeyer, Jens C.
+      doi: 10.1016/j.ppnp.2020.103787
+      notes: Related full text resolved locally and read for bounded enrichment.
+      reference_id: arxiv:1912.07064
+      role: review
+      title: Small-scale structure of fuzzy and axion-like dark matter
+      url: https://arxiv.org/abs/1912.07064
+      year: 2020
+  extraction:
+    method: llm_assisted
+    extracted_by: codex_batch_0016
+    extractor_name: codex
+    extraction_date: '2026-05-31'
+    confidence: high
+    source_chunks_or_sections:
+    - reference_id: arxiv:1912.10859
+      section: abstract/introduction
+      page: null
+      quote_or_summary: The paper studies non-adiabatic gravitational production of a minimally coupled
+        ultra-light scalar spectator field.
+    - reference_id: arxiv:1912.10859
+      section: main assumptions
+      page: null
+      quote_or_summary: The scalar is free, real, has no vev, no inflaton coupling, no self-interactions,
+        and only gravitational interactions.
+    - reference_id: arxiv:1912.10859
+      section: abundance/free streaming
+      page: null
+      quote_or_summary: For the Planck upper bound on inflation scale, m about 1.5e-5 eV saturates DM
+        with w about 1e-14 and free-streaming about 70 pc.
+    unresolved_items:
+    - The primary benchmark is much heavier than the fuzzy-DM and PTA masses discussed in related constraints.
+    - No Lyman-alpha or pulsar-timing likelihood was rerun.
+  evidence:
+    particle_content:
+    - reference_id: arxiv:1912.10859
+      note: The candidate is a free real ultra-light scalar degree of freedom used as ULDM.
+      confidence: high
+      section: main assumptions
+      page: null
+    interactions:
+    - reference_id: arxiv:1912.10859
+      note: The field has no self-interactions or couplings to other fields and only interacts gravitationally.
+      confidence: high
+      section: introduction/main assumptions
+      page: null
+    production_mechanism:
+    - reference_id: arxiv:1912.10859
+      note: Non-adiabatic cosmological expansion during inflation and radiation domination produces particles
+        from the Bunch-Davies vacuum.
+      confidence: high
+      section: abstract/introduction
+      page: null
+    cosmological_history:
+    - reference_id: arxiv:1912.10859
+      note: The calculation assumes exact de Sitter inflation, Bunch-Davies initial state, instantaneous
+        reheating, and radiation domination until equality.
+      confidence: high
+      section: main assumptions
+      page: null
+    phase_space:
+    - reference_id: arxiv:1912.10859
+      note: The produced distribution N_k is peaked at low comoving momentum with an infrared N_k ~ 1/k^3
+        behavior.
+      confidence: medium
+      section: distribution function section
+      page: null
+    parameter_ranges:
+    - reference_id: arxiv:1912.10859
+      note: The paper quotes m about 1.5e-5 eV for full abundance at the Planck upper inflation scale,
+        with free-streaming about 70 pc.
+      confidence: medium
+      section: abundance/free streaming
+      page: null
+    validity_domain:
+    - reference_id: arxiv:1912.10859
+      note: The result excludes misalignment production by assuming no scalar expectation value and focuses
+        on superhorizon modes at the end of inflation.
+      confidence: high
+      section: main assumptions
+      page: null
+    constraints:
+    - confidence: high
+      note: Primary abundance calculation supplies the benchmark relation and production assumptions.
+      page: null
+      reference_id: arxiv:1912.10859
+      section: Production calculation
+    - confidence: high
+      note: Lyman-alpha bound is derived with hydrodynamical simulations of forest data.
+      page: null
+      reference_id: arxiv:1703.04683
+      section: Results
+    - confidence: high
+      note: PPTA bound follows from null timing-array search.
+      page: null
+      reference_id: arxiv:1810.03227
+      section: Abstract
+    observables:
+    - confidence: high
+      note: Primary paper gives m about 1.5e-5 eV, w about 1e-14, and lambda_fs about 70 pc for the Planck-normalized
+        benchmark.
+      page: null
+      reference_id: arxiv:1912.10859
+      section: Abstract/Introduction
+    - confidence: high
+      note: Related Lyman-alpha work gives conservative combined lower bound m_FDM > 20e-22 eV at 2 CL.
+      page: null
+      reference_id: arxiv:1703.04683
+      section: Results
+    - confidence: high
+      note: Related PPTA work constrains local ultralight-boson density near m=1e-23 eV.
+      page: null
+      reference_id: arxiv:1810.03227
+      section: Abstract
+    routes:
+    - confidence: high
+      note: Primary text connects occupation distribution to abundance, equation of state and free-streaming
+        length.
+      page: null
+      reference_id: arxiv:1912.10859
+      section: Summary
+  review:
+    human_reviewed: false
+    reviewed_by: null
+    review_date: null
+    expert_reviewed: false
+    expert_reviewer: null
+    expert_review_date: null
+    reviewer_notes: []
+    scientific_confidence: high
+    implementation_confidence: medium
+  caveats:
+  - The extraction treats the paper-supported production mechanism as the model variant; it does not merge
+    in misalignment-produced ULDM.
+robustness:
+  overall: medium
+  theory_robustness: medium
+  observational_robustness: unknown
+  computational_robustness: medium
+  constraint_robustness: not_applicable
+  dominant_uncertainties:
+  - instantaneous reheating approximation
+  - inflationary scale
+  - absence of non-gravitational couplings
+  validation_status: expert_judgment_only
+  notes: The paper analytically derives the abundance and coldness under specific cosmological assumptions.
+agent_failure_modes:
+  warnings:
+  - id: not_misalignment_fdm
+    severity: high
+    category: invalid_mapping
+    warning: Do not merge this with misalignment-produced fuzzy dark matter; the paper assumes no field
+      expectation value and gravitational production only.
+    mitigation: Keep production mechanism and assumptions explicit.
+    source_reference_ids:
+    - arxiv:1912.10859
+  - id: reheating_sensitivity
+    severity: medium
+    category: assumption_mismatch
+    warning: The abundance depends on the instantaneous reheating and de Sitter assumptions used in the
+      calculation.
+    mitigation: null
+    source_reference_ids:
+    - arxiv:1912.10859
+observables:
+- caveats:
+  - Benchmark depends on instantaneous reheating and the inflationary scale.
+  channel: large_scale_structure
+  effect_direction: suppression
+  environments:
+  - linear matter field
+  - small halos
+  id: obs_nonadiabatic_cold_component
+  key_quantities:
+  - name: ultralight scalar mass
+    role: core
+    source_reference_ids:
+    - arxiv:1912.10859
+    status: inferred
+    symbol: m
+    unit: eV
+    value: about 1.5e-5
+  - name: equation of state
+    role: derived
+    source_reference_ids:
+    - arxiv:1912.10859
+    status: inferred
+    symbol: w
+    value: about 1e-14
+  - name: free-streaming length
+    role: derived
+    source_reference_ids:
+    - arxiv:1912.10859
+    status: inferred
+    symbol: lambda_fs
+    unit: pc
+    value: about 70
+  linked_constraints:
+  - con_nonadiabatic_abundance_benchmark
+  linked_routes:
+  - route_nonadiabatic_uldm_structure
+  name: Non-adiabatic ULDM cold-component benchmark
+  notes: null
+  observability: medium
+  predicted_effect: For the Planck-normalized benchmark the gravitationally produced scalar saturates
+    the dark-matter abundance at m about 1.5e-5 eV, with w about 1e-14 and free-streaming length about
+    70 pc, so it behaves as cold dark matter on ordinary galaxy scales.
+  redshift_range: radiation era to z=0
+  relevance: critical
+  scale_range: cutoff length about 70 pc for the benchmark
+  source_reference_ids:
+  - arxiv:1912.10859
+  subchannel: free-streaming cutoff
+- caveats:
+  - The primary full-abundance benchmark mass is far above the fuzzy-DM regime constrained here.
+  channel: lyman_alpha
+  effect_direction: suppression
+  environments:
+  - intergalactic medium
+  id: obs_fdm_lya_power_cutoff
+  key_quantities:
+  - name: fuzzy dark matter mass
+    range: m_FDM > 20e-22 eV conservative combined 2 CL bound in related analysis
+    role: core
+    source_reference_ids:
+    - arxiv:1703.04683
+    status: inferred
+    symbol: m_FDM
+    unit: eV
+  - description: Nuisance thermal history for Lyman-alpha recast.
+    name: IGM temperature history
+    role: nuisance
+    source_reference_ids:
+    - arxiv:1703.04683
+    status: inferred
+    symbol: T_IGM
+  linked_constraints:
+  - con_lya_fdm_mass
+  linked_routes:
+  - route_nonadiabatic_uldm_structure
+  name: Fuzzy-DM Lyman-alpha power suppression
+  notes: null
+  observability: high
+  predicted_effect: If the same scalar framework is pushed to fuzzy masses near 1e-22 eV, wave/free-streaming
+    suppression changes the small-scale matter and Lyman-alpha flux power spectra.
+  redshift_range: high-redshift Lyman-alpha forest
+  relevance: medium
+  scale_range: quasi-linear small scales probed by XQ-100 and HIRES/MIKE
+  source_reference_ids:
+  - arxiv:1912.10859
+  - arxiv:1703.04683
+  subchannel: forest flux power spectrum
+- caveats:
+  - Not applicable to the primary benchmark mass m about 1.5e-5 eV without a different frequency probe.
+  channel: other
+  effect_direction: oscillatory
+  environments:
+  - Milky Way pulsar timing baselines
+  id: obs_pta_ultralight_potential_oscillations
+  key_quantities:
+  - name: scalar mass
+    range: around 1e-23 eV for the quoted PPTA local-density bound
+    role: core
+    source_reference_ids:
+    - arxiv:1810.03227
+    status: inferred
+    symbol: m
+    unit: eV
+  - name: local scalar density
+    range: < 6 GeV cm^-3 at 95 percent confidence near m=1e-23 eV in PPTA analysis
+    role: core
+    source_reference_ids:
+    - arxiv:1810.03227
+    status: inferred
+    symbol: rho_DM,local
+    unit: GeV cm^-3
+  linked_constraints:
+  - con_ppta_ultralight_density
+  linked_routes:
+  - route_nonadiabatic_uldm_structure
+  name: Pulsar-timing response to ultralight scalar density oscillations
+  notes: null
+  observability: medium
+  predicted_effect: A coherently oscillating ultralight scalar field can induce nanohertz gravitational-potential
+    oscillations and periodic pulsar time-of-arrival residuals.
+  redshift_range: z=0 Milky Way
+  relevance: low
+  scale_range: nanohertz timing frequencies for m near 1e-23 eV
+  source_reference_ids:
+  - arxiv:1810.03227
+  subchannel: pulsar timing array
+constraints:
+- allowed_regions:
+  - m about 1.5e-5 eV can saturate the dark-matter abundance for the Planck upper inflation-scale benchmark.
+  applies: parameter_dependent
+  assumptions:
+  - can_be_relaxed: partial
+    description: The calculation assumes an instantaneous transition from de Sitter inflation to radiation
+      domination.
+    id: instantaneous_reheating
+    impact_if_violated: A different reheating history changes the produced abundance and momentum distribution.
+    notes: null
+    scope: production calculation
+    source_reference_ids:
+    - arxiv:1912.10859
+    status: assumed
+  benchmark_implications:
+  - This abundance acts as a lower-bound contribution for generic ultralight or axion-like scalars.
+  caveats:
+  - The result is a benchmark relation rather than an observational exclusion curve.
+  constrained_parameters:
+  - m
+  - H_dS
+  - H_R
+  constraint_type: cosmological
+  data_release: Planck inflation-scale upper-bound normalization used by the primary paper
+  excluded_regions: []
+  id: con_nonadiabatic_abundance_benchmark
+  likelihood_available: 'no'
+  likelihood_reference: null
+  name: Planck-normalized non-adiabatic abundance benchmark
+  notes: null
+  observable_channel: dark-matter abundance
+  recasting_needed: 'no'
+  robustness: medium
+  source_reference_ids:
+  - arxiv:1912.10859
+- allowed_regions:
+  - The primary m about 1.5e-5 eV benchmark is effectively CDM for this Lyman-alpha bound.
+  applies: recast_required
+  assumptions:
+  - can_be_relaxed: partial
+    description: The related limit is for fuzzy dark matter modeled with hydrodynamical Lyman-alpha simulations.
+    id: fdm_mapping
+    impact_if_violated: A different production distribution can alter the transfer-function mapping.
+    notes: null
+    scope: ULDM-to-FDM recast
+    source_reference_ids:
+    - arxiv:1703.04683
+    status: assumed
+  benchmark_implications:
+  - Use only for low-mass fuzzy/ULDM variants, not the primary benchmark without a mass retargeting.
+  caveats:
+  - IGM thermal history assumptions shift the lower limit.
+  constrained_parameters:
+  - m_FDM
+  - matter power transfer function
+  - IGM thermal history
+  constraint_type: astrophysical
+  data_release: XQ-100 plus HIRES/MIKE Lyman-alpha forest samples
+  excluded_regions:
+  - Fuzzy-DM masses below about 20e-22 eV are excluded at 2 CL in the conservative combined XQ-100 plus
+    HIRES/MIKE analysis.
+  id: con_lya_fdm_mass
+  likelihood_available: 'no'
+  likelihood_reference: null
+  name: Lyman-alpha lower bound on fuzzy-DM mass
+  notes: null
+  observable_channel: Lyman-alpha forest flux power
+  recasting_needed: 'yes'
+  robustness: medium
+  source_reference_ids:
+  - arxiv:1703.04683
+- allowed_regions:
+  - The primary benchmark mass is not in the nanohertz PTA window.
+  applies: parameter_dependent
+  assumptions:
+  - can_be_relaxed: partial
+    description: The scalar field is coherent over the pulsar-timing baseline and contributes to the local
+      halo density.
+    id: coherent_local_field
+    impact_if_violated: Loss of coherence or a subdominant local fraction weakens the timing signal.
+    notes: null
+    scope: PTA recast
+    source_reference_ids:
+    - arxiv:1810.03227
+    status: assumed
+  benchmark_implications:
+  - Relevant only for masses whose oscillation frequency lies in the PTA band.
+  caveats:
+  - Frequency coverage, cadence, and local-density assumptions control the bound.
+  constrained_parameters:
+  - m
+  - rho_DM,local
+  constraint_type: astrophysical
+  data_release: Parkes Pulsar Timing Array timing data
+  excluded_regions:
+  - At m about 1e-23 eV, local ultralight-boson density above about 6 GeV cm^-3 is excluded at 95 percent
+    confidence by the related PPTA analysis.
+  id: con_ppta_ultralight_density
+  likelihood_available: partial
+  likelihood_reference: null
+  name: PPTA local-density bound on ultralight scalar field
+  notes: null
+  observable_channel: pulsar timing
+  recasting_needed: 'yes'
+  robustness: medium
+  source_reference_ids:
+  - arxiv:1810.03227
+theory_to_observable_routing:
+  routes:
+  - agent_notes: null
+    caveats:
+    - Reheating history is a leading production uncertainty.
+    constraint_ids:
+    - con_nonadiabatic_abundance_benchmark
+    - con_lya_fdm_mass
+    - con_ppta_ultralight_density
+    derived_quantities:
+    - N_k distribution
+    - Omega_DM
+    - w
+    - lambda_fs
+    - matter transfer function
+    description: Compute the non-adiabatic scalar distribution, abundance, free-streaming scale, and applicable
+      structure probes.
+    forward_model_chain:
+    - inputs:
+      - m
+      - H_dS
+      - H_R
+      notes: Use the non-adiabatic production formulae.
+      outputs:
+      - occupation distribution N_k
+      step_id: s1
+      step_type: analytic_formula
+      tool_or_code: null
+      validity: Valid for the primary instantaneous-reheating setup.
+    - inputs:
+      - N_k
+      notes: Map field expectation values to a kinetic/fluid description.
+      outputs:
+      - energy density
+      - pressure
+      - w
+      step_id: s2
+      step_type: data_transform
+      tool_or_code: null
+      validity: Adiabatic late-time regime.
+    - inputs:
+      - distribution function
+      - lambda_fs
+      notes: Compute suppression relative to CDM.
+      outputs:
+      - matter power spectrum
+      step_id: s3
+      step_type: transfer_function
+      tool_or_code: CLASS/CAMB-style Boltzmann solver
+      validity: Requires implementing the nonthermal distribution.
+    - inputs:
+      - matter power
+      - field oscillation frequency
+      notes: Apply Lyman-alpha or PTA recasts where appropriate.
+      outputs:
+      - Lyman-alpha/PTA constraints
+      step_id: s4
+      step_type: likelihood
+      tool_or_code: null
+      validity: Only low-mass variants land in the related likelihood windows.
+    id: route_nonadiabatic_uldm_structure
+    input_parameters:
+    - m
+    - H_dS
+    - H_R
+    - reheating history
+    likelihoods:
+    - Lyman-alpha likelihood unavailable
+    - PPTA likelihood unavailable
+    observable_ids:
+    - obs_nonadiabatic_cold_component
+    - obs_fdm_lya_power_cutoff
+    - obs_pta_ultralight_potential_oscillations
+    required_code_resources:
+    - Boltzmann solver with nonthermal scalar distribution
+    - Lyman-alpha transfer-function emulator
+    - PTA timing likelihood
+    route_status: planned
+    source_model_features:
+    - free real spectator scalar
+    - Bunch-Davies initial state
+    - gravitational production
+    validation_tests:
+    - recover m about 1.5e-5 eV abundance benchmark
+    - recover lambda_fs about 70 pc
+    - recover FDM m > 20e-22 eV bound in thermal-history choice

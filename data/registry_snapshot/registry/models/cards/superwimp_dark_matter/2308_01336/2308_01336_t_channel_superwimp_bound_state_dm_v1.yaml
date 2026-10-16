@@ -1,0 +1,985 @@
+_source:
+  shard: arXiv_src_2308_010_wds.tar
+  paper_id: '2308_01336'
+  source_member: 2308_01336.json
+  enriched: true
+  enrichment_schema_version: dm_model_ocr_enrichment_smoke_v0
+schema_version: model_only_v0
+model_id: 2308_01336_t_channel_superwimp_bound_state_dm_v1
+identity:
+  name: Excited-bound-state t-channel superWIMP dark matter
+  family: superwimp_dark_matter
+  aliases:
+  - colored scalar t-channel mediator superWIMP model
+  - charged parent particle model
+  short_description: A simplified dark matter model with a singlet Majorana fermion and a colored, electrically
+    charged scalar mediator; highly excited mediator bound states keep depleting the mediator abundance
+    until late decay into dark matter.
+  historical_origin_or_motivation: The paper studies how excited bound-state formation and transitions
+    alter superWIMP dark matter production relative to mediator freeze-out followed by late decay.
+  status: speculative
+  model_kind: simplified_model
+theory:
+  theory_level: simplified_model
+  parent_frameworks:
+  - t-channel mediator dark matter
+  - superWIMP production
+  - perturbative unbroken gauge theory bound states
+  lagrangian_available: partial
+  renormalizable: 'yes'
+  embedded_in_larger_framework: unknown
+  notes: The paper gives the Yukawa interaction between the singlet Majorana dark matter, scalar mediator,
+    and right-handed quark, plus SM gauge interactions of the mediator.
+particle_content:
+  dark_matter_candidate:
+    name: singlet Majorana fermion
+    spin: 1/2
+    statistics: fermion
+    elementary_or_composite: elementary
+    number_of_components: single_component
+  additional_dark_sector_particles: []
+  mediators:
+  - colored scalar mediator qtilde with right-handed quark gauge quantum numbers
+  dark_radiation_species: []
+  excited_or_degenerate_states:
+  - qtilde qtilde* bound states with high principal and angular quantum numbers
+  long_lived_particles:
+  - long-lived scalar mediator in the superWIMP regime
+  unstable_parent_particles:
+  - scalar mediator qtilde decaying to dark matter and a quark
+  standard_model_extension: substantial
+symmetries:
+  stabilizing_mechanism: The mass hierarchy m_qtilde > m_chi allows mediator decay into the dark matter
+    particle; the paper treats the dark matter fermion as cosmologically stable, with the exact stabilizing
+    symmetry not specified in the extracted text.
+  symmetries:
+  - name: Standard Model SU(3)_c gauge charge of mediator
+    type: gauge
+    exact_or_approximate: exact
+    breaking: unbroken in the bound-state calculation
+    breaking_scale: null
+  - name: Standard Model U(1)_Y / electromagnetism for mediator
+    type: gauge
+    exact_or_approximate: exact
+    breaking: used for electromagnetic transitions among bound states
+    breaking_scale: null
+  - name: unspecified dark matter stability selection rule
+    type: unknown
+    exact_or_approximate: unknown
+    breaking: not specified
+    breaking_scale: null
+  topological_defects_possible: unknown
+interactions:
+  portals:
+  - other
+  - vector
+  standard_model_targets:
+  - right-handed quarks
+  - gluons
+  - photons
+  dark_sector_couplings:
+  - Yukawa interaction lambda between dark matter, scalar mediator, and right-handed quark
+  - mediator QCD and electromagnetic gauge interactions
+  mediator_types:
+  - colored scalar t-channel mediator
+  - gluon and photon radiation in bound-state processes
+  interaction_operators:
+  - L_int = lambda qtilde chi q_R + h.c. as rendered in the text
+  - electric/chromoelectric dipole transitions for bound states
+  scattering:
+    elastic: unknown
+    inelastic: unknown
+    momentum_dependence: unknown
+    velocity_dependence: strong
+    spin_dependence: unknown
+  annihilation_channels:
+  - qtilde qtilde* direct annihilation with Sommerfeld enhancement
+  - bound-state decay of mediator constituents into gluons
+  decay_channels:
+  - qtilde -> chi + q
+  self_scattering_channels: []
+  cp_structure: unknown
+  flavor_structure: mediator has quantum numbers of either an up- or down-type right-handed quark; numerical
+    results focus on the down-type case.
+  tree_or_loop_level: both
+parameters:
+  core:
+  - name: dark_matter_mass
+    symbol: m_chi
+    description: Mass of the singlet Majorana dark matter fermion.
+    value: model dependent; viable mass can shift by about an order of magnitude when excited states are
+      included
+    fiducial_value: null
+    range: null
+    unit: GeV
+    prior: null
+    scale: null
+    role: core
+    status: inferred
+    source_reference_ids:
+    - '2308_01336'
+    notes: The paper emphasizes the impact on the viable dark matter mass rather than a single benchmark
+      mass.
+  - name: mediator_mass
+    symbol: m_qtilde
+    description: Mass of the colored scalar mediator, assumed above the dark matter mass.
+    value: m_qtilde > m_chi
+    fiducial_value: null
+    range: null
+    unit: GeV
+    prior: null
+    scale: null
+    role: core
+    status: inferred
+    source_reference_ids:
+    - '2308_01336'
+    notes: null
+  - name: yukawa_coupling
+    symbol: lambda
+    description: Yukawa coupling controlling conversion and mediator decay.
+    value: superWIMP regime uses small lambda
+    fiducial_value: null
+    range: null
+    unit: null
+    prior: null
+    scale: null
+    role: core
+    status: inferred
+    source_reference_ids:
+    - '2308_01336'
+    notes: The conversion rate scales as lambda squared; direct dark matter annihilation and coannihilation
+      scale as lambda to the fourth and are suppressed for lambda << 1.
+  - name: bound_state_excitation_cutoff
+    symbol: n_max
+    description: Number of excited bound states included in the calculation.
+    value: up to n = 1000 for bound-state formation; up to n = 100 for bound-to-bound transitions
+    fiducial_value: null
+    range: null
+    unit: null
+    prior: null
+    scale: null
+    role: computational
+    status: inferred
+    source_reference_ids:
+    - '2308_01336'
+    notes: null
+  nuisance: []
+  derived: []
+production:
+  mechanisms:
+  - superWIMP production from mediator freeze-out followed by late mediator decay
+  - continued mediator depletion through Sommerfeld-enhanced annihilation and excited bound-state formation
+  - bound-to-bound transitions driven by electromagnetic interactions
+  thermal_equilibrium_with_standard_model: partial
+  thermal_equilibrium_with_hidden_sector: not_applicable
+  abundance_set_by:
+  - mediator abundance at decay
+  - mediator lifetime or conversion rate
+  - lambda
+  - m_chi and m_qtilde
+  - QCD and electromagnetic bound-state processes
+  depends_on_reheating_temperature: unknown
+  can_produce_all_dark_matter: parameter_dependent
+  nonthermal_momentum_distribution: 'yes'
+  notes: The paper finds excited states make mediator depletion efficient until decay, causing the dark
+    matter density to depend on the mediator lifetime.
+relic_density:
+  full_or_subcomponent: full_dark_matter
+  target_fraction:
+    name: target_relic_density
+    symbol: Omega_chi h^2
+    description: Observed relic density used as the target for viable parameter space.
+    value: about 0.12
+    fiducial_value: null
+    range: null
+    unit: null
+    prior: null
+    scale: null
+    role: derived
+    status: assumed
+    source_reference_ids:
+    - '2308_01336'
+    notes: null
+  calculation_type: mixed
+  key_dependencies:
+  - coupled Boltzmann equations for mediator and dark matter yields
+  - effective mediator annihilation cross section including excited bound states
+  - late mediator decay rate
+  - strong and electromagnetic gauge couplings
+  requires_entropy_dilution: unknown
+  overclosure_risk: parameter_dependent
+  underproduction_risk: parameter_dependent
+  tuning_assessment: unknown
+cosmological_history:
+  standard_history_assumed: true
+  nonstandard_features:
+  - late decay of a long-lived parent mediator in the superWIMP regime
+  dark_sector_temperature: null
+  delta_neff: null
+  kinetic_decoupling: null
+  chemical_decoupling:
+    name: mediator_freeze_out
+    symbol: x
+    description: Mediator freeze-out and depletion variable used in Boltzmann equations.
+    value: x = m_qtilde / T
+    fiducial_value: null
+    range: null
+    unit: null
+    prior: null
+    scale: null
+    role: cosmological
+    status: inferred
+    source_reference_ids:
+    - '2308_01336'
+    notes: null
+  phase_transitions: []
+  topological_defects: []
+  isocurvature_perturbations: unknown
+  bbn_relevance: unknown
+  cmb_relevance: unknown
+phase_space:
+  distribution_type: decay_produced
+  distribution_function_available: unknown
+  f_of_p_or_q: not provided in the extracted text
+  average_momentum_relative_to_thermal: null
+  free_streaming_length: null
+  velocity_dispersion_today: null
+  phase_space_bounds:
+  - The paper notes implications for Lyman-alpha constraints through changes in the viable dark matter
+    mass.
+  notes: Late parent decay can produce nonthermal momenta; the model card does not infer a distribution
+    beyond the paper text.
+structure_formation:
+  linear:
+    behaves_like_cdm: scale_dependent
+    transfer_function_shape: smooth_cutoff
+    small_scale_power_effect: suppression
+    half_mode_mass: null
+    impact_on_sigma8_s8: unknown
+  nonlinear:
+    halo_mass_function_effect: unknown
+    subhalo_mass_function_effect: unknown
+    simulation_calibrated: unknown
+validity_domain:
+- id: superwimp_regime
+  applies_to: model
+  condition: The extracted row applies to the small-lambda superWIMP regime where mediator freeze-out
+    and late decay dominate production.
+  valid_range: null
+  status: inferred
+  extrapolation_risk: medium
+  caveats: []
+  source_reference_ids:
+  - '2308_01336'
+  notes: null
+- id: perturbative_bound_state_framework
+  applies_to: computation
+  condition: Bound-state treatment assumes perturbative unbroken gauge interactions and electric/chromoelectric
+    dipole transitions.
+  valid_range: null
+  status: inferred
+  extrapolation_risk: medium
+  caveats: []
+  source_reference_ids:
+  - '2308_01336'
+  notes: null
+- id: down_type_mediator_benchmark
+  applies_to: model
+  condition: Numerical results focus on the mediator with down-type right-handed quark quantum numbers
+    and electric charge -1/3.
+  valid_range: null
+  status: inferred
+  extrapolation_risk: medium
+  caveats: []
+  source_reference_ids:
+  - '2308_01336'
+  notes: null
+assumptions:
+  global:
+  - id: standard_expansion_history
+    description: The coupled Boltzmann treatment is interpreted under the standard radiation-dominated
+      thermal history used in the paper.
+    scope: cosmological_history
+    status: assumed
+    impact_if_violated: A nonstandard expansion history would change freeze-out and decay timing.
+    can_be_relaxed: unknown
+    source_reference_ids:
+    - '2308_01336'
+    notes: null
+  - id: long_lived_mediator
+    description: The mediator is sufficiently long lived for the superWIMP regime so its late decay controls
+      dark matter production.
+    scope: production
+    status: inferred
+    impact_if_violated: If conversion is faster, coannihilation or conversion-driven freeze-out would
+      describe the abundance instead.
+    can_be_relaxed: unknown
+    source_reference_ids:
+    - '2308_01336'
+    notes: null
+  - id: cosmological_stability_of_chi
+    description: The singlet Majorana fermion is treated as stable on cosmological time scales.
+    scope: theory
+    status: inferred
+    impact_if_violated: If chi decays, it is not the dark matter.
+    can_be_relaxed: unknown
+    source_reference_ids:
+    - '2308_01336'
+    notes: null
+  constraint_specific: []
+  computation_specific:
+  - id: many_excited_states_included
+    description: The model-card interpretation follows the paper calculation including many excited bound
+      states and bound-to-bound transitions.
+    scope: computation
+    status: inferred
+    impact_if_violated: null
+    can_be_relaxed: unknown
+    source_reference_ids:
+    - '2308_01336'
+    notes: null
+associated_code:
+  has_associated_code: partial
+  code_summary: The paper reports numerical bound-state and Boltzmann calculations and use of RunDec 3
+    for the SM strong coupling; no model-specific public repository is identified in the extracted text.
+  primary_code_role: relic_density_calculation
+  repositories: []
+  packages_or_modules: []
+  notebooks: []
+  scripts: []
+  expected_inputs: []
+  expected_outputs: []
+  supported_observable_channels: []
+  reproducibility:
+    reproducibility_level: unknown
+    has_tests: unknown
+    has_examples: unknown
+    has_documentation: unknown
+    pinned_dependencies: unknown
+    notes: null
+  validation:
+    validation_status: unknown
+    benchmark_references: []
+    validation_notes: null
+  caveats: []
+provenance:
+  model_id: 2308_01336_t_channel_superwimp_bound_state_dm_v1
+  model_name: Excited-bound-state t-channel superWIMP dark matter
+  model_family: superwimp_dark_matter
+  entry_version: 0.1.0
+  status: machine_extracted
+  created_at: '2026-05-31'
+  last_updated: '2026-05-31'
+  sources:
+    primary_papers:
+    - reference_id: '2308_01336'
+      title: Excited bound states and their role in dark matter production
+      authors:
+      - Tobias Binder
+      - Mathias Garny
+      - Jan Heisig
+      - Stefan Lederer
+      - Kai Urban
+      year: 2023
+      arxiv_id: '2308.01336'
+      doi: null
+      url: null
+      role: original_model
+      notes: Assigned SQLite full text only.
+    - reference_id: '2308.01336'
+      title: Excited bound states and their role in dark matter production
+      authors:
+      - Binder, Tobias
+      - Garny, Mathias
+      - Heisig, Jan
+      - Lederer, Stefan
+      - Urban, Kai
+      year: 2023
+      arxiv_id: '2308.01336'
+      doi: 10.1103/PhysRevD.108.095030
+      url: https://arxiv.org/abs/2308.01336
+      role: original_model
+      notes: Primary assigned paper text resolved locally.
+    constraint_papers:
+    - reference_id: '2404.16086'
+      title: Probing conversion-driven freeze-out at the LHC
+      authors:
+      - Heisig, Jan
+      - Lessa, Andre
+      - Ramos, Lucas Magno D.
+      year: 2024
+      arxiv_id: '2404.16086'
+      doi: 10.1103/PhysRevD.110.015031
+      url: https://arxiv.org/abs/2404.16086
+      role: constraint
+      notes: Related full text resolved locally and read within the three-paper cap.
+    - reference_id: '2308.14594'
+      title: Indirect detection of dark matter with (pseudo)-scalar interactions
+      authors:
+      - Biondini, Simone
+      - Bollig, Julian
+      - Vogl, Stefan
+      year: 2024
+      arxiv_id: '2308.14594'
+      doi: 10.1007/JHEP04(2024)050
+      url: https://arxiv.org/abs/2308.14594
+      role: constraint
+      notes: Related full text resolved locally and read within the three-paper cap.
+    review_papers:
+    - reference_id: '2402.12787'
+      title: 'Effective field theories for dark matter pairs in the early universe: center-of-mass recoil
+        effects'
+      authors:
+      - Biondini, S.
+      - Brambilla, N.
+      - Qerimi, G.
+      - Vairo, A.
+      year: 2024
+      arxiv_id: '2402.12787'
+      doi: 10.1007/JHEP07(2024)021
+      url: https://arxiv.org/abs/2402.12787
+      role: implementation
+      notes: Related full text resolved locally and read within the three-paper cap.
+    external_databases: []
+  extraction:
+    method: llm_assisted
+    extracted_by: codex_batch_worker
+    extractor_name: dark-matter model-card batch worker
+    extraction_date: '2026-05-31'
+    confidence: medium
+    source_chunks_or_sections:
+    - reference_id: '2308_01336'
+      section: opening summary
+      page: null
+      quote_or_summary: The paper applies the formalism to a simplified dark matter model with a colored
+        electrically charged t-channel mediator in the superWIMP regime.
+    - reference_id: '2308_01336'
+      section: model setup
+      page: null
+      quote_or_summary: It specifies a singlet Majorana fermion dark matter candidate and a scalar mediator
+        with right-handed quark gauge quantum numbers.
+    - reference_id: '2308_01336'
+      section: Boltzmann equations
+      page: null
+      quote_or_summary: The abundance is followed with coupled mediator and dark matter yield equations
+        including bound-state effects and mediator decay.
+    unresolved_items:
+    - The exact stabilizing symmetry for chi is not specified in the extracted text.
+    - The Lyman-alpha relaxation is not converted into a numerical transfer-function likelihood here.
+    - Collider constraints require a dedicated long-lived-particle recast for the chosen masses and lifetime.
+  evidence:
+    particle_content:
+    - reference_id: '2308_01336'
+      note: The model contains a singlet Majorana fermion dark matter candidate and a scalar mediator
+        qtilde with right-handed quark gauge quantum numbers.
+      confidence: high
+      section: model setup
+      page: null
+    interactions:
+    - reference_id: '2308_01336'
+      note: The dark matter couples through a Yukawa interaction to the scalar mediator and right-handed
+        quark; the mediator also has SU(3)_c and U(1)_Y gauge interactions.
+      confidence: high
+      section: model setup
+      page: null
+    production_mechanism:
+    - reference_id: '2308_01336'
+      note: The superWIMP regime is described as mediator freeze-out followed by late decay into dark
+        matter, modified by excited bound-state depletion.
+      confidence: high
+      section: opening/model setup
+      page: null
+    cosmological_history:
+    - reference_id: '2308_01336'
+      note: The paper solves coupled Boltzmann equations for Y_q and Y_chi with x = m_q/T, entropy density,
+        and Hubble rate.
+      confidence: medium
+      section: Boltzmann equations
+      page: null
+    parameter_ranges:
+    - reference_id: '2308_01336'
+      note: The text states m_qtilde > m_chi and focuses on small lambda where conversion and superWIMP
+        production are relevant.
+      confidence: medium
+      section: model setup
+      page: null
+    validity_domain:
+    - reference_id: '2308_01336'
+      note: The paper notes the calculation is in perturbative unbroken gauge theories and examines partial-wave
+        unitarity.
+      confidence: medium
+      section: bound-state formalism
+      page: null
+    observables:
+    - reference_id: '2308.01336'
+      note: Primary paper states that highly excited states keep depleting mediators, make the density
+        lifetime-dependent, and relax Lyman-alpha constraints.
+      confidence: high
+      section: Abstract and superWIMP section
+      page: null
+    - reference_id: '2404.16086'
+      note: Related local text provides long-lived t-channel mediator collider context.
+      confidence: medium
+      section: Abstract
+      page: null
+    - reference_id: '2402.12787'
+      note: Related local text covers effective-field-theory treatment of dark matter pairs in the early
+        universe.
+      confidence: medium
+      section: Introduction
+      page: null
+    constraints:
+    - reference_id: '2308.01336'
+      note: Primary paper provides bound-state, unitarity, relic-density, and Lyman-alpha implications.
+      confidence: high
+      section: Results
+      page: null
+    - reference_id: '2404.16086'
+      note: Related local text maps conversion-driven freeze-out to LHC searches.
+      confidence: medium
+      section: Search strategy
+      page: null
+    routes:
+    - reference_id: '2308.01336'
+      note: Primary paper lays out the pNREFT matrix elements, bound-state rates, and superWIMP Boltzmann
+        route.
+      confidence: high
+      section: Methods and superWIMP section
+      page: null
+  review:
+    human_reviewed: false
+    reviewed_by: null
+    review_date: null
+    expert_reviewed: false
+    expert_reviewer: null
+    expert_review_date: null
+    reviewer_notes: []
+    scientific_confidence: medium
+    implementation_confidence: medium
+  caveats:
+  - Plain-text mathematical rendering obscures some particle symbols; notation is normalized in compact
+    ASCII form.
+robustness:
+  overall: medium
+  theory_robustness: medium
+  observational_robustness: unknown
+  computational_robustness: medium
+  constraint_robustness: not_applicable
+  dominant_uncertainties:
+  - plain-text loss of some symbols
+  - model is simplified and regime-specific
+  - phase-space distribution not explicitly extracted
+  validation_status: expert_judgment_only
+  notes: Accepted because the paper substantially develops the relic-production calculation for this dark
+    matter model.
+agent_failure_modes:
+  warnings:
+  - id: do_not_use_outside_superwimp_regime
+    severity: medium
+    category: extrapolation
+    warning: The card describes the superWIMP/small-lambda regime; other regimes in the same model have
+      different abundance logic.
+    mitigation: Check whether coannihilation, conversion-driven freeze-out, or freeze-in dominates before
+      reuse.
+    source_reference_ids:
+    - '2308_01336'
+  - id: bound_state_truncation
+    severity: medium
+    category: approximate_constraint
+    warning: The relic result depends on many but finite excited bound states and approximate dipole processes.
+    mitigation: Treat numerical relic-density conclusions as calculation-specific until reviewed.
+    source_reference_ids:
+    - '2308_01336'
+observables:
+- id: excited_bound_state_relic_depletion
+  name: Relic-density depletion by highly excited bound states
+  channel: cosmology
+  subchannel: superWIMP mediator freeze-out and decay
+  predicted_effect: Including many excited mediator bound states keeps depleting the mediator abundance
+    until late decay, reducing the final dark matter density compared with Sommerfeld-only or ground-state
+    treatments.
+  effect_direction: suppression
+  key_quantities:
+  - name: dark matter mass
+    symbol: m_chi
+    unit: GeV
+    role: core
+    status: inferred
+    source_reference_ids:
+    - '2308.01336'
+  - name: mediator mass
+    symbol: m_tilde_q
+    value: m_tilde_q > m_chi
+    unit: GeV
+    role: core
+    status: inferred
+    source_reference_ids:
+    - '2308.01336'
+  - name: bound-state cutoff
+    symbol: n_max
+    value: up to n=1000 for bound-state formation and n=100 for transitions in the primary calculation
+    role: computational
+    status: inferred
+    source_reference_ids:
+    - '2308.01336'
+  redshift_range: freeze-out through mediator decay
+  scale_range: null
+  environments:
+  - early universe plasma
+  observability: medium
+  relevance: critical
+  linked_constraints:
+  - bound_state_relic_recalculation
+  - perturbative_unitarity_bound
+  linked_routes:
+  - excited_bound_state_to_constraints
+  caveats:
+  - Requires a large coupled bound-state network and perturbative validity checks.
+  source_reference_ids:
+  - '2308.01336'
+  - '2402.12787'
+  notes: null
+- id: mediator_lifetime_relic_dependence
+  name: Novel dependence of superWIMP density on mediator lifetime
+  channel: cosmology
+  subchannel: late mediator decay
+  predicted_effect: Because excited states maintain depletion until decay, the final dark matter density
+    depends on the mediator lifetime in the superWIMP regime.
+  effect_direction: rate_change
+  key_quantities:
+  - name: Yukawa coupling
+    symbol: lambda
+    description: Small coupling controlling conversion and mediator decay.
+    role: core
+    status: inferred
+    source_reference_ids:
+    - '2308.01336'
+  - name: mediator lifetime
+    symbol: tau_mediator
+    role: derived
+    status: inferred
+    source_reference_ids:
+    - '2308.01336'
+  redshift_range: post-freeze-out before or around late mediator decay
+  scale_range: null
+  environments:
+  - early universe plasma
+  observability: medium
+  relevance: high
+  linked_constraints:
+  - bound_state_relic_recalculation
+  linked_routes:
+  - excited_bound_state_to_constraints
+  caveats:
+  - The lifetime dependence is model-specific and tied to the colored scalar mediator setup.
+  source_reference_ids:
+  - '2308.01336'
+  notes: null
+- id: lyman_alpha_relaxed_superwimp_bound
+  name: Relaxation of Lyman-alpha tension through bound-state depletion
+  channel: lyman_alpha
+  subchannel: warm superWIMP dark matter
+  predicted_effect: The reduced relic density and shifted viable mass region can relax Lyman-alpha constraints
+    on superWIMP production.
+  effect_direction: model_dependent
+  key_quantities:
+  - name: dark matter mass
+    symbol: m_chi
+    description: Viable mass can shift by about an order of magnitude when excited states are included.
+    unit: GeV
+    role: core
+    status: approximate
+    source_reference_ids:
+    - '2308.01336'
+  - name: mediator lifetime
+    symbol: tau_mediator
+    role: derived
+    status: inferred
+    source_reference_ids:
+    - '2308.01336'
+  redshift_range: structure formation epoch
+  scale_range: Lyman-alpha forest scales
+  environments:
+  - intergalactic medium
+  observability: medium
+  relevance: high
+  linked_constraints:
+  - lyman_alpha_superwimp_bound
+  linked_routes:
+  - excited_bound_state_to_constraints
+  caveats:
+  - A precision Lyman-alpha recast requires the nonthermal momentum distribution.
+  source_reference_ids:
+  - '2308.01336'
+  notes: null
+- id: long_lived_colored_mediator_lhc
+  name: Long-lived colored mediator signatures
+  channel: collider
+  subchannel: HSCP, displaced, or compressed-object searches
+  predicted_effect: The small coupling and compressed t-channel mediator setup predicts long-lived colored
+    charged particles that can be targeted at the LHC.
+  effect_direction: rate_change
+  key_quantities:
+  - name: mediator mass
+    symbol: m_tilde_q
+    unit: GeV
+    role: core
+    status: inferred
+    source_reference_ids:
+    - '2308.01336'
+    - '2404.16086'
+  - name: mass splitting
+    symbol: Delta m
+    description: Mediator-dark matter mass splitting controlling visible decay products.
+    unit: GeV
+    role: core
+    status: inferred
+    source_reference_ids:
+    - '2404.16086'
+  redshift_range: collider runtime
+  scale_range: TeV partonic scales
+  environments:
+  - LHC detectors
+  observability: medium
+  relevance: medium
+  linked_constraints:
+  - collider_long_lived_mediator
+  linked_routes:
+  - excited_bound_state_to_constraints
+  caveats:
+  - Collider limits are adjacent to the primary cosmology result and need a dedicated recast.
+  source_reference_ids:
+  - '2308.01336'
+  - '2404.16086'
+  notes: null
+constraints:
+- id: bound_state_relic_recalculation
+  name: Relic abundance must include highly excited bound states
+  constraint_type: numerical
+  observable_channel: thermal history
+  applies: 'yes'
+  constrained_parameters:
+  - n_max
+  - lambda
+  - m_chi
+  - m_tilde_q
+  - tau_mediator
+  excluded_regions:
+  - Sommerfeld-only or ground-state-only calculations can overestimate the relic abundance by more than
+    an order of magnitude in the studied regime.
+  allowed_regions:
+  - Networks including highly excited states and transitions within perturbative/unitary validity.
+  benchmark_implications:
+  - The viable dark matter mass can move by about an order of magnitude.
+  likelihood_available: 'no'
+  likelihood_reference: null
+  data_release: null
+  recasting_needed: 'yes'
+  robustness: high
+  assumptions:
+  - id: coulombic_bound_states
+    description: Radiative bound-state formation is described by Coulombic potentials and electric-dipole
+      transitions in the non-relativistic regime.
+    scope: bound-state calculation
+    status: approximate
+    impact_if_violated: Non-Coulombic or nonperturbative corrections could change high-n rates.
+    can_be_relaxed: partial
+    source_reference_ids:
+    - '2308.01336'
+    notes: null
+  caveats:
+  - Computation is intensive and not replaced by a simple closed-form likelihood.
+  source_reference_ids:
+  - '2308.01336'
+  - '2402.12787'
+  notes: null
+- id: perturbative_unitarity_bound
+  name: Perturbativity and partial-wave unitarity of bound-state rates
+  constraint_type: theoretical
+  observable_channel: non-relativistic scattering
+  applies: 'yes'
+  constrained_parameters:
+  - effective gauge couplings
+  - partial waves
+  - n_max
+  excluded_regions:
+  - Parameter regions where bound-state formation rates violate perturbativity or unitarity assumptions.
+  allowed_regions:
+  - The primary paper reports compatibility with partial-wave unitarity in the relevant perturbative regime.
+  benchmark_implications:
+  - The excited-state depletion result is trustworthy only inside this regime.
+  likelihood_available: 'no'
+  likelihood_reference: null
+  data_release: null
+  recasting_needed: partial
+  robustness: medium
+  assumptions:
+  - id: nonrelativistic_perturbative_regime
+    description: The nonrelativistic potential treatment and perturbative gauge couplings are valid.
+    scope: theory calculation
+    status: assumed
+    impact_if_violated: Strong coupling would require lattice or other nonperturbative methods.
+    can_be_relaxed: partial
+    source_reference_ids:
+    - '2308.01336'
+    notes: null
+  caveats:
+  - No independent unitarity scan was run here.
+  source_reference_ids:
+  - '2308.01336'
+  notes: null
+- id: lyman_alpha_superwimp_bound
+  name: Lyman-alpha constraints on superWIMP warmness
+  constraint_type: cosmological
+  observable_channel: lyman_alpha
+  applies: parameter_dependent
+  constrained_parameters:
+  - m_chi
+  - tau_mediator
+  - momentum distribution
+  excluded_regions:
+  - Warm nonthermal superWIMP spectra that erase too much small-scale structure.
+  allowed_regions:
+  - Excited-state depletion can relax the Lyman-alpha tension by shifting the viable mass/lifetime region.
+  benchmark_implications:
+  - The cosmologically viable mass range changes relative to calculations omitting excited states.
+  likelihood_available: 'no'
+  likelihood_reference: null
+  data_release: null
+  recasting_needed: 'yes'
+  robustness: medium
+  assumptions:
+  - id: superwimp_momentum_distribution
+    description: The Lyman-alpha mapping uses the superWIMP momentum distribution from late mediator decay.
+    scope: structure formation
+    status: assumed
+    impact_if_violated: Different decay kinematics or a multi-component fraction would modify the bound.
+    can_be_relaxed: 'yes'
+    source_reference_ids:
+    - '2308.01336'
+    notes: null
+  caveats:
+  - The primary text states relaxation qualitatively; a transfer-function recast is unresolved.
+  source_reference_ids:
+  - '2308.01336'
+  notes: null
+- id: collider_long_lived_mediator
+  name: LHC searches for long-lived colored mediators
+  constraint_type: collider
+  observable_channel: long-lived particle searches
+  applies: recast_required
+  constrained_parameters:
+  - m_tilde_q
+  - Delta m
+  - tau_mediator
+  - lambda
+  excluded_regions:
+  - Mediator masses and lifetimes excluded by HSCP, displaced, disappearing, or soft-object searches in
+    t-channel mediator models.
+  allowed_regions:
+  - Compressed or lifetime regions not excluded by current searches.
+  benchmark_implications:
+  - Cosmologically favored superWIMP regions can be probed by lifetime-dependent LHC searches.
+  likelihood_available: partial
+  likelihood_reference: null
+  data_release: null
+  recasting_needed: 'yes'
+  robustness: medium
+  assumptions:
+  - id: colored_scalar_mediator
+    description: The mediator has the colored and electrically charged scalar quantum numbers of the t-channel
+      model.
+    scope: collider phenomenology
+    status: assumed
+    impact_if_violated: Different charges or decay modes would change the search mapping.
+    can_be_relaxed: 'yes'
+    source_reference_ids:
+    - '2308.01336'
+    - '2404.16086'
+    notes: null
+  caveats:
+  - Related-paper collider limits were read locally but not simulated.
+  source_reference_ids:
+  - '2308.01336'
+  - '2404.16086'
+  notes: null
+theory_to_observable_routing:
+  routes:
+  - id: excited_bound_state_to_constraints
+    description: Compute bound-state formation and transitions, evolve mediator freeze-out and decay,
+      then compare relic-density, Lyman-alpha, unitarity, and collider constraints.
+    source_model_features:
+    - singlet Majorana dark matter
+    - colored electrically charged scalar mediator
+    - highly excited bound states
+    - superWIMP late-decay regime
+    input_parameters:
+    - m_chi
+    - m_tilde_q
+    - lambda
+    - gauge couplings
+    - n_max
+    - tau_mediator
+    derived_quantities:
+    - effective annihilation/depletion rate
+    - mediator yield at decay
+    - Omega_chi
+    - nonthermal momentum distribution
+    forward_model_chain:
+    - step_id: matrix_elements
+      step_type: analytic_formula
+      tool_or_code: potential non-relativistic EFT
+      inputs:
+      - Coulomb potentials
+      - effective couplings
+      - n_max
+      outputs:
+      - BSF and transition rates
+      validity: Valid in the perturbative nonrelativistic regime.
+      notes: null
+    - step_id: network_evolution
+      step_type: boltzmann_solver
+      tool_or_code: bound-state network plus mediator yield equations
+      inputs:
+      - rates
+      - lambda
+      - masses
+      outputs:
+      - mediator abundance until decay
+      validity: Must include enough excited states for convergence.
+      notes: null
+    - step_id: constraint_recast
+      step_type: recasting
+      tool_or_code: relic, Lyman-alpha, unitarity, and LHC checks
+      inputs:
+      - Omega_chi
+      - momentum distribution
+      - tau_mediator
+      - mediator mass
+      outputs:
+      - allowed/excluded parameter regions
+      validity: Requires external transfer-function and collider likelihoods for precision.
+      notes: null
+    observable_ids:
+    - excited_bound_state_relic_depletion
+    - mediator_lifetime_relic_dependence
+    - lyman_alpha_relaxed_superwimp_bound
+    - long_lived_colored_mediator_lhc
+    constraint_ids:
+    - bound_state_relic_recalculation
+    - perturbative_unitarity_bound
+    - lyman_alpha_superwimp_bound
+    - collider_long_lived_mediator
+    likelihoods: []
+    required_code_resources:
+    - BSF/high-n transition rate code
+    - Boltzmann network solver
+    - Lyman-alpha transfer-function recast
+    - LLP collider recast
+    validation_tests:
+    - Recover the paper claim that excited states can reduce relic density by more than an order of magnitude
+    - Check convergence as n_max increases
+    route_status: planned
+    agent_notes: null
+    caveats:
+    - The LHC and Lyman-alpha constraints are not fully implemented in the local artifacts.

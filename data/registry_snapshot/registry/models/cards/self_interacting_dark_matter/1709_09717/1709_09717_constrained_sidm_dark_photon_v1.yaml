@@ -1,0 +1,835 @@
+_source:
+  shard: arXiv_src_1709_025_wds.tar
+  paper_id: '1709_09717'
+  source_member: 1709_09717.json
+  enriched: true
+  enrichment_schema_version: dm_model_ocr_enrichment_smoke_v0
+schema_version: model_only_v0
+model_id: 1709_09717_constrained_sidm_dark_photon_v1
+identity:
+  name: Constrained self-interacting dark matter with dark photon and dark fermions
+  family: self_interacting_dark_matter
+  aliases:
+  - constrained simplified SIDM model
+  - hidden charged DM simplified model
+  short_description: A simplified hidden-sector SIDM model in which a DM particle self-interacts through
+    a massive dark photon and remains coupled to light dark fermions, with asymmetric production favored
+    by halo-scale requirements.
+  historical_origin_or_motivation: Motivated by explaining diverse galactic halo profiles while predicting
+    dark radiation and dark acoustic damping.
+  status: speculative
+  model_kind: simplified_model
+theory:
+  theory_level: simplified_model
+  parent_frameworks:
+  - hidden charged dark matter
+  - self-interacting dark matter
+  lagrangian_available: 'yes'
+  renormalizable: unknown
+  eft_cutoff: null
+  embedded_in_larger_framework: 'yes'
+  notes: The paper describes the model as a simplified version of more general hidden charged DM models.
+particle_content:
+  dark_matter_candidate:
+    name: SIDM particle chi
+    spin: unknown
+    statistics: fermion
+    elementary_or_composite: elementary
+    number_of_components: single_component
+  additional_dark_sector_particles:
+  - light dark fermion f
+  mediators:
+  - massive dark photon phi
+  dark_radiation_species:
+  - massless dark fermion f
+  excited_or_degenerate_states: []
+  long_lived_particles:
+  - asymmetric chi population
+  unstable_parent_particles: []
+  standard_model_extension: substantial
+symmetries:
+  stabilizing_mechanism: Stability is implicit in the conserved dark matter number/asymmetry; the paper
+    does not specify the full stabilizing symmetry.
+  symmetries:
+  - name: dark gauge interaction
+    type: gauge
+    exact_or_approximate: unknown
+  topological_defects_possible: unknown
+interactions:
+  portals:
+  - vector
+  standard_model_targets: []
+  dark_sector_couplings:
+  - chi-phi gauge coupling g_chi
+  - f-phi gauge coupling g_f
+  mediator_types:
+  - massive dark photon
+  - light dark fermion dark radiation
+  interaction_operators:
+  - -i g_chi chi gamma^mu chi phi_mu
+  - -i g_f f gamma^mu f phi_mu
+  scattering:
+    elastic: 'yes'
+    inelastic: unknown
+    momentum_dependence: strong
+    velocity_dependence: strong
+    spin_dependence: unknown
+  annihilation_channels:
+  - chi anti-chi -> dark photon mediator
+  self_scattering_channels:
+  - chi chi self-scattering through massive dark photon exchange
+  - chi-f elastic scattering
+  tree_or_loop_level: tree
+parameters:
+  core:
+  - name: dark gauge coupling
+    symbol: g_chi = g_f
+    description: Common coupling of DM and dark fermions to the dark photon.
+    range: fit from self-interaction and production requirements
+    role: core
+    status: inferred
+  - name: DM mass
+    symbol: m_chi
+    description: Mass of the self-interacting DM particle.
+    range: symmetric case 9-240 MeV; asymmetric focus m_chi > 1 GeV and perturbativity breaks down near
+      200 GeV
+    unit: GeV
+    role: core
+    status: inferred
+  - name: dark photon mass
+    symbol: m_phi
+    description: Mass of the vector mediator.
+    range: fit to preferred self-interaction cross sections
+    role: core
+    status: inferred
+  - name: dark-to-visible temperature ratio
+    symbol: xi
+    description: Ratio T_f/T_gamma controlling dark radiation and kinetic decoupling.
+    range: Planck-motivated upper values around 0.48-0.62
+    role: core
+    status: inferred
+production:
+  mechanisms:
+  - primordial asymmetric dark matter abundance
+  - symmetric annihilation to dark photon mediator considered as comparison
+  thermal_equilibrium_with_standard_model: 'no'
+  thermal_equilibrium_with_hidden_sector: 'yes'
+  abundance_set_by:
+  - primordial DM asymmetry for the favored region
+  - annihilation cross section for the symmetric comparison
+  depends_on_reheating_temperature: unknown
+  can_produce_all_dark_matter: parameter_dependent
+  nonthermal_momentum_distribution: unknown
+  notes: The paper states that asymmetric production is favored once dwarf-to-cluster self-interaction
+    requirements are imposed.
+relic_density:
+  full_or_subcomponent: full_dark_matter
+  target_fraction: null
+  calculation_type: mixed
+  key_dependencies:
+  - dark matter asymmetry
+  - annihilation cross section to mediator
+  - dark gauge coupling
+  - DM and mediator masses
+  requires_entropy_dilution: unknown
+  overclosure_risk: parameter_dependent
+  underproduction_risk: parameter_dependent
+  tuning_assessment: unknown
+cosmological_history:
+  standard_history_assumed: true
+  nonstandard_features:
+  - decoupled hidden-sector temperature ratio
+  - dark radiation from light fermions
+  - late kinetic decoupling through chi-f scattering
+  dark_sector_temperature:
+    name: dark-to-visible temperature ratio
+    symbol: xi
+    description: T_f/T_gamma in the dark sector.
+    range: xi below CMB bounds, examples around 0.48
+    role: core
+    status: inferred
+  delta_neff:
+    name: dark radiation contribution
+    symbol: Delta N_eff
+    description: Contribution from light fermions f.
+    range: set by xi
+    role: core
+    status: inferred
+  kinetic_decoupling:
+    name: kinetic decoupling temperature
+    symbol: T_kd
+    description: Visible-sector temperature at chi-f kinetic decoupling.
+    range: roughly 0.6-5 keV in the favored/allowed region
+    unit: keV
+    role: core
+    status: inferred
+  chemical_decoupling: null
+  phase_transitions: []
+  topological_defects: []
+  isocurvature_perturbations: unknown
+  bbn_relevance: unknown
+  cmb_relevance: medium
+phase_space:
+  distribution_type: unknown
+  distribution_function_available: 'no'
+  notes: The paper focuses on the matter-power transfer effects of late kinetic decoupling, not a full
+    phase-space distribution.
+structure_formation:
+  linear:
+    behaves_like_cdm: scale_dependent
+    transfer_function_shape: oscillatory
+    small_scale_power_effect: suppression
+  nonlinear:
+    halo_mass_function_effect: suppressed below a kinetic-decoupling-dependent cutoff mass
+    subhalo_mass_function_effect: mildly suppressed for Lyman-alpha-allowed T_kd
+    simulation_calibrated: partial
+validity_domain:
+- id: simplified-hidden-sector
+  applies_to: model
+  condition: Use as a simplified hidden-sector SIDM realization with four parameters g_chi, m_chi, m_phi,
+    xi.
+  status: established
+  extrapolation_risk: medium
+  caveats: []
+- id: asymmetric-focus
+  applies_to: production
+  condition: The viable region emphasized by the paper assumes asymmetric DM with m_chi > 1 GeV.
+  status: inferred
+  extrapolation_risk: medium
+  caveats: []
+assumptions:
+  global:
+  - id: equal-dark-couplings
+    description: The paper assumes g_chi = g_f.
+    scope: theory
+    status: assumed
+  - id: independent-dark-temperature
+    description: The hidden sector can evolve with an independent temperature ratio xi.
+    scope: cosmological_history
+    status: assumed
+  - id: asymmetric-production
+    description: The main viable analysis assumes a primordial DM asymmetry.
+    scope: production
+    status: inferred
+associated_code:
+  has_associated_code: unknown
+  code_summary: The paper reports using a modified CAMB/ETHOS-style calculation for matter power spectra,
+    but no dedicated public model code is identified in the assigned text.
+provenance:
+  model_id: 1709_09717_constrained_sidm_dark_photon_v1
+  model_name: Constrained self-interacting dark matter with dark photon and dark fermions
+  model_family: self_interacting_dark_matter
+  entry_version: 0.1.0
+  status: machine_extracted
+  created_at: '2026-05-31'
+  last_updated: '2026-05-31'
+  sources:
+    primary_papers:
+    - reference_id: paper:1709_09717
+      title: Signatures of Self-Interacting Dark Matter in the Matter Power Spectrum and the CMB
+      authors:
+      - Ran Huo
+      - Manoj Kaplinghat
+      - Zhen Pan
+      - Hai-Bo Yu
+      year: 2017
+      arxiv_id: '1709.09717'
+      doi: null
+      url: null
+      role: original_model
+      notes: null
+    - reference_id: '1709_09717'
+      title: Signatures of self-interacting dark matter in the matter power spectrum and the CMB
+      authors:
+      - Huo, Ran
+      - Kaplinghat, Manoj
+      - Pan, Zhen
+      - Yu, Hai-Bo
+      year: 2018
+      arxiv_id: '1709.09717'
+      doi: 10.1016/j.physletb.2018.06.024
+      url: https://arxiv.org/abs/1709.09717
+      role: original_model
+      notes: Primary assigned paper; full text resolved locally.
+    constraint_papers:
+    - reference_id: '1705_08894'
+      title: 'Wandering in the Lyman-alpha forest: a study of dark matter-dark radiation interactions'
+      authors:
+      - Krall, Rebecca
+      - Cyr-Racine, Francis-Yan
+      - Dvorkin, Cora
+      year: 2017
+      arxiv_id: '1705.08894'
+      doi: 10.1088/1475-7516/2017/09/003
+      url: https://arxiv.org/abs/1705.08894
+      role: constraint
+      notes: Related full text read from local SQLite cache.
+    - reference_id: '1805_00651'
+      title: Self-interacting dark matter and muon ( g - 2) in a gauged U{(1)}_{L_{μ }-{L}_{τ }} model
+      authors:
+      - Kamada, Ayuki
+      - Kaneta, Kunio
+      - Yanagi, Keisuke
+      - Yu, Hai-Bo
+      year: 2018
+      arxiv_id: '1805.00651'
+      doi: 10.1007/JHEP06(2018)117
+      url: https://arxiv.org/abs/1805.00651
+      role: extension
+      notes: Related source text read from arXiv abstract page via bounded fallback.
+    - reference_id: '1712_01246'
+      title: Reannihilation of self-interacting dark matter
+      authors:
+      - Binder, Tobias
+      - Gustafsson, Michael
+      - Kamada, Ayuki
+      - Sandner, Stefan Marinus Rodrigues
+      - Wiesner, Max
+      year: 2018
+      arxiv_id: '1712.01246'
+      doi: 10.1103/PhysRevD.97.123004
+      url: https://arxiv.org/abs/1712.01246
+      role: extension
+      notes: Related full text read from local SQLite cache.
+    review_papers: []
+    external_databases: []
+  extraction:
+    method: llm_assisted
+    extracted_by: codex
+    extractor_name: gpt-5.5 dark-matter model-card worker
+    extraction_date: '2026-05-31'
+    confidence: high
+    source_chunks_or_sections:
+    - reference_id: paper:1709_09717
+      section: Constrained Simplified SIDM Model
+      page: null
+      quote_or_summary: Defines the interaction Lagrangian, particle content, four parameters, and production
+        variants.
+    - reference_id: paper:1709_09717
+      section: Dark Radiation, Acoustic Damping and Kinetic Decoupling
+      page: null
+      quote_or_summary: Connects the model to dark radiation, kinetic decoupling, and power-spectrum suppression.
+    unresolved_items:
+    - No machine-readable Lyman-alpha or CMB likelihood was extracted.
+    - Halo-profile constraints are represented as paper-quoted target bands, not as a simulation-calibrated
+      likelihood.
+  evidence:
+    particle_content:
+    - reference_id: paper:1709_09717
+      note: The model contains a self-interacting DM particle, a massive dark photon mediator, and light/massless
+        dark fermions f that act as dark radiation.
+      confidence: high
+      section: Constrained Simplified SIDM Model
+    interactions:
+    - reference_id: paper:1709_09717
+      note: The interaction Lagrangian couples the SIDM particle and massless fermion f to a gauge boson
+        with couplings g_chi and g_f, with g_chi = g_f assumed.
+      confidence: high
+      section: Constrained Simplified SIDM Model
+    production_mechanism:
+    - reference_id: paper:1709_09717
+      note: The paper compares symmetric annihilation to the mediator with an asymmetric DM abundance,
+        and finds the halo data favor asymmetric production.
+      confidence: high
+      section: model parameter discussion
+    cosmological_history:
+    - reference_id: paper:1709_09717
+      note: The dark sector can evolve independently with temperature ratio xi = T_f/T_gamma; light fermions
+        contribute Delta N_eff and keep DM coupled until late kinetic decoupling.
+      confidence: high
+      section: Dark Radiation and Kinetic Decoupling
+    parameter_ranges:
+    - reference_id: paper:1709_09717
+      note: 'The simplified model is described by four parameters: g_chi, m_chi, m_phi, and xi; for symmetric
+        DM the allowed mass range is quoted as 9-240 MeV, while the paper focuses on asymmetric DM with
+        m_chi > 1 GeV.'
+      confidence: high
+      section: Constrained Simplified SIDM Model
+    structure_formation:
+    - reference_id: paper:1709_09717
+      note: Elastic chi-f scattering produces dark acoustic damping; the paper maps kinetic decoupling
+        temperature to WDM-like power suppression and halo-mass-function effects.
+      confidence: high
+      section: Matter power spectrum and halo mass function
+    observables:
+    - reference_id: '1709_09717'
+      note: Primary local text states dark radiation, late kinetic decoupling, and dark acoustic damping
+        suppress the linear power spectrum.
+      confidence: high
+      section: abstract/introduction
+      page: null
+    - reference_id: '1709_09717'
+      note: Primary text gives Planck-derived temperature-ratio bounds and a kinetic-decoupling scaling.
+      confidence: high
+      section: dark radiation section
+      page: null
+    - reference_id: '1709_09717'
+      note: Primary text ties dwarf-to-cluster halo fits to the simplified SIDM parameter space.
+      confidence: high
+      section: constrained SIDM model section
+      page: null
+    constraints:
+    - reference_id: '1709_09717'
+      note: Primary paper quotes the halo cross-section targets and symmetric-DM mass range.
+      confidence: high
+      section: constrained SIDM model section
+      page: null
+    - reference_id: '1709_09717'
+      note: Primary paper states Lyman-alpha measurements put a strong upper limit on the damping scale.
+      confidence: high
+      section: abstract/introduction
+      page: null
+    - reference_id: '1709_09717'
+      note: Primary paper quotes xi upper bounds from Planck N_eff and imperfect-fluid analyses.
+      confidence: high
+      section: dark radiation section
+      page: null
+    routes:
+    - reference_id: '1709_09717'
+      note: 'Routing follows the paper sequence: halo cross-section fit, kinetic decoupling/damping, Lyman-alpha
+        and CMB constraints.'
+      confidence: high
+      section: main text
+      page: null
+  review:
+    human_reviewed: false
+    reviewed_by: null
+    review_date: null
+    expert_reviewed: false
+    expert_reviewer: null
+    expert_review_date: null
+    reviewer_notes: []
+    scientific_confidence: medium
+    implementation_confidence: medium
+robustness:
+  overall: medium
+  theory_robustness: medium
+  observational_robustness: medium
+  computational_robustness: medium
+  dominant_uncertainties:
+  - symmetric versus asymmetric production choice
+  - mapping of dark acoustic damping to WDM-like limits
+  validation_status: partially_validated
+  notes: The model is explicitly simplified but the paper provides detailed parameter and structure-formation
+    calculations.
+agent_failure_modes:
+  warnings:
+  - id: production-variant
+    severity: medium
+    category: assumption_mismatch
+    warning: Do not merge the symmetric comparison with the favored asymmetric-production regime without
+      checking the relic-density assumption.
+  - id: wdm-mapping
+    severity: medium
+    category: invalid_mapping
+    warning: The paper uses a power-spectrum mapping to WDM constraints; it should not be treated as exact
+      WDM physics.
+observables:
+- id: sidm_dark_acoustic_damping
+  name: Suppressed linear matter power from dark acoustic damping
+  channel: lyman_alpha
+  subchannel: Lyman-alpha forest and small-scale matter spectrum
+  predicted_effect: Elastic scattering between dark matter and light dark fermions delays kinetic decoupling
+    and damps the SIDM linear matter power spectrum.
+  effect_direction: suppression
+  key_quantities:
+  - name: kinetic decoupling temperature
+    symbol: T_kd
+    description: Visible-sector temperature at dark-matter kinetic decoupling.
+    unit: keV
+    role: derived
+    status: inferred
+    source_reference_ids:
+    - '1709_09717'
+  - name: dark-sector temperature ratio
+    symbol: xi
+    description: Temperature ratio controlling dark radiation and damping.
+    role: cosmological
+    status: inferred
+    source_reference_ids:
+    - '1709_09717'
+  - name: dark matter mass
+    symbol: m_chi
+    role: core
+    status: inferred
+    source_reference_ids:
+    - '1709_09717'
+  redshift_range: pre-recombination through low-redshift Lyman-alpha probes
+  scale_range: small comoving scales near the damping cutoff
+  environments:
+  - intergalactic medium
+  - Milky Way satellite scales
+  observability: high
+  relevance: high
+  linked_constraints:
+  - sidm_lyman_alpha_damping_bound
+  linked_routes:
+  - route_sidm_transfer_function
+  caveats:
+  - Requires mapping the interacting dark-sector transfer function into a WDM-equivalent or Lyman-alpha
+    likelihood.
+  source_reference_ids:
+  - '1709_09717'
+  - '1705_08894'
+  notes: Primary text says the Lyman-alpha forest strongly limits the damping scale and leaves little
+    room to reduce satellites.
+- id: sidm_dark_radiation_cmb
+  name: Dark radiation contribution and CMB response
+  channel: cmb
+  subchannel: N_eff and interacting dark radiation
+  predicted_effect: The light dark fermions contribute to Delta N_eff and can affect CMB observables in
+    tandem with the dark-matter/dark-radiation coupling.
+  effect_direction: shape_change
+  key_quantities:
+  - name: Delta N_eff
+    symbol: ΔN_eff
+    description: Extra effective neutrino species from light dark fermions.
+    role: derived
+    status: inferred
+    source_reference_ids:
+    - '1709_09717'
+  - name: dark-sector temperature ratio
+    symbol: xi
+    role: cosmological
+    status: inferred
+    source_reference_ids:
+    - '1709_09717'
+  redshift_range: recombination
+  scale_range: CMB angular scales
+  environments:
+  - early Universe
+  observability: medium
+  relevance: high
+  linked_constraints:
+  - sidm_planck_neff_bound
+  linked_routes:
+  - route_sidm_cmb_neff
+  caveats:
+  - Imperfect-fluid CMB limits depend on the dark radiation interaction treatment.
+  source_reference_ids:
+  - '1709_09717'
+  notes: Primary text quotes Planck-derived upper bounds on the dark-sector temperature ratio.
+- id: sidm_velocity_dependent_halo_response
+  name: Velocity-dependent halo-core response in dwarfs through clusters
+  channel: dwarf_galaxies
+  subchannel: SIDM halo profiles and cluster lenses
+  predicted_effect: Massive dark-photon exchange yields self-scattering cross sections that can affect
+    dwarf, spiral, and cluster halo structure with velocity dependence.
+  effect_direction: morphology_change
+  key_quantities:
+  - name: self-interaction cross section per mass
+    symbol: sigma/m_chi
+    description: Cross section per unit mass evaluated at galaxy and cluster velocities.
+    unit: cm^2/g
+    role: derived
+    status: inferred
+    source_reference_ids:
+    - '1709_09717'
+  - name: mediator mass
+    symbol: m_phi
+    role: core
+    status: inferred
+    source_reference_ids:
+    - '1709_09717'
+  - name: dark gauge coupling
+    symbol: g_chi
+    role: core
+    status: inferred
+    source_reference_ids:
+    - '1709_09717'
+  redshift_range: z~0 halo observations
+  scale_range: dwarf-galaxy to cluster halo scales
+  environments:
+  - dwarf galaxies
+  - spiral galaxies
+  - galaxy clusters
+  observability: high
+  relevance: high
+  linked_constraints:
+  - sidm_halo_cross_section_fit
+  linked_routes:
+  - route_sidm_halo_cross_sections
+  caveats:
+  - Astrophysical inference depends on baryonic modeling of halo profiles.
+  source_reference_ids:
+  - '1709_09717'
+  notes: Primary text uses halo fits from dwarfs to clusters to constrain the simplified dark-photon model.
+constraints:
+- id: sidm_halo_cross_section_fit
+  name: Dwarf-to-cluster self-interaction cross-section fit
+  constraint_type: astrophysical
+  observable_channel: halo structure
+  applies: parameter_dependent
+  constrained_parameters:
+  - m_chi
+  - m_phi
+  - g_chi
+  - sigma/m_chi
+  excluded_regions: []
+  allowed_regions:
+  - Asymmetric DM has a much larger mass range than symmetric DM when fitting dwarf/galaxy and cluster
+    self-interaction requirements.
+  benchmark_implications:
+  - The symmetric case is restricted to a narrow 9-240 MeV mass range under the primary paper assumptions,
+    while the paper focuses on asymmetric DM with m_chi above 1 GeV.
+  likelihood_available: unknown
+  likelihood_reference: null
+  data_release: null
+  recasting_needed: 'yes'
+  robustness: medium
+  assumptions:
+  - id: halo_fit_transferability
+    description: Preferred cross sections from rotation curves, lensing, and cluster kinematics can be
+      applied to the simplified dark-photon model.
+    scope: halo self-interaction fit
+    status: assumed
+    impact_if_violated: Different halo modeling would shift the inferred particle-physics parameter space.
+    can_be_relaxed: partial
+    source_reference_ids:
+    - '1709_09717'
+  caveats:
+  - The primary paper quotes preferred cross sections but not a reusable halo likelihood.
+  source_reference_ids:
+  - '1709_09717'
+  notes: Captures the paper-specific halo-prior step that drives the asymmetric-DM conclusion.
+- id: sidm_lyman_alpha_damping_bound
+  name: Lyman-alpha upper bound on dark-acoustic damping scale
+  constraint_type: cosmological
+  observable_channel: Lyman-alpha forest power spectrum
+  applies: 'yes'
+  constrained_parameters:
+  - T_kd
+  - xi
+  - m_chi
+  - m_phi
+  - g_f
+  excluded_regions:
+  - Damping scales large enough to substantially solve the missing-satellites problem are disfavored by
+    the primary paper interpretation of recent Lyman-alpha measurements.
+  allowed_regions: []
+  benchmark_implications:
+  - The interacting dark-radiation sector has little room to suppress satellite abundances once Lyman-alpha
+    data are imposed.
+  likelihood_available: unknown
+  likelihood_reference: null
+  data_release: null
+  recasting_needed: 'yes'
+  robustness: medium
+  assumptions:
+  - id: wdm_mapping
+    description: The SIDM damping cutoff can be mapped to or compared against Lyman-alpha limits on warm-like
+      dark matter transfer functions.
+    scope: Lyman-alpha recast
+    status: assumed
+    impact_if_violated: A poor mapping would weaken the stated satellite-abundance implication.
+    can_be_relaxed: partial
+    source_reference_ids:
+    - '1709_09717'
+    - '1705_08894'
+  caveats:
+  - No numerical likelihood table is present in the OCR text.
+  source_reference_ids:
+  - '1709_09717'
+  - '1705_08894'
+  notes: The primary paper explicitly states that Lyman-alpha measurements strongly limit the damping
+    scale.
+- id: sidm_planck_neff_bound
+  name: Planck dark-radiation temperature-ratio bound
+  constraint_type: cosmological
+  observable_channel: CMB N_eff
+  applies: parameter_dependent
+  constrained_parameters:
+  - xi
+  - Delta N_eff
+  excluded_regions:
+  - The primary paper quotes xi < 0.62 at 2 sigma from Planck N_eff and a stronger xi < 0.48 imperfect-fluid
+    bound under additional assumptions.
+  allowed_regions: []
+  benchmark_implications:
+  - Dark-sector temperature and coupling choices must satisfy CMB dark-radiation bounds alongside halo
+    self-interaction targets.
+  likelihood_available: unknown
+  likelihood_reference: null
+  data_release: Planck 2015 polarization and temperature data as quoted by primary paper
+  recasting_needed: partial
+  robustness: medium
+  assumptions:
+  - id: dark_radiation_fluid_model
+    description: The CMB recast uses the same dark-radiation fluid approximation and interaction assumptions
+      as quoted in the primary paper.
+    scope: CMB recast
+    status: assumed
+    impact_if_violated: Different dark-radiation self-interactions change the xi bound.
+    can_be_relaxed: partial
+    source_reference_ids:
+    - '1709_09717'
+  caveats:
+  - The imperfect-fluid limit has model dependence the primary paper says it neglects in later estimates.
+  source_reference_ids:
+  - '1709_09717'
+  notes: Structured as a paper-quoted recast rather than an independent Planck likelihood.
+theory_to_observable_routing:
+  routes:
+  - id: route_sidm_transfer_function
+    description: Compute interacting dark-sector kinetic decoupling and the damped matter transfer function,
+      then compare with Lyman-alpha limits.
+    source_model_features:
+    - dark photon mediator
+    - light dark fermion bath
+    - late kinetic decoupling
+    input_parameters:
+    - m_chi
+    - m_phi
+    - g_chi
+    - g_f
+    - xi
+    derived_quantities:
+    - T_kd
+    - damping scale
+    - linear transfer function
+    - WDM-equivalent mass
+    forward_model_chain:
+    - step_id: solve_momentum_transfer
+      step_type: analytic_formula
+      tool_or_code: SIDM-dark-radiation scattering rate
+      inputs:
+      - m_chi
+      - m_phi
+      - g_chi
+      - g_f
+      - xi
+      outputs:
+      - T_kd
+      validity: Radiation-era kinetic decoupling approximation.
+      notes: Primary paper provides an approximate T_kd scaling.
+    - step_id: compute_transfer
+      step_type: transfer_function
+      tool_or_code: Boltzmann or fitted dark-acoustic damping transfer function
+      inputs:
+      - T_kd
+      - xi
+      outputs:
+      - suppressed matter power spectrum
+      validity: Requires accurate treatment of interacting dark radiation.
+      notes: Use Lyman-alpha-compatible transfer function output.
+    - step_id: apply_lyman_alpha
+      step_type: likelihood
+      tool_or_code: Lyman-alpha forest likelihood or WDM recast
+      inputs:
+      - transfer function
+      outputs:
+      - allowed damping scale
+      validity: Only as robust as the WDM/interacting-radiation mapping.
+      notes: Primary paper uses recent Lyman-alpha constraints qualitatively in the OCR text.
+    observable_ids:
+    - sidm_dark_acoustic_damping
+    constraint_ids:
+    - sidm_lyman_alpha_damping_bound
+    likelihoods:
+    - Lyman-alpha forest likelihood or validated WDM-equivalent recast
+    required_code_resources:
+    - Boltzmann solver with interacting dark radiation
+    - Lyman-alpha likelihood/recast
+    validation_tests:
+    - Recover the paper statement that satellite suppression is strongly limited by Lyman-alpha data.
+    route_status: planned
+    agent_notes: Most important cosmological route for this model card.
+    caveats:
+    - Lyman-alpha thermal-history nuisance parameters are not encoded here.
+  - id: route_sidm_cmb_neff
+    description: Propagate the dark-radiation temperature ratio into Delta N_eff and CMB limits.
+    source_model_features:
+    - massless dark fermion
+    - hidden-sector temperature ratio
+    input_parameters:
+    - xi
+    - dark fermion degrees of freedom
+    - dark-radiation interaction model
+    derived_quantities:
+    - Delta N_eff
+    - CMB parameter constraint
+    forward_model_chain:
+    - step_id: compute_neff
+      step_type: analytic_formula
+      tool_or_code: Delta N_eff formula quoted in primary paper
+      inputs:
+      - xi
+      - dark fermion degrees of freedom
+      outputs:
+      - Delta N_eff
+      validity: Assumes no later entropy transfer between sectors.
+      notes: Primary paper gives the temperature-ratio relation.
+    - step_id: compare_planck
+      step_type: recasting
+      tool_or_code: Planck N_eff/imperfect-fluid bound
+      inputs:
+      - Delta N_eff
+      - fluid model
+      outputs:
+      - xi upper bound
+      validity: Bound depends on free-streaming versus imperfect-fluid behavior.
+      notes: Use the primary-paper quoted xi bounds unless doing a full CMB fit.
+    observable_ids:
+    - sidm_dark_radiation_cmb
+    constraint_ids:
+    - sidm_planck_neff_bound
+    likelihoods:
+    - Planck CMB likelihood for Delta N_eff/interacting radiation
+    required_code_resources:
+    - CLASS/CAMB dark-radiation module
+    validation_tests:
+    - Reproduce xi < 0.62 or the stronger imperfect-fluid bound under matching assumptions.
+    route_status: planned
+    agent_notes: Simple analytic route plus optional full CMB fit.
+    caveats:
+    - Interacting-radiation perturbations can alter the mapping.
+  - id: route_sidm_halo_cross_sections
+    description: Map dark-photon parameters to velocity-dependent self-scattering and compare with dwarf/spiral/cluster
+      halo inferences.
+    source_model_features:
+    - Yukawa self-interaction
+    - asymmetric dark matter abundance
+    input_parameters:
+    - m_chi
+    - m_phi
+    - g_chi
+    - halo velocity scale
+    derived_quantities:
+    - sigma/m_chi at dwarf, galaxy, and cluster velocities
+    - halo-profile response
+    forward_model_chain:
+    - step_id: compute_yukawa_scattering
+      step_type: analytic_formula
+      tool_or_code: velocity-dependent SIDM transfer cross section
+      inputs:
+      - m_chi
+      - m_phi
+      - g_chi
+      - velocity
+      outputs:
+      - sigma/m_chi
+      validity: Use the classical/quantum/Born regime appropriate to each parameter point.
+      notes: Primary paper stresses velocity dependence and non-perturbative enhancement.
+    - step_id: compare_halo_targets
+      step_type: semi_analytic_model
+      tool_or_code: halo cross-section target bands
+      inputs:
+      - sigma/m_chi at velocity scales
+      outputs:
+      - allowed particle region
+      validity: Targets are astrophysical inferences, not direct laboratory bounds.
+      notes: Cluster and galaxy requirements drive the symmetric/asymmetric conclusion.
+    observable_ids:
+    - sidm_velocity_dependent_halo_response
+    constraint_ids:
+    - sidm_halo_cross_section_fit
+    likelihoods: []
+    required_code_resources:
+    - SIDM transfer cross-section calculator
+    - halo target compilation
+    validation_tests:
+    - Recover sigma/m about 1 cm^2/g for galaxies and 0.1 cm^2/g for clusters in the paper setup.
+    route_status: planned
+    agent_notes: Connects astrophysical halo data to particle parameters.
+    caveats:
+    - Baryonic effects and halo histories are major nuisance factors.

@@ -1,0 +1,291 @@
+_source:
+  shard: arXiv_src_0711_002_wds.tar
+  paper_id: 0711_3881
+  source_member: 0711_3881.json
+schema_version: model_only_v0
+model_id: 0711_3881_multipartite_dm_scenario_a_v1
+identity:
+  name: Multipartite two-component dark matter scenario A
+  family: multi_component_dark_matter
+  aliases:
+  - 2DM
+  - multipartite dark matter
+  short_description: A two-component singlet dark matter limit in which both stable components annihilate
+    into Standard Model particles but do not interact with each other.
+  historical_origin_or_motivation: Relaxes the one-particle dark matter assumption and can reopen constrained
+    MSSM parameter space.
+  status: speculative
+  model_kind: simplified_model
+theory:
+  theory_level: simplified_model
+  parent_frameworks:
+  - Standard Model plus singlet dark sector
+  - MSSM-inspired completion
+  lagrangian_available: partial
+  renormalizable: unknown
+  embedded_in_larger_framework: 'yes'
+  notes: The paper gives a generic Lagrangian/effective interaction model and discusses possible supersymmetric
+    origins.
+particle_content:
+  dark_matter_candidate:
+    name: fermion singlet plus scalar singlet
+    spin: spin 1/2 and spin 0 components
+    statistics: unknown
+    elementary_or_composite: elementary
+    number_of_components: multi_component
+  additional_dark_sector_particles: []
+  mediators:
+  - SM Higgs
+  - MSSM higgsinos in the example completion
+  excited_or_degenerate_states: []
+  standard_model_extension: minimal
+symmetries:
+  stabilizing_mechanism: Two exact discrete parities separately stabilize the two singlet dark matter
+    components.
+  symmetries:
+  - name: Z2 x Z2_prime
+    type: discrete
+    exact_or_approximate: exact
+    breaking: none stated
+    breaking_scale: null
+  topological_defects_possible: unknown
+interactions:
+  portals:
+  - higgs
+  standard_model_targets:
+  - SM Higgs doublet
+  - Standard Model particles
+  dark_sector_couplings:
+  - inter-component coupling controlled by the scenario limit
+  mediator_types:
+  - SM Higgs
+  - higgsino exchange in MSSM example
+  interaction_operators:
+  - Higgs portal terms and effective two-DM interaction terms
+  annihilation_channels:
+  - fermion singlet annihilation into SM particles
+  - scalar singlet annihilation into SM particles
+  tree_or_loop_level: unknown
+parameters:
+  core:
+  - name: fermion singlet mass
+    symbol: m_fermion
+    description: Mass of the neutralino-like singlet component.
+    role: core
+    status: inferred
+    source_reference_ids: []
+  - name: scalar singlet mass
+    symbol: m_scalar
+    description: Mass of the scalar singlet component.
+    role: core
+    status: inferred
+    source_reference_ids: []
+  - name: fermion-Higgs effective coupling
+    description: Effective coupling controlling fermion singlet annihilation/scattering through the Higgs
+      sector.
+    role: core
+    status: inferred
+    source_reference_ids: []
+  - name: scalar-Higgs portal coupling
+    description: Coupling of the scalar singlet to H dagger H.
+    role: core
+    status: inferred
+    source_reference_ids: []
+  - name: inter-component coupling
+    description: Set to zero in scenario A.
+    value: '0'
+    role: core
+    status: assumed
+    source_reference_ids: []
+production:
+  mechanisms:
+  - fermion singlet annihilation into SM particles
+  - scalar singlet annihilation into SM particles
+  thermal_equilibrium_with_standard_model: 'yes'
+  thermal_equilibrium_with_hidden_sector: unknown
+  abundance_set_by:
+  - annihilation cross sections of both components
+  - relative local/cosmological density fractions
+  depends_on_reheating_temperature: unknown
+  can_produce_all_dark_matter: parameter_dependent
+  nonthermal_momentum_distribution: unknown
+  notes: Both components contribute thermally and the total relic abundance is the sum of the two species.
+relic_density:
+  full_or_subcomponent: full_dark_matter
+  target_fraction: null
+  calculation_type: thermal
+  key_dependencies:
+  - two annihilation cross sections
+  - inter-component annihilation or conversion if present
+  requires_entropy_dilution: unknown
+  overclosure_risk: parameter_dependent
+  underproduction_risk: parameter_dependent
+  tuning_assessment: unknown
+cosmological_history:
+  standard_history_assumed: true
+  nonstandard_features: []
+  dark_sector_temperature: null
+  delta_neff: null
+  kinetic_decoupling: null
+  chemical_decoupling: null
+  phase_transitions: []
+  topological_defects: []
+  isocurvature_perturbations: unknown
+  bbn_relevance: unknown
+  cmb_relevance: unknown
+phase_space:
+  distribution_type: thermal
+  distribution_function_available: unknown
+  notes: Treated as WIMP-like relic components; no explicit phase-space distribution is extracted.
+structure_formation:
+  linear:
+    behaves_like_cdm: 'yes'
+    transfer_function_shape: cdm_like
+    small_scale_power_effect: none
+  nonlinear:
+    halo_mass_function_effect: unknown
+    subhalo_mass_function_effect: unknown
+    simulation_calibrated: unknown
+validity_domain:
+- id: effective_interaction_limit
+  applies_to: model
+  condition: Use for low-momentum elastic scattering and annihilation at rest as stated in the paper.
+  status: assumed
+  extrapolation_risk: medium
+  caveats: []
+  source_reference_ids: []
+- id: two_component_limit
+  applies_to: model
+  condition: Only the two stable singlet components are light enough to remain as dark matter.
+  status: assumed
+  extrapolation_risk: medium
+  caveats: []
+  source_reference_ids: []
+assumptions:
+  global:
+  - id: same_halo_profile
+    description: The paper assumes the two dark matter candidates have the same halo-density profile for
+      its phenomenological estimates.
+    scope: structure_formation
+    status: assumed
+    source_reference_ids: []
+    can_be_relaxed: unknown
+  - id: m_heavy_above_m_light
+    description: The scenario discussion takes the first component heavier than the second for definiteness,
+      with similar conclusions if swapped.
+    scope: theory
+    status: assumed
+    source_reference_ids: []
+    can_be_relaxed: unknown
+associated_code:
+  has_associated_code: unknown
+  code_summary: The assigned paper text did not identify model-specific public code.
+  primary_code_role: null
+provenance:
+  model_id: 0711_3881_multipartite_dm_scenario_a_v1
+  model_name: Multipartite two-component dark matter scenario A
+  model_family: multi_component_dark_matter
+  entry_version: 0.1.0
+  status: machine_extracted
+  created_at: '2026-05-31'
+  last_updated: '2026-05-31'
+  sources:
+    primary_papers:
+    - reference_id: arxiv:0711.3881
+      title: Multipartite Dark Matter
+      authors:
+      - Qing-Hong Cao
+      - Ernest Ma
+      - Jose Wudka
+      - C.-P. Yuan
+      year: 2007
+      arxiv_id: '0711.3881'
+      doi: null
+      url: null
+      role: original_model
+      notes: Assigned SQLite full text used as the only source.
+  extraction:
+    method: llm_assisted
+    extracted_by: codex_batch_0013
+    extractor_name: gpt55_rolling_batch_worker
+    extraction_date: '2026-05-31'
+    confidence: medium
+    source_chunks_or_sections:
+    - reference_id: arxiv:0711.3881
+      section: Abstract/Introduction
+      quote_or_summary: Paper studies the possibility of several coexisting dark matter particles, focusing
+        on a generic two-DM case.
+    - reference_id: arxiv:0711.3881
+      section: Model
+      quote_or_summary: Adds a fermion singlet and scalar singlet with Z2 x Z2-prime charges.
+    - reference_id: arxiv:0711.3881
+      section: Observational Constraints
+      quote_or_summary: The relic abundances of both components must add to the measured CDM density.
+    unresolved_items: []
+  evidence:
+    particle_content:
+    - reference_id: arxiv:0711.3881
+      note: 'The model contains two SM-gauge-singlet dark matter candidates: a neutralino-like fermion
+        singlet and a scalar singlet.'
+      confidence: high
+      section: Model
+    symmetries:
+    - reference_id: arxiv:0711.3881
+      note: The two singlets carry different charges under an exactly conserved Z2 x Z2-prime symmetry
+        while SM particles are even.
+      confidence: high
+      section: Model
+    interactions:
+    - reference_id: arxiv:0711.3881
+      note: Scenario A sets the inter-component interaction to zero while both components have nonzero
+        annihilation channels into SM particles.
+      confidence: high
+      section: Model
+    production_mechanism:
+    - reference_id: arxiv:0711.3881
+      note: The paper treats thermal annihilation at rest and requires the two relic-density contributions
+        to sum to the observed CDM abundance.
+      confidence: high
+      section: Observational Constraints
+    parameter_ranges:
+    - reference_id: arxiv:0711.3881
+      note: Relevant parameters are the two masses and effective couplings to the Higgs/SM and to each
+        other; the paper studies characteristic coupling limits.
+      confidence: medium
+      section: Model
+    validity_domain:
+    - reference_id: arxiv:0711.3881
+      note: The effective terms are stated to apply to DM-nucleus elastic scattering and annihilation
+        at rest, not arbitrary high-energy processes.
+      confidence: high
+      section: Model
+  review:
+    human_reviewed: false
+    reviewed_by: null
+    review_date: null
+    expert_reviewed: false
+    expert_reviewer: null
+    expert_review_date: null
+    reviewer_notes: []
+    scientific_confidence: medium
+    implementation_confidence: medium
+  caveats:
+  - Paper-local symbols are partially stripped in the SQLite text; component roles are recorded descriptively.
+robustness:
+  overall: medium
+  theory_robustness: medium
+  observational_robustness: unknown
+  computational_robustness: unknown
+  dominant_uncertainties:
+  - paper-local coupling symbols are degraded in the text extraction
+  - generic effective model rather than a unique UV completion
+  validation_status: expert_judgment_only
+  notes: Strong evidence that the paper introduces the multipartite DM framework and three scenario limits.
+agent_failure_modes:
+  warnings:
+  - id: component_symbol_loss
+    severity: medium
+    category: notation_conflict
+    warning: The extracted text drops several Greek field/coupling symbols; component identities are therefore
+      described in words.
+    source_reference_ids: []

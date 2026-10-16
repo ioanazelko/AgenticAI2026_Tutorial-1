@@ -1,0 +1,526 @@
+_source:
+  shard: arXiv_src_1011_007_wds.tar
+  paper_id: '1011_6374'
+  source_member: 1011_6374.json
+  enriched: true
+  enrichment_schema_version: dm_model_ocr_enrichment_smoke_v0
+schema_version: model_only_v0
+model_id: 1011_6374_exothermic_yukawa_interacting_dm_v1
+identity:
+  name: Exothermic Yukawa-potential interacting dark matter
+  family: self_interacting_dark_matter
+  aliases:
+  - YIDM*
+  - exothermic YIDM
+  short_description: A Yukawa self-interacting dark matter variant with excited states whose down-scattering
+    releases kinetic energy, potentially ejecting dark matter from shallow dwarf halos and producing constant-density
+    cores.
+  historical_origin_or_motivation: Developed as the exothermic extension of YIDM to enhance core formation
+    and possible evaporation in low-mass halos.
+  status: speculative
+  model_kind: simplified_model
+theory:
+  theory_level: simplified_model
+  parent_frameworks:
+  - Yukawa-potential interacting dark matter
+  - inelastic dark matter
+  - exciting dark matter
+  - dark U(1) force models
+  lagrangian_available: partial
+  renormalizable: 'yes'
+  embedded_in_larger_framework: 'yes'
+  notes: The exothermic variant adds excited or split dark states to the Yukawa dark-force setup.
+particle_content:
+  dark_matter_candidate:
+    name: excited-state dark matter particle with Yukawa self-interactions
+    spin: 1/2 in the sketched gauge realization; otherwise model-dependent
+    statistics: fermion
+    elementary_or_composite: elementary
+    number_of_components: single_component
+  additional_dark_sector_particles:
+  - light dark-force mediator
+  - excited dark matter state
+  mediators:
+  - light vector mediator
+  - light scalar mediator
+  dark_radiation_species: []
+  excited_or_degenerate_states:
+  - metastable excited dark matter state YIDM*
+  long_lived_particles:
+  - cosmologically long-lived excited state, if present from the early universe
+  unstable_parent_particles: []
+  standard_model_extension: minimal
+symmetries:
+  stabilizing_mechanism: Dark-sector stability plus small state splitting; excited-state stability is
+    model-dependent.
+  symmetries:
+  - name: U(1)_dark
+    type: gauge
+    exact_or_approximate: broken
+    breaking: dark symmetry breaking can generate Majorana state splittings
+    breaking_scale: null
+  topological_defects_possible: unknown
+interactions:
+  portals:
+  - vector
+  - higgs
+  standard_model_targets:
+  - standard model fields only through small dark-force mixing, if present
+  dark_sector_couplings:
+  - inelastic or exothermic dark matter self-scattering
+  - Yukawa-potential elastic scattering
+  mediator_types:
+  - vector
+  - scalar
+  interaction_operators:
+  - dark gauge interaction with split states
+  - scalar Yukawa exchange
+  scattering:
+    elastic: 'yes'
+    inelastic: 'yes'
+    momentum_dependence: strong
+    velocity_dependence: strong
+    spin_dependence: unknown
+  annihilation_channels:
+  - annihilation into new bosons under thermal relic assumptions
+  decay_channels: []
+  self_scattering_channels:
+  - down-scattering between excited and ground dark states releases kinetic energy
+  cp_structure: unknown
+  flavor_structure: unknown
+  tree_or_loop_level: tree
+parameters:
+  core:
+  - name: dark matter mass
+    symbol: m_chi
+    description: Mass of the excited-state dark matter particle.
+    range: sub-MeV can be natural for thermally populated excited states; weak-scale masses possible for
+      nonthermal production
+    unit: GeV
+    role: core
+    status: inferred
+    source_reference_ids:
+    - '1011.6374'
+  - name: mediator mass
+    symbol: m_phi
+    description: Mass of the light dark-force carrier.
+    range: light mediator chosen to affect dwarf-scale velocities
+    unit: GeV
+    role: core
+    status: inferred
+    source_reference_ids:
+    - '1011.6374'
+  - name: dark coupling
+    symbol: alpha_d
+    description: Dark-force coupling.
+    range: approximately 1e-5 to 1 in the broad parameter discussion
+    role: core
+    status: inferred
+    source_reference_ids:
+    - '1011.6374'
+  - name: exothermic kick velocity
+    symbol: v_crit
+    description: Velocity imparted by exothermic scattering.
+    range: must be comparable to or exceed escape velocities of shallow dwarf halos for evaporation effects
+    unit: km s^-1
+    role: core
+    status: inferred
+    source_reference_ids:
+    - '1011.6374'
+  - name: excited-state splitting
+    symbol: Delta
+    description: Energy splitting between dark states.
+    range: model-dependent; sets the exothermic energy release
+    role: core
+    status: inferred
+    source_reference_ids:
+    - '1011.6374'
+production:
+  mechanisms:
+  - thermal freeze-out with excited states surviving from the early universe
+  - nonthermal production of excited states from heavier state decays
+  - asymmetric production is noted as natural in some mass ranges
+  thermal_equilibrium_with_standard_model: unknown
+  thermal_equilibrium_with_hidden_sector: unknown
+  abundance_set_by:
+  - annihilation cross section if thermal
+  - excited-state depletion rate
+  - possible nonthermal parent decays or primordial asymmetry
+  depends_on_reheating_temperature: unknown
+  can_produce_all_dark_matter: parameter_dependent
+  nonthermal_momentum_distribution: parameter_dependent
+  notes: The paper separates the abundance of the dark matter from the survival of excited states needed
+    for exothermic halo effects.
+relic_density:
+  full_or_subcomponent: either
+  target_fraction: null
+  calculation_type: mixed
+  key_dependencies:
+  - thermal annihilation rate if a thermal relic
+  - excited-state survival until late times
+  - possible asymmetric or nonthermal production
+  requires_entropy_dilution: unknown
+  overclosure_risk: parameter_dependent
+  underproduction_risk: parameter_dependent
+  tuning_assessment: unknown
+cosmological_history:
+  standard_history_assumed: true
+  nonstandard_features:
+  - cosmologically persistent excited states
+  - late exothermic self-scattering in shallow halos
+  dark_sector_temperature: null
+  delta_neff: null
+  kinetic_decoupling: null
+  chemical_decoupling: null
+  phase_transitions:
+  - dark symmetry breaking can split states
+  topological_defects: []
+  isocurvature_perturbations: unknown
+  bbn_relevance: unknown
+  cmb_relevance: medium
+phase_space:
+  distribution_type: mixed_cold_warm
+  distribution_function_available: 'no'
+  average_momentum_relative_to_thermal: null
+  phase_space_bounds:
+  - Down-scattering can inject kinetic energy into halos at late times.
+  notes: The primordial component is cold, while exothermic late scattering can heat or eject particles
+    in shallow potentials.
+structure_formation:
+  linear:
+    behaves_like_cdm: approximately
+    transfer_function_shape: cdm_like
+    small_scale_power_effect: mixed
+  nonlinear:
+    halo_mass_function_effect: Exothermic collisions can drive dwarf halos toward constant-density cores
+      and may evaporate low-mass halos.
+    subhalo_mass_function_effect: Potential reduction of low-mass satellite abundance is discussed but
+      requires numerical simulation.
+    simulation_calibrated: 'no'
+validity_domain:
+- id: excited_state_survival
+  applies_to: cosmological_history
+  condition: Requires an excited-state population that survives until structure formation without rapid
+    depletion.
+  status: assumed
+  extrapolation_risk: high
+  source_reference_ids:
+  - '1011.6374'
+- id: shallow_halo_energy_release
+  applies_to: structure_formation
+  condition: Exothermic effects are largest when the released kinetic energy is comparable to the binding
+    energy of dwarf halos.
+  status: inferred
+  extrapolation_risk: medium
+  source_reference_ids:
+  - '1011.6374'
+- id: simulation_needed
+  applies_to: halo_model
+  condition: Halo-core and evaporation predictions are qualitative until simulated.
+  status: inferred
+  extrapolation_risk: high
+  source_reference_ids:
+  - '1011.6374'
+assumptions:
+  global:
+  - id: copious_excited_states
+    description: Excited dark states are assumed to be copiously present from the early universe or produced
+      nonthermally.
+    scope: cosmological_history
+    status: assumed
+    can_be_relaxed: unknown
+    source_reference_ids:
+    - '1011.6374'
+    impact_if_violated: The model reduces toward elastic YIDM without exothermic heating.
+  - id: dark_force_state_splitting
+    description: A dark force naturally accompanies the state splitting that enables exothermic down-scattering.
+    scope: theory
+    status: assumed
+    can_be_relaxed: 'yes'
+    source_reference_ids:
+    - '1011.6374'
+    impact_if_violated: The kick-velocity phenomenology would not arise.
+associated_code:
+  has_associated_code: 'no'
+  code_summary: No associated simulation or particle-physics code is reported in the assigned text.
+provenance:
+  model_id: 1011_6374_exothermic_yukawa_interacting_dm_v1
+  model_name: Exothermic Yukawa-potential interacting dark matter
+  model_family: self_interacting_dark_matter
+  entry_version: 0.1.0
+  status: machine_extracted
+  created_at: '2026-05-31'
+  last_updated: '2026-05-31'
+  sources:
+    primary_papers:
+    - reference_id: '1011.6374'
+      title: Cores in Dwarf Galaxies from Dark Matter with a Yukawa Potential
+      authors:
+      - Abraham Loeb
+      - Neal Weiner
+      year: 2010
+      arxiv_id: '1011.6374'
+      doi: null
+      url: null
+      role: original_model
+      notes: Assigned full text used as the sole source for this extracted model card.
+    - arxiv_id: '1011.6374'
+      authors:
+      - Loeb, Abraham
+      - Weiner, Neal
+      doi: 10.1103/PhysRevLett.106.171302
+      notes: Primary paper full text was read from the local production text cache.
+      reference_id: src_1011_6374_primary
+      role: original_model
+      title: Cores in Dwarf Galaxies from Dark Matter with a Yukawa Potential
+      url: https://arxiv.org/abs/1011.6374
+      year: 2011
+    constraint_papers: []
+    external_databases: []
+    review_papers: []
+  extraction:
+    method: llm_assisted
+    extracted_by: codex_batch_0007
+    extractor_name: gpt-5-codex
+    extraction_date: '2026-05-31'
+    confidence: high
+    source_chunks_or_sections:
+    - reference_id: '1011.6374'
+      section: Exothermic interactions
+      page: null
+      quote_or_summary: Excited states and down-scattering release kinetic energy and change dwarf-halo
+        evolution.
+    - reference_id: '1011.6374'
+      section: Discussion and appendix
+      page: null
+      quote_or_summary: The paper describes YIDM* parameters and cosmological requirements for excited
+        states.
+    unresolved_items:
+    - Excited-state abundance and state-splitting mechanism are only sketched, not fixed by a complete
+      model.
+    - Satellite evaporation is a suggested implication and needs dedicated inelastic SIDM simulations.
+    - Direct-detection/capture bounds are stated to be weaker in the target regime but are UV-model dependent.
+  evidence:
+    particle_content:
+    - reference_id: '1011.6374'
+      note: The exothermic variant assumes excited dark matter states associated with the dark force.
+      confidence: high
+      section: Exothermic interactions
+    interactions:
+    - reference_id: '1011.6374'
+      note: Down-scattering can release kinetic energy, unlike the elastic YIDM case.
+      confidence: high
+      section: Exothermic interactions
+    production_mechanism:
+    - reference_id: '1011.6374'
+      note: The paper discusses thermal survival of excited states and nonthermal production alternatives.
+      confidence: medium
+      section: Appendix/model discussion
+    structure_formation:
+    - reference_id: '1011.6374'
+      note: Exothermic interactions can eject particles from shallow dwarf halos and form constant-density
+        cores.
+      confidence: high
+      section: Exothermic interactions and discussion
+    validity_domain:
+    - reference_id: '1011.6374'
+      note: The authors state that simulations are needed for quantitative halo predictions.
+      confidence: high
+      section: Discussion
+    constraints:
+    - confidence: medium
+      note: 'Constraint support is qualitative: velocity dependence/exothermicity alleviates earlier SIDM
+        concerns but needs recasting.'
+      page: null
+      reference_id: src_1011_6374_primary
+      section: Constraint and numerical-analysis discussions
+    observables:
+    - confidence: high
+      note: Primary text states that exothermic interactions and dark-matter evaporation could affect
+        satellite galaxies and first galaxies.
+      page: null
+      reference_id: src_1011_6374_primary
+      section: Abstract and main phenomenology sections
+    routes:
+    - confidence: medium
+      note: Route support follows the paper's inelastic generalization of Yukawa scattering and evaporation
+        discussion.
+      page: null
+      reference_id: src_1011_6374_primary
+      section: Method/modeling sections
+  review:
+    human_reviewed: false
+    expert_reviewed: false
+    scientific_confidence: medium
+    implementation_confidence: medium
+robustness:
+  overall: medium
+  theory_robustness: medium
+  computational_robustness: low
+  dominant_uncertainties:
+  - excited-state survival
+  - kick velocity and splitting
+  - lack of simulation calibration
+  validation_status: expert_judgment_only
+agent_failure_modes:
+  warnings:
+  - id: excited_state_assumption
+    severity: high
+    category: assumption_mismatch
+    warning: The exothermic conclusions depend on a surviving excited-state population, not just on a
+      Yukawa force.
+    mitigation: Check excited-state cosmology before applying dwarf-halo evaporation claims.
+    source_reference_ids:
+    - '1011.6374'
+observables:
+- caveats:
+  - The paper frames evaporation as a possible implication, not a completed satellite-mass-function likelihood.
+  channel: milky_way_satellites
+  effect_direction: suppression
+  environments:
+  - Milky Way satellite halos
+  - first-galaxy progenitors
+  id: obs_exothermic_satellite_evaporation
+  key_quantities:
+  - description: Mass splitting between dark states controlling exothermic kick energy.
+    name: energy splitting
+    role: core
+    source_reference_ids:
+    - src_1011_6374_primary
+    status: inferred
+    symbol: delta
+  - description: Self-scattering strength for elastic or inelastic Yukawa scattering.
+    name: momentum-transfer cross section per mass
+    role: core
+    source_reference_ids:
+    - src_1011_6374_primary
+    status: inferred
+    symbol: sigma_T/m_chi
+    unit: cm^2/g
+  - description: Determines whether exothermic kicks can unbind particles from low-mass halos.
+    name: halo velocity dispersion
+    role: core
+    source_reference_ids:
+    - src_1011_6374_primary
+    status: inferred
+    symbol: v
+    unit: km/s
+  linked_constraints:
+  - con_exothermic_halo_survival
+  linked_routes:
+  - route_inelastic_yukawa_to_satellites
+  name: Low-mass halo evaporation from exothermic self-scattering
+  notes: null
+  observability: low
+  predicted_effect: Downscattering between split dark states can inject kinetic energy and evaporate dark
+    matter from low-mass objects, potentially reducing Milky Way satellites and altering early galaxy
+    formation/reionization.
+  redshift_range: first galaxies through present-day satellites
+  relevance: high
+  scale_range: low-mass halos with shallow potential wells
+  source_reference_ids:
+  - src_1011_6374_primary
+  subchannel: satellite abundance and first-galaxy formation
+constraints:
+- allowed_regions:
+  - Velocity dependence and exothermicity can alleviate earlier SIDM constraints while leaving room for
+    dwarf-scale effects.
+  applies: parameter_dependent
+  assumptions: []
+  benchmark_implications:
+  - Could connect the missing-satellites deficit, dwarf cores, and cluster consistency if kicks are tuned
+    to low halo escape speeds.
+  caveats:
+  - Requires simulations of inelastic self-scattering and halo evaporation.
+  - Direct-detection implications depend on the UV completion and splitting.
+  constrained_parameters:
+  - delta
+  - sigma_T/m_chi
+  - v_peak
+  - m_phi
+  constraint_type: astrophysical
+  data_release: Astrophysical halo observations discussed qualitatively in the primary paper
+  excluded_regions:
+  - Splittings/cross sections that over-evaporate low-mass halos or maintain large scattering at cluster
+    velocities would be disfavored.
+  id: con_exothermic_halo_survival
+  likelihood_available: unknown
+  likelihood_reference: null
+  name: Halo-survival and cluster consistency for exothermic YIDM
+  notes: null
+  observable_channel: satellite abundance and cluster dynamics
+  recasting_needed: 'yes'
+  robustness: low
+  source_reference_ids:
+  - src_1011_6374_primary
+theory_to_observable_routing:
+  routes:
+  - agent_notes: The primary paper identifies the observable route but does not provide a full satellite
+      likelihood.
+    caveats:
+    - Energy splitting and population history are model-dependent.
+    constraint_ids:
+    - con_exothermic_halo_survival
+    derived_quantities:
+    - inelastic sigma_T(v)
+    - kick velocity
+    - evaporation rate
+    - satellite abundance shift
+    description: Propagate inelastic Yukawa self-scattering with exothermic kicks into satellite-halo
+      evaporation predictions.
+    forward_model_chain:
+    - inputs:
+      - m_chi
+      - m_phi
+      - alpha_d
+      - delta
+      - v
+      notes: Include the mass splitting in the characteristic momentum transfer.
+      outputs:
+      - elastic and inelastic transfer cross sections
+      step_id: step_inelastic_cross_section
+      step_type: analytic_formula
+      tool_or_code: null
+      validity: Approximate extension of the elastic formula; quantum effects may matter.
+    - inputs:
+      - cross sections
+      - halo escape velocities
+      notes: Estimate whether downscattering ejects particles from small halos.
+      outputs:
+      - evaporation or heating rate
+      step_id: step_evaporation
+      step_type: semi_analytic_model
+      tool_or_code: null
+      validity: Best for order-of-magnitude triage.
+    - inputs:
+      - evaporation rate
+      - subhalo population
+      notes: Compare to Milky Way satellite abundance and early-galaxy constraints.
+      outputs:
+      - satellite-count prediction
+      step_id: step_satellites
+      step_type: simulation
+      tool_or_code: SIDM/inelastic halo simulation
+      validity: Needs numerical validation.
+    id: route_inelastic_yukawa_to_satellites
+    input_parameters:
+    - m_chi
+    - m_phi
+    - alpha_d
+    - delta
+    - halo escape velocity
+    likelihoods:
+    - satellite-count likelihoods
+    - cluster SIDM bounds
+    observable_ids:
+    - obs_exothermic_satellite_evaporation
+    required_code_resources:
+    - inelastic SIDM cross-section calculator
+    - subhalo simulation or emulator
+    route_status: planned
+    source_model_features:
+    - Yukawa force with excited dark states.
+    - Downscattering releases kinetic energy.
+    validation_tests:
+    - Check elastic limit delta -> 0 recovers YIDM behavior.
+    - Vary halo escape velocity to confirm low-mass selectivity.

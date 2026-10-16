@@ -1,0 +1,322 @@
+_source:
+  shard: arXiv_src_1411_012_wds.tar
+  paper_id: '1411_6679'
+  source_member: 1411_6679.json
+schema_version: model_only_v0
+model_id: 1411_6679_syndetic_z2_dark_sector_v1
+identity:
+  name: Syndetic residual-Z2 dark-sector model
+  family: scotogenic_dark_matter
+  aliases:
+  - Syndetic model of fundamental interactions
+  short_description: A one-Higgs Standard Model extension with a Peccei-Quinn symmetry whose residual
+    exact Z2 stabilizes a cold dark matter candidate in a scotogenic dark sector.
+  historical_origin_or_motivation: The paper links strong CP, dark matter, neutrino masses, and first-family
+    fermion masses in one renormalizable extension.
+  status: speculative
+  model_kind: complete_theory
+theory:
+  theory_level: uv_complete
+  parent_frameworks:
+  - Standard Model extension
+  - Peccei-Quinn U(1)
+  - scotogenic mechanism
+  lagrangian_available: partial
+  renormalizable: 'yes'
+  eft_cutoff: null
+  embedded_in_larger_framework: 'yes'
+  notes: The text specifies PQ charges, new fields, and relevant couplings, but not a full relic-density
+    treatment.
+particle_content:
+  dark_matter_candidate:
+    name: eta_I, the lightest odd-Z2 neutral scalar candidate
+    spin: '0'
+    statistics: scalar
+    elementary_or_composite: elementary
+    number_of_components: single_component
+  additional_dark_sector_particles:
+  - heavy singlet quark Q
+  - N_1R
+  - N_2R
+  - N_3R
+  - eta doublet
+  - charged scalar singlet
+  - neutral scalar singlet
+  mediators:
+  - eta doublet
+  - charged scalar singlet
+  - heavy singlet quark Q
+  dark_radiation_species: []
+  excited_or_degenerate_states: []
+  long_lived_particles: []
+  unstable_parent_particles:
+  - heavier Z2-odd states
+  standard_model_extension: substantial
+symmetries:
+  stabilizing_mechanism: An exactly conserved residual Z2 from U(1)_PQ leaves all SM particles even and
+    the dark sector odd.
+  symmetries:
+  - name: U(1)_PQ
+    type: global
+    exact_or_approximate: broken
+    breaking: spontaneous breaking by a scalar singlet containing the axion
+    breaking_scale: null
+  - name: residual Z2
+    type: discrete
+    exact_or_approximate: exact
+    breaking: unbroken
+    breaking_scale: null
+  topological_defects_possible: 'yes'
+interactions:
+  portals:
+  - higgs
+  - other
+  standard_model_targets:
+  - quarks
+  - charged leptons
+  - neutrinos
+  dark_sector_couplings:
+  - f_Q phi0 Q_R Q_L
+  - f_N phi0 N_R N_R
+  - scalar mixing terms involving eta and singlet scalars
+  mediator_types:
+  - scalar
+  - fermion
+  interaction_operators:
+  - radiative mass couplings linking first-family SM fermions to Z2-odd fields
+  scattering:
+    elastic: unknown
+    inelastic: unknown
+    momentum_dependence: unknown
+    velocity_dependence: unknown
+    spin_dependence: not_applicable
+  annihilation_channels: []
+  decay_channels:
+  - heavier Z2-odd particles can cascade to the lightest odd particle
+  self_scattering_channels: []
+  cp_structure: PQ symmetry addresses strong CP; detailed dark-sector CP structure is not fully specified.
+  flavor_structure: First-family quark and charged-lepton masses arise radiatively through the dark sector.
+  tree_or_loop_level: both
+parameters:
+  core:
+  - name: PQ breaking scalar vev
+    symbol: v_PQ
+    description: Sets masses for Q and N through couplings to the PQ-breaking singlet.
+    role: core
+    status: inferred
+  - name: eta scalar mass splitting
+    description: Mass matrix for eta_R and eta_I includes m_eta^2 plus or minus the PQ-breaking contribution.
+    role: core
+    status: inferred
+  - name: Yukawa couplings f_Q and f_N
+    symbol: f_Q, f_N
+    description: Couplings of the PQ-breaking scalar to heavy quark and singlet fermions.
+    role: core
+    status: inferred
+production:
+  mechanisms:
+  - stable cold dark matter from the lightest residual-Z2-odd state; production mechanism not calculated
+    in the text
+  thermal_equilibrium_with_standard_model: unknown
+  thermal_equilibrium_with_hidden_sector: unknown
+  abundance_set_by:
+  - unknown
+  depends_on_reheating_temperature: unknown
+  can_produce_all_dark_matter: unknown
+  nonthermal_momentum_distribution: unknown
+  notes: The paper identifies a cold dark matter candidate but does not compute a relic abundance.
+relic_density:
+  full_or_subcomponent: unknown
+  target_fraction: null
+  calculation_type: unknown
+  key_dependencies:
+  - mass ordering of Z2-odd particles
+  - dark-sector couplings
+  requires_entropy_dilution: unknown
+  overclosure_risk: unknown
+  underproduction_risk: unknown
+  tuning_assessment: unknown
+cosmological_history:
+  standard_history_assumed: false
+  nonstandard_features:
+  - PQ breaking can have a DFSZ-like domain-wall problem requiring additional intervention.
+  dark_sector_temperature: null
+  delta_neff: null
+  kinetic_decoupling: null
+  chemical_decoupling: null
+  phase_transitions:
+  - spontaneous U(1)_PQ breaking
+  topological_defects:
+  - domain walls possible in the PQ sector
+  isocurvature_perturbations: unknown
+  bbn_relevance: unknown
+  cmb_relevance: unknown
+phase_space:
+  distribution_type: unknown
+  distribution_function_available: unknown
+  notes: The candidate is described as cold dark matter, without a distribution function.
+structure_formation:
+  linear:
+    behaves_like_cdm: 'yes'
+    transfer_function_shape: cdm_like
+    small_scale_power_effect: none
+  nonlinear:
+    halo_mass_function_effect: unknown
+    subhalo_mass_function_effect: unknown
+    simulation_calibrated: unknown
+validity_domain:
+- id: v1
+  applies_to: model
+  condition: eta_I is the lightest odd-Z2 particle.
+  status: assumed
+  extrapolation_risk: high
+  caveats:
+  - The text says this is suggestive rather than a full benchmark.
+  source_reference_ids:
+  - '1411_6679'
+  notes: null
+- id: v2
+  applies_to: cosmological_history
+  condition: PQ domain-wall issue is resolved by additional physics.
+  status: assumed
+  extrapolation_risk: high
+  caveats:
+  - The paper notes DFSZ-like domain walls require intervention.
+  source_reference_ids:
+  - '1411_6679'
+  notes: null
+assumptions:
+  global:
+  - id: a1
+    description: The residual Z2 remains exact and the lightest odd state is eta_I.
+    scope: theory
+    status: assumed
+    impact_if_violated: The dark matter candidate would not be stable.
+    can_be_relaxed: unknown
+    source_reference_ids:
+    - '1411_6679'
+    notes: null
+associated_code:
+  has_associated_code: unknown
+  code_summary: No model-specific code was identified in the assigned text.
+  primary_code_role: null
+  repositories: []
+  packages_or_modules: []
+  notebooks: []
+  scripts: []
+  caveats: []
+robustness:
+  overall: medium
+  theory_robustness: medium
+  observational_robustness: unknown
+  computational_robustness: unknown
+  constraint_robustness: not_applicable
+  dominant_uncertainties:
+  - Relic density and production history are not computed in the paper.
+  validation_status: expert_judgment_only
+  notes: Machine-extracted candidate from one paper.
+agent_failure_modes:
+  warnings:
+  - id: w1
+    severity: medium
+    category: assumption_mismatch
+    warning: Do not treat this row as a relic-density calculation; it is a model-construction candidate.
+    mitigation: Use only the stated particle content and symmetry claims.
+    source_reference_ids:
+    - '1411_6679'
+provenance:
+  model_id: 1411_6679_syndetic_z2_dark_sector_v1
+  model_name: Syndetic residual-Z2 dark-sector model
+  model_family: scotogenic_dark_matter
+  entry_version: 0.1.0
+  status: machine_extracted
+  created_at: '2026-05-31'
+  last_updated: '2026-05-31'
+  sources:
+    primary_papers:
+    - reference_id: '1411_6679'
+      title: Syndetic Model of Fundamental Interactions
+      authors:
+      - E. Ma
+      year: 2014
+      arxiv_id: '1411.6679'
+      doi: null
+      url: null
+      role: original_model
+      notes: Assigned SQLite full text was the only source used.
+  extraction:
+    method: llm_assisted
+    extracted_by: codex_batch_0000
+    extractor_name: Codex
+    extraction_date: '2026-05-31'
+    confidence: medium
+    source_chunks_or_sections:
+    - reference_id: '1411_6679'
+      section: opening model description
+      page: null
+      quote_or_summary: The paper proposes a syndetic model connecting strong CP, dark matter, neutrino
+        masses, and first-family masses.
+    - reference_id: '1411_6679'
+      section: dark-sector discussion
+      page: null
+      quote_or_summary: The residual Z2 makes SM particles even and the listed dark-sector particles odd;
+        eta_I is suggested as the lightest odd dark matter candidate.
+    unresolved_items:
+    - No external lookup was used; fields not explicit in the text are left unknown.
+    - This run intentionally omits observables, constraints, and theory-to-observable routes.
+  evidence:
+    particle_content:
+    - reference_id: '1411_6679'
+      note: Dark sector contains Q, N_i, eta, and scalar singlets; eta_I is suggested as the lightest
+        odd dark matter candidate.
+      confidence: medium
+      section: dark-sector discussion
+      page: null
+    symmetries:
+    - reference_id: '1411_6679'
+      note: U(1)_PQ breaking leaves an exact residual Z2 supporting cold dark matter.
+      confidence: medium
+      section: opening model description
+      page: null
+    interactions:
+    - reference_id: '1411_6679'
+      note: The text gives PQ-sector couplings and radiative mass interactions involving the dark sector.
+      confidence: medium
+      section: dark-sector discussion
+      page: null
+    production_mechanism:
+    - reference_id: '1411_6679'
+      note: Production is not calculated; the paper supports stability and cold-DM identity only.
+      confidence: low
+      section: dark-sector discussion
+      page: null
+    cosmological_history:
+    - reference_id: '1411_6679'
+      note: The text flags a PQ domain-wall issue analogous to DFSZ models.
+      confidence: medium
+      section: dark-sector discussion
+      page: null
+    parameter_ranges:
+    - reference_id: '1411_6679'
+      note: Masses/couplings are symbolic; no relic-compatible range is provided.
+      confidence: low
+      section: dark-sector discussion
+      page: null
+    validity_domain:
+    - reference_id: '1411_6679'
+      note: The candidate requires eta_I to be the lightest odd-Z2 state.
+      confidence: medium
+      section: dark-sector discussion
+      page: null
+  review:
+    human_reviewed: false
+    reviewed_by: null
+    review_date: null
+    expert_reviewed: false
+    expert_reviewer: null
+    expert_review_date: null
+    reviewer_notes: []
+    scientific_confidence: medium
+    implementation_confidence: medium
+  caveats:
+  - Relic-density details are absent; model-card production and abundance fields are therefore conservative.

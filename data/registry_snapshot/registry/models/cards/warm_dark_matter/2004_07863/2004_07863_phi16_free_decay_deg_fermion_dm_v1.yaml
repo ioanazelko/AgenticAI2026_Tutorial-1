@@ -1,0 +1,867 @@
+_source:
+  shard: arXiv_src_2004_027_wds.tar
+  paper_id: '2004_07863'
+  source_member: 2004_07863.json
+  enriched: true
+  enrichment_schema_version: dm_model_ocr_enrichment_smoke_v0
+schema_version: model_only_v0
+model_id: 2004_07863_phi16_free_decay_deg_fermion_dm_v1
+identity:
+  name: Free phi_16 decay degenerate fermion dark matter from broken U(1)_{B-L}
+  family: warm_dark_matter
+  aliases:
+  - no-dark-thermal-bath phi_16 B-L WDM
+  - free scalar decay Q_{B-L}=8 fermion DM
+  short_description: A sub-keV Q_{B-L}=8 chiral fermion dark matter candidate produced by decay of free
+    nonrelativistic phi_16 scalars that were generated from inflaton decay but never formed a dark thermal
+    bath.
+  historical_origin_or_motivation: Introduced to connect a degenerate sub-keV fermion dark matter solution
+    to dwarf-galaxy cores with a broken U(1)_{B-L} explanation of neutrino masses and leptogenesis.
+  status: speculative
+  model_kind: complete_theory
+theory:
+  theory_level: effective_field_theory
+  parent_frameworks:
+  - U(1)_{B-L} extension of the Standard Model
+  - two-right-handed-neutrino seesaw and thermal leptogenesis
+  - Number-Theory-like anomaly-free chiral fermion sector
+  lagrangian_available: partial
+  renormalizable: 'no'
+  embedded_in_larger_framework: 'yes'
+  notes: The paper gives the gauge symmetry, anomaly-canceling chiral fermions, B-L-breaking scalar, Yukawa
+    terms, and Planck-suppressed operators that set the sub-keV fermion mass.
+particle_content:
+  dark_matter_candidate:
+    name: Q_{B-L}=8 chiral fermion
+    spin: 1/2
+    statistics: fermion
+    elementary_or_composite: elementary
+    number_of_components: single_component
+  additional_dark_sector_particles:
+  - two heavy right-handed neutrinos
+  - Q_{B-L}=9, 5, and 7 chiral fermions forming heavy states
+  - B-L breaking scalar with Q_{B-L}=2
+  - complex scalar phi_16 with Q_{B-L}=16
+  mediators:
+  - U(1)_{B-L} gauge boson A prime
+  - complex scalar phi_16
+  - inflaton field where used for phi_16 production
+  dark_radiation_species: []
+  excited_or_degenerate_states: []
+  long_lived_particles:
+  - Q_{B-L}=8 chiral fermion dark matter
+  unstable_parent_particles:
+  - phi_16 mother scalar
+  standard_model_extension: substantial
+symmetries:
+  stabilizing_mechanism: Spontaneous U(1)_{B-L} breaking by an even-charged scalar leaves a residual Z_2^{B-L};
+    the Q_{B-L}=8 fermion does not mix with the odd-charged fermions and is stable.
+  symmetries:
+  - name: U(1)_{B-L}
+    type: gauge
+    exact_or_approximate: broken
+    breaking: spontaneously broken by the Q_{B-L}=2 scalar vev
+    breaking_scale:
+      name: B-L breaking scale
+      symbol: V_{B-L}
+      range: (2-3) x 10^15
+      unit: GeV
+      role: core
+      status: inferred
+  - name: residual Z_2^{B-L}
+    type: discrete
+    exact_or_approximate: exact
+    breaking: not described
+    breaking_scale: null
+  topological_defects_possible: unknown
+interactions:
+  portals:
+  - vector
+  - other
+  standard_model_targets:
+  - Standard Model fermions carrying B-L charge
+  - inflaton/SM reheating sector
+  dark_sector_couplings:
+  - y_* phi_16^* psi_8 psi_8
+  - U(1)_{B-L} gauge interaction through A prime
+  - Yukawa couplings of the Q_{B-L}=2 scalar to heavy right-handed neutrinos and heavy chiral fermions
+  mediator_types:
+  - B-L gauge boson
+  - complex scalar mother particle
+  - inflaton source field
+  interaction_operators:
+  - phi_16 -> psi_8 psi_8
+  - g phi_I |phi_16|^2
+  - Planck-suppressed operator generating the psi_8 mass
+  - SM SM -> psi_8 psi_8 through virtual A prime is analyzed and found too warm in the minimal route
+  scattering:
+    elastic: unknown
+    inelastic: unknown
+    momentum_dependence: unknown
+    velocity_dependence: unknown
+    spin_dependence: unknown
+  annihilation_channels: []
+  decay_channels:
+  - phi_16 decay to a pair of Q_{B-L}=8 fermions
+  self_scattering_channels:
+  - phi_16-sector scattering in the dark-thermal-bath variant when the quartic is non-negligible
+  tree_or_loop_level: tree
+parameters:
+  core:
+  - name: dark matter mass
+    symbol: m_DM
+    description: Sub-keV Q_{B-L}=8 fermion mass for the no-dark-thermal-bath benchmark.
+    range: 0.2-0.35
+    unit: keV
+    role: core
+    status: inferred
+  - name: B-L breaking scale
+    symbol: V_{B-L}
+    description: Scale setting the Q_{B-L}=8 fermion mass through a high-dimensional operator.
+    range: (2-3) x 10^15
+    unit: GeV
+    role: core
+    status: inferred
+  - name: phi_16 mass benchmark
+    symbol: m_16
+    description: Mother scalar benchmark used to demonstrate viable free decay.
+    value: 5 x 10^5
+    unit: GeV
+    role: core
+    status: inferred
+  - name: inflaton branching ratio benchmark
+    symbol: Br
+    description: Benchmark branching ratio for inflaton production of phi_16.
+    value: 1 x 10^-6
+    role: core
+    status: inferred
+  - name: Yukawa coupling benchmark
+    symbol: y_*
+    description: Benchmark phi_16^* psi_8 psi_8 coupling.
+    value: 5 x 10^-6
+    role: core
+    status: inferred
+  - name: dark scalar quartic
+    symbol: lambda_16
+    description: Tiny or vanishing phi_16 quartic prevents a dark thermal bath from forming.
+    value: tiny or zero
+    role: core
+    status: assumed
+  derived:
+  - name: dark matter free-streaming length
+    symbol: lambda_FS
+    description: Computed to target the 0.3-0.5 Mpc range discussed for degenerate fermion warm dark matter.
+    range: 0.3-0.5
+    unit: Mpc
+    role: derived
+    status: inferred
+  - name: BBN extra radiation contribution
+    symbol: Delta N_eff^BBN
+    description: Estimated contribution from relativistic dark matter at BBN in the viable production
+      scenarios.
+    range: less than about 0.01-0.02 depending on variant
+    role: derived
+    status: inferred
+production:
+  mechanisms:
+  - inflaton decay to phi_16 at reheating
+  - free-streaming phi_16 becomes nonrelativistic
+  - nonrelativistic phi_16 decay to Q_{B-L}=8 fermion pairs
+  thermal_equilibrium_with_standard_model: 'no'
+  thermal_equilibrium_with_hidden_sector: 'no'
+  abundance_set_by:
+  - inflaton branching ratio Br
+  - phi_16 mass
+  - Yukawa coupling y_*
+  - inflaton mass and reheating temperature
+  - dark matter mass
+  - B-L breaking scale
+  depends_on_reheating_temperature: 'yes'
+  can_produce_all_dark_matter: parameter_dependent
+  nonthermal_momentum_distribution: 'yes'
+  notes: The paper emphasizes this no-bath option is easier than the thermal-bath option for obtaining
+    the target free-streaming length.
+relic_density:
+  full_or_subcomponent: full_dark_matter
+  target_fraction: null
+  calculation_type: nonthermal
+  key_dependencies:
+  - inflaton branching ratio Br
+  - phi_16 mass
+  - Yukawa coupling y_*
+  - inflaton mass and reheating temperature
+  - dark matter mass
+  - B-L breaking scale
+  requires_entropy_dilution: unknown
+  overclosure_risk: parameter_dependent
+  underproduction_risk: parameter_dependent
+  tuning_assessment: unknown
+cosmological_history:
+  standard_history_assumed: false
+  nonstandard_features:
+  - positive Hubble-induced phi_16 mass during inflation
+  - no phi_16 dark thermal bath
+  - free nonrelativistic mother-scalar decay
+  - extra radiation checked at BBN
+  dark_sector_temperature: null
+  delta_neff:
+    name: Delta N_eff at BBN
+    symbol: Delta N_eff^BBN
+    range: at most O(0.01-0.02) in examples
+    role: derived
+    status: inferred
+  kinetic_decoupling: null
+  chemical_decoupling: null
+  phase_transitions:
+  - spontaneous U(1)_{B-L} breaking
+  topological_defects: []
+  isocurvature_perturbations: unknown
+  bbn_relevance: medium
+  cmb_relevance: unknown
+phase_space:
+  distribution_type: decay_produced
+  distribution_function_available: approximate
+  f_of_p_or_q: The paper models decay-produced momenta and free-streaming for the Q_{B-L}=8 fermion rather
+    than tabulating a full final distribution.
+  average_momentum_relative_to_thermal: null
+  free_streaming_length:
+    name: target free-streaming length
+    symbol: lambda_FS
+    range: 0.3-0.5
+    unit: Mpc
+    role: derived
+    status: inferred
+  velocity_dispersion_today: null
+  phase_space_bounds:
+  - The paper requires the would-be present-day DM temperature to be below the dwarf-spheroidal degeneracy
+    temperature.
+  notes: For the benchmark m_16 = 5 x 10^5 GeV, Br = 10^-6, and y_* = 5 x 10^-6, the paper finds 0.2-0.35
+    keV gives lambda_FS in the 0.3-0.5 Mpc target range.
+structure_formation:
+  linear:
+    behaves_like_cdm: 'no'
+    transfer_function_shape: smooth_cutoff
+    small_scale_power_effect: suppression
+  nonlinear:
+    halo_mass_function_effect: Sub-keV warm fermion dark matter is intended to form cored dwarf-spheroidal
+      halos in a quasi-degenerate state.
+    subhalo_mass_function_effect: Expected suppression of small-scale structure relative to CDM is part
+      of the motivation, but no simulation calibration is provided in this paper.
+    simulation_calibrated: 'no'
+validity_domain:
+- id: phi16_no_dark_bath
+  applies_to: production
+  condition: phi_16 quartic and Yukawa interactions must be small enough that no dark thermal bath forms
+    before phi_16 decay.
+  status: assumed
+  extrapolation_risk: medium
+- id: phi16_nonrelativistic_before_decay
+  applies_to: cosmological_history
+  condition: phi_16 should become nonrelativistic before it decays to Q_{B-L}=8 fermion pairs.
+  status: inferred
+  extrapolation_risk: medium
+- id: benchmark_free_streaming_range
+  applies_to: structure_formation
+  condition: The benchmark m_16, Br, and y_* values give lambda_FS around 0.3-0.5 Mpc for m_DM about 0.2-0.35
+    keV.
+  status: inferred
+  extrapolation_risk: medium
+assumptions:
+  global:
+  - id: positive_hubble_mass_phi16
+    description: The phi_16 field has positive Hubble-induced mass during inflation and sits near the
+      origin.
+    scope: cosmological_history
+    status: assumed
+    impact_if_violated: Leads to the coherent-oscillation variant instead.
+    can_be_relaxed: 'yes'
+  - id: no_dark_thermal_bath
+    description: The phi_16 quartic interaction is tiny or vanishing and the Yukawa interaction remains
+      sufficiently small.
+    scope: production
+    status: assumed
+    impact_if_violated: Use the dark-thermal-bath variant.
+    can_be_relaxed: 'yes'
+  - id: suppressed_higgs_portal
+    description: Higgs-portal and other scalar mixings are assumed highly suppressed so phi_16 does not
+      thermalize with the Standard Model.
+    scope: theory
+    status: assumed
+    impact_if_violated: The paper says phi_16 would thermalize and the desired nonthermal WDM history
+      would fail.
+    can_be_relaxed: unknown
+associated_code:
+  has_associated_code: unknown
+  code_summary: No model-specific public code or repository is identified in the assigned text.
+provenance:
+  model_id: 2004_07863_phi16_free_decay_deg_fermion_dm_v1
+  model_name: Free phi_16 decay degenerate fermion dark matter from broken U(1)_{B-L}
+  model_family: warm_dark_matter
+  entry_version: 0.1.0
+  status: machine_extracted
+  created_at: '2026-05-31'
+  last_updated: '2026-05-31'
+  sources:
+    primary_papers:
+    - reference_id: '2004_07863'
+      title: Degenerate Fermion Dark Matter from a Broken U(1)_{B-L} Gauge Symmetry
+      role: original_model
+      year: 2020
+      arxiv_id: '2004.07863'
+      doi: null
+      url: null
+      authors:
+      - Gongjun Choi
+      - Motoo Suzuki
+      - Tsutomu T. Yanagida
+      notes: Assigned SQLite full text was the only source used.
+    - arxiv_id: '2004.07863'
+      authors:
+      - Choi, Gongjun
+      - Suzuki, Motoo
+      - Yanagida, Tsutomu T.
+      doi: 10.1103/PhysRevD.102.035022
+      notes: Primary assigned paper read from local SQLite full text.
+      reference_id: arxiv:2004.07863
+      role: original_model
+      title: Degenerate fermion dark matter from a broken U (1 )B<SUB>-L</SUB> gauge symmetry
+      url: https://arxiv.org/abs/2004.07863
+      year: 2020
+    constraint_papers:
+    - arxiv_id: astro-ph/0501562
+      authors:
+      - Viel, Matteo
+      - Lesgourgues, Julien
+      - Haehnelt, Martin G.
+      - Matarrese, Sabino
+      - Riotto, Antonio
+      doi: 10.1103/PhysRevD.71.063534
+      notes: Related full text resolved locally and read for bounded enrichment.
+      reference_id: arxiv:astro-ph/0501562
+      role: constraint
+      title: Constraining warm dark matter candidates including sterile neutrinos and light gravitinos
+        with WMAP and the Lyman-α forest
+      url: https://arxiv.org/abs/astro-ph/0501562
+      year: 2005
+    - arxiv_id: '1711.06267'
+      authors:
+      - Kim, Stacy Y.
+      - Peter, Annika H. G.
+      - Hargis, Jonathan R.
+      doi: 10.1103/PhysRevLett.121.211302
+      notes: Related full text resolved locally and read for bounded enrichment.
+      reference_id: arxiv:1711.06267
+      role: constraint
+      title: 'Missing Satellites Problem: Completeness Corrections to the Number of Satellite Galaxies
+        in the Milky Way are Consistent with Cold Dark Matter Predictions'
+      url: https://arxiv.org/abs/1711.06267
+      year: 2018
+    - arxiv_id: '1907.04558'
+      authors:
+      - Kamada, Ayuki
+      - Yanagi, Keisuke
+      doi: 10.1088/1475-7516/2019/11/029
+      notes: Related full text resolved locally and read for bounded enrichment.
+      reference_id: arxiv:1907.04558
+      role: constraint
+      title: 'Constraining FIMP from the structure formation of the Universe: analytic mapping from m<SUB>WDM</SUB>'
+      url: https://arxiv.org/abs/1907.04558
+      year: 2019
+    external_databases: []
+    review_papers: []
+  extraction:
+    method: llm_assisted
+    extracted_by: codex_batch-0014
+    extractor_name: Codex GPT-5 dark-matter model-card worker
+    extraction_date: '2026-05-31'
+    confidence: high
+    source_chunks_or_sections:
+    - reference_id: '2004_07863'
+      section: Model construction
+      page: null
+      quote_or_summary: The Q_{B-L}=8 fermion is stable after U(1)_{B-L} breaking and obtains a sub-keV
+        mass for V_{B-L} near 10^15 GeV.
+    - reference_id: '2004_07863'
+      section: Case without formation of dark sector thermal bath
+      page: null
+      quote_or_summary: The paper studies phi_16 produced by inflaton decay, free-streaming until nonrelativistic,
+        then decaying to DM pairs.
+    unresolved_items:
+    - No Lyman-alpha flux-power, satellite-count, or BBN likelihood was rerun.
+    - Thermal-WDM bounds are treated as recast targets because the DM phase-space distribution is nonthermal.
+  evidence:
+    particle_content:
+    - reference_id: '2004_07863'
+      note: The paper replaces one conventional right-handed neutrino with four anomaly-canceling chiral
+        fermions and identifies the even-B-L-charge Q_{B-L}=8 fermion as the dark matter candidate.
+      confidence: high
+      section: Model construction
+    symmetries:
+    - reference_id: '2004_07863'
+      note: The Q_{B-L}=8 fermion is stable because U(1)_{B-L} breaking leaves residual Z_2^{B-L} and
+        the state does not mix with the odd-charged fermions.
+      confidence: high
+      section: Model construction
+    interactions:
+    - reference_id: '2004_07863'
+      note: The text gives the phi_16 coupling y_* phi_16^* psi_8 psi_8 and discusses A-prime-mediated
+        production routes.
+      confidence: high
+      section: Scalar extension and production
+    production_mechanism:
+    - reference_id: '2004_07863'
+      note: The paper states that with tiny or vanishing phi_16 quartic interaction, phi_16 does not form
+        a dark thermal bath and decays after becoming nonrelativistic.
+      confidence: high
+      section: Case without formation of dark sector thermal bath
+    cosmological_history:
+    - reference_id: '2004_07863'
+      note: The benchmark no-bath history computes Delta N_eff^BBN at most 0.02 and a would-be DM temperature
+        below the degeneracy temperature.
+      confidence: high
+      section: No-dark-bath consistency checks
+    parameter_ranges:
+    - reference_id: '2004_07863'
+      note: The worked benchmark uses m_16 = 5 x 10^5 GeV, Br = 10^-6, y_* = 5 x 10^-6, and gives 0.2-0.35
+        keV for the target free-streaming range.
+      confidence: high
+      section: No-dark-bath benchmark
+    validity_domain:
+    - reference_id: '2004_07863'
+      note: The text requires T_SM(a_NR) > T_SM,2 > T_SM,1 and y_* below the minimum of several bounds
+        so phi_16 decays in the desired nonthermal regime.
+      confidence: high
+      section: No-dark-bath hierarchy conditions
+    constraints:
+    - confidence: high
+      note: Primary paper states lambda_FS=0.3-0.5 Mpc target and Delta N_eff^BBN consistency checks.
+      page: null
+      reference_id: arxiv:2004.07863
+      section: Consistency checks
+    - confidence: medium
+      note: Related mapping paper emphasizes that nonthermal WDM candidates need a thermal-WDM equivalent
+        mapping.
+      page: null
+      reference_id: arxiv:1907.04558
+      section: Abstract
+    observables:
+    - confidence: high
+      note: Primary paper gives the free production mechanism, free-streaming target, BBN Delta N_eff
+        check, and degenerate-fermion motivation.
+      page: null
+      reference_id: arxiv:2004.07863
+      section: Production mechanisms
+    - confidence: medium
+      note: Related Lyman-alpha paper gives WDM mass sensitivity from WMAP plus Lyman-alpha forest.
+      page: null
+      reference_id: arxiv:astro-ph/0501562
+      section: Abstract
+    - confidence: medium
+      note: Related satellite-count paper discusses WDM thermal masses below 4 keV being in tension with
+        Milky Way satellites.
+      page: null
+      reference_id: arxiv:1711.06267
+      section: Abstract
+    routes:
+    - confidence: high
+      note: Primary paper lays out the free route from phi_16 dynamics to scalar decay, free streaming,
+        and BBN radiation.
+      page: null
+      reference_id: arxiv:2004.07863
+      section: Production mechanism
+  review:
+    human_reviewed: false
+    reviewed_by: null
+    review_date: null
+    expert_reviewed: false
+    expert_reviewer: null
+    expert_review_date: null
+    reviewer_notes: []
+    scientific_confidence: high
+    implementation_confidence: high
+  caveats:
+  - The no-bath scenario depends on suppressing phi_16 quartic and Higgs-portal interactions enough to
+    avoid both dark-sector and SM thermalization.
+robustness:
+  overall: medium
+  theory_robustness: medium
+  observational_robustness: unknown
+  computational_robustness: medium
+  dominant_uncertainties:
+  - Viability depends on the nonthermal production history and choices of phi_16-sector parameters.
+  - The paper gives analytic estimates and benchmark scans but no public implementation in the assigned
+    text.
+  validation_status: expert_judgment_only
+  notes: The particle identity, symmetry, and production logic are explicit; detailed viability is parameter
+    dependent.
+agent_failure_modes:
+  warnings:
+  - id: minimal_scattering_route_not_viable
+    severity: medium
+    category: assumption_mismatch
+    warning: The paper finds direct SM-scattering production through the B-L gauge boson gives too large
+      a free-streaming length for the intended degenerate sub-keV DM use case.
+    mitigation: Use the phi_16 decay or coherent-oscillation histories for viable rows from this paper.
+    source_reference_ids:
+    - '2004_07863'
+  - id: benchmark_not_unique
+    severity: low
+    category: extrapolation
+    warning: The paper presents m_16 = 5 x 10^5 GeV, Br = 10^-6, y_* = 5 x 10^-6 as an illustrative benchmark,
+      not the only viable no-bath point.
+    mitigation: Treat the benchmark as evidence for viability and consult the parameter inequalities for
+      other points.
+    source_reference_ids:
+    - '2004_07863'
+observables:
+- caveats:
+  - The paper does not perform a new dwarf-galaxy Jeans analysis.
+  channel: dwarf_galaxies
+  effect_direction: morphology_change
+  environments:
+  - dwarf spheroidal galaxies
+  id: obs_degfermion_dwarf_cores
+  key_quantities:
+  - description: Q_{B-L}=8 fermion mass for this production variant.
+    name: dark matter mass
+    range: 0.2-0.35
+    role: core
+    source_reference_ids:
+    - arxiv:2004.07863
+    status: inferred
+    symbol: m_DM
+    unit: keV
+  - description: Scale setting the high-dimensional mass operator.
+    name: B-L breaking scale
+    range: (2-3)e15
+    role: core
+    source_reference_ids:
+    - arxiv:2004.07863
+    status: inferred
+    symbol: V_{B-L}
+    unit: GeV
+  - description: Benchmark free-decay mother scalar mass.
+    name: phi_16 mass benchmark
+    role: core
+    source_reference_ids:
+    - arxiv:2004.07863
+    status: inferred
+    symbol: m_16
+    unit: GeV
+    value: 5e5
+  - description: Benchmark inflaton branching ratio to phi_16.
+    name: inflaton branching ratio benchmark
+    role: core
+    source_reference_ids:
+    - arxiv:2004.07863
+    status: inferred
+    symbol: Br
+    value: 1e-6
+  - description: Benchmark phi_16 psi_8 psi_8 coupling.
+    name: Yukawa coupling benchmark
+    role: core
+    source_reference_ids:
+    - arxiv:2004.07863
+    status: inferred
+    symbol: y_star
+    value: 5e-6
+  linked_constraints:
+  - con_free_streaming_window
+  linked_routes:
+  - route_phi16_free_decay_wdm
+  name: Degenerate sub-keV fermion support in dwarf halos
+  notes: null
+  observability: medium
+  predicted_effect: Sub-keV fermion DM can form quasi-degenerate dwarf-spheroidal halos with cored profiles,
+    provided the production history yields a sufficiently cold present-day distribution.
+  redshift_range: late-time dwarf galaxies
+  relevance: high
+  scale_range: dwarf spheroidal cores
+  source_reference_ids:
+  - arxiv:2004.07863
+  subchannel: cored dwarf spheroidal halos
+- caveats:
+  - Thermal-WDM mass bounds require a production-spectrum mapping.
+  channel: lyman_alpha
+  effect_direction: suppression
+  environments:
+  - Lyman-alpha forest
+  - Milky Way satellites
+  id: obs_wdm_free_streaming_cutoff
+  key_quantities:
+  - description: Target window used for consistency with Lyman-alpha and satellite constraints.
+    name: free-streaming length
+    range: 0.3-0.5
+    role: core
+    source_reference_ids:
+    - arxiv:2004.07863
+    - arxiv:astro-ph/0501562
+    - arxiv:1711.06267
+    status: inferred
+    symbol: lambda_FS
+    unit: Mpc
+  - description: Thermal-WDM comparison used in related constraints.
+    name: thermal-equivalent WDM mass
+    range: lower bounds of order keV; primary discusses conservative 1.9 keV mapping
+    role: core
+    source_reference_ids:
+    - arxiv:2004.07863
+    - arxiv:astro-ph/0501562
+    - arxiv:1907.04558
+    status: inferred
+    symbol: m_WDM
+    unit: keV
+  linked_constraints:
+  - con_lya_wdm_mapping
+  linked_routes:
+  - route_phi16_free_decay_wdm
+  name: Warm free-streaming cutoff
+  notes: null
+  observability: high
+  predicted_effect: Nonthermal scalar decay produces a warm sub-keV fermion spectrum; the target free-streaming
+    length is chosen to avoid excessive small-scale suppression.
+  redshift_range: linear structure through high-redshift Lyman-alpha forest
+  relevance: critical
+  scale_range: small/intermediate matter-power scales
+  source_reference_ids:
+  - arxiv:2004.07863
+  - arxiv:astro-ph/0501562
+  - arxiv:1711.06267
+  - arxiv:1907.04558
+  subchannel: matter-power suppression
+- caveats:
+  - BBN contribution is estimated analytically from the nonthermal momentum history.
+  channel: cosmology
+  effect_direction: enhancement
+  environments:
+  - early universe
+  id: obs_bbn_delta_neff_degfermion
+  key_quantities:
+  - description: Production-variant estimate from the primary paper.
+    name: BBN effective-neutrino contribution
+    range: at most about 0.02 in the benchmark
+    role: core
+    source_reference_ids:
+    - arxiv:2004.07863
+    status: inferred
+    symbol: Delta N_eff^BBN
+  linked_constraints:
+  - con_bbn_neff_degfermion
+  linked_routes:
+  - route_phi16_free_decay_wdm
+  name: Relativistic DM contribution at BBN
+  notes: null
+  observability: medium
+  predicted_effect: The sub-keV fermions may still be relativistic at BBN and contribute to N_eff, but
+    the source benchmarks keep the contribution below the quoted bound.
+  redshift_range: BBN epoch
+  relevance: medium
+  scale_range: homogeneous expansion
+  source_reference_ids:
+  - arxiv:2004.07863
+  subchannel: extra radiation at BBN
+constraints:
+- allowed_regions:
+  - 0.3 Mpc < lambda_FS < 0.5 Mpc target window used by the primary paper.
+  applies: parameter_dependent
+  assumptions:
+  - can_be_relaxed: partial
+    description: The selected free-streaming window captures the relevant Lyman-alpha and satellite-count
+      viability target.
+    id: lambdafs-window
+    impact_if_violated: A full transfer-function likelihood can shift the allowed mass interval.
+    notes: null
+    scope: structure recast
+    source_reference_ids:
+    - arxiv:2004.07863
+    - arxiv:astro-ph/0501562
+    - arxiv:1711.06267
+    status: approximate
+  benchmark_implications:
+  - This free production route gives m_DM range 0.2-0.35 for the target window.
+  caveats:
+  - No transfer-function code or Lyman-alpha likelihood was run.
+  constrained_parameters:
+  - lambda_FS
+  - m_DM
+  - m_16
+  - y_star
+  constraint_type: astrophysical
+  data_release: Lyman-alpha and satellite constraints cited by source papers
+  excluded_regions:
+  - lambda_FS larger than about 0.5 Mpc risks excessive suppression of small-scale matter power.
+  id: con_free_streaming_window
+  likelihood_available: 'no'
+  likelihood_reference: null
+  name: Free-streaming window for cored dwarfs and satellites
+  notes: null
+  observable_channel: small_scale_structure
+  recasting_needed: 'yes'
+  robustness: medium
+  source_reference_ids:
+  - arxiv:2004.07863
+  - arxiv:astro-ph/0501562
+  - arxiv:1711.06267
+- allowed_regions:
+  - Nonthermal distributions whose transfer function remains above the Lyman-alpha lower-bound target.
+  applies: recast_required
+  assumptions:
+  - can_be_relaxed: partial
+    description: Nonthermal scalar-decay DM is compared to thermal WDM through a warmness/transfer-function
+      mapping.
+    id: thermal-equivalent-map
+    impact_if_violated: A full Boltzmann calculation may change the equivalent mass.
+    notes: null
+    scope: Lyman-alpha recast
+    source_reference_ids:
+    - arxiv:2004.07863
+    - arxiv:1907.04558
+    status: approximate
+  benchmark_implications:
+  - The simple mapping is a warning flag, not a final exclusion, because the nonthermal spectrum needs
+    a dedicated recast.
+  caveats:
+  - Thermal WDM bounds cannot be directly imposed without mapping the nonthermal distribution.
+  constrained_parameters:
+  - m_DM
+  - m_WDM
+  - phase-space distribution
+  constraint_type: astrophysical
+  data_release: WMAP/Lyman-alpha and later WDM mapping literature read locally
+  excluded_regions:
+  - The primary paper notes that applying m_WDM > 1.9 keV via its simple map gives m_psi8 > about 0.4
+    keV, in tension with some degenerate-fermion target masses.
+  id: con_lya_wdm_mapping
+  likelihood_available: 'no'
+  likelihood_reference: null
+  name: Thermal-WDM equivalent Lyman-alpha mapping
+  notes: null
+  observable_channel: lyman_alpha
+  recasting_needed: 'yes'
+  robustness: medium
+  source_reference_ids:
+  - arxiv:2004.07863
+  - arxiv:astro-ph/0501562
+  - arxiv:1907.04558
+- allowed_regions:
+  - at most about 0.02 in the benchmark
+  applies: 'yes'
+  assumptions:
+  - can_be_relaxed: partial
+    description: The BBN radiation contribution is computed from the analytic nonthermal momentum history.
+    id: analytic-neff-momentum
+    impact_if_violated: A full distribution-function evolution could change Delta N_eff.
+    notes: null
+    scope: BBN extra radiation
+    source_reference_ids:
+    - arxiv:2004.07863
+    status: approximate
+  benchmark_implications:
+  - The free route remains below the quoted BBN radiation bound in the source benchmark.
+  caveats:
+  - No BBN likelihood was rerun.
+  constrained_parameters:
+  - Delta N_eff^BBN
+  - m_DM
+  - a_FS
+  constraint_type: cosmological
+  data_release: null
+  excluded_regions:
+  - Benchmarks with Delta N_eff^BBN above 0.114 would fail the primary paper quoted 95 percent bound.
+  id: con_bbn_neff_degfermion
+  likelihood_available: 'no'
+  likelihood_reference: null
+  name: BBN Delta N_eff limit for relativistic sub-keV DM
+  notes: null
+  observable_channel: bbn
+  recasting_needed: 'yes'
+  robustness: medium
+  source_reference_ids:
+  - arxiv:2004.07863
+theory_to_observable_routing:
+  routes:
+  - agent_notes: null
+    caveats:
+    - OCR drops some exponent signs in the local text; benchmark values were cross-checked against the
+      assignment model card.
+    constraint_ids:
+    - con_free_streaming_window
+    - con_lya_wdm_mapping
+    - con_bbn_neff_degfermion
+    derived_quantities:
+    - lambda_FS
+    - phase-space distribution
+    - Delta N_eff^BBN
+    - thermal-equivalent WDM mass
+    description: Map free nonthermal phi_16 production and later nonrelativistic decay to the warm degenerate-fermion
+      spectrum.
+    forward_model_chain:
+    - inputs:
+      - V_{B-L}
+      - operator dimension
+      notes: null
+      outputs:
+      - m_DM
+      step_id: s1
+      step_type: analytic_formula
+      tool_or_code: null
+      validity: Primary high-dimensional B-L mass relation.
+    - inputs:
+      - production initial conditions
+      - m_16
+      - y_star
+      notes: inflaton produces phi_16 particles that never form a dark bath and decay after becoming nonrelativistic
+      outputs:
+      - DM momentum at production
+      - a_FS
+      step_id: s2
+      step_type: semi_analytic_model
+      tool_or_code: null
+      validity: Production-channel specific.
+    - inputs:
+      - phase-space distribution
+      - m_DM
+      notes: Not run in this batch.
+      outputs:
+      - lambda_FS
+      - matter-power cutoff
+      step_id: s3
+      step_type: transfer_function
+      tool_or_code: null
+      validity: Needed for likelihood-grade Lyman-alpha recast.
+    - inputs:
+      - momentum distribution at BBN
+      notes: null
+      outputs:
+      - Delta N_eff^BBN
+      step_id: s4
+      step_type: analytic_formula
+      tool_or_code: null
+      validity: Approximate source calculation.
+    id: route_phi16_free_decay_wdm
+    input_parameters:
+    - m_DM
+    - V_{B-L}
+    - m_16
+    - y_star
+    - Br
+    likelihoods:
+    - Lyman-alpha likelihood unavailable
+    - satellite likelihood unavailable
+    - BBN likelihood unavailable
+    observable_ids:
+    - obs_degfermion_dwarf_cores
+    - obs_wdm_free_streaming_cutoff
+    - obs_bbn_delta_neff_degfermion
+    required_code_resources:
+    - Boltzmann solver for nonthermal WDM distribution
+    - Lyman-alpha transfer-function recast
+    - dwarf-halo phase-space model
+    route_status: planned
+    source_model_features:
+    - no phi_16 dark thermal bath
+    - free nonrelativistic phi_16 decay
+    - Q_{B-L}=8 fermion DM
+    validation_tests:
+    - recover lambda_FS=0.3-0.5 Mpc target
+    - recover Delta N_eff^BBN below quoted 0.114 bound

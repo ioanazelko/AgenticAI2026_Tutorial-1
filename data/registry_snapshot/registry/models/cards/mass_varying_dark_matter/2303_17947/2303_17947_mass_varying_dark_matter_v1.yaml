@@ -1,0 +1,803 @@
+_source:
+  shard: arXiv_src_2303_143_wds.tar
+  paper_id: '2303_17947'
+  source_member: 2303_17947.json
+  enriched: true
+  enrichment_schema_version: dm_model_ocr_enrichment_smoke_v0
+schema_version: model_only_v0
+model_id: 2303_17947_mass_varying_dark_matter_v1
+identity:
+  name: Mass-varying dark matter with rapid mass turn-on
+  family: mass_varying_dark_matter
+  aliases:
+  - MVDM
+  - mass-varying dark matter
+  - time-varying dark matter mass model
+  short_description: A phenomenological model in which a fermionic thermal dark-matter species is initially
+    massless and radiation-like, then rapidly acquires a nonzero mass at redshift z_t and becomes cold
+    dark matter.
+  historical_origin_or_motivation: Motivated by nontrivial dark-sector physics and by asking whether a
+    DM particle mass can be dynamical with cosmic time.
+  status: speculative
+  model_kind: phenomenological_parameterization
+theory:
+  theory_level: phenomenological_parameterization
+  parent_frameworks:
+  - nonstandard dark-sector cosmology
+  - mass-varying dark matter
+  - warm-dark-matter-like phenomenology
+  lagrangian_available: 'no'
+  renormalizable: not_applicable
+  embedded_in_larger_framework: unknown
+  notes: The paper explicitly takes a model-independent empirical time variation m(z) rather than adopting
+    a specific particle-physics Lagrangian.
+particle_content:
+  dark_matter_candidate:
+    name: fermionic thermal species with time-varying mass
+    spin: 1/2
+    statistics: fermion
+    elementary_or_composite: unknown
+    number_of_components: single_component
+  additional_dark_sector_particles: []
+  mediators: []
+  dark_radiation_species:
+  - same species before the mass transition
+  excited_or_degenerate_states: []
+  long_lived_particles:
+  - mass-varying dark matter species
+  unstable_parent_particles: []
+  standard_model_extension: unknown
+symmetries:
+  stabilizing_mechanism: unknown; cosmological stability is assumed by modeling the species as the dark
+    matter component.
+  symmetries: []
+  topological_defects_possible: unknown
+interactions:
+  portals:
+  - none
+  standard_model_targets: []
+  dark_sector_couplings:
+  - empirical time-dependent mass m(z)
+  - possible scalar-field origin discussed qualitatively but not specified
+  mediator_types: []
+  interaction_operators: []
+  scattering:
+    elastic: not_applicable
+    inelastic: not_applicable
+    momentum_dependence: not_applicable
+    velocity_dependence: not_applicable
+    spin_dependence: not_applicable
+  annihilation_channels: []
+  decay_channels: []
+  self_scattering_channels: []
+  cp_structure: unknown
+  flavor_structure: unknown
+  tree_or_loop_level: not_applicable
+parameters:
+  core:
+  - name: final dark matter mass
+    symbol: M
+    description: Mass after the transition from the radiation-like phase.
+    range: expressed through M/T in the paper
+    role: core
+    status: inferred
+  - name: transition redshift
+    symbol: z_t
+    description: Redshift at which the mass turns on.
+    range: mostly z_t of order 1e5 in the paper examples and limits
+    role: core
+    status: inferred
+  - name: transition duration in redshift
+    symbol: Delta z
+    description: Width of the smooth mass turn-on.
+    range: fast-transition regime Delta z / z_t << 1
+    role: core
+    status: inferred
+  - name: dark-sector temperature
+    symbol: T
+    description: Temperature of the fermionic thermal phase-space distribution.
+    value: T_gamma/10 in the numerical examples
+    role: core
+    status: inferred
+  - name: mass-to-temperature ratio
+    symbol: M/T
+    description: Dimensionless ratio controlling free streaming and perturbation evolution.
+    range: 10 to above 3e3 discussed in the Lyman-alpha comparison
+    role: core
+    status: inferred
+production:
+  mechanisms:
+  - thermal fermionic phase-space distribution followed by mass turn-on
+  - phenomenological normalization to observed cold dark matter density
+  thermal_equilibrium_with_standard_model: unknown
+  thermal_equilibrium_with_hidden_sector: 'yes'
+  abundance_set_by:
+  - present-day CDM density normalization
+  - dark-sector temperature T
+  - final mass M
+  - transition redshift z_t
+  depends_on_reheating_temperature: unknown
+  can_produce_all_dark_matter: 'yes'
+  nonthermal_momentum_distribution: 'no'
+  notes: The paper fixes the present-day energy density to the Planck best-fit CDM density and studies
+    the species as the full DM component.
+relic_density:
+  full_or_subcomponent: full_dark_matter
+  target_fraction:
+    name: dark matter density target
+    symbol: Omega_c h^2
+    description: Present-day density matched to the Planck best-fit CDM density.
+    value: '0.12'
+    role: cosmological
+    status: assumed
+  calculation_type: phenomenological
+  key_dependencies:
+  - M/T
+  - T
+  - z_t
+  - Delta z / z_t
+  requires_entropy_dilution: unknown
+  overclosure_risk: unknown
+  underproduction_risk: unknown
+  tuning_assessment: unknown
+cosmological_history:
+  standard_history_assumed: true
+  nonstandard_features:
+  - dark matter is radiation-like before z_t
+  - mass rapidly turns on from zero to M
+  - energy density scales as radiation before z_t and matter after z_t
+  dark_sector_temperature:
+    name: dark-sector temperature
+    symbol: T
+    description: Temperature assigned to the Fermi-Dirac phase-space distribution.
+    value: T_gamma/10 in examples
+    role: cosmological
+    status: assumed
+  delta_neff:
+    name: extra relativistic degrees of freedom
+    symbol: Delta N_eff
+    description: Estimated to be small in the relevant nonrelativistic-at-transition parameter space.
+    range: less than about 0.01 in the paper estimate for relevant z_t and T_t/M
+    role: derived
+    status: inferred
+  kinetic_decoupling: null
+  chemical_decoupling: null
+  phase_transitions:
+  - rapid relativistic-to-nonrelativistic mass transition at z_t
+  topological_defects: []
+  isocurvature_perturbations: unknown
+  bbn_relevance: low
+  cmb_relevance: medium
+phase_space:
+  distribution_type: thermal
+  distribution_function_available: 'yes'
+  f_of_p_or_q: Fermi-Dirac distribution f(q/T) in comoving momentum q
+  average_momentum_relative_to_thermal: thermal fermion value before transition; evolves through m(a)/T
+    after mass turn-on
+  free_streaming_length: null
+  velocity_dispersion_today: null
+  phase_space_bounds:
+  - fast transition Delta z / z_t << 1
+  - main study assumes M/T_t >> 1 so the species becomes nonrelativistic immediately after mass turn-on
+  notes: Before z_t the species free-streams as radiation; after z_t its velocity redshifts and it behaves
+    as cold matter for large M/T_t.
+structure_formation:
+  linear:
+    behaves_like_cdm: scale_dependent
+    transfer_function_shape: smooth_cutoff
+    small_scale_power_effect: suppression
+    half_mode_mass: null
+    thermal_wdm_mapping:
+      available: true
+      validity: approximate
+      warning: The paper emphasizes that MVDM can suppress power on larger scales than WDM with the same
+        M/T because the species is massless before z_t.
+    impact_on_sigma8_s8: unknown
+  nonlinear:
+    halo_mass_function_effect: unknown
+    subhalo_mass_function_effect: unknown
+    infall_subhalo_mass_function_effect: unknown
+    present_day_bound_subhalo_mass_function_effect: unknown
+    concentration_mass_relation_effect: unknown
+    density_profile_effect: unknown
+    core_or_cusp_effect: unknown
+    subhalo_survival_effect: unknown
+    tidal_stripping_effect: unknown
+    smallest_galaxies_effect: small-scale linear power is suppressed before nonlinear modeling
+    simulation_calibrated: 'no'
+validity_domain:
+- id: mvdm_empirical_scope
+  applies_to: model
+  condition: Model is an empirical mass-history parameterization, not a specified UV particle model.
+  status: established
+  extrapolation_risk: medium
+  caveats: []
+  source_reference_ids:
+  - '2303_17947'
+  notes: null
+- id: mvdm_fast_transition
+  applies_to: parameter
+  condition: The analysis focuses on fast transitions with Delta z / z_t << 1.
+  status: established
+  extrapolation_risk: high
+  caveats: []
+  source_reference_ids:
+  - '2303_17947'
+  notes: null
+- id: mvdm_nonrelativistic_turnon
+  applies_to: parameter
+  condition: Main results assume M/T_t >> 1 so the species becomes nonrelativistic when its mass turns
+    on.
+  status: established
+  extrapolation_risk: medium
+  caveats: []
+  source_reference_ids:
+  - '2303_17947'
+  notes: null
+assumptions:
+  global:
+  - id: fermionic_thermal_species
+    description: The dark matter species is assumed to be fermionic with a Fermi-Dirac distribution at
+      temperature T.
+    scope: theory
+    status: assumed
+    impact_if_violated: null
+    can_be_relaxed: unknown
+    source_reference_ids:
+    - '2303_17947'
+    notes: null
+  - id: empirical_mass_history
+    description: The mass m(z) is imposed as a smooth empirical transition from zero to M around z_t.
+    scope: theory
+    status: assumed
+    impact_if_violated: null
+    can_be_relaxed: unknown
+    source_reference_ids:
+    - '2303_17947'
+    notes: null
+  - id: full_cdm_density
+    description: The present-day energy density is matched to the observed CDM density Omega_c h^2 about
+      0.12.
+    scope: cosmological_history
+    status: assumed
+    impact_if_violated: null
+    can_be_relaxed: unknown
+    source_reference_ids:
+    - '2303_17947'
+    notes: null
+associated_code:
+  has_associated_code: partial
+  code_summary: The paper reports modifying CLASS to include a species with time-varying mass, but the
+    assigned text does not identify a public repository.
+  primary_code_role: boltzmann_solver_patch
+  packages_or_modules:
+  - name: CLASS modification for time-varying-mass dark matter
+    resource_type: patch
+    availability: unknown
+    relationship_to_model: official_author_code
+    purpose:
+    - compute_matter_power_spectrum
+    - compute_transfer_function
+    url: null
+    repository_url: null
+    documentation_url: null
+    archive_url: null
+    doi: null
+    license: null
+    languages: []
+    version: null
+  expected_inputs:
+  - M/T
+  - z_t
+  - Delta z
+  - dark-sector temperature
+  - cosmological parameters
+  expected_outputs:
+  - linear matter power spectrum
+  - CMB anisotropy power spectra
+  reproducibility:
+    reproducibility_level: unknown
+    has_tests: unknown
+    has_examples: unknown
+    has_documentation: unknown
+    pinned_dependencies: unknown
+    notes: No public code location is present in the assigned text.
+  validation:
+    validation_status: unknown
+    benchmark_references: []
+    validation_notes: The text describes comparisons with CDM/WDM-like spectra and Lyman-alpha data but
+      not software validation.
+  caveats:
+  - Code availability is not established from the assigned text.
+provenance:
+  model_id: 2303_17947_mass_varying_dark_matter_v1
+  model_name: Mass-varying dark matter with rapid mass turn-on
+  model_family: mass_varying_dark_matter
+  entry_version: 0.1.0
+  status: machine_extracted
+  created_at: '2026-05-31'
+  last_updated: '2026-05-31'
+  sources:
+    primary_papers:
+    - reference_id: '2303_17947'
+      title: Cosmological Signatures of Mass Varying Dark Matter
+      authors:
+      - Anirban Das
+      - Subinoy Das
+      - Shiv K. Sethi
+      year: 2023
+      arxiv_id: '2303.17947'
+      doi: null
+      url: null
+      role: original_model
+      notes: Assigned paper text from the run-local SQLite database.
+    - arxiv_id: '2303.17947'
+      authors:
+      - Das, Anirban
+      - Das, Subinoy
+      - Sethi, Shiv K.
+      doi: 10.1103/PhysRevD.108.083501
+      notes: Primary assigned paper read from local SQLite full text.
+      reference_id: arxiv:2303.17947
+      role: original_model
+      title: Mass-varying dark matter and its cosmological signature
+      url: https://arxiv.org/abs/2303.17947
+      year: 2023
+    constraint_papers:
+    - arxiv_id: '1410.7129'
+      authors:
+      - Sarkar, Abir
+      - Das, Subinoy
+      - Sethi, Shiv K.
+      doi: 10.1088/1475-7516/2015/03/004
+      notes: Related local full text read for late-forming-DM analogy.
+      reference_id: arxiv:1410.7129
+      role: extension
+      title: How late can the dark matter form in our universe?
+      url: https://arxiv.org/abs/1410.7129
+      year: 2015
+    - arxiv_id: '1702.01764'
+      authors:
+      - Iršič, Vid
+      - Viel, Matteo
+      - Haehnelt, Martin G.
+      - Bolton, James S.
+      - Cristiani, Stefano
+      - Becker, George D.
+      - D'Odorico, Valentina
+      - Cupani, Guido
+      - Kim, Tae-Sun
+      - Berg, Trystyn A. M.
+      - López, Sebastian
+      - Ellison, Sara
+      - Christensen, Lise
+      - Denney, Kelly D.
+      - Worseck, Gábor
+      doi: 10.1103/PhysRevD.96.023522
+      notes: Related local full text read for thermal-WDM Ly-alpha bound.
+      reference_id: arxiv:1702.01764
+      role: constraint
+      title: New constraints on the free-streaming of warm dark matter from intermediate and small scale
+        Lyman-α forest data
+      url: https://arxiv.org/abs/1702.01764
+      year: 2017
+    - arxiv_id: '2209.14220'
+      authors:
+      - Villasenor, Bruno
+      - Robertson, Brant
+      - Madau, Piero
+      - Schneider, Evan
+      doi: 10.1103/PhysRevD.108.023502
+      notes: Related local full text read for newer thermal-WDM Ly-alpha bound.
+      reference_id: arxiv:2209.14220
+      role: constraint
+      title: New constraints on warm dark matter from the Lyman-α forest power spectrum
+      url: https://arxiv.org/abs/2209.14220
+      year: 2023
+    external_databases: []
+    review_papers: []
+  extraction:
+    method: llm_assisted
+    extracted_by: codex_batch_0019
+    extractor_name: Codex GPT-5 batch worker
+    extraction_date: '2026-05-31'
+    confidence: high
+    source_chunks_or_sections:
+    - reference_id: '2303_17947'
+      section: Abstract/Introduction
+      page: null
+      quote_or_summary: The paper studies mass-varying dark matter whose mass changes from zero to nonzero
+        in the early Universe.
+    - reference_id: '2303_17947'
+      section: Background evolution
+      page: null
+      quote_or_summary: The paper assumes a fermionic thermal species, a smooth mass transition m(z),
+        and a Fermi-Dirac distribution.
+    - reference_id: '2303_17947'
+      section: Discussion/Conclusion
+      page: null
+      quote_or_summary: The paper states it takes a model-independent empirical mass-history approach
+        and summarizes the MVDM parameters M and z_t.
+    unresolved_items:
+    - No UV-complete mass-generation model is specified; additional dark-sector signatures remain model
+      dependent.
+    - No hydrodynamical Ly-alpha likelihood was rerun for this enrichment row.
+  evidence:
+    particle_content:
+    - reference_id: '2303_17947'
+      note: The model assumes a fermionic thermal species with temperature T as the dark matter component.
+      confidence: high
+      section: Background evolution
+      page: null
+    symmetries:
+    - reference_id: '2303_17947'
+      note: No stabilizing symmetry is specified; stability is implicit in the cosmological dark matter
+        treatment.
+      confidence: medium
+      section: Model discussion
+      page: null
+    interactions:
+    - reference_id: '2303_17947'
+      note: The model is parameterized by a time-dependent mass; possible scalar-field origins are discussed
+        qualitatively but no interaction Lagrangian is adopted.
+      confidence: high
+      section: Model discussion
+      page: null
+    production_mechanism:
+    - reference_id: '2303_17947'
+      note: The species has a Fermi-Dirac distribution, is radiation-like before z_t, and is normalized
+        to the present CDM density after mass turn-on.
+      confidence: high
+      section: Background evolution
+      page: null
+    cosmological_history:
+    - reference_id: '2303_17947'
+      note: Energy density scales as radiation before the transition and as matter after z_t in the fast-transition
+        approximation.
+      confidence: high
+      section: Extra relativistic degrees of freedom
+      page: null
+    parameter_ranges:
+    - reference_id: '2303_17947'
+      note: Core parameters are M/T, transition redshift z_t, and transition duration Delta z; examples
+        fix T = T_gamma/10 and focus on fast transitions.
+      confidence: high
+      section: Background evolution/Lyman-alpha comparison
+      page: null
+    validity_domain:
+    - reference_id: '2303_17947'
+      note: The paper focuses on Delta z / z_t << 1 and on M/T_t >> 1, leaving slow transitions and WDM-like
+        limits outside the main analysis.
+      confidence: high
+      section: Background evolution
+      page: null
+    constraints:
+    - confidence: high
+      note: Primary paper reports a 95 percent confidence exclusion region in M/T versus z_t using eBOSS
+        DR14 Ly-alpha data.
+      page: null
+      reference_id: arxiv:2303.17947
+      section: Ly-alpha comparison
+    - confidence: high
+      note: Combined XQ-100 plus HIRES/MIKE analysis gives m_WDM > 5.3 keV at 2 sigma for thermal relic
+        WDM.
+      page: null
+      reference_id: arxiv:1702.01764
+      section: Results
+    - confidence: high
+      note: Later Ly-alpha forest FPS analysis gives m_WDM > 3.1 keV at 95 percent confidence while marginalizing
+        thermal histories.
+      page: null
+      reference_id: arxiv:2209.14220
+      section: Abstract and results
+    observables:
+    - confidence: high
+      note: Primary text states that the pre-transition massless phase suppresses the linear matter power
+        spectrum and affects CMB spectra.
+      page: null
+      reference_id: arxiv:2303.17947
+      section: Introduction and power-spectra discussion
+    - confidence: medium
+      note: Late-forming-DM related text identifies redshift of formation as the parameter controlling
+        suppression in the linear matter spectrum.
+      page: null
+      reference_id: arxiv:1410.7129
+      section: Cosmology of LFDM
+    - confidence: high
+      note: Related Ly-alpha paper gives a thermal relic WDM lower limit from XQ-100 plus HIRES/MIKE.
+      page: null
+      reference_id: arxiv:1702.01764
+      section: Results
+    routes:
+    - confidence: high
+      note: Primary paper evolves perturbations for a time-dependent mass and compares CMB and matter
+        power spectra.
+      page: null
+      reference_id: arxiv:2303.17947
+      section: Perturbation calculation
+  review:
+    human_reviewed: false
+    reviewed_by: null
+    review_date: null
+    expert_reviewed: false
+    expert_reviewer: null
+    expert_review_date: null
+    reviewer_notes:
+    - The paper intentionally does not specify a UV particle-physics model for the mass turn-on.
+    scientific_confidence: high
+    implementation_confidence: high
+robustness:
+  overall: medium
+  theory_robustness: medium
+  observational_robustness: medium
+  computational_robustness: medium
+  constraint_robustness: medium
+  dominant_uncertainties:
+  - Underlying particle model is unspecified.
+  - Nonlinear structure formation is not calibrated.
+  - Slow mass transitions are outside the main study.
+  validation_status: partially_validated
+  notes: The phenomenological model is explicit and computationally developed at the linear-perturbation
+    level, but not UV-complete.
+agent_failure_modes:
+  warnings:
+  - id: mvdm_not_uv_complete
+    severity: high
+    category: invalid_mapping
+    warning: Do not map this entry to a specific scalar-coupled fermion Lagrangian; the paper uses an
+      empirical mass-history parameterization.
+    mitigation: Keep model_kind as phenomenological_parameterization unless a UV source is added.
+    source_reference_ids:
+    - '2303_17947'
+  - id: mvdm_wdm_mapping_approximate
+    severity: medium
+    category: extrapolation
+    warning: A warm-dark-matter mapping is only qualitative because z_t independently controls when free
+      streaming starts to act like massive DM.
+    mitigation: Use M/T and z_t together when reasoning about the small-scale cutoff.
+    source_reference_ids:
+    - '2303_17947'
+observables:
+- caveats:
+  - The primary comparison uses an extracted linear matter spectrum rather than a dedicated hydrodynamical
+    likelihood for the mass-varying model.
+  - Thermal-WDM bounds are only approximate recast targets.
+  channel: lyman_alpha
+  effect_direction: suppression
+  environments:
+  - intergalactic medium
+  - linear matter density field
+  id: obs_mvdm_lya_power_suppression
+  key_quantities:
+  - description: Dimensionless final mass over dark-sector temperature controlling free streaming.
+    name: mass-to-temperature ratio
+    role: core
+    source_reference_ids:
+    - arxiv:2303.17947
+    status: inferred
+    symbol: M/T
+    value: 10 to above 3e3 in the primary Ly-alpha comparison
+  - description: Redshift at which the mass turns on.
+    name: transition redshift
+    range: early transitions around and above 1e5 are less constrained than later transitions
+    role: core
+    source_reference_ids:
+    - arxiv:2303.17947
+    status: inferred
+    symbol: z_t
+  linked_constraints:
+  - con_mvdm_eboss_lya
+  - con_mvdm_wdm_recast
+  linked_routes:
+  - route_mvdm_boltzmann_lya
+  name: Small-scale matter-power suppression
+  notes: null
+  observability: high
+  predicted_effect: A massless radiation-like phase before the transition and residual free streaming
+    suppress the linear matter power spectrum on small scales relative to CDM, with the suppression controlled
+    mainly by M/T and z_t.
+  redshift_range: Ly-alpha forest comparison uses high-redshift IGM absorption, roughly z=2.5-6 in the
+    primary discussion.
+  relevance: critical
+  scale_range: Primary text emphasizes Ly-alpha sensitivity to k of order 5-7 Mpc^-1 and small-scale deviations
+    from CDM.
+  source_reference_ids:
+  - arxiv:2303.17947
+  - arxiv:1410.7129
+  - arxiv:1702.01764
+  - arxiv:2209.14220
+  subchannel: linear matter power from eBOSS/SDSS Ly-alpha forest
+- caveats:
+  - No full Planck likelihood for this enrichment row was rerun.
+  channel: cmb
+  effect_direction: shape_change
+  environments:
+  - cosmic microwave background
+  id: obs_mvdm_cmb_power_phase
+  key_quantities:
+  - description: Width of the smooth mass turn-on; primary calculations use the fast-transition regime.
+    name: transition duration
+    range: Delta z / z_t much less than 1
+    role: core
+    source_reference_ids:
+    - arxiv:2303.17947
+    status: inferred
+    symbol: Delta z
+  - description: Temperature of the Fermi-Dirac distribution.
+    name: dark-sector temperature
+    role: core
+    source_reference_ids:
+    - arxiv:2303.17947
+    status: inferred
+    symbol: T
+    value: T_gamma/10 in primary examples
+  linked_constraints:
+  - con_mvdm_eboss_lya
+  linked_routes:
+  - route_mvdm_boltzmann_lya
+  name: CMB anisotropy response to mass turn-on
+  notes: null
+  observability: medium
+  predicted_effect: The suppressed matter power is reflected in CMB TT/EE spectra; the primary paper also
+    describes wiggles/phase shifts associated with the transition.
+  redshift_range: before and around recombination for CMB observables; transition redshift is a model
+    parameter
+  relevance: high
+  scale_range: CMB multipoles up to Planck-like small angular scales in the primary discussion
+  source_reference_ids:
+  - arxiv:2303.17947
+  subchannel: temperature and polarization power spectra
+constraints:
+- allowed_regions:
+  - Earlier mass turn-on and sufficiently large M/T reduce the Ly-alpha-visible departure from CDM.
+  applies: 'yes'
+  assumptions:
+  - can_be_relaxed: 'yes'
+    description: Primary comparison uses a linear matter power spectrum extracted from Ly-alpha flux data
+      under a fiducial cosmology.
+    id: linear-power-extraction
+    impact_if_violated: A full hydrodynamical analysis could shift the exclusion contour.
+    notes: null
+    scope: primary eBOSS Ly-alpha comparison
+    source_reference_ids:
+    - arxiv:2303.17947
+    status: assumed
+  benchmark_implications:
+  - Mass-varying benchmarks must be evolved through a Boltzmann solver before comparing to Ly-alpha data.
+  caveats:
+  - IGM thermal history and flux-bias modeling are not recomputed for MVDM in this batch.
+  constrained_parameters:
+  - M/T
+  - z_t
+  constraint_type: astrophysical
+  data_release: eBOSS/SDSS DR14 Ly-alpha forest derived 3D matter power spectrum
+  excluded_regions:
+  - The primary paper reports 95 percent confidence exclusion regions in the M/T versus z_t plane from
+    eBOSS DR14 Ly-alpha data.
+  - For 10 < M/T < 3e3, later mass transitions and lower M/T values are more strongly constrained by small-scale
+    power suppression.
+  id: con_mvdm_eboss_lya
+  likelihood_available: approximate
+  likelihood_reference: null
+  name: Primary eBOSS DR14 Ly-alpha exclusion in M/T-z_t plane
+  notes: null
+  observable_channel: lyman_alpha
+  recasting_needed: partial
+  robustness: medium
+  source_reference_ids:
+  - arxiv:2303.17947
+- allowed_regions:
+  - Mass-varying spectra that are colder than the thermal-WDM bounds remain viable under this approximate
+    mapping.
+  applies: recast_required
+  assumptions:
+  - can_be_relaxed: 'yes'
+    description: MVDM suppression can be compared to thermal-WDM limits by matching small-scale transfer
+      behavior.
+    id: thermal-equivalent-transfer
+    impact_if_violated: The MVDM transition can change the spectral shape relative to WDM, moving the
+      inferred bound.
+    notes: null
+    scope: rough recast
+    source_reference_ids:
+    - arxiv:2303.17947
+    - arxiv:1702.01764
+    - arxiv:2209.14220
+    status: assumed
+  benchmark_implications:
+  - Use thermal-WDM limits only as a qualitative floor unless the MVDM transfer function is recast.
+  caveats:
+  - The primary model is not a standard thermal relic WDM model.
+  constrained_parameters:
+  - M/T
+  - free-streaming scale
+  - thermal-equivalent m_WDM
+  constraint_type: astrophysical
+  data_release: XQ-100, HIRES/MIKE, and high-redshift Ly-alpha flux-power samples
+  excluded_regions:
+  - Related Ly-alpha analyses exclude thermal relic WDM masses below about 5.3 keV at 2 sigma in one combined
+    XQ-100 plus HIRES/MIKE analysis and below 3.1 keV at 95 percent confidence in a later CHIPS analysis.
+  id: con_mvdm_wdm_recast
+  likelihood_available: 'no'
+  likelihood_reference: null
+  name: Thermal-WDM Ly-alpha lower-mass recast target
+  notes: null
+  observable_channel: lyman_alpha
+  recasting_needed: 'yes'
+  robustness: medium
+  source_reference_ids:
+  - arxiv:2303.17947
+  - arxiv:1702.01764
+  - arxiv:2209.14220
+theory_to_observable_routing:
+  routes:
+  - agent_notes: Primary paper implemented the forward calculation; this batch records the route but did
+      not rerun it.
+    caveats:
+    - Particle-physics completion may add signatures not represented by m(z).
+    constraint_ids:
+    - con_mvdm_eboss_lya
+    - con_mvdm_wdm_recast
+    derived_quantities:
+    - m(a)/T
+    - background density history
+    - linear matter transfer function
+    - CMB TT/EE spectra
+    description: Map the time-dependent dark-matter mass history to CMB and Ly-alpha matter-power constraints.
+    forward_model_chain:
+    - inputs:
+      - M/T
+      - z_t
+      - Delta z
+      notes: null
+      outputs:
+      - m(a) and rho(a)
+      step_id: s1
+      step_type: analytic_formula
+      tool_or_code: null
+      validity: Fast-transition phenomenology.
+    - inputs:
+      - m(a)/T
+      - Fermi-Dirac distribution
+      notes: null
+      outputs:
+      - matter power spectrum
+      - CMB spectra
+      step_id: s2
+      step_type: boltzmann_solver
+      tool_or_code: CLASS/CAMB-style modified massive species module
+      validity: Requires time-dependent mass support.
+    - inputs:
+      - P(k)
+      - Ly-alpha extracted matter power
+      notes: null
+      outputs:
+      - M/T-z_t exclusion
+      step_id: s3
+      step_type: likelihood
+      tool_or_code: null
+      validity: Approximate unless IGM hydrodynamics are rerun.
+    id: route_mvdm_boltzmann_lya
+    input_parameters:
+    - M/T
+    - z_t
+    - Delta z / z_t
+    - T/T_gamma
+    - Omega_c h^2
+    likelihoods:
+    - primary frequentist Ly-alpha comparison
+    - thermal-WDM Ly-alpha recast target
+    observable_ids:
+    - obs_mvdm_lya_power_suppression
+    - obs_mvdm_cmb_power_phase
+    required_code_resources:
+    - Boltzmann solver with time-dependent dark-matter mass
+    - Ly-alpha likelihood or extracted P(k) comparison
+    route_status: planned
+    source_model_features:
+    - fermionic thermal phase-space distribution
+    - rapid mass turn-on from radiation-like to matter-like behavior
+    - phenomenological m(z) with no UV Lagrangian
+    validation_tests:
+    - recover CDM limit for early transition and large M/T
+    - recover primary 95 percent exclusion contour qualitatively

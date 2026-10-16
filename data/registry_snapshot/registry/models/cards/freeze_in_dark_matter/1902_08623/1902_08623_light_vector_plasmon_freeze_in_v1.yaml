@@ -1,0 +1,873 @@
+_source:
+  shard: arXiv_src_1902_025_wds.tar
+  paper_id: '1902_08623'
+  source_member: 1902_08623.json
+  enriched: true
+  enrichment_schema_version: dm_model_ocr_enrichment_smoke_v0
+schema_version: model_only_v0
+model_id: 1902_08623_light_vector_plasmon_freeze_in_v1
+identity:
+  name: Light-vector freeze-in dark matter with plasmon decay
+  family: freeze_in_dark_matter
+  aliases:
+  - millicharged freeze-in dark matter
+  - dark-photon-mediated freeze-in dark matter
+  short_description: Dirac fermion dark matter feebly coupled to the Standard Model through a light vector
+    mediator, with relic abundance computed from freeze-in including in-medium photon/plasmon decays.
+  historical_origin_or_motivation: The paper updates light-vector freeze-in calculations and identifies
+    plasmon decay as an important sub-MeV production channel.
+  status: emerging
+  model_kind: simplified_model
+theory:
+  theory_level: simplified_model
+  parent_frameworks:
+  - kinetically mixed dark photon
+  - millicharged dark matter
+  - freeze-in
+  lagrangian_available: 'yes'
+  renormalizable: 'yes'
+  eft_cutoff: null
+  embedded_in_larger_framework: unknown
+  notes: The paper writes a vacuum Lagrangian for Dirac fermion DM coupled to a kinetically mixed dark
+    photon and also discusses the effective millicharge limit.
+particle_content:
+  dark_matter_candidate:
+    name: Dirac fermion chi
+    spin: 1/2
+    statistics: fermion
+    elementary_or_composite: elementary
+    number_of_components: single_component
+  additional_dark_sector_particles:
+  - light dark photon A prime when using the dark-photon realization
+  mediators:
+  - light vector mediator
+  - in-medium photon/plasmon
+  dark_radiation_species: []
+  excited_or_degenerate_states: []
+  long_lived_particles: []
+  unstable_parent_particles: []
+  standard_model_extension: minimal
+symmetries:
+  stabilizing_mechanism: DM stability is assumed through the dark-sector charge/effective millicharge
+    structure of the simplified model.
+  symmetries:
+  - name: dark U(1)
+    type: gauge
+    exact_or_approximate: unknown
+    breaking: not specified for the effectively light mediator limit
+    breaking_scale: null
+  topological_defects_possible: unknown
+interactions:
+  portals:
+  - vector
+  standard_model_targets:
+  - electrons
+  - positrons
+  - charged Standard Model fermions
+  - in-medium photons/plasmons
+  dark_sector_couplings:
+  - effective millicharge Q e
+  - dark photon kinetic mixing epsilon
+  - dark coupling g_chi
+  mediator_types:
+  - light vector boson
+  - plasmon
+  interaction_operators:
+  - Q e A_mu chi gamma^mu chi
+  - epsilon F_mu_nu Fprime^mu_nu kinetic mixing
+  scattering:
+    elastic: 'yes'
+    inelastic: unknown
+    momentum_dependence: strong
+    velocity_dependence: strong
+    spin_dependence: spin_independent
+  annihilation_channels:
+  - e+ e- to chi chi
+  - Standard Model fermion annihilation to chi chi
+  decay_channels: []
+  self_scattering_channels:
+  - chi chi self-scattering through dark photon interactions when present
+  cp_structure: not specified
+  flavor_structure: couples to electrically charged Standard Model states through the vector portal
+  tree_or_loop_level: tree
+parameters:
+  core:
+  - name: dark matter mass
+    symbol: m_chi
+    description: Mass of the Dirac fermion dark matter.
+    range: sub-MeV through MeV-scale regimes emphasized for plasmon freeze-in
+    unit: eV
+    role: core
+    status: inferred
+  - name: effective millicharge
+    symbol: Q
+    description: Effective electric charge controlling plasmon decay and scattering.
+    role: core
+    status: inferred
+  - name: kinetic mixing
+    symbol: epsilon
+    description: Dark photon kinetic mixing with the Standard Model photon.
+    role: core
+    status: inferred
+  - name: dark gauge coupling
+    symbol: g_chi
+    description: Coupling of the dark photon to chi.
+    role: core
+    status: inferred
+  - name: dark photon mass
+    symbol: m_Aprime
+    description: Mediator mass; paper discusses the massless or very light dark photon limit.
+    range: effectively below the in-medium photon mass for the processes considered
+    unit: eV
+    role: core
+    status: inferred
+  nuisance: []
+  derived:
+  - name: electron recoil cross section
+    symbol: sigma_e
+    description: Direct-detection normalization related to Q, alpha, and the electron-DM reduced mass.
+    role: core
+    status: inferred
+production:
+  mechanisms:
+  - freeze-in from plasmon decay
+  - freeze-in from Standard Model charged-fermion annihilation
+  thermal_equilibrium_with_standard_model: 'no'
+  thermal_equilibrium_with_hidden_sector: unknown
+  abundance_set_by:
+  - plasmon decay rate
+  - charged-fermion annihilation rate
+  - feeble vector-portal coupling
+  depends_on_reheating_temperature: parameter_dependent
+  can_produce_all_dark_matter: parameter_dependent
+  nonthermal_momentum_distribution: 'yes'
+  notes: The paper presents updated relic abundance calculations including plasmon decays, which dominate
+    for sub-MeV masses when kinematically allowed.
+relic_density:
+  full_or_subcomponent: full_dark_matter
+  target_fraction: null
+  calculation_type: nonthermal
+  key_dependencies:
+  - m_chi
+  - Q or epsilon times g_chi
+  - plasma mass and finite-temperature photon modes
+  - charged fermion abundances
+  requires_entropy_dilution: unknown
+  overclosure_risk: parameter_dependent
+  underproduction_risk: parameter_dependent
+  tuning_assessment: unknown
+cosmological_history:
+  standard_history_assumed: true
+  nonstandard_features: []
+  dark_sector_temperature: null
+  delta_neff: null
+  kinetic_decoupling: null
+  chemical_decoupling: null
+  phase_transitions: []
+  topological_defects: []
+  isocurvature_perturbations: unknown
+  bbn_relevance: medium
+  cmb_relevance: medium
+phase_space:
+  distribution_type: nonthermal
+  distribution_function_available: 'yes'
+  f_of_p_or_q: Computed from collision terms for plasmon decay and Standard Model fermion annihilation.
+  average_momentum_relative_to_thermal: nonthermal and channel-dependent
+  free_streaming_length: null
+  velocity_dispersion_today: null
+  phase_space_bounds: []
+  notes: The paper emphasizes that the combined channels produce a highly nonthermal DM phase-space distribution.
+structure_formation:
+  linear:
+    behaves_like_cdm: unknown
+    transfer_function_shape: unknown
+    small_scale_power_effect: unknown
+    half_mode_mass: null
+  nonlinear:
+    halo_mass_function_effect: unknown
+    subhalo_mass_function_effect: unknown
+    simulation_calibrated: unknown
+validity_domain:
+- id: freeze_in_regime
+  applies_to: model
+  condition: DM-SM interactions are feeble enough that chi never thermalizes with the Standard Model bath.
+  status: established
+  extrapolation_risk: medium
+- id: plasmon_channel
+  applies_to: production
+  condition: In-medium photon/plasmon decay is included where the plasma mass makes chi pair production
+    kinematically available.
+  status: established
+  extrapolation_risk: low
+- id: light_vector_limit
+  applies_to: model
+  condition: The dark photon realization is treated in the effectively light mediator limit for early-universe
+    processes.
+  status: inferred
+  extrapolation_risk: medium
+assumptions:
+  global:
+  - id: standard_thermal_history
+    description: The relic calculation assumes the usual early-universe thermal plasma used for freeze-in.
+    scope: cosmological_history
+    status: assumed
+    can_be_relaxed: unknown
+  - id: feeble_coupling
+    description: The vector-portal coupling is small enough for freeze-in rather than thermal equilibrium.
+    scope: production
+    status: established
+    can_be_relaxed: unknown
+  constraint_specific: []
+  computation_specific: []
+associated_code:
+  has_associated_code: unknown
+  code_summary: No paper-supported associated code was identified in the assigned text.
+  primary_code_role: null
+  repositories: []
+  packages_or_modules: []
+  notebooks: []
+  scripts: []
+  expected_inputs: []
+  expected_outputs: []
+  caveats: []
+provenance:
+  model_id: 1902_08623_light_vector_plasmon_freeze_in_v1
+  model_name: Light-vector freeze-in dark matter with plasmon decay
+  model_family: freeze_in_dark_matter
+  entry_version: 0.1.0
+  status: machine_extracted
+  created_at: '2026-05-31'
+  last_updated: '2026-05-31'
+  sources:
+    primary_papers:
+    - reference_id: paper:1902.08623
+      title: 'Making dark matter out of light: freeze-in from plasma effects'
+      authors:
+      - Cora Dvorkin
+      - Tongyan Lin
+      - Katelin Schutz
+      year: 2019
+      arxiv_id: '1902.08623'
+      doi: null
+      url: null
+      role: original_model
+      notes: Assigned full text from target_text.sqlite.
+    - arxiv_id: '1902.08623'
+      authors:
+      - Dvorkin, Cora
+      - Lin, Tongyan
+      - Schutz, Katelin
+      doi: null
+      notes: Primary light-vector freeze-in with plasmon production paper.
+      reference_id: main
+      role: original_model
+      title: 'Making dark matter out of light: Freeze-in from plasma effects'
+      url: https://arxiv.org/abs/1902.08623
+      year: 2019
+    constraint_papers:
+    - arxiv_id: '1711.11038'
+      authors:
+      - Krnjaic, Gordan
+      doi: null
+      notes: Related predictive light-mediator freeze-in and direct-detection context read locally.
+      reference_id: rel_krnjaic_2018_freezein_direct
+      role: constraint
+      title: 'Freezing in, heating up, and freezing out: predictive nonthermal dark matter and low-mass
+        direct detection'
+      url: https://arxiv.org/abs/1711.11038
+      year: 2018
+    - arxiv_id: '1807.05022'
+      authors:
+      - Hambye, Thomas
+      - Tytgat, Michel H. G.
+      - Vandecasteele, Jerome
+      - Vanderheyden, Laurent
+      doi: null
+      notes: Related direct-detection sensitivity to freeze-in read locally.
+      reference_id: rel_hambye_2018_direct_freezein
+      role: constraint
+      title: Dark matter direct detection is testing freeze-in
+      url: https://arxiv.org/abs/1807.05022
+      year: 2018
+    - arxiv_id: '2011.08186'
+      authors:
+      - Dvorkin, Cora
+      - Lin, Tongyan
+      - Schutz, Katelin
+      doi: null
+      notes: Related cosmological limits for the same sub-MeV light-mediator freeze-in class read locally.
+      reference_id: rel_dvorkin_2021_submev_cosmology
+      role: constraint
+      title: Cosmology of Sub-MeV Dark Matter Freeze-In
+      url: https://arxiv.org/abs/2011.08186
+      year: 2021
+    external_databases:
+    - name: NASA ADS
+      note: Used for sanitized metadata discovery, reference counts, citation counts, and related-paper
+        triage only.
+      url: https://ui.adsabs.harvard.edu/
+    review_papers: []
+  extraction:
+    method: llm_assisted
+    extracted_by: codex_dark_matter_model_worker_batch_0006
+    extractor_name: Codex GPT-5
+    extraction_date: '2026-05-31'
+    confidence: high
+    source_chunks_or_sections:
+    - reference_id: paper:1902.08623
+      section: Abstract
+      page: null
+      quote_or_summary: The paper says light-vector interactions can produce the observed DM abundance
+        through freeze-in and identifies plasmon decay as an additional production channel.
+    - reference_id: paper:1902.08623
+      section: DM with dark photon interactions
+      page: null
+      quote_or_summary: The paper writes a Dirac fermion DM plus kinetically mixed dark photon Lagrangian.
+    - reference_id: paper:1902.08623
+      section: Phase space from plasmon decay
+      page: null
+      quote_or_summary: The paper computes collision terms and the nonthermal phase-space distribution
+        from plasmon decay.
+    unresolved_items:
+    - The exact direct-detection target curve requires detector response and the full production calculation,
+      not just the qualitative order-of-magnitude reduction.
+    - Supernova acceleration, disk ejection, and dark-sector thermalization remain important unresolved
+      astrophysical/model assumptions.
+  evidence:
+    particle_content:
+    - reference_id: paper:1902.08623
+      note: Dirac fermion DM chi is coupled to a kinetically mixed dark photon A prime in the model discussion.
+      confidence: high
+      section: DM with dark photon interactions
+      page: null
+    symmetries:
+    - reference_id: paper:1902.08623
+      note: The dark photon/millicharge setup implies a dark charge structure, but the paper does not
+        detail a separate stabilizing symmetry.
+      confidence: medium
+      section: DM with dark photon interactions
+      page: null
+    interactions:
+    - reference_id: paper:1902.08623
+      note: The paper uses a light vector mediator and effective millicharge matrix elements for plasmon
+        decay to DM.
+      confidence: high
+      section: Plasmon decay
+      page: null
+    production_mechanism:
+    - reference_id: paper:1902.08623
+      note: Plasmon decays and Standard Model fermion annihilations are both included in the freeze-in
+        relic calculation.
+      confidence: high
+      section: Abstract
+      page: null
+    cosmological_history:
+    - reference_id: paper:1902.08623
+      note: The computation follows early-universe plasma thermodynamics and tracks effects on relic abundance
+        and phase space.
+      confidence: medium
+      section: Appendix/production discussion
+      page: null
+    parameter_ranges:
+    - reference_id: paper:1902.08623
+      note: The plasmon channel is highlighted as dominant for sub-MeV DM masses in the light mediator
+        setup.
+      confidence: high
+      section: Abstract
+      page: null
+    validity_domain:
+    - reference_id: paper:1902.08623
+      note: Freeze-in requires small couplings so that production proceeds through sub-Hubble interactions.
+      confidence: high
+      section: Introduction
+      page: null
+    constraints:
+    - confidence: high
+      note: Primary text discusses BBN, CMB, fifth-force, stellar-emission context and the need to recast
+        signals with plasmon production.
+      page: null
+      reference_id: main
+      section: null
+    - confidence: medium
+      note: Related local text supports direct-detection sensitivity to freeze-in parameter space.
+      page: null
+      reference_id: rel_hambye_2018_direct_freezein
+      section: null
+    - confidence: high
+      note: Related text states combined cosmological probes constrain freeze-in masses up to 20 keV,
+        depending on thermalization.
+      page: null
+      reference_id: rel_dvorkin_2021_submev_cosmology
+      section: null
+    observables:
+    - confidence: high
+      note: Primary text identifies plasmon decay as a dominant sub-MeV production channel and notes reduced
+        direct-detection signal strength.
+      page: null
+      reference_id: main
+      section: null
+    - confidence: medium
+      note: Related local text supports predictive low-mass direct-detection context for light-mediator
+        freeze-in.
+      page: null
+      reference_id: rel_krnjaic_2018_freezein_direct
+      section: null
+    - confidence: high
+      note: Related local text supports CMB/Lyman/small-scale cosmology constraints for sub-MeV freeze-in.
+      page: null
+      reference_id: rel_dvorkin_2021_submev_cosmology
+      section: null
+    routes:
+    - confidence: high
+      note: Primary text provides the finite-temperature production and direct-detection recast logic.
+      page: null
+      reference_id: main
+      section: null
+    - confidence: medium
+      note: Related paper provides the cosmological Boltzmann/constraint route.
+      page: null
+      reference_id: rel_dvorkin_2021_submev_cosmology
+      section: null
+  review:
+    human_reviewed: false
+    reviewed_by: null
+    review_date: null
+    expert_reviewed: false
+    expert_reviewer: null
+    expert_review_date: null
+    reviewer_notes: []
+    scientific_confidence: high
+    implementation_confidence: medium
+  caveats:
+  - The model card records the paper-local light-vector freeze-in benchmark and does not canonicalize
+    to external dark photon model entries.
+robustness:
+  overall: medium
+  theory_robustness: medium
+  observational_robustness: unknown
+  computational_robustness: medium
+  dominant_uncertainties:
+  - finite-temperature plasma treatment
+  - nonthermal phase-space cosmology deferred partly to a companion paper
+  validation_status: expert_judgment_only
+  notes: High confidence that this paper substantially develops the production calculation; cosmological
+    impact fields are deliberately sparse.
+agent_failure_modes:
+  warnings:
+  - id: nonthermal_phase_space
+    severity: medium
+    category: assumption_mismatch
+    warning: Do not approximate this freeze-in candidate as ordinary thermal freeze-out DM; the paper
+      emphasizes nonthermal phase-space effects.
+    mitigation: Use the paper-supported production and phase-space notes when reasoning about cosmology.
+observables:
+- caveats:
+  - Requires finite-temperature photon self-energy and thermal history.
+  channel: cosmology
+  effect_direction: enhancement
+  environments:
+  - early universe plasma
+  id: obs_plasmon_enhanced_freezein
+  key_quantities:
+  - description: Mass of the light freeze-in dark matter particle.
+    name: dark matter mass
+    range: keV to MeV regime emphasized for plasmon dominance
+    role: core
+    source_reference_ids:
+    - main
+    status: inferred
+    symbol: m_chi
+    unit: eV
+  - description: Dark photon kinetic mixing or effective millicharge controlling SM-DM coupling.
+    name: kinetic mixing
+    role: core
+    source_reference_ids:
+    - main
+    status: inferred
+    symbol: epsilon
+  - description: Light vector mediator mass.
+    name: dark photon mass
+    role: core
+    source_reference_ids:
+    - main
+    status: inferred
+    symbol: m_Aprime
+  - description: In-medium photon mass setting resonant plasmon decay kinematics.
+    name: plasma frequency
+    role: derived
+    source_reference_ids:
+    - main
+    status: inferred
+    symbol: omega_p
+  linked_constraints:
+  - con_relic_density_plasmon_recast
+  linked_routes:
+  - route_plasma_freezein_to_detection
+  name: Plasmon-decay contribution to freeze-in relic production
+  notes: null
+  observability: medium
+  predicted_effect: In-medium photons acquire a plasma mass and can decay to dark matter through the light
+    vector portal; for sub-MeV dark matter this channel dominates production and changes the coupling
+    needed for the observed relic abundance.
+  redshift_range: early thermal plasma before matter-radiation equality
+  relevance: critical
+  scale_range: thermal plasma scales; not a spatial observable
+  source_reference_ids:
+  - main
+  subchannel: finite-temperature photon/plasmon decay
+- caveats:
+  - Primary text notes supernova acceleration and cosmic-ray uncertainties can affect local direct-detection
+    rates.
+  channel: direct_detection
+  effect_direction: suppression
+  environments:
+  - semiconductor detectors
+  - superconductors
+  - noble-liquid and low-threshold experiments
+  id: obs_rescaled_direct_detection_signal
+  key_quantities:
+  - description: DM-electron reference scattering cross section or analogous low-threshold observable.
+    name: reference cross section
+    role: derived
+    source_reference_ids:
+    - main
+    - rel_krnjaic_2018_freezein_direct
+    status: inferred
+    symbol: sigma_bar_e
+  - description: Portal coupling setting both production and scattering.
+    name: kinetic mixing
+    role: core
+    source_reference_ids:
+    - main
+    status: inferred
+    symbol: epsilon
+  linked_constraints:
+  - con_direct_detection_recast
+  linked_routes:
+  - route_plasma_freezein_to_detection
+  name: Reduced low-threshold direct-detection signal after including plasmon production
+  notes: null
+  observability: high
+  predicted_effect: Because plasmon decay adds efficient production, the coupling required for the relic
+    abundance is smaller than in calculations without plasma effects, reducing predicted direct-detection
+    signal strength for the lowest masses.
+  redshift_range: today in terrestrial detectors
+  relevance: high
+  scale_range: sub-MeV to MeV-scale recoil/absorption thresholds
+  source_reference_ids:
+  - main
+  - rel_krnjaic_2018_freezein_direct
+  - rel_hambye_2018_direct_freezein
+  subchannel: electron/nuclear scattering in low-threshold experiments
+- caveats:
+  - Related cosmology paper is a companion-style constraint for the same model class; details depend on
+    dark-sector thermalization.
+  channel: lyman_alpha
+  effect_direction: suppression
+  environments:
+  - CMB
+  - Lyman-alpha forest
+  - stellar streams
+  - Milky Way satellites
+  - quasar lensing
+  id: obs_nonthermal_submev_cosmology
+  key_quantities:
+  - description: Sub-MeV freeze-in dark matter mass.
+    name: freeze-in mass
+    range: related work constrains masses up to 20 keV, depending on dark-sector thermalization
+    role: core
+    source_reference_ids:
+    - rel_dvorkin_2021_submev_cosmology
+    status: approximate
+    symbol: m_chi
+    unit: keV
+  - description: Whether the dark matter thermalizes with itself after SM freeze-in.
+    name: dark-sector thermalization flag
+    role: core
+    source_reference_ids:
+    - rel_dvorkin_2021_submev_cosmology
+    status: unknown
+  - description: Millicharged interaction can add baryon-DM drag in addition to velocity-dispersion effects.
+    name: DM-baryon drag cross section
+    role: derived
+    source_reference_ids:
+    - rel_dvorkin_2021_submev_cosmology
+    status: inferred
+  linked_constraints:
+  - con_submev_cosmology_mass_floor
+  linked_routes:
+  - route_nonthermal_distribution_to_cosmology
+  name: Cosmological suppression from nonthermal sub-MeV freeze-in phase space
+  notes: null
+  observability: high
+  predicted_effect: The same light-mediator freeze-in class produces nonthermal sub-MeV dark matter that
+    can alter cosmological evolution and suppress small-scale structure; related work combines CMB and
+    small-scale probes to set lower mass limits.
+  redshift_range: CMB through late-time small-scale-structure epochs
+  relevance: critical
+  scale_range: CMB acoustic scales and Lyman-alpha/stream/satellite small scales
+  source_reference_ids:
+  - main
+  - rel_dvorkin_2021_submev_cosmology
+  subchannel: CMB, Lyman-alpha, lensing, streams, and satellite counts
+constraints:
+- allowed_regions:
+  - Parameter points that include plasmon decay and SM annihilations can reproduce the observed abundance
+    with reduced direct-detection strength.
+  applies: 'yes'
+  assumptions:
+  - can_be_relaxed: partial
+    description: The early Universe has the standard electromagnetic plasma properties used to compute
+      in-medium photon masses.
+    id: assume_standard_plasma
+    impact_if_violated: Nonstandard thermal histories can change plasmon production.
+    notes: null
+    scope: production
+    source_reference_ids:
+    - main
+    status: assumed
+  benchmark_implications:
+  - Any direct-detection target curve for this model should be recomputed with plasmon decays included.
+  caveats:
+  - This is an internal abundance/recast condition rather than an external exclusion.
+  constrained_parameters:
+  - m_chi
+  - epsilon
+  - m_Aprime
+  - alpha_D
+  constraint_type: cosmological
+  data_release: null
+  excluded_regions:
+  - Couplings inferred from freeze-in calculations that omit plasmon decays overestimate the coupling
+    needed for sub-MeV relic abundance.
+  id: con_relic_density_plasmon_recast
+  likelihood_available: 'no'
+  likelihood_reference: null
+  name: Relic-density recast including plasmon decay
+  notes: null
+  observable_channel: cosmology
+  recasting_needed: 'no'
+  robustness: high
+  source_reference_ids:
+  - main
+- allowed_regions:
+  - Sub-MeV to GeV freeze-in regions can remain testable by low-threshold electron/nuclear recoil experiments
+    after recasting.
+  applies: parameter_dependent
+  assumptions:
+  - can_be_relaxed: partial
+    description: The local freeze-in dark matter population is not strongly depleted or accelerated by
+      supernova/cosmic-ray effects.
+    id: assume_local_halo_not_depleted
+    impact_if_violated: Local acceleration or disk ejection can alter predicted rates and sensitivities.
+    notes: null
+    scope: direct detection
+    source_reference_ids:
+    - main
+    status: assumed
+  benchmark_implications:
+  - Plasmon effects can lower expected signal strength by roughly an order of magnitude at the lowest
+    experimentally accessible masses in the primary text.
+  caveats:
+  - Detector-material response and threshold modeling are experiment-specific.
+  constrained_parameters:
+  - sigma_bar_e
+  - epsilon
+  - m_chi
+  - m_Aprime
+  constraint_type: direct_detection
+  data_release: SENSEI, SuperCDMS, DarkSide, XENON1T and proposed low-threshold programs are discussed
+    as context in local texts.
+  excluded_regions:
+  - Existing and proposed direct-detection sensitivities probe parts of predictive freeze-in parameter
+    space, but plasmon production reduces the predicted signal at the lowest masses.
+  id: con_direct_detection_recast
+  likelihood_available: partial
+  likelihood_reference: null
+  name: Low-threshold direct-detection reach for light-vector freeze-in
+  notes: null
+  observable_channel: direct_detection
+  recasting_needed: 'yes'
+  robustness: medium
+  source_reference_ids:
+  - main
+  - rel_krnjaic_2018_freezein_direct
+  - rel_hambye_2018_direct_freezein
+- allowed_regions:
+  - Masses above the relevant nonthermal-cosmology lower bound, or scenarios with altered thermalization,
+    can remain viable.
+  applies: parameter_dependent
+  assumptions:
+  - can_be_relaxed: partial
+    description: The related sub-MeV freeze-in cosmology calculation applies after matching mediator/coupling
+      and thermalization assumptions to the primary light-vector model.
+    id: assume_same_freezein_class
+    impact_if_violated: Different dark-sector self-thermalization changes the mass floor.
+    notes: null
+    scope: related-paper recast
+    source_reference_ids:
+    - main
+    - rel_dvorkin_2021_submev_cosmology
+    status: assumed
+  benchmark_implications:
+  - The light-vector model should be checked against the companion cosmology constraints, not just relic
+    abundance and direct detection.
+  caveats:
+  - The exact limit is model- and thermalization-dependent.
+  constrained_parameters:
+  - m_chi
+  - phase-space distribution
+  - dark-sector thermalization
+  - DM-baryon drag
+  constraint_type: cosmological
+  data_release: CMB, Lyman-alpha forest, quasar lensing, stellar streams, and satellite counts in related
+    local text
+  excluded_regions:
+  - Related work combines CMB, Lyman-alpha forest, quasar lensing, stellar streams, and Milky Way satellites
+    to set lower limits on freeze-in masses up to 20 keV, with details depending on thermalization.
+  id: con_submev_cosmology_mass_floor
+  likelihood_available: partial
+  likelihood_reference: null
+  name: Cosmological lower-mass reach for sub-MeV freeze-in dark matter
+  notes: null
+  observable_channel: lyman_alpha
+  recasting_needed: 'yes'
+  robustness: medium
+  source_reference_ids:
+  - rel_dvorkin_2021_submev_cosmology
+theory_to_observable_routing:
+  routes:
+  - agent_notes: The physics ingredients are explicit, but no reusable code artifact was provided in the
+      assignment.
+    caveats:
+    - Cosmic-ray acceleration and local-halo uncertainties can affect terrestrial rates.
+    constraint_ids:
+    - con_relic_density_plasmon_recast
+    - con_direct_detection_recast
+    derived_quantities:
+    - plasmon decay rate
+    - annihilation yield
+    - nonthermal phase-space distribution
+    - relic-density coupling
+    - direct-detection cross section
+    description: Calculate finite-temperature freeze-in abundance and recast direct-detection reach.
+    forward_model_chain:
+    - inputs:
+      - temperature
+      - photon self-energy
+      - m_Aprime
+      - epsilon
+      notes: null
+      outputs:
+      - in-medium mixing
+      - plasmon decay rate
+      step_id: plasma
+      step_type: analytic_formula
+      tool_or_code: null
+      validity: Primary paper identifies in-medium plasmon decay as a dominant sub-MeV channel.
+    - inputs:
+      - decay and annihilation rates
+      - Hubble rate
+      notes: null
+      outputs:
+      - freeze-in yield
+      - phase-space distribution
+      step_id: yield
+      step_type: boltzmann_solver
+      tool_or_code: null
+      validity: Need to integrate production over the thermal history.
+    - inputs:
+      - relic-density coupling
+      - detector response
+      notes: null
+      outputs:
+      - direct-detection rate or target cross section
+      step_id: recast
+      step_type: recasting
+      tool_or_code: null
+      validity: Plasmon production changes the predicted signal strength.
+    id: route_plasma_freezein_to_detection
+    input_parameters:
+    - m_chi
+    - m_Aprime
+    - epsilon
+    - alpha_D
+    - thermal history
+    likelihoods:
+    - experiment-specific low-threshold direct-detection limits
+    observable_ids:
+    - obs_plasmon_enhanced_freezein
+    - obs_rescaled_direct_detection_signal
+    required_code_resources:
+    - finite-temperature production integrator; direct-detection rate calculator
+    route_status: partially_implemented
+    source_model_features:
+    - light vector mediator
+    - kinetic mixing or effective millicharge
+    - plasmon decay plus SM annihilation production
+    validation_tests:
+    - Recover the paper result that plasmon decay dominates sub-MeV production.
+    - Compare direct-detection target curves with and without plasmon decays.
+  - agent_notes: This route uses a locally read related constraint paper for the cosmology step.
+    caveats:
+    - Exact bound depends on self-thermalization and mediator assumptions.
+    constraint_ids:
+    - con_submev_cosmology_mass_floor
+    derived_quantities:
+    - velocity distribution
+    - matter power suppression
+    - DM-baryon drag
+    - CMB and Lyman-alpha observables
+    description: Propagate the nonthermal light-vector freeze-in distribution into CMB and small-scale-structure
+      constraints.
+    forward_model_chain:
+    - inputs:
+      - freeze-in production history
+      notes: null
+      outputs:
+      - nonthermal momentum distribution
+      step_id: distribution
+      step_type: data_transform
+      tool_or_code: null
+      validity: Primary paper flags nonthermal phase space; related paper performs cosmology analysis.
+    - inputs:
+      - distribution
+      - DM-baryon drag terms
+      - cosmological parameters
+      notes: null
+      outputs:
+      - CMB spectra
+      - matter power spectrum
+      step_id: boltzmann
+      step_type: boltzmann_solver
+      tool_or_code: CAMB/CLASS-like solver
+      validity: Related text describes modified Boltzmann calculations for CMB/drag effects.
+    - inputs:
+      - CMB and small-scale observables
+      notes: null
+      outputs:
+      - mass lower bound
+      - allowed thermalization scenarios
+      step_id: likelihood
+      step_type: likelihood
+      tool_or_code: null
+      validity: Requires matching to the related-paper data combination.
+    id: route_nonthermal_distribution_to_cosmology
+    input_parameters:
+    - m_chi
+    - phase-space distribution
+    - epsilon
+    - thermalization flag
+    likelihoods:
+    - CMB, Lyman-alpha, quasar lensing, stellar streams, satellite abundance constraints
+    observable_ids:
+    - obs_nonthermal_submev_cosmology
+    required_code_resources:
+    - Boltzmann solver with nonthermal distribution and optional DM-baryon drag
+    route_status: planned
+    source_model_features:
+    - nonthermal sub-MeV freeze-in distribution
+    - millicharged/light-vector interactions
+    - possible dark-sector thermalization
+    validation_tests:
+    - Recover related-paper mass reach up to 20 keV before applying to variants.

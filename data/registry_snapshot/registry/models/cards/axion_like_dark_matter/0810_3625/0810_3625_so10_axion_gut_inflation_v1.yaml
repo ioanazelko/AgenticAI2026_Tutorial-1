@@ -1,0 +1,638 @@
+_source:
+  shard: arXiv_src_0810_003_wds.tar
+  paper_id: 0810_3625
+  source_member: 0810_3625.json
+  enriched: true
+  enrichment_schema_version: dm_model_ocr_enrichment_smoke_v0
+schema_version: model_only_v0
+model_id: 0810_3625_so10_axion_gut_inflation_v1
+identity:
+  name: SO(10) GUT inflation model with axion dark matter
+  family: axion_like_dark_matter
+  aliases:
+  - SO(10) axion dark matter model
+  short_description: A non-supersymmetric SO(10) GUT inflation construction in which Peccei-Quinn breaking
+    at the intermediate B-L scale supplies axion dark matter.
+  historical_origin_or_motivation: The paper requires GUT inflation to also provide a cold dark matter
+    candidate and embeds axion dark matter in SO(10) models with PQ symmetry.
+  status: speculative
+  model_kind: complete_theory
+theory:
+  theory_level: uv_complete
+  parent_frameworks:
+  - non-supersymmetric SO(10) grand unified theory
+  - Coleman-Weinberg or Higgs-potential inflation
+  - Peccei-Quinn symmetry
+  lagrangian_available: partial
+  renormalizable: unknown
+  eft_cutoff: null
+  embedded_in_larger_framework: 'yes'
+  notes: The paper specifies SO(10) breaking chains, PQ charge assignments, Higgs multiplets, and scale
+    relations rather than a standalone axion effective Lagrangian.
+particle_content:
+  dark_matter_candidate:
+    name: axion
+    spin: '0'
+    statistics: boson
+    elementary_or_composite: elementary
+    number_of_components: single_component
+  additional_dark_sector_particles: []
+  mediators:
+  - SO(10) gauge bosons
+  - scalar leptoquarks
+  - inflaton
+  dark_radiation_species: []
+  excited_or_degenerate_states: []
+  long_lived_particles:
+  - axion
+  unstable_parent_particles:
+  - inflaton
+  - right-handed neutrinos
+  standard_model_extension: substantial
+symmetries:
+  stabilizing_mechanism: Peccei-Quinn symmetry broken at the intermediate B-L scale gives the axion; added
+    10-plet fermions make the residual discrete PQ symmetry coincide with the SO(10) center to address
+    domain walls.
+  symmetries:
+  - name: U(1)_PQ
+    type: global
+    exact_or_approximate: broken
+    breaking: spontaneously broken by SO(10) Higgs multiplets at M_B-L
+    breaking_scale:
+      name: B-L/PQ breaking scale
+      symbol: M_B-L
+      range: 10^11-10^12
+      unit: GeV
+      role: core
+      status: inferred
+  - name: SO(10)
+    type: gauge
+    exact_or_approximate: broken
+    breaking: breaks through an intermediate left-right stage to the Standard Model
+    breaking_scale:
+      name: SO(10) breaking scale
+      symbol: M_X
+      range: about 10^16
+      unit: GeV
+      role: core
+      status: inferred
+  topological_defects_possible: 'yes'
+interactions:
+  portals:
+  - axion
+  - other
+  standard_model_targets:
+  - QCD sector through Peccei-Quinn axion physics
+  - right-handed neutrinos from inflaton decay
+  dark_sector_couplings:
+  - PQ charge assignments for 16- and 10-dimensional SO(10) fermion multiplets
+  mediator_types:
+  - SO(10) gauge bosons
+  - scalar leptoquarks
+  - inflaton
+  interaction_operators: []
+  tree_or_loop_level: unknown
+parameters:
+  core:
+  - name: SO(10) gauge-boson scale
+    symbol: M_X
+    range: near or above 10^16
+    unit: GeV
+    role: core
+    status: inferred
+    notes: Favored by WMAP5-compatible inflation in the paper.
+  - name: B-L and Peccei-Quinn breaking scale
+    symbol: M_B-L
+    range: 10^11-10^12
+    unit: GeV
+    role: core
+    status: inferred
+    notes: Identified as the scale required by axion dark matter physics.
+  - name: scalar leptoquark mass scale
+    range: about 10^12
+    unit: GeV
+    role: core
+    status: inferred
+    notes: Intermediate scalar leptoquarks control the proton-decay estimate in the SO(10) axion models.
+production:
+  mechanisms:
+  - PQ-scale axion dark matter tied to intermediate B-L/PQ breaking
+  - inflaton decay produces right-handed neutrinos for nonthermal leptogenesis, not the axion abundance
+  thermal_equilibrium_with_standard_model: unknown
+  thermal_equilibrium_with_hidden_sector: unknown
+  abundance_set_by:
+  - PQ/B-L breaking scale M_B-L
+  depends_on_reheating_temperature: unknown
+  can_produce_all_dark_matter: 'yes'
+  nonthermal_momentum_distribution: unknown
+  notes: The paper states that axions comprise the dark matter and that axion dark matter requires M_B-L
+    around 10^11-10^12 GeV, but it does not spell out a detailed axion production calculation.
+relic_density:
+  full_or_subcomponent: full_dark_matter
+  target_fraction: null
+  calculation_type: unknown
+  key_dependencies:
+  - M_B-L identified with PQ breaking scale
+  requires_entropy_dilution: unknown
+  overclosure_risk: unknown
+  underproduction_risk: unknown
+  tuning_assessment: unknown
+cosmological_history:
+  standard_history_assumed: false
+  nonstandard_features:
+  - GUT inflation
+  - intermediate PQ/B-L breaking
+  - nonthermal leptogenesis from inflaton-produced right-handed neutrinos
+  dark_sector_temperature: null
+  delta_neff: null
+  phase_transitions:
+  - SO(10) breaking
+  - PQ/B-L breaking
+  topological_defects:
+  - axion domain walls addressed by residual discrete PQ symmetry
+  isocurvature_perturbations: unknown
+  bbn_relevance: unknown
+  cmb_relevance: medium
+phase_space:
+  distribution_type: field_like
+  distribution_function_available: unknown
+  notes: The paper treats axions as cold dark matter but does not provide a phase-space distribution.
+structure_formation:
+  linear:
+    behaves_like_cdm: 'yes'
+    transfer_function_shape: unknown
+    small_scale_power_effect: unknown
+  nonlinear:
+    halo_mass_function_effect: unknown
+    subhalo_mass_function_effect: unknown
+    simulation_calibrated: unknown
+validity_domain:
+- id: pq_scale_window
+  applies_to: model
+  condition: Axion dark matter implementation uses the intermediate PQ/B-L breaking scale around 10^11-10^12
+    GeV.
+  valid_range: M_B-L around 10^11-10^12 GeV
+  status: inferred
+  extrapolation_risk: medium
+  caveats:
+  - Detailed axion relic production is not calculated in the paper.
+  source_reference_ids:
+  - primary
+  notes: null
+assumptions:
+  global:
+  - id: so10_breaking_chain
+    description: SO(10) breaks through an intermediate left-right stage with U(1)_PQ broken at M_B-L.
+    scope: theory
+    status: assumed
+    source_reference_ids:
+    - primary
+    can_be_relaxed: unknown
+  - id: axion_dm_scale
+    description: The PQ/B-L scale is in the axion dark-matter window quoted by the paper.
+    scope: production
+    status: inferred
+    source_reference_ids:
+    - primary
+    can_be_relaxed: unknown
+associated_code:
+  has_associated_code: unknown
+  code_summary: No associated code is identified in the assigned paper text.
+provenance:
+  model_id: 0810_3625_so10_axion_gut_inflation_v1
+  model_name: SO(10) GUT inflation model with axion dark matter
+  model_family: axion_like_dark_matter
+  entry_version: 0.1.0
+  status: machine_extracted
+  created_at: '2026-05-30'
+  last_updated: '2026-05-30'
+  sources:
+    primary_papers:
+    - reference_id: primary
+      title: GUT Inflation and Proton Decay after WMAP5
+      authors:
+      - Mansoor Ur Rehman
+      - Qaisar Shafi
+      - Joshua R. Wickman
+      year: 2008
+      arxiv_id: '0810.3625'
+      doi: null
+      url: null
+      role: extension
+      notes: Accepted as a substantive SO(10) axion dark-matter variant, not as a generic axion review.
+    - arxiv_id: '0810.3625'
+      authors:
+      - Rehman, Mansoor Ur
+      - Shafi, Qaisar
+      - Wickman, Joshua R.
+      doi: 10.1103/PhysRevD.78.123516
+      notes: Primary assigned paper read from local SQLite full text.
+      reference_id: arxiv:0810.3625
+      role: original_model
+      title: GUT inflation and proton decay after WMAP5 data
+      url: https://arxiv.org/abs/0810.3625
+      year: 2008
+    constraint_papers:
+    - arxiv_id: '2210.03710'
+      authors:
+      - Lazarides, George
+      - Maji, Rinku
+      - Roshan, Rishav
+      - Shafi, Qaisar
+      doi: 10.1088/1475-7516/2022/12/009
+      notes: Related full text resolved locally and read within the three-text cap.
+      reference_id: arxiv:2210.03710
+      role: extension
+      title: A predictive SO(10) model
+      url: https://arxiv.org/abs/2210.03710
+      year: 2022
+    - arxiv_id: '1712.06526'
+      authors:
+      - Boucenna, Sofiane M.
+      - Shafi, Qaisar
+      doi: 10.1103/PhysRevD.97.075012
+      notes: Related full text resolved locally and read within the three-text cap.
+      reference_id: arxiv:1712.06526
+      role: extension
+      title: Axion inflation, proton decay, and leptogenesis in S U (5 )×U (1 )P Q
+      url: https://arxiv.org/abs/1712.06526
+      year: 2018
+    - arxiv_id: '0803.0547'
+      authors:
+      - Komatsu, E.
+      - Dunkley, J.
+      - Nolta, M. R.
+      - Bennett, C. L.
+      - Gold, B.
+      - Hinshaw, G.
+      - Jarosik, N.
+      - Larson, D.
+      doi: 10.1088/0067-0049/180/2/330
+      notes: Related full text resolved locally and read within the three-text cap.
+      reference_id: arxiv:0803.0547
+      role: dataset
+      title: 'Five-Year Wilkinson Microwave Anisotropy Probe Observations: Cosmological Interpretation'
+      url: https://arxiv.org/abs/0803.0547
+      year: 2009
+    external_databases: []
+    review_papers: []
+  extraction:
+    method: llm_assisted
+    extracted_by: codex_batch_worker
+    extractor_name: Codex GPT-5 dark-matter model-card worker
+    extraction_date: '2026-05-30'
+    confidence: medium
+    source_chunks_or_sections:
+    - reference_id: primary
+      section: SO(10) axion model discussion
+      page: null
+      quote_or_summary: The paper says SO(10) models can meet the dark matter and baryogenesis requirements,
+        with axions comprising the dark matter.
+    - reference_id: primary
+      section: SO(10) breaking and RGE discussion
+      page: null
+      quote_or_summary: It identifies U(1)_PQ and B-L breaking near 10^11-10^12 GeV and lists SO(10) Higgs
+        and fermion content.
+    unresolved_items:
+    - Detailed axion production mechanism and relic-density calculation are not given in the assigned
+      text.
+    - No modern Planck/BICEP or current proton-decay recast was performed.
+    - The axion relic density is tied to the PQ/B-L scale, but the primary paper does not provide a full
+      axion abundance calculation.
+  evidence:
+    particle_content:
+    - reference_id: primary
+      note: Axions are identified as the dark matter component in the SO(10) models.
+      confidence: medium
+      section: SO(10) axion model discussion
+      page: null
+    symmetries:
+    - reference_id: primary
+      note: The text gives U(1)_PQ charge assignments and states that PQ symmetry is broken at the intermediate
+        M_B-L scale.
+      confidence: medium
+      section: SO(10) breaking discussion
+      page: null
+    interactions:
+    - reference_id: primary
+      note: The model includes SO(10) gauge bosons, scalar leptoquarks, an inflaton, right-handed neutrinos,
+        and specified Higgs multiplets.
+      confidence: medium
+      section: SO(10) model construction
+      page: null
+    production_mechanism:
+    - reference_id: primary
+      note: The only explicit relic logic is the statement that axion dark matter physics requires M_B-L
+        around 10^11-10^12 GeV.
+      confidence: low
+      section: SO(10) axion model discussion
+      page: null
+    cosmological_history:
+    - reference_id: primary
+      note: GUT inflation, PQ/B-L breaking, and nonthermal leptogenesis are tied together in the cosmological
+        scenario.
+      confidence: medium
+      section: SO(10) axion model discussion
+      page: null
+    parameter_ranges:
+    - reference_id: primary
+      note: M_B-L is quoted around 10^11-10^12 GeV, with SO(10) breaking near 10^16 GeV.
+      confidence: medium
+      section: SO(10) scales
+      page: null
+    validity_domain:
+    - reference_id: primary
+      note: The axion dark-matter interpretation depends on the intermediate PQ/B-L scale window.
+      confidence: medium
+      section: SO(10) axion model discussion
+      page: null
+    constraints:
+    - confidence: high
+      note: Primary text quotes Super-K-era tau(p -> e+ pi0) > 8.2e33 yr and estimates SO(10) axion proton
+        lifetimes around 10^34-10^35 yr for scalar-leptoquark exchange.
+      page: null
+      reference_id: arxiv:0810.3625
+      section: GUT Inflation and Proton Decay
+    observables:
+    - confidence: high
+      note: Primary text states n_s near 0.96 selects an inflation scale around 10^16 GeV and identifies
+        M_B-L around 10^11-10^12 GeV for axion dark matter.
+      page: null
+      reference_id: arxiv:0810.3625
+      section: SO(10) axion model
+    - confidence: medium
+      note: Related WMAP5 text was read locally for the CMB scalar-index context.
+      page: null
+      reference_id: arxiv:0803.0547
+      section: Cosmological interpretation
+    routes:
+    - confidence: high
+      note: Primary text connects the inflation scale, SO(10) breaking scale, PQ/B-L scale, nonthermal
+        leptogenesis, and proton-decay estimates.
+      page: null
+      reference_id: arxiv:0810.3625
+      section: SO(10) axion model
+  review:
+    human_reviewed: false
+    reviewed_by: null
+    review_date: null
+    expert_reviewed: false
+    expert_reviewer: null
+    expert_review_date: null
+    reviewer_notes: []
+    scientific_confidence: medium
+    implementation_confidence: low
+robustness:
+  overall: medium
+  theory_robustness: medium
+  observational_robustness: unknown
+  computational_robustness: unknown
+  dominant_uncertainties:
+  - Axion relic production details are not explicit in the paper.
+  validation_status: expert_judgment_only
+  notes: The GUT construction is detailed, but the axion abundance treatment is compact.
+agent_failure_modes:
+  warnings:
+  - id: axion_production_unspecified
+    severity: medium
+    category: other
+    warning: Do not infer a specific axion production mechanism beyond the paper-supported PQ/B-L scale
+      statement.
+    source_reference_ids:
+    - primary
+    mitigation: Consult the primary paper text before using production-specific claims.
+observables:
+- caveats:
+  - The primary paper fixes the axion abundance mainly through the PQ/B-L scale rather than a detailed
+    axion relic calculation.
+  channel: cmb
+  effect_direction: shape_change
+  environments:
+  - early universe
+  - CMB anisotropies
+  id: obs_so10_axion_inflation_cmb
+  key_quantities:
+  - name: scalar spectral index
+    range: close to 0.96
+    role: cosmological
+    source_reference_ids:
+    - arxiv:0810.3625
+    - arxiv:0803.0547
+    status: inferred
+    symbol: n_s
+  - name: SO(10) gauge-boson scale
+    range: near or above 10^16
+    role: core
+    source_reference_ids:
+    - arxiv:0810.3625
+    status: inferred
+    symbol: M_X
+    unit: GeV
+  - name: PQ/B-L breaking scale
+    range: 10^11-10^12
+    role: core
+    source_reference_ids:
+    - arxiv:0810.3625
+    status: inferred
+    symbol: M_B-L
+    unit: GeV
+  linked_constraints:
+  - con_wmap5_gut_inflation_scale
+  linked_routes:
+  - route_so10_axion_inflation_to_cmb_and_proton_decay
+  name: WMAP-selected GUT inflation scale with axion DM
+  notes: null
+  observability: medium
+  predicted_effect: Requiring a scalar spectral index near 0.96 selects an observable-inflation scale
+    near 10^16 GeV and links the SO(10) breaking scale to the PQ/B-L scale that supplies axion dark matter.
+  redshift_range: inflationary initial conditions through recombination
+  relevance: high
+  scale_range: CMB pivot-scale observables
+  source_reference_ids:
+  - arxiv:0810.3625
+  - arxiv:0803.0547
+  subchannel: scalar spectral index and inflation scale
+- caveats:
+  - The estimate is model dependent and tied to the SO(10) breaking chain and scalar spectrum.
+  channel: precision_laboratory
+  effect_direction: rate_change
+  environments:
+  - proton decay detectors
+  id: obs_so10_axion_proton_decay
+  key_quantities:
+  - name: proton lifetime
+    range: 10^34-10^38; 10^34-10^35 in scalar-leptoquark SO(10) axion examples
+    role: core
+    source_reference_ids:
+    - arxiv:0810.3625
+    status: inferred
+    symbol: tau_p
+    unit: yr
+  - name: scalar leptoquark mass
+    range: about 10^12
+    role: core
+    source_reference_ids:
+    - arxiv:0810.3625
+    status: inferred
+    unit: GeV
+  linked_constraints:
+  - con_so10_axion_proton_lifetime
+  linked_routes:
+  - route_so10_axion_inflation_to_cmb_and_proton_decay
+  name: SO(10) axion-model proton decay
+  notes: null
+  observability: medium
+  predicted_effect: Superheavy gauge boson and intermediate scalar-leptoquark exchange can give proton
+    lifetimes in the 10^34-10^38 yr range, with SO(10) axion examples near 10^34-10^35 yr.
+  redshift_range: not_applicable
+  relevance: high
+  scale_range: baryon-number-violating GUT scale processes
+  source_reference_ids:
+  - arxiv:0810.3625
+  subchannel: proton decay
+constraints:
+- allowed_regions:
+  - Inflation energy scale of order 10^16 GeV and PQ/B-L scale around 10^11-10^12 GeV for axion dark matter.
+  applies: parameter_dependent
+  assumptions:
+  - can_be_relaxed: partial
+    description: The SO(10) inflation potential is represented by the Coleman-Weinberg or Higgs-potential
+      cases analyzed in the primary paper.
+    id: cw-or-higgs-inflation-fit
+    impact_if_violated: null
+    notes: null
+    scope: inflation-scale inference
+    source_reference_ids:
+    - arxiv:0810.3625
+    status: assumed
+  benchmark_implications:
+  - GUT-scale inflation and axion DM scales can coexist with nonthermal leptogenesis.
+  caveats:
+  - Modern CMB likelihoods were not rerun in this batch.
+  constrained_parameters:
+  - n_s
+  - M_X
+  - V0^(1/4)
+  - M_B-L
+  constraint_type: cosmological
+  data_release: WMAP five-year cosmological interpretation
+  excluded_regions:
+  - SO(10) breaking scales much below the WMAP-preferred inflation scale fail the primary paper's target
+    n_s near 0.96.
+  id: con_wmap5_gut_inflation_scale
+  likelihood_available: 'no'
+  likelihood_reference: null
+  name: WMAP5 scalar-index requirement on GUT inflation
+  notes: null
+  observable_channel: cmb
+  recasting_needed: 'yes'
+  robustness: medium
+  source_reference_ids:
+  - arxiv:0810.3625
+  - arxiv:0803.0547
+- allowed_regions:
+  - M_X above about 4e15 GeV; SO(10) axion examples predict tau_p about 10^34-10^35 yr from scalar leptoquarks.
+  applies: parameter_dependent
+  assumptions:
+  - can_be_relaxed: partial
+    description: The proton-decay estimate assumes the SO(10) breaking chain and intermediate scalar spectrum
+      used in the primary paper.
+    id: so10-breaking-chain
+    impact_if_violated: null
+    notes: null
+    scope: proton lifetime estimate
+    source_reference_ids:
+    - arxiv:0810.3625
+    status: assumed
+  benchmark_implications:
+  - The axion SO(10) construction can be close to proton-decay reach while keeping M_B-L near the axion
+    scale.
+  caveats:
+  - The paper gives order-of-magnitude lifetime estimates rather than detector likelihoods.
+  constrained_parameters:
+  - tau_p
+  - M_X
+  - scalar leptoquark mass
+  constraint_type: laboratory
+  data_release: Super-K proton decay limit quoted by the primary paper
+  excluded_regions:
+  - Gauge-boson scales giving tau(p -> e+ pi0) below 8.2e33 yr are below the primary paper's quoted Super-K
+    lower bound.
+  id: con_so10_axion_proton_lifetime
+  likelihood_available: 'no'
+  likelihood_reference: null
+  name: Super-K-era proton lifetime bound and SO(10) prediction
+  notes: null
+  observable_channel: proton decay
+  recasting_needed: 'yes'
+  robustness: medium
+  source_reference_ids:
+  - arxiv:0810.3625
+theory_to_observable_routing:
+  routes:
+  - agent_notes: null
+    caveats:
+    - Axion relic abundance and isocurvature are not computed explicitly in the primary paper.
+    constraint_ids:
+    - con_wmap5_gut_inflation_scale
+    - con_so10_axion_proton_lifetime
+    derived_quantities:
+    - n_s
+    - inflation scale
+    - axion scale
+    - tau_p
+    description: Map SO(10) and PQ/B-L breaking scales to CMB inflation observables, axion-DM scale requirements,
+      and proton-decay estimates.
+    forward_model_chain:
+    - inputs:
+      - inflaton potential
+      notes: null
+      outputs:
+      - n_s
+      - V0^(1/4)
+      step_id: s1
+      step_type: analytic_formula
+      tool_or_code: null
+      validity: Primary-paper inflation approximations.
+    - inputs:
+      - M_B-L
+      notes: null
+      outputs:
+      - axion DM scale
+      step_id: s2
+      step_type: data_transform
+      tool_or_code: null
+      validity: Uses the primary paper's axion-scale identification.
+    - inputs:
+      - M_X
+      - scalar leptoquark mass
+      notes: null
+      outputs:
+      - proton lifetime
+      step_id: s3
+      step_type: analytic_formula
+      tool_or_code: null
+      validity: Order-of-magnitude GUT estimate.
+    id: route_so10_axion_inflation_to_cmb_and_proton_decay
+    input_parameters:
+    - M_X
+    - M_B-L
+    - inflaton potential parameters
+    - scalar leptoquark mass
+    likelihoods:
+    - WMAP5 likelihood not rerun
+    - proton decay likelihood unavailable
+    observable_ids:
+    - obs_so10_axion_inflation_cmb
+    - obs_so10_axion_proton_decay
+    required_code_resources:
+    - inflation/CMB likelihood code for a modern recast
+    route_status: planned
+    source_model_features:
+    - non-supersymmetric SO(10)
+    - PQ symmetry broken at M_B-L
+    - GUT-scale inflation
+    - scalar leptoquarks
+    validation_tests:
+    - recover n_s near 0.96 target
+    - recover tau_p order 10^34-10^38 yr

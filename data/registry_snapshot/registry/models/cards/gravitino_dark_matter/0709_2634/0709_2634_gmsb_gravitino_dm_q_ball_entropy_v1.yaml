@@ -1,0 +1,398 @@
+_source:
+  shard: arXiv_src_0709_002_wds.tar
+  paper_id: 0709_2634
+  source_member: 0709_2634.json
+schema_version: model_only_v0
+model_id: 0709_2634_gmsb_gravitino_dm_q_ball_entropy_v1
+identity:
+  name: Gauge-mediated gravitino dark matter with Q-ball entropy dilution
+  family: gravitino_dark_matter
+  aliases:
+  - GMSB gravitino LSP with stau NLSP and Q-ball decay
+  short_description: A gauge-mediated supersymmetry scenario with a stable gravitino LSP, long-lived stau
+    NLSP, and late entropy production from MSSM Q-ball decay to dilute charged relics and shape the dark-matter
+    abundance history.
+  historical_origin_or_motivation: The paper constructs Q-ball decay as a natural late entropy source
+    to evade catalyzed BBN limits in gravitino-LSP, stau-NLSP gauge mediation.
+  status: speculative
+  model_kind: complete_theory
+theory:
+  theory_level: uv_complete
+  parent_frameworks:
+  - gauge-mediated supersymmetry breaking
+  - minimal supersymmetric Standard Model flat directions
+  - Affleck-Dine dynamics
+  lagrangian_available: partial
+  renormalizable: unknown
+  embedded_in_larger_framework: 'yes'
+  notes: The paper gives the GMSB flat-direction potential and Q-ball decay/dilution formulae, but not
+    a complete supersymmetric spectrum.
+particle_content:
+  dark_matter_candidate:
+    name: gravitino LSP
+    spin: 3/2
+    statistics: fermion
+    elementary_or_composite: elementary
+    number_of_components: single_component
+  additional_dark_sector_particles:
+  - stau NLSP
+  - MSSM non-topological Q ball from flat-direction condensate
+  mediators:
+  - supergravity Planck-suppressed interactions
+  - MSSM flat-direction interactions
+  dark_radiation_species: []
+  excited_or_degenerate_states: []
+  long_lived_particles:
+  - gravitino
+  - long-lived stau NLSP
+  - late-decaying Q ball
+  unstable_parent_particles:
+  - stau NLSP
+  - Q ball
+  standard_model_extension: substantial
+symmetries:
+  stabilizing_mechanism: R parity conservation makes the gravitino LSP stable; Q balls carry an approximate
+    baryon or lepton U(1) charge of MSSM flat directions.
+  symmetries:
+  - name: R parity
+    type: discrete
+    exact_or_approximate: exact
+    breaking: not specified
+    breaking_scale: null
+  - name: flat-direction baryon/lepton U(1)
+    type: approximate
+    exact_or_approximate: approximate
+    breaking: non-renormalizable baryon/lepton number violating operators at large field values
+    breaking_scale: null
+  topological_defects_possible: 'no'
+interactions:
+  portals:
+  - gravitational
+  - other
+  standard_model_targets:
+  - stau
+  - nucleons and lighter Standard Model particles from Q-ball decay
+  dark_sector_couplings:
+  - Planck-suppressed stau-gravitino decay
+  - Q-ball surface decay into Standard Model particles
+  mediator_types:
+  - supergravity interaction
+  - non-topological soliton decay
+  interaction_operators:
+  - GMSB flat-direction scalar potential
+  - non-renormalizable flat-direction operators
+  scattering:
+    elastic: unknown
+    inelastic: unknown
+    momentum_dependence: unknown
+    velocity_dependence: unknown
+    spin_dependence: unknown
+  annihilation_channels:
+  - stau annihilation before freeze-out
+  decay_channels:
+  - stau to gravitino plus Standard Model particles
+  - Q ball surface decay to Standard Model particles
+  self_scattering_channels: []
+  tree_or_loop_level: unknown
+parameters:
+  core:
+  - name: gravitino mass
+    symbol: m_3/2
+    description: Gravitino LSP mass in the gauge-mediated scenario.
+    value: lighter than the weak scale; 10 GeV used in dilution estimates
+    unit: GeV
+    role: core
+    status: inferred
+    source_reference_ids:
+    - primary
+  - name: stau mass
+    symbol: m_stau
+    description: Long-lived stau NLSP mass entering the needed dilution factor.
+    value: 100 GeV normalization in the required dilution factor
+    unit: GeV
+    role: core
+    status: inferred
+    source_reference_ids:
+    - primary
+  - name: required stau dilution factor
+    symbol: Delta
+    description: Entropy dilution factor needed to satisfy catalyzed BBN limits for a 10 GeV gravitino
+      example.
+    value: (300-600) * (m_stau/100 GeV)
+    role: cosmological
+    status: inferred
+    source_reference_ids:
+    - primary
+  - name: Q-ball charge
+    symbol: Q
+    description: Global charge of the MSSM Q ball controlling mass, radius, and lifetime.
+    value: model dependent; examples near 1e23-1e24 in decay-temperature estimates
+    role: core
+    status: inferred
+    source_reference_ids:
+    - primary
+  - name: Q-ball decay temperature
+    symbol: T_D
+    description: Temperature at which the Q ball decays and releases entropy.
+    value: about 5-10 MeV for the benchmark normalizations shown
+    unit: MeV
+    role: cosmological
+    status: inferred
+    source_reference_ids:
+    - primary
+  - name: messenger-sector scale parameter
+    symbol: M_F
+    description: Gauge-mediation potential scale entering Q-ball properties.
+    value: 10^3 GeV to about 5e8 GeV for m_3/2 = 10 GeV
+    unit: GeV
+    role: core
+    status: inferred
+    source_reference_ids:
+    - primary
+production:
+  mechanisms:
+  - nonthermal gravitino dark matter after or before Q-ball entropy production
+  - late Q-ball decay dilutes stau and gravitino abundances
+  - Affleck-Dine flat-direction dynamics forms Q balls
+  thermal_equilibrium_with_standard_model: 'no'
+  thermal_equilibrium_with_hidden_sector: unknown
+  abundance_set_by:
+  - gravitino mass
+  - reheating temperature bound
+  - Q-ball charge and decay temperature
+  - entropy dilution factor
+  - nonthermal gravitino production
+  depends_on_reheating_temperature: 'yes'
+  can_produce_all_dark_matter: parameter_dependent
+  nonthermal_momentum_distribution: unknown
+  notes: The text says thermal gravitino production is insufficient under the reheating-temperature constraint
+    and that nonthermal production is needed.
+relic_density:
+  full_or_subcomponent: unknown
+  target_fraction: null
+  calculation_type: mixed
+  key_dependencies:
+  - late entropy production
+  - Q-ball decay temperature
+  - stau freeze-out timing
+  - nonthermal gravitino production
+  requires_entropy_dilution: 'yes'
+  overclosure_risk: parameter_dependent
+  underproduction_risk: parameter_dependent
+  tuning_assessment: unknown
+cosmological_history:
+  standard_history_assumed: false
+  nonstandard_features:
+  - Q-ball matter domination before decay
+  - late entropy production after stau freeze-out in relevant cases
+  - Affleck-Dine baryogenesis connection
+  dark_sector_temperature: null
+  delta_neff: null
+  kinetic_decoupling: null
+  chemical_decoupling:
+    name: stau freeze-out temperature
+    symbol: T_fo
+    description: Temperature of stau freeze-out, approximated by m_stau/20 in the paper.
+    value: m_stau/20
+    unit: GeV
+    role: cosmological
+    status: inferred
+    source_reference_ids:
+    - primary
+  phase_transitions:
+  - electroweak phase transition relevant for lepton-charge conversion in leptonic flat-direction case
+  topological_defects: []
+  isocurvature_perturbations: unknown
+  bbn_relevance: critical
+  cmb_relevance: unknown
+phase_space:
+  distribution_type: nonthermal
+  distribution_function_available: unknown
+  notes: The paper discusses nonthermal gravitino production but does not provide a momentum distribution.
+structure_formation:
+  linear:
+    behaves_like_cdm: unknown
+    transfer_function_shape: unknown
+    small_scale_power_effect: unknown
+  nonlinear:
+    halo_mass_function_effect: unknown
+    subhalo_mass_function_effect: unknown
+    simulation_calibrated: unknown
+validity_domain:
+- id: r_parity_conserved
+  applies_to: model
+  condition: R parity must be conserved so the gravitino LSP is stable.
+  status: assumed
+  extrapolation_risk: high
+  caveats: []
+  source_reference_ids:
+  - primary
+- id: stau_nlsp
+  applies_to: model
+  condition: The scenario assumes a long-lived charged stau NLSP whose abundance must be diluted.
+  status: assumed
+  extrapolation_risk: high
+  caveats: []
+  source_reference_ids:
+  - primary
+- id: q_ball_decay_after_freezeout
+  applies_to: production
+  condition: Useful stau dilution requires Q-ball decay after stau freeze-out in the main scenario.
+  status: inferred
+  extrapolation_risk: medium
+  caveats: []
+  source_reference_ids:
+  - primary
+- id: bbn_decay_temperature
+  applies_to: cosmological_history
+  condition: The Q ball must decay early enough to be consistent with BBN while producing large entropy.
+  status: inferred
+  extrapolation_risk: high
+  caveats: []
+  source_reference_ids:
+  - primary
+assumptions:
+  global:
+  - id: gmsb_spectrum
+    description: Gauge mediation gives a gravitino lighter than the weak scale and a stau NLSP.
+    scope: theory
+    status: assumed
+    can_be_relaxed: unknown
+    source_reference_ids:
+    - primary
+  - id: flat_direction_q_ball_formation
+    description: An MSSM flat direction fragments into large Q balls after inflation.
+    scope: cosmological_history
+    status: assumed
+    can_be_relaxed: unknown
+    source_reference_ids:
+    - primary
+  - id: nonthermal_gravitino_replenishment
+    description: The gravitino dark matter abundance is supplied nonthermally or overproduced before dilution.
+    scope: production
+    status: assumed
+    can_be_relaxed: unknown
+    source_reference_ids:
+    - primary
+    impact_if_violated: Without additional production, late entropy release can underproduce gravitino
+      dark matter.
+associated_code:
+  has_associated_code: unknown
+  code_summary: No model-specific associated code is identified in the assigned text.
+provenance:
+  model_id: 0709_2634_gmsb_gravitino_dm_q_ball_entropy_v1
+  model_name: Gauge-mediated gravitino dark matter with Q-ball entropy dilution
+  model_family: gravitino_dark_matter
+  entry_version: 0.1.0
+  status: machine_extracted
+  created_at: '2026-05-30'
+  last_updated: '2026-05-30'
+  sources:
+    primary_papers:
+    - reference_id: primary
+      title: Entropy production by Q-ball decay for diluting long-lived charged particles
+      year: 2007
+      arxiv_id: '0709.2634'
+      doi: null
+      url: null
+      role: extension
+      notes: null
+      authors:
+      - Shinta Kasuya
+      - Fuminobu Takahashi
+  extraction:
+    method: llm_assisted
+    extracted_by: gpt55_dark_matter_batch_worker_batch_0018
+    extractor_name: Codex
+    extraction_date: '2026-05-30'
+    confidence: medium
+    source_chunks_or_sections:
+    - reference_id: primary
+      section: opening
+      page: null
+      quote_or_summary: The text identifies a gravitino LSP in gauge mediation as stable dark matter if
+        R parity is conserved.
+    - reference_id: primary
+      section: Q-ball scenario
+      page: null
+      quote_or_summary: The paper proposes late entropy production from MSSM Q-ball decay to dilute stau
+        relics.
+    - reference_id: primary
+      section: summary/discussion
+      page: null
+      quote_or_summary: The discussion notes that gravitino dark matter is also diluted and must be overproduced
+        or created after entropy production.
+    unresolved_items: []
+  evidence:
+    particle_content:
+    - reference_id: primary
+      note: The source specifies a gravitino LSP, stau NLSP, and MSSM Q balls from flat directions.
+      confidence: high
+      section: introduction and Q-ball review
+    symmetries:
+    - reference_id: primary
+      note: R parity stabilizes the gravitino; an approximate baryon/lepton U(1) charge supports Q balls.
+      confidence: high
+      section: introduction and Q-ball review
+    interactions:
+    - reference_id: primary
+      note: Stau decays are Planck suppressed and Q-ball decay proceeds from the soliton surface into
+        Standard Model particles.
+      confidence: medium
+      section: Q-ball decay
+    production_mechanism:
+    - reference_id: primary
+      note: Late entropy production from Q-ball decay dilutes charged relics; gravitino dark matter then
+        needs nonthermal production or prior overproduction.
+      confidence: high
+      section: summary/discussion
+    cosmological_history:
+    - reference_id: primary
+      note: The paper derives dilution factors for cases where stau freeze-out occurs before or after
+        Q-ball domination.
+      confidence: high
+      section: dilution factor
+    parameter_ranges:
+    - reference_id: primary
+      note: The required dilution factor is quoted as roughly 300-600 times m_stau/100 GeV for a 10 GeV
+        gravitino example.
+      confidence: high
+      section: introduction
+    validity_domain:
+    - reference_id: primary
+      note: Q-ball decay temperature, charge, and freeze-out timing determine whether sufficient dilution
+        is achieved.
+      confidence: medium
+      section: dilution analysis
+  review:
+    human_reviewed: false
+    expert_reviewed: false
+    scientific_confidence: medium
+    implementation_confidence: medium
+    reviewer_notes: []
+  caveats:
+  - The paper focuses on entropy dilution and CBBN viability; the final gravitino relic density is not
+    computed as a unique prediction.
+robustness:
+  overall: medium
+  theory_robustness: medium
+  observational_robustness: unknown
+  computational_robustness: unknown
+  validation_status: expert_judgment_only
+  notes: The Q-ball entropy mechanism is explicit; the final dark-matter abundance requires additional
+    production assumptions.
+agent_failure_modes:
+  warnings:
+  - id: not_a_simple_thermal_relic
+    severity: high
+    category: assumption_mismatch
+    warning: Do not model this as standard thermal gravitino production; the source explicitly relies
+      on late entropy production and nonthermal production.
+    source_reference_ids:
+    - primary
+  - id: bbn_sensitive
+    severity: high
+    category: extrapolation
+    warning: Viability is tied to stau lifetime, Q-ball decay temperature, and catalyzed BBN assumptions.
+    source_reference_ids:
+    - primary

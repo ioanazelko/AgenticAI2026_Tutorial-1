@@ -1,0 +1,433 @@
+$schema: "https://json-schema.org/draft/2020-12/schema"
+$id: "https://darkmatterfm.org/schemas/code.schema.yaml"
+title: "Code resources schema for BSM dark-matter model entries"
+description: >
+  Reusable schema for recording whether a BSM dark-matter model has associated
+  software, repositories, notebooks, simulation tools, likelihood code,
+  emulators, or analysis pipelines. This is intended to distinguish official
+  model implementations from community reimplementations, wrappers, constraint
+  pipelines, and unpublished private code.
+type: object
+additionalProperties: false
+
+$defs:
+  associated_code:
+    type: object
+    additionalProperties: false
+    description: >
+      Structured description of code associated with the model. This should be
+      present even when no code is known, so the registry can distinguish
+      "checked and none found" from "not yet checked".
+    required:
+      - has_associated_code
+    properties:
+      has_associated_code:
+        type: string
+        description: "Whether any code is known to be associated with this model entry."
+        enum:
+          - 'yes'
+          - 'no'
+          - partial
+          - unknown
+
+      code_summary:
+        type:
+          - string
+          - "null"
+        description: "Short human-readable summary of known code resources or absence of code."
+
+      primary_code_role:
+        type:
+          - string
+          - "null"
+        description: "Main role of the associated code, if there is one."
+        enum:
+          - model_definition
+          - relic_density_calculation
+          - boltzmann_solver_patch
+          - transfer_function
+          - halo_model
+          - structure_formation_simulation
+          - emulator
+          - likelihood
+          - recasting_pipeline
+          - compute_cross_sections
+          - direct_detection_rate
+          - indirect_detection_signal
+          - collider_simulation
+          - notebook_or_example
+          - data_processing
+          - visualization
+          - other
+          - unknown
+          - null
+
+      repositories:
+        type: array
+        description: "Public, private, or on-request repositories associated with the model."
+        items:
+          $ref: "#/$defs/code_resource"
+
+      packages_or_modules:
+        type: array
+        description: "Installable packages, modules, or code components relevant to the model."
+        items:
+          $ref: "#/$defs/code_resource"
+
+      notebooks:
+        type: array
+        description: "Tutorial, validation, or analysis notebooks associated with the model."
+        items:
+          $ref: "#/$defs/code_resource"
+
+      scripts:
+        type: array
+        description: "Standalone scripts associated with the model."
+        items:
+          $ref: "#/$defs/code_resource"
+
+      containers_or_environments:
+        type: array
+        description: "Docker/Singularity images, conda environments, requirements files, or other execution environments."
+        items:
+          $ref: "#/$defs/execution_environment"
+
+      expected_inputs:
+        type: array
+        description: "Typical inputs expected by the associated code."
+        items:
+          type: string
+        examples:
+          - model_parameters
+          - cosmological_parameters
+          - transfer_function
+          - halo_catalog
+          - likelihood_data_vector
+
+      expected_outputs:
+        type: array
+        description: "Typical outputs produced by the associated code."
+        items:
+          type: string
+        examples:
+          - relic_density
+          - transfer_function
+          - matter_power_spectrum
+          - half_mode_mass
+          - direct_detection_rate
+          - log_likelihood
+
+      supported_observable_channels:
+        type: array
+        description: "Observable channels supported by the code."
+        items:
+          type: string
+        examples:
+          - cmb
+          - lyman_alpha
+          - satellite_counts
+          - stellar_streams
+          - strong_lensing
+          - direct_detection
+          - indirect_detection
+          - collider
+
+      reproducibility:
+        type: object
+        additionalProperties: false
+        description: "How reproducible and usable the code is for this model entry."
+        properties:
+          reproducibility_level:
+            type: string
+            enum:
+              - exact
+              - approximate
+              - partial
+              - not_reproducible
+              - unknown
+          has_tests:
+            type: string
+            enum: ['yes', 'no', partial, unknown]
+          has_examples:
+            type: string
+            enum: ['yes', 'no', partial, unknown]
+          has_documentation:
+            type: string
+            enum: ['yes', 'no', partial, unknown]
+          pinned_dependencies:
+            type: string
+            enum: ['yes', 'no', partial, unknown]
+          notes:
+            type:
+              - string
+              - "null"
+
+      validation:
+        type: object
+        additionalProperties: false
+        description: "Validation status of the associated code for this model."
+        properties:
+          validation_status:
+            type: string
+            enum:
+              - validated_against_paper
+              - validated_against_public_benchmark
+              - internally_validated
+              - smoke_test_only
+              - unvalidated
+              - unknown
+          benchmark_references:
+            type: array
+            items:
+              type: string
+          validation_notes:
+            type:
+              - string
+              - "null"
+
+      caveats:
+        type: array
+        description: "Known caveats, limitations, missing dependencies, licensing issues, or code/model mismatches."
+        items:
+          type: string
+
+  code_resource:
+    type: object
+    additionalProperties: false
+    required:
+      - name
+      - resource_type
+      - availability
+      - relationship_to_model
+      - purpose
+    properties:
+      name:
+        type: string
+        description: "Name of the code resource, repository, package, notebook, or script."
+
+      resource_type:
+        type: string
+        enum:
+          - repository
+          - package
+          - module
+          - script
+          - notebook
+          - patch
+          - fork
+          - container
+          - web_service
+          - data_release_code
+          - unknown
+
+      availability:
+        type: string
+        enum:
+          - public
+          - private
+          - on_request
+          - restricted
+          - unavailable
+          - unknown
+
+      relationship_to_model:
+        type: string
+        description: "How directly this code is connected to the model."
+        enum:
+          - official_author_code
+          - official_collaboration_code
+          - community_implementation
+          - independent_reimplementation
+          - wrapper_around_public_tool
+          - constraint_analysis_code
+          - emulator_training_code
+          - benchmark_or_tutorial
+          - used_for_analysis
+          - related_but_not_model_specific
+          - unknown
+
+      purpose:
+        type: array
+        description: "Tasks this code can perform."
+        items:
+          type: string
+          enum:
+            - define_lagrangian
+            - compute_relic_density
+            - compute_decay_rates
+            - compute_cross_sections
+            - solve_boltzmann_equations
+            - compute_transfer_function
+            - compute_matter_power_spectrum
+            - compute_hmf_or_shmf
+            - run_simulations
+            - train_emulator
+            - run_emulator
+            - compute_likelihood
+            - recast_constraints
+            - collider_simulation
+            - generate_benchmarks
+            - reproduce_figures
+            - process_data
+            - other
+
+      url:
+        type:
+          - string
+          - "null"
+        format: uri
+
+      repository_url:
+        type:
+          - string
+          - "null"
+        format: uri
+
+      documentation_url:
+        type:
+          - string
+          - "null"
+        format: uri
+
+      archive_url:
+        type:
+          - string
+          - "null"
+        format: uri
+        description: "Permanent archive URL, for example Zenodo or institutional archive."
+
+      doi:
+        type:
+          - string
+          - "null"
+
+      license:
+        type:
+          - string
+          - "null"
+
+      languages:
+        type: array
+        items:
+          type: string
+        examples:
+          - Python
+          - C
+          - C++
+          - Fortran
+          - Julia
+
+      version:
+        type:
+          - string
+          - "null"
+        description: "Version, release tag, or semantic version."
+
+      commit:
+        type:
+          - string
+          - "null"
+        description: "Pinned commit hash if needed for reproducibility."
+
+      last_checked:
+        type:
+          - string
+          - "null"
+        format: date
+
+      maintained:
+        type: string
+        enum:
+          - 'yes'
+          - 'no'
+          - unknown
+          - not_applicable
+
+      dependencies:
+        type: array
+        items:
+          type: string
+
+      supported_parameters:
+        type: array
+        description: "Model or nuisance parameters explicitly supported by the code."
+        items:
+          type: string
+
+      supported_model_families:
+        type: array
+        description: "Model families this code supports."
+        items:
+          type: string
+
+      supported_observables:
+        type: array
+        description: "Observables or likelihood channels supported by the code."
+        items:
+          type: string
+
+      inputs:
+        type: array
+        items:
+          type: string
+
+      outputs:
+        type: array
+        items:
+          type: string
+
+      validity_domain:
+        type: array
+        description: "Known validity limits for this code resource."
+        items:
+          type: string
+
+      citation_reference_ids:
+        type: array
+        description: "Reference IDs from the provenance block that should be cited when using this code."
+        items:
+          type: string
+
+      notes:
+        type:
+          - string
+          - "null"
+
+  execution_environment:
+    type: object
+    additionalProperties: false
+    required:
+      - environment_type
+      - name
+    properties:
+      environment_type:
+        type: string
+        enum:
+          - conda
+          - pip_requirements
+          - docker
+          - singularity
+          - spack
+          - module_file
+          - nix
+          - other
+          - unknown
+      name:
+        type: string
+      url:
+        type:
+          - string
+          - "null"
+        format: uri
+      file_path:
+        type:
+          - string
+          - "null"
+      version_or_tag:
+        type:
+          - string
+          - "null"
+      notes:
+        type:
+          - string
+          - "null"

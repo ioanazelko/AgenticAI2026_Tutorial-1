@@ -1,0 +1,1014 @@
+_source:
+  shard: arXiv_src_2203_030_wds.tar
+  paper_id: '2203_04276'
+  source_member: 2203_04276.json
+  enriched: true
+  enrichment_schema_version: dm_model_ocr_enrichment_smoke_v0
+schema_version: model_only_v0
+model_id: 2203_04276_dirac_scotogenic_fimp_v1
+identity:
+  name: Dirac scotogenic freeze-in dark matter with gauged U(1) B-L
+  family: freeze_in_dark_matter
+  aliases:
+  - Dirac scotogenic FIMP
+  - radiative Dirac fermion dark matter
+  short_description: An extension of the Dirac scotogenic model in which a light Dirac fermion dark matter
+    candidate obtains its mass radiatively and is produced by freeze-in through a broken B-L gauge interaction.
+  historical_origin_or_motivation: The paper motivates the construction as a Dirac-neutrino scotogenic
+    model that also generates a light fermionic dark matter mass through loop diagrams.
+  status: speculative
+  model_kind: complete_theory
+theory:
+  theory_level: simplified_model
+  parent_frameworks:
+  - Dirac scotogenic model
+  - gauged U(1) B-L
+  lagrangian_available: partial
+  renormalizable: 'yes'
+  embedded_in_larger_framework: unknown
+  notes: The paper writes the new Yukawa, scalar, vector-like fermion, and gauge-sector ingredients and
+    discusses a low-energy Weinberg-type effective operator after integrating out heavy mediators.
+particle_content:
+  dark_matter_candidate:
+    name: light Dirac fermion from the chiral singlets nu_3 and nu_4
+    spin: 1/2
+    statistics: fermion
+    elementary_or_composite: elementary
+    number_of_components: single_component
+  additional_dark_sector_particles:
+  - two right-handed neutrinos participating as dark radiation
+  - inert scalar doublet
+  - inert scalar singlet
+  - B-L breaking scalar singlet
+  - vector-like singlet fermions N
+  - vector-like doublet fermions D
+  - vector-like singlet fermions S
+  mediators:
+  - massive B-L gauge boson Z prime
+  - SM-like Higgs through the loop-induced effective operator
+  - heavy inert scalars
+  - vector-like fermions in the radiative mass loop
+  dark_radiation_species:
+  - two right-handed neutrinos
+  excited_or_degenerate_states: []
+  long_lived_particles: []
+  unstable_parent_particles: []
+  standard_model_extension: substantial
+symmetries:
+  stabilizing_mechanism: The dark matter is stabilized by the imposed Z_5 symmetry together with the chiral
+    B-L charge assignments, which forbid mass mixing and radiative or three-body decays in the model scope.
+  symmetries:
+  - name: U(1) B-L
+    type: gauge
+    exact_or_approximate: broken
+    breaking: Spontaneously broken by a scalar singlet vev, producing the massive Z prime mediator.
+    breaking_scale:
+      name: B-L breaking scale
+      symbol: v_B-L
+      description: Vacuum expectation value setting the Z prime mass and freeze-in rate.
+      value: null
+      range: null
+      unit: null
+      role: core
+      status: inferred
+      source_reference_ids:
+      - '2203_04276'
+      notes: The paper discusses a viable freeze-in parameter space controlled by this scale.
+  - name: Z_5
+    type: discrete
+    exact_or_approximate: exact
+    breaking: Imposed to ensure dark matter stability and forbid unwanted operators; a separate small
+      breaking is only discussed for possible baryogenesis extensions.
+    breaking_scale: null
+  topological_defects_possible: unknown
+interactions:
+  portals:
+  - higgs
+  - vector
+  standard_model_targets:
+  - SM fermions through off-shell B-L gauge-boson exchange
+  - Higgs boson through the loop-induced effective operator
+  dark_sector_couplings:
+  - Y_D coupling between the dark fermion and vector-like doublet
+  - Y_S coupling involving the vector-like singlet
+  - Y_DS and Y_SD Higgs couplings mixing D and S
+  - B-L gauge coupling
+  mediator_types:
+  - Z prime vector boson
+  - SM-like Higgs
+  - inert scalars
+  - vector-like fermions
+  interaction_operators:
+  - loop-induced H dagger H times dark fermion bilinear effective operator below mediator masses
+  annihilation_channels:
+  - SM fermion annihilation to dark matter through off-shell Z prime during freeze-in
+  decay_channels: []
+  self_scattering_channels:
+  - Higgs-mediated dark matter self scattering
+  - Z-prime-mediated dark matter self scattering
+  tree_or_loop_level: both
+parameters:
+  core:
+  - name: dark matter mass
+    symbol: m_DM
+    description: Mass of the light Dirac fermion dark matter candidate.
+    value: null
+    range: keV-scale lower window from structure-formation discussion, with the viable freeze-in scenario
+      requiring it below roughly the MeV scale.
+    unit: null
+    role: core
+    status: inferred
+    source_reference_ids:
+    - '2203_04276'
+    notes: Converted text makes some units ambiguous; the paper emphasizes typical keV-scale masses and
+      an upper scale below O(MeV) for Z-prime-dominated production.
+  - name: B-L breaking scale
+    symbol: v_B-L
+    description: Scale controlling the Z prime mass and the out-of-equilibrium gauge-scattering production
+      rate.
+    value: null
+    range: null
+    unit: null
+    role: core
+    status: inferred
+    source_reference_ids:
+    - '2203_04276'
+    notes: The paper displays viable contours in the reheating-temperature versus v_B-L plane.
+  - name: reheating temperature
+    symbol: T_RH
+    description: Low reheating temperature assumed after inflation to avoid thermal populations of heavy
+      new states and suppress Higgs production.
+    value: null
+    range:
+      min: 4
+      max: 5
+      inclusive_min: true
+      inclusive_max: false
+      unit: MeV to GeV window
+      notes: Paper states successful BBN requires about 4 MeV and Higgs freeze-out motivates an upper
+        scale near 5 GeV.
+    unit: null
+    role: cosmological
+    status: assumed
+    source_reference_ids:
+    - '2203_04276'
+    notes: The range is extracted from the paper's low-reheating discussion.
+  - name: vector-like fermion mass scale
+    symbol: M_F
+    description: Mass scale of vector-like fermions in the loop generating the dark matter mass.
+    value: null
+    range: null
+    unit: null
+    role: core
+    status: inferred
+    source_reference_ids:
+    - '2203_04276'
+    notes: The paper works in a radiative-seesaw limit involving M_F and the inert-scalar scale.
+  - name: radiative Yukawa couplings
+    symbol: Y_D, Y_DS, Y_S
+    description: Yukawa couplings entering the one-loop dark matter mass expression.
+    value: null
+    range: null
+    unit: null
+    role: core
+    status: inferred
+    source_reference_ids:
+    - '2203_04276'
+    notes: The paper gives benchmark scaling estimates with order-0.1 values.
+production:
+  mechanisms:
+  - freeze-in from out-of-equilibrium SM-fermion annihilations mediated by an off-shell B-L Z prime
+  thermal_equilibrium_with_standard_model: 'no'
+  thermal_equilibrium_with_hidden_sector: 'no'
+  abundance_set_by:
+  - dark matter mass
+  - B-L breaking scale
+  - reheating temperature
+  - SM fermion B-L charges
+  depends_on_reheating_temperature: 'yes'
+  can_produce_all_dark_matter: parameter_dependent
+  nonthermal_momentum_distribution: 'yes'
+  notes: The paper finds Higgs decays and thermal production unsuitable for the keV-scale scenario and
+    focuses on gauge-scattering freeze-in.
+relic_density:
+  full_or_subcomponent: full_dark_matter
+  target_fraction:
+    name: observed dark matter abundance
+    symbol: Omega_DM h^2
+    description: Target abundance used by the paper for the freeze-in parameter-space contours.
+    value: '0.12'
+    range: null
+    unit: null
+    role: cosmological
+    status: assumed
+    source_reference_ids:
+    - '2203_04276'
+    notes: null
+  calculation_type: nonthermal
+  key_dependencies:
+  - m_DM
+  - v_B-L
+  - T_RH
+  - relativistic SM fermion charge sum
+  requires_entropy_dilution: 'no'
+  overclosure_risk: parameter_dependent
+  underproduction_risk: parameter_dependent
+  tuning_assessment: unknown
+cosmological_history:
+  standard_history_assumed: false
+  nonstandard_features:
+  - low reheating temperature after inflation
+  - no primordial dark matter abundance assumed
+  - only SM degrees of freedom plus two right-handed neutrinos and the light dark matter are present after
+    reheating
+  dark_sector_temperature: null
+  delta_neff:
+    name: dark radiation contribution
+    symbol: Delta N_eff
+    description: Small dark radiation contribution from right-handed neutrino freeze-in in the viable
+      production setup.
+    value: less than about 0.012 in the paper's near-term-falsification statement
+    range: null
+    unit: null
+    role: derived
+    status: inferred
+    source_reference_ids:
+    - '2203_04276'
+    notes: Included as cosmological-history information, not as an observable extraction.
+  kinetic_decoupling: null
+  chemical_decoupling: null
+  phase_transitions:
+  - B-L breaking before the low-temperature freeze-in epoch
+  topological_defects: []
+  isocurvature_perturbations: unknown
+  bbn_relevance: medium
+  cmb_relevance: medium
+phase_space:
+  distribution_type: nonthermal
+  distribution_function_available: 'no'
+  average_momentum_relative_to_thermal: null
+  free_streaming_length: null
+  velocity_dispersion_today: null
+  phase_space_bounds:
+  - The paper maps Lyman-alpha warm-dark-matter considerations to a FIMP mass window.
+  notes: The dark matter is a FIMP produced out of equilibrium; the paper states it can be relativistic
+    near BBN but not at recombination in the viable range.
+structure_formation:
+  linear:
+    behaves_like_cdm: approximately
+    transfer_function_shape: smooth_cutoff
+    small_scale_power_effect: suppression
+    half_mode_mass: null
+    impact_on_sigma8_s8: unknown
+  nonlinear:
+    halo_mass_function_effect: unknown
+    subhalo_mass_function_effect: unknown
+    simulation_calibrated: 'no'
+validity_domain:
+- id: low_reheating_freeze_in
+  applies_to: production
+  condition: The reheating temperature is below the heavy loop mediators and Z prime and lies in the low
+    range used to avoid Higgs-driven overproduction.
+  valid_range: about 4 MeV to about 5 GeV in the paper discussion
+  status: assumed
+  extrapolation_risk: high
+  caveats:
+  - Changing the reheating history or allowing primordial dark matter can invalidate the abundance calculation.
+  source_reference_ids:
+  - '2203_04276'
+  notes: null
+- id: effective_zprime_limit
+  applies_to: EFT
+  condition: SM-fermion annihilation to dark matter is treated with an off-shell heavy Z prime, so the
+    relevant temperatures and momenta are below the mediator mass.
+  valid_range: null
+  status: assumed
+  extrapolation_risk: medium
+  caveats:
+  - The full propagator would be needed near the mediator pole or above the assumed reheating range.
+  source_reference_ids:
+  - '2203_04276'
+  notes: null
+- id: exact_dm_stabilizing_symmetry
+  applies_to: model
+  condition: The Z_5 symmetry must forbid dark matter mixing and decay operators in the dark matter model
+    sector.
+  valid_range: null
+  status: assumed
+  extrapolation_risk: medium
+  caveats:
+  - The paper notes possible quantum-gravity concerns for discrete symmetries and discusses a small scalar-sector
+    breaking only in a baryogenesis extension.
+  source_reference_ids:
+  - '2203_04276'
+  notes: null
+assumptions:
+  global:
+  - id: no_primordial_dm
+    description: The model assumes no primordial dark matter abundance from inflaton decays or other reheating
+      processes.
+    scope: cosmological_history
+    status: assumed
+    impact_if_violated: The freeze-in relic-density calculation would not by itself determine the observed
+      abundance.
+    can_be_relaxed: unknown
+    source_reference_ids:
+    - '2203_04276'
+    notes: null
+  - id: low_temperature_spectrum
+    description: After reheating, only SM states, two right-handed neutrinos, and the light dark matter
+      are present in the plasma.
+    scope: production
+    status: assumed
+    impact_if_violated: Additional thermalized dark-sector states could overproduce relics or dark radiation.
+    can_be_relaxed: unknown
+    source_reference_ids:
+    - '2203_04276'
+    notes: null
+  - id: z5_stability
+    description: The imposed Z_5 symmetry is taken to stabilize the dark matter candidate.
+    scope: theory
+    status: assumed
+    impact_if_violated: Dark matter could mix with neutrinos or decay, changing the model identity.
+    can_be_relaxed: 'no'
+    source_reference_ids:
+    - '2203_04276'
+    notes: null
+associated_code:
+  has_associated_code: unknown
+  code_summary: The assigned text acknowledges PackageX, but no public model-specific implementation is
+    identified.
+  primary_code_role: null
+  repositories: []
+  packages_or_modules: []
+  notebooks: []
+  scripts: []
+  containers_or_environments: []
+  expected_inputs: []
+  expected_outputs: []
+  supported_observable_channels: []
+  caveats:
+  - No model-specific code resource was extracted from the paper text.
+provenance:
+  model_id: 2203_04276_dirac_scotogenic_fimp_v1
+  model_name: Dirac scotogenic freeze-in dark matter with gauged U(1) B-L
+  model_family: freeze_in_dark_matter
+  entry_version: 0.1.0
+  status: machine_extracted
+  created_at: '2026-05-31'
+  last_updated: '2026-05-31'
+  sources:
+    primary_papers:
+    - reference_id: '2203_04276'
+      title: unknown
+      authors: []
+      year: 2022
+      arxiv_id: '2203.04276'
+      doi: null
+      url: null
+      role: original_model
+      notes: The SQLite text does not expose a clean title block; the paper itself introduces the Dirac
+        scotogenic freeze-in construction.
+    - arxiv_id: '2203.04276'
+      authors:
+      - Berbig, Maximilian
+      doi: 10.1007/JHEP09(2022)101
+      notes: Primary assigned paper read from local SQLite full text.
+      reference_id: arxiv:2203.04276
+      role: original_model
+      title: Freeze-In of radiative keV-scale neutrino dark matter from a new U(1)<SUB>B-L</SUB>
+      url: https://arxiv.org/abs/2203.04276
+      year: 2022
+    constraint_papers:
+    - arxiv_id: '1405.1259'
+      authors:
+      - Molinaro, Emiliano
+      - Yaguna, Carlos E.
+      - Zapata, Oscar
+      doi: 10.1088/1475-7516/2014/07/015
+      notes: Related local full text read for FIMP realization of the scotogenic model.
+      reference_id: arxiv:1405.1259
+      role: extension
+      title: FIMP realization of the scotogenic model
+      url: https://arxiv.org/abs/1405.1259
+      year: 2014
+    - arxiv_id: '1702.01764'
+      authors:
+      - Iršič, Vid
+      - Viel, Matteo
+      - Haehnelt, Martin G.
+      - Bolton, James S.
+      - Cristiani, Stefano
+      - Becker, George D.
+      - D'Odorico, Valentina
+      - Cupani, Guido
+      - et al.
+      doi: 10.1103/PhysRevD.96.023522
+      notes: Related local full text read for Ly-alpha thermal-WDM equivalent constraints.
+      reference_id: arxiv:1702.01764
+      role: constraint
+      title: New constraints on the free-streaming of warm dark matter from intermediate and small scale
+        Lyman-α forest data
+      url: https://arxiv.org/abs/1702.01764
+      year: 2017
+    external_databases: []
+    review_papers:
+    - arxiv_id: '1706.07442'
+      authors:
+      - Bernal, Nicolás
+      - Heikinheimo, Matti
+      - Tenkanen, Tommi
+      - Tuominen, Kimmo
+      - Vaskonen, Ville
+      doi: 10.1142/S0217751X1730023X
+      notes: Related local full text read for FIMP production and observational context.
+      reference_id: arxiv:1706.07442
+      role: review
+      title: 'The dawn of FIMP Dark Matter: A review of models and constraints'
+      url: https://arxiv.org/abs/1706.07442
+      year: 2017
+  extraction:
+    method: llm_assisted
+    extracted_by: codex_batch_0018
+    extractor_name: Codex GPT-5
+    extraction_date: '2026-05-31'
+    confidence: high
+    source_chunks_or_sections:
+    - reference_id: '2203_04276'
+      section: Extension for radiative DM mass
+      page: null
+      quote_or_summary: Introduces chiral Weyl fermions whose nu_3 and nu_4 combine into the Dirac dark
+        matter candidate.
+    - reference_id: '2203_04276'
+      section: UV completion and production discussion
+      page: null
+      quote_or_summary: Adds B-L breaking scalar, Z prime mediator, and low-reheating assumptions before
+        freeze-in.
+    - reference_id: '2203_04276'
+      section: Conclusion
+      page: null
+      quote_or_summary: Summarizes the Dirac scotogenic extension, Z_5 stabilization, and gauge-scattering
+        freeze-in relic abundance.
+    unresolved_items:
+    - The exact paper title and author list were not present in the SQLite text exposed to this worker.
+    - Some units in converted parameter expressions are ambiguous in the text extraction.
+    - No numerical FIMP momentum distribution or Ly-alpha likelihood was rerun.
+    - The exact Delta N_eff value was not reconstructed from the primary formulas.
+  evidence:
+    particle_content:
+    - reference_id: '2203_04276'
+      note: The paper states that the remaining two chiral fermions combine to form a Dirac fermion identified
+        as the dark matter candidate.
+      confidence: high
+      section: Extension for radiative DM mass
+      page: null
+    symmetries:
+    - reference_id: '2203_04276'
+      note: The construction relies on gauged U(1) B-L charges and imposes Z_5 to stabilize dark matter
+        and forbid unwanted mass terms.
+      confidence: high
+      section: Extension for radiative DM mass
+      page: null
+    interactions:
+    - reference_id: '2203_04276'
+      note: The paper gives Yukawa couplings for the D and S vector-like fermions and uses Z prime and
+        Higgs-mediated interactions in production estimates.
+      confidence: high
+      section: Radiative mass and gauge scattering
+      page: null
+    production_mechanism:
+    - reference_id: '2203_04276'
+      note: The viable abundance is obtained from out-of-equilibrium SM-fermion annihilations through
+        the B-L gauge boson after low reheating.
+      confidence: high
+      section: Gauge scattering
+      page: null
+    cosmological_history:
+    - reference_id: '2203_04276'
+      note: The paper assumes a low reheating temperature, no primordial dark matter abundance, and computes
+        small dark-radiation production.
+      confidence: high
+      section: Dark radiation and inflation discussion
+      page: null
+    parameter_ranges:
+    - reference_id: '2203_04276'
+      note: The text states a keV-scale lower window from Lyman-alpha considerations, an O(MeV) upper
+        scale for the Z-prime-dominated production scenario, and a low reheating window.
+      confidence: medium
+      section: Conclusion
+      page: null
+    validity_domain:
+    - reference_id: '2203_04276'
+      note: The freeze-in treatment requires out-of-equilibrium rates and mediator masses above the reheating
+        scale.
+      confidence: high
+      section: Gauge scattering
+      page: null
+    constraints:
+    - confidence: high
+      note: Primary text quotes LEP/LHC Zprime limits, electron-scattering estimates, and Planck+BAO N_eff
+        comparison.
+      page: null
+      reference_id: arxiv:2203.04276
+      section: Model constraints
+    - confidence: high
+      note: Related Ly-alpha analysis gives 5.3 keV thermal-WDM lower limit at 2 C.L.
+      page: null
+      reference_id: arxiv:1702.01764
+      section: Abstract
+    observables:
+    - confidence: high
+      note: Primary text identifies gauge scattering as the viable freeze-in route and Higgs decays as
+        Lyman-alpha incompatible.
+      page: null
+      reference_id: arxiv:2203.04276
+      section: Introduction and production sections
+    - confidence: high
+      note: Related scotogenic FIMP paper shows freeze-in can span keV to TeV masses.
+      page: null
+      reference_id: arxiv:1405.1259
+      section: Abstract
+    - confidence: high
+      note: FIMP review describes freeze-in as out-of-equilibrium production through feeble couplings.
+      page: null
+      reference_id: arxiv:1706.07442
+      section: Review
+    routes:
+    - confidence: high
+      note: Primary paper links radiative mass generation, B-L gauge freeze-in, dark radiation, and direct-detection
+        estimates.
+      page: null
+      reference_id: arxiv:2203.04276
+      section: Model and phenomenology
+  review:
+    human_reviewed: false
+    reviewed_by: null
+    review_date: null
+    expert_reviewed: false
+    expert_reviewer: null
+    expert_review_date: null
+    reviewer_notes: []
+    scientific_confidence: medium
+    implementation_confidence: medium
+  caveats:
+  - The model depends on an imposed Z_5 symmetry and a low-reheating cosmology.
+  - The extraction did not use external bibliographic sources.
+robustness:
+  overall: medium
+  theory_robustness: medium
+  observational_robustness: unknown
+  computational_robustness: low
+  dominant_uncertainties:
+  - low-reheating assumption
+  - dark matter mass and v_B-L units in converted text
+  - absence of model-specific public code in assigned text
+  validation_status: expert_judgment_only
+  notes: The paper provides a coherent model and analytic estimates, but several cosmological ingredients
+    are assumptions or left for future work.
+agent_failure_modes:
+  warnings:
+  - id: do_not_map_to_xray_sterile_neutrino
+    severity: medium
+    category: invalid_mapping
+    warning: Do not treat this as ordinary sterile-neutrino dark matter with active-neutrino mixing; the
+      paper emphasizes no active mixing and no radiative decay mode.
+    mitigation: Use the paper-specific Dirac fermion and B-L/Z_5 stabilization content.
+    source_reference_ids:
+    - '2203_04276'
+  - id: low_reheating_required
+    severity: high
+    category: assumption_mismatch
+    warning: The relic-density result relies on a low reheating temperature and no primordial dark matter
+      abundance.
+    mitigation: Check cosmological-history assumptions before reusing the abundance logic.
+    source_reference_ids:
+    - '2203_04276'
+observables:
+- caveats:
+  - Depends on a nonstandard reheating hierarchy that keeps heavy new states out of equilibrium.
+  channel: cosmology
+  effect_direction: rate_change
+  environments:
+  - early universe plasma
+  id: obs_dirac_fimp_relic_gauge_freezein
+  key_quantities:
+  - description: Sets m_Zprime/g_B-L and controls the effective gauge-scattering rate.
+    name: B-L breaking scale
+    range: above 6.9 TeV from LEP; larger values used for freeze-in
+    role: core
+    source_reference_ids:
+    - arxiv:2203.04276
+    status: inferred
+    symbol: v_B-L
+    unit: TeV
+  - description: Assumed below the loop-particle and Zprime masses so unwanted thermal relics are absent.
+    name: reheating temperature
+    range: T_RH below M_N, M_F, m_0 and m_Zprime; also below Higgs freeze-out in part of discussion
+    role: core
+    source_reference_ids:
+    - arxiv:2203.04276
+    status: assumed
+    symbol: T_RH
+    unit: GeV
+  - description: Radiatively generated keV-scale Dirac FIMP mass.
+    name: dark matter mass
+    range: keV-scale, below about MeV in direct-detection discussion
+    role: core
+    source_reference_ids:
+    - arxiv:2203.04276
+    - arxiv:1405.1259
+    status: inferred
+    symbol: m_DM
+    unit: energy
+  linked_constraints:
+  - con_bminusl_relic_and_collider
+  linked_routes:
+  - route_dirac_scotogenic_fimp
+  name: B-L gauge-scattering freeze-in abundance
+  notes: null
+  observability: low
+  predicted_effect: The light Dirac fermion FIMP is produced out of equilibrium through the broken U(1)
+    B-L gauge interaction; the abundance is controlled mainly by v_B-L, m_DM, and the reheating history
+    below the heavy new states.
+  redshift_range: radiation era around reheating/freeze-in
+  relevance: critical
+  scale_range: null
+  source_reference_ids:
+  - arxiv:2203.04276
+  - arxiv:1706.07442
+  - arxiv:1405.1259
+  subchannel: freeze-in relic density
+- caveats:
+  - Thermal-relic WDM limits are only proxy constraints until the Dirac-FIMP spectrum is propagated.
+  channel: lyman_alpha
+  effect_direction: suppression
+  environments:
+  - Lyman-alpha forest
+  id: obs_dirac_fimp_lya_cutoff
+  key_quantities:
+  - description: Related combined Ly-alpha bound for thermal relic WDM.
+    name: thermal-equivalent WDM mass
+    range: m_WDM > 5.3 keV at 2 C.L. in related analysis
+    role: core
+    source_reference_ids:
+    - arxiv:1702.01764
+    status: inferred
+    symbol: m_WDM
+    unit: keV
+  - description: Nonthermal distribution whose free-streaming scale must be recast against Ly-alpha data.
+    name: FIMP momentum distribution
+    range: production-channel dependent
+    role: core
+    source_reference_ids:
+    - arxiv:2203.04276
+    - arxiv:1706.07442
+    status: inferred
+    symbol: f(p)
+  linked_constraints:
+  - con_lya_dirac_fimp
+  linked_routes:
+  - route_dirac_scotogenic_fimp
+  name: Warm FIMP free-streaming cutoff
+  notes: null
+  observability: high
+  predicted_effect: Out-of-equilibrium Higgs decays would produce a FIMP spectrum too warm for Lyman-alpha
+    bounds, motivating the B-L gauge-scattering production channel.
+  redshift_range: Lyman-alpha forest redshifts
+  relevance: high
+  scale_range: intermediate and small cosmological scales
+  source_reference_ids:
+  - arxiv:2203.04276
+  - arxiv:1702.01764
+  subchannel: Lyman-alpha forest small-scale power
+- caveats:
+  - No CMB likelihood was run; the primary prediction is qualitative/minuscule.
+  channel: cmb
+  effect_direction: enhancement
+  environments:
+  - CMB
+  - BBN
+  id: obs_dirac_fimp_dark_radiation
+  key_quantities:
+  - description: Primary paper describes the predicted contribution as minuscule and quotes observational
+      targets.
+    name: extra radiation
+    range: well below current sensitivity for benchmark scenarios
+    role: core
+    source_reference_ids:
+    - arxiv:2203.04276
+    status: approximate
+    symbol: Delta N_eff
+  - description: Primary text quotes about 0.28 at 2 C.L. from Planck+BAO.
+    fiducial_value: 0.28 at 2 C.L.
+    name: Planck+BAO bound
+    role: core
+    source_reference_ids:
+    - arxiv:2203.04276
+    status: inferred
+    symbol: Delta N_eff
+  linked_constraints:
+  - con_neff_dark_radiation
+  linked_routes:
+  - route_dirac_scotogenic_fimp
+  name: Freeze-in dark-radiation contribution
+  notes: null
+  observability: low
+  predicted_effect: A similar freeze-in process produces a very small dark-radiation component, to be
+    compared with BBN and Planck/BAO N_eff bounds.
+  redshift_range: BBN through recombination
+  relevance: medium
+  scale_range: CMB angular scales
+  source_reference_ids:
+  - arxiv:2203.04276
+  subchannel: Delta N_eff
+- caveats:
+  - Cross sections are benchmark estimates and depend on v_B-L.
+  channel: direct_detection
+  effect_direction: null_signal
+  environments:
+  - electron-recoil direct detection experiments
+  id: obs_dirac_fimp_electron_scattering
+  key_quantities:
+  - description: Primary benchmark estimate for m_DM < m_e.
+    fiducial_value: about 4e-71 (v_DM/1e-3)^2
+    name: Higgs-mediated electron cross section
+    role: core
+    source_reference_ids:
+    - arxiv:2203.04276
+    status: approximate
+    symbol: sigma_h_e
+    unit: cm^2
+  - description: Primary benchmark estimate for m_DM < m_e.
+    fiducial_value: about 6.5e-66 (m_DM/10 eV)^2 (v_DM/1e-3)^2 (967 TeV/v_B-L)^4
+    name: Zprime-mediated electron cross section
+    role: core
+    source_reference_ids:
+    - arxiv:2203.04276
+    status: approximate
+    symbol: sigma_Zp_e
+    unit: cm^2
+  linked_constraints:
+  - con_electron_direct_detection_negligible
+  linked_routes:
+  - route_dirac_scotogenic_fimp
+  name: Electron-scattering direct-detection null signal
+  notes: null
+  observability: low
+  predicted_effect: Higgs- and Zprime-mediated nonrelativistic electron-scattering cross sections are
+    far below current electron-recoil sensitivity for the freeze-in parameter choices.
+  redshift_range: today
+  relevance: medium
+  scale_range: atomic electron recoil energies
+  source_reference_ids:
+  - arxiv:2203.04276
+  subchannel: sub-GeV electron scattering
+constraints:
+- allowed_regions:
+  - Freeze-in benchmarks use large enough v_B-L to reproduce the relic abundance while satisfying direct
+    searches.
+  applies: parameter_dependent
+  assumptions:
+  - can_be_relaxed: partial
+    description: The quoted LEP bound assumes a Zprime coupled to conventional SM B-L charges.
+    id: standard-bl-charges
+    impact_if_violated: Different charges or kinetic mixing alter the search limit.
+    notes: null
+    scope: collider bound
+    source_reference_ids:
+    - arxiv:2203.04276
+    status: assumed
+  benchmark_implications:
+  - The gauge-scattering rate scales with v_B-L in the effective-operator limit.
+  caveats:
+  - No collider recast was performed.
+  constrained_parameters:
+  - v_B-L
+  - m_Zprime
+  - g_B-L
+  - T_RH
+  - m_DM
+  constraint_type: collider
+  data_release: LEP and LHC bounds quoted in primary text
+  excluded_regions:
+  - LEP requires v_B-L = m_Zprime/g_B-L > 6.9 TeV for conventional B-L charges.
+  - LHC searches exclude Zprime masses below about 0.2-3.5 TeV depending on assumptions.
+  id: con_bminusl_relic_and_collider
+  likelihood_available: 'no'
+  likelihood_reference: null
+  name: B-L scale and Zprime consistency
+  notes: null
+  observable_channel: collider_and_relic_density
+  recasting_needed: 'yes'
+  robustness: medium
+  source_reference_ids:
+  - arxiv:2203.04276
+- allowed_regions:
+  - Gauge-scattering freeze-in is used as the colder/viable production route in the primary model.
+  applies: 'yes'
+  assumptions:
+  - can_be_relaxed: 'yes'
+    description: The 5.3 keV WDM lower limit is used as a benchmark, while the actual FIMP spectrum needs
+      its own transfer function.
+    id: thermal-equivalent-lya
+    impact_if_violated: The mass floor can shift for nonthermal spectra.
+    notes: null
+    scope: Ly-alpha recast
+    source_reference_ids:
+    - arxiv:2203.04276
+    - arxiv:1702.01764
+    status: assumed
+  benchmark_implications:
+  - The production channel is not an implementation detail; it determines whether the keV FIMP survives
+    small-scale-structure bounds.
+  caveats:
+  - IGM thermal-history uncertainties are not propagated.
+  constrained_parameters:
+  - m_DM
+  - FIMP momentum distribution
+  - production channel
+  constraint_type: astrophysical
+  data_release: XQ-100 plus HIRES/MIKE Ly-alpha forest samples in related analysis
+  excluded_regions:
+  - The primary text states that production from out-of-equilibrium Higgs decays is not compatible with
+    Lyman-alpha bounds on the DM mass.
+  - Thermal-equivalent WDM masses below 5.3 keV are excluded at 2 C.L. in the related combined Ly-alpha
+    analysis.
+  id: con_lya_dirac_fimp
+  likelihood_available: 'no'
+  likelihood_reference: null
+  name: Lyman-alpha exclusion of too-warm Higgs-decay FIMP
+  notes: null
+  observable_channel: lyman_alpha
+  recasting_needed: 'yes'
+  robustness: medium
+  source_reference_ids:
+  - arxiv:2203.04276
+  - arxiv:1702.01764
+- allowed_regions:
+  - The primary model predicts a minuscule dark-radiation contribution in the discussed freeze-in process.
+  applies: 'no'
+  assumptions:
+  - can_be_relaxed: 'yes'
+    description: Comparison assumes the standard N_eff baseline and no other dark-radiation sectors.
+    id: standard-neutrino-decoupling
+    impact_if_violated: Additional light sectors could dominate Delta N_eff.
+    notes: null
+    scope: CMB comparison
+    source_reference_ids:
+    - arxiv:2203.04276
+    status: assumed
+  benchmark_implications:
+  - Dark radiation is not expected to be the leading probe of the benchmark.
+  caveats:
+  - The batch did not reconstruct the numerical Delta N_eff calculation.
+  constrained_parameters:
+  - Delta N_eff
+  - T_RH
+  - v_B-L
+  constraint_type: cosmological
+  data_release: Planck+BAO N_eff summary quoted in primary paper
+  excluded_regions:
+  - Current Planck+BAO sensitivity would exclude large extra radiation, quoted as Delta N_eff about 0.28
+    at 2 C.L. in the primary text.
+  id: con_neff_dark_radiation
+  likelihood_available: 'no'
+  likelihood_reference: null
+  name: Small Delta N_eff from freeze-in radiation
+  notes: null
+  observable_channel: cmb
+  recasting_needed: 'no'
+  robustness: medium
+  source_reference_ids:
+  - arxiv:2203.04276
+- allowed_regions:
+  - Benchmark Higgs- and Zprime-mediated cross sections around 1e-66 to 1e-71 cm^2 remain untested.
+  applies: 'no'
+  assumptions:
+  - can_be_relaxed: 'yes'
+    description: The quoted cross sections choose v_B-L to reproduce the observed relic density.
+    id: benchmark-vbl
+    impact_if_violated: Changing v_B-L rescales the Zprime-mediated rate.
+    notes: null
+    scope: direct detection estimate
+    source_reference_ids:
+    - arxiv:2203.04276
+    status: assumed
+  benchmark_implications:
+  - Direct detection via electrons is not a viable near-term search strategy for the benchmark.
+  caveats:
+  - Only leading nonrelativistic electron-scattering estimates were used.
+  constrained_parameters:
+  - sigma_e
+  - v_B-L
+  - m_DM
+  constraint_type: direct_detection
+  data_release: null
+  excluded_regions:
+  - Current electron-recoil limits around 1e-40 cm^2 are far above the primary benchmark cross sections.
+  id: con_electron_direct_detection_negligible
+  likelihood_available: 'no'
+  likelihood_reference: null
+  name: Electron recoil direct-detection reach
+  notes: null
+  observable_channel: electron_scattering
+  recasting_needed: 'no'
+  robustness: high
+  source_reference_ids:
+  - arxiv:2203.04276
+theory_to_observable_routing:
+  routes:
+  - agent_notes: The enrichment emphasizes that production-channel choice is central to observability.
+    caveats:
+    - Low reheating assumptions are part of the model viability.
+    constraint_ids:
+    - con_bminusl_relic_and_collider
+    - con_lya_dirac_fimp
+    - con_neff_dark_radiation
+    - con_electron_direct_detection_negligible
+    derived_quantities:
+    - freeze-in yield
+    - momentum distribution
+    - Delta N_eff
+    - electron scattering cross sections
+    - thermal-equivalent WDM scale
+    description: Connect the radiative Dirac scotogenic mass model to gauge freeze-in abundance, warmness,
+      Delta N_eff, and weak direct-detection prospects.
+    forward_model_chain:
+    - inputs:
+      - loop masses
+      - B-L charges
+      - v_B-L
+      notes: null
+      outputs:
+      - m_DM
+      - m_Zprime
+      step_id: s1
+      step_type: analytic_formula
+      tool_or_code: null
+      validity: Radiative mass and gauge-sector setup.
+    - inputs:
+      - T_RH
+      - v_B-L
+      - m_DM
+      - g_*
+      notes: null
+      outputs:
+      - FIMP relic density
+      - momentum distribution
+      step_id: s2
+      step_type: boltzmann_solver
+      tool_or_code: null
+      validity: Needed to reproduce gauge-scattering freeze-in.
+    - inputs:
+      - momentum distribution
+      notes: null
+      outputs:
+      - matter-power suppression
+      - Ly-alpha recast variable
+      step_id: s3
+      step_type: transfer_function
+      tool_or_code: null
+      validity: Higgs-decay route is too warm; gauge route still needs recast.
+    - inputs:
+      - m_DM
+      - v_B-L
+      - v_DM
+      notes: null
+      outputs:
+      - electron-scattering cross sections
+      - Delta N_eff estimate
+      step_id: s4
+      step_type: analytic_formula
+      tool_or_code: null
+      validity: Primary paper gives leading estimates.
+    id: route_dirac_scotogenic_fimp
+    input_parameters:
+    - m_DM
+    - v_B-L
+    - T_RH
+    - m_Zprime
+    - g_B-L
+    - loop masses
+    - initial abundance
+    likelihoods:
+    - Ly-alpha likelihood not run
+    - collider likelihood not run
+    - direct-detection estimate analytic only
+    observable_ids:
+    - obs_dirac_fimp_relic_gauge_freezein
+    - obs_dirac_fimp_lya_cutoff
+    - obs_dirac_fimp_dark_radiation
+    - obs_dirac_fimp_electron_scattering
+    required_code_resources:
+    - freeze-in Boltzmann integrator
+    - nonthermal transfer-function solver
+    - collider Zprime recast tools if updating bounds
+    route_status: planned
+    source_model_features:
+    - Dirac scotogenic neutrino masses
+    - radiative keV FIMP mass
+    - gauged U(1) B-L
+    - low reheating hierarchy
+    validation_tests:
+    - Recover Higgs-decay warmness exclusion statement
+    - Recover electron cross sections far below 1e-40 cm^2

@@ -1,0 +1,923 @@
+_source:
+  shard: arXiv_src_2202_029_wds.tar
+  paper_id: '2202_04453'
+  source_member: 2202_04453.json
+  enriched: true
+  enrichment_schema_version: dm_model_ocr_enrichment_smoke_v0
+schema_version: model_only_v0
+model_id: 2202_04453_hidden_sector_dark_fermion_hubble_tension_v1
+identity:
+  name: Out-of-equilibrium U(1)_X hidden-sector dark-fermion model
+  family: hidden_sector_dark_matter
+  aliases:
+  - Stueckelberg U(1)_X hidden sector with dark fermion
+  short_description: A U(1)_X hidden-sector model in which feeble kinetic mixing populates a colder dark
+    sector containing a stable dark fermion D, dark photon, massive scalar S, and massless pseudoscalar;
+    the dark-fermion relic density is computed with two-temperature Boltzmann evolution.
+  historical_origin_or_motivation: Introduced to keep BBN predictions intact while adding late dark radiation
+    near recombination to reduce the Hubble tension.
+  status: speculative
+  model_kind: complete_theory
+theory:
+  theory_level: simplified_model
+  parent_frameworks:
+  - U(1)_X hidden sector
+  - Stueckelberg dark photon
+  - two-temperature hidden-sector cosmology
+  lagrangian_available: 'yes'
+  renormalizable: 'yes'
+  embedded_in_larger_framework: 'yes'
+  notes: The paper writes the SM plus hidden-sector Lagrangian, sets the Stueckelberg mass-mixing parameter
+    M2 to zero for simplicity, and studies the scalar potential for S and the pseudoscalar.
+particle_content:
+  dark_matter_candidate:
+    name: dark fermion D
+    spin: 1/2
+    statistics: fermion
+    elementary_or_composite: elementary
+    number_of_components: single_component
+  additional_dark_sector_particles:
+  - dark photon A_prime
+  - massive scalar S
+  - massless pseudoscalar
+  mediators:
+  - U(1)_X dark photon A_prime
+  - massive scalar S
+  - massless pseudoscalar
+  dark_radiation_species:
+  - massless pseudoscalar produced by late scalar decay
+  standard_model_extension: substantial
+symmetries:
+  stabilizing_mechanism: The paper treats the dark fermion D as the dark matter particle; the extracted
+    text supports U(1)_X charge assignments but does not spell out an additional stabilizing symmetry.
+  symmetries:
+  - name: U(1)_X
+    type: gauge
+    exact_or_approximate: exact
+    breaking: Gauge-boson mass generated through the Stueckelberg mechanism.
+    breaking_scale: null
+  topological_defects_possible: unknown
+interactions:
+  portals:
+  - vector
+  standard_model_targets:
+  - SM fermions through hypercharge-U(1)_X kinetic mixing
+  - hypercharge gauge boson
+  dark_sector_couplings:
+  - g_X Q_X D gamma^mu D C_mu
+  - y_phi D gamma5 D pseudoscalar
+  - y_S D D S
+  mediator_types:
+  - dark photon A_prime
+  - scalar S
+  - pseudoscalar
+  interaction_operators:
+  - kinetic mixing epsilon C_{mu nu} B^{mu nu}
+  - Stueckelberg mass term for C_mu and B_mu
+  - dark fermion couplings to C_mu, S, and pseudoscalar
+  annihilation_channels:
+  - hidden-sector D anti-D reactions entering the coupled Boltzmann equations
+  - SM fermion annihilation into dark-sector states through kinetic mixing
+  decay_channels:
+  - dark photon decays before BBN in viable benchmarks
+  - massive scalar S decays out of equilibrium into the massless pseudoscalar near recombination
+  tree_or_loop_level: tree
+parameters:
+  core:
+  - name: dark fermion mass
+    symbol: m_D
+    description: Mass of the dark fermion D that constitutes the dark matter.
+    range: benchmark-dependent values chosen in the paper
+    unit: GeV
+    role: core
+    status: assumed
+    source_reference_ids:
+    - '2202.04453'
+    notes: null
+  - name: dark photon mass
+    symbol: m_A_prime
+    description: Mass of the U(1)_X gauge boson after Stueckelberg mass generation.
+    range: benchmark-dependent values subject to dark photon requirements
+    unit: GeV
+    role: core
+    status: assumed
+    source_reference_ids:
+    - '2202.04453'
+    notes: null
+  - name: scalar mass
+    symbol: m_S
+    description: Mass of the massive dark scalar S that later decays to the massless pseudoscalar.
+    range: benchmark-dependent
+    unit: GeV
+    role: core
+    status: assumed
+    source_reference_ids:
+    - '2202.04453'
+    notes: null
+  - name: kinetic mixing
+    symbol: epsilon
+    description: Hypercharge-U(1)_X kinetic mixing that feebly couples the visible and hidden sectors.
+    range: small enough that the sectors do not thermalize
+    role: core
+    status: assumed
+    source_reference_ids:
+    - '2202.04453'
+    notes: null
+  - name: U(1)_X dark coupling
+    symbol: g_X Q_X
+    description: Dark fermion coupling to the U(1)_X gauge field.
+    role: core
+    status: established
+    source_reference_ids:
+    - '2202.04453'
+    notes: null
+  - name: scalar and pseudoscalar Yukawa couplings
+    symbol: y_S, y_phi
+    description: Couplings of D to the massive scalar S and the pseudoscalar.
+    range: chosen in benchmarks to realize relic density and late decay history
+    role: core
+    status: assumed
+    source_reference_ids:
+    - '2202.04453'
+    notes: null
+  - name: visible-to-hidden temperature ratio
+    symbol: eta = T/T_h
+    description: Two-temperature cosmological evolution variable.
+    range: evolved by coupled equations rather than fixed
+    role: cosmological
+    status: established
+    source_reference_ids:
+    - '2202.04453'
+    notes: null
+production:
+  mechanisms:
+  - freeze-in-like population of a colder hidden sector through feeble kinetic mixing
+  - dark-sector freeze-out of D after hidden-sector reactions become inefficient
+  thermal_equilibrium_with_standard_model: 'no'
+  thermal_equilibrium_with_hidden_sector: partial
+  abundance_set_by:
+  - two-temperature coupled Boltzmann equations
+  - kinetic mixing between the sectors
+  - dark-sector annihilation and conversion reactions involving D, A_prime, S, and pseudoscalar
+  depends_on_reheating_temperature: unknown
+  can_produce_all_dark_matter: parameter_dependent
+  nonthermal_momentum_distribution: unknown
+  notes: The paper states that the number densities never reach the visible-sector equilibrium distribution;
+    benchmarks include full relic density for several points and a subcomponent point.
+relic_density:
+  full_or_subcomponent: either
+  target_fraction: null
+  calculation_type: mixed
+  key_dependencies:
+  - epsilon
+  - m_D
+  - m_A_prime
+  - m_S
+  - dark Yukawa couplings
+  - temperature ratio T/T_h
+  - late scalar decay history
+  requires_entropy_dilution: unknown
+  overclosure_risk: parameter_dependent
+  underproduction_risk: parameter_dependent
+  tuning_assessment: unknown
+cosmological_history:
+  standard_history_assumed: false
+  nonstandard_features:
+  - initially empty hidden sector
+  - visible and hidden sectors at different temperatures
+  - late out-of-equilibrium scalar decay to dark radiation near recombination
+  dark_sector_temperature:
+    name: hidden-sector temperature
+    symbol: T_h
+    description: Temperature of the hidden-sector bath in the two-temperature Boltzmann treatment.
+    range: null
+    unit: GeV
+    role: cosmological
+    status: established
+    source_reference_ids:
+    - '2202.04453'
+    notes: null
+  delta_neff:
+    name: extra effective relativistic degrees of freedom
+    symbol: Delta N_eff
+    description: Late scalar decay contribution designed to raise N_eff near recombination while keeping
+      BBN nearly unchanged.
+    range: minimal at BBN; increased near recombination
+    unit: null
+    role: derived
+    status: inferred
+    source_reference_ids:
+    - '2202.04453'
+    notes: null
+  kinetic_decoupling:
+    name: kinetic decoupling temperature
+    symbol: T_kd
+    description: Kinetic decoupling is computed from scattering rates equaling the Hubble rate; the text
+      notes a lower limit above about 100 eV from Lyman-alpha considerations.
+    range: T_kd > 100 eV in viable discussion
+    unit: eV
+    role: derived
+    status: assumed
+    source_reference_ids:
+    - '2202.04453'
+    notes: null
+  chemical_decoupling:
+    name: dark-sector chemical decoupling temperature
+    symbol: T_cd
+    description: Point where the numerical treatment switches after dark freeze-out of D.
+    range: null
+    unit: GeV
+    role: derived
+    status: established
+    source_reference_ids:
+    - '2202.04453'
+    notes: null
+  phase_transitions: []
+  topological_defects: []
+  isocurvature_perturbations: unknown
+  bbn_relevance: high
+  cmb_relevance: critical
+phase_space:
+  distribution_type: nonthermal
+  distribution_function_available: unknown
+  average_momentum_relative_to_thermal: null
+  free_streaming_length: null
+  velocity_dispersion_today: null
+  phase_space_bounds: []
+  notes: No explicit dark-fermion phase-space distribution is extracted; the paper tracks number densities
+    with two temperatures.
+structure_formation:
+  linear:
+    behaves_like_cdm: unknown
+    transfer_function_shape: unknown
+    small_scale_power_effect: unknown
+    half_mode_mass: null
+  nonlinear:
+    halo_mass_function_effect: unknown
+    subhalo_mass_function_effect: unknown
+    simulation_calibrated: unknown
+validity_domain:
+- id: valid_empty_hidden_initial_condition
+  applies_to: production
+  condition: Hidden sector starts with no initial population and is populated only through feeble visible-hidden
+    interactions.
+  valid_range: null
+  status: assumed
+  extrapolation_risk: medium
+  caveats: []
+  source_reference_ids:
+  - '2202.04453'
+  notes: null
+- id: valid_two_temperature_boltzmann
+  applies_to: relic_density
+  condition: Visible and hidden sectors remain at different temperatures and require coupled two-temperature
+    Boltzmann equations.
+  valid_range: null
+  status: established
+  extrapolation_risk: medium
+  caveats: []
+  source_reference_ids:
+  - '2202.04453'
+  notes: null
+- id: valid_late_scalar_decay
+  applies_to: cosmological_history
+  condition: The massive scalar S decays out of equilibrium to the massless pseudoscalar close to recombination.
+  valid_range: null
+  status: assumed
+  extrapolation_risk: high
+  caveats:
+  - Timing of the scalar decay is central to the Hubble-tension motivation.
+  source_reference_ids:
+  - '2202.04453'
+  notes: null
+assumptions:
+  global:
+  - id: assume_no_initial_hidden_population
+    description: The hidden sector is assumed to be initially unpopulated.
+    scope: cosmological_history
+    status: assumed
+    impact_if_violated: A pre-existing hidden bath would alter the two-temperature relic calculation.
+    can_be_relaxed: unknown
+    source_reference_ids:
+    - '2202.04453'
+    notes: null
+  - id: assume_m2_zero
+    description: The Stueckelberg mass-mixing parameter M2 is set to zero for simplicity.
+    scope: theory
+    status: assumed
+    impact_if_violated: A nonzero M2 would modify mixing and couplings to the visible sector.
+    can_be_relaxed: 'yes'
+    source_reference_ids:
+    - '2202.04453'
+    notes: null
+  - id: assume_bbn_safe_dark_radiation
+    description: The dark radiation contribution is assumed negligible at BBN but relevant near recombination.
+    scope: cosmological_history
+    status: assumed
+    impact_if_violated: If violated, the model would not realize the advertised Hubble-tension history.
+    can_be_relaxed: unknown
+    source_reference_ids:
+    - '2202.04453'
+    notes: null
+associated_code:
+  has_associated_code: unknown
+  code_summary: The paper reports numerical solution of coupled Boltzmann equations but the extracted
+    text does not identify public model code.
+  primary_code_role: null
+provenance:
+  model_id: 2202_04453_hidden_sector_dark_fermion_hubble_tension_v1
+  model_name: Out-of-equilibrium U(1)_X hidden-sector dark-fermion model
+  model_family: hidden_sector_dark_matter
+  entry_version: 0.1.0
+  status: machine_extracted
+  created_at: '2026-05-31'
+  last_updated: '2026-05-31'
+  sources:
+    primary_papers:
+    - reference_id: '2202.04453'
+      title: Analyzing the Hubble tension through hidden sector dynamics in the early universe
+      year: 2022
+      arxiv_id: '2202.04453'
+      doi: null
+      url: null
+      role: original_model
+      notes: Assigned full text from target_text.sqlite.
+      authors:
+      - Amin Aboubrahim
+      - Michael Klasen
+      - Pran Nath
+    - arxiv_id: '2202.04453'
+      authors:
+      - Amin Aboubrahim
+      - Michael Klasen
+      - Pran Nath
+      doi: 10.1088/1475-7516/2022/04/042
+      notes: Primary full text read from the local production text cache.
+      reference_id: src_2202_04453_primary
+      role: original_model
+      title: Analyzing the Hubble tension through hidden sector dynamics in the early universe
+      url: https://arxiv.org/abs/2202.04453
+      year: 2022
+    constraint_papers:
+    - arxiv_id: '2205.07316'
+      authors:
+      - Amin Aboubrahim
+      - Michael Klasen
+      - Pran Nath
+      doi: null
+      notes: Related full text resolved locally; used for hidden-sector thermal evolution and dark-radiation
+        context.
+      reference_id: ads_2202_04453_01
+      role: extension
+      title: 'A tower of hidden sectors: a general treatment and physics implications'
+      url: https://arxiv.org/abs/2205.07316
+      year: 2022
+    - arxiv_id: '2403.09558'
+      authors:
+      - Wan-Zhe Feng
+      - Jinzheng Li
+      - Pran Nath
+      doi: null
+      notes: Related full text resolved locally; used only as context for two-temperature hidden-sector
+        evolution.
+      reference_id: ads_2202_04453_07
+      role: extension
+      title: Cosmologically Consistent Analysis of Gravitational Waves from hidden sectors
+      url: https://arxiv.org/abs/2403.09558
+      year: 2024
+    - arxiv_id: '2402.04123'
+      authors:
+      - Jinzheng Li
+      - Pran Nath
+      doi: null
+      notes: Related full text resolved locally; used for hot/cold hidden-sector sensitivity of relic
+        density and N_eff.
+      reference_id: ads_2202_04453_10
+      role: extension
+      title: Hot vs cold hidden sectors and their effects on thermal relics
+      url: https://arxiv.org/abs/2402.04123
+      year: 2024
+    external_databases: []
+    review_papers: []
+  extraction:
+    method: llm_assisted
+    extracted_by: Codex dark-matter extraction worker batch-0009
+    extractor_name: gpt-5.5-codex
+    extraction_date: '2026-05-31'
+    confidence: high
+    source_chunks_or_sections:
+    - reference_id: '2202.04453'
+      section: abstract
+      page: null
+      quote_or_summary: Paper proposes an out-of-equilibrium hidden sector with dark fermion DM to help
+        alleviate the Hubble tension.
+    - reference_id: '2202.04453'
+      section: hidden sector model
+      page: null
+      quote_or_summary: Gives U(1)_X Stueckelberg Lagrangian with dark fermion D, dark photon, scalar
+        S, and pseudoscalar.
+    - reference_id: '2202.04453'
+      section: Boltzmann analysis
+      page: null
+      quote_or_summary: Solves coupled Boltzmann equations with visible and hidden temperatures to compute
+        the relic density.
+    unresolved_items:
+    - Exact benchmark table values are not fully recoverable from the extracted text.
+    - No public likelihood or code was identified for the specific late-decay N_eff history.
+  evidence:
+    particle_content:
+    - reference_id: '2202.04453'
+      note: The paper says the dark sector contains a dark fermion acting as dark matter, a dark photon,
+        a massive scalar, and a massless pseudoscalar.
+      confidence: high
+      section: abstract and model description
+      page: null
+    symmetries:
+    - reference_id: '2202.04453'
+      note: The model is described as a U(1)_X extension of the Standard Model with Stueckelberg mass
+        generation for the new gauge field.
+      confidence: high
+      section: hidden sector model
+      page: null
+    interactions:
+    - reference_id: '2202.04453'
+      note: The Lagrangian includes kinetic mixing between hypercharge and U(1)_X plus D couplings to
+        the dark gauge field and scalar/pseudoscalar fields.
+      confidence: high
+      section: hidden sector model
+      page: null
+    production_mechanism:
+    - reference_id: '2202.04453'
+      note: The authors assume no initial dark-sector population; feeble kinetic mixing populates the
+        hidden sector and coupled two-temperature Boltzmann equations determine the dark-fermion relic
+        density.
+      confidence: high
+      section: abstract and numerical analysis
+      page: null
+    cosmological_history:
+    - reference_id: '2202.04453'
+      note: The visible and hidden sectors remain at different temperatures, BBN receives minimal extra
+        radiation, and late scalar decay to the massless pseudoscalar increases N_eff near recombination.
+      confidence: high
+      section: cosmological evolution
+      page: null
+    parameter_ranges:
+    - reference_id: '2202.04453'
+      note: Benchmarks are selected to satisfy the dark matter relic density and dark photon mass requirements;
+        examples have relic density 0.12 or 0.07 depending on kinetic mixing.
+      confidence: medium
+      section: numerical analysis
+      page: null
+    validity_domain:
+    - reference_id: '2202.04453'
+      note: The analysis assumes M2=0, no initial hidden population, two-temperature evolution, and late
+        kinetic decoupling consistent with the dark-sector history.
+      confidence: medium
+      section: model assumptions
+      page: null
+    constraints:
+    - confidence: high
+      note: Primary text identifies BBN/CMB N_eff, relic density, and T_kd > 100 eV Lyman-alpha considerations
+        as benchmark constraints.
+      page: null
+      reference_id: src_2202_04453_primary
+      section: Introduction and kinetic-decoupling sections
+    observables:
+    - confidence: high
+      note: Primary text states that an initially empty hidden sector remains at a different temperature,
+        computes the dark-fermion relic density, and raises N_eff through late scalar decay.
+      page: null
+      reference_id: src_2202_04453_primary
+      section: Abstract and model/cosmology sections
+    - confidence: medium
+      note: Related local text develops multi-temperature hidden-sector Boltzmann equations and discusses
+        dark radiation probes.
+      page: null
+      reference_id: ads_2202_04453_01
+      section: Abstract and thermal-evolution sections
+    - confidence: medium
+      note: Related local text notes strong relic-density and N_eff dependence on hot versus cold hidden-sector
+        initial conditions.
+      page: null
+      reference_id: ads_2202_04453_10
+      section: Abstract
+    routes:
+    - confidence: high
+      note: Route follows the coupled Boltzmann and kinetic-decoupling calculations described in the primary
+        text.
+      page: null
+      reference_id: src_2202_04453_primary
+      section: Boltzmann and kinetic-decoupling sections
+  review:
+    human_reviewed: false
+    reviewed_by: null
+    review_date: null
+    expert_reviewed: false
+    expert_reviewer: null
+    expert_review_date: null
+    reviewer_notes: []
+    scientific_confidence: medium
+    implementation_confidence: medium
+robustness:
+  overall: medium
+  theory_robustness: medium
+  observational_robustness: medium
+  computational_robustness: medium
+  constraint_robustness: unknown
+  dominant_uncertainties:
+  - Benchmark-dependent late scalar decay history.
+  - Exact benchmark values are partially obscured in the extracted text.
+  - Stability mechanism for D is implicit rather than separately spelled out.
+  validation_status: unvalidated
+  notes: Accepted because the paper explicitly proposes the particle model and computes the dark-fermion
+    relic density in its cosmological history.
+agent_failure_modes:
+  warnings:
+  - id: not_standard_thermal_freezeout
+    severity: high
+    category: assumption_mismatch
+    warning: Do not treat the model as ordinary visible-sector thermal freeze-out; the two sectors have
+      different temperatures and the hidden sector starts empty.
+    mitigation: Use the two-temperature Boltzmann assumptions when reasoning from this entry.
+    source_reference_ids:
+    - '2202.04453'
+  - id: late_decay_drives_hubble_tension
+    severity: medium
+    category: extrapolation
+    warning: The Hubble-tension effect depends on late S decay to the massless pseudoscalar.
+    mitigation: Preserve the late-decay condition and BBN/CMB timing caveat.
+    source_reference_ids:
+    - '2202.04453'
+observables:
+- caveats:
+  - The same dark-radiation history must avoid excessive N_eff during BBN.
+  - The primary paper motivates the target range but does not provide a public likelihood.
+  channel: cmb
+  effect_direction: enhancement
+  environments:
+  - early universe
+  - CMB recombination
+  id: obs_delta_neff_late_dark_radiation
+  key_quantities:
+  - description: Late dark-radiation contribution targeted by the Hubble-tension setup.
+    name: effective extra neutrino number
+    range: roughly 0.2-0.5 is quoted as a phenomenological Hubble-tension range
+    role: derived
+    source_reference_ids:
+    - src_2202_04453_primary
+    status: assumed
+    symbol: Delta N_eff
+  - description: Timing of S decay relative to BBN and recombination.
+    name: scalar decay epoch
+    role: cosmological
+    source_reference_ids:
+    - src_2202_04453_primary
+    status: assumed
+    symbol: tau_S or z_dec
+  linked_constraints:
+  - con_bbn_cmb_neff_timing
+  linked_routes:
+  - route_two_temperature_boltzmann_neff
+  name: Late dark-radiation contribution to N_eff
+  notes: null
+  observability: high
+  predicted_effect: The massive hidden scalar decays out of equilibrium to a massless pseudoscalar close
+    to recombination, raising N_eff while keeping the BBN contribution minimal.
+  redshift_range: BBN through recombination
+  relevance: critical
+  scale_range: null
+  source_reference_ids:
+  - src_2202_04453_primary
+  subchannel: extra relativistic energy density
+- caveats:
+  - Relic density changes substantially if the hidden sector is not initially cold or empty.
+  channel: cosmology
+  effect_direction: rate_change
+  environments:
+  - visible plasma
+  - hidden-sector heat bath
+  id: obs_two_temperature_relic_density
+  key_quantities:
+  - description: Hypercharge-U(1)_X kinetic mixing that populates the hidden sector.
+    name: kinetic mixing
+    role: core
+    source_reference_ids:
+    - src_2202_04453_primary
+    status: assumed
+    symbol: epsilon
+  - description: Temperature evolved separately from the visible bath.
+    name: hidden-sector temperature
+    role: cosmological
+    source_reference_ids:
+    - src_2202_04453_primary
+    - ads_2202_04453_01
+    - ads_2202_04453_10
+    status: established
+    symbol: T_h
+  - description: Mass of the dark fermion relic.
+    name: dark-fermion mass
+    role: core
+    source_reference_ids:
+    - src_2202_04453_primary
+    status: assumed
+    symbol: m_D
+    unit: GeV
+  linked_constraints:
+  - con_relic_density_benchmark
+  linked_routes:
+  - route_two_temperature_boltzmann_neff
+  name: Two-temperature hidden-sector relic density
+  notes: null
+  observability: medium
+  predicted_effect: Feeble kinetic mixing populates an initially empty colder hidden sector; coupled visible/hidden
+    Boltzmann equations determine the dark-fermion relic abundance.
+  redshift_range: radiation era through dark freeze-out
+  relevance: critical
+  scale_range: null
+  source_reference_ids:
+  - src_2202_04453_primary
+  - ads_2202_04453_01
+  - ads_2202_04453_10
+  subchannel: dark matter abundance
+- caveats:
+  - No transfer function or likelihood is supplied in the primary text.
+  channel: lyman_alpha
+  effect_direction: suppression
+  environments:
+  - linear matter power
+  - intergalactic medium
+  id: obs_late_kinetic_decoupling
+  key_quantities:
+  - description: Temperature where hidden-sector momentum exchange falls below Hubble expansion.
+    name: kinetic decoupling temperature
+    range:
+      inclusive_min: false
+      max: null
+      min: 100
+      notes: Lower limit quoted from Lyman-alpha considerations in the primary text.
+      unit: eV
+    role: derived
+    source_reference_ids:
+    - src_2202_04453_primary
+    status: assumed
+    symbol: T_kd
+    unit: eV
+  linked_constraints:
+  - con_lyman_alpha_tkd
+  linked_routes:
+  - route_kinetic_decoupling_small_scale
+  name: Late kinetic decoupling and small-scale-power risk
+  notes: null
+  observability: medium
+  predicted_effect: The model can kinetically decouple late; the primary text notes a Lyman-alpha lower
+    limit requiring T_kd above about 100 eV.
+  redshift_range: post-freeze-out to matter era
+  relevance: high
+  scale_range: small-scale matter power probed by Lyman-alpha forest
+  source_reference_ids:
+  - src_2202_04453_primary
+  subchannel: kinetic decoupling lower bound
+constraints:
+- allowed_regions:
+  - Minimal BBN contribution with an increased recombination-era N_eff is the target regime.
+  applies: parameter_dependent
+  assumptions:
+  - can_be_relaxed: unknown
+    description: The scalar S decays after BBN and close enough to recombination to affect CMB-era N_eff.
+    id: assume_late_scalar_decay
+    impact_if_violated: If S decays too early or too late the Hubble-tension motivation fails.
+    notes: null
+    scope: cosmological_history
+    source_reference_ids:
+    - src_2202_04453_primary
+    status: assumed
+  benchmark_implications:
+  - Phenomenological Hubble-tension ranges of Delta N_eff around 0.2-0.5 are discussed as motivation.
+  caveats:
+  - Requires a dedicated cosmological parameter fit for the benchmark.
+  constrained_parameters:
+  - Delta N_eff
+  - tau_S
+  - T_h/T
+  - m_S
+  constraint_type: cosmological
+  data_release: BBN light-element and CMB/BAO/H0 N_eff inferences
+  excluded_regions:
+  - Large dark-radiation abundance already at BBN would spoil the intended cosmological history.
+  id: con_bbn_cmb_neff_timing
+  likelihood_available: unknown
+  likelihood_reference: null
+  name: BBN and CMB N_eff timing
+  notes: null
+  observable_channel: N_eff
+  recasting_needed: 'yes'
+  robustness: medium
+  source_reference_ids:
+  - src_2202_04453_primary
+- allowed_regions:
+  - Several benchmarks can reproduce the relic abundance, with one benchmark acting as a subcomponent.
+  applies: parameter_dependent
+  assumptions:
+  - can_be_relaxed: partial
+    description: The hidden sector starts unpopulated and is filled by feeble kinetic mixing.
+    id: assume_initially_empty_hidden_sector
+    impact_if_violated: A primordial hidden bath would change yields and N_eff.
+    notes: null
+    scope: production
+    source_reference_ids:
+    - src_2202_04453_primary
+    - ads_2202_04453_01
+    - ads_2202_04453_10
+    status: assumed
+  benchmark_implications:
+  - Hidden-sector initial conditions and hot/cold temperature history materially change the relic prediction.
+  caveats:
+  - No reusable numerical scan or likelihood was identified.
+  constrained_parameters:
+  - m_D
+  - m_A_prime
+  - m_S
+  - epsilon
+  - T_h/T
+  - dark-sector couplings
+  constraint_type: cosmological
+  data_release: Planck-style Omega_DM target used in the primary numerical scan
+  excluded_regions:
+  - Benchmarks that overproduce or underproduce the dark fermion relative to the observed dark matter
+    abundance are not viable as full-DM points.
+  id: con_relic_density_benchmark
+  likelihood_available: 'no'
+  likelihood_reference: null
+  name: Observed dark-matter abundance from two-temperature Boltzmann evolution
+  notes: null
+  observable_channel: relic density
+  recasting_needed: partial
+  robustness: medium
+  source_reference_ids:
+  - src_2202_04453_primary
+  - ads_2202_04453_01
+  - ads_2202_04453_10
+- allowed_regions:
+  - Benchmarks with sufficiently early kinetic decoupling remain viable with respect to this qualitative
+    bound.
+  applies: parameter_dependent
+  assumptions: []
+  benchmark_implications:
+  - The primary paper quotes T_kd > 100 eV as a lower-limit criterion.
+  caveats:
+  - The primary text does not compute a model-specific transfer function.
+  constrained_parameters:
+  - T_kd
+  - dark-sector scattering couplings
+  constraint_type: cosmological
+  data_release: Lyman-alpha forest small-scale power constraints
+  excluded_regions:
+  - Parameter choices producing T_kd below about 100 eV are flagged as disfavored by Lyman-alpha considerations.
+  id: con_lyman_alpha_tkd
+  likelihood_available: unknown
+  likelihood_reference: null
+  name: Lyman-alpha lower bound on kinetic decoupling
+  notes: null
+  observable_channel: small-scale matter power
+  recasting_needed: 'yes'
+  robustness: low
+  source_reference_ids:
+  - src_2202_04453_primary
+theory_to_observable_routing:
+  routes:
+  - agent_notes: The primary paper performs the numerical evolution but no reusable code was identified.
+    caveats:
+    - Changing hidden-sector initial temperature can shift both relic density and N_eff.
+    constraint_ids:
+    - con_bbn_cmb_neff_timing
+    - con_relic_density_benchmark
+    derived_quantities:
+    - hidden-sector yields
+    - T_h/T
+    - Omega_D h^2
+    - Delta N_eff at BBN and recombination
+    description: Evolve visible and hidden temperatures, particle yields, and late scalar decay to compare
+      relic density and N_eff observables.
+    forward_model_chain:
+    - inputs:
+      - visible and hidden collision terms
+      - model masses and couplings
+      notes: null
+      outputs:
+      - Y_D
+      - Y_A_prime
+      - Y_S
+      - T_h/T
+      step_id: step_coupled_boltzmann
+      step_type: boltzmann_solver
+      tool_or_code: null
+      validity: Two-temperature treatment with feeble visible-hidden coupling.
+    - inputs:
+      - S abundance
+      - S lifetime
+      - pseudoscalar energy injection
+      notes: null
+      outputs:
+      - Delta N_eff(z)
+      step_id: step_late_decay
+      step_type: analytic_formula
+      tool_or_code: null
+      validity: Instantaneous-decay approximations should be checked against a full decay history.
+    - inputs:
+      - Omega_D h^2
+      - Delta N_eff(BBN)
+      - Delta N_eff(CMB)
+      notes: null
+      outputs:
+      - allowed benchmark status
+      step_id: step_cosmology_compare
+      step_type: likelihood
+      tool_or_code: null
+      validity: Requires external BBN/CMB likelihoods.
+    id: route_two_temperature_boltzmann_neff
+    input_parameters:
+    - m_D
+    - m_A_prime
+    - m_S
+    - epsilon
+    - g_X
+    - y_S
+    - y_phi
+    - initial T_h/T
+    likelihoods:
+    - BBN N_eff likelihood
+    - CMB N_eff likelihood
+    - Omega_DM target
+    observable_ids:
+    - obs_delta_neff_late_dark_radiation
+    - obs_two_temperature_relic_density
+    required_code_resources:
+    - custom coupled Boltzmann solver
+    route_status: planned
+    source_model_features:
+    - Initially empty U(1)_X hidden sector.
+    - Dark fermion, dark photon, scalar S, and massless pseudoscalar have a hidden temperature distinct
+      from the SM bath.
+    validation_tests:
+    - Recover negligible hidden abundance as epsilon -> 0.
+    - Check N_eff before and after S decay separately.
+  - agent_notes: Only the T_kd lower-limit statement is structured; no transfer-function result is invented.
+    caveats:
+    - A simple T_kd cut may not capture the full perturbation history.
+    constraint_ids:
+    - con_lyman_alpha_tkd
+    derived_quantities:
+    - momentum-transfer rate
+    - free-streaming/acoustic scale
+    - matter transfer function
+    description: Map the hidden-sector kinetic-decoupling temperature into a small-scale matter-power
+      constraint.
+    forward_model_chain:
+    - inputs:
+      - momentum-transfer rate
+      - H(T)
+      notes: null
+      outputs:
+      - T_kd
+      step_id: step_rate_hubble_crossing
+      step_type: analytic_formula
+      tool_or_code: null
+      validity: Instantaneous decoupling approximation.
+    - inputs:
+      - T_kd
+      - dark-sector perturbation model
+      notes: null
+      outputs:
+      - P(k) or transfer function
+      step_id: step_transfer_function
+      step_type: transfer_function
+      tool_or_code: Boltzmann solver
+      validity: Not supplied by the primary paper.
+    - inputs:
+      - transfer function
+      - Lyman-alpha likelihood
+      notes: null
+      outputs:
+      - allowed/excluded T_kd region
+      step_id: step_lyman_recast
+      step_type: recasting
+      tool_or_code: null
+      validity: Requires a dedicated Lyman-alpha recast.
+    id: route_kinetic_decoupling_small_scale
+    input_parameters:
+    - dark-sector scattering amplitudes
+    - T_kd
+    - m_D
+    - T_h/T
+    likelihoods:
+    - Lyman-alpha forest likelihood
+    observable_ids:
+    - obs_late_kinetic_decoupling
+    required_code_resources:
+    - linear Boltzmann solver
+    - Lyman-alpha likelihood
+    route_status: planned
+    source_model_features:
+    - Late kinetic decoupling of dark fermion/scalar species in the hidden sector.
+    validation_tests:
+    - Verify CDM-like limit for very early kinetic decoupling.

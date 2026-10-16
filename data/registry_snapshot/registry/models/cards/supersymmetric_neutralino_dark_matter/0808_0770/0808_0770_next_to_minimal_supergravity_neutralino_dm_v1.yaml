@@ -1,0 +1,814 @@
+_source:
+  shard: arXiv_src_0808_001_wds.tar
+  paper_id: 0808_0770
+  source_member: 0808_0770.json
+  enriched: true
+  enrichment_schema_version: dm_model_ocr_enrichment_smoke_v0
+schema_version: model_only_v0
+model_id: 0808_0770_next_to_minimal_supergravity_neutralino_dm_v1
+identity:
+  name: Next-to-minimal supergravity-motivated neutralino dark matter
+  family: supersymmetric_neutralino_dark_matter
+  aliases:
+  - NmSuGra
+  - next-to-minimal supergravity-motivated model
+  short_description: A constrained NMSSM setup with GUT-scale universal soft terms, a singlet sector,
+    and a lightest neutralino dark-matter candidate whose relic density is evaluated against WMAP.
+  historical_origin_or_motivation: The paper motivates NmSuGra as a minimal supergravity-like constrained
+    version of the NMSSM that reduces electroweak and dark-matter fine-tuning relative to mSuGra.
+  status: speculative
+  model_kind: complete_theory
+theory:
+  theory_level: uv_complete
+  parent_frameworks:
+  - NMSSM
+  - minimal supergravity-motivated supersymmetry
+  lagrangian_available: partial
+  renormalizable: 'yes'
+  eft_cutoff: null
+  embedded_in_larger_framework: 'yes'
+  notes: The paper gives the NMSSM superpotential W = W_Y + lambda S H_u H_d + kappa S^3/3, soft terms,
+    and GUT-scale universality assumptions.
+particle_content:
+  dark_matter_candidate:
+    name: lightest neutralino
+    spin: 1/2
+    statistics: fermion
+    elementary_or_composite: elementary
+    number_of_components: single_component
+  additional_dark_sector_particles:
+  - singlet chiral superfield S
+  - singlino neutralino component
+  mediators:
+  - neutral Higgs bosons
+  - sfermions
+  - electroweak gauge bosons
+  dark_radiation_species: []
+  excited_or_degenerate_states:
+  - heavier neutralinos
+  - charginos
+  - stops
+  - staus
+  long_lived_particles: []
+  unstable_parent_particles:
+  - gluinos
+  - squarks
+  - charginos
+  - heavier neutralinos
+  standard_model_extension: substantial
+symmetries:
+  stabilizing_mechanism: Stable neutralino dark matter is assumed in the relic-density analysis; the stabilizing
+    symmetry is not spelled out beyond the supersymmetric setup.
+  symmetries:
+  - name: global Z_3 symmetry of the NMSSM superpotential
+    type: discrete
+    exact_or_approximate: broken
+    breaking: Broken during the electroweak phase transition; small tadpoles are assumed phenomenologically
+      negligible.
+    breaking_scale: null
+  topological_defects_possible: 'yes'
+interactions:
+  portals:
+  - higgs
+  - vector
+  - other
+  standard_model_targets:
+  - quarks
+  - leptons
+  - Higgs bosons
+  - W bosons
+  - Z bosons
+  dark_sector_couplings:
+  - lambda S H_u H_d
+  - kappa S^3
+  mediator_types:
+  - Higgs bosons
+  - sfermions
+  - electroweak gauge bosons
+  interaction_operators:
+  - NMSSM superpotential and soft-breaking terms
+  scattering:
+    elastic: 'yes'
+    inelastic: unknown
+    momentum_dependence: unknown
+    velocity_dependence: unknown
+    spin_dependence: spin_independent
+  annihilation_channels:
+  - neutralino-stop coannihilation
+  - neutralino-stau coannihilation
+  - s-channel Higgs resonance annihilation
+  - focus-point annihilation
+  decay_channels: []
+  self_scattering_channels: []
+  cp_structure: unknown
+  flavor_structure: minimal flavor structure assumed through universal soft terms
+  tree_or_loop_level: both
+parameters:
+  core:
+  - name: universal scalar mass
+    symbol: M0
+    description: GUT-scale common scalar soft mass.
+    value: null
+    range: 0 < M0 < 4 TeV
+    unit: TeV
+    role: core
+    status: inferred
+    source_reference_ids: []
+    notes: null
+  - name: universal gaugino mass
+    symbol: M1/2
+    description: GUT-scale common gaugino soft mass.
+    value: null
+    range: 0 < M1/2 < 2 TeV
+    unit: TeV
+    role: core
+    status: inferred
+    source_reference_ids: []
+    notes: null
+  - name: universal trilinear coupling
+    symbol: A0
+    description: GUT-scale common trilinear coupling.
+    value: null
+    range: 0 < |A0| < 5 TeV
+    unit: TeV
+    role: core
+    status: inferred
+    source_reference_ids: []
+    notes: null
+  - name: Higgs vev ratio
+    symbol: tan beta
+    description: Ratio of up- and down-type Higgs vevs.
+    value: null
+    range: 1 < tan beta < 60
+    unit: null
+    role: core
+    status: inferred
+    source_reference_ids: []
+    notes: null
+  - name: singlet-Higgs coupling
+    symbol: lambda
+    description: NMSSM coupling in S H_u H_d.
+    value: null
+    range: 0.01 < lambda < 0.7
+    unit: null
+    role: core
+    status: inferred
+    source_reference_ids: []
+    notes: null
+  - name: sign of higgsino mass parameter
+    symbol: sign(mu)
+    description: Discrete sign of the effective higgsino mass parameter.
+    value: null
+    range: positive or negative; positive values are favored in the paper's likelihood discussion
+    unit: null
+    role: core
+    status: inferred
+    source_reference_ids: []
+    notes: null
+  nuisance: []
+  derived:
+  - name: neutralino relic density
+    symbol: Omega_chi h^2
+    description: Calculated with NMSSMTools/DarkSUSY and compared to the WMAP upper bound.
+    value: null
+    range: below or near 0.1143 +/- 0.0034 in allowed points
+    unit: null
+    role: derived
+    status: inferred
+    source_reference_ids: []
+    notes: null
+  - name: neutralino-proton spin-independent cross section
+    symbol: sigma_SI
+    description: Computed for detectability in CDMS, not recorded as a constraint in this model-only pass.
+    value: null
+    range: null
+    unit: null
+    role: derived
+    status: inferred
+    source_reference_ids: []
+    notes: null
+production:
+  mechanisms:
+  - thermal freeze-out
+  - coannihilation
+  - resonant annihilation
+  - focus-point annihilation
+  thermal_equilibrium_with_standard_model: 'yes'
+  thermal_equilibrium_with_hidden_sector: not_applicable
+  abundance_set_by:
+  - neutralino composition
+  - coannihilation partner masses
+  - Higgs resonance corridors
+  - GUT-scale soft parameters
+  depends_on_reheating_temperature: unknown
+  can_produce_all_dark_matter: parameter_dependent
+  nonthermal_momentum_distribution: 'no'
+  notes: WMAP is used as an upper bound in the likelihood, so underabundant neutralino points are not
+    excluded by the paper's procedure.
+relic_density:
+  full_or_subcomponent: either
+  target_fraction:
+    name: neutralino dark-matter abundance
+    symbol: Omega_chi h^2
+    description: WMAP abundance used as upper bound.
+    value: null
+    range: Omega h^2 <= about 0.1143 +/- 0.0034
+    unit: null
+    role: derived
+    status: inferred
+    source_reference_ids: []
+    notes: null
+  calculation_type: thermal
+  key_dependencies:
+  - bino/higgsino/singlino admixture
+  - stop or stau coannihilation
+  - Higgs resonance corridors
+  - focus-point region
+  requires_entropy_dilution: unknown
+  overclosure_risk: parameter_dependent
+  underproduction_risk: parameter_dependent
+  tuning_assessment: mild_tuning
+cosmological_history:
+  standard_history_assumed: true
+  nonstandard_features: []
+  dark_sector_temperature: null
+  delta_neff: null
+  kinetic_decoupling: null
+  chemical_decoupling: null
+  phase_transitions:
+  - electroweak phase transition breaks the NMSSM Z_3 symmetry
+  topological_defects:
+  - domain walls are noted and assumed removed or phenomenologically negligible
+  isocurvature_perturbations: unknown
+  bbn_relevance: low
+  cmb_relevance: high
+phase_space:
+  distribution_type: thermal
+  distribution_function_available: 'no'
+  f_of_p_or_q: not provided
+  average_momentum_relative_to_thermal: null
+  free_streaming_length: null
+  velocity_dispersion_today: null
+  phase_space_bounds: []
+  notes: Cold neutralino dark matter is assumed; no distribution function is derived in the paper.
+structure_formation:
+  linear:
+    behaves_like_cdm: 'yes'
+    transfer_function_shape: cdm_like
+    small_scale_power_effect: none
+  nonlinear:
+    halo_mass_function_effect: unknown
+    subhalo_mass_function_effect: unknown
+    simulation_calibrated: unknown
+validity_domain:
+- id: nmsugra_soft_universality
+  applies_to: model
+  condition: GUT-scale universal scalar masses, gaugino masses, and trilinear couplings are imposed.
+  valid_range: null
+  status: assumed
+  extrapolation_risk: medium
+  caveats: []
+  source_reference_ids: []
+  notes: null
+- id: nmsugra_scan_range
+  applies_to: parameter
+  condition: Continuous parameters are restricted to the scan ranges quoted in the paper.
+  valid_range: null
+  status: established
+  extrapolation_risk: medium
+  caveats: []
+  source_reference_ids: []
+  notes: null
+assumptions:
+  global:
+  - id: stable_neutralino_lsp
+    description: The lightest neutralino is treated as the dark-matter particle when computing relic density.
+    scope: production
+    status: assumed
+    impact_if_violated: Relic-density interpretation fails if the LSP is unstable.
+    can_be_relaxed: unknown
+    source_reference_ids: []
+    notes: null
+  - id: wmap_upper_bound
+    description: The WMAP dark-matter abundance is used as an upper bound rather than an equality condition.
+    scope: production
+    status: established
+    impact_if_violated: Underabundant neutralino points remain allowed as subcomponents.
+    can_be_relaxed: 'yes'
+    source_reference_ids: []
+    notes: null
+associated_code:
+  has_associated_code: partial
+  code_summary: The paper uses public NMSPEC, NMSSMTools 1.2.5, and DarkSUSY 4.1 components for spectra,
+    relic density, scattering, and low-energy quantities.
+  primary_code_role: relic_density_calculation
+  packages_or_modules:
+  - name: NMSPEC
+    resource_type: package
+    availability: public
+    relationship_to_model: related_but_not_model_specific
+    purpose:
+    - other
+    url: null
+    repository_url: null
+    documentation_url: null
+    archive_url: null
+    doi: null
+    license: null
+    languages: []
+    version: null
+    commit: null
+    last_checked: '2026-05-30'
+    maintained: unknown
+    dependencies: []
+    supported_parameters: []
+    supported_model_families: []
+  - name: NMSSMTools 1.2.5
+    resource_type: package
+    availability: public
+    relationship_to_model: related_but_not_model_specific
+    purpose:
+    - compute_relic_density
+    - compute_cross_sections
+    - other
+    url: null
+    repository_url: null
+    documentation_url: null
+    archive_url: null
+    doi: null
+    license: null
+    languages: []
+    version: null
+    commit: null
+    last_checked: '2026-05-30'
+    maintained: unknown
+    dependencies: []
+    supported_parameters: []
+    supported_model_families: []
+  - name: DarkSUSY 4.1
+    resource_type: package
+    availability: public
+    relationship_to_model: related_but_not_model_specific
+    purpose:
+    - compute_relic_density
+    - compute_cross_sections
+    url: null
+    repository_url: null
+    documentation_url: null
+    archive_url: null
+    doi: null
+    license: null
+    languages: []
+    version: null
+    commit: null
+    last_checked: '2026-05-30'
+    maintained: unknown
+    dependencies: []
+    supported_parameters: []
+    supported_model_families: []
+  expected_inputs:
+  - NmSuGra model parameters
+  expected_outputs:
+  - superpartner spectrum
+  - neutralino relic density
+  - neutralino-proton cross section
+  reproducibility:
+    reproducibility_level: partial
+    has_tests: unknown
+    has_examples: unknown
+    has_documentation: unknown
+    pinned_dependencies: partial
+    notes: Tool names and versions are stated for NMSSMTools and DarkSUSY; no full runtime environment
+      is provided.
+  validation:
+    validation_status: unknown
+    benchmark_references: []
+    validation_notes: The paper reports a large parameter scan but no standalone code validation artifact.
+  caveats: []
+provenance:
+  model_id: 0808_0770_next_to_minimal_supergravity_neutralino_dm_v1
+  model_name: Next-to-minimal supergravity-motivated neutralino dark matter
+  model_family: supersymmetric_neutralino_dark_matter
+  entry_version: 0.1.0
+  status: machine_extracted
+  created_at: '2026-05-30'
+  last_updated: '2026-05-30'
+  sources:
+    primary_papers:
+    - reference_id: 0808_0770
+      title: Discovery potential of the next-to-minimal supergravity-motivated model
+      authors:
+      - Csaba Balazs
+      - Daniel Carter
+      year: 2008
+      arxiv_id: '0808.0770'
+      doi: null
+      url: null
+      role: original_model
+      notes: Primary assigned paper text from the run SQLite database.
+    - arxiv_id: '0808.0770'
+      authors:
+      - Balazs, Csaba
+      - Carter, Daniel
+      doi: 10.1103/PhysRevD.78.055001
+      notes: Primary NmSuGra neutralino scan read locally.
+      reference_id: src_0808_primary
+      role: original_model
+      title: Discovery potential of the next-to-minimal supergravity-motivated model
+      url: https://arxiv.org/abs/0808.0770
+      year: 2008
+    constraint_papers:
+    - arxiv_id: '0802.3530'
+      authors:
+      - Ahmed, Z.
+      - Akerib, D. S.
+      - Arrenberg, S.
+      - Attisha, M. J.
+      - Bailey, C. N.
+      doi: 10.1103/PhysRevLett.102.011301
+      notes: Related CDMS WIMP-search paper read locally.
+      reference_id: src_0808_cdms2008
+      role: constraint
+      title: Search for Weakly Interacting Massive Particles with the First Five-Tower Data from the Cryogenic
+        Dark Matter Search at the Soudan Underground Laboratory
+      url: https://arxiv.org/abs/0802.3530
+      year: 2009
+    - arxiv_id: hep-ph/0702036
+      authors:
+      - Barger, Vernon
+      - Langacker, Paul
+      - Lewis, Ian
+      - McCaskey, Mat
+      - Shaughnessy, Gabe
+      doi: 10.1103/PhysRevD.75.115002
+      notes: Related singlet-extended neutralino recoil study read locally.
+      reference_id: src_0808_singlet_recoil
+      role: constraint
+      title: Recoil detection of the lightest neutralino in MSSM singlet extensions
+      url: https://arxiv.org/abs/hep-ph/0702036
+      year: 2007
+    external_databases:
+    - name: NASA ADS
+      note: Used for sanitized metadata discovery; structured claims are based on local source-text reads.
+      url: https://ui.adsabs.harvard.edu/
+    review_papers: []
+  extraction:
+    method: llm_assisted
+    extracted_by: codex_batch_0010
+    extractor_name: Codex
+    extraction_date: '2026-05-30'
+    confidence: medium
+    source_chunks_or_sections:
+    - reference_id: 0808_0770
+      section: model definition
+      page: null
+      quote_or_summary: Defines NmSuGra by imposing GUT-scale universality within the NMSSM.
+    - reference_id: 0808_0770
+      section: relic-density scan
+      page: null
+      quote_or_summary: Computes neutralino relic density and classifies WMAP-allowed annihilation branches.
+    unresolved_items:
+    - No modern LHC or direct-detection recast was attempted.
+  evidence:
+    particle_content:
+    - reference_id: 0808_0770
+      note: Lightest neutralino is used as the dark-matter candidate, with bino/higgsino/singlino admixtures
+        discussed.
+      confidence: high
+      section: scan discussion
+      page: null
+    symmetries:
+    - reference_id: 0808_0770
+      note: The superpotential has a global Z_3 symmetry; domain-wall issues are treated by small tadpoles/Z_2
+        R-symmetry assumptions.
+      confidence: medium
+      section: model definition
+      page: null
+    interactions:
+    - reference_id: 0808_0770
+      note: The paper gives NMSSM superpotential and soft terms and identifies neutralino annihilation/coannihilation
+        branches.
+      confidence: medium
+      section: model and scan
+      page: null
+    production_mechanism:
+    - reference_id: 0808_0770
+      note: WMAP-allowed regions arise from coannihilation, Higgs resonance corridors, and a focus-point-like
+        branch.
+      confidence: high
+      section: relic-density scan
+      page: null
+    parameter_ranges:
+    - reference_id: 0808_0770
+      note: The scan ranges include 0<M0<4 TeV, 0<M1/2<2 TeV, 0<|A0|<5 TeV, 1<tan beta<60, and 0.01<lambda<0.7.
+      confidence: high
+      section: parameter ranges
+      page: null
+    validity_domain:
+    - reference_id: 0808_0770
+      note: The model relies on GUT-scale universality and the WMAP abundance is used as an upper bound.
+      confidence: medium
+      section: likelihood setup
+      page: null
+    constraints:
+    - confidence: high
+      note: Primary text states WMAP is used as an upper bound and lists the likelihood inputs.
+      page: null
+      reference_id: src_0808_primary
+      section: Likelihood setup
+    - confidence: high
+      note: CDMS related text reports the 90% CL SI limit.
+      page: null
+      reference_id: src_0808_cdms2008
+      section: Abstract
+    observables:
+    - confidence: high
+      note: Primary text names the scan observables and discovery-potential route.
+      page: null
+      reference_id: src_0808_primary
+      section: Introduction and scan setup
+    - confidence: high
+      note: Related CDMS source supplies the direct-detection limit context.
+      page: null
+      reference_id: src_0808_cdms2008
+      section: Abstract
+    routes:
+    - confidence: high
+      note: Primary text names NMSPEC, NMSSMTools, and DarkSUSY.
+      page: null
+      reference_id: src_0808_primary
+      section: Scan setup
+  review:
+    human_reviewed: false
+    reviewed_by: null
+    review_date: null
+    expert_reviewed: false
+    expert_reviewer: null
+    expert_review_date: null
+    reviewer_notes: []
+    scientific_confidence: medium
+    implementation_confidence: medium
+  caveats: []
+robustness:
+  overall: medium
+  theory_robustness: medium
+  observational_robustness: medium
+  computational_robustness: medium
+  constraint_robustness: not_applicable
+  dominant_uncertainties:
+  - stabilizing symmetry not explicitly stated in the extracted text
+  - public-code runtime details are incomplete
+  validation_status: expert_judgment_only
+  notes: The paper gives a concrete model definition and scan, but the extraction remains machine-only.
+agent_failure_modes:
+  warnings:
+  - id: nmsugra_not_full_relic_requirement
+    severity: medium
+    category: assumption_mismatch
+    warning: The paper treats WMAP as an upper bound; do not assume every allowed point makes all dark
+      matter.
+    mitigation: Track whether a downstream task requires full-density or subcomponent dark matter.
+    source_reference_ids: []
+  - id: nmsugra_rparity_implicit
+    severity: medium
+    category: missing_likelihood
+    warning: Neutralino stability is implicit in the relic-density analysis, but the extracted text does
+      not explicitly state the stabilizing symmetry.
+    mitigation: Surface the assumption before using the card as a complete stability proof.
+    source_reference_ids: []
+observables:
+- caveats:
+  - Modern direct-detection limits were not recast.
+  channel: direct_detection
+  effect_direction: rate_change
+  environments:
+  - CDMS-like cryogenic detectors
+  id: obs_nmsugra_recoil
+  key_quantities:
+  - description: Elastic scattering quantity computed with NMSSMTools/DarkSUSY.
+    name: neutralino-proton SI cross section
+    role: derived
+    source_reference_ids:
+    - src_0808_primary
+    - src_0808_cdms2008
+    status: inferred
+    symbol: sigma_SI
+    unit: cm^2
+  - description: WMAP abundance used as an upper bound in the scan.
+    name: neutralino relic density
+    role: derived
+    source_reference_ids:
+    - src_0808_primary
+    status: inferred
+    symbol: Omega_chi h^2
+    value: 0.1143 +/- 0.0034 upper-bound target
+  linked_constraints:
+  - con_cdms_si_2008
+  - con_wmap_likelihood_2008
+  linked_routes:
+  - route_nmsugra_scan
+  name: NmSuGra neutralino nuclear recoils
+  notes: null
+  observability: high
+  predicted_effect: The scan computes neutralino-proton spin-independent scattering and compares it with
+    CDMS; favored regions can be reachable by upgraded CDMS under the paper's muon-g-2 assumption.
+  redshift_range: null
+  relevance: critical
+  scale_range: detector nuclear-recoil energies
+  source_reference_ids:
+  - src_0808_primary
+  - src_0808_cdms2008
+  - src_0808_singlet_recoil
+  subchannel: spin-independent elastic scattering
+- caveats:
+  - The collider discussion predates Run-2 LHC exclusions.
+  channel: collider
+  effect_direction: rate_change
+  environments:
+  - CERN LHC
+  id: obs_nmsugra_lhc
+  key_quantities:
+  - name: universal scalar mass
+    range: 0 < M0 < 4 TeV
+    role: core
+    source_reference_ids:
+    - src_0808_primary
+    status: inferred
+    symbol: M0
+    unit: TeV
+  - name: universal gaugino mass
+    range: 0 < M1/2 < 2 TeV
+    role: core
+    source_reference_ids:
+    - src_0808_primary
+    status: inferred
+    symbol: M1/2
+    unit: TeV
+  linked_constraints:
+  - con_wmap_likelihood_2008
+  linked_routes:
+  - route_nmsugra_scan
+  name: NmSuGra LHC superpartner reach
+  notes: null
+  observability: medium
+  predicted_effect: The favored NmSuGra spectrum may be testable at the LHC, with discovery potential
+    tied to the same likelihood region as the relic and CDMS observables.
+  redshift_range: null
+  relevance: high
+  scale_range: LHC proton-proton energies
+  source_reference_ids:
+  - src_0808_primary
+  subchannel: supersymmetry searches
+constraints:
+- allowed_regions:
+  - NmSuGra points below the CDMS limit remain viable in the primary scan.
+  applies: parameter_dependent
+  assumptions:
+  - can_be_relaxed: partial
+    description: The WIMP recoil comparison assumes a standard local halo and must be rescaled for subcomponent
+      neutralinos.
+    id: standard_halo
+    impact_if_violated: The expected recoil rate changes with the local neutralino fraction.
+    notes: null
+    scope: direct detection
+    source_reference_ids:
+    - src_0808_primary
+    - src_0808_cdms2008
+    status: assumed
+  benchmark_implications:
+  - Related CDMS text reports a 90% CL limit of 6.6e-44 cm^2, or 4.6e-44 cm^2 combined, at 60 GeV.
+  caveats:
+  - Current direct-detection limits are much stronger.
+  constrained_parameters:
+  - sigma_SI
+  - m_chi
+  constraint_type: direct_detection
+  data_release: CDMS Soudan five-tower data as summarized in the related source
+  excluded_regions:
+  - Cross sections above the CDMS WIMP-nucleon SI upper bound are disfavored in the 2008 likelihood.
+  id: con_cdms_si_2008
+  likelihood_available: partial
+  likelihood_reference: null
+  name: CDMS 2008 spin-independent upper limit
+  notes: null
+  observable_channel: direct_detection
+  recasting_needed: 'yes'
+  robustness: medium
+  source_reference_ids:
+  - src_0808_primary
+  - src_0808_cdms2008
+- allowed_regions:
+  - WMAP is treated as an upper bound, so underabundant neutralino points can remain allowed.
+  applies: parameter_dependent
+  assumptions:
+  - can_be_relaxed: 'yes'
+    description: The neutralino is not required to make all of the observed dark matter.
+    id: wmap_upper_only
+    impact_if_violated: A two-sided relic requirement would remove underabundant points.
+    notes: null
+    scope: relic density
+    source_reference_ids:
+    - src_0808_primary
+    status: assumed
+  benchmark_implications:
+  - Mostly bino- and higgsino-like neutralino regions survive more readily than singlino-like regions
+    in the primary scan.
+  caveats:
+  - Not a modern global fit.
+  constrained_parameters:
+  - Omega_chi h^2
+  - m_h
+  - m_chargino
+  - delta a_mu
+  - Br(b -> s gamma)
+  - Br(B_s -> mu+ mu-)
+  constraint_type: other
+  data_release: WMAP, LEP/Tevatron, CDMS, Brookhaven muon g-2, and b-physics inputs cited in the primary
+    paper
+  excluded_regions:
+  - Overabundant neutralino points and LEP/low-energy-disfavored spectra increase the primary scan penalty.
+  id: con_wmap_likelihood_2008
+  likelihood_available: partial
+  likelihood_reference: null
+  name: WMAP-era combined NmSuGra likelihood envelope
+  notes: null
+  observable_channel: combined cosmology, collider, and low-energy observables
+  recasting_needed: 'yes'
+  robustness: medium
+  source_reference_ids:
+  - src_0808_primary
+theory_to_observable_routing:
+  routes:
+  - agent_notes: No numerical rerun performed.
+    caveats:
+    - Post-2008 exclusions omitted.
+    constraint_ids:
+    - con_cdms_si_2008
+    - con_wmap_likelihood_2008
+    derived_quantities:
+    - superpartner spectrum
+    - Omega_chi h^2
+    - sigma_SI
+    - low-energy observables
+    description: NmSuGra inputs to relic density, recoil rates, and collider reach
+    forward_model_chain:
+    - inputs:
+      - NmSuGra inputs
+      notes: null
+      outputs:
+      - spectrum
+      - couplings
+      step_id: s1
+      step_type: other
+      tool_or_code: NMSPEC
+      validity: As named in the primary text.
+    - inputs:
+      - spectrum
+      - couplings
+      notes: null
+      outputs:
+      - Omega_chi h^2
+      - sigma_SI
+      step_id: s2
+      step_type: boltzmann_solver
+      tool_or_code: NMSSMTools 1.2.5 / DarkSUSY 4.1
+      validity: Valid for the primary NMSSM implementation.
+    - inputs:
+      - WMAP
+      - CDMS
+      - LEP/Tevatron
+      - muon g-2
+      - b-physics
+      notes: null
+      outputs:
+      - favored parameter region
+      step_id: s3
+      step_type: likelihood
+      tool_or_code: null
+      validity: WMAP used as upper bound.
+    id: route_nmsugra_scan
+    input_parameters:
+    - M0
+    - M1/2
+    - A0
+    - tan beta
+    - lambda
+    - sign(mu)
+    likelihoods:
+    - No reusable likelihood extracted in this bounded enrichment pass.
+    observable_ids:
+    - obs_nmsugra_recoil
+    - obs_nmsugra_lhc
+    required_code_resources:
+    - NMSPEC
+    - NMSSMTools
+    - DarkSUSY
+    - modern recast tools
+    route_status: partially_implemented
+    source_model_features:
+    - GUT-scale universal NMSSM inputs
+    - lightest neutralino DM
+    - coannihilation and resonance corridors
+    validation_tests:
+    - Reproduce the WMAP upper-bound behavior.
+    - Check CDMS normalization against the related source.

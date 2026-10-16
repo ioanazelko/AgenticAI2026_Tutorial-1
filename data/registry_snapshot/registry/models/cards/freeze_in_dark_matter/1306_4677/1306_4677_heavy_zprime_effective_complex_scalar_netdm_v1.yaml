@@ -1,0 +1,513 @@
+_source:
+  shard: arXiv_src_1306_008_wds.tar
+  paper_id: '1306_4677'
+  source_member: 1306_4677.json
+  enriched: true
+  enrichment_schema_version: dm_model_ocr_enrichment_smoke_v0
+schema_version: model_only_v0
+model_id: 1306_4677_heavy_zprime_effective_complex_scalar_netdm_v1
+identity:
+  name: Heavy-Z' effective complex-scalar NETDM
+  family: freeze_in_dark_matter
+  aliases:
+  - heavy mediator scalar vector portal NETDM
+  short_description: A non-equilibrium dark matter variant where complex scalar dark matter is produced
+    by SM annihilation through an off-shell heavy vector mediator represented by a derivative-current
+    EFT operator.
+  historical_origin_or_motivation: Scalar counterpart to the paper's heavy vector-portal NETDM calculation.
+  status: speculative
+  model_kind: effective_field_theory
+theory:
+  theory_level: effective_field_theory
+  parent_frameworks:
+  - Z' portal
+  - NETDM
+  - vector effective interactions
+  lagrangian_available: partial
+  renormalizable: 'no'
+  eft_cutoff:
+    name: effective interaction scale
+    symbol: Lambda
+    description: Suppression scale of the scalar derivative-current operator
+    range: about 10^12 GeV for T_RH about 10^9 GeV
+    unit: GeV
+    role: core
+    status: inferred
+  embedded_in_larger_framework: 'yes'
+  notes: The mediator is integrated out and represented by a Fermi-like vector interaction.
+particle_content:
+  dark_matter_candidate:
+    name: complex scalar chi
+    spin: '0'
+    statistics: scalar
+    elementary_or_composite: elementary
+    number_of_components: single_component
+  additional_dark_sector_particles: []
+  mediators:
+  - integrated-out heavy Z' or vector-like mediator
+  dark_radiation_species: []
+  excited_or_degenerate_states: []
+  long_lived_particles: []
+  unstable_parent_particles: []
+  standard_model_extension: substantial
+symmetries:
+  stabilizing_mechanism: The paper assumes a stable dark matter particle with negligible initial abundance;
+    the stabilizing symmetry is not specified for the EFT case.
+  symmetries:
+  - name: unknown dark matter stabilizing symmetry
+    type: unknown
+    exact_or_approximate: unknown
+    breaking: unknown
+    breaking_scale: null
+  topological_defects_possible: unknown
+interactions:
+  portals:
+  - vector
+  standard_model_targets:
+  - SM fermions
+  dark_sector_couplings:
+  - derivative current of complex scalar chi
+  mediator_types:
+  - heavy vector mediator / Z'
+  interaction_operators:
+  - (f gamma_mu f)(chi partial^mu chi* - chi* partial^mu chi)/Lambda^2
+  tree_or_loop_level: tree
+parameters:
+  core:
+  - name: dark matter mass
+    symbol: m_chi
+    description: Mass of complex scalar dark matter
+    role: core
+    status: unknown
+  - name: reheating temperature
+    symbol: T_RH
+    description: Temperature setting UV-dominated production
+    value: example values 10^8-10^9 GeV
+    unit: GeV
+    role: cosmological
+    status: inferred
+  - name: effective interaction scale
+    symbol: Lambda
+    description: Scale suppressing the scalar vector-current operator
+    range: about 10^3-10^5 times T_RH
+    unit: GeV
+    role: core
+    status: inferred
+production:
+  mechanisms:
+  - UV freeze-in
+  - non-equilibrium thermal dark matter
+  - SM fermion annihilation through off-shell heavy mediator
+  thermal_equilibrium_with_standard_model: 'no'
+  thermal_equilibrium_with_hidden_sector: unknown
+  abundance_set_by:
+  - T_RH
+  - effective operator scale Lambda
+  - dark matter mass
+  depends_on_reheating_temperature: 'yes'
+  can_produce_all_dark_matter: 'yes'
+  nonthermal_momentum_distribution: 'yes'
+  notes: The scalar yield has the same UV-dominated logic as the fermion case with different degrees of
+    freedom.
+relic_density:
+  full_or_subcomponent: full_dark_matter
+  target_fraction: null
+  calculation_type: nonthermal
+  key_dependencies:
+  - T_RH
+  - Lambda
+  - m_chi
+  requires_entropy_dilution: unknown
+  overclosure_risk: parameter_dependent
+  underproduction_risk: parameter_dependent
+  tuning_assessment: unknown
+cosmological_history:
+  standard_history_assumed: true
+  nonstandard_features:
+  - negligible initial dark matter abundance
+  bbn_relevance: medium
+  cmb_relevance: medium
+phase_space:
+  distribution_type: nonthermal
+  distribution_function_available: 'no'
+  notes: Number-density yield is solved from Boltzmann equations; a phase-space distribution is not given.
+structure_formation:
+  linear:
+    behaves_like_cdm: 'yes'
+    transfer_function_shape: cdm_like
+    small_scale_power_effect: none
+  nonlinear:
+    halo_mass_function_effect: unknown
+    subhalo_mass_function_effect: unknown
+    simulation_calibrated: unknown
+validity_domain:
+- id: eft_heavy_mediator
+  applies_to: EFT
+  condition: m_Z' is above the reheating temperature, m_Z' > T_RH
+  status: inferred
+  extrapolation_risk: high
+  caveats: []
+- id: negligible_initial_abundance
+  applies_to: cosmological_history
+  condition: The initial dark matter abundance is negligible after reheating
+  status: assumed
+  extrapolation_risk: medium
+  caveats: []
+assumptions:
+  global:
+  - id: radiation_history
+    description: Radiation-dominated expansion with standard entropy and energy degrees of freedom during
+      production.
+    scope: cosmological_history
+    status: assumed
+    can_be_relaxed: 'yes'
+    impact_if_violated: Changing the expansion history changes the UV freeze-in yield.
+  - id: stable_scalar
+    description: The complex scalar dark matter particle is stable on cosmological timescales.
+    scope: theory
+    status: assumed
+    can_be_relaxed: unknown
+    impact_if_violated: The relic abundance calculation would not define present dark matter.
+associated_code:
+  has_associated_code: unknown
+  code_summary: No associated model code is identified in the assigned paper text.
+provenance:
+  model_id: 1306_4677_heavy_zprime_effective_complex_scalar_netdm_v1
+  model_name: Heavy-Z' effective complex-scalar NETDM
+  model_family: freeze_in_dark_matter
+  entry_version: 0.1.0
+  status: machine_extracted
+  created_at: '2026-05-31'
+  last_updated: '2026-05-31'
+  sources:
+    primary_papers:
+    - reference_id: primary
+      title: Thermal and non-thermal production of dark matter via Z'-portal(s)
+      authors:
+      - Xiaoyong Chu
+      - Yann Mambrini
+      - Jeremie Quevillon
+      - Bryan Zaldivar
+      year: 2013
+      arxiv_id: '1306.4677'
+      doi: null
+      url: null
+      role: original_model
+      notes: Assigned full text from target_text.sqlite only.
+    - arxiv_id: '1306.4677'
+      authors:
+      - Chu, Xiaoyong
+      - Mambrini, Yann
+      - Quevillon, Jérémie
+      - Zaldívar, Bryan
+      doi: 10.1088/1475-7516/2014/01/034
+      notes: Primary assigned paper read from local SQLite full text.
+      reference_id: arxiv:1306.4677
+      role: original_model
+      title: Thermal and non-thermal production of dark matter via Z'-portal(s)
+      url: https://arxiv.org/abs/1306.4677
+      year: 2014
+    constraint_papers:
+    - arxiv_id: '1207.5988'
+      authors:
+      - Aprile, E.
+      - Alfonsi, M.
+      - Arisaka, K.
+      - Arneodo, F.
+      - Balan, C.
+      - Baudis, L.
+      - Bauermeister, B.
+      - Behrens, A.
+      - Beltrame, P.
+      - Bokeloh, K.
+      - Brown, E.
+      - Bruno, G.
+      doi: 10.1103/PhysRevLett.109.181301
+      notes: Related full text resolved locally and read for XENON100 direct-detection context.
+      reference_id: arxiv:1207.5988
+      role: constraint
+      title: Dark Matter Results from 225 Live Days of XENON100 Data
+      url: https://arxiv.org/abs/1207.5988
+      year: 2012
+    - arxiv_id: '1212.5226'
+      authors:
+      - Hinshaw, G.
+      - Larson, D.
+      - Komatsu, E.
+      - Spergel, D. N.
+      - Bennett, C. L.
+      - Dunkley, J.
+      - Nolta, M. R.
+      - Halpern, M.
+      - Hill, R. S.
+      - Odegard, N.
+      - Page, L.
+      - Smith, K. M.
+      doi: 10.1088/0067-0049/208/2/19
+      notes: Related full text resolved locally and read for WMAP relic-density context.
+      reference_id: arxiv:1212.5226
+      role: constraint
+      title: 'Nine-year Wilkinson Microwave Anisotropy Probe (WMAP) Observations: Cosmological Parameter
+        Results'
+      url: https://arxiv.org/abs/1212.5226
+      year: 2013
+    external_databases: []
+    review_papers:
+    - arxiv_id: '1706.07442'
+      authors:
+      - Bernal, Nicolás
+      - Heikinheimo, Matti
+      - Tenkanen, Tommi
+      - Tuominen, Kimmo
+      - Vaskonen, Ville
+      doi: 10.1142/S0217751X1730023X
+      notes: Related full text resolved locally and read for freeze-in/FIMP context.
+      reference_id: arxiv:1706.07442
+      role: review
+      title: 'The dawn of FIMP Dark Matter: A review of models and constraints'
+      url: https://arxiv.org/abs/1706.07442
+      year: 2017
+  extraction:
+    method: llm_assisted
+    extracted_by: codex_batch_0018
+    extractor_name: Codex GPT-5 dark-matter model-card worker
+    extraction_date: '2026-05-31'
+    confidence: high
+    source_chunks_or_sections:
+    - reference_id: primary
+      section: 'm_Z'' > T_RH: effective vector-like interactions'
+      page: null
+      quote_or_summary: The paper gives O_V^s for complex scalar dark matter and solves the UV-dominated
+        yield.
+    unresolved_items:
+    - No related paper was used to add spin-specific numerical coefficients for the scalar versus Dirac
+      operator.
+  evidence:
+    particle_content:
+    - reference_id: primary
+      note: For very heavy mediators, the paper also writes an effective vector-like operator for complex
+        scalar dark matter.
+      confidence: high
+      section: 'm_Z'' > T_RH: effective vector-like interactions'
+    interactions:
+    - reference_id: primary
+      note: The scalar operator uses the SM fermion vector current times the derivative current of the
+        complex scalar dark matter.
+      confidence: high
+      section: 'm_Z'' > T_RH: effective vector-like interactions'
+    production_mechanism:
+    - reference_id: primary
+      note: The heavy mediator case is UV dominated; the yield scales with T_RH^3/Lambda^4.
+      confidence: high
+      section: m_Z' > T_RH
+    parameter_ranges:
+    - reference_id: primary
+      note: For T_RH about 10^9 GeV, the paper finds an effective interaction scale near 10^12 GeV to
+        match the relic abundance.
+      confidence: medium
+      section: Conclusion / heavy mediator results
+    cosmological_history:
+    - reference_id: primary
+      note: The paper explicitly correlates T_RH with the effective interaction scale in the heavy mediator
+        regime.
+      confidence: high
+      section: Abstract / Conclusion
+    validity_domain:
+    - reference_id: primary
+      note: The effective description is for mediator masses above T_RH and production through SM annihilation.
+      confidence: high
+      section: m_Z' > T_RH
+    constraints:
+    - confidence: high
+      note: Primary abstract and analysis quote Lambda about 10^3-10^5 T_RH from relic abundance.
+      page: null
+      reference_id: arxiv:1306.4677
+      section: Abstract and NETDM section
+    observables:
+    - confidence: high
+      note: Primary paper states that heavy gauge mediators above T_RH yield a direct T_RH-Lambda relic
+        correlation.
+      page: null
+      reference_id: arxiv:1306.4677
+      section: Heavy mediator analysis
+    routes:
+    - confidence: high
+      note: Primary paper formulates the effective-operator heavy-mediator production route.
+      page: null
+      reference_id: arxiv:1306.4677
+      section: Effective model section
+  review:
+    human_reviewed: false
+    reviewed_by: null
+    review_date: null
+    expert_reviewed: false
+    expert_reviewer: null
+    expert_review_date: null
+    reviewer_notes: []
+    scientific_confidence: high
+    implementation_confidence: medium
+robustness:
+  overall: medium
+  theory_robustness: medium
+  observational_robustness: unknown
+  computational_robustness: medium
+  dominant_uncertainties:
+  - EFT validity depends on m_Z' exceeding the reheating temperature.
+  validation_status: expert_judgment_only
+agent_failure_modes:
+  warnings:
+  - id: eft_validity
+    severity: medium
+    category: extrapolation
+    warning: Do not use the EFT row when temperatures approach or exceed the mediator mass.
+    mitigation: Use the explicit Z' model regime instead.
+observables:
+- caveats:
+  - The EFT is valid only when the mediator mass is above the reheating temperature.
+  channel: cosmology
+  effect_direction: rate_change
+  environments:
+  - early Universe plasma
+  id: obs_scalar_netdm_uv_relic
+  key_quantities:
+  - description: Maximum temperature controlling UV freeze-in.
+    name: reheating temperature
+    range: example scans around 10^8-10^9 GeV
+    role: cosmological
+    source_reference_ids:
+    - arxiv:1306.4677
+    status: inferred
+    symbol: T_RH
+    unit: GeV
+  - description: Scale suppressing the heavy-Z-prime contact operator.
+    name: effective interaction scale
+    range: about 10^3-10^5 times T_RH
+    role: core
+    source_reference_ids:
+    - arxiv:1306.4677
+    status: inferred
+    symbol: Lambda
+    unit: GeV
+  - description: Heavy-mediator NETDM realization uses a complex scalar dark matter candidate.
+    name: dark matter spin/statistics
+    role: core
+    source_reference_ids:
+    - arxiv:1306.4677
+    status: assumed
+  linked_constraints:
+  - con_scalar_netdm_trh_lambda
+  linked_routes:
+  - route_scalar_netdm_uv_freezein
+  name: UV freeze-in abundance for heavy-mediator complex scalar NETDM
+  notes: null
+  observability: low
+  predicted_effect: For mediator masses above reheating, Standard Model annihilation through a contact
+    operator produces dark matter with an abundance controlled by T_RH and the effective scale Lambda.
+  redshift_range: reheating era through today
+  relevance: critical
+  scale_range: homogeneous relic abundance
+  source_reference_ids:
+  - arxiv:1306.4677
+  - arxiv:1706.07442
+  subchannel: UV-dominated non-equilibrium production
+constraints:
+- allowed_regions:
+  - The primary text states that relic abundance constraints impose Lambda about 10^3-10^5 T_RH for heavy
+    mediators.
+  applies: 'yes'
+  assumptions:
+  - can_be_relaxed: 'no'
+    description: The contact-operator treatment assumes m_Z' > T_RH.
+    id: eft-validity
+    impact_if_violated: If the mediator is thermally accessible, the UV freeze-in scaling changes.
+    scope: heavy mediator EFT
+    source_reference_ids:
+    - arxiv:1306.4677
+    status: assumed
+  benchmark_implications:
+  - The benchmark can produce all dark matter while remaining out of equilibrium.
+  caveats:
+  - No collider or direct-detection constraint is directly applied to the ultra-heavy effective mediator
+    in this row.
+  constrained_parameters:
+  - T_RH
+  - Lambda
+  - m_chi
+  constraint_type: cosmological
+  data_release: WMAP/Planck-era relic abundance
+  excluded_regions:
+  - Effective scales outside the quoted 10^3-10^5 T_RH band underproduce or overproduce for the source
+    benchmarks.
+  id: con_scalar_netdm_trh_lambda
+  likelihood_available: 'no'
+  likelihood_reference: null
+  name: Relic-density correlation between T_RH and Lambda for complex scalar NETDM
+  notes: null
+  observable_channel: relic_density
+  recasting_needed: partial
+  robustness: medium
+  source_reference_ids:
+  - arxiv:1306.4677
+theory_to_observable_routing:
+  routes:
+  - agent_notes: null
+    caveats:
+    - The batch did not distinguish scalar and fermion operator coefficients beyond the model-card identities.
+    constraint_ids:
+    - con_scalar_netdm_trh_lambda
+    derived_quantities:
+    - annihilation rate
+    - freeze-in yield
+    - Omega_chi h^2
+    description: Convert a heavy-Z-prime contact operator for complex scalar dark matter into a UV freeze-in
+      relic-density target.
+    forward_model_chain:
+    - inputs:
+      - operator dimension
+      - Lambda
+      - T_RH
+      notes: null
+      outputs:
+      - SM annihilation collision term
+      step_id: s1
+      step_type: analytic_formula
+      tool_or_code: null
+      validity: Valid below the heavy mediator threshold.
+    - inputs:
+      - collision term
+      - initial abundance
+      notes: null
+      outputs:
+      - Y_chi
+      step_id: s2
+      step_type: boltzmann_solver
+      tool_or_code: null
+      validity: Assumes negligible initial dark matter abundance.
+    - inputs:
+      - Y_chi
+      - entropy density
+      notes: null
+      outputs:
+      - Omega_chi h^2
+      step_id: s3
+      step_type: validation
+      tool_or_code: null
+      validity: Compare to WMAP/Planck abundance target.
+    id: route_scalar_netdm_uv_freezein
+    input_parameters:
+    - T_RH
+    - Lambda
+    - m_chi
+    likelihoods:
+    - Relic-density target only; no likelihood grid persisted.
+    observable_ids:
+    - obs_scalar_netdm_uv_relic
+    required_code_resources:
+    - freeze-in Boltzmann solver or source analytic approximation
+    route_status: planned
+    source_model_features:
+    - heavy off-shell Z-prime
+    - complex scalar dark matter
+    - non-equilibrium thermal dark matter
+    validation_tests:
+    - recover Lambda/T_RH near 10^3-10^5

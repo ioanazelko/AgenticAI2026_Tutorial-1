@@ -1,0 +1,734 @@
+_source:
+  shard: arXiv_src_2106_009_wds.tar
+  paper_id: '2106_01457'
+  source_member: 2106_01457.json
+  enriched: true
+  enrichment_schema_version: dm_model_ocr_enrichment_smoke_v0
+schema_version: model_only_v0
+model_id: 2106_01457_planck_scale_axion_lump_dm_v1
+identity:
+  name: Planck-scale axion fuzzy-lump dark matter
+  family: fuzzy_ultralight_dark_matter
+  aliases:
+  - three-component Planck-scale axion dark matter
+  - axionic fuzzy dark matter lumps
+  - SU(2) lepton-family axion lumps
+  short_description: A speculative three-component fuzzy dark matter model in which Planck-scale axions
+    associated with lepton-family SU(2) Yang-Mills scales form selfgravitating condensate-plus-halo lumps
+    through cosmological depercolation.
+  historical_origin_or_motivation: Motivated by SU(2)_CMB modifications of cosmology, low-surface-brightness
+    galaxy rotation curves, and a proposed axial-anomaly link between leptons, dark matter, and dark energy.
+  status: speculative
+  model_kind: phenomenological_parameterization
+theory:
+  theory_level: phenomenological_parameterization
+  parent_frameworks:
+  - fuzzy dark matter
+  - Planck-scale axion scenario
+  - confining SU(2) Yang-Mills theories
+  - SU(2)_CMB cosmology
+  lagrangian_available: 'no'
+  renormalizable: unknown
+  embedded_in_larger_framework: 'yes'
+  notes: The paper proposes masses and lump properties from axial anomalies, Yang-Mills scales, Planck
+    mass, and phenomenological fits rather than presenting a conventional particle Lagrangian.
+particle_content:
+  dark_matter_candidate:
+    name: three Planck-scale ultralight axion species
+    spin: '0'
+    statistics: scalar
+    elementary_or_composite: elementary
+    number_of_components: multi_component
+  additional_dark_sector_particles:
+  - e-lumps
+  - mu-lumps
+  - tau-lumps
+  - global axion condensate associated with dark energy
+  mediators:
+  - gravity
+  - SU(2) Yang-Mills topological charge density
+  dark_radiation_species: []
+  standard_model_extension: substantial
+symmetries:
+  stabilizing_mechanism: Ultralight pseudo-Nambu-Goldstone axions with extremely feeble visible-sector
+    interactions form stable nonthermal Bose condensates and selfgravitating lumps.
+  symmetries:
+  - name: axial/Peccei-Quinn-like symmetry
+    type: global
+    exact_or_approximate: broken
+    breaking: Planck-scale induced chiral symmetry breaking plus SU(2) Yang-Mills axial anomaly generates
+      axion masses.
+  - name: SU(2)_e, SU(2)_mu, SU(2)_tau
+    type: gauge
+    exact_or_approximate: exact
+    breaking: Confining phases are invoked for lepton-family Yang-Mills dynamics.
+interactions:
+  portals:
+  - gravitational
+  - other
+  standard_model_targets:
+  - lepton families through proposed axial-anomaly association
+  - gravitationally traced matter distributions
+  dark_sector_couplings:
+  - selfgravity of axion condensates
+  - axial-anomaly mass generation
+  - Yang-Mills topological charge density
+  mediator_types:
+  - gravity
+  - confining SU(2) Yang-Mills dynamics
+  self_scattering_channels:
+  - gravitational selfbinding of fuzzy condensates
+  tree_or_loop_level: unknown
+parameters:
+  core:
+  - name: electron-family axion mass
+    symbol: m_a,e
+    description: Axion mass extracted from low-surface-brightness galaxy rotation curves.
+    value: '0.675e-23'
+    unit: eV
+    role: core
+    status: approximate
+  - name: mu-family axion mass
+    symbol: m_a,mu
+    description: Predicted axion mass associated with the mu lepton family.
+    value: '2.89e-19'
+    unit: eV
+    role: core
+    status: inferred
+  - name: tau-family axion mass
+    symbol: m_a,tau
+    description: Predicted axion mass associated with the tau lepton family.
+    value: '8.17e-17'
+    unit: eV
+    role: core
+    status: inferred
+  - name: e-lump virial mass
+    symbol: M_e
+    description: Typical virial mass of an isolated e-lump inferred from rotation-curve modeling.
+    value: 6.3e10
+    unit: M_sun
+    role: core
+    status: approximate
+  - name: e-lump Bohr radius
+    symbol: r_B,e
+    description: Gravitational Bohr radius of a typical e-lump.
+    value: '0.26'
+    unit: kpc
+    role: core
+    status: approximate
+  - name: depercolation redshifts
+    symbol: z_p,i
+    description: Redshifts at which tau, mu, and e lumps depercolate in the proposed cosmology.
+    value:
+      tau: 685000
+      mu: 40000
+      e: 53
+    role: core
+    status: inferred
+  - name: Planck-scale Peccei-Quinn scale
+    symbol: M_P
+    description: Universal Planck-scale symmetry-breaking scale assumed for the axions.
+    value: 1.22e19
+    unit: GeV
+    role: core
+    status: assumed
+production:
+  mechanisms:
+  - nonthermal Bose-Einstein condensation
+  - depercolation of homogeneous axion condensates into selfgravitating fuzzy lumps
+  - conversion of dark-energy-like condensate into pressureless dark matter
+  thermal_equilibrium_with_standard_model: 'no'
+  thermal_equilibrium_with_hidden_sector: 'no'
+  abundance_set_by:
+  - depercolation redshift
+  - lump masses
+  - Yang-Mills scales
+  - Planck-scale axion mass relation
+  depends_on_reheating_temperature: unknown
+  can_produce_all_dark_matter: parameter_dependent
+  nonthermal_momentum_distribution: 'yes'
+  notes: The text describes a three-component nonthermal condensate fluid rather than thermal freeze-out
+    or freeze-in.
+relic_density:
+  full_or_subcomponent: full_dark_matter
+  target_fraction: null
+  calculation_type: phenomenological
+  key_dependencies:
+  - rotation-curve extraction of m_a,e
+  - SU(2) Yang-Mills mass scaling
+  - depercolation criterion r_H/r_B
+  - nearly equal species contributions
+  requires_entropy_dilution: unknown
+  overclosure_risk: unknown
+  underproduction_risk: unknown
+  tuning_assessment: unknown
+cosmological_history:
+  standard_history_assumed: false
+  nonstandard_features:
+  - SU(2)_CMB cosmology
+  - stepwise depercolation of axion condensates
+  - dark-energy-to-dark-matter conversion
+  - multi-species fuzzy condensates
+  dark_sector_temperature: null
+  phase_transitions:
+  - confining/deconfining SU(2)_e transition discussed near T_e about 9.49 keV
+  topological_defects: []
+  isocurvature_perturbations: unknown
+  bbn_relevance: unknown
+  cmb_relevance: high
+phase_space:
+  distribution_type: field_like
+  distribution_function_available: approximate
+  f_of_p_or_q: Nonthermal Bose-condensed axion fields; no explicit distribution function supplied.
+  notes: The dark matter is modeled as fuzzy condensate cores plus virialized particle-cloud halos.
+structure_formation:
+  linear:
+    behaves_like_cdm: scale_dependent
+    transfer_function_shape: smooth_cutoff
+    small_scale_power_effect: mixed
+  nonlinear:
+    halo_mass_function_effect: core/soliton profiles and lump masses replace ordinary CDM halo assumptions
+      in the discussed systems
+    subhalo_mass_function_effect: three axion species affect substructure differently; detailed subhalo
+      function not supplied
+    simulation_calibrated: partial
+validity_domain:
+- id: isolated-lump-regime
+  applies_to: model
+  condition: Mass and radius predictions apply to isolated, unmerged fuzzy axion lumps.
+  valid_range: null
+  status: assumed
+  extrapolation_risk: high
+  caveats: []
+  source_reference_ids:
+  - '2106_01457'
+  notes: null
+- id: single-species-lsb-fit
+  applies_to: parameter
+  condition: The m_a,e extraction assumes low-surface-brightness galaxy dark halos are dominated by a
+    single e-axion lump species.
+  valid_range: null
+  status: assumed
+  extrapolation_risk: high
+  caveats: []
+  source_reference_ids:
+  - '2106_01457'
+  notes: null
+- id: depercolation-criterion
+  applies_to: cosmological_history
+  condition: The depercolation redshifts depend on a phenomenological threshold in r_H/r_B.
+  valid_range: null
+  status: speculative
+  extrapolation_risk: high
+  caveats: []
+  source_reference_ids:
+  - '2106_01457'
+  notes: null
+assumptions:
+  global:
+  - id: planck-scale-axial-anomaly
+    description: Axion masses are generated by a Planck-scale induced axial anomaly tied to confining
+      SU(2) Yang-Mills theories.
+    scope: theory
+    status: speculative
+    impact_if_violated: null
+    can_be_relaxed: unknown
+    source_reference_ids:
+    - '2106_01457'
+    notes: null
+  - id: three-nearly-equal-components
+    description: The three axion lump species are assumed to contribute roughly comparable cosmological
+      dark-matter densities.
+    scope: cosmological_history
+    status: assumed
+    impact_if_violated: null
+    can_be_relaxed: unknown
+    source_reference_ids:
+    - '2106_01457'
+    notes: null
+associated_code:
+  has_associated_code: partial
+  code_summary: The paper states that processed data and program underlying the article will be shared
+    on request.
+  primary_code_role: other
+provenance:
+  model_id: 2106_01457_planck_scale_axion_lump_dm_v1
+  model_name: Planck-scale axion fuzzy-lump dark matter
+  model_family: fuzzy_ultralight_dark_matter
+  entry_version: 0.1.0
+  status: machine_extracted
+  created_at: '2026-05-31'
+  last_updated: '2026-05-31'
+  sources:
+    primary_papers:
+    - reference_id: '2106_01457'
+      title: Axionic fuzzy dark matter lumps from lepton-family SU(2) Yang-Mills scales
+      authors:
+      - unknown
+      year: 2021
+      arxiv_id: '2106.01457'
+      doi: null
+      url: null
+      role: original_model
+      notes: Title reconstructed from assigned text; author list was not recoverable in the extracted
+        text header.
+    - arxiv_id: '2106.01457'
+      authors:
+      - Meinert, Janning
+      - Hofmann, Ralf
+      doi: 10.3390/universe7060198
+      notes: Primary Planck-scale axion fuzzy-lump model paper.
+      reference_id: primary_2106_01457
+      role: original_model
+      title: Axial Anomaly in Galaxies and the Dark Universe
+      url: https://arxiv.org/abs/2106.01457
+      year: 2021
+    constraint_papers:
+    - arxiv_id: '1703.04683'
+      authors:
+      - Irsic, Vid
+      - Viel, Matteo
+      - Haehnelt, Martin G.
+      - Bolton, James S.
+      doi: 10.1103/PhysRevLett.119.031302
+      notes: Related Lyman-alpha fuzzy-DM bound read locally.
+      reference_id: rel_1703_04683
+      role: constraint
+      title: First Constraints on Fuzzy Dark Matter from Lyman-alpha Forest Data and Hydrodynamical Simulations
+      url: https://arxiv.org/abs/1703.04683
+      year: 2017
+    - arxiv_id: '1606.09251'
+      authors:
+      - Lelli, Federico
+      - McGaugh, Stacy S.
+      - Schombert, James M.
+      doi: 10.3847/0004-6256/152/6/157
+      notes: SPARC rotation-curve mass-model data paper read locally.
+      reference_id: rel_1606_09251
+      role: dataset
+      title: 'SPARC: Mass Models for 175 Disk Galaxies with Spitzer Photometry and Accurate Rotation Curves'
+      url: https://arxiv.org/abs/1606.09251
+      year: 2016
+    external_databases: []
+    review_papers:
+    - arxiv_id: '1510.07633'
+      authors:
+      - Marsh, David J. E.
+      doi: 10.1016/j.physrep.2016.06.005
+      notes: Axion cosmology review read locally.
+      reference_id: rel_1510_07633
+      role: review
+      title: Axion cosmology
+      url: https://arxiv.org/abs/1510.07633
+      year: 2016
+  extraction:
+    method: llm_assisted
+    extracted_by: codex-batch-0017
+    extractor_name: Codex dark-matter batch worker
+    extraction_date: '2026-05-31'
+    confidence: medium
+    source_chunks_or_sections:
+    - reference_id: '2106_01457'
+      section: Abstract
+      page: null
+      quote_or_summary: The paper proposes isolated fuzzy dark matter lumps from ultralight axions whose
+        masses arise from SU(2) Yang-Mills scales and the Planck mass.
+    - reference_id: '2106_01457'
+      section: Summary and Outlook
+      page: null
+      quote_or_summary: Three Planck-scale axion species, nonthermal condensates, depercolation redshifts,
+        and rotation-curve extraction of m_a,e are summarized.
+    unresolved_items:
+    - Author list and exact title were not fully recoverable from the extracted text.
+    - Several claims are speculative and phenomenological rather than derived from a standard Lagrangian.
+    - The SU(2) lepton-family origin and depercolation mechanism are speculative and not independently
+      validated.
+    - A true Lyman-alpha assessment requires a multi-component transfer function and hydrodynamic recast.
+  evidence:
+    particle_content:
+    - reference_id: '2106_01457'
+      note: The paper proposes three ultralight Planck-scale axion species associated with the lepton
+        families and SU(2) Yang-Mills scales.
+      confidence: high
+      section: Abstract and Summary
+      page: null
+    symmetries:
+    - reference_id: '2106_01457'
+      note: Axion masses arise from Planck-scale induced axial anomalies and confining SU(2) Yang-Mills
+        theories associated with lepton families.
+      confidence: high
+      section: Introduction and Summary
+      page: null
+    interactions:
+    - reference_id: '2106_01457'
+      note: Interactions with visible leptonic matter are described as extremely feeble; structure is
+        primarily gravitational/selfgravitating fuzzy axion condensates.
+      confidence: medium
+      section: Summary and Outlook
+      page: null
+    production_mechanism:
+    - reference_id: '2106_01457'
+      note: Homogeneous nonthermal axion condensates depercolate into selfgravitating lumps when the Hubble
+        radius sufficiently exceeds the gravitational Bohr radius.
+      confidence: high
+      section: Introduction and Section Sec4
+      page: null
+    cosmological_history:
+    - reference_id: '2106_01457'
+      note: The model has stepwise depercolation redshifts for tau, mu, and e lumps, converting dark-energy-like
+        condensates into pressureless dark matter.
+      confidence: high
+      section: Section Sec4 and Summary
+      page: null
+    parameter_ranges:
+    - reference_id: '2106_01457'
+      note: The extracted e-axion mass is m_a,e = 0.675e-23 eV, with predicted mu and tau axion masses
+        2.89e-19 eV and 8.17e-17 eV.
+      confidence: high
+      section: Section Sec5 and Summary
+      page: null
+    validity_domain:
+    - reference_id: '2106_01457'
+      note: The scenario assumes isolated, unmerged lumps, a universal Planck-scale PQ scale, and phenomenological
+        depercolation criteria.
+      confidence: medium
+      section: Sections Sec2-Sec5
+      page: null
+    constraints:
+    - confidence: high
+      note: Primary text explicitly compares its masses with literature fuzzy-DM constraints and notes
+        single-species assumptions.
+      page: null
+      reference_id: primary_2106_01457
+      section: discussion
+    - confidence: medium
+      note: Related Lyman-alpha local text provides the external small-scale-structure constraint channel.
+      page: null
+      reference_id: rel_1703_04683
+      section: abstract
+    observables:
+    - confidence: high
+      note: Primary paper reports the three axion masses, SPARC-motivated lightest mass, lump scales,
+        and Lyman-alpha caveat.
+      page: null
+      reference_id: primary_2106_01457
+      section: abstract/discussion
+    - confidence: medium
+      note: SPARC local text documents the rotation-curve dataset used as the observational anchor.
+      page: null
+      reference_id: rel_1606_09251
+      section: abstract
+    - confidence: medium
+      note: Related local text gives single-species fuzzy-DM Lyman-alpha constraint context.
+      page: null
+      reference_id: rel_1703_04683
+      section: abstract
+    routes:
+    - confidence: high
+      note: Primary paper defines the fuzzy-lump construction and benchmark extraction.
+      page: null
+      reference_id: primary_2106_01457
+      section: model sections
+    - confidence: medium
+      note: Axion cosmology review supplies broader ultralight-axion phenomenology and constraints context.
+      page: null
+      reference_id: rel_1510_07633
+      section: review
+  review:
+    human_reviewed: false
+    reviewed_by: null
+    review_date: null
+    expert_reviewed: false
+    expert_reviewer: null
+    expert_review_date: null
+    reviewer_notes: []
+    scientific_confidence: low
+    implementation_confidence: medium
+robustness:
+  overall: low
+  dominant_uncertainties:
+  - speculative SU(2)-lepton-family link
+  - phenomenological depercolation threshold
+  - mapping to structure formation beyond fitted rotation curves
+  validation_status: expert_judgment_only
+  notes: The paper itself proposes the model, but many ingredients remain speculative.
+agent_failure_modes:
+  warnings:
+  - id: speculative-framework
+    severity: high
+    category: assumption_mismatch
+    warning: Do not treat the SU(2)-lepton-family and dark-energy depercolation assumptions as established;
+      they are central speculative premises of the paper.
+    mitigation: null
+    source_reference_ids:
+    - '2106_01457'
+observables:
+- caveats:
+  - The extraction is phenomenological and tied to a speculative SU(2)/axial-anomaly framework.
+  channel: dwarf_galaxies
+  effect_direction: morphology_change
+  environments:
+  - low-surface-brightness galaxies
+  - SPARC disk-galaxy sample
+  - galactic cores and halos
+  id: obs_sparc_core_halo_lumps
+  key_quantities:
+  - description: Lightest axion mass extracted from SPARC-like rotation-curve fits.
+    name: electron-family axion mass
+    role: core
+    source_reference_ids:
+    - primary_2106_01457
+    status: approximate
+    symbol: m_a_e
+    unit: eV
+    value: '0.675e-23'
+  - description: Virial mass of an isolated electron-family axion lump.
+    name: e-lump virial mass
+    role: core
+    source_reference_ids:
+    - primary_2106_01457
+    status: approximate
+    symbol: M_e
+    unit: M_sun
+    value: 6.3e10
+  - description: Bohr-radius scale of the self-gravitating axion lump.
+    name: e-lump Bohr radius
+    role: core
+    source_reference_ids:
+    - primary_2106_01457
+    status: approximate
+    symbol: r_B_e
+    unit: kpc
+    value: '0.26'
+  linked_constraints:
+  - con_sparc_rotation_curve_fit
+  linked_routes:
+  - route_multicomponent_fuzzy_lump_recast
+  name: SPARC core-halo rotation-curve fits from axion fuzzy lumps
+  notes: SPARC is the direct observational anchor used by the primary model.
+  observability: medium
+  predicted_effect: The lightest Planck-scale axion component is fit to low-surface-brightness galaxy
+    rotation curves through self-gravitating condensate cores plus virialized halos.
+  redshift_range: null
+  relevance: critical
+  scale_range: galaxy cores and halos in low-surface-brightness/SPARC rotation-curve systems
+  source_reference_ids:
+  - primary_2106_01457
+  - rel_1606_09251
+  subchannel: galaxy rotation curves
+- caveats:
+  - Published Lyman-alpha bounds usually assume one axion species; this model has three hierarchical species.
+  channel: lyman_alpha
+  effect_direction: suppression
+  environments:
+  - intergalactic medium
+  - high-redshift quasar sightlines
+  id: obs_lyman_alpha_small_scale_suppression
+  key_quantities:
+  - description: Representative lower mass bound from Lyman-alpha forest analyses cited/discussed by the
+      primary text.
+    name: single-species fuzzy-DM mass bound
+    role: derived
+    source_reference_ids:
+    - primary_2106_01457
+    - rel_1703_04683
+    status: inferred
+    symbol: m_a_min
+    unit: eV
+  - description: Fractional contribution of each axion species to dark matter.
+    name: component fractions
+    role: core
+    source_reference_ids:
+    - primary_2106_01457
+    status: unknown
+    symbol: f_i
+  linked_constraints:
+  - con_lyman_alpha_multicomponent_recast
+  linked_routes:
+  - route_multicomponent_fuzzy_lump_recast
+  name: Single-species fuzzy-DM Lyman-alpha suppression tension
+  notes: This is a likely tension/constraint channel rather than a completed exclusion for the multi-component
+    model.
+  observability: medium
+  predicted_effect: Ultralight axions suppress small-scale structure and are constrained by Lyman-alpha
+    forest flux power; the primary paper argues single-species limits require care for its three-component
+    model.
+  redshift_range:
+    inclusive_max: true
+    inclusive_min: true
+    max: low-redshift galaxies
+    min: high-redshift Lyman-alpha forest
+    notes: Epoch labels.
+    unit: null
+  relevance: high
+  scale_range: sub-galactic matter-power scales probed by quasar spectra
+  source_reference_ids:
+  - primary_2106_01457
+  - rel_1703_04683
+  - rel_1510_07633
+  subchannel: forest flux power
+constraints:
+- allowed_regions:
+  - Primary model extracts the lightest axion mass and lump scales from low-surface-brightness/SPARC rotation-curve
+    fits.
+  applies: parameter_dependent
+  assumptions:
+  - can_be_relaxed: partial
+    description: Galaxy cores and halos are described by the model-specific condensate-plus-halo fuzzy-lump
+      profile.
+    id: assume_schrodinger_poisson_profile
+    impact_if_violated: Different baryonic modeling or halo relations can shift the extracted axion mass.
+    notes: null
+    scope: galaxy modeling
+    source_reference_ids:
+    - primary_2106_01457
+    - rel_1606_09251
+    status: speculative
+  benchmark_implications:
+  - The quoted e-family mass and lump size are benchmarks, not broad posterior constraints.
+  caveats:
+  - No machine-readable fit likelihood or covariance was resolved.
+  constrained_parameters:
+  - m_a_e
+  - M_e
+  - r_B_e
+  - halo mass profile
+  constraint_type: astrophysical
+  data_release: SPARC rotation-curve and photometry sample
+  excluded_regions: []
+  id: con_sparc_rotation_curve_fit
+  likelihood_available: 'no'
+  likelihood_reference: null
+  name: Phenomenological SPARC rotation-curve extraction of fuzzy-lump parameters
+  notes: Treat as a benchmark extraction rather than a robust statistical constraint.
+  observable_channel: galaxy rotation curves
+  recasting_needed: 'yes'
+  robustness: low
+  source_reference_ids:
+  - primary_2106_01457
+  - rel_1606_09251
+- allowed_regions:
+  - The primary model may evade a direct bound only if the multi-component fractions and depercolation
+    history alter the transfer function.
+  applies: recast_required
+  assumptions:
+  - can_be_relaxed: partial
+    description: Published Lyman-alpha bounds cannot be applied verbatim to a hierarchical three-component
+      axion fluid.
+    id: assume_single_species_bound_not_direct
+    impact_if_violated: If the lightest component dominates small-scale suppression, the single-species
+      bound becomes more directly applicable.
+    notes: null
+    scope: constraint mapping
+    source_reference_ids:
+    - primary_2106_01457
+    - rel_1703_04683
+    status: assumed
+  benchmark_implications:
+  - A valid benchmark needs a multi-component matter-power calculation before accepting the lightest mass.
+  caveats:
+  - The primary paper discusses the caveat but does not supply a complete multi-component Lyman-alpha
+    likelihood.
+  constrained_parameters:
+  - m_a_e
+  - m_a_mu
+  - m_a_tau
+  - component fractions
+  - thermal history
+  constraint_type: cosmological
+  data_release: XQ-100 and HIRES/MIKE-style Lyman-alpha analyses discussed in local text
+  excluded_regions:
+  - Single-species fuzzy-DM analyses exclude very light axion masses that strongly suppress small-scale
+    power.
+  id: con_lyman_alpha_multicomponent_recast
+  likelihood_available: partial
+  likelihood_reference: null
+  name: Lyman-alpha fuzzy-DM mass bounds for a three-component axion model
+  notes: This is the key external consistency check for the very light electron-family axion.
+  observable_channel: Lyman-alpha forest flux power
+  recasting_needed: 'yes'
+  robustness: medium
+  source_reference_ids:
+  - primary_2106_01457
+  - rel_1703_04683
+  - rel_1510_07633
+theory_to_observable_routing:
+  routes:
+  - agent_notes: The model is speculative enough that a recast should start from benchmark reproduction,
+      not direct exclusion.
+    caveats:
+    - The SU(2)/axial-anomaly origin and depercolation history remain weakly supported.
+    constraint_ids:
+    - con_sparc_rotation_curve_fit
+    - con_lyman_alpha_multicomponent_recast
+    derived_quantities:
+    - core radius
+    - halo profile
+    - rotation curve
+    - multi-component transfer function
+    - Lyman-alpha likelihood proxy
+    description: Fit fuzzy-lump galaxy profiles and recast small-scale-structure constraints for a three-component
+      Planck-scale axion fluid.
+    forward_model_chain:
+    - inputs:
+      - m_a_e
+      - M_e
+      - r_B_e
+      - SPARC baryonic model
+      notes: Reproduce the primary SPARC-style extraction.
+      outputs:
+      - rotation curve
+      - profile residuals
+      step_id: galaxy_profile_fit
+      step_type: semi_analytic_model
+      tool_or_code: null
+      validity: Sensitive to baryonic modeling and sample selection.
+    - inputs:
+      - m_a_i
+      - component fractions
+      - thermal/depercolation history
+      notes: Build a multi-component fuzzy-DM suppression model.
+      outputs:
+      - linear matter-power suppression
+      step_id: transfer_function
+      step_type: transfer_function
+      tool_or_code: null
+      validity: No off-the-shelf implementation found for this speculative history.
+    - inputs:
+      - matter power
+      - IGM nuisance model
+      - quasar spectra likelihood
+      notes: Compare with Lyman-alpha bounds.
+      outputs:
+      - allowed/excluded mass-fraction region
+      step_id: lyman_recast
+      step_type: likelihood
+      tool_or_code: null
+      validity: Requires hydrodynamic emulator or conservative recast.
+    id: route_multicomponent_fuzzy_lump_recast
+    input_parameters:
+    - m_a_e
+    - m_a_mu
+    - m_a_tau
+    - component fractions
+    - depercolation redshifts
+    - baryonic mass model
+    likelihoods:
+    - SPARC fit likelihood; Lyman-alpha forest emulator/likelihood
+    observable_ids:
+    - obs_sparc_core_halo_lumps
+    - obs_lyman_alpha_small_scale_suppression
+    required_code_resources:
+    - Schrodinger-Poisson/fuzzy-DM profile solver
+    - SPARC baryonic mass-model loader
+    - multi-component matter-power code
+    - Lyman-alpha emulator
+    route_status: planned
+    source_model_features:
+    - three ultralight axion species
+    - self-gravitating condensate-plus-halo lumps
+    - phenomenological depercolation redshifts
+    - Planck-scale PQ scale
+    validation_tests:
+    - Recover the primary e-family benchmark values from the same galaxy sample.
+    - Verify single-species limit against Irsic et al. before adding components.

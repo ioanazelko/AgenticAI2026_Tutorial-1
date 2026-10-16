@@ -1,0 +1,113 @@
+$schema: "https://json-schema.org/draft/2020-12/schema"
+$id: "https://darkmatterfm.org/schemas/route.schema.yaml"
+title: "Theory-to-observable routing schema"
+description: >
+  Schema for routing a BSM dark-matter model from theory parameters to
+  observables, forward models, emulators, and likelihoods.
+type: object
+additionalProperties: false
+
+$defs:
+  route:
+    type: object
+    additionalProperties: false
+    properties:
+      id:
+        type: string
+        pattern: "^[a-z0-9_-]+$"
+      description:
+        type: string
+      source_model_features:
+        type: array
+        description: "Model features or parameters that trigger this route."
+        items:
+          type: string
+      input_parameters:
+        type: array
+        items:
+          type: string
+      derived_quantities:
+        type: array
+        items:
+          type: string
+      forward_model_chain:
+        type: array
+        description: "Ordered sequence of computations from theory to observable."
+        items:
+          type: object
+          additionalProperties: false
+          properties:
+            step_id:
+              type: string
+            step_type:
+              type: string
+              enum:
+                - analytic_formula
+                - boltzmann_solver
+                - transfer_function
+                - emulator
+                - semi_analytic_model
+                - simulation
+                - likelihood
+                - recasting
+                - data_transform
+                - validation
+                - other
+            tool_or_code:
+              type: [string, "null"]
+            status:
+              type: string
+              description: >
+                Whether the capability this step needs actually exists.
+                "missing"/"partial" steps are capability gaps; cross-reference
+                them from the card's capability_gaps block via blocking_routes.
+              enum: [available, partial, missing, unknown]
+            inputs:
+              type: array
+              items:
+                type: string
+            outputs:
+              type: array
+              items:
+                type: string
+            validity:
+              type: [string, "null"]
+            notes:
+              type: [string, "null"]
+          required: [step_id, step_type]
+      observable_ids:
+        type: array
+        items:
+          type: string
+      constraint_ids:
+        type: array
+        items:
+          type: string
+      likelihoods:
+        type: array
+        items:
+          type: string
+      required_code_resources:
+        type: array
+        items:
+          type: string
+      validation_tests:
+        type: array
+        items:
+          type: string
+      route_status:
+        type: string
+        enum: [implemented, partially_implemented, planned, unavailable, unknown]
+      agent_notes:
+        type: [string, "null"]
+      caveats:
+        type: array
+        items:
+          type: string
+    required:
+      - id
+      - description
+      - source_model_features
+      - forward_model_chain
+      - observable_ids
+      - route_status

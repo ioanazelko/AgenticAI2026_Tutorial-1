@@ -1,0 +1,669 @@
+_source:
+  shard: arXiv_src_1702_011_wds.tar
+  paper_id: '1702_04526'
+  source_member: 1702_04526.json
+  enriched: true
+  enrichment_schema_version: dm_model_ocr_enrichment_smoke_v0
+schema_version: model_only_v0
+model_id: 1702_04526_rhn_oscillation_sterile_neutrino_dm_v1
+identity:
+  name: Sterile right-handed-neutrino dark matter from RHN oscillations
+  family: sterile_neutrino_dark_matter
+  aliases:
+  - RHN oscillation sterile-neutrino DM
+  short_description: A sterile-neutrino dark matter scenario in which the lightest right-handed neutrino
+    is produced by nonresonant oscillations from heavier thermal right-handed neutrinos rather than by
+    active-sterile mixing.
+  historical_origin_or_motivation: Designed to make sterile-neutrino DM while reducing the X-ray and small-scale-structure
+    tension of conventional active-sterile production.
+  status: speculative
+  model_kind: complete_theory
+theory:
+  theory_level: uv_complete
+  parent_frameworks:
+  - seesaw model with three Majorana right-handed neutrinos
+  lagrangian_available: 'yes'
+  renormalizable: 'yes'
+  eft_cutoff: null
+  embedded_in_larger_framework: unknown
+  notes: The text gives the Standard Model plus Majorana RHN Lagrangian and studies a non-diagonal RHN
+    mass matrix.
+particle_content:
+  dark_matter_candidate:
+    name: lightest right-handed neutrino N1
+    spin: 1/2
+    statistics: fermion
+    elementary_or_composite: elementary
+    number_of_components: single_component
+  additional_dark_sector_particles:
+  - heavier right-handed neutrinos N2 and N3
+  mediators:
+  - Higgs doublet and lepton-doublet Yukawa interactions
+  dark_radiation_species: []
+  excited_or_degenerate_states: []
+  long_lived_particles: []
+  unstable_parent_particles: []
+  standard_model_extension: minimal
+symmetries:
+  stabilizing_mechanism: N1 is cosmologically long-lived because its mixing with left-handed neutrinos
+    is sufficiently small; no exact stabilizing symmetry is specified.
+  symmetries:
+  - name: approximate sterile-neutrino isolation
+    type: approximate
+    exact_or_approximate: approximate
+    breaking: small active-sterile mixing breaks complete isolation
+    breaking_scale: null
+  topological_defects_possible: unknown
+interactions:
+  portals:
+  - neutrino
+  standard_model_targets:
+  - lepton doublets
+  - Higgs doublet
+  dark_sector_couplings:
+  - off-diagonal RHN mass mixing
+  - RHN Yukawa couplings
+  mediator_types:
+  - right-handed neutrino mixing
+  interaction_operators:
+  - Majorana mass matrix for RHNs
+  - Yukawa term y_nu L H N_R
+  scattering:
+    elastic: unknown
+    inelastic: unknown
+    momentum_dependence: unknown
+    velocity_dependence: unknown
+    spin_dependence: unknown
+  annihilation_channels: []
+  decay_channels:
+  - heavier RHN decays to N1 are subdominant
+  self_scattering_channels: []
+  cp_structure: unknown
+  flavor_structure: unknown
+  tree_or_loop_level: tree
+parameters:
+  core:
+  - name: sterile DM mass
+    symbol: M1
+    description: Mass of the lightest right-handed neutrino dark matter candidate.
+    range: keV to MeV examples are discussed
+    role: core
+    status: inferred
+  - name: heavier RHN masses
+    symbol: M2, M3
+    description: Masses of heavier right-handed neutrinos involved in oscillation production.
+    role: core
+    status: inferred
+  - name: RHN mixing angle
+    symbol: theta_N
+    description: Mixing between the lightest and heavier RHNs controlling oscillation production.
+    role: core
+    status: inferred
+  - name: neutrino Yukawa matrix
+    symbol: y_nu
+    description: Yukawa couplings that connect heavier RHNs to the Standard Model and generate seesaw
+      neutrino masses.
+    role: core
+    status: inferred
+  nuisance: []
+  derived: []
+production:
+  mechanisms:
+  - nonresonant oscillation production from heavier thermal RHNs
+  thermal_equilibrium_with_standard_model: 'no'
+  thermal_equilibrium_with_hidden_sector: partial
+  abundance_set_by:
+  - RHN mixing angle
+  - M1
+  - M2
+  - thermal abundance of N2/N3
+  - neutrino Yukawa couplings
+  depends_on_reheating_temperature: unknown
+  can_produce_all_dark_matter: 'yes'
+  nonthermal_momentum_distribution: 'yes'
+  notes: The paper states that oscillation production can constitute the whole DM abundance and that decay
+    production is subdominant in the viable region.
+relic_density:
+  full_or_subcomponent: full_dark_matter
+  target_fraction: null
+  calculation_type: nonthermal
+  key_dependencies:
+  - M1
+  - M2
+  - theta_N
+  - Y_N1 yield from RHN oscillations
+  requires_entropy_dilution: unknown
+  overclosure_risk: parameter_dependent
+  underproduction_risk: parameter_dependent
+  tuning_assessment: unknown
+cosmological_history:
+  standard_history_assumed: true
+  nonstandard_features: []
+  dark_sector_temperature: null
+  delta_neff: null
+  kinetic_decoupling: null
+  chemical_decoupling: null
+  phase_transitions: []
+  topological_defects: []
+  isocurvature_perturbations: unknown
+  bbn_relevance: low
+  cmb_relevance: medium
+phase_space:
+  distribution_type: nonthermal
+  distribution_function_available: approximate
+  average_momentum_relative_to_thermal: null
+  free_streaming_length: null
+  velocity_dispersion_today: null
+  phase_space_bounds: []
+  notes: The text estimates the average momentum and discusses redshifting relative to conventional sterile-neutrino
+    production.
+structure_formation:
+  linear:
+    behaves_like_cdm: 'no'
+    transfer_function_shape: smooth_cutoff
+    small_scale_power_effect: suppression
+    half_mode_mass: null
+    thermal_wdm_mapping:
+      available: false
+      validity: unknown
+  nonlinear:
+    halo_mass_function_effect: suppressed below free-streaming scale for warm cases
+    subhalo_mass_function_effect: suppressed below free-streaming scale for warm cases
+    simulation_calibrated: 'no'
+validity_domain:
+- id: small_active_mixing
+  applies_to: model
+  condition: N1 must have sufficiently small mixing with active neutrinos to avoid X-ray bounds.
+  status: inferred
+  extrapolation_risk: medium
+- id: thermal_heavier_rhn
+  applies_to: production
+  condition: At least one heavier RHN must be thermally populated so oscillations can source N1.
+  status: inferred
+  extrapolation_risk: medium
+assumptions:
+  global:
+  - id: seesaw_setup
+    description: The Standard Model is extended by three Majorana right-handed neutrinos with a non-diagonal
+      mass matrix.
+    scope: theory
+    status: assumed
+    can_be_relaxed: unknown
+  - id: standard_early_universe
+    description: The production calculation assumes a standard radiation bath containing thermally produced
+      heavier RHNs.
+    scope: cosmological_history
+    status: assumed
+    can_be_relaxed: unknown
+associated_code:
+  has_associated_code: unknown
+  code_summary: No associated model code is identified in the assigned paper text.
+provenance:
+  model_id: 1702_04526_rhn_oscillation_sterile_neutrino_dm_v1
+  model_name: Sterile right-handed-neutrino dark matter from RHN oscillations
+  model_family: sterile_neutrino_dark_matter
+  entry_version: 0.1.0
+  status: machine_extracted
+  created_at: '2026-05-31'
+  last_updated: '2026-05-31'
+  sources:
+    primary_papers:
+    - reference_id: paper:1702_04526
+      title: Sterile neutrino dark matter from right-handed neutrino oscillations
+      authors:
+      - Kenji Kadota
+      - Kunio Kaneta
+      year: 2017
+      arxiv_id: '1702.04526'
+      doi: null
+      url: null
+      role: original_model
+      notes: Assigned full text from the run SQLite database.
+    - arxiv_id: '1702.04526'
+      authors:
+      - Kadota, Kenji
+      - Kaneta, Kunio
+      doi: 10.1103/PhysRevD.97.115021
+      notes: Primary assigned paper read from local SQLite full text.
+      reference_id: arxiv:1702.04526
+      role: original_model
+      title: Sterile neutrino dark matter from right-handed neutrino oscillations
+      url: https://arxiv.org/abs/1702.04526
+      year: 2018
+    constraint_papers:
+    - arxiv_id: '1512.05369'
+      authors:
+      - Merle, Alexander
+      - Schneider, Aurel
+      - Totzauer, Maximilian
+      doi: 10.1088/1475-7516/2016/04/003
+      notes: Related full text resolved locally and read for bounded enrichment.
+      reference_id: arxiv:1512.05369
+      role: constraint
+      title: Dodelson-Widrow production of sterile neutrino Dark Matter with non-trivial initial abundance
+      url: https://arxiv.org/abs/1512.05369
+      year: 2016
+    - arxiv_id: '1702.01764'
+      authors:
+      - Iršič, Vid
+      - Viel, Matteo
+      - Haehnelt, Martin G.
+      - Bolton, James S.
+      - Cristiani, Stefano
+      - Becker, George D.
+      - D'Odorico, Valentina
+      - Cupani, Guido
+      doi: 10.1103/PhysRevD.96.023522
+      notes: Related full text resolved locally and read for bounded enrichment.
+      reference_id: arxiv:1702.01764
+      role: constraint
+      title: New constraints on the free-streaming of warm dark matter from intermediate and small scale
+        Lyman-α forest data
+      url: https://arxiv.org/abs/1702.01764
+      year: 2017
+    - arxiv_id: '1609.00667'
+      authors:
+      - Perez, Kerstin
+      - Ng, Kenny C. Y.
+      - Beacom, John F.
+      - Hersh, Cora
+      - Horiuchi, Shunsaku
+      - Krivonos, Roman
+      doi: 10.1103/PhysRevD.95.123002
+      notes: Related full text resolved locally and read for bounded enrichment.
+      reference_id: arxiv:1609.00667
+      role: constraint
+      title: Almost closing the ν MSM sterile neutrino dark matter window with NuSTAR
+      url: https://arxiv.org/abs/1609.00667
+      year: 2017
+    external_databases: []
+    review_papers: []
+  extraction:
+    method: llm_assisted
+    extracted_by: codex_batch_worker
+    extractor_name: Codex GPT-5 dark-matter model-card worker
+    extraction_date: '2026-05-31'
+    confidence: high
+    source_chunks_or_sections:
+    - reference_id: paper:1702_04526
+      section: abstract/introduction
+      page: null
+      quote_or_summary: The paper proposes sterile RHN dark matter produced through nonresonant oscillations
+        among right-handed neutrinos.
+    - reference_id: paper:1702_04526
+      section: setup
+      page: null
+      quote_or_summary: The model is the Standard Model plus three Majorana right-handed neutrinos with
+        a generally non-diagonal mass matrix.
+    unresolved_items:
+    - No RHN Boltzmann integration, X-ray likelihood, or Ly-alpha hydrodynamical recast was rerun.
+  evidence:
+    particle_content:
+    - reference_id: paper:1702_04526
+      note: The lightest RHN N1 is the sterile-neutrino DM candidate; heavier RHNs explain neutrino masses
+        through seesaw mixing.
+      confidence: high
+    interactions:
+    - reference_id: paper:1702_04526
+      note: The Lagrangian contains RHN Yukawa couplings to lepton doublets and Higgs fields plus a Majorana
+        mass matrix.
+      confidence: high
+    production_mechanism:
+    - reference_id: paper:1702_04526
+      note: N1 is produced by oscillations from thermal heavier RHNs, with heavier-RHN decay production
+        subdominant.
+      confidence: high
+    cosmological_history:
+    - reference_id: paper:1702_04526
+      note: The production peak can occur above or around the electroweak scale, redshifting the momentum
+        and helping with small-scale bounds.
+      confidence: medium
+    parameter_ranges:
+    - reference_id: paper:1702_04526
+      note: Examples discuss M1 from keV to MeV ranges and heavier RHN masses around the weak scale in
+        benchmark plots.
+      confidence: medium
+    validity_domain:
+    - reference_id: paper:1702_04526
+      note: The scenario requires sufficiently small active-sterile mixing for N1 and a mass matrix with
+        RHN mixing.
+      confidence: high
+    constraints:
+    - confidence: high
+      note: Related Ly-alpha analysis gives a combined 5.3 keV thermal relic WDM lower limit.
+      page: null
+      reference_id: arxiv:1702.01764
+      section: null
+    - confidence: medium
+      note: Related NuSTAR sterile-neutrino paper provides strong X-ray constraints on keV sterile-neutrino
+        mixing.
+      page: null
+      reference_id: arxiv:1609.00667
+      section: null
+    observables:
+    - confidence: high
+      note: Primary paper states RHN oscillations can produce the full sterile-neutrino DM abundance.
+      page: null
+      reference_id: arxiv:1702.04526
+      section: null
+    - confidence: high
+      note: Primary estimates p1 about 2.8T and M1 around 10 keV after entropy redshifting.
+      page: null
+      reference_id: arxiv:1702.04526
+      section: null
+    routes:
+    - confidence: high
+      note: Primary paper gives a yield formula linking RHN mixing and masses to Omega_N1 h^2.
+      page: null
+      reference_id: arxiv:1702.04526
+      section: null
+  review:
+    human_reviewed: false
+    reviewed_by: null
+    review_date: null
+    expert_reviewed: false
+    expert_reviewer: null
+    expert_review_date: null
+    reviewer_notes: []
+    scientific_confidence: high
+    implementation_confidence: high
+robustness:
+  overall: high
+  theory_robustness: high
+  observational_robustness: not_applicable
+  computational_robustness: unknown
+  constraint_robustness: not_applicable
+  dominant_uncertainties:
+  - Exact OCR rendering of some equations and powers is imperfect.
+  validation_status: expert_judgment_only
+  notes: The paper directly proposes the production mechanism and gives the Lagrangian setup.
+agent_failure_modes:
+  warnings:
+  - id: warm_cold_branch
+    severity: medium
+    category: assumption_mismatch
+    warning: The paper allows warm or cold sterile RHN DM depending on parameters; do not apply warm-DM
+      structure effects universally.
+observables:
+- caveats: []
+  channel: cosmology
+  effect_direction: rate_change
+  environments:
+  - early-Universe thermal plasma
+  id: obs_rhn_oscillation_relic_yield
+  key_quantities:
+  - description: Lightest RHN DM mass
+    name: sterile RHN mass
+    range: keV to MeV examples; warm case pushed above about 10 keV
+    role: core
+    source_reference_ids:
+    - arxiv:1702.04526
+    status: inferred
+    symbol: M1
+    unit: keV/MeV
+  - description: Off-diagonal RHN mixing controlling oscillation probability
+    name: RHN mixing angle
+    range: model-dependent
+    role: core
+    source_reference_ids:
+    - arxiv:1702.04526
+    status: inferred
+    symbol: theta_N
+  linked_constraints:
+  - con_rhn_oscillation_relic_density
+  linked_routes:
+  - route_rhn_oscillation_to_xray_lya
+  name: RHN oscillation relic yield
+  notes: null
+  observability: medium
+  predicted_effect: Thermal heavier RHNs oscillate into the lightest RHN and can produce the full sterile-neutrino
+    DM abundance without active-sterile-mixing production.
+  redshift_range: radiation era
+  relevance: critical
+  scale_range: model-dependent
+  source_reference_ids:
+  - arxiv:1702.04526
+  - arxiv:1512.05369
+  subchannel: nonthermal sterile-neutrino production
+- caveats:
+  - X-ray bounds constrain active mixing rather than the RHN oscillation yield directly.
+  channel: lyman_alpha
+  effect_direction: suppression
+  environments:
+  - Lyman-alpha forest
+  - X-ray halos
+  id: obs_rhn_free_streaming_xray
+  key_quantities:
+  - description: Primary estimate before entropy redshifting
+    name: average production momentum
+    role: derived
+    source_reference_ids:
+    - arxiv:1702.04526
+    status: inferred
+    symbol: p1/T
+    value: about 2.8
+  - description: Primary Lyman-alpha estimate after entropy redshifting
+    name: RHN mass floor
+    range: greater than about 10
+    role: core
+    source_reference_ids:
+    - arxiv:1702.04526
+    - arxiv:1702.01764
+    status: inferred
+    symbol: M1
+    unit: keV
+  - description: Mixing constrained by X-ray line searches
+    name: active-sterile mixing
+    range: must be very small
+    role: core
+    source_reference_ids:
+    - arxiv:1702.04526
+    - arxiv:1609.00667
+    status: inferred
+    symbol: theta_active
+  linked_constraints:
+  - con_lya_rhn_mass_floor
+  - con_xray_sterile_mixing
+  linked_routes:
+  - route_rhn_oscillation_to_xray_lya
+  name: free streaming and X-ray-line tests of sterile RHN DM
+  notes: null
+  observability: high
+  predicted_effect: The nonthermal RHN spectrum suppresses small-scale power if M1 is too small, while
+    any active mixing would generate an X-ray decay line.
+  redshift_range: source epoch to observation
+  relevance: critical
+  scale_range: Ly-alpha forest scales and keV X-ray lines
+  source_reference_ids:
+  - arxiv:1702.04526
+  - arxiv:1702.01764
+  - arxiv:1609.00667
+  subchannel: warm sterile-neutrino transfer function plus radiative decay line
+constraints:
+- allowed_regions:
+  - Primary examples obtain Omega_N1 h^2 near 0.12 from RHN oscillations while keeping active mixing small.
+  applies: 'yes'
+  assumptions:
+  - can_be_relaxed: partial
+    description: Heavier RHNs are populated thermally enough to seed N1 oscillations.
+    id: thermal_heavy_rhn_source
+    impact_if_violated: Changing this assumption changes the recast.
+    notes: null
+    scope: production calculation
+    source_reference_ids:
+    - arxiv:1702.04526
+    status: assumed
+  benchmark_implications:
+  - Decay production from heavier RHNs is subdominant in the viable region.
+  caveats: []
+  constrained_parameters:
+  - M1
+  - M2
+  - theta_N
+  - y_nu
+  - Y_N1
+  constraint_type: cosmological
+  data_release: null
+  excluded_regions:
+  - Parameter choices that underproduce or overproduce Omega_N1 h^2 relative to the observed abundance.
+  id: con_rhn_oscillation_relic_density
+  likelihood_available: 'no'
+  likelihood_reference: null
+  name: Oscillation-production relic-density target
+  notes: null
+  observable_channel: DM relic abundance
+  recasting_needed: 'no'
+  robustness: medium
+  source_reference_ids:
+  - arxiv:1702.04526
+  - arxiv:1512.05369
+- allowed_regions:
+  - M1 greater than about 10 keV is the source estimate for this RHN oscillation scenario.
+  applies: recast_required
+  assumptions:
+  - can_be_relaxed: partial
+    description: N1 production occurs efficiently before the QCD transition, cooling the spectrum by entropy
+      redshifting.
+    id: pre_qcd_entropy_redshift
+    impact_if_violated: Changing this assumption changes the recast.
+    notes: null
+    scope: mass-floor estimate
+    source_reference_ids:
+    - arxiv:1702.04526
+    status: assumed
+  benchmark_implications:
+  - A nonthermal transfer-function likelihood is required for precision use.
+  caveats: []
+  constrained_parameters:
+  - M1
+  - p1/T
+  - transfer function
+  constraint_type: astrophysical
+  data_release: XQ-100 plus HIRES/MIKE Ly-alpha samples
+  excluded_regions:
+  - Primary estimate disfavors M1 below about 10 keV for the discussed pre-QCD production; thermal WDM
+    below 5.3 keV is excluded in the related Ly-alpha analysis.
+  id: con_lya_rhn_mass_floor
+  likelihood_available: 'no'
+  likelihood_reference: null
+  name: Lyman-alpha lower bound on warm RHN mass
+  notes: null
+  observable_channel: Lyman-alpha forest
+  recasting_needed: 'yes'
+  robustness: medium
+  source_reference_ids:
+  - arxiv:1702.04526
+  - arxiv:1702.01764
+- allowed_regions:
+  - The RHN oscillation mechanism permits N1 active mixing to be sufficiently small while heavier RHNs
+    explain seesaw neutrino masses.
+  applies: parameter_dependent
+  assumptions:
+  - can_be_relaxed: partial
+    description: The usual sterile-neutrino radiative decay channel controls X-ray emission when active
+      mixing is nonzero.
+    id: standard_radiative_decay
+    impact_if_violated: Changing this assumption changes the recast.
+    notes: null
+    scope: indirect detection
+    source_reference_ids:
+    - arxiv:1609.00667
+    - arxiv:1512.05369
+    status: established
+  benchmark_implications:
+  - X-ray limits force heavier-RHN decay production to remain subdominant in the primary setup.
+  caveats: []
+  constrained_parameters:
+  - theta_active
+  - M1
+  constraint_type: astrophysical
+  data_release: null
+  excluded_regions:
+  - Large active-sterile mixing for keV sterile-neutrino DM is excluded by X-ray line searches; related
+    NuSTAR work strongly constrains the nuMSM window.
+  id: con_xray_sterile_mixing
+  likelihood_available: 'no'
+  likelihood_reference: null
+  name: X-ray limits on active-sterile mixing
+  notes: null
+  observable_channel: X-ray line searches
+  recasting_needed: partial
+  robustness: high
+  source_reference_ids:
+  - arxiv:1702.04526
+  - arxiv:1609.00667
+  - arxiv:1512.05369
+theory_to_observable_routing:
+  routes:
+  - agent_notes: null
+    caveats: []
+    constraint_ids:
+    - con_rhn_oscillation_relic_density
+    - con_lya_rhn_mass_floor
+    - con_xray_sterile_mixing
+    derived_quantities:
+    - Y_N1
+    - Omega_N1 h^2
+    - p1/T
+    - free-streaming scale
+    - radiative decay rate
+    description: Propagate RHN mass mixing and thermal heavier-RHN production into abundance, free streaming,
+      and X-ray constraints.
+    forward_model_chain:
+    - inputs:
+      - M1
+      - M2
+      - theta_N
+      - y_nu
+      notes: null
+      outputs:
+      - oscillation yield
+      step_id: s1
+      step_type: analytic_formula
+      tool_or_code: null
+      validity: Uses source fitting formula.
+    - inputs:
+      - momentum distribution
+      - M1
+      notes: null
+      outputs:
+      - linear transfer function
+      step_id: s2
+      step_type: transfer_function
+      tool_or_code: null
+      validity: Needed for Ly-alpha recast.
+    - inputs:
+      - active mixing
+      - M1
+      notes: null
+      outputs:
+      - X-ray exclusion
+      step_id: s3
+      step_type: likelihood
+      tool_or_code: null
+      validity: Standard sterile-neutrino decay constraints.
+    id: route_rhn_oscillation_to_xray_lya
+    input_parameters:
+    - M1
+    - M2
+    - M3
+    - theta_N
+    - y_nu
+    - active mixing
+    likelihoods:
+    - source likelihoods not rerun in this batch
+    observable_ids:
+    - obs_rhn_oscillation_relic_yield
+    - obs_rhn_free_streaming_xray
+    required_code_resources:
+    - RHN Boltzmann integrator
+    - nonthermal transfer-function solver
+    - X-ray line likelihood tables
+    route_status: planned
+    source_model_features:
+    - three Majorana RHNs
+    - off-diagonal RHN mass mixing
+    - lightest RHN with suppressed active mixing
+    validation_tests:
+    - recover Omega h^2 about 0.12
+    - recover M1 > about 10 keV

@@ -1,0 +1,834 @@
+_source:
+  shard: arXiv_src_1205_001_wds.tar
+  paper_id: '1205_0569'
+  source_member: 1205_0569.json
+  enriched: true
+  enrichment_schema_version: dm_model_ocr_enrichment_smoke_v0
+schema_version: model_only_v0
+model_id: 1205_0569_composite_sterile_dirac_neutrino_wdm_v1
+identity:
+  name: Composite sterile Dirac neutrino warm dark matter
+  family: sterile_neutrino_dark_matter
+  aliases:
+  - keV sterile Dirac neutrino WDM
+  - composite-neutrino warm dark matter
+  short_description: A keV sterile Dirac neutrino arising in a composite-neutrino hidden sector, with
+    resonant or entropy-diluted thermal production as warm dark matter.
+  historical_origin_or_motivation: The paper embeds keV sterile Dirac neutrinos in a confining hidden-sector
+    composite-neutrino framework.
+  status: speculative
+  model_kind: effective_field_theory
+theory:
+  theory_level: effective_field_theory
+  parent_frameworks:
+  - composite neutrino scenario
+  - confining hidden sector
+  lagrangian_available: partial
+  renormalizable: unknown
+  embedded_in_larger_framework: 'yes'
+  notes: The paper specifies a low-energy EFT below a scale M with preons, a confining color group, hidden
+    flavor, irrelevant operators, and mass matrices after confinement and electroweak symmetry breaking.
+particle_content:
+  dark_matter_candidate:
+    name: keV sterile Dirac neutrino
+    spin: 1/2
+    statistics: fermion
+    elementary_or_composite: elementary
+    number_of_components: single_component
+  additional_dark_sector_particles:
+  - preons in the confining hidden sector
+  - hidden pions
+  - right-handed composite neutrinos
+  - heavy sterile Dirac bound states
+  mediators:
+  - M-scale irrelevant operators connecting the sectors
+  dark_radiation_species:
+  - hidden pions
+  - right-handed neutrinos
+  excited_or_degenerate_states:
+  - heavy sterile Dirac states
+  long_lived_particles:
+  - keV sterile Dirac neutrino
+  unstable_parent_particles:
+  - heavy bound states after confinement
+  standard_model_extension: substantial
+symmetries:
+  stabilizing_mechanism: The sterile Dirac neutrino is long-lived because the chiral and composite structure
+    suppresses exotic decay operators to high dimension.
+  symmetries:
+  - name: B-L
+    type: global
+    exact_or_approximate: unknown
+    breaking: not specified
+    breaking_scale: null
+  - name: hidden flavor symmetry
+    type: global
+    exact_or_approximate: broken
+    breaking: spontaneously broken by a scalar condensate
+    breaking_scale: null
+  topological_defects_possible: unknown
+interactions:
+  portals:
+  - neutrino
+  - other
+  standard_model_targets:
+  - active neutrinos
+  - Standard Model singlet operators
+  - possible inflaton singlet
+  dark_sector_couplings:
+  - preon confinement
+  - active-sterile mixing
+  - irrelevant operators suppressed by M
+  mediator_types:
+  - irrelevant M-scale operator
+  - confining hidden-sector dynamics
+  interaction_operators:
+  - L H n_R operator generated after confinement
+  - operators coupling preons to Standard Model singlets
+  scattering:
+    elastic: unknown
+    inelastic: unknown
+    momentum_dependence: unknown
+    velocity_dependence: unknown
+    spin_dependence: unknown
+  annihilation_channels: []
+  decay_channels:
+  - radiative sterile-neutrino decay to active neutrino plus photon, suppressed as in sterile-neutrino
+    WDM discussions
+  self_scattering_channels: []
+  tree_or_loop_level: unknown
+parameters:
+  core:
+  - name: sterile Dirac neutrino mass
+    symbol: m_d
+    description: KeV-scale mass of the dark sterile neutrino.
+    range: keV scale; examples discuss m_d around 5 keV and viable thermal masses above about 1.5 keV
+    unit: keV
+    role: core
+    status: inferred
+    source_reference_ids:
+    - primary
+  - name: active-sterile mixing angle
+    symbol: theta_d
+    description: Mixing angle between active and dark sterile neutrino states.
+    value: sin^2(2 theta_d) about 3e-10 for m_d around 5 keV in (n,n-1) theories
+    role: core
+    status: inferred
+    source_reference_ids:
+    - primary
+  - name: compositeness scale
+    symbol: M
+    description: Scale suppressing irrelevant operators in the composite-neutrino EFT.
+    value: about 2e4 (m_d/5 keV) TeV for (n,n-1) theories
+    unit: TeV
+    role: core
+    status: inferred
+    source_reference_ids:
+    - primary
+  - name: confinement scale
+    symbol: Lambda
+    description: Scale at which the confining hidden sector confines.
+    range: TeV scale in the (3,2) scenario discussed for thermal production
+    unit: TeV
+    role: core
+    status: inferred
+    source_reference_ids:
+    - primary
+  - name: entropy dilution factor
+    symbol: Delta
+    description: Entropy increase needed after ultra-relativistic freeze-out for thermal WDM.
+    value: order 1e4 for m_d around 5 keV
+    role: cosmological
+    status: inferred
+    source_reference_ids:
+    - primary
+  - name: preon count in sterile bound state
+    symbol: n
+    description: Odd number of preons in the sterile-neutrino bound states.
+    range: n with m=n-1 favored by mixing bounds
+    role: core
+    status: inferred
+    source_reference_ids:
+    - primary
+production:
+  mechanisms:
+  - resonant active-to-sterile production with lepton asymmetry
+  - inflaton decay plus non-resonant production in low-reheat histories
+  - ultra-relativistic thermal freeze-out followed by entropy dilution from supercooled hidden-sector
+    confinement
+  thermal_equilibrium_with_standard_model: partial
+  thermal_equilibrium_with_hidden_sector: partial
+  abundance_set_by:
+  - m_d
+  - theta_d
+  - post-inflation reheating temperature
+  - lepton asymmetry
+  - hidden-sector confinement and entropy dilution
+  depends_on_reheating_temperature: parameter_dependent
+  can_produce_all_dark_matter: parameter_dependent
+  nonthermal_momentum_distribution: parameter_dependent
+  notes: The paper presents resonant nonthermal production for low reheating temperatures and an alternative
+    entropy-diluted thermal WDM history for the (3,2) theory.
+relic_density:
+  full_or_subcomponent: full_dark_matter
+  calculation_type: mixed
+  key_dependencies:
+  - sterile-neutrino mass
+  - active-sterile mixing
+  - lepton asymmetry
+  - entropy dilution
+  - confinement temperature
+  requires_entropy_dilution: parameter_dependent
+  overclosure_risk: parameter_dependent
+  underproduction_risk: parameter_dependent
+  tuning_assessment: unknown
+cosmological_history:
+  standard_history_assumed: false
+  nonstandard_features:
+  - low post-inflation reheating option below the TeV scale
+  - first-order hidden-sector confinement phase transition
+  - supercooling and entropy production
+  dark_sector_temperature: null
+  delta_neff:
+    name: extra effective neutrino species from hidden pions and right-handed neutrinos
+    symbol: Delta N_eff
+    description: Estimated contribution at BBN from hidden pions and right-handed neutrinos.
+    value: about 0.26 for g_bs around 10
+    role: cosmological
+    status: inferred
+    source_reference_ids:
+    - primary
+  kinetic_decoupling: null
+  chemical_decoupling: null
+  phase_transitions:
+  - supercooled confinement-induced phase transition
+  topological_defects: []
+  isocurvature_perturbations: unknown
+  bbn_relevance: medium
+  cmb_relevance: medium
+phase_space:
+  distribution_type: mixed_cold_warm
+  distribution_function_available: approximate
+  average_momentum_relative_to_thermal: red-shifted relative to active neutrinos in entropy-diluted thermal
+    scenario
+  notes: The paper contrasts resonant nonthermal WDM with colder entropy-diluted thermal WDM.
+structure_formation:
+  linear:
+    behaves_like_cdm: 'no'
+    transfer_function_shape: smooth_cutoff
+    small_scale_power_effect: suppression
+    thermal_wdm_mapping:
+      available: true
+      validity: approximate
+      warning: The text translates Lyman-alpha limits using free-streaming scaling rather than presenting
+        a full transfer function.
+  nonlinear:
+    halo_mass_function_effect: unknown
+    subhalo_mass_function_effect: suppressed relative to CDM as expected for WDM
+    simulation_calibrated: unknown
+validity_domain:
+- id: composite_eft
+  applies_to: model
+  condition: Low-energy description is below the M scale and assumes the sectors interact only through
+    irrelevant operators.
+  status: assumed
+  extrapolation_risk: medium
+  caveats: []
+  source_reference_ids:
+  - primary
+- id: n_n_minus_1_mixing
+  applies_to: parameter
+  condition: The paper restricts attention to (n,n-1) theories because m<n-1 gives mixing angles ruled
+    out by x-ray constraints.
+  status: inferred
+  extrapolation_risk: medium
+  caveats: []
+  source_reference_ids:
+  - primary
+- id: thermal_variant_supercooling
+  applies_to: production
+  condition: Entropy-diluted thermal production requires sufficient supercooling of the confinement transition.
+  status: speculative
+  extrapolation_risk: high
+  caveats: []
+  source_reference_ids:
+  - primary
+assumptions:
+  global:
+  - id: suppressed_exotic_decays
+    description: High-dimension operators from the chiral composite structure make exotic sterile-neutrino
+      decays negligible.
+    scope: theory
+    status: assumed
+    can_be_relaxed: unknown
+    source_reference_ids:
+    - primary
+    impact_if_violated: The sterile neutrino may not be long-lived enough if lower-dimension decay operators
+      are present.
+  - id: low_reheat_for_nonthermal
+    description: The nonthermal scenario assumes a post-inflation reheating temperature below the TeV-scale
+      sector decoupling and confinement scales.
+    scope: cosmological_history
+    status: assumed
+    can_be_relaxed: unknown
+    source_reference_ids:
+    - primary
+  - id: supercooled_confinement
+    description: The thermal scenario assumes a supercooled first-order confinement phase transition that
+      produces large entropy.
+    scope: production
+    status: speculative
+    can_be_relaxed: unknown
+    source_reference_ids:
+    - primary
+associated_code:
+  has_associated_code: unknown
+  code_summary: No model-specific associated code is identified in the assigned text.
+provenance:
+  model_id: 1205_0569_composite_sterile_dirac_neutrino_wdm_v1
+  model_name: Composite sterile Dirac neutrino warm dark matter
+  model_family: sterile_neutrino_dark_matter
+  entry_version: 0.1.0
+  status: machine_extracted
+  created_at: '2026-05-31'
+  last_updated: '2026-05-31'
+  sources:
+    primary_papers:
+    - reference_id: primary
+      title: KeV Warm Dark Matter and Composite Neutrinos
+      authors:
+      - Dean J. Robinson
+      - Yuhsin Tsai
+      year: 2012
+      arxiv_id: '1205.0569'
+      doi: null
+      url: null
+      role: original_model
+      notes: null
+    - arxiv_id: '1205.0569'
+      authors:
+      - Robinson, Dean J.
+      - Tsai, Yuhsin
+      doi: 10.1007/JHEP08(2012)161
+      notes: Primary assigned paper read from local SQLite full text.
+      reference_id: arxiv:1205.0569
+      role: original_model
+      title: KeV warm dark matter and composite neutrinos
+      url: https://arxiv.org/abs/1205.0569
+      year: 2012
+    constraint_papers:
+    - arxiv_id: '0711.4646'
+      authors:
+      - Petraki, Kalliopi
+      - Kusenko, Alexander
+      doi: 10.1103/PhysRevD.77.065014
+      notes: Related full text resolved locally and read for bounded enrichment.
+      reference_id: arxiv:0711.4646
+      role: constraint
+      title: Dark-matter sterile neutrinos in models with a gauge singlet in the Higgs sector
+      url: https://arxiv.org/abs/0711.4646
+      year: 2008
+    - arxiv_id: hep-ph/0612182
+      authors:
+      - Asaka, Takehiko
+      - Shaposhnikov, Mikhail
+      - Laine, Mikko
+      doi: 10.1088/1126-6708/2007/01/091
+      notes: Related full text resolved locally and read for bounded enrichment.
+      reference_id: arxiv:hep-ph/0612182
+      role: constraint
+      title: Lightest sterile neutrino abundance within the νMSM
+      url: https://arxiv.org/abs/hep-ph/0612182
+      year: 2007
+    - arxiv_id: '0804.4543'
+      authors:
+      - Laine, Mikko
+      - Shaposhnikov, Mikhail
+      doi: 10.1088/1475-7516/2008/06/031
+      notes: Related full text resolved locally and read for bounded enrichment.
+      reference_id: arxiv:0804.4543
+      role: constraint
+      title: Sterile neutrino dark matter as a consequence of νMSM-induced lepton asymmetry
+      url: https://arxiv.org/abs/0804.4543
+      year: 2008
+    external_databases: []
+    review_papers: []
+  extraction:
+    method: llm_assisted
+    extracted_by: gpt55_dark_matter_batch_worker_batch_0004
+    extractor_name: Codex
+    extraction_date: '2026-05-31'
+    confidence: high
+    source_chunks_or_sections:
+    - reference_id: primary
+      section: opening abstract/introduction
+      page: null
+      quote_or_summary: The paper says elementary keV sterile Dirac neutrinos can arise in the composite-neutrino
+        scenario and be WDM.
+    - reference_id: primary
+      section: Setup and mass/mixing discussion
+      page: null
+      quote_or_summary: It builds a confining hidden-sector EFT and derives keV masses and active-sterile
+        mixing for (n,n-1) theories.
+    - reference_id: primary
+      section: Non-Thermal WDM and Thermal WDM
+      page: null
+      quote_or_summary: It presents resonant production and entropy-diluted thermal freeze-out after supercooled
+        confinement.
+    unresolved_items:
+    - No X-ray, Lyman-alpha, or BBN likelihood was rerun.
+    - The resonant-production window depends on an assumed lepton asymmetry and on the nonthermal momentum
+      spectrum.
+  evidence:
+    particle_content:
+    - reference_id: primary
+      note: The dark matter candidate is a keV sterile Dirac neutrino dominated by the hidden-sector sterile
+        state.
+      confidence: high
+      section: mass and mixing discussion
+    symmetries:
+    - reference_id: primary
+      note: The setup keeps a nonanomalous B-L combination and uses hidden flavor breaking by a condensate.
+      confidence: medium
+      section: Setup
+    interactions:
+    - reference_id: primary
+      note: The sectors couple through M-suppressed irrelevant operators that generate active-sterile
+        mixing after confinement.
+      confidence: high
+      section: Setup
+    production_mechanism:
+    - reference_id: primary
+      note: The paper gives both resonant nonthermal production and entropy-diluted ultra-relativistic
+        freeze-out as WDM histories.
+      confidence: high
+      section: Non-Thermal WDM and Thermal WDM
+    cosmological_history:
+    - reference_id: primary
+      note: The thermal scenario relies on a supercooled confinement-induced phase transition and estimates
+        entropy dilution.
+      confidence: high
+      section: Supercooled Confinement
+    parameter_ranges:
+    - reference_id: primary
+      note: For (n,n-1) theories the text quotes m_d around 5 keV with sin^2(2 theta_d) around 3e-10 and
+        M scaling as 2e4 TeV times m_d/5 keV.
+      confidence: high
+      section: mass and mixing discussion
+    validity_domain:
+    - reference_id: primary
+      note: The paper states that m<n-1 theories have too-large mixing and focuses on (n,n-1) theories.
+      confidence: high
+      section: mass and mixing discussion
+    constraints:
+    - confidence: high
+      note: Primary paper rules out larger-mixing composite classes and gives the entropy-diluted Lyman-alpha
+        translation m_d > 1.5 keV.
+      page: null
+      reference_id: arxiv:1205.0569
+      section: Production and constraints
+    - confidence: medium
+      note: Related abundance calculation emphasizes X-ray constraints and structure-formation tension
+        for ordinary Dodelson-Widrow production.
+      page: null
+      reference_id: arxiv:hep-ph/0612182
+      section: Abstract
+    observables:
+    - confidence: high
+      note: Primary paper states X-ray, Lyman-alpha/free-streaming, Tremaine-Gunn and BBN constraints
+        and gives the m_d/theta_d composite scaling.
+      page: null
+      reference_id: arxiv:1205.0569
+      section: Introduction and setup
+    - confidence: medium
+      note: Related nuMSM paper discusses resonant production from lepton asymmetry and X-ray/structure
+        constraints.
+      page: null
+      reference_id: arxiv:0804.4543
+      section: Introduction
+    routes:
+    - confidence: high
+      note: Primary text connects composite-neutrino operator dimensions, production histories, entropy
+        dilution, and WDM observables.
+      page: null
+      reference_id: arxiv:1205.0569
+      section: Cosmological histories
+  review:
+    human_reviewed: false
+    expert_reviewed: false
+    scientific_confidence: medium
+    implementation_confidence: medium
+    reviewer_notes: []
+  caveats:
+  - The paper discusses more than one production history for the same composite sterile-neutrino candidate.
+robustness:
+  overall: medium
+  theory_robustness: medium
+  observational_robustness: unknown
+  computational_robustness: unknown
+  validation_status: expert_judgment_only
+  dominant_uncertainties:
+  - degree of supercooling in the confinement transition
+  - exact O(1) coefficients in the mass matrices
+  - production-history selection
+  notes: The construction and relic logic are explicit, while the thermal variant depends on plausible
+    but model-dependent supercooling.
+agent_failure_modes:
+  warnings:
+  - id: production_variant_mixing
+    severity: medium
+    category: assumption_mismatch
+    warning: Do not combine the resonant low-reheat and entropy-diluted thermal histories as a single
+      fixed cosmology.
+    source_reference_ids:
+    - primary
+  - id: supercooling_requirement
+    severity: medium
+    category: extrapolation
+    warning: The thermal WDM variant depends on significant hidden-sector supercooling estimated rather
+      than fully computed.
+    source_reference_ids:
+    - primary
+observables:
+- caveats:
+  - X-ray limits depend on the assumed dark-matter distribution and production abundance.
+  channel: indirect_detection
+  effect_direction: spectral_line
+  environments:
+  - Milky Way halo
+  - dwarf galaxies
+  - clusters
+  id: obs_sterile_xray_decay_line
+  key_quantities:
+  - description: Benchmark mass emphasized for composite sterile neutrinos.
+    name: sterile Dirac neutrino mass
+    range: keV scale; example m_d about 5 keV
+    role: core
+    source_reference_ids:
+    - arxiv:1205.0569
+    status: inferred
+    symbol: m_d
+    unit: keV
+  - description: Composite (n,n-1) theories naturally give small mixing.
+    name: active-sterile mixing angle
+    role: core
+    source_reference_ids:
+    - arxiv:1205.0569
+    status: inferred
+    symbol: sin^2(2 theta_d)
+    value: about 3e-10 for m_d about 5 keV
+  linked_constraints:
+  - con_xray_mixing_bounds
+  linked_routes:
+  - route_composite_sterile_wdm
+  name: Radiative-decay X-ray line from active-sterile mixing
+  notes: null
+  observability: medium
+  predicted_effect: The keV sterile Dirac neutrino inherits the usual radiative decay channel through
+    active-sterile mixing, producing X-ray flux constraints.
+  redshift_range: z=0 halos
+  relevance: high
+  scale_range: galactic and dwarf-galaxy halos
+  source_reference_ids:
+  - arxiv:1205.0569
+  - arxiv:0711.4646
+  - arxiv:hep-ph/0612182
+  - arxiv:0804.4543
+  subchannel: sterile-neutrino decay line
+- caveats:
+  - Resonant and inflaton-decay histories require production-spectrum-specific recasts.
+  channel: lyman_alpha
+  effect_direction: suppression
+  environments:
+  - intergalactic medium
+  - small halos
+  id: obs_wdm_free_streaming_lya
+  key_quantities:
+  - description: Primary translation of a nonresonant 10 keV Lyman-alpha bound after temperature dilution.
+    name: thermal entropy-diluted sterile mass
+    range: m_d > 1.5
+    role: core
+    source_reference_ids:
+    - arxiv:1205.0569
+    status: inferred
+    symbol: m_d
+    unit: keV
+  - description: Bound quoted for nonresonantly produced WDM at the active-neutrino temperature.
+    name: nonresonant-production comparison mass
+    range: m_nrp > 10
+    role: core
+    source_reference_ids:
+    - arxiv:1205.0569
+    status: inferred
+    symbol: m_nrp
+    unit: keV
+  linked_constraints:
+  - con_lya_free_streaming
+  linked_routes:
+  - route_composite_sterile_wdm
+  name: Warm-DM free-streaming cutoff
+  notes: null
+  observability: high
+  predicted_effect: A keV sterile-neutrino momentum distribution suppresses small-scale matter power;
+    entropy-diluted thermal production is colder than ordinary nonresonant production.
+  redshift_range: high-redshift Lyman-alpha forest
+  relevance: critical
+  scale_range: small/intermediate linear matter scales
+  source_reference_ids:
+  - arxiv:1205.0569
+  - arxiv:0711.4646
+  - arxiv:0804.4543
+  subchannel: linear matter power cutoff
+- caveats:
+  - Requires sufficient supercooling of the composite sector.
+  channel: cosmology
+  effect_direction: rate_change
+  environments:
+  - hidden confining sector
+  - early universe
+  id: obs_hidden_confinement_entropy
+  key_quantities:
+  - description: Thermal relic abundance requires a large entropy increase after freeze-out.
+    name: entropy dilution factor
+    role: core
+    source_reference_ids:
+    - arxiv:1205.0569
+    status: inferred
+    symbol: Delta
+    value: order 1e4 for m_d about 5 keV
+  - description: Hidden pions and right-handed neutrinos contribute extra radiation in the thermal history.
+    name: extra effective neutrino species
+    role: core
+    source_reference_ids:
+    - arxiv:1205.0569
+    status: approximate
+    symbol: Delta N_eff
+    value: about 0.26 for g_bs around 10
+  linked_constraints:
+  - con_bbn_hidden_freezeout
+  linked_routes:
+  - route_composite_sterile_wdm
+  name: Hidden-confinement entropy dilution
+  notes: null
+  observability: medium
+  predicted_effect: Supercooled confinement in the composite hidden sector can generate entropy that dilutes
+    an otherwise overabundant thermal sterile-neutrino relic.
+  redshift_range: pre-BBN through BBN
+  relevance: high
+  scale_range: homogeneous expansion
+  source_reference_ids:
+  - arxiv:1205.0569
+  subchannel: first-order confinement phase transition
+constraints:
+- allowed_regions:
+  - The (n,n-1) class with m_d about 5 keV and sin^2(2 theta_d) about 3e-10 remains in the discussed allowed/resonant
+    window.
+  applies: 'yes'
+  assumptions:
+  - can_be_relaxed: partial
+    description: The composite sterile Dirac state has the same active-neutrino radiative decay phenomenology
+      used for sterile-neutrino WDM bounds.
+    id: standard-radiative-decay
+    impact_if_violated: Exotic decays or a subdominant abundance would change the bound.
+    notes: null
+    scope: X-ray recast
+    source_reference_ids:
+    - arxiv:1205.0569
+    status: assumed
+  benchmark_implications:
+  - Dirac versus Majorana mass structure does not remove the usual radiative-decay X-ray constraint in
+    the primary discussion.
+  caveats:
+  - No X-ray line likelihood was evaluated.
+  constrained_parameters:
+  - m_d
+  - sin^2(2 theta_d)
+  - sterile-neutrino abundance
+  constraint_type: astrophysical
+  data_release: X-ray flux constraints compiled in source literature
+  excluded_regions:
+  - Composite theories with m < n-1 have larger mixing angles and are described by the primary paper as
+    ruled out by X-ray flux constraints.
+  id: con_xray_mixing_bounds
+  likelihood_available: 'no'
+  likelihood_reference: null
+  name: Sterile-neutrino X-ray mixing bounds
+  notes: null
+  observable_channel: indirect_detection
+  recasting_needed: 'yes'
+  robustness: medium
+  source_reference_ids:
+  - arxiv:1205.0569
+  - arxiv:0711.4646
+  - arxiv:hep-ph/0612182
+  - arxiv:0804.4543
+- allowed_regions:
+  - Resonant production with sufficient lepton asymmetry, inflaton-decay production, or entropy-diluted
+    thermal production with m_d > about 1.5 keV.
+  applies: parameter_dependent
+  assumptions:
+  - can_be_relaxed: partial
+    description: The thermal sterile-neutrino free-streaming length scales approximately as T/m when translating
+      the Lyman-alpha comparison bound.
+    id: temperature-rescaled-wdm
+    impact_if_violated: A nonthermal resonant spectrum cannot be captured by a simple temperature rescaling.
+    notes: null
+    scope: thermal diluted WDM
+    source_reference_ids:
+    - arxiv:1205.0569
+    status: approximate
+  benchmark_implications:
+  - The entropy-diluted thermal option can be colder than ordinary nonresonant sterile-neutrino WDM.
+  caveats:
+  - A full Lyman-alpha flux-power likelihood was not run.
+  constrained_parameters:
+  - m_d
+  - T_d/T_nu
+  - momentum distribution
+  - lepton asymmetry
+  constraint_type: astrophysical
+  data_release: Lyman-alpha bounds quoted in primary paper
+  excluded_regions:
+  - Pure nonresonant production is described as disfavored by combined Lyman-alpha and X-ray flux bounds.
+  id: con_lya_free_streaming
+  likelihood_available: 'no'
+  likelihood_reference: null
+  name: Lyman-alpha and free-streaming bound
+  notes: null
+  observable_channel: lyman_alpha
+  recasting_needed: 'yes'
+  robustness: medium
+  source_reference_ids:
+  - arxiv:1205.0569
+  - arxiv:0711.4646
+  - arxiv:0804.4543
+- allowed_regions:
+  - Hidden-sector interactions freeze out before BBN and supercooled confinement provides sufficient entropy
+    dilution.
+  applies: parameter_dependent
+  assumptions:
+  - can_be_relaxed: 'yes'
+    description: The composite hidden sector undergoes a sufficiently supercooled first-order confinement
+      transition.
+    id: supercooled-confinement
+    impact_if_violated: Without enough supercooling, thermal sterile neutrinos overclose or remain too
+      warm.
+    notes: null
+    scope: entropy production
+    source_reference_ids:
+    - arxiv:1205.0569
+    status: assumed
+  benchmark_implications:
+  - The model quotes Delta N_eff around 0.26 for representative hidden degrees of freedom.
+  caveats:
+  - The confinement transition was treated analytically, not simulated.
+  constrained_parameters:
+  - Delta N_eff
+  - hidden-sector decoupling temperature
+  - confinement temperature
+  - entropy dilution
+  constraint_type: cosmological
+  data_release: null
+  excluded_regions:
+  - Interactions keeping sterile states or hidden pions coupled through BBN would violate the assumed
+    thermal history.
+  id: con_bbn_hidden_freezeout
+  likelihood_available: 'no'
+  likelihood_reference: null
+  name: BBN and hidden-sector freeze-out requirements
+  notes: null
+  observable_channel: bbn
+  recasting_needed: 'yes'
+  robustness: low
+  source_reference_ids:
+  - arxiv:1205.0569
+theory_to_observable_routing:
+  routes:
+  - agent_notes: null
+    caveats:
+    - Resonant production depends on a large lepton asymmetry not fixed by the model card.
+    constraint_ids:
+    - con_xray_mixing_bounds
+    - con_lya_free_streaming
+    - con_bbn_hidden_freezeout
+    derived_quantities:
+    - radiative decay rate
+    - momentum distribution
+    - free-streaming length
+    - Delta N_eff
+    description: Map composite sterile Dirac neutrino parameters and hidden-sector thermal history to
+      X-ray, Lyman-alpha, and BBN observables.
+    forward_model_chain:
+    - inputs:
+      - operator dimensions
+      - m_d
+      notes: Select (n,n-1) class for X-ray-safe mixing.
+      outputs:
+      - theta_d
+      - M
+      step_id: s1
+      step_type: analytic_formula
+      tool_or_code: null
+      validity: Composite EFT scaling used in primary paper.
+    - inputs:
+      - theta_d
+      - lepton asymmetry
+      - reheat history
+      notes: Not run in this batch.
+      outputs:
+      - sterile-neutrino distribution
+      step_id: s2
+      step_type: boltzmann_solver
+      tool_or_code: null
+      validity: Needed for resonant/inflaton production.
+    - inputs:
+      - momentum distribution
+      - m_d
+      notes: Thermal diluted case can use approximate T/m scaling.
+      outputs:
+      - matter-power cutoff
+      - Lyman-alpha observable
+      step_id: s3
+      step_type: transfer_function
+      tool_or_code: null
+      validity: Production-spectrum dependent.
+    - inputs:
+      - hidden degrees of freedom
+      - decoupling temperature
+      notes: Requires confinement supercooling input.
+      outputs:
+      - Delta N_eff
+      - entropy dilution
+      step_id: s4
+      step_type: analytic_formula
+      tool_or_code: null
+      validity: Approximate hidden-sector thermodynamics.
+    id: route_composite_sterile_wdm
+    input_parameters:
+    - m_d
+    - theta_d
+    - M
+    - Lambda
+    - lepton asymmetry
+    - entropy dilution Delta
+    likelihoods:
+    - X-ray likelihood unavailable
+    - Lyman-alpha likelihood unavailable
+    - BBN/N_eff likelihood unavailable
+    observable_ids:
+    - obs_sterile_xray_decay_line
+    - obs_wdm_free_streaming_lya
+    - obs_hidden_confinement_entropy
+    required_code_resources:
+    - sterile-neutrino production solver
+    - Boltzmann/transfer-function solver
+    - hidden-sector phase-transition thermodynamics
+    route_status: planned
+    source_model_features:
+    - keV Dirac sterile neutrino
+    - active-sterile mixing from composite-neutrino operators
+    - resonant or entropy-diluted production
+    - supercooled hidden confinement
+    validation_tests:
+    - recover sin^2(2 theta_d) about 3e-10 at m_d about 5 keV
+    - recover entropy-diluted m_d > 1.5 keV bound

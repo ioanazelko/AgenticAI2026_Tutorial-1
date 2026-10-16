@@ -1,0 +1,1056 @@
+_source:
+  shard: arXiv_src_2311_092_wds.tar
+  paper_id: '2311_12487'
+  source_member: 2311_12487.json
+  enriched: true
+  enrichment_schema_version: dm_model_ocr_enrichment_smoke_v0
+schema_version: model_only_v0
+model_id: 2311_12487_qg_broken_fermionic_fimp_domain_wall_v1
+identity:
+  name: Quantum-gravity-broken fermionic FIMP with domain walls
+  family: freeze_in_dark_matter
+  aliases:
+  - fermionic dark matter with QG-broken Z2 symmetries
+  - FIMP dark matter and domain walls from broken discrete global symmetries
+  short_description: A singlet fermion dark matter candidate odd under an approximate Z2^DM symmetry is
+    produced by freeze-in through dimension-five operators, while a singlet scalar odd under Z2^DW forms
+    domain walls whose annihilation is driven by quantum-gravity symmetry breaking.
+  historical_origin_or_motivation: Introduced as a fermionic extension of an earlier scalar dark matter/domain-wall
+    scenario to connect freeze-in dark matter, decays induced by quantum gravity, and gravitational waves
+    from domain-wall annihilation.
+  status: speculative
+  model_kind: effective_field_theory
+theory:
+  theory_level: effective_field_theory
+  parent_frameworks:
+  - Refined Swampland Global Symmetry Conjecture
+  - string-inspired singlet sectors
+  - freeze-in dark matter
+  lagrangian_available: 'yes'
+  renormalizable: 'no'
+  eft_cutoff:
+    name: freeze-in scale
+    symbol: Lambda_FI
+    value: null
+    unit: GeV
+    role: core
+    status: unknown
+    source_reference_ids:
+    - '2311_12487'
+    notes: Dimension-five freeze-in operators are suppressed by Lambda_FI.
+  embedded_in_larger_framework: 'yes'
+  notes: The EFT augments the Standard Model with a singlet fermion and singlet scalar, with approximate
+    discrete symmetries broken by dimension-five QG-suppressed operators.
+particle_content:
+  dark_matter_candidate:
+    name: singlet fermion dark matter chi
+    spin: 1/2
+    statistics: fermion
+    elementary_or_composite: elementary
+    number_of_components: single_component
+  additional_dark_sector_particles:
+  - singlet scalar S responsible for domain walls
+  mediators:
+  - scalar S
+  - Standard Model Higgs boson
+  - active neutrinos through QG-induced mixing
+  dark_radiation_species: []
+  excited_or_degenerate_states: []
+  long_lived_particles:
+  - singlet fermion dark matter chi
+  unstable_parent_particles:
+  - scalar excitation s
+  - Higgs boson h
+  standard_model_extension: substantial
+symmetries:
+  stabilizing_mechanism: An approximate Z2^DM makes the singlet fermion long-lived, but QG-induced dimension-five
+    operators break the symmetry and allow slow decays through mixing with active neutrinos.
+  symmetries:
+  - name: Z2^DM
+    type: discrete
+    exact_or_approximate: broken
+    breaking: Explicitly broken by QG-suppressed dimension-five operators involving S, lepton doublets,
+      and the Higgs.
+    breaking_scale:
+      name: quantum-gravity breaking scale
+      symbol: Lambda_QG
+      value: 10^20-10^35
+      unit: GeV
+      role: core
+      status: inferred
+      source_reference_ids:
+      - '2311_12487'
+      notes: Range discussed for phenomenological considerations.
+  - name: Z2^DW
+    type: discrete
+    exact_or_approximate: broken
+    breaking: Spontaneously broken by the scalar S vev and explicitly biased by QG-suppressed operators,
+      causing domain-wall annihilation.
+    breaking_scale:
+      name: scalar vev
+      symbol: v_s
+      value: null
+      unit: GeV
+      role: core
+      status: unknown
+      source_reference_ids:
+      - '2311_12487'
+      notes: Benchmarks include v_s=10^10 GeV for relic-density illustration and v_s=2.21e6 GeV for a
+        gravitational-wave example.
+  topological_defects_possible: 'yes'
+interactions:
+  portals:
+  - higgs
+  - neutrino
+  - other
+  standard_model_targets:
+  - Higgs doublet
+  - lepton doublets
+  - active neutrinos
+  dark_sector_couplings:
+  - dimension-five freeze-in interactions between singlet fermion, S, and H
+  - QG-induced S-L-H operator causing neutrino mixing
+  mediator_types:
+  - scalar S
+  - Higgs h
+  - active neutrino mixing
+  interaction_operators:
+  - Z2-conserving dimension-five freeze-in operators suppressed by Lambda_FI
+  - scalar potential with H^†H, S^2, H^†H S^2, and lambda_s(S^2-v_s^2)^2/4
+  - QG bias operators S^5/Lambda_QG, S^3H^2/Lambda_QG, and S H^4/Lambda_QG
+  - QG-breaking operator S chi L_i H/Lambda_QG in rendered notation
+  scattering:
+    elastic: unknown
+    inelastic: unknown
+    momentum_dependence: unknown
+    velocity_dependence: unknown
+    spin_dependence: unknown
+  annihilation_channels: []
+  decay_channels:
+  - chi to photon plus active neutrino through mixing
+  - chi to e+ e- plus active neutrino through weak interactions when kinematically allowed
+  self_scattering_channels: []
+  cp_structure: unknown
+  flavor_structure: neutrino-flavor dependent QG coefficients alpha_i
+  tree_or_loop_level: both
+operators:
+  renormalizable_terms:
+  - scalar potential for H and S with Higgs-portal coupling lambda_hs
+  eft_operators:
+  - dimension-five freeze-in operators suppressed by Lambda_FI
+  - dimension-five QG bias operators for S
+  - dimension-five QG operator generating chi-active-neutrino mixing
+  contact_or_light_mediator: both
+  coupling_types:
+  - Higgs portal
+  - neutrino portal
+  - QG-suppressed discrete-symmetry breaking
+parameters:
+  core:
+  - name: dark matter mass
+    symbol: m_DM
+    description: Mass of the singlet fermion dark matter candidate.
+    value: null
+    unit: GeV
+    role: core
+    status: unknown
+    source_reference_ids:
+    - '2311_12487'
+    notes: Figures discuss examples from MeV to TeV scales.
+  - name: freeze-in scale
+    symbol: Lambda_FI
+    description: Suppression scale for dimension-five operators that produce the FIMP abundance.
+    value: null
+    unit: GeV
+    role: core
+    status: unknown
+    source_reference_ids:
+    - '2311_12487'
+    notes: The observed relic density fixes relations in the T_RH-Lambda_FI plane.
+  - name: quantum-gravity breaking scale
+    symbol: Lambda_QG
+    description: Effective scale suppressing discrete-symmetry-breaking operators.
+    value: 10^20-10^35
+    unit: GeV
+    role: core
+    status: inferred
+    source_reference_ids:
+    - '2311_12487'
+    notes: The paper treats this as a free parameter constrained by decays and domain-wall gravitational
+      waves.
+  - name: scalar vev
+    symbol: v_s
+    description: Vacuum expectation value of S that breaks Z2^DW and enters the neutrino-mixing and domain-wall
+      sectors.
+    value: null
+    unit: GeV
+    role: core
+    status: unknown
+    source_reference_ids:
+    - '2311_12487'
+    notes: Benchmarks include 10^10 GeV for relic-density plots and 2.21e6 GeV for a NANOGrav-like example.
+  - name: reheating temperature
+    symbol: T_RH
+    description: Highest temperature controlling UV freeze-in production.
+    value: greater than O(MeV), up to about 10^16
+    unit: GeV
+    role: cosmological
+    status: inferred
+    source_reference_ids:
+    - '2311_12487'
+    notes: The text treats T_RH as a free parameter after discussing BBN and inflationary considerations.
+  - name: scalar mass benchmark
+    symbol: m_s
+    description: Mass of the scalar excitation used in freeze-in examples.
+    value: '1'
+    unit: TeV
+    role: benchmark
+    status: inferred
+    source_reference_ids:
+    - '2311_12487'
+    notes: Used for demonstration in the relic-density contours.
+  nuisance:
+  - name: Higgs-singlet portal coupling
+    symbol: lambda_hs
+    description: Assumed small so S-Higgs mixing is negligible for v_s much larger than v_h.
+    value: null
+    unit: null
+    role: core
+    status: assumed
+    source_reference_ids:
+    - '2311_12487'
+    notes: null
+  - name: QG operator coefficients
+    symbol: alpha_i, beta_i
+    description: Dimensionless coefficients of QG-suppressed breaking operators, taken order one by redefining
+      Lambda_QG.
+    value: O(1)
+    unit: null
+    role: nuisance
+    status: assumed
+    source_reference_ids:
+    - '2311_12487'
+    notes: null
+  derived:
+  - name: active-neutrino mixing angle
+    symbol: theta
+    description: Mixing of chi with active neutrinos after S and H get vevs.
+    value: sum_i alpha_i v_s v_h /(2 Lambda_QG m_DM)
+    unit: null
+    role: derived
+    status: inferred
+    source_reference_ids:
+    - '2311_12487'
+    notes: This mixing allows slow dark matter decays.
+  - name: total freeze-in yield
+    symbol: Y_DM^Total
+    description: Sum of UV and IR freeze-in contributions.
+    value: Y_DM^UV + Y_DM^IR
+    unit: null
+    role: derived
+    status: inferred
+    source_reference_ids:
+    - '2311_12487'
+    notes: Used in Omega_DM h^2=2.75e8 (m_DM/GeV) Y_DM^Total.
+mass_scales_and_hierarchies:
+  scales:
+  - name: NANOGrav-like benchmark Lambda_QG
+    symbol: Lambda_QG
+    value: 8.68e32
+    unit: GeV
+    role: benchmark
+    status: inferred
+    source_reference_ids:
+    - '2311_12487'
+    notes: Benchmark paired with v_s=2.21e6 GeV for f_p=4.07e-8 Hz.
+  - name: NANOGrav-like benchmark scalar vev
+    symbol: v_s
+    value: 2.21e6
+    unit: GeV
+    role: benchmark
+    status: inferred
+    source_reference_ids:
+    - '2311_12487'
+    notes: Benchmark used for the domain-wall gravitational-wave spectrum.
+  hierarchy_questions:
+  - question: Why can QG breaking be observable despite Planck-scale suppression?
+    answer: The paper treats Lambda_QG as an effective nonperturbatively enhanced scale and correlates
+      tiny decays with domain-wall bias terms.
+    status: speculative
+  - question: When does UV versus IR freeze-in dominate?
+    answer: UV freeze-in dominates at reheating temperatures comparable to or above v_s, while low reheating
+      temperatures can make IR scalar decays dominant.
+    status: inferred
+production:
+  mechanisms:
+  - UV freeze-in from scattering through dimension-five operators
+  - IR freeze-in from decays of s and h after symmetry breaking
+  thermal_equilibrium_with_standard_model: 'no'
+  thermal_equilibrium_with_hidden_sector: unknown
+  abundance_set_by:
+  - Lambda_FI
+  - T_RH
+  - m_DM
+  - v_s
+  - m_s
+  - scalar and Higgs decay widths
+  depends_on_reheating_temperature: 'yes'
+  can_produce_all_dark_matter: parameter_dependent
+  nonthermal_momentum_distribution: 'yes'
+  notes: The paper emphasizes the singlet fermion never equilibrates with the thermal plasma and that
+    the relic density is the sum of UV and IR freeze-in yields.
+relic_density:
+  full_or_subcomponent: full_dark_matter
+  target_fraction:
+    name: observed dark matter relic density
+    symbol: Omega_DM h^2
+    value: '0.12'
+    unit: null
+    role: derived
+    status: established
+    source_reference_ids:
+    - '2311_12487'
+    notes: Used for the solid relic-density contours in the T_RH-Lambda_FI and v_s-m_DM planes.
+  calculation_type: nonthermal
+  key_dependencies:
+  - Y_DM^UV proportional to T_RH M_Pl/Lambda_FI^2
+  - Y_DM^IR from s and h decays
+  - m_DM
+  - v_s
+  - m_s
+  requires_entropy_dilution: unknown
+  overclosure_risk: parameter_dependent
+  underproduction_risk: parameter_dependent
+  tuning_assessment: unknown
+cosmological_history:
+  standard_history_assumed: false
+  nonstandard_features:
+  - freeze-in production from a feebly coupled singlet fermion
+  - spontaneous Z2^DW breaking creates domain walls
+  - QG-induced bias makes domain walls annihilate before BBN in viable regions
+  - dark matter can decay through active-neutrino mixing
+  dark_sector_temperature: null
+  delta_neff: null
+  kinetic_decoupling: null
+  chemical_decoupling: null
+  phase_transitions:
+  - S obtains a vev and breaks Z2^DW
+  - electroweak symmetry breaking induces scalar and neutrino mixing effects
+  topological_defects:
+  - domain walls
+  isocurvature_perturbations: unknown
+  bbn_relevance: high
+  cmb_relevance: medium
+phase_space:
+  distribution_type: nonthermal
+  distribution_function_available: unknown
+  f_of_p_or_q: not provided
+  average_momentum_relative_to_thermal: null
+  free_streaming_length: null
+  velocity_dispersion_today: null
+  phase_space_bounds: []
+  notes: Freeze-in production implies a nonthermal distribution, but the paper uses yield-level relic-density
+    calculations rather than a full phase-space function.
+structure_formation:
+  linear:
+    behaves_like_cdm: unknown
+    transfer_function_shape: unknown
+    small_scale_power_effect: unknown
+    half_mode_mass: null
+    impact_on_sigma8_s8: not discussed
+  nonlinear:
+    halo_mass_function_effect: unknown
+    subhalo_mass_function_effect: unknown
+    infall_subhalo_mass_function_effect: unknown
+    present_day_bound_subhalo_mass_function_effect: unknown
+    concentration_mass_relation_effect: unknown
+    density_profile_effect: unknown
+    core_or_cusp_effect: unknown
+    subhalo_survival_effect: unknown
+    tidal_stripping_effect: unknown
+    smallest_galaxies_effect: unknown
+    simulation_calibrated: unknown
+validity_domain:
+- id: feeble_freeze_in
+  applies_to: production
+  condition: The singlet fermion interactions must be weak enough that it never thermalizes with the Standard
+    Model bath.
+  status: assumed
+  extrapolation_risk: medium
+  caveats:
+  - Larger couplings would invalidate the FIMP freeze-in treatment.
+  source_reference_ids:
+  - '2311_12487'
+  notes: null
+- id: small_higgs_s_mixing
+  applies_to: model
+  condition: The analysis assumes v_s much larger than v_h and lambda_hs sufficiently small so S-Higgs
+    mixing is negligible.
+  status: assumed
+  extrapolation_risk: medium
+  caveats:
+  - Large mixing would change production and phenomenology.
+  source_reference_ids:
+  - '2311_12487'
+  notes: null
+- id: common_qg_scale
+  applies_to: model
+  condition: All relevant discrete-symmetry-breaking dimension-five operators are assumed to be suppressed
+    by a common Lambda_QG with order-one coefficients.
+  status: assumed
+  extrapolation_risk: high
+  caveats:
+  - Different QG scales for different operators would weaken the decay/GW correlation.
+  source_reference_ids:
+  - '2311_12487'
+  notes: null
+assumptions:
+  global:
+  - id: rsgsc_dimension_five_breaking
+    description: The Refined Swampland Global Symmetry Conjecture selects the lowest allowed dimension-five
+      symmetry-breaking operators.
+    scope: theory
+    status: speculative
+    impact_if_violated: The correlated dark matter decay and domain-wall bias predictions could be absent
+      or much smaller.
+    can_be_relaxed: unknown
+    source_reference_ids:
+    - '2311_12487'
+    notes: null
+  - id: order_one_qg_coefficients
+    description: Dimensionless coefficients of QG-breaking operators are taken to be order one after redefining
+      Lambda_QG.
+    scope: theory
+    status: assumed
+    impact_if_violated: Mixing angles, decay rates, and domain-wall annihilation scales would shift.
+    can_be_relaxed: 'yes'
+    source_reference_ids:
+    - '2311_12487'
+    notes: null
+  - id: free_reheating_temperature
+    description: The reheating temperature is treated as a free parameter within broad cosmological bounds.
+    scope: cosmological_history
+    status: assumed
+    impact_if_violated: UV freeze-in abundance contours would change.
+    can_be_relaxed: 'yes'
+    source_reference_ids:
+    - '2311_12487'
+    notes: null
+  constraint_specific: []
+  computation_specific: []
+associated_code:
+  has_associated_code: unknown
+  code_summary: No associated public model code is identified in the assigned text.
+  repositories: []
+  packages_or_modules: []
+  notebooks: []
+  scripts: []
+  containers_or_environments: []
+  expected_inputs: []
+  expected_outputs: []
+  supported_observable_channels: []
+  caveats: []
+provenance:
+  model_id: 2311_12487_qg_broken_fermionic_fimp_domain_wall_v1
+  model_name: Quantum-gravity-broken fermionic FIMP with domain walls
+  model_family: freeze_in_dark_matter
+  entry_version: 0.1.0
+  status: machine_extracted
+  created_at: '2026-05-31'
+  last_updated: '2026-05-31'
+  sources:
+    primary_papers:
+    - reference_id: '2311_12487'
+      title: Quantum Gravity Effects on Fermionic Dark Matter and Gravitational Waves
+      authors:
+      - Stephen F. King
+      - Rishav Roshan
+      - Xin Wang
+      - Graham White
+      - Masahito Yamazaki
+      year: 2023
+      arxiv_id: '2311.12487'
+      doi: null
+      url: null
+      role: original_model
+      notes: Assigned full text from target_text.sqlite.
+    - arxiv_id: '2311.12487'
+      authors:
+      - King, Stephen F.
+      - Roshan, Rishav
+      - Wang, Xin
+      - White, Graham
+      - Yamazaki, Masahito
+      doi: 10.1088/1475-7516/2024/05/071
+      notes: Primary assigned paper read from local SQLite full text.
+      reference_id: arxiv:2311.12487
+      role: original_model
+      title: Quantum gravity effects on fermionic dark matter and gravitational waves
+      url: https://arxiv.org/abs/2311.12487
+      year: 2024
+    constraint_papers:
+    - arxiv_id: '2308.03724'
+      authors:
+      - King, Stephen F.
+      - Roshan, Rishav
+      - Wang, Xin
+      - White, Graham
+      - Yamazaki, Masahito
+      doi: 10.1103/PhysRevD.109.024057
+      notes: Related local full text read for the preceding scalar-QG/domain-wall model.
+      reference_id: arxiv:2308.03724
+      role: extension
+      title: Quantum gravity effects on dark matter and gravitational waves
+      url: https://arxiv.org/abs/2308.03724
+      year: 2024
+    - arxiv_id: '2306.16219'
+      authors:
+      - Afzal, Adeela
+      - Agazie, Gabriella
+      - Anumarlapudi, Akash
+      - Archibald, Anne M.
+      - Arzoumanian, Zaven
+      - Baker, Paul T.
+      - Bécsy, Bence
+      - Blanco-Pillado, Jose Juan
+      - et al.
+      doi: 10.3847/2041-8213/acdc91
+      notes: Related local full text read for NANOGrav 15-year new-physics/PTA interpretation.
+      reference_id: arxiv:2306.16219
+      role: dataset
+      title: 'The NANOGrav 15 yr Data Set: Search for Signals from New Physics'
+      url: https://arxiv.org/abs/2306.16219
+      year: 2023
+    external_databases: []
+    review_papers:
+    - arxiv_id: '1703.02576'
+      authors:
+      - Saikawa, Ken'ichi
+      doi: 10.3390/universe3020040
+      notes: Related local full text read for gravitational waves from cosmic domain walls.
+      reference_id: arxiv:1703.02576
+      role: review
+      title: A Review of Gravitational Waves from Cosmic Domain Walls
+      url: https://arxiv.org/abs/1703.02576
+      year: 2017
+  extraction:
+    method: llm_assisted
+    extracted_by: codex_batch_worker_batch-0007
+    extractor_name: null
+    extraction_date: '2026-05-31'
+    confidence: high
+    source_chunks_or_sections:
+    - reference_id: '2311_12487'
+      section: Abstract and introduction
+      page: null
+      quote_or_summary: The paper extends a scalar DM/domain-wall scenario to fermionic FIMP dark matter
+        with QG-broken discrete symmetries.
+    - reference_id: '2311_12487'
+      section: Model and freeze-in production
+      page: null
+      quote_or_summary: The model adds singlet S and singlet fermion chi, writes dimension-five freeze-in/QG
+        operators, and computes UV plus IR freeze-in yields.
+    unresolved_items:
+    - The source text rendering drops some fermion symbols in the Lagrangian, so operator names are described
+      conservatively.
+    - No combined PTA, indirect-detection, and relic-density likelihood was run.
+    - The 15 keV Lyman-alpha statement is a cited freeze-in result and needs a spectrum-specific recast.
+  evidence:
+    particle_content:
+    - reference_id: '2311_12487'
+      note: The model augments the Standard Model with one singlet scalar S and one singlet fermion, with
+        the fermion playing the role of dark matter.
+      confidence: high
+      section: Model setup
+      page: null
+    symmetries:
+    - reference_id: '2311_12487'
+      note: The new fields are odd under Z2^DW and Z2^DM, and QG-suppressed operators explicitly break
+        these discrete global symmetries.
+      confidence: high
+      section: Model setup
+      page: null
+    interactions:
+    - reference_id: '2311_12487'
+      note: Dimension-five freeze-in operators are suppressed by Lambda_FI; QG-breaking S-L-H operators
+        generate active-neutrino mixing after symmetry breaking.
+      confidence: high
+      section: Model setup
+      page: null
+    production_mechanism:
+    - reference_id: '2311_12487'
+      note: The paper computes UV freeze-in from scattering and IR freeze-in from scalar decays, then
+        uses Y_DM^Total to obtain Omega_DM h^2.
+      confidence: high
+      section: Freeze-in production
+      page: null
+    cosmological_history:
+    - reference_id: '2311_12487'
+      note: S breaking creates domain walls; QG bias terms drive their annihilation and can yield a stochastic
+        gravitational-wave background.
+      confidence: high
+      section: Domain walls and gravitational waves
+      page: null
+    parameter_ranges:
+    - reference_id: '2311_12487'
+      note: The text discusses Lambda_QG about 10^20-10^35 GeV, T_RH from BBN-safe MeV scales up to about
+        10^16 GeV, and a NANOGrav-like benchmark Lambda_QG=8.68e32 GeV with v_s=2.21e6 GeV.
+      confidence: high
+      section: QG scale, freeze-in, and gravitational waves
+      page: null
+    validity_domain:
+    - reference_id: '2311_12487'
+      note: The model assumes v_s much larger than v_h, small Higgs-singlet mixing, order-one QG coefficients,
+        and a common Lambda_QG for relevant symmetry-breaking operators.
+      confidence: high
+      section: Model setup
+      page: null
+    constraints:
+    - confidence: high
+      note: Primary text states Lyman-alpha, CMB, X/gamma, SKA, and neutrinoless double-beta constraints
+        on v_s and m_DM.
+      page: null
+      reference_id: arxiv:2311.12487
+      section: Indirect detection discussion
+    - confidence: high
+      note: NANOGrav paper warns cosmological fits are modeling dependent and provides excluded regions
+        when spectra exceed the data.
+      page: null
+      reference_id: arxiv:2306.16219
+      section: Abstract
+    observables:
+    - confidence: high
+      note: Primary text links QG breaking to FIMP decays and domain-wall gravitational waves.
+      page: null
+      reference_id: arxiv:2311.12487
+      section: Abstract and introduction
+    - confidence: high
+      note: NANOGrav new-physics paper discusses domain walls as a possible cosmological interpretation
+        and PTA constraints.
+      page: null
+      reference_id: arxiv:2306.16219
+      section: Abstract
+    - confidence: high
+      note: Domain-wall review gives annihilation, peak-frequency, and amplitude scaling.
+      page: null
+      reference_id: arxiv:1703.02576
+      section: Review
+    routes:
+    - confidence: high
+      note: Primary paper provides the common-QG-scale construction tying FIMP decay and DW annihilation.
+      page: null
+      reference_id: arxiv:2311.12487
+      section: Model setup
+    - confidence: medium
+      note: Previous scalar model demonstrates the same QG-DM-GW correlation in a simpler setup.
+      page: null
+      reference_id: arxiv:2308.03724
+      section: Abstract
+  review:
+    human_reviewed: false
+    reviewed_by: null
+    review_date: null
+    expert_reviewed: false
+    expert_reviewer: null
+    expert_review_date: null
+    reviewer_notes: []
+    scientific_confidence: medium
+    implementation_confidence: medium
+  caveats:
+  - Rendered text loses some symbols in the dimension-five Lagrangian, so the operator extraction is intentionally
+    descriptive rather than algebraically exact.
+robustness:
+  overall: medium
+  theory_robustness: medium
+  observational_robustness: unknown
+  computational_robustness: unknown
+  constraint_robustness: unknown
+  dominant_uncertainties:
+  - effective QG scale and order-one coefficients
+  - relative UV versus IR freeze-in contribution
+  - assumption of common symmetry-breaking scale
+  validation_status: expert_judgment_only
+  notes: The paper provides analytic yield formulae and benchmark plots; this extraction records text-supported
+    model structure and dependencies.
+agent_failure_modes:
+  warnings:
+  - id: z2_not_exact
+    severity: high
+    category: assumption_mismatch
+    warning: The Z2^DM symmetry is approximate and deliberately broken by QG operators; do not treat the
+      fermion as exactly stable.
+    mitigation: Retain the QG-induced mixing and decay logic when using the model.
+    source_reference_ids:
+    - '2311_12487'
+  - id: uv_ir_freeze_in_regime
+    severity: medium
+    category: extrapolation
+    warning: The relic abundance can be dominated by UV or IR freeze-in depending on reheating and symmetry-breaking
+      scales.
+    mitigation: Use the total yield Y_DM^UV+Y_DM^IR and avoid applying a single-regime approximation outside
+      its stated domain.
+    source_reference_ids:
+    - '2311_12487'
+observables:
+- caveats:
+  - PTA interpretation is not unique; supermassive black-hole binaries and other cosmological sources
+    remain alternatives.
+  channel: gravitational_waves
+  effect_direction: enhancement
+  environments:
+  - pulsar timing arrays
+  - early-universe domain-wall network
+  id: obs_qg_domain_wall_gw
+  key_quantities:
+  - description: Suppression scale of discrete-symmetry-breaking operators.
+    name: effective quantum-gravity scale
+    range: model-dependent
+    role: core
+    source_reference_ids:
+    - arxiv:2311.12487
+    - arxiv:2308.03724
+    status: inferred
+    symbol: Lambda_QG
+    unit: GeV
+  - description: VEV setting domain-wall tension and also entering the fermion mixing.
+    name: domain-wall scalar vev
+    range: model-dependent; benchmark scans include about 1e5 GeV as a transition scale for freeze-in
+      behavior
+    role: core
+    source_reference_ids:
+    - arxiv:2311.12487
+    status: approximate
+    symbol: v_s
+    unit: GeV
+  - description: Controls the peak GW frequency in domain-wall calculations.
+    name: domain-wall annihilation temperature
+    range: model-dependent
+    role: core
+    source_reference_ids:
+    - arxiv:1703.02576
+    status: inferred
+    symbol: T_ann
+    unit: GeV
+  linked_constraints:
+  - con_pta_domain_wall_gw
+  linked_routes:
+  - route_qg_fimp_multimessenger
+  name: Quantum-gravity-biased domain-wall gravitational waves
+  notes: null
+  observability: medium
+  predicted_effect: Quantum-gravity breaking biases the domain-wall potential, causing domain-wall annihilation
+    and a characteristic stochastic gravitational-wave background that can lie in the PTA band.
+  redshift_range: early universe domain-wall annihilation; signal observed today
+  relevance: critical
+  scale_range: nanohertz PTA frequencies for the motivated benchmarks
+  source_reference_ids:
+  - arxiv:2311.12487
+  - arxiv:2308.03724
+  - arxiv:2306.16219
+  - arxiv:1703.02576
+  subchannel: nanohertz stochastic background from domain-wall annihilation
+- caveats:
+  - The strength depends on O(1) quantum-gravity operator coefficients and flavor assumptions.
+  channel: indirect_detection
+  effect_direction: rate_change
+  environments:
+  - CMB
+  - diffuse X-ray/gamma-ray sky
+  - radio galaxies and clusters
+  - neutrinoless double-beta experiments
+  id: obs_fermionic_fimp_decay_indirect
+  key_quantities:
+  - description: Mass of the fermionic FIMP.
+    name: dark matter mass
+    range: keV to TeV-scale scan, with sub-100 MeV region strongly constrained in parts of parameter space
+    role: core
+    source_reference_ids:
+    - arxiv:2311.12487
+    status: inferred
+    symbol: m_DM
+    unit: energy
+  - description: Mixing induced after electroweak and singlet symmetry breaking.
+    name: active-sterile mixing angle
+    range: theta_i proportional to v_s v_h /(Lambda_QG m_DM)
+    role: core
+    source_reference_ids:
+    - arxiv:2311.12487
+    status: inferred
+    symbol: theta
+  - description: Lifetime constrained by CMB and photon backgrounds.
+    name: dark matter lifetime
+    range: channel dependent; photon-background limits include tau_DM >~1e25 s for some modes
+    role: core
+    source_reference_ids:
+    - arxiv:2311.12487
+    status: approximate
+    symbol: tau_DM
+    unit: s
+  linked_constraints:
+  - con_decay_indirect_cmb_xray
+  linked_routes:
+  - route_qg_fimp_multimessenger
+  name: Fermionic FIMP decay signatures from neutrino mixing
+  notes: null
+  observability: medium
+  predicted_effect: Quantum-gravity breaking induces active-neutrino mixing for the fermionic FIMP, allowing
+    late decays whose products are constrained by CMB energy injection, diffuse X/gamma-ray backgrounds,
+    radio searches, and neutrinoless double-beta limits.
+  redshift_range: BBN/recombination through present-day indirect searches
+  relevance: high
+  scale_range: null
+  source_reference_ids:
+  - arxiv:2311.12487
+  subchannel: CMB, X/gamma-ray, radio, and neutrinoless double beta
+- caveats:
+  - The quoted 15 keV value is imported from a cited production-spectrum study and should be recast for
+    changed freeze-in histories.
+  channel: lyman_alpha
+  effect_direction: suppression
+  environments:
+  - Lyman-alpha forest
+  id: obs_fimp_free_streaming_lya
+  key_quantities:
+  - description: FIMP mass constrained by free streaming.
+    name: dark matter mass
+    range: m_DM below about 15 keV excluded for the cited freeze-in spectrum
+    role: core
+    source_reference_ids:
+    - arxiv:2311.12487
+    status: inferred
+    symbol: m_DM
+    unit: keV
+  linked_constraints:
+  - con_lya_fimp_mass
+  linked_routes:
+  - route_qg_fimp_multimessenger
+  name: Freeze-in free-streaming suppression
+  notes: null
+  observability: high
+  predicted_effect: The FIMP momentum distribution can suppress small-scale structure; the primary text
+    cites a freeze-in Lyman-alpha bound that excludes dark matter masses below about 15 keV for the relevant
+    warm production case.
+  redshift_range: Lyman-alpha forest redshifts
+  relevance: high
+  scale_range: intermediate to small cosmological scales
+  source_reference_ids:
+  - arxiv:2311.12487
+  subchannel: small-scale matter suppression
+constraints:
+- allowed_regions:
+  - Some domain-wall spectra can reproduce the NANOGrav 15-year signal under cosmological-source assumptions.
+  applies: parameter_dependent
+  assumptions:
+  - can_be_relaxed: 'yes'
+    description: The PTA background is treated as a possible cosmological domain-wall signal, not as established
+      evidence for this model.
+    id: pta-source-model
+    impact_if_violated: If the signal is astrophysical SMBHB-dominated, only upper limits remain.
+    notes: null
+    scope: PTA interpretation
+    source_reference_ids:
+    - arxiv:2306.16219
+    status: assumed
+  benchmark_implications:
+  - The domain-wall sector can be correlated with the same QG scale that controls DM decay.
+  caveats:
+  - PTA Bayes factors depend strongly on SMBHB population modeling.
+  constrained_parameters:
+  - Lambda_QG
+  - v_s
+  - domain-wall tension
+  - bias
+  - T_ann
+  constraint_type: astrophysical
+  data_release: NANOGrav 15-year pulsar timing data set
+  excluded_regions:
+  - Domain-wall models whose stochastic background significantly exceeds the NANOGrav spectrum are excluded
+    by PTA amplitude constraints.
+  id: con_pta_domain_wall_gw
+  likelihood_available: partial
+  likelihood_reference: NANOGrav 15-year new-physics analysis
+  name: PTA domain-wall gravitational-wave consistency
+  notes: null
+  observable_channel: gravitational_waves
+  recasting_needed: 'yes'
+  robustness: medium
+  source_reference_ids:
+  - arxiv:2311.12487
+  - arxiv:2308.03724
+  - arxiv:2306.16219
+  - arxiv:1703.02576
+- allowed_regions:
+  - A roughly triangular allowed region in the v_s--m_DM plane remains after imposing indirect limits
+    and relic-density curves.
+  applies: parameter_dependent
+  assumptions:
+  - can_be_relaxed: 'yes'
+    description: The primary scan sets the relevant dimensionless QG-breaking coefficients to order one
+      by redefining Lambda_QG.
+    id: order-one-qg-couplings
+    impact_if_violated: Different coefficients alter the mixing angle and lifetime.
+    notes: null
+    scope: mixing and decay mapping
+    source_reference_ids:
+    - arxiv:2311.12487
+    status: assumed
+  benchmark_implications:
+  - Increasing the freeze-in coupling pushes relic-density curves toward regions more restricted by CMB
+    and X/gamma observations.
+  caveats:
+  - No indirect-detection likelihood was rerun.
+  constrained_parameters:
+  - m_DM
+  - theta
+  - v_s
+  - Lambda_QG
+  - tau_DM
+  constraint_type: cosmological
+  data_release: HEAO-1, INTEGRAL, COMPTEL, EGRET, Fermi-LAT limits quoted in primary text
+  excluded_regions:
+  - Primary text states CMB and X-ray/gamma-ray backgrounds strongly disfavor m_DM below about 100 MeV
+    for large Lambda_QG and small v_s.
+  - Diffuse photon data constrain 0.01 MeV < m_DM < 100 MeV through the active-sterile mixing relation.
+  id: con_decay_indirect_cmb_xray
+  likelihood_available: 'no'
+  likelihood_reference: null
+  name: CMB and diffuse-photon decay limits
+  notes: null
+  observable_channel: indirect_detection
+  recasting_needed: 'yes'
+  robustness: medium
+  source_reference_ids:
+  - arxiv:2311.12487
+- allowed_regions:
+  - Heavier or colder freeze-in spectra can evade this specific mass floor.
+  applies: recast_required
+  assumptions:
+  - can_be_relaxed: 'yes'
+    description: The imported Lyman-alpha mass limit assumes a sufficiently similar freeze-in momentum
+      spectrum.
+    id: freezein-spectrum-match
+    impact_if_violated: A colder or warmer spectrum changes the mass floor.
+    notes: null
+    scope: small-scale structure
+    source_reference_ids:
+    - arxiv:2311.12487
+    status: assumed
+  benchmark_implications:
+  - The QG FIMP must remain heavy/cold enough while also fitting the relic-density curves.
+  caveats:
+  - IGM thermal-history systematics are not propagated.
+  constrained_parameters:
+  - m_DM
+  - freeze-in momentum distribution
+  constraint_type: astrophysical
+  data_release: null
+  excluded_regions:
+  - The primary text cites a freeze-in Lyman-alpha bound excluding m_DM below about 15 keV.
+  id: con_lya_fimp_mass
+  likelihood_available: 'no'
+  likelihood_reference: null
+  name: Freeze-in Lyman-alpha mass floor
+  notes: null
+  observable_channel: lyman_alpha
+  recasting_needed: 'yes'
+  robustness: medium
+  source_reference_ids:
+  - arxiv:2311.12487
+theory_to_observable_routing:
+  routes:
+  - agent_notes: The row keeps the multi-messenger correlation but avoids treating PTA data as evidence
+      for this model.
+    caveats:
+    - QG coefficients and reheating history can move all three observable sectors.
+    constraint_ids:
+    - con_pta_domain_wall_gw
+    - con_decay_indirect_cmb_xray
+    - con_lya_fimp_mass
+    derived_quantities:
+    - freeze-in yield
+    - theta
+    - tau_DM
+    - domain-wall annihilation temperature
+    - GW spectrum
+    - Ly-alpha free-streaming scale
+    description: Jointly map the QG-breaking scale into FIMP freeze-in abundance, decay observables, and
+      domain-wall gravitational waves.
+    forward_model_chain:
+    - inputs:
+      - Lambda_QG
+      - v_s
+      - m_DM
+      notes: null
+      outputs:
+      - active-neutrino mixing angle
+      - DM decay width
+      step_id: s1
+      step_type: analytic_formula
+      tool_or_code: null
+      validity: Primary text gives the mixing scaling and uses it for indirect constraints.
+    - inputs:
+      - lambda_FI
+      - T_RH
+      - v_s
+      - m_DM
+      notes: null
+      outputs:
+      - FIMP relic density
+      - momentum distribution
+      step_id: s2
+      step_type: boltzmann_solver
+      tool_or_code: null
+      validity: Needed to reproduce UV/IR freeze-in curves.
+    - inputs:
+      - domain-wall tension
+      - bias
+      - T_ann
+      notes: null
+      outputs:
+      - GW peak frequency
+      - GW amplitude
+      step_id: s3
+      step_type: analytic_formula
+      tool_or_code: null
+      validity: Domain-wall review gives standard estimates.
+    - inputs:
+      - GW spectrum
+      - decay spectra
+      - matter cutoff
+      notes: null
+      outputs:
+      - PTA/indirect/Ly-alpha constraints
+      step_id: s4
+      step_type: likelihood
+      tool_or_code: null
+      validity: Full likelihood combination not run here.
+    id: route_qg_fimp_multimessenger
+    input_parameters:
+    - Lambda_QG
+    - v_s
+    - m_DM
+    - T_RH
+    - lambda_FI
+    - domain-wall tension/bias
+    likelihoods:
+    - PTA new-physics likelihood not run
+    - indirect CMB/X-ray likelihoods not run
+    - Ly-alpha recast not run
+    observable_ids:
+    - obs_qg_domain_wall_gw
+    - obs_fermionic_fimp_decay_indirect
+    - obs_fimp_free_streaming_lya
+    required_code_resources:
+    - freeze-in Boltzmann solver
+    - domain-wall GW spectrum module
+    - indirect-decay likelihoods
+    - Ly-alpha transfer-function recast
+    route_status: planned
+    source_model_features:
+    - fermionic FIMP odd under approximate Z2^DM
+    - singlet scalar domain-wall sector
+    - common QG breaking scale
+    - DM-neutrino mixing
+    validation_tests:
+    - Recover primary triangular allowed-region behavior
+    - Recover PTA-band peak for published domain-wall benchmarks

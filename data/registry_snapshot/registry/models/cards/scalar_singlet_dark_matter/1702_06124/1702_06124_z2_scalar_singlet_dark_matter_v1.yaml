@@ -1,0 +1,859 @@
+_source:
+  shard: arXiv_src_1702_014_wds.tar
+  paper_id: '1702_06124'
+  source_member: 1702_06124.json
+  enriched: true
+  enrichment_schema_version: dm_model_ocr_enrichment_smoke_v0
+schema_version: model_only_v0
+model_id: 1702_06124_z2_scalar_singlet_dark_matter_v1
+identity:
+  name: Z_2 scalar singlet dark matter for electroweak baryogenesis
+  family: scalar_singlet_dark_matter
+  aliases:
+  - Higgs-portal real singlet scalar S
+  short_description: A real Z_2-odd singlet scalar coupled to the Higgs, studied as a dark matter candidate
+    alongside electroweak baryogenesis, gravitational waves, and collider probes.
+  historical_origin_or_motivation: Revisits the singlet scalar extension as a minimal setting for a strong
+    electroweak phase transition and dark matter phenomenology.
+  status: speculative
+  model_kind: simplified_model
+theory:
+  theory_level: simplified_model
+  parent_frameworks:
+  - Standard Model plus real singlet scalar
+  lagrangian_available: 'yes'
+  renormalizable: 'yes'
+  embedded_in_larger_framework: unknown
+  notes: The paper gives the tree-level scalar potential and one-loop effective-potential treatment.
+particle_content:
+  dark_matter_candidate:
+    name: real scalar S
+    spin: '0'
+    statistics: scalar
+    elementary_or_composite: elementary
+    number_of_components: single_component
+  additional_dark_sector_particles: []
+  mediators:
+  - Higgs boson
+  dark_radiation_species: []
+  excited_or_degenerate_states: []
+  long_lived_particles:
+  - S
+  unstable_parent_particles: []
+  standard_model_extension: minimal
+symmetries:
+  stabilizing_mechanism: Exact Z_2 symmetry S -> -S makes the singlet stable.
+  symmetries:
+  - name: Z_2
+    type: discrete
+    exact_or_approximate: exact
+    breaking: not broken in the dark matter phase considered
+    breaking_scale: null
+  topological_defects_possible: unknown
+interactions:
+  portals:
+  - higgs
+  standard_model_targets:
+  - Higgs boson
+  - SM annihilation final states
+  - nucleons through Higgs exchange
+  dark_sector_couplings:
+  - lambda_HS Higgs portal
+  - lambda_S singlet quartic
+  mediator_types:
+  - Higgs boson
+  interaction_operators:
+  - '|H|^2 S^2'
+  - S^4
+  scattering:
+    elastic: 'yes'
+    inelastic: 'no'
+    momentum_dependence: mild
+    velocity_dependence: none
+    spin_dependence: spin_independent
+  annihilation_channels:
+  - S S to SM final states through Higgs portal
+  decay_channels: []
+  self_scattering_channels:
+  - S self-interaction from lambda_S S^4
+  cp_structure: CP-even scalar potential in the extracted model.
+  flavor_structure: Flavor universal Higgs-portal coupling in the dark matter sector.
+  tree_or_loop_level: both
+parameters:
+  core:
+  - name: singlet mass
+    symbol: m_S
+    description: Physical mass of the real scalar after electroweak symmetry breaking.
+    role: core
+    status: established
+    source_reference_ids:
+    - '1702_06124'
+  - name: Higgs portal coupling
+    symbol: lambda_HS
+    description: Coupling between the Higgs bilinear and S^2.
+    role: core
+    status: established
+    source_reference_ids:
+    - '1702_06124'
+  - name: singlet quartic
+    symbol: lambda_S
+    description: Self-coupling of S in the tree-level potential.
+    role: core
+    status: established
+    source_reference_ids:
+    - '1702_06124'
+production:
+  mechanisms:
+  - thermal freeze-out through Higgs-portal annihilation
+  thermal_equilibrium_with_standard_model: 'yes'
+  thermal_equilibrium_with_hidden_sector: not_applicable
+  abundance_set_by:
+  - m_S
+  - lambda_HS
+  - annihilation cross section
+  - early expansion history
+  depends_on_reheating_temperature: unknown
+  can_produce_all_dark_matter: parameter_dependent
+  nonthermal_momentum_distribution: 'no'
+  notes: The paper finds that EWBG-compatible standard-history regions tend to leave S as less than all
+    of the dark matter, while modified expansion can change the abundance.
+relic_density:
+  full_or_subcomponent: either
+  target_fraction: null
+  calculation_type: thermal
+  key_dependencies:
+  - m_S
+  - lambda_HS
+  - Higgs resonance
+  - possible faster early expansion
+  requires_entropy_dilution: 'no'
+  overclosure_risk: parameter_dependent
+  underproduction_risk: parameter_dependent
+  tuning_assessment: unknown
+cosmological_history:
+  standard_history_assumed: true
+  nonstandard_features:
+  - optional extra early energy density redshifting faster than radiation
+  dark_sector_temperature: null
+  delta_neff: null
+  kinetic_decoupling: null
+  chemical_decoupling: null
+  phase_transitions:
+  - strong first-order electroweak phase transition
+  topological_defects: []
+  isocurvature_perturbations: unknown
+  bbn_relevance: unknown
+  cmb_relevance: low
+phase_space:
+  distribution_type: thermal
+  distribution_function_available: 'no'
+  f_of_p_or_q: not provided
+  average_momentum_relative_to_thermal: null
+  free_streaming_length: null
+  velocity_dispersion_today: null
+  phase_space_bounds: []
+  notes: The paper treats S as a cold thermal relic candidate.
+structure_formation:
+  linear:
+    behaves_like_cdm: 'yes'
+    transfer_function_shape: cdm_like
+    small_scale_power_effect: none
+    half_mode_mass: null
+    impact_on_sigma8_s8: unknown
+  nonlinear:
+    halo_mass_function_effect: unknown
+    subhalo_mass_function_effect: unknown
+    simulation_calibrated: unknown
+validity_domain:
+- id: v1
+  applies_to: model
+  condition: EWBG-compatible standard-history regions do not make S all of the dark matter in the authors
+    analysis.
+  status: inferred
+  extrapolation_risk: medium
+  caveats: []
+  source_reference_ids:
+  - '1702_06124'
+- id: v2
+  applies_to: cosmological_history
+  condition: Modified early expansion is an optional scenario rather than the baseline relic calculation.
+  status: assumed
+  extrapolation_risk: medium
+  caveats: []
+  source_reference_ids:
+  - '1702_06124'
+assumptions:
+  global:
+  - id: a1
+    description: The Z_2 symmetry is exact in the dark matter phase.
+    scope: global
+    status: assumed
+    can_be_relaxed: unknown
+    source_reference_ids:
+    - '1702_06124'
+  - id: a2
+    description: The scalar singlet is the only dark particle unless a multi-component dark sector is
+      explicitly added.
+    scope: global
+    status: assumed
+    can_be_relaxed: 'yes'
+    source_reference_ids:
+    - '1702_06124'
+associated_code:
+  has_associated_code: unknown
+  code_summary: No model-specific public code is identified in the assigned text.
+  primary_code_role: null
+  repositories: []
+  packages_or_modules: []
+  notebooks: []
+  scripts: []
+  expected_inputs: []
+  expected_outputs: []
+  caveats: []
+provenance:
+  model_id: 1702_06124_z2_scalar_singlet_dark_matter_v1
+  model_name: Z_2 scalar singlet dark matter for electroweak baryogenesis
+  model_family: scalar_singlet_dark_matter
+  entry_version: 0.1.0
+  status: machine_extracted
+  created_at: '2026-05-31'
+  last_updated: '2026-05-31'
+  sources:
+    primary_papers:
+    - reference_id: '1702_06124'
+      title: Gravitational wave, collider and dark matter signals from a scalar singlet electroweak baryogenesis
+      authors:
+      - Ankit Beniwal
+      - Marek Lewicki
+      - James D. Wells
+      - Martin White
+      - Anthony G. Williams
+      year: 2017
+      arxiv_id: '1702.06124'
+      doi: null
+      url: null
+      role: extension
+      notes: null
+    - arxiv_id: '1702.06124'
+      authors:
+      - Beniwal, Ankit
+      - Lewicki, Marek
+      - Wells, James D.
+      - White, Martin
+      - Williams, Anthony G.
+      doi: 10.1007/JHEP08(2017)108
+      notes: Primary assigned paper.
+      reference_id: src_1702_primary
+      role: original_model
+      title: Gravitational wave, collider and dark matter signals from a scalar singlet electroweak baryogenesis
+      url: https://arxiv.org/abs/1702.06124
+      year: 2017
+    constraint_papers:
+    - arxiv_id: '1605.08663'
+      authors:
+      - Chala, Mikael
+      - Nardini, Germano
+      - Sobolev, Ivan
+      doi: 10.1103/PhysRevD.94.055006
+      notes: Locally resolved related singlet-sector EWBG/direct-detection/GW study.
+      reference_id: src_1702_chala2016
+      role: extension
+      title: Unified explanation for dark matter and electroweak baryogenesis with direct detection and
+        gravitational wave signatures
+      url: https://arxiv.org/abs/1605.08663
+      year: 2016
+    - arxiv_id: '1702.02698'
+      authors:
+      - Chao, Wei
+      - Guo, Huai-Ke
+      - Shu, Jing
+      doi: 10.1088/1475-7516/2017/09/009
+      notes: Locally resolved related source on dark-matter-triggered electroweak-transition gravitational
+        waves.
+      reference_id: src_1702_chao2017
+      role: extension
+      title: Gravitational wave signals of electroweak phase transition triggered by dark matter
+      url: https://arxiv.org/abs/1702.02698
+      year: 2017
+    - arxiv_id: '1811.03279'
+      authors:
+      - Bian, Ligong
+      - Liu, Xuewen
+      doi: 10.1103/PhysRevD.99.055003
+      notes: Locally resolved related two-step EWPT dark-sector source.
+      reference_id: src_1702_bian2019
+      role: extension
+      title: Two-step strongly first-order electroweak phase transition modified FIMP dark matter, gravitational
+        wave signals, and the neutrino mass
+      url: https://arxiv.org/abs/1811.03279
+      year: 2019
+    external_databases: []
+    review_papers: []
+  extraction:
+    method: llm_assisted
+    extracted_by: codex_batch_0010
+    extractor_name: Codex GPT-5
+    extraction_date: '2026-05-31'
+    confidence: high
+    source_chunks_or_sections:
+    - reference_id: '1702_06124'
+      section: Model and dark matter abundance
+      page: null
+      quote_or_summary: The paper defines a Z_2 real singlet scalar potential and solves the Boltzmann
+        equation for S.
+    unresolved_items:
+    - No 2026 direct-detection or collider update was attempted; limits are those quoted in the primary
+      paper.
+    - No public code repository was identified in the assigned text.
+  evidence:
+    particle_content:
+    - reference_id: '1702_06124'
+      note: The model adds one real scalar singlet S coupled to the SM Higgs boson.
+      confidence: high
+      section: Model section
+    symmetries:
+    - reference_id: '1702_06124'
+      note: The tree-level scalar potential is written with a Z_2 symmetry S -> -S, making the new scalar
+        a viable dark matter candidate.
+      confidence: high
+      section: Model section
+    interactions:
+    - reference_id: '1702_06124'
+      note: The scalar couples through the Higgs portal term lambda_HS |H|^2 S^2 and annihilates into
+        SM final states.
+      confidence: high
+      section: Model and relic density sections
+    production_mechanism:
+    - reference_id: '1702_06124'
+      note: The abundance is obtained by solving the Boltzmann equation for thermal annihilation with
+        x = m_S/T.
+      confidence: high
+      section: Dark matter abundance
+    cosmological_history:
+    - reference_id: '1702_06124'
+      note: The paper studies the standard relic calculation and an optional faster-than-radiation early
+        energy component that changes freeze-out.
+      confidence: medium
+      section: Modified cosmology section
+    parameter_ranges:
+    - reference_id: '1702_06124'
+      note: Core parameters include m_S, lambda_HS, and lambda_S; EWBG-favored regions leave S as a small
+        subcomponent in the standard history.
+      confidence: medium
+      section: Model and conclusions
+    validity_domain:
+    - reference_id: '1702_06124'
+      note: In regions where electroweak baryogenesis is realized, the scalar does not account for all
+        dark matter in the standard calculation.
+      confidence: high
+      section: Conclusions
+    constraints:
+    - confidence: high
+      note: Primary text states Omega_DM h^2=0.1188, LUX (2016) as strongest SI limit used, m_S<m_h/2
+        invisible-Higgs pressure, and future GW/collider reach.
+      page: null
+      reference_id: src_1702_primary
+      section: null
+    observables:
+    - confidence: high
+      note: Primary text gives Planck relic cap, LUX scaling, LISA/BBO GW reach, collider self-coupling
+        projections, and light-singlet invisible-Higgs caveat.
+      page: null
+      reference_id: src_1702_primary
+      section: dark matter, GW, and collider sections
+    - confidence: medium
+      note: Related locally resolved source supports EWPT-triggered-by-dark-matter GW phenomenology.
+      page: null
+      reference_id: src_1702_chao2017
+      section: null
+    routes:
+    - confidence: high
+      note: Primary supplies freeze-out, SI scattering, finite-temperature, GW, and collider formulas/projections
+        for route implementation.
+      page: null
+      reference_id: src_1702_primary
+      section: null
+  review:
+    human_reviewed: false
+    reviewed_by: null
+    review_date: null
+    expert_reviewed: false
+    expert_reviewer: null
+    expert_review_date: null
+    reviewer_notes: []
+    scientific_confidence: high
+    implementation_confidence: medium
+robustness:
+  overall: medium
+  theory_robustness: medium
+  computational_robustness: medium
+  validation_status: expert_judgment_only
+  dominant_uncertainties:
+  - the singlet often becomes a subcomponent in EWBG-favored regions
+  notes: The model is simple and renormalizable but joint EWBG and dark matter viability is parameter
+    dependent.
+agent_failure_modes:
+  warnings:
+  - id: w1
+    severity: medium
+    category: assumption_mismatch
+    warning: Do not assume the scalar saturates dark matter in the electroweak-baryogenesis region; the
+      paper emphasizes subcomponent behavior there.
+    source_reference_ids:
+    - '1702_06124'
+observables:
+- caveats:
+  - Direct-detection limits are dataset/version dependent; this batch used the paper quote, not a modern
+    recast.
+  channel: direct_detection
+  effect_direction: rate_change
+  environments:
+  - LUX-like xenon detectors
+  - future direct-detection experiments
+  id: obs_higgs_portal_direct_detection
+  key_quantities:
+  - description: Physical Z2-odd scalar mass.
+    name: singlet mass
+    range: above m_h/2 in most displayed EWBG plots
+    role: core
+    source_reference_ids:
+    - src_1702_primary
+    status: inferred
+    symbol: m_S
+    unit: GeV
+  - description: Coupling controlling annihilation, phase transition strength, and SI scattering.
+    name: Higgs portal coupling
+    range: 0.2-4 scanned; large values become perturbatively unreliable
+    role: core
+    source_reference_ids:
+    - src_1702_primary
+    status: inferred
+    symbol: lambda_HS
+  - description: Scaling factor for direct-detection limits when S is subdominant.
+    name: relic-density fraction
+    range:
+      inclusive_max: true
+      inclusive_min: true
+      max: 1
+      min: 0
+      notes: Must not exceed Planck DM abundance.
+      unit: null
+    role: derived
+    source_reference_ids:
+    - src_1702_primary
+    status: inferred
+    symbol: Omega_S/Omega_DM
+  linked_constraints:
+  - con_planck_relic_lux_scaled
+  - con_invisible_higgs_light_singlet
+  linked_routes:
+  - route_higgs_portal_relic_direct_detection
+  name: Spin-independent Higgs-portal nuclear recoils
+  notes: null
+  observability: high
+  predicted_effect: The singlet scatters through the Higgs portal; the paper scales the SI cross section
+    by the relic fraction and applies LUX (2016), finding severe pressure on EWBG-compatible points.
+  redshift_range: null
+  relevance: critical
+  scale_range: detector-scale nuclear recoil energies
+  source_reference_ids:
+  - src_1702_primary
+  - src_1702_chala2016
+  subchannel: LUX-scaled scalar-nucleon scattering
+- caveats:
+  - Bubble-wall velocity and finite-temperature potential choices are not independently validated here.
+  channel: gravitational_waves
+  effect_direction: spectral_line
+  environments:
+  - early Universe
+  - LISA
+  - BBO
+  id: obs_singlet_ewpt_gravitational_waves
+  key_quantities:
+  - description: Latent-heat strength parameter for the stochastic GW signal.
+    name: phase-transition strength
+    role: derived
+    source_reference_ids:
+    - src_1702_primary
+    status: unknown
+    symbol: alpha
+  - description: Transition timescale parameter controlling GW amplitude and peak frequency.
+    name: inverse duration
+    role: derived
+    source_reference_ids:
+    - src_1702_primary
+    status: unknown
+    symbol: beta/H
+  - description: Increasing lambda_HS strengthens the transition but also impacts relic and direct-detection
+      constraints.
+    name: Higgs portal coupling
+    role: core
+    source_reference_ids:
+    - src_1702_primary
+    status: inferred
+    symbol: lambda_HS
+  linked_constraints:
+  - con_ewbg_gw_future_reach
+  linked_routes:
+  - route_phase_transition_gw
+  name: Gravitational waves from singlet-assisted electroweak phase transition
+  notes: null
+  observability: medium
+  predicted_effect: A strong first-order electroweak phase transition in the scalar singlet model can
+    generate stochastic gravitational waves with portions of parameter space in LISA/BBO reach.
+  redshift_range: electroweak epoch
+  relevance: high
+  scale_range: mHz to decihertz stochastic GW bands
+  source_reference_ids:
+  - src_1702_primary
+  - src_1702_chao2017
+  - src_1702_bian2019
+  subchannel: first-order electroweak phase transition
+- caveats:
+  - Indirect Higgs-coupling reach is not a current exclusion for most of the space.
+  channel: collider
+  effect_direction: morphology_change
+  environments:
+  - HL-LHC
+  - ILC
+  - future 100 TeV pp collider
+  id: obs_higgs_self_coupling_collider
+  key_quantities:
+  - description: Loop-induced singlet contribution to the Higgs cubic coupling.
+    name: Higgs trilinear deviation
+    role: derived
+    source_reference_ids:
+    - src_1702_primary
+    status: approximate
+    symbol: delta_lambda_3
+  - description: Controls collider deviation and phase-transition strength.
+    name: portal coupling
+    role: core
+    source_reference_ids:
+    - src_1702_primary
+    status: inferred
+    symbol: lambda_HS
+  linked_constraints:
+  - con_collider_higgs_self_coupling_reach
+  linked_routes:
+  - route_higgs_collider_recast
+  name: Collider probes through Higgs self-coupling and singlet production
+  notes: null
+  observability: medium
+  predicted_effect: The portal scalar modifies the Higgs trilinear coupling; the primary paper quotes
+    approximate HL-LHC, ILC, and 100 TeV collider sensitivity, while direct production is difficult at
+    the LHC.
+  redshift_range: null
+  relevance: medium
+  scale_range: collider center-of-mass energies from HL-LHC to 100 TeV
+  source_reference_ids:
+  - src_1702_primary
+  subchannel: double-Higgs and future pp/e+e- probes
+constraints:
+- allowed_regions:
+  - Subcomponent S abundance is allowed if the scaled scattering rate and total relic density remain below
+    limits.
+  applies: 'yes'
+  assumptions:
+  - can_be_relaxed: 'yes'
+    description: The baseline relic calculation assumes standard thermal freeze-out through the Higgs
+      portal.
+    id: standard-thermal-freezeout
+    impact_if_violated: A faster early expansion changes Omega_S and direct-detection scaling.
+    notes: null
+    scope: dark-matter abundance
+    source_reference_ids:
+    - src_1702_primary
+    status: assumed
+  benchmark_implications:
+  - EWBG-compatible standard-history regions tend to leave S as less than all of DM and are still severely
+    constrained by LUX.
+  caveats:
+  - A 2026 direct-detection update was not performed.
+  constrained_parameters:
+  - m_S
+  - lambda_HS
+  - Omega_S/Omega_DM
+  - sigma_SI
+  constraint_type: direct_detection
+  data_release: Planck 2015 DM abundance and LUX (2016) as quoted in the primary paper
+  excluded_regions:
+  - Points with Omega_S/Omega_DM times sigma_SI above the LUX (2016) limit are excluded in the paper.
+  - Omega_S h^2 must not exceed the Planck value 0.1188.
+  id: con_planck_relic_lux_scaled
+  likelihood_available: partial
+  likelihood_reference: Primary paper relic-density solution and LUX (2016) scaled cross-section comparison.
+  name: Planck relic-density cap and LUX-scaled SI scattering bound
+  notes: null
+  observable_channel: xenon nuclear recoils plus relic density
+  recasting_needed: 'yes'
+  robustness: high
+  source_reference_ids:
+  - src_1702_primary
+- allowed_regions:
+  - The primary analysis focuses on m_S above m_h/2 for most EWBG-relevant plots.
+  applies: 'yes'
+  assumptions:
+  - can_be_relaxed: partial
+    description: The singlet is Z2 odd and stable, so h -> SS is invisible when kinematically allowed.
+    id: unbroken-z2-singlet
+    impact_if_violated: If Z2 is broken or S decays visibly, the invisible-Higgs constraint changes.
+    notes: null
+    scope: collider constraint
+    source_reference_ids:
+    - src_1702_primary
+    status: established
+  benchmark_implications:
+  - Light singlet dark matter is difficult to reconcile with EWBG-sized portal couplings.
+  caveats:
+  - Exact invisible-width likelihood not extracted.
+  constrained_parameters:
+  - m_S
+  - lambda_HS
+  constraint_type: collider
+  data_release: null
+  excluded_regions:
+  - For m_S < m_h/2, portal couplings relevant for EWBG are mostly excluded by Higgs invisible-branching
+    limits according to the primary paper.
+  id: con_invisible_higgs_light_singlet
+  likelihood_available: partial
+  likelihood_reference: Primary paper statement citing invisible Higgs limits.
+  name: Invisible-Higgs constraint below the half-Higgs mass threshold
+  notes: null
+  observable_channel: Higgs invisible branching ratio
+  recasting_needed: partial
+  robustness: medium
+  source_reference_ids:
+  - src_1702_primary
+- allowed_regions:
+  - Parts of the primary parameter space are forecast to be accessible to LISA A5M5 and BBO; LIGO does
+    not probe the displayed region.
+  applies: parameter_dependent
+  assumptions:
+  - can_be_relaxed: partial
+    description: One-loop finite-temperature potential is reliable only for portal couplings not too far
+      above a few.
+    id: thermal-potential-reliability
+    impact_if_violated: Large lambda_HS values can invalidate perturbative predictions.
+    notes: null
+    scope: GW forecast
+    source_reference_ids:
+    - src_1702_primary
+    status: assumed
+  benchmark_implications:
+  - GW searches can test the EWBG phase transition even when S is only a subcomponent.
+  caveats:
+  - Forecast, not a present exclusion.
+  constrained_parameters:
+  - lambda_HS
+  - m_S
+  - alpha
+  - beta/H
+  - wall velocity
+  constraint_type: other
+  data_release: LISA/BBO/LIGO forecast curves quoted in the primary paper
+  excluded_regions: []
+  id: con_ewbg_gw_future_reach
+  likelihood_available: 'no'
+  likelihood_reference: null
+  name: Future GW reach for singlet-driven electroweak transition
+  notes: null
+  observable_channel: LISA/BBO stochastic background
+  recasting_needed: 'yes'
+  robustness: medium
+  source_reference_ids:
+  - src_1702_primary
+  - src_1702_chao2017
+  - src_1702_bian2019
+- allowed_regions:
+  - The primary paper quotes about 30 percent HL-LHC precision on the Higgs cubic coupling, about 13 percent
+    at 1 TeV ILC with 2.5 ab^-1, and stronger reach at a future 100 TeV pp collider.
+  applies: parameter_dependent
+  assumptions:
+  - can_be_relaxed: 'yes'
+    description: Projected Higgs self-coupling precision maps onto the singlet loop correction in the
+      primary model.
+    id: higgs-coupling-projection
+    impact_if_violated: Different detector performance or EFT interpretation changes reach.
+    notes: null
+    scope: collider forecast
+    source_reference_ids:
+    - src_1702_primary
+    status: assumed
+  benchmark_implications:
+  - Collider probes are complementary but not the strongest current limit in the primary study.
+  caveats:
+  - No collider simulation was rerun.
+  constrained_parameters:
+  - lambda_HS
+  - m_S
+  - delta_lambda_3
+  constraint_type: collider
+  data_release: Primary collider-projection discussion
+  excluded_regions: []
+  id: con_collider_higgs_self_coupling_reach
+  likelihood_available: 'no'
+  likelihood_reference: null
+  name: Higgs self-coupling and future collider reach
+  notes: null
+  observable_channel: double Higgs and direct singlet production
+  recasting_needed: 'yes'
+  robustness: medium
+  source_reference_ids:
+  - src_1702_primary
+theory_to_observable_routing:
+  routes:
+  - agent_notes: A modern recast would be valuable but the route is clear.
+    caveats:
+    - Modified expansion changes freeze-out.
+    constraint_ids:
+    - con_planck_relic_lux_scaled
+    - con_invisible_higgs_light_singlet
+    derived_quantities:
+    - Omega_S h^2
+    - sigma_SI
+    - scaled exclusion
+    description: Compute thermal singlet relic density and scaled SI scattering constraints.
+    forward_model_chain:
+    - inputs:
+      - m_S
+      - lambda_HS
+      - SM final states
+      notes: Can be reproduced with a standard Higgs-portal relic solver.
+      outputs:
+      - Omega_S h^2
+      step_id: freezeout
+      step_type: boltzmann_solver
+      tool_or_code: micrOMEGAs-like calculation
+      validity: Primary numerically solves abundance equation; exact code not provided.
+    - inputs:
+      - Omega_S/Omega_DM
+      - sigma_SI
+      - LUX limit
+      notes: Apply relic-fraction scaling used by primary paper.
+      outputs:
+      - excluded or allowed
+      step_id: direct-detection-scale
+      step_type: data_transform
+      tool_or_code: null
+      validity: Dataset should be updated for modern limits in future.
+    id: route_higgs_portal_relic_direct_detection
+    input_parameters:
+    - m_S
+    - lambda_HS
+    - lambda_S
+    - cosmological history
+    likelihoods:
+    - Planck relic density
+    - LUX 2016 SI limit
+    observable_ids:
+    - obs_higgs_portal_direct_detection
+    required_code_resources:
+    - Relic-density/DD solver
+    - direct-detection limit database
+    route_status: planned
+    source_model_features:
+    - Z2 Higgs-portal singlet
+    - thermal freeze-out
+    - subcomponent scaling
+    validation_tests:
+    - Recover primary Fig. DMplot exclusions.
+  - agent_notes: Good route for multimessenger EWBG screening.
+    caveats:
+    - Gauge/thermal-potential uncertainties not assessed.
+    constraint_ids:
+    - con_ewbg_gw_future_reach
+    derived_quantities:
+    - transition temperature
+    - alpha
+    - beta/H
+    - Omega_GW(f)
+    description: Map finite-temperature singlet potential to EWBG and stochastic GW observables.
+    forward_model_chain:
+    - inputs:
+      - zero-temperature potential
+      - thermal corrections
+      notes: Follow the primary finite-temperature setup.
+      outputs:
+      - critical temperature
+      - order parameter
+      step_id: thermal-potential
+      step_type: analytic_formula
+      tool_or_code: null
+      validity: Perturbative reliability limited for large lambda_HS.
+    - inputs:
+      - alpha
+      - beta/H
+      - wall velocity
+      notes: Compare to LISA/BBO curves.
+      outputs:
+      - SNR for LISA/BBO
+      step_id: gw-forecast
+      step_type: semi_analytic_model
+      tool_or_code: null
+      validity: Forecast sensitivity only.
+    id: route_phase_transition_gw
+    input_parameters:
+    - m_S
+    - lambda_HS
+    - lambda_S
+    - wall velocity
+    likelihoods:
+    - LISA/BBO forecast curves
+    observable_ids:
+    - obs_singlet_ewpt_gravitational_waves
+    required_code_resources:
+    - Finite-temperature effective-potential code
+    - GW spectrum calculator
+    route_status: planned
+    source_model_features:
+    - strong first-order electroweak phase transition
+    - singlet thermal loop barrier
+    validation_tests:
+    - Reproduce primary LISA/BBO accessible regions.
+  - agent_notes: Collider route is complementary to direct detection and GW.
+    caveats:
+    - Direct singlet production is difficult at the LHC.
+    constraint_ids:
+    - con_collider_higgs_self_coupling_reach
+    derived_quantities:
+    - delta_lambda_3
+    - future collider reach
+    description: Translate singlet loop effects to Higgs self-coupling and future collider reach.
+    forward_model_chain:
+    - inputs:
+      - m_S
+      - lambda_HS
+      notes: Compute trilinear shift.
+      outputs:
+      - delta_lambda_3
+      step_id: higgs-cubic-shift
+      step_type: analytic_formula
+      tool_or_code: null
+      validity: One-loop primary expression.
+    - inputs:
+      - delta_lambda_3
+      - projected precision
+      notes: Overlay HL-LHC/ILC/100 TeV reaches.
+      outputs:
+      - reachable parameter space
+      step_id: collider-projection
+      step_type: recasting
+      tool_or_code: null
+      validity: Projection-level only.
+    id: route_higgs_collider_recast
+    input_parameters:
+    - m_S
+    - lambda_HS
+    likelihoods:
+    - HL-LHC/ILC/future-collider projections
+    observable_ids:
+    - obs_higgs_self_coupling_collider
+    required_code_resources:
+    - Collider projection tables
+    route_status: planned
+    source_model_features:
+    - Higgs-portal scalar
+    - loop correction to Higgs cubic coupling
+    validation_tests:
+    - Check against primary quoted 30 percent and 13 percent precision statements.

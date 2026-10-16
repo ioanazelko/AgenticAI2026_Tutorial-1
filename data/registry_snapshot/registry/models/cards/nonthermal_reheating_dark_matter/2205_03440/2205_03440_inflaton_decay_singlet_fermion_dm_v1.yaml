@@ -1,0 +1,784 @@
+_source:
+  shard: arXiv_src_2205_022_wds.tar
+  paper_id: '2205_03440'
+  source_member: 2205_03440.json
+  enriched: true
+  enrichment_schema_version: dm_model_ocr_enrichment_smoke_v0
+schema_version: model_only_v0
+model_id: 2205_03440_inflaton_decay_singlet_fermion_dm_v1
+identity:
+  name: Inflaton-decay singlet-fermion dark matter with inflaton-mediated scatterings
+  family: nonthermal_reheating_dark_matter
+  aliases:
+  - light non-thermal dark matter from inflaton decay
+  short_description: A minimal reheating scenario in which a scalar inflaton couples renormalizably to
+    the SM Higgs sector and to an SM-singlet fermion dark matter particle; inflaton decay sets the abundance
+    and inflaton-mediated 2->2 scatterings reshape the dark matter momentum distribution.
+  historical_origin_or_motivation: The paper studies how post-reheating scatterings modify light nonthermal
+    dark matter produced in inflaton decay.
+  status: speculative
+  model_kind: simplified_model
+theory:
+  theory_level: simplified_model
+  parent_frameworks:
+  - inflationary reheating
+  - singlet dark matter
+  lagrangian_available: partial
+  renormalizable: 'yes'
+  eft_cutoff: null
+  embedded_in_larger_framework: 'yes'
+  notes: The assigned text gives a renormalizable interaction Lagrangian for a scalar inflaton coupled
+    to the Higgs doublet and to singlet fermion dark matter, though some symbols are degraded in extraction.
+particle_content:
+  dark_matter_candidate:
+    name: SM-singlet fermion dark matter
+    spin: 1/2
+    statistics: fermion
+    elementary_or_composite: elementary
+    number_of_components: single_component
+  additional_dark_sector_particles:
+  - scalar inflaton
+  mediators:
+  - scalar inflaton
+  dark_radiation_species: []
+  excited_or_degenerate_states: []
+  long_lived_particles:
+  - SM-singlet fermion dark matter
+  unstable_parent_particles:
+  - scalar inflaton
+  standard_model_extension: substantial
+symmetries:
+  stabilizing_mechanism: The assigned text treats the singlet fermion as the dark matter particle but
+    does not specify the stabilizing symmetry.
+  symmetries: []
+  topological_defects_possible: unknown
+interactions:
+  portals:
+  - higgs
+  - other
+  standard_model_targets:
+  - SM Higgs doublet
+  - Higgs boson
+  dark_sector_couplings:
+  - inflaton coupling to singlet fermion dark matter
+  - inflaton-mediated dark matter self-scattering
+  mediator_types:
+  - scalar inflaton
+  interaction_operators:
+  - renormalizable inflaton-Higgs interaction
+  - renormalizable inflaton-dark-matter interaction
+  scattering:
+    elastic: 'yes'
+    inelastic: unknown
+    momentum_dependence: strong
+    velocity_dependence: unknown
+    spin_dependence: unknown
+  annihilation_channels:
+  - dark matter pair recombination to inflaton
+  decay_channels:
+  - inflaton decay to a dark matter pair
+  - inflaton decay to SM radiation through the Higgs sector
+  self_scattering_channels:
+  - inflaton-mediated dark matter pair scattering
+  cp_structure: unknown
+  flavor_structure: singlet dark matter; SM coupling through Higgs sector in the minimal setup
+  tree_or_loop_level: tree
+parameters:
+  core:
+  - name: dark matter mass
+    symbol: m_DM
+    description: Mass of the singlet fermion dark matter particle.
+    value: 10 keV benchmark; 0.2 keV discussed after relic-density rescaling
+    unit: keV
+    role: core
+    status: inferred
+    notes: The paper studies light dark matter examples.
+  - name: inflaton mass
+    symbol: m_phi
+    description: Mass of the scalar inflaton.
+    value: 5 TeV benchmark; few-TeV scale emphasized
+    unit: TeV
+    role: core
+    status: inferred
+  - name: reheating temperature
+    symbol: T_R
+    description: Temperature at the onset of radiation domination.
+    value: 1 TeV benchmark
+    unit: TeV
+    role: core
+    status: inferred
+  - name: dark matter-inflaton coupling
+    description: Coupling controlling inflaton decay to dark matter and related scattering rates.
+    value: around 1e-9 in relic-density example; 6.6e-9 used in scattering examples
+    role: core
+    status: inferred
+    notes: Symbol is not legible in the assigned text.
+  - name: inflaton-Higgs coupling
+    description: Coupling controlling reheating into the SM Higgs/radiation sector.
+    role: core
+    status: inferred
+    notes: Traded for T_R in the numerical discussion.
+  - name: reheating duration scale-factor ratio
+    symbol: a(t_I)/a(t_R)
+    description: Ratio used to parametrize the duration of reheating.
+    range: studied examples include values down to 5e-3; lower cosmological bound estimated near 1e-17
+      for T_R=1 TeV
+    role: core
+    status: inferred
+  nuisance: []
+  derived:
+  - name: relic abundance
+    symbol: Omega_DM h^2
+    description: Present-day dark matter abundance computed from inflaton-decay production.
+    value: 0.12 can be obtained for T_R=1 TeV, m_phi=5 TeV, m_DM=10 keV and coupling around 1e-9
+    role: derived
+    status: inferred
+  - name: co-moving free-streaming length
+    symbol: lambda_FSH
+    description: Free-streaming length estimated from the momentum distribution.
+    value: 0.0734 Mpc without scatterings and 0.0020 Mpc with scatterings for one 10 keV benchmark
+    unit: Mpc
+    role: derived
+    status: inferred
+production:
+  mechanisms:
+  - nonthermal inflaton decay during reheating
+  - inflaton-mediated post-reheating scatterings affecting the momentum distribution
+  thermal_equilibrium_with_standard_model: 'no'
+  thermal_equilibrium_with_hidden_sector: unknown
+  abundance_set_by:
+  - inflaton branching fraction to dark matter
+  - reheating temperature
+  - inflaton mass
+  - dark matter-inflaton coupling
+  - duration of reheating
+  depends_on_reheating_temperature: 'yes'
+  can_produce_all_dark_matter: parameter_dependent
+  nonthermal_momentum_distribution: 'yes'
+  notes: The model can match the relic abundance for selected benchmark parameters; scattering effects
+    can change the momentum distribution without being the primary production mechanism.
+relic_density:
+  full_or_subcomponent: either
+  target_fraction:
+    name: target relic abundance
+    symbol: Omega_DM h^2
+    value: '0.12'
+    role: derived
+    status: inferred
+  calculation_type: nonthermal
+  key_dependencies:
+  - DM mass
+  - inflaton mass
+  - reheating temperature
+  - inflaton partial width to dark matter
+  - back-reaction and quantum-statistics effects
+  requires_entropy_dilution: unknown
+  overclosure_risk: parameter_dependent
+  underproduction_risk: parameter_dependent
+  tuning_assessment: unknown
+cosmological_history:
+  standard_history_assumed: false
+  nonstandard_features:
+  - post-inflation matter-dominated reheating era
+  - nonthermal dark matter production from inflaton decay
+  - post-production inflaton-mediated scattering before the distribution freezes
+  dark_sector_temperature: null
+  delta_neff: null
+  kinetic_decoupling:
+    name: distribution freeze temperature
+    value: around 100 GeV
+    unit: GeV
+    role: derived
+    status: inferred
+    notes: The shape of the distribution freezes around this SM bath temperature in the cases studied.
+  chemical_decoupling: null
+  phase_transitions: []
+  topological_defects: []
+  isocurvature_perturbations: unknown
+  bbn_relevance: medium
+  cmb_relevance: low
+phase_space:
+  distribution_type: decay_produced
+  distribution_function_available: 'yes'
+  f_of_p_or_q: The paper solves a Boltzmann kinetic equation for f(k,t) with collision terms and evolves
+    the binned distribution from reheating to matter-radiation equality.
+  average_momentum_relative_to_thermal: scatterings populate lower-momentum modes and reduce the average
+    velocity at equality by up to about a factor of 40 in studied examples
+  free_streaming_length:
+    name: co-moving free-streaming length
+    symbol: lambda_FSH
+    value: 0.0020 Mpc with scatterings for a 10 keV benchmark; 0.0734 Mpc without scatterings
+    unit: Mpc
+    role: derived
+    status: inferred
+  velocity_dispersion_today: null
+  phase_space_bounds:
+  - light-DM free-streaming length is compared to Lyman-alpha structure-formation requirements
+  notes: The central development is the modification of the nonthermal momentum distribution by inflaton-mediated
+    scatterings.
+structure_formation:
+  linear:
+    behaves_like_cdm: approximately
+    transfer_function_shape: smooth_cutoff
+    small_scale_power_effect: suppression
+    half_mode_mass: null
+    thermal_wdm_mapping:
+      available: false
+      validity: misleading
+      warning: The paper emphasizes the nonthermal distribution and scattering-induced cooling, so a thermal-WDM
+        mass mapping would be unreliable without recalculating the distribution.
+    impact_on_sigma8_s8: unknown
+  nonlinear:
+    halo_mass_function_effect: unknown
+    subhalo_mass_function_effect: unknown
+    simulation_calibrated: 'no'
+validity_domain:
+- id: minimal_inflaton_higgs_setup
+  applies_to: model
+  condition: Scalar inflaton dominantly reheats the SM through a renormalizable Higgs interaction and
+    also couples to singlet fermion dark matter.
+  status: assumed
+  extrapolation_risk: medium
+  caveats:
+  - Other inflaton-SM couplings would change the relevant scattering processes and parameter scales.
+  source_reference_ids:
+  - arxiv:2205.03440
+  notes: null
+- id: numerical_parameter_region
+  applies_to: parameter
+  condition: Examples focus on TeV-scale reheating and few-TeV inflaton masses; a full scan is left for
+    future work.
+  status: approximate
+  extrapolation_risk: high
+  caveats:
+  - Collision integrals are numerically demanding and were not scanned globally.
+  source_reference_ids:
+  - arxiv:2205.03440
+  notes: null
+assumptions:
+  global:
+  - id: dominant_sm_reheating
+    description: The inflaton dominantly decays to the SM sector so that the universe is radiation dominated
+      by BBN.
+    scope: cosmological_history
+    status: assumed
+    impact_if_violated: Relic-density and scattering-rate estimates would change.
+    can_be_relaxed: unknown
+    source_reference_ids:
+    - arxiv:2205.03440
+    notes: null
+  - id: homogeneous_distribution
+    description: The dark matter and anti-dark-matter distributions are taken equal and evolved with Boltzmann
+      equations in an expanding FRW background.
+    scope: production
+    status: assumed
+    impact_if_violated: Momentum distribution and free-streaming estimates could differ.
+    can_be_relaxed: unknown
+    source_reference_ids:
+    - arxiv:2205.03440
+    notes: null
+  computation_specific: []
+associated_code:
+  has_associated_code: unknown
+  code_summary: The assigned text mentions SciPy and CUBA being used for numerical Boltzmann/collision
+    calculations, but it does not identify a public model code.
+  primary_code_role: unknown
+  repositories: []
+  packages_or_modules: []
+  notebooks: []
+  scripts: []
+  containers_or_environments: []
+  expected_inputs:
+  - model parameters
+  - reheating parameters
+  - initial momentum distribution
+  expected_outputs:
+  - momentum distribution
+  - relic abundance
+  - free-streaming length
+  reproducibility:
+    reproducibility_level: unknown
+    has_tests: unknown
+    has_examples: unknown
+    has_documentation: unknown
+    pinned_dependencies: unknown
+    notes: null
+  validation:
+    validation_status: unknown
+    benchmark_references:
+    - arxiv:2205.03440
+    validation_notes: No public validation artifact is described in the assigned text.
+  caveats: []
+provenance:
+  model_id: 2205_03440_inflaton_decay_singlet_fermion_dm_v1
+  model_name: Inflaton-decay singlet-fermion dark matter with inflaton-mediated scatterings
+  model_family: nonthermal_reheating_dark_matter
+  entry_version: 0.1.0
+  status: machine_extracted
+  created_at: '2026-05-31'
+  last_updated: '2026-05-31'
+  sources:
+    primary_papers:
+    - reference_id: arxiv:2205.03440
+      title: unknown
+      authors: []
+      year: 2022
+      arxiv_id: '2205.03440'
+      doi: null
+      url: null
+      role: extension
+      notes: Title and authors are not present in the assigned text extraction; source begins directly
+        with the inflation/reheating discussion.
+    - arxiv_id: '2205.03440'
+      authors:
+      - Ghosh, Avirup
+      - Mukhopadhyay, Satyanarayan
+      doi: 10.1103/PhysRevD.106.043519
+      notes: Primary model paper read from local full text and discovered through ADS.
+      reference_id: 2205_03440_primary
+      role: original_model
+      title: 'Momentum distribution of dark matter produced in inflaton decay: Effect of inflaton mediated
+        scatterings'
+      url: https://arxiv.org/abs/2205.03440
+      year: 2022
+    constraint_papers:
+    - arxiv_id: '2206.08940'
+      authors:
+      - Garcia, Marcos A. G.
+      - Pierre, Mathias
+      - Verner, Sarunas
+      doi: 10.1103/PhysRevD.107.043530
+      notes: Related local full text on preheating-produced scalar dark matter and structure-formation/Lyman-alpha
+        bounds.
+      reference_id: 2205_03440_rel_scalar_preheating
+      role: constraint
+      title: Scalar dark matter production from preheating and structure formation constraints
+      url: https://arxiv.org/abs/2206.08940
+      year: 2023
+    - arxiv_id: '2009.05987'
+      authors:
+      - Bhattacharya, Sukannya
+      - Das, Subinoy
+      - Dutta, Koushik
+      - Gangopadhyay, Mayukh Raj
+      - Mahanta, Ratul
+      - Maharana, Anshuman
+      doi: 10.1103/PhysRevD.103.063503
+      notes: Related local full text on nonthermal hot dark matter momentum distributions from inflaton/moduli
+        decay.
+      reference_id: 2205_03440_rel_nonthermal_hot_dm
+      role: extension
+      title: 'Nonthermal hot dark matter from inflaton or moduli decay: Momentum distribution and relaxation
+        of the cosmological mass bound'
+      url: https://arxiv.org/abs/2009.05987
+      year: 2021
+    - arxiv_id: '2111.01267'
+      authors:
+      - Du, Yong
+      - Huang, Fei
+      - Li, Hao-Lin
+      - Li, Yuan-Zhen
+      - Yu, Jiang-Hao
+      doi: 10.1088/1475-7516/2022/04/012
+      notes: Related local full text on phase-space distributions, scatterings, and structure-formation
+        observables.
+      reference_id: 2205_03440_rel_phase_space_distribution
+      role: implementation
+      title: Revisiting dark matter freeze-in and freeze-out through phase-space distribution
+      url: https://arxiv.org/abs/2111.01267
+      year: 2022
+    external_databases: []
+    review_papers: []
+  extraction:
+    method: llm_assisted
+    extracted_by: codex_batch_worker
+    extractor_name: dark-matter model-card extraction worker
+    extraction_date: '2026-05-31'
+    confidence: medium
+    source_chunks_or_sections:
+    - reference_id: arxiv:2205.03440
+      section: Introduction and model setup
+      page: null
+      quote_or_summary: The text considers a minimal scalar-inflaton scenario coupled to both SM and singlet-fermion
+        dark matter sectors.
+    - reference_id: arxiv:2205.03440
+      section: Results and summary
+      page: null
+      quote_or_summary: Inflaton-mediated scatterings can reduce the average velocity and free-streaming
+        length of light nonthermal dark matter.
+    unresolved_items:
+    - A full Lyman-alpha likelihood or transfer-function recast is not present in the primary paper.
+    - The stabilizing symmetry for the singlet fermion is not specified in the extracted model card.
+    - Some coupling symbols are degraded in OCR; numerical benchmark values were retained where legible.
+  evidence:
+    particle_content:
+    - reference_id: arxiv:2205.03440
+      note: The assigned text states that the DM field is taken to be an SM-singlet fermion.
+      confidence: high
+      section: Model setup
+      page: null
+    interactions:
+    - reference_id: arxiv:2205.03440
+      note: The interaction Lagrangian couples the scalar inflaton to the Higgs doublet and to the DM
+        sector.
+      confidence: medium
+      section: Model setup
+      page: null
+    production_mechanism:
+    - reference_id: arxiv:2205.03440
+      note: DM is produced nonthermally during reheating through inflaton decay.
+      confidence: high
+      section: Introduction
+      page: null
+    cosmological_history:
+    - reference_id: arxiv:2205.03440
+      note: The calculation follows a reheating epoch, then evolves the distribution to matter-radiation
+        equality.
+      confidence: medium
+      section: Cosmological evolution
+      page: null
+    parameter_ranges:
+    - reference_id: arxiv:2205.03440
+      note: Benchmarks include T_R=1 TeV, m_phi=5 TeV, m_DM=10 keV and couplings near 1e-9.
+      confidence: medium
+      section: Results
+      page: null
+    phase_space:
+    - reference_id: arxiv:2205.03440
+      note: The paper solves a Boltzmann equation for f(k,t) and finds scatterings can significantly lower
+        the free-streaming length.
+      confidence: high
+      section: Phase-space calculation
+      page: null
+    validity_domain:
+    - reference_id: arxiv:2205.03440
+      note: The authors note that changing the dominant inflaton-SM coupling would change the relevant
+        scales and processes.
+      confidence: medium
+      section: Summary
+      page: null
+    constraints:
+    - confidence: high
+      note: Primary paper states the no-collision benchmark would be strongly constrained while the collision-included
+        benchmark is consistent in the simple estimate.
+      page: null
+      reference_id: 2205_03440_primary
+      section: Results/free-streaming estimate
+    - confidence: medium
+      note: Related preheating paper treats Lyman-alpha structure-formation bounds for non-cold dark matter
+        produced out of equilibrium.
+      page: null
+      reference_id: 2205_03440_rel_scalar_preheating
+      section: Abstract/introduction
+    observables:
+    - confidence: high
+      note: Primary paper quantifies the collision-induced reduction of the free-streaming length and
+        ties it to Lyman-alpha/structure formation.
+      page: null
+      reference_id: 2205_03440_primary
+      section: Results/free-streaming estimate
+    - confidence: medium
+      note: Related phase-space paper describes free-streaming horizons and structure-formation observables
+        for general dark-matter distributions.
+      page: null
+      reference_id: 2205_03440_rel_phase_space_distribution
+      section: Introduction/phase-space discussion
+    routes:
+    - confidence: high
+      note: Primary paper supplies the Boltzmann-distribution to velocity/free-streaming route.
+      page: null
+      reference_id: 2205_03440_primary
+      section: Model and results
+    - confidence: medium
+      note: Related paper supports the phase-space distribution to structure-formation route.
+      page: null
+      reference_id: 2205_03440_rel_phase_space_distribution
+      section: Phase-space distribution discussion
+  review:
+    human_reviewed: false
+    reviewed_by: null
+    review_date: null
+    expert_reviewed: false
+    expert_reviewer: null
+    expert_review_date: null
+    reviewer_notes: []
+    scientific_confidence: medium
+    implementation_confidence: medium
+  caveats: []
+robustness:
+  overall: medium
+  theory_robustness: medium
+  observational_robustness: unknown
+  computational_robustness: medium
+  dominant_uncertainties:
+  - title and author metadata absent from assigned text
+  - symbol loss in extracted Lagrangian
+  - limited parameter scan
+  validation_status: expert_judgment_only
+  notes: Accepted as a substantive development of a nonthermal dark matter production model, with extraction
+    confidence limited by degraded formulas.
+agent_failure_modes:
+  warnings:
+  - id: do_not_thermalize_distribution
+    severity: medium
+    category: invalid_mapping
+    warning: Do not replace this model with a thermal warm-dark-matter distribution without recomputing
+      the nonthermal phase-space distribution.
+    mitigation: Use the paper's Boltzmann-evolved distribution or state the approximation explicitly.
+    source_reference_ids:
+    - arxiv:2205.03440
+  - id: symbols_degraded
+    severity: medium
+    category: notation_conflict
+    warning: The assigned text extraction loses some equation symbols, so coupling names should not be
+      treated as canonical.
+    mitigation: Verify formulas against the original paper before using exact symbolic expressions.
+    source_reference_ids:
+    - arxiv:2205.03440
+observables:
+- caveats:
+  - The paper gives a simple free-streaming estimate, not a full Lyman-alpha likelihood recast.
+  channel: lyman_alpha
+  effect_direction: model_dependent
+  environments:
+  - Lyman-alpha forest
+  - small-scale matter power spectrum
+  id: obs_free_streaming_structure
+  key_quantities:
+  - description: Singlet fermion mass
+    name: dark matter mass
+    role: core
+    status: inferred
+    symbol: m_DM
+    unit: keV
+    value: 10 keV benchmark
+  - description: Comoving free-streaming length
+    name: free-streaming length
+    role: derived
+    status: inferred
+    symbol: lambda_FSH
+    unit: Mpc
+    value: 0.0734 Mpc without collisions; 0.0020 Mpc with collisions
+  - description: Scalar inflaton benchmark mass
+    name: inflaton mass
+    role: core
+    status: inferred
+    symbol: m_phi
+    unit: TeV
+    value: 5 TeV
+  - description: Radiation-domination onset temperature
+    name: reheating temperature
+    role: core
+    status: inferred
+    symbol: T_R
+    unit: TeV
+    value: 1 TeV
+  linked_constraints:
+  - con_lya_free_streaming
+  linked_routes:
+  - route_phase_space_to_structure
+  name: Free-streaming imprint of inflaton-decay dark matter
+  notes: Most directly observable through small-scale structure rather than a laboratory signal.
+  observability: medium
+  predicted_effect: The nonthermal momentum distribution sets a free-streaming length; in the 10 keV benchmark,
+    including inflaton-mediated scatterings reduces the paper estimate from 0.0734 Mpc to 0.0020 Mpc,
+    weakening the otherwise warm-DM-like structure suppression.
+  redshift_range: null
+  relevance: high
+  scale_range: sub-Mpc comoving free-streaming scales in the benchmark estimate
+  source_reference_ids:
+  - 2205_03440_primary
+  - 2205_03440_rel_phase_space_distribution
+  - 2205_03440_rel_scalar_preheating
+  subchannel: free-streaming cutoff in small-scale structure
+- caveats:
+  - Scattering rate symbols are partly degraded in OCR; numerical benchmark is retained from the primary
+    text.
+  channel: cosmology
+  effect_direction: shape_change
+  environments:
+  - early Universe reheating epoch
+  id: obs_collision_reshaped_momentum
+  key_quantities:
+  - description: Coupling controlling inflaton decay and scatterings
+    name: DM-inflaton coupling
+    role: core
+    status: inferred
+    value: 6.6e-9 scattering benchmark
+  - description: Duration-of-reheating proxy
+    name: scale-factor reheating ratio
+    role: cosmological
+    status: inferred
+    symbol: a_I/a_R
+    value: 5e-5 benchmark
+  linked_constraints:
+  - con_lya_free_streaming
+  linked_routes:
+  - route_phase_space_to_structure
+  name: Collision-reshaped nonthermal phase-space distribution
+  notes: This is the theory-side observable that feeds the free-streaming estimate.
+  observability: low
+  predicted_effect: Inflaton-mediated DM-DM and DM-SM scatterings reshape the low-momentum portion of
+    the distribution after production from inflaton decay.
+  redshift_range: null
+  relevance: high
+  scale_range: null
+  source_reference_ids:
+  - 2205_03440_primary
+  - 2205_03440_rel_nonthermal_hot_dm
+  - 2205_03440_rel_phase_space_distribution
+  subchannel: post-reheating momentum distribution
+constraints:
+- allowed_regions:
+  - For the same benchmark, including collisions gives lambda_FSH=0.0020 Mpc and is described as consistent
+    with structure-formation requirements.
+  applies: parameter_dependent
+  assumptions:
+  - can_be_relaxed: partial
+    description: The free-streaming length is used as a proxy for Lyman-alpha and structure-formation
+      limits.
+    id: assume_simple_fsh_mapping
+    impact_if_violated: A full transfer-function likelihood could shift the allowed mass/coupling region.
+    notes: null
+    scope: constraint recast
+    source_reference_ids:
+    - 2205_03440_primary
+    - 2205_03440_rel_phase_space_distribution
+    status: approximate
+  benchmark_implications:
+  - Post-reheating scatterings can move an apparently warm nonthermal benchmark into a colder allowed
+    regime.
+  caveats:
+  - No published likelihood table is provided in the primary paper.
+  constrained_parameters:
+  - m_DM
+  - m_phi
+  - T_R
+  - DM-inflaton coupling
+  - a_I/a_R
+  - lambda_FSH
+  constraint_type: cosmological
+  data_release: null
+  excluded_regions:
+  - Warm, collisionless nonthermal distributions with free-streaming lengths large enough to erase Lyman-alpha
+    forest structure.
+  - For the quoted 10 keV benchmark, the no-collision lambda_FSH=0.0734 Mpc case is described as strongly
+    constrained.
+  id: con_lya_free_streaming
+  likelihood_available: 'no'
+  likelihood_reference: null
+  name: Structure-formation bound from nonthermal free streaming
+  notes: Use as a route target for a future full matter-power recast.
+  observable_channel: lyman_alpha/small_scale_structure
+  recasting_needed: 'yes'
+  robustness: medium
+  source_reference_ids:
+  - 2205_03440_primary
+  - 2205_03440_rel_scalar_preheating
+  - 2205_03440_rel_phase_space_distribution
+- allowed_regions:
+  - Benchmarks with T_R around 1 TeV and dominant inflaton decay to the SM radiation bath satisfy the
+    qualitative BBN requirement used in the paper.
+  applies: 'yes'
+  assumptions:
+  - can_be_relaxed: partial
+    description: The inflaton dominantly reheats the Standard Model sector.
+    id: assume_visible_reheating
+    impact_if_violated: If false, both relic abundance and BBN viability must be recomputed.
+    notes: null
+    scope: cosmological history
+    source_reference_ids:
+    - 2205_03440_primary
+    status: assumed
+  benchmark_implications:
+  - The light-DM benchmark assumes a completed reheating history before BBN.
+  caveats:
+  - The primary text states the requirement qualitatively rather than deriving a BBN likelihood.
+  constrained_parameters:
+  - T_R
+  - inflaton visible branching fraction
+  - inflaton total width
+  constraint_type: cosmological
+  data_release: null
+  excluded_regions:
+  - Inflaton decays that fail to leave a radiation-dominated Universe before BBN.
+  id: con_bbn_reheating_completion
+  likelihood_available: 'no'
+  likelihood_reference: null
+  name: Radiation domination before BBN
+  notes: This is a baseline cosmological consistency condition rather than the main observational constraint.
+  observable_channel: BBN/reheating
+  recasting_needed: partial
+  robustness: high
+  source_reference_ids:
+  - 2205_03440_primary
+theory_to_observable_routing:
+  routes:
+  - agent_notes: Primary text supports the chain through lambda_FSH; the final Lyman-alpha likelihood
+      remains a recast task.
+    caveats:
+    - A simple lambda_FSH comparison can miss shape differences in the transfer function.
+    constraint_ids:
+    - con_lya_free_streaming
+    - con_bbn_reheating_completion
+    derived_quantities:
+    - f_DM(p,t)
+    - average velocity
+    - lambda_FSH
+    - matter-power cutoff
+    description: Map inflaton-decay production plus scatterings into small-scale-structure observables.
+    forward_model_chain:
+    - inputs:
+      - inflaton decay widths
+      - Hubble history
+      - collision terms
+      notes: Must retain Pauli blocking/back-reaction options used by the paper.
+      outputs:
+      - f_DM(p,t)
+      step_id: solve_distribution
+      step_type: boltzmann_solver
+      tool_or_code: custom phase-space Boltzmann solver
+      validity: valid for the simplified reheating model in the primary paper
+    - inputs:
+      - f_DM(p,t_dec)
+      - cosmological parameters
+      notes: Benchmark should reproduce 0.0734 Mpc without collisions and 0.0020 Mpc with collisions.
+      outputs:
+      - lambda_FSH
+      step_id: compute_free_streaming
+      step_type: analytic_formula
+      tool_or_code: free-streaming integral
+      validity: proxy for small-scale structure impact
+    - inputs:
+      - lambda_FSH or transfer function
+      notes: Requires external Lyman-alpha likelihood or calibrated warm-DM mapping.
+      outputs:
+      - allowed/excluded mass-coupling region
+      step_id: compare_structure_bounds
+      step_type: likelihood
+      tool_or_code: Lyman-alpha or transfer-function recast
+      validity: not implemented in the paper
+    id: route_phase_space_to_structure
+    input_parameters:
+    - m_DM
+    - m_phi
+    - T_R
+    - DM-inflaton coupling
+    - a_I/a_R
+    likelihoods:
+    - future Lyman-alpha forest likelihood
+    observable_ids:
+    - obs_free_streaming_structure
+    - obs_collision_reshaped_momentum
+    required_code_resources:
+    - phase-space Boltzmann solver
+    - linear transfer-function calculator
+    - Lyman-alpha likelihood
+    route_status: planned
+    source_model_features:
+    - nonthermal inflaton decay
+    - inflaton-mediated 2-to-2 scatterings
+    - singlet fermion dark matter
+    validation_tests:
+    - reproduce primary benchmark free-streaming values
+    - recover cold limit when scatterings cool the distribution

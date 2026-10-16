@@ -1,0 +1,786 @@
+_source:
+  shard: arXiv_src_0804_003_wds.tar
+  paper_id: 0804_4543
+  source_member: 0804_4543.json
+  enriched: true
+  enrichment_schema_version: dm_model_ocr_enrichment_smoke_v0
+schema_version: model_only_v0
+model_id: 0804_4543_numsm_resonant_sterile_neutrino_dm_v1
+identity:
+  name: nuMSM lepton-asymmetry resonant sterile-neutrino dark matter
+  family: sterile_neutrino_dark_matter
+  aliases:
+  - MSM-induced lepton-asymmetry sterile neutrino dark matter
+  - Shi-Fuller resonant sterile neutrino production in the nuMSM
+  short_description: A nuMSM scenario where CP-violating oscillations of the two heavier right-handed
+    neutrinos generate a large lepton asymmetry, enabling resonant production of the lightest keV sterile
+    neutrino as dark matter.
+  historical_origin_or_motivation: The paper develops the parameter region where the nuMSM can explain
+    active neutrino data, baryogenesis-related lepton asymmetry, and sterile-neutrino dark matter without
+    adding a new scalar.
+  status: speculative
+  model_kind: complete_theory
+theory:
+  theory_level: effective_field_theory
+  parent_frameworks:
+  - nuMSM
+  - Standard Model plus three right-handed neutrinos
+  - Shi-Fuller resonant production
+  lagrangian_available: 'yes'
+  renormalizable: 'yes'
+  embedded_in_larger_framework: 'yes'
+  notes: The paper starts from the nuMSM and writes the lightest right-handed neutrino Lagrangian with
+    Majorana mass M_1 and Yukawa matrix elements F_alpha1 coupled to the Higgs and active lepton doublets.
+particle_content:
+  dark_matter_candidate:
+    name: N1 lightest right-handed sterile neutrino
+    spin: 1/2
+    statistics: fermion
+    elementary_or_composite: elementary
+    number_of_components: single_component
+  additional_dark_sector_particles:
+  - two heavier right-handed neutrinos N2 and N3
+  mediators:
+  - active-sterile mixing in the electroweak plasma
+  dark_radiation_species: []
+  excited_or_degenerate_states:
+  - nearly degenerate heavier right-handed neutrinos in Scenario IIa
+  long_lived_particles:
+  - N1 sterile neutrino
+  unstable_parent_particles: []
+  standard_model_extension: substantial
+symmetries:
+  stabilizing_mechanism: No exact stabilizing symmetry is given; N1 is cosmologically long-lived because
+    its Yukawa couplings and active-sterile mixing are extremely small.
+  symmetries: []
+  topological_defects_possible: unknown
+interactions:
+  portals:
+  - neutrino
+  standard_model_targets:
+  - active lepton doublets
+  - Higgs doublet
+  - electroweak plasma
+  dark_sector_couplings:
+  - F_alpha1 L_alpha H N1
+  - Majorana mass M1 for N1
+  mediator_types:
+  - active-sterile mixing
+  - finite-temperature electroweak matter potential
+  interaction_operators:
+  - N1 Majorana mass term
+  - neutrino Yukawa interaction with L_alpha and conjugate Higgs
+  scattering:
+    elastic: unknown
+    inelastic: unknown
+    momentum_dependence: strong
+    velocity_dependence: unknown
+    spin_dependence: unknown
+  annihilation_channels: []
+  decay_channels:
+  - N1 to active neutrinos
+  - radiative N1 to active neutrino plus photon
+  self_scattering_channels: []
+  cp_structure: CP violation in the heavier right-handed neutrino sector generates the lepton asymmetry;
+    the N1 abundance calculation uses the absolute asymmetry as input.
+  flavor_structure: The paper studies limiting flavour structures for the N1 Dirac mass elements and assumes
+    equal active-species lepton asymmetries for the main calculation.
+  tree_or_loop_level: both
+parameters:
+  core:
+  - name: lightest_sterile_neutrino_mass
+    symbol: M_1
+    description: Mass of the N1 dark matter candidate.
+    range:
+      min: 4
+      max: 50
+      inclusive_min: true
+      inclusive_max: true
+      unit: keV
+      notes: Range quoted for N1 accounting for all dark matter under the paper assumptions.
+    unit: keV
+    role: core
+    status: approximate
+  - name: total_active_sterile_mixing
+    symbol: sin^2(2 theta)
+    description: Total active-sterile mixing angle entering abundance and X-ray decay calculations.
+    range:
+      min: 2e-12
+      max: 8e-10
+      inclusive_min: true
+      inclusive_max: true
+      unit: null
+      notes: Example solution range quoted for n_nue/s around 8e-6 and M1 about 4-25 keV.
+    role: core
+    status: approximate
+  - name: lepton_asymmetry
+    symbol: n_nue/s
+    description: Lepton asymmetry parameter used to drive resonant production.
+    range:
+      min: 8e-6
+      max: '2.5e-3'
+      inclusive_min: true
+      inclusive_max: true
+      unit: null
+      notes: The lower value opens an allowed mass range; the upper value is the BBN-scale maximum quoted
+        in the paper conventions.
+    role: core
+    status: approximate
+  - name: n1_yukawa_couplings
+    symbol: '|F_{alpha1}|'
+    description: Absolute Yukawa couplings of the lightest right-handed neutrino.
+    range:
+      min: 5e-15
+      max: 4e-13
+      inclusive_min: true
+      inclusive_max: true
+      unit: null
+      notes: Quoted in the conclusion for the all-DM case.
+    role: core
+    status: approximate
+  - name: heavier_neutrino_mass_splitting
+    symbol: Delta M_23
+    description: Small mass difference of the two heavier right-handed neutrino eigenstates enabling Scenario
+      IIa lepton asymmetry.
+    range: much smaller than the known active-neutrino mass differences
+    role: core
+    status: inferred
+production:
+  mechanisms:
+  - resonant active-sterile oscillation production in a lepton-asymmetric plasma
+  - Shi-Fuller mechanism seeded by nuMSM lepton asymmetry
+  thermal_equilibrium_with_standard_model: 'no'
+  thermal_equilibrium_with_hidden_sector: not_applicable
+  abundance_set_by:
+  - M_1
+  - total mixing angle sin^2(2 theta)
+  - lepton asymmetry n_nue/s
+  - finite-temperature matter potential and QCD-era rates
+  depends_on_reheating_temperature: unknown
+  can_produce_all_dark_matter: parameter_dependent
+  nonthermal_momentum_distribution: 'yes'
+  notes: The paper recomputes the abundance and non-equilibrium spectra using quantum field theoretic
+    finite-temperature rates in the charge-asymmetric case.
+relic_density:
+  full_or_subcomponent: full_dark_matter
+  target_fraction:
+    name: target_dark_matter_fraction
+    description: The main constraints are derived by requiring N1 to account for all observed dark matter.
+    value: 1
+    role: derived
+    status: assumed
+  calculation_type: nonthermal
+  key_dependencies:
+  - sterile-neutrino yield Y_1
+  - M_1
+  - mixing angle
+  - lepton asymmetry depletion
+  - QCD crossover uncertainties
+  requires_entropy_dilution: 'no'
+  overclosure_risk: parameter_dependent
+  underproduction_risk: parameter_dependent
+  tuning_assessment: unknown
+cosmological_history:
+  standard_history_assumed: true
+  nonstandard_features:
+  - large lepton asymmetry persisting below sphaleron freeze-out
+  - resonant N1 production near the QCD crossover for keV masses
+  dark_sector_temperature: null
+  delta_neff: null
+  kinetic_decoupling: null
+  chemical_decoupling:
+    name: production_temperature_window
+    symbol: T
+    description: Numerical integration window for production after electroweak symmetry breaking.
+    range:
+      min: 1 MeV
+      max: 4 GeV
+      inclusive_min: true
+      inclusive_max: true
+      unit: null
+      notes: The paper integrates down to 1 MeV and takes 4 GeV as an upper limit where the rate is negligible.
+    role: computational
+    status: assumed
+  phase_transitions:
+  - QCD crossover affects production for M1 of a few keV
+  topological_defects: []
+  isocurvature_perturbations: unknown
+  bbn_relevance: high
+  cmb_relevance: unknown
+phase_space:
+  distribution_type: resonant
+  distribution_function_available: 'yes'
+  average_momentum_relative_to_thermal: q_s/q_a can decrease to about 0.3, or about 0.4 for small M1 after
+    approximate back-reaction correction
+  free_streaming_length: null
+  velocity_dispersion_today: null
+  phase_space_bounds:
+  - The paper reinterprets Lyman-alpha/structure formation lower mass bounds using the nonthermal average
+    momentum estimate.
+  notes: The lepton asymmetry produces strongly non-Fermi-Dirac spectra, with low-momentum enhancement
+    for some asymmetries.
+structure_formation:
+  linear:
+    behaves_like_cdm: scale_dependent
+    transfer_function_shape: smooth_cutoff
+    small_scale_power_effect: suppression
+    thermal_wdm_mapping:
+      available: true
+      validity: approximate
+      warning: The paper stresses that proper simulations with the non-equilibrium spectra are still needed.
+  nonlinear:
+    halo_mass_function_effect: unknown; spectra are intended as input for warm dark matter simulations
+      and dwarf-halo studies
+    subhalo_mass_function_effect: suppression expected relative to CDM but not calibrated in the paper
+    simulation_calibrated: 'no'
+validity_domain:
+- id: broken_electroweak_temperature_range
+  applies_to: production
+  condition: The abundance calculation is restricted to temperatures below a few GeV, with electroweak
+    symmetry broken and v about 246 GeV.
+  status: assumed
+  extrapolation_risk: medium
+  source_reference_ids: []
+- id: small_mixing_expansion
+  applies_to: theory
+  condition: The calculation assumes theta_1 much less than one, specifically theta_1 below about 1e-3,
+    and keeps leading non-trivial order in theta_1 squared.
+  status: assumed
+  extrapolation_risk: medium
+  source_reference_ids: []
+- id: equal_active_asymmetries
+  applies_to: cosmological_history
+  condition: The main calculation assumes equal lepton asymmetries in all active species, even though
+    the paper notes this is not strictly the nuMSM expectation.
+  status: assumed
+  extrapolation_risk: high
+  source_reference_ids: []
+- id: below_equilibrium_density
+  applies_to: production
+  condition: The QFT formulation assumes the produced right-handed neutrino density is below equilibrium;
+    the paper notes possible violations in parts of parameter space.
+  status: assumed
+  extrapolation_risk: high
+  source_reference_ids: []
+- id: nonthermal_structure_mapping
+  applies_to: structure_formation
+  condition: Thermal warm-DM structure constraints are only approximately reinterpreted for the non-equilibrium
+    spectra.
+  status: approximate
+  extrapolation_risk: high
+  source_reference_ids: []
+assumptions:
+  global:
+  - id: numsm_particle_content
+    description: The Standard Model is extended by three right-handed neutrinos with masses below the
+      electroweak scale.
+    scope: theory
+    status: assumed
+  - id: large_lepton_asymmetry_input
+    description: A large lepton asymmetry generated by the heavier right-handed neutrino sector is present
+      during N1 production.
+    scope: cosmological_history
+    status: assumed
+  - id: n1_all_dark_matter
+    description: The main parameter bounds assume N1 makes all of the dark matter.
+    scope: production
+    status: assumed
+    impact_if_violated: If N1 is only a subcomponent, the quoted mass and coupling bounds are relaxed.
+  - id: no_other_production_mechanism
+    description: The absolute lower mass bound quoted assumes active-sterile mixing is the only N1 production
+      mechanism.
+    scope: production
+    status: assumed
+associated_code:
+  has_associated_code: unknown
+  code_summary: The assigned text describes numerical integrations but does not identify a public model-specific
+    code release.
+  primary_code_role: null
+provenance:
+  model_id: 0804_4543_numsm_resonant_sterile_neutrino_dm_v1
+  model_name: nuMSM lepton-asymmetry resonant sterile-neutrino dark matter
+  model_family: sterile_neutrino_dark_matter
+  entry_version: 0.1.0
+  status: machine_extracted
+  created_at: '2026-05-30'
+  last_updated: '2026-05-30'
+  sources:
+    primary_papers:
+    - reference_id: 0804_4543
+      title: Sterile neutrino dark matter as a consequence of nuMSM-induced lepton asymmetry
+      authors:
+      - Mikko Laine
+      - Mikhail Shaposhnikov
+      year: 2008
+      arxiv_id: '0804.4543'
+      doi: null
+      url: null
+      role: extension
+      notes: Assigned full text used as the only source.
+    - arxiv_id: '0804.4543'
+      authors:
+      - Laine, Mikko
+      - Shaposhnikov, Mikhail
+      doi: 10.1088/1475-7516/2008/06/031
+      notes: Primary assigned paper read from local SQLite full text.
+      reference_id: arxiv:0804.4543
+      role: original_model
+      title: Sterile neutrino dark matter as a consequence of nuMSM-induced lepton asymmetry
+      url: https://arxiv.org/abs/0804.4543
+      year: null
+    constraint_papers:
+    - arxiv_id: astro-ph/0501562
+      authors:
+      - Viel, Matteo
+      - Lesgourgues, Julien
+      - Haehnelt, Martin G.
+      - Matarrese, Sabino
+      - Riotto, Antonio
+      doi: 10.1103/PhysRevD.71.063534
+      notes: Related Lyman-alpha/WDM constraint paper resolved locally and read for bounded enrichment.
+      reference_id: arxiv:astro-ph/0501562
+      role: constraint
+      title: Constraining warm dark matter candidates including sterile neutrinos and light gravitinos
+        with WMAP and the Lyman-α forest
+      url: https://arxiv.org/abs/astro-ph/0501562
+      year: null
+    - arxiv_id: '1507.06655'
+      authors:
+      - Venumadhav, Tejaswi
+      - Cyr-Racine, Francis-Yan
+      - Abazajian, Kevork N.
+      - Hirata, Christopher M.
+      doi: 10.1103/PhysRevD.94.043515
+      notes: Related resonant sterile-neutrino transfer-function paper resolved locally and read for bounded
+        enrichment.
+      reference_id: arxiv:1507.06655
+      role: constraint
+      title: 'Sterile neutrino dark matter: Weak interactions in the strong coupling epoch'
+      url: https://arxiv.org/abs/1507.06655
+      year: null
+    external_databases: []
+    review_papers:
+    - arxiv_id: '1506.06752'
+      authors:
+      - Ghiglieri, J.
+      - Laine, M.
+      doi: 10.1007/JHEP11(2015)171
+      notes: Related sterile-neutrino spectrum calculation resolved locally and read for bounded enrichment.
+      reference_id: arxiv:1506.06752
+      role: extension
+      title: Improved determination of sterile neutrino dark matter spectrum
+      url: https://arxiv.org/abs/1506.06752
+      year: null
+  extraction:
+    method: llm_assisted
+    extracted_by: codex_batch_0004
+    extractor_name: Codex GPT-5
+    extraction_date: '2026-05-30'
+    confidence: high
+    source_chunks_or_sections:
+    - reference_id: 0804_4543
+      section: Abstract and introduction
+      page: null
+      quote_or_summary: The paper states that nuMSM lepton asymmetry enables efficient resonant generation
+        of lightest sterile neutrinos as dark matter.
+    - reference_id: 0804_4543
+      section: general formalism
+      page: null
+      quote_or_summary: The paper writes the N1 Lagrangian and assumptions for a first-principles abundance
+        calculation.
+    - reference_id: 0804_4543
+      section: astrophysical consequences and conclusion
+      page: null
+      quote_or_summary: The paper quotes M1 about 4-50 keV and tiny Yukawa couplings for the all-dark-matter
+        case.
+    unresolved_items:
+    - The paper flags hadronic/QCD-crossover uncertainties and the need for structure-formation simulations
+      using the non-equilibrium spectra.
+    - No modern Lyman-alpha or X-ray likelihood was rerun.
+    - The exact allowed region depends on flavor asymmetry assumptions and the nonthermal phase-space
+      distribution.
+  evidence:
+    particle_content:
+    - reference_id: 0804_4543
+      note: The text defines the nuMSM as the Standard Model plus three right-handed neutrinos and identifies
+        the lightest N1 as the keV dark matter particle.
+      confidence: high
+      section: Abstract/introduction
+      page: null
+    symmetries:
+    - reference_id: 0804_4543
+      note: The paper gives no exact stabilizing symmetry; small F_alpha1 and mixing make N1 long-lived.
+      confidence: medium
+      section: formalism
+      page: null
+    interactions:
+    - reference_id: 0804_4543
+      note: The Lagrangian contains an N1 Majorana mass and Yukawa couplings F_alpha1 to active lepton
+        doublets and the conjugate Higgs.
+      confidence: high
+      section: general formalism
+      page: null
+    production_mechanism:
+    - reference_id: 0804_4543
+      note: Large lepton asymmetry from heavier right-handed neutrino oscillations triggers resonant active-sterile
+        production of N1.
+      confidence: high
+      section: Abstract/introduction
+      page: null
+    cosmological_history:
+    - reference_id: 0804_4543
+      note: The calculation uses lepton asymmetry below sphaleron freeze-out, integrates production from
+        a few GeV to 1 MeV, and notes QCD-crossover uncertainties.
+      confidence: high
+      section: formalism/abundance
+      page: null
+    parameter_ranges:
+    - reference_id: 0804_4543
+      note: The conclusion quotes M1 about 4-50 keV and |F_alpha1| about 5e-15 to 4e-13 for the all-DM
+        scenario.
+      confidence: high
+      section: conclusion
+      page: null
+    validity_domain:
+    - reference_id: 0804_4543
+      note: The paper states assumptions of small theta1, equal active asymmetries, and below-equilibrium
+        N1 density, with caveats when they fail.
+      confidence: high
+      section: general formalism
+      page: null
+    constraints:
+    - confidence: high
+      note: Related Lyman-alpha analysis quotes lower limits of 550 eV for thermal relic WDM and 2.0 keV
+        for a sterile-neutrino mapping.
+      page: null
+      reference_id: arxiv:astro-ph/0501562
+      section: Abstract/results
+    - confidence: high
+      note: Primary paper identifies X-ray non-observation and structure formation as the two main experimental
+        constraint classes.
+      page: null
+      reference_id: arxiv:0804.4543
+      section: Introduction
+    observables:
+    - confidence: high
+      note: Primary paper computes non-equilibrium sterile-neutrino spectra in the presence of nuMSM-induced
+        lepton asymmetry and identifies Lyman-alpha and dwarf-halo uses.
+      page: null
+      reference_id: arxiv:0804.4543
+      section: Abstract
+    - confidence: high
+      note: Related paper computes spectra for 7.1 keV sterile neutrinos motivated by a 3.55 keV X-ray
+        line interpretation.
+      page: null
+      reference_id: arxiv:1506.06752
+      section: Abstract
+    routes:
+    - confidence: high
+      note: Primary paper provides the production equations and nonthermal spectra needed for downstream
+        structure simulations.
+      page: null
+      reference_id: arxiv:0804.4543
+      section: Production formalism
+  review:
+    human_reviewed: false
+    reviewed_by: null
+    review_date: null
+    expert_reviewed: false
+    expert_reviewer: null
+    expert_review_date: null
+    reviewer_notes: []
+    scientific_confidence: high
+    implementation_confidence: medium
+  caveats:
+  - The all-dark-matter mass range relies partly on approximate reinterpretation of structure-formation
+    limits for nonthermal spectra.
+robustness:
+  overall: medium
+  theory_robustness: medium
+  observational_robustness: unknown
+  computational_robustness: medium
+  constraint_robustness: not_applicable
+  dominant_uncertainties:
+  - QCD crossover rates for few-keV masses
+  - equal-flavour-asymmetry approximation
+  - approximate back-reaction treatment
+  - thermal warm-DM mapping for nonthermal spectra
+  validation_status: partially_validated
+  notes: The paper performs numerical abundance and spectrum calculations but calls for structure simulations
+    with the actual spectra.
+agent_failure_modes:
+  warnings:
+  - id: thermal_wdm_mapping_caution
+    severity: high
+    category: invalid_mapping
+    warning: Do not directly map these resonant non-equilibrium spectra to thermal warm dark matter bounds
+      without checking the approximation.
+    source_reference_ids: []
+    mitigation: Use the paper-specific spectra or simulations when structure formation matters.
+  - id: flavour_asymmetry_assumption
+    severity: medium
+    category: assumption_mismatch
+    warning: The main calculation assumes equal active lepton asymmetries, which the paper notes is not
+      strictly realized in the nuMSM.
+    source_reference_ids: []
+    mitigation: Track flavour-asymmetry assumptions before reusing abundance bounds.
+  - id: back_reaction_approximation
+    severity: medium
+    category: extrapolation
+    warning: The paper treats possible N1 back reaction with an approximate correction and notes larger
+      errors for small masses and intermediate asymmetries.
+    source_reference_ids: []
+    mitigation: Avoid overinterpreting precise parameter boundaries.
+observables:
+- caveats:
+  - Thermal-WDM mass bounds are not directly applicable to resonant sterile-neutrino spectra.
+  channel: lyman_alpha
+  effect_direction: suppression
+  environments:
+  - Lyman-alpha forest
+  - dwarf-galaxy scales
+  id: obs_resonant_sterile_spectrum
+  key_quantities:
+  - description: Mass of the lightest right-handed neutrino.
+    name: sterile-neutrino mass
+    range: keV scale; 7.1 keV benchmark in related spectrum study
+    role: core
+    source_reference_ids:
+    - arxiv:0804.4543
+    - arxiv:1506.06752
+    status: inferred
+    symbol: M_1
+    unit: keV
+  - description: Controls sterile-neutrino production and radiative decay rate.
+    name: active-sterile mixing angle
+    range: very small; primary expands to leading order for theta_1 << 10^-3
+    role: core
+    source_reference_ids:
+    - arxiv:0804.4543
+    status: assumed
+    symbol: theta_1^2
+  - description: Resonant production parameter; primary finds n_nue/s above about 0.8e-5 can give the
+      observed abundance in the nuMSM scenario.
+    name: lepton asymmetry per entropy
+    range: about 0.8e-5 up to nuMSM/BBN-limited values discussed in primary
+    role: core
+    source_reference_ids:
+    - arxiv:0804.4543
+    status: inferred
+    symbol: n_L/s
+  linked_constraints:
+  - con_lya_sterile_wdm_recast
+  linked_routes:
+  - route_numsm_spectrum_to_xray_and_structure
+  name: Resonantly produced sterile-neutrino momentum spectrum
+  notes: null
+  observability: high
+  predicted_effect: A pre-existing nuMSM lepton asymmetry resonantly produces keV sterile neutrinos with
+    a nonthermal momentum spectrum that must be propagated into small-scale structure observables.
+  redshift_range: production epoch through structure formation
+  relevance: critical
+  scale_range: comoving k roughly 1-100 h Mpc^-1 for related transfer-function discussion
+  source_reference_ids:
+  - arxiv:0804.4543
+  - arxiv:astro-ph/0501562
+  - arxiv:1507.06655
+  subchannel: warm-dark-matter transfer function
+- caveats:
+  - The batch did not evaluate any specific X-ray exposure or line-search likelihood.
+  channel: indirect_detection
+  effect_direction: spectral_line
+  environments:
+  - galaxy clusters
+  - Milky Way halo
+  - dwarf galaxies
+  id: obs_sterile_neutrino_xray_line
+  key_quantities:
+  - description: Radiative-decay photon energy.
+    name: line energy
+    role: derived
+    source_reference_ids:
+    - arxiv:0804.4543
+    - arxiv:1506.06752
+    status: inferred
+    symbol: E_gamma
+    unit: keV
+    value: approximately M_1/2
+  - description: Controls the radiative decay rate and X-ray bounds.
+    name: mixing angle
+    role: core
+    source_reference_ids:
+    - arxiv:0804.4543
+    - arxiv:1506.06752
+    status: inferred
+    symbol: sin^2(2 theta)
+  linked_constraints:
+  - con_xray_mixing_lifetime
+  linked_routes:
+  - route_numsm_spectrum_to_xray_and_structure
+  name: Radiative sterile-neutrino decay line
+  notes: null
+  observability: medium
+  predicted_effect: The lightest sterile neutrino is long-lived but radiative decays can produce a narrow
+    X-ray line at roughly half the sterile-neutrino mass.
+  redshift_range: late-time halos to present
+  relevance: high
+  scale_range: galaxy and cluster dark-matter halos
+  source_reference_ids:
+  - arxiv:0804.4543
+  - arxiv:1506.06752
+  subchannel: X-ray line from N1 -> nu + gamma
+constraints:
+- allowed_regions:
+  - Resonantly produced nuMSM spectra can be colder than thermal spectra and need exact transfer functions
+    before applying a mass limit.
+  applies: recast_required
+  assumptions:
+  - can_be_relaxed: partial
+    description: The related lower bound maps nonthermal sterile-neutrino spectra to warm-DM-like suppression.
+    id: thermal_equivalent_mapping
+    impact_if_violated: Incorrect mapping can overstate or understate the mass bound for resonant spectra.
+    notes: null
+    scope: structure recast
+    source_reference_ids:
+    - arxiv:0804.4543
+    - arxiv:astro-ph/0501562
+    - arxiv:1507.06655
+    status: assumed
+  benchmark_implications:
+  - The primary spectra are intended as inputs to Lyman-alpha and dwarf-halo simulations, not as a final
+    likelihood result.
+  caveats:
+  - Modern Lyman-alpha limits may be stronger than the 2005 related bound; this row records the locally
+    read related source.
+  constrained_parameters:
+  - M_1
+  - phase-space distribution
+  - transfer_function
+  constraint_type: astrophysical
+  data_release: WMAP plus high-resolution Lyman-alpha forest samples used by related paper
+  excluded_regions:
+  - The related WMAP plus high-resolution Lyman-alpha analysis quotes 2 sigma lower limits of 550 eV for
+    early-decoupled thermal relics and 2.0 keV for the sterile-neutrino mapping used there.
+  id: con_lya_sterile_wdm_recast
+  likelihood_available: 'no'
+  likelihood_reference: null
+  name: Lyman-alpha/WDM lower-bound recast for sterile neutrinos
+  notes: null
+  observable_channel: Lyman-alpha forest small-scale power
+  recasting_needed: 'yes'
+  robustness: medium
+  source_reference_ids:
+  - arxiv:0804.4543
+  - arxiv:astro-ph/0501562
+  - arxiv:1507.06655
+- allowed_regions:
+  - Very small mixing and resonant production can produce the abundance while keeping the radiative line
+    weak.
+  applies: parameter_dependent
+  assumptions:
+  - can_be_relaxed: partial
+    description: The X-ray bound assumes the standard radiative decay N1 -> nu + gamma with rate controlled
+      by active-sterile mixing.
+    id: radiative_decay_channel
+    impact_if_violated: Additional decay channels or nonstandard halo distributions would alter the line
+      constraint.
+    notes: null
+    scope: indirect detection
+    source_reference_ids:
+    - arxiv:0804.4543
+    - arxiv:1506.06752
+    status: assumed
+  benchmark_implications:
+  - A 7.1 keV sterile-neutrino interpretation of a 3.55 keV line fixes mass and mixing and requires a
+    matching lepton asymmetry in the related spectrum calculation.
+  caveats:
+  - No X-ray data product or likelihood was used in this batch.
+  constrained_parameters:
+  - M_1
+  - sin^2(2 theta)
+  - tau_N1
+  constraint_type: astrophysical
+  data_release: null
+  excluded_regions:
+  - Large active-sterile mixing is constrained by non-observation of decay X-rays from dark-matter halos.
+  id: con_xray_mixing_lifetime
+  likelihood_available: 'no'
+  likelihood_reference: null
+  name: X-ray non-observation bound on sterile-neutrino mixing
+  notes: null
+  observable_channel: X-ray line searches
+  recasting_needed: 'yes'
+  robustness: medium
+  source_reference_ids:
+  - arxiv:0804.4543
+  - arxiv:1506.06752
+theory_to_observable_routing:
+  routes:
+  - agent_notes: null
+    caveats:
+    - The flavor structure of the lepton asymmetry changes the resulting spectrum.
+    constraint_ids:
+    - con_lya_sterile_wdm_recast
+    - con_xray_mixing_lifetime
+    derived_quantities:
+    - nonthermal f(p)
+    - transfer function
+    - radiative decay rate
+    - line energy
+    description: Propagate nuMSM lepton asymmetry and sterile-neutrino mixing into nonthermal spectra,
+      X-ray decay, and small-scale-structure constraints.
+    forward_model_chain:
+    - inputs:
+      - M_1
+      - theta_1^2
+      - n_L/s
+      notes: null
+      outputs:
+      - sterile-neutrino phase-space distribution
+      step_id: s1
+      step_type: boltzmann_solver
+      tool_or_code: null
+      validity: Requires QFT finite-temperature rates as in the source literature.
+    - inputs:
+      - f(p)
+      - Omega_DM
+      notes: null
+      outputs:
+      - linear matter power suppression
+      step_id: s2
+      step_type: transfer_function
+      tool_or_code: CLASS/CAMB-style solver
+      validity: Exact nonthermal spectrum should be used.
+    - inputs:
+      - transfer function
+      - decay rate
+      notes: null
+      outputs:
+      - Lyman-alpha and X-ray constraints
+      step_id: s3
+      step_type: likelihood
+      tool_or_code: null
+      validity: Likelihood assets not included here.
+    id: route_numsm_spectrum_to_xray_and_structure
+    input_parameters:
+    - M_1
+    - theta_1^2
+    - n_L/s
+    - flavour asymmetry pattern
+    likelihoods:
+    - Lyman-alpha forest likelihood unavailable
+    - X-ray line likelihood unavailable
+    observable_ids:
+    - obs_resonant_sterile_spectrum
+    - obs_sterile_neutrino_xray_line
+    required_code_resources:
+    - sterile-neutrino production solver
+    - Boltzmann transfer-function solver
+    route_status: planned
+    source_model_features:
+    - nuMSM right-handed neutrinos
+    - Shi-Fuller resonant production
+    - large lepton asymmetry from heavier-neutrino oscillations
+    validation_tests:
+    - recover primary n_nue/s abundance threshold
+    - recover related 7.1 keV spectrum benchmark

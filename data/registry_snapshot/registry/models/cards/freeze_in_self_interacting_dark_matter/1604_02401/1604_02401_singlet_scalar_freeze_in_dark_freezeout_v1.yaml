@@ -1,0 +1,808 @@
+_source:
+  shard: arXiv_src_1604_006_wds.tar
+  paper_id: '1604_02401'
+  source_member: 1604_02401.json
+  enriched: true
+  enrichment_schema_version: dm_model_ocr_enrichment_smoke_v0
+schema_version: model_only_v0
+model_id: 1604_02401_singlet_scalar_freeze_in_dark_freezeout_v1
+identity:
+  name: Self-interacting singlet scalar freeze-in/dark-freeze-out dark matter
+  family: freeze_in_self_interacting_dark_matter
+  aliases:
+  - decoupled scalar Higgs-portal freeze-in model
+  - scalar dark freeze-out hidden sector
+  short_description: A nearly decoupled Higgs-portal singlet scalar whose initial abundance is produced
+    by freeze-in from Higgs decays and whose self-interactions may thermalize the hidden sector, producing
+    the final relic abundance by dark freeze-out.
+  historical_origin_or_motivation: Motivated by feeble visible-sector couplings, possible dark matter
+    self-interactions, and isocurvature constraints on decoupled hidden sectors.
+  status: speculative
+  model_kind: simplified_model
+theory:
+  theory_level: simplified_model
+  parent_frameworks:
+  - Higgs portal
+  - freeze-in dark matter
+  - self-interacting dark matter
+  lagrangian_available: 'yes'
+  renormalizable: 'yes'
+  eft_cutoff: null
+  embedded_in_larger_framework: unknown
+  notes: The paper does not specify a dynamical origin for scalar or fermion mass terms.
+particle_content:
+  dark_matter_candidate:
+    name: real singlet scalar s
+    spin: '0'
+    statistics: scalar
+    elementary_or_composite: elementary
+    number_of_components: single_component
+  additional_dark_sector_particles:
+  - sterile-neutrino/Dirac fermion psi, decoupled in the scalar-DM limit
+  mediators:
+  - SM Higgs boson through scalar portal
+  dark_radiation_species: []
+  excited_or_degenerate_states: []
+  long_lived_particles: []
+  unstable_parent_particles: []
+  standard_model_extension: minimal
+symmetries:
+  stabilizing_mechanism: singlet scalar parity/Z2 forbids odd-s interactions and stabilizes scalar dark
+    matter in the scalar-DM limit
+  symmetries:
+  - name: singlet scalar Z2/parity
+    type: discrete
+    exact_or_approximate: exact
+    breaking: not indicated for scalar-DM limit
+    breaking_scale: null
+  topological_defects_possible: unknown
+interactions:
+  portals:
+  - higgs
+  standard_model_targets:
+  - SM Higgs boson
+  dark_sector_couplings:
+  - lambda_hs Higgs portal
+  - lambda_s scalar self-coupling
+  mediator_types:
+  - Higgs portal
+  - scalar self-interaction
+  interaction_operators:
+  - lambda_hs |H|^2 s^2
+  - lambda_s s^4/4
+  scattering:
+    elastic: 'yes'
+    inelastic: 'no'
+    momentum_dependence: unknown
+    velocity_dependence: unknown
+    spin_dependence: not_applicable
+  annihilation_channels:
+  - dark-sector 4 to 2 scalar number-changing scattering
+  - inverse 2 to 4 scalar scattering
+  decay_channels: []
+  self_scattering_channels:
+  - s s -> s s
+  - 4 s -> 2 s
+  cp_structure: real (pseudo)scalar option noted; scalar relic treatment uses real singlet scalar
+  flavor_structure: flavor blind Higgs portal
+  tree_or_loop_level: tree
+parameters:
+  core:
+  - name: Higgs portal coupling
+    symbol: lambda_hs
+    description: Feeble portal coupling controlling Higgs-decay freeze-in.
+    range: below about 1e-7 to avoid SM thermalization; examples 1e-12 to 1e-9
+    role: core
+    status: inferred
+    source_reference_ids:
+    - paper
+  - name: scalar self-coupling
+    symbol: lambda_s
+    description: Controls dark-sector thermalization, isocurvature bound, and scalar self-interaction.
+    range: model dependent; critical value lambda_s^FI determines dark thermalization
+    role: core
+    status: inferred
+    source_reference_ids:
+    - paper
+  - name: scalar mass
+    symbol: m_s
+    description: Scalar dark matter mass.
+    range: above warm-DM floor around 3 keV; self-interacting regions noted below about 10 keV for freeze-in
+      and below about 0.1 GeV for dark freeze-out
+    unit: GeV
+    role: core
+    status: inferred
+    source_reference_ids:
+    - paper
+  - name: dark-sector temperature ratio
+    symbol: xi
+    description: T_D/T after hidden-sector decoupling.
+    value: set by energy injected through Higgs decays
+    role: derived
+    status: inferred
+    source_reference_ids:
+    - paper
+  nuisance: []
+  derived: []
+production:
+  mechanisms:
+  - Higgs-decay freeze-in
+  - dark-sector internal thermalization
+  - dark freeze-out via number-changing scalar scattering
+  thermal_equilibrium_with_standard_model: 'no'
+  thermal_equilibrium_with_hidden_sector: partial
+  abundance_set_by:
+  - lambda_hs initial freeze-in yield
+  - lambda_s self-thermalization threshold
+  - 4 to 2 scalar freeze-out
+  - dark-to-visible temperature ratio
+  depends_on_reheating_temperature: unknown
+  can_produce_all_dark_matter: parameter_dependent
+  nonthermal_momentum_distribution: parameter_dependent
+  notes: For lambda_s below the internal-thermalization threshold, standard freeze-in gives the relic
+    abundance.
+relic_density:
+  full_or_subcomponent: full_dark_matter
+  target_fraction:
+    name: observed abundance
+    symbol: Omega_DM h^2
+    description: The scalar can constitute all dark matter in allowed freeze-in/dark-freeze-out regions.
+    value: '0.12'
+    role: cosmological
+    status: inferred
+    source_reference_ids:
+    - paper
+  calculation_type: mixed
+  key_dependencies:
+  - lambda_hs
+  - lambda_s
+  - m_s
+  - dark freeze-out temperature x_D^FO
+  requires_entropy_dilution: 'no'
+  overclosure_risk: parameter_dependent
+  underproduction_risk: parameter_dependent
+  tuning_assessment: unknown
+cosmological_history:
+  standard_history_assumed: true
+  nonstandard_features:
+  - decoupled hidden-sector temperature
+  - possible primordial singlet condensate with isocurvature
+  - internal dark-sector freeze-out
+  dark_sector_temperature:
+    name: dark-to-visible temperature ratio
+    symbol: xi
+    description: T_D/T set by Higgs-decay energy injection and separate entropy conservation.
+    value: model dependent
+    role: cosmological
+    status: inferred
+    source_reference_ids:
+    - paper
+  delta_neff:
+    name: dark radiation contribution
+    symbol: Delta N_eff
+    description: Paper states the dark sector entropy density is too small to significantly affect N_eff
+      in allowed parameter space.
+    value: negligible
+    role: cosmological
+    status: inferred
+    source_reference_ids:
+    - paper
+  kinetic_decoupling: null
+  chemical_decoupling:
+    name: dark freeze-out temperature
+    symbol: x_D^FO
+    description: m_s/T_D at 4 to 2 freeze-out when internal thermalization occurs.
+    value: model dependent
+    role: cosmological
+    status: inferred
+    source_reference_ids:
+    - paper
+  phase_transitions: []
+  topological_defects: []
+  isocurvature_perturbations: parameter_dependent
+  bbn_relevance: low
+  cmb_relevance: medium
+phase_space:
+  distribution_type: mixed_cold_warm
+  distribution_function_available: 'no'
+  f_of_p_or_q: not provided
+  average_momentum_relative_to_thermal: depends on whether freeze-in or dark freeze-out regime applies
+  free_streaming_length: null
+  velocity_dispersion_today: null
+  phase_space_bounds:
+  - warm dark matter mass below about 3 keV excluded by Lyman-alpha forest data in the paper
+  notes: Relativistic dark freeze-out may require corrections to the nonrelativistic abundance approximation.
+structure_formation:
+  linear:
+    behaves_like_cdm: scale_dependent
+    transfer_function_shape: smooth_cutoff
+    small_scale_power_effect: mixed
+    half_mode_mass: null
+    impact_on_sigma8_s8: unknown
+  nonlinear:
+    halo_mass_function_effect: self-interactions and warm spectra can affect small-scale structure in
+      allowed light-mass regions
+    subhalo_mass_function_effect: unknown
+    simulation_calibrated: unknown
+validity_domain:
+- id: feeble_portal
+  applies_to: parameter
+  condition: '|lambda_hs| must be below about 1e-7 for the singlet sector not to thermalize with the SM.'
+  status: inferred
+  extrapolation_risk: medium
+  caveats: []
+  source_reference_ids:
+  - paper
+  notes: null
+- id: nonrelativistic_dark_freezeout
+  applies_to: calculation
+  condition: Analytic dark-freeze-out abundance estimates are explicitly nonrelativistic and need corrections
+    in relativistic regimes.
+  status: inferred
+  extrapolation_risk: high
+  caveats: []
+  source_reference_ids:
+  - paper
+  notes: null
+assumptions:
+  global:
+  - id: heavy_fermion_scalar_limit
+    description: For the scalar dark matter scenario the fermion is assumed heavy and decoupled from the
+      low-energy spectrum.
+    scope: theory
+    status: assumed
+    impact_if_violated: null
+    can_be_relaxed: unknown
+    source_reference_ids:
+    - paper
+    notes: null
+  - id: separate_entropy
+    description: After visible/dark decoupling, the two sectors conserve entropy separately.
+    scope: cosmological_history
+    status: assumed
+    impact_if_violated: null
+    can_be_relaxed: unknown
+    source_reference_ids:
+    - paper
+    notes: null
+associated_code:
+  has_associated_code: unknown
+  code_summary: No associated code is identified in the assigned text.
+  primary_code_role: null
+  repositories: []
+  packages_or_modules: []
+  notebooks: []
+  scripts: []
+  containers_or_environments: []
+  expected_inputs: []
+  expected_outputs: []
+  reproducibility:
+    reproducibility_level: unknown
+    has_tests: unknown
+    has_examples: unknown
+    has_documentation: unknown
+    pinned_dependencies: unknown
+    notes: null
+  validation:
+    validation_status: unknown
+    benchmark_references: []
+    validation_notes: null
+  caveats: []
+provenance:
+  model_id: 1604_02401_singlet_scalar_freeze_in_dark_freezeout_v1
+  model_name: Self-interacting singlet scalar freeze-in/dark-freeze-out dark matter
+  model_family: freeze_in_self_interacting_dark_matter
+  entry_version: 0.1.0
+  status: machine_extracted
+  created_at: '2026-05-31'
+  last_updated: '2026-05-31'
+  sources:
+    primary_papers:
+    - reference_id: paper
+      title: Observational Constraints on Decoupled Hidden Sectors
+      authors:
+      - Matti Heikinheimo
+      - Tommi Tenkanen
+      - Kimmo Tuominen
+      - Ville Vaskonen
+      year: 2016
+      arxiv_id: '1604.02401'
+      doi: null
+      url: null
+      role: original_model
+      notes: null
+    - arxiv_id: '1604.02401'
+      authors:
+      - Heikinheimo, Matti
+      - Tenkanen, Tommi
+      - Tuominen, Kimmo
+      - Vaskonen, Ville
+      doi: 10.1103/PhysRevD.94.063506
+      notes: Primary assigned paper.
+      reference_id: src_1604_02401
+      role: original_model
+      title: Observational constraints on decoupled hidden sectors
+      url: https://arxiv.org/abs/1604.02401
+      year: 2016
+    constraint_papers:
+    - arxiv_id: '1510.08063'
+      authors:
+      - Bernal, Nicolás
+      - Chu, Xiaoyong
+      - Garcia-Cely, Camilo
+      - Hambye, Thomas
+      - Zaldivar, Bryan
+      doi: 10.1088/1475-7516/2016/03/018
+      notes: Related full text resolved locally for bounded enrichment.
+      reference_id: src_1510_08063
+      role: extension
+      title: Production regimes for Self-Interacting Dark Matter
+      url: https://arxiv.org/abs/1510.08063
+      year: 2016
+    - arxiv_id: '1801.03089'
+      authors:
+      - Heikinheimo, Matti
+      - Tenkanen, Tommi
+      - Tuominen, Kimmo
+      doi: 10.1103/PhysRevD.97.063002
+      notes: Related full text resolved locally for bounded enrichment.
+      reference_id: src_1801_03089
+      role: constraint
+      title: Prospects for indirect detection of frozen-in dark matter
+      url: https://arxiv.org/abs/1801.03089
+      year: 2018
+    external_databases:
+    - name: NASA ADS
+      note: Used for sanitized primary/reference/citation metadata discovery.
+      url: https://ui.adsabs.harvard.edu/
+    review_papers: []
+  extraction:
+    method: llm_assisted
+    extracted_by: codex_batch_0014
+    extractor_name: codex_gpt5_dark_matter_model_worker
+    extraction_date: '2026-05-31'
+    confidence: high
+    source_chunks_or_sections:
+    - reference_id: paper
+      section: model and scalar freeze-out
+      page: null
+      quote_or_summary: The paper defines the singlet scalar/fermion Higgs-portal sector and works out
+        freeze-in plus dark-freeze-out histories.
+    unresolved_items:
+    - No source text provides a ready-to-use Lyman-alpha likelihood or nonthermal distribution function.
+    - Relativistic dark freeze-out regions require more precise treatment than the analytic nonrelativistic
+      estimate.
+  evidence:
+    particle_content:
+    - reference_id: paper
+      note: The concrete model extends the SM by a real singlet scalar s and a sterile-neutrino/Dirac
+        fermion; in the scalar scenario the fermion is heavy and decoupled.
+      confidence: high
+      section: model section
+      page: null
+    interactions:
+    - reference_id: paper
+      note: The only nongravitational visible-sector interaction is the scalar portal lambda_hs |H|^2
+        s^2, with scalar self-coupling lambda_s s^4/4.
+      confidence: high
+      section: model section
+      page: null
+    symmetries:
+    - reference_id: paper
+      note: The text notes a Z2 symmetry of the singlet scalar forbids 2 to 3 scalar processes.
+      confidence: medium
+      section: scalar freeze-out
+      page: null
+    production_mechanism:
+    - reference_id: paper
+      note: Initial scalar abundance is produced through Higgs decays by freeze-in; strong self-interactions
+        can thermalize the dark sector and lead to dark freeze-out through 4 to 2 scattering.
+      confidence: high
+      section: scalar freeze-out
+      page: null
+    cosmological_history:
+    - reference_id: paper
+      note: The singlet sector does not thermalize with the SM for |lambda_hs| below about 1e-7 and has
+        a separate dark-sector temperature after decoupling.
+      confidence: high
+      section: model/scalar freeze-out
+      page: null
+    parameter_ranges:
+    - reference_id: paper
+      note: Correct abundance lines are shown for lambda_hs from 1e-12 to 1e-9; the self-interacting scalar
+        region is very light for freeze-in and below about 0.1 GeV for dark freeze-out.
+      confidence: medium
+      section: conclusions
+      page: null
+    validity_domain:
+    - reference_id: paper
+      note: The paper emphasizes isocurvature and self-interaction bounds on scalar mass and self-coupling.
+      confidence: medium
+      section: early-universe dynamics
+      page: null
+    constraints:
+    - confidence: high
+      note: Primary paper gives the m_DM about 3 keV floor, Bullet Cluster sigma/m benchmark, and isocurvature
+        self-coupling logic.
+      page: null
+      reference_id: src_1604_02401
+      section: null
+    - confidence: medium
+      note: Related full text discusses laboratory, cosmological, BBN, X-ray, CMB, and direct-detection
+        constraints in self-interacting freeze-in regimes.
+      page: null
+      reference_id: src_1510_08063
+      section: null
+    observables:
+    - confidence: high
+      note: Primary paper states the Lyman-alpha floor, cluster self-interaction benchmark, and isocurvature
+        motivation.
+      page: null
+      reference_id: src_1604_02401
+      section: null
+    - confidence: medium
+      note: Related full text compares freeze-in and dark-freeze-out regimes for self-interacting hidden
+        sectors.
+      page: null
+      reference_id: src_1510_08063
+      section: null
+    - confidence: medium
+      note: Related full text notes possible indirect probes of frozen-in hidden sectors.
+      page: null
+      reference_id: src_1801_03089
+      section: null
+    routes:
+    - confidence: medium
+      note: Routes follow the primary paper calculation flow from portal production to dark-sector freeze-out
+        and observational constraints.
+      page: null
+      reference_id: src_1604_02401
+      section: null
+  review:
+    human_reviewed: false
+    reviewed_by: null
+    review_date: null
+    expert_reviewed: false
+    expert_reviewer: null
+    expert_review_date: null
+    reviewer_notes: []
+    scientific_confidence: high
+    implementation_confidence: medium
+  caveats: []
+  related_entries: []
+robustness:
+  overall: medium
+  theory_robustness: medium
+  observational_robustness: unknown
+  computational_robustness: medium
+  dominant_uncertainties:
+  - relativistic dark freeze-out treatment is approximate
+  - inflationary initial conditions affect isocurvature
+  validation_status: expert_judgment_only
+  notes: null
+agent_failure_modes:
+  warnings:
+  - id: regime_switching
+    severity: medium
+    category: assumption_mismatch
+    warning: The scalar abundance mechanism changes between standard freeze-in and dark freeze-out depending
+      on lambda_s.
+    mitigation: Classify the regime before applying relic formulas.
+    source_reference_ids:
+    - paper
+  - id: relativistic_freezeout
+    severity: medium
+    category: other
+    warning: The paper notes nonrelativistic approximations are unreliable in parts of the relativistic
+      dark-freeze-out region.
+    mitigation: Use numerical Boltzmann treatment for those regions.
+    source_reference_ids:
+    - paper
+observables:
+- caveats:
+  - The paper does not provide a distribution function or half-mode mapping.
+  channel: lyman_alpha
+  effect_direction: suppression
+  environments:
+  - intergalactic medium
+  - linear matter field
+  id: obs_wdm_cutoff_lyman
+  key_quantities:
+  - description: Mass of the singlet scalar dark matter candidate.
+    name: scalar mass
+    role: core
+    source_reference_ids:
+    - src_1604_02401
+    status: inferred
+    symbol: m_s
+    unit: keV or GeV
+  - description: Temperature ratio T_D/T controlling the momentum scale.
+    name: dark-sector temperature ratio
+    role: derived
+    source_reference_ids:
+    - src_1604_02401
+    status: inferred
+    symbol: xi
+  linked_constraints:
+  - con_lyman_wdm_floor
+  linked_routes:
+  - route_relic_to_transfer
+  name: Warm-spectrum small-scale cutoff
+  notes: null
+  observability: high
+  predicted_effect: Relativistic freeze-in or dark-freeze-out spectra suppress small-scale power; the
+    paper applies a warm-DM lower mass floor near 3 keV.
+  redshift_range: null
+  relevance: critical
+  scale_range: Lyman-alpha forest scales; no half-mode mass tabulated.
+  source_reference_ids:
+  - src_1604_02401
+  subchannel: Lyman-alpha forest matter-power suppression
+- caveats:
+  - Mapping scalar quartic coupling to velocity-dependent halo observables requires a recast.
+  channel: clusters
+  effect_direction: morphology_change
+  environments:
+  - galaxy clusters
+  - dwarf galaxy halos
+  id: obs_self_interaction_cluster_halo
+  key_quantities:
+  - description: Astrophysical self-scattering figure of merit.
+    name: self-interaction cross section per mass
+    role: derived
+    source_reference_ids:
+    - src_1604_02401
+    status: inferred
+    symbol: sigma_DM/m_DM
+    unit: cm^2/g
+    value: up to about 1
+  - description: Controls self-scattering and hidden-sector thermalization.
+    name: scalar self-coupling
+    role: core
+    source_reference_ids:
+    - src_1604_02401
+    - src_1510_08063
+    status: inferred
+    symbol: lambda_s
+  linked_constraints:
+  - con_cluster_self_interaction_limit
+  - con_inflationary_isocurvature
+  linked_routes:
+  - route_self_interaction_recast
+  name: Self-interaction effects in clusters and small halos
+  notes: null
+  observability: medium
+  predicted_effect: Large singlet self-coupling can both thermalize the hidden sector and produce elastic
+    self-scattering that changes halo morphology if near astrophysical bounds.
+  redshift_range: null
+  relevance: high
+  scale_range: cluster to dwarf-halo scales
+  source_reference_ids:
+  - src_1604_02401
+  - src_1510_08063
+  subchannel: cluster mergers, halo cores, and dwarf-scale structure
+constraints:
+- allowed_regions:
+  - Masses above the quoted floor can be compatible when relic-density and nonrelativistic-freezeout caveats
+    are satisfied.
+  applies: 'yes'
+  assumptions:
+  - can_be_relaxed: 'yes'
+    description: The paper-level warm-DM floor is used as a proxy for the actual nonthermal momentum distribution.
+    id: assume_wdm_mapping
+    impact_if_violated: A colder or hotter nonthermal spectrum would shift the bound.
+    notes: null
+    scope: structure_formation
+    source_reference_ids:
+    - src_1604_02401
+    status: approximate
+  benchmark_implications:
+  - Light scalar benchmarks must be checked against a transfer-function calculation before claiming viability.
+  caveats:
+  - No likelihood or transfer-function table is provided.
+  constrained_parameters:
+  - m_s
+  - xi
+  - momentum distribution
+  constraint_type: cosmological
+  data_release: null
+  excluded_regions:
+  - The paper treats dark matter masses below about 3 keV as excluded by Lyman-alpha warm-DM constraints.
+  id: con_lyman_wdm_floor
+  likelihood_available: unknown
+  likelihood_reference: null
+  name: Lyman-alpha warm-dark-matter lower mass floor
+  notes: Use as a screening constraint, not as a precision likelihood.
+  observable_channel: lyman_alpha
+  recasting_needed: partial
+  robustness: medium
+  source_reference_ids:
+  - src_1604_02401
+- allowed_regions:
+  - Values around or below the quoted cluster bound remain phenomenologically interesting for halo-core
+    phenomenology.
+  applies: parameter_dependent
+  assumptions:
+  - can_be_relaxed: 'yes'
+    description: The scalar quartic self-scattering can be summarized by an effective sigma/m on cluster
+      velocities.
+    id: assume_elastic_mapping
+    impact_if_violated: Velocity dependence or nonperturbative effects could change the cluster comparison.
+    notes: null
+    scope: astrophysical_recast
+    source_reference_ids:
+    - src_1604_02401
+    - src_1510_08063
+    status: approximate
+  benchmark_implications:
+  - A self-interacting scalar region near the limit may be testable through cluster offsets and halo morphology.
+  caveats:
+  - The primary paper uses the cluster limit as a benchmark rather than a full likelihood.
+  constrained_parameters:
+  - lambda_s
+  - m_s
+  - sigma_DM/m_DM
+  constraint_type: astrophysical
+  data_release: null
+  excluded_regions:
+  - Benchmarks with sigma_DM/m_DM substantially above about 1 cm^2/g conflict with the Bullet Cluster
+    benchmark quoted in the primary paper.
+  id: con_cluster_self_interaction_limit
+  likelihood_available: unknown
+  likelihood_reference: null
+  name: Cluster-merger self-interaction bound
+  notes: null
+  observable_channel: clusters
+  recasting_needed: partial
+  robustness: medium
+  source_reference_ids:
+  - src_1604_02401
+  - src_1510_08063
+- allowed_regions:
+  - Non-negligible self-interactions above the paper-derived floor suppress the problematic condensate
+    contribution.
+  applies: parameter_dependent
+  assumptions:
+  - can_be_relaxed: 'yes'
+    description: The singlet is light during inflation and can acquire fluctuations.
+    id: assume_light_during_inflation
+    impact_if_violated: If the field is heavy or diluted, the isocurvature bound changes.
+    notes: null
+    scope: early_universe
+    source_reference_ids:
+    - src_1604_02401
+    status: assumed
+  benchmark_implications:
+  - The viable dark-freeze-out region is shaped jointly by isocurvature and self-interaction requirements.
+  caveats:
+  - Requires inflationary initial-condition assumptions.
+  constrained_parameters:
+  - lambda_s
+  - H_*
+  - primordial singlet condensate fraction
+  constraint_type: cosmological
+  data_release: null
+  excluded_regions:
+  - Too-small singlet self-coupling can leave a primordial condensate isocurvature component incompatible
+    with CMB bounds when it contributes substantially to dark matter.
+  id: con_inflationary_isocurvature
+  likelihood_available: unknown
+  likelihood_reference: null
+  name: Inflationary isocurvature lower bound on self-coupling
+  notes: null
+  observable_channel: cmb
+  recasting_needed: partial
+  robustness: medium
+  source_reference_ids:
+  - src_1604_02401
+theory_to_observable_routing:
+  routes:
+  - agent_notes: Primary paper provides the physical ingredients but not a reusable transfer-function
+      likelihood.
+    caveats:
+    - Relativistic dark freeze-out is flagged as approximate in the primary paper.
+    constraint_ids:
+    - con_lyman_wdm_floor
+    derived_quantities:
+    - relic abundance
+    - momentum distribution or temperature ratio
+    - linear transfer function
+    description: Propagate freeze-in/dark-freeze-out parameters to a small-scale matter-power prediction.
+    forward_model_chain:
+    - inputs:
+      - lambda_hs
+      - lambda_s
+      - m_s
+      notes: null
+      outputs:
+      - Omega_DM h^2
+      - xi
+      step_id: solve_relic
+      step_type: boltzmann_solver
+      tool_or_code: null
+      validity: Requires coupled visible/dark Boltzmann equations.
+    - inputs:
+      - xi
+      - m_s
+      - distribution function
+      notes: null
+      outputs:
+      - matter transfer function
+      step_id: compute_transfer
+      step_type: transfer_function
+      tool_or_code: CLASS/CAMB recast
+      validity: A true nonthermal distribution is preferable to a thermal-WDM proxy.
+    - inputs:
+      - transfer function
+      notes: null
+      outputs:
+      - Lyman-alpha exclusion or likelihood
+      step_id: compare_lyman
+      step_type: likelihood
+      tool_or_code: null
+      validity: No likelihood bundled with the primary paper.
+    id: route_relic_to_transfer
+    input_parameters:
+    - lambda_hs
+    - lambda_s
+    - m_s
+    - xi
+    likelihoods:
+    - Lyman-alpha forest WDM or nonthermal-DM likelihood
+    observable_ids:
+    - obs_wdm_cutoff_lyman
+    required_code_resources:
+    - Boltzmann solver
+    - linear transfer-function code
+    route_status: planned
+    source_model_features:
+    - Higgs-portal freeze-in
+    - dark-sector self-thermalization
+    - 4-to-2 dark freeze-out
+    validation_tests:
+    - Reproduce the paper relic-density contours before applying Lyman-alpha data.
+  - agent_notes: A compact recast is feasible but not implemented in the paper text.
+    caveats: []
+    constraint_ids:
+    - con_cluster_self_interaction_limit
+    - con_inflationary_isocurvature
+    derived_quantities:
+    - sigma_DM/m_DM
+    description: Convert scalar self-coupling to halo self-scattering and compare with cluster and dwarf
+      limits.
+    forward_model_chain:
+    - inputs:
+      - lambda_s
+      - m_s
+      notes: null
+      outputs:
+      - sigma_DM/m_DM
+      step_id: cross_section
+      step_type: analytic_formula
+      tool_or_code: null
+      validity: Perturbative contact-scattering estimate only.
+    - inputs:
+      - sigma_DM/m_DM
+      notes: null
+      outputs:
+      - cluster-merger allowed/excluded flag
+      step_id: cluster_compare
+      step_type: recasting
+      tool_or_code: null
+      validity: Needs velocity and astrophysical system assumptions.
+    id: route_self_interaction_recast
+    input_parameters:
+    - lambda_s
+    - m_s
+    - halo velocity
+    likelihoods:
+    - cluster merger self-interaction bounds
+    observable_ids:
+    - obs_self_interaction_cluster_halo
+    required_code_resources:
+    - self-interaction calculator
+    route_status: planned
+    source_model_features:
+    - quartic scalar self-interaction
+    validation_tests:
+    - Check units against cm^2/g and reproduce the quoted Bullet Cluster scale.

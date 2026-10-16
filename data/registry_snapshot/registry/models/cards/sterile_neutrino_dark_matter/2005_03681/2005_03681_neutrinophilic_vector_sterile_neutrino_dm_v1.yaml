@@ -1,0 +1,701 @@
+_source:
+  shard: arXiv_src_2005_013_wds.tar
+  paper_id: '2005_03681'
+  source_member: 2005_03681.json
+  enriched: true
+  enrichment_schema_version: dm_model_ocr_enrichment_smoke_v0
+schema_version: model_only_v0
+model_id: 2005_03681_neutrinophilic_vector_sterile_neutrino_dm_v1
+identity:
+  name: Sterile neutrino dark matter with a neutrinophilic vector mediator
+  family: sterile_neutrino_dark_matter
+  aliases:
+  - neutrinophilic V sterile neutrino DM
+  - secret-neutrino vector sterile neutrino dark matter
+  short_description: Sterile neutrino dark matter produced by active-sterile oscillations in the early
+    universe, with a new vector mediator modifying active-neutrino scattering rates and thermal potentials.
+  historical_origin_or_motivation: Introduced to retain the infrared production logic of Dodelson-Widrow
+    while using new vector-mediated neutrino interactions to achieve the observed relic abundance in experimentally
+    testable parameter space.
+  status: speculative
+  model_kind: effective_field_theory
+theory:
+  theory_level: effective_field_theory
+  parent_frameworks:
+  - sterile neutrino dark matter
+  - secret neutrino interactions
+  - vector-mediated active-neutrino forces
+  lagrangian_available: 'yes'
+  renormalizable: 'no'
+  embedded_in_larger_framework: 'yes'
+  notes: The first vector realization is a neutrinophilic effective model where V couples only to active
+    neutrinos at low energy via a higher-dimensional operator.
+particle_content:
+  dark_matter_candidate:
+    name: sterile-neutrino-like mass eigenstate nu4
+    spin: 1/2
+    statistics: fermion
+    elementary_or_composite: elementary
+    number_of_components: single_component
+  additional_dark_sector_particles:
+  - neutrinophilic vector V
+  - possible singlet chiral fermions and scalar in UV completion
+  mediators:
+  - new vector boson V
+  dark_radiation_species: []
+  excited_or_degenerate_states:
+  - mostly active light neutrino nu1
+  - mostly sterile heavy state nu4
+  long_lived_particles:
+  - keV-scale sterile neutrino dark matter
+  unstable_parent_particles: []
+  standard_model_extension: substantial
+symmetries:
+  stabilizing_mechanism: Cosmological longevity follows from small sterile-neutrino mass and tiny active-sterile
+    mixing rather than an exact stabilizing symmetry.
+  symmetries:
+  - name: effective neutrinophilic U(1)'
+    type: gauge
+    exact_or_approximate: broken
+    breaking: realized in the paper through a higher-dimensional operator and a possible singlet UV completion
+  topological_defects_possible: unknown
+interactions:
+  portals:
+  - neutrino
+  - vector
+  standard_model_targets:
+  - active neutrinos
+  dark_sector_couplings:
+  - higher-dimensional lepton-Higgs operator producing V-nu-nu couplings
+  - active-sterile Yukawa mixing
+  mediator_types:
+  - vector boson
+  interaction_operators:
+  - (L H)(H L) V / Lambda^2
+  - V_mu nu gamma^mu nu
+  annihilation_channels: []
+  decay_channels:
+  - sterile neutrino radiative and three-neutrino decays suppressed by mixing
+  tree_or_loop_level: tree
+parameters:
+  core:
+  - name: sterile neutrino mass
+    symbol: m4
+    description: Mass of the mostly sterile dark matter state.
+    range: keV scale; benchmark curves include 7.1 keV and 50 keV
+    unit: keV
+    role: core
+    status: inferred
+  - name: active-sterile mixing
+    symbol: sin^2(2 theta)
+    description: Mixing controlling production and longevity.
+    range: benchmarks include 7e-11 and 1e-15
+    role: core
+    status: inferred
+  - name: vector mass
+    symbol: m_V
+    description: Mass of the neutrinophilic vector mediator.
+    range: MeV to GeV scale in viable summary
+    unit: GeV
+    role: core
+    status: inferred
+  - name: neutrinophilic coupling
+    symbol: lambda
+    description: Effective coupling of V to active neutrinos after electroweak symmetry breaking.
+    range: about 1e-6 to 1e-2 across viable vector scenarios
+    role: core
+    status: inferred
+production:
+  mechanisms:
+  - active-sterile neutrino oscillation production
+  - vector-enhanced neutrino scattering
+  - modified active-neutrino dispersion relation and reaction rate
+  - Dodelson-Widrow-like infrared-dominated production
+  thermal_equilibrium_with_standard_model: partial
+  thermal_equilibrium_with_hidden_sector: unknown
+  abundance_set_by:
+  - sterile-neutrino mass m4
+  - active-sterile mixing angle
+  - vector mass m_V
+  - vector coupling
+  - thermal neutrino reaction rate
+  depends_on_reheating_temperature: unknown
+  can_produce_all_dark_matter: 'yes'
+  nonthermal_momentum_distribution: 'yes'
+  notes: The paper solves phase-space density evolution for sterile neutrinos produced from the active
+    thermal bath.
+relic_density:
+  full_or_subcomponent: full_dark_matter
+  target_fraction: null
+  calculation_type: mixed
+  key_dependencies:
+  - m4
+  - sin^2(2 theta)
+  - m_V
+  - vector coupling
+  - neutrino thermal potential V_T
+  - scattering rate Gamma
+  requires_entropy_dilution: 'no'
+  overclosure_risk: parameter_dependent
+  underproduction_risk: parameter_dependent
+  tuning_assessment: unknown
+cosmological_history:
+  standard_history_assumed: true
+  nonstandard_features:
+  - new vector-mediated active-neutrino interactions during sterile-neutrino production
+  dark_sector_temperature: null
+  delta_neff: null
+  kinetic_decoupling: null
+  chemical_decoupling: null
+  phase_transitions: []
+  topological_defects: []
+  isocurvature_perturbations: unknown
+  bbn_relevance: medium
+  cmb_relevance: medium
+phase_space:
+  distribution_type: nonthermal
+  distribution_function_available: 'yes'
+  f_of_p_or_q: df_nu4/dz = Gamma sin^2(2 theta_eff) f_nu /(4H) in the paper notation
+  average_momentum_relative_to_thermal: Dodelson-Widrow-like nonthermal sterile-neutrino spectrum
+  free_streaming_length: null
+  velocity_dispersion_today: null
+  phase_space_bounds:
+  - The paper discusses keV sterile-neutrino masses and small-scale-structure motivation.
+  notes: The sterile neutrino is produced from the active neutrino thermal distribution but is not itself
+    thermalized.
+structure_formation:
+  linear:
+    behaves_like_cdm: 'no'
+    transfer_function_shape: smooth_cutoff
+    small_scale_power_effect: suppression
+  nonlinear:
+    halo_mass_function_effect: unknown
+    subhalo_mass_function_effect: unknown
+    simulation_calibrated: unknown
+validity_domain:
+- id: keV_sterile_mass
+  applies_to: parameter
+  condition: The dark matter candidate is keV-scale in the studied examples, including m4=7.1 keV and
+    m4=50 keV benchmark curves.
+  status: inferred
+  extrapolation_risk: medium
+  caveats: []
+- id: small_mixing
+  applies_to: parameter
+  condition: The active-sterile mixing angle must remain tiny for longevity and production phenomenology.
+  status: assumed
+  extrapolation_risk: high
+  caveats: []
+- id: vector_mass_coupling_window
+  applies_to: parameter
+  condition: The paper summarizes viable vector masses from MeV to GeV and couplings from about 1e-6 to
+    1e-2 across the studied models.
+  status: inferred
+  extrapolation_risk: medium
+  caveats: []
+assumptions:
+  global:
+  - id: zero_lepton_asymmetry
+    description: The calculation sets active-neutrino chemical potentials/lepton asymmetry to zero.
+    scope: cosmological_history
+    status: assumed
+    can_be_relaxed: unknown
+  - id: negligible_initial_sterile_abundance
+    description: The initial sterile-neutrino abundance is assumed negligible before production.
+    scope: production
+    status: assumed
+    can_be_relaxed: unknown
+  - id: small_mixing_longevity
+    description: The sterile neutrino is cosmologically long-lived because its active admixture is very
+      small.
+    scope: theory
+    status: assumed
+    can_be_relaxed: unknown
+associated_code:
+  has_associated_code: unknown
+  code_summary: null
+provenance:
+  model_id: 2005_03681_neutrinophilic_vector_sterile_neutrino_dm_v1
+  model_name: Sterile neutrino dark matter with a neutrinophilic vector mediator
+  model_family: sterile_neutrino_dark_matter
+  entry_version: 0.1.0
+  status: machine_extracted
+  created_at: '2026-05-31'
+  last_updated: '2026-05-31'
+  sources:
+    primary_papers:
+    - reference_id: primary
+      title: Origin of Sterile Neutrino Dark Matter via Secret Neutrino Interactions with Vectors
+      year: 2020
+      arxiv_id: '2005.03681'
+      doi: null
+      url: null
+      role: original_model
+      notes: null
+      authors:
+      - Kevin J. Kelly
+      - Manibrata Sen
+      - Walter Tangarife
+      - Yue Zhang
+    - arxiv_id: '2005.03681'
+      authors:
+      - Kelly, Kevin J.
+      - Sen, Manibrata
+      - Tangarife, Walter
+      - Zhang, Yue
+      doi: 10.1103/PhysRevD.101.115031
+      notes: Primary paper text resolved locally; ADS used for metadata.
+      reference_id: src_2005_03681
+      role: original_model
+      title: Origin of sterile neutrino dark matter via secret neutrino interactions with vector bosons
+      url: https://arxiv.org/abs/2005.03681
+      year: 2020
+    constraint_papers:
+    - arxiv_id: '2011.02487'
+      authors:
+      - Kelly, Kevin J.
+      - Sen, Manibrata
+      - Zhang, Yue
+      doi: 10.1103/PhysRevLett.127.041101
+      notes: Related local full text resolved and read within cap; no full text dump stored.
+      reference_id: src_2011_02487
+      role: constraint
+      title: Intimate Relationship between Sterile Neutrino Dark Matter and  N<SUB>eff</SUB>
+      url: https://arxiv.org/abs/2011.02487
+      year: 2021
+    - arxiv_id: '1402.2301'
+      authors:
+      - Bulbul, Esra
+      - Markevitch, Maxim
+      - Foster, Adam
+      - Smith, Randall K.
+      - Loewenstein, Michael
+      - Randall, Scott W.
+      doi: 10.1088/0004-637X/789/1/13
+      notes: Related local full text resolved and read within cap; no full text dump stored.
+      reference_id: src_1402_2301
+      role: constraint
+      title: Detection of an Unidentified Emission Line in the Stacked X-Ray Spectrum of Galaxy Clusters
+      url: https://arxiv.org/abs/1402.2301
+      year: 2014
+    - arxiv_id: '1901.01262'
+      authors:
+      - Ng, Kenny C. Y.
+      - Roach, Brandon M.
+      - Perez, Kerstin
+      - Beacom, John F.
+      - Horiuchi, Shunsaku
+      - Krivonos, Roman
+      - Wik, Daniel R.
+      doi: 10.1103/PhysRevD.99.083005
+      notes: Related local full text resolved and read within cap; no full text dump stored.
+      reference_id: src_1901_01262
+      role: constraint
+      title: New constraints on sterile neutrino dark matter from NuSTAR M31 observations
+      url: https://arxiv.org/abs/1901.01262
+      year: 2019
+    external_databases: []
+    review_papers: []
+  extraction:
+    method: llm_assisted
+    extracted_by: codex_batch_0010
+    extractor_name: Codex GPT-5 batch worker
+    extraction_date: '2026-05-31'
+    confidence: high
+    source_chunks_or_sections:
+    - reference_id: primary
+      section: Abstract/introduction/model sections
+      page: null
+      quote_or_summary: The paper analyzes sterile-neutrino dark matter production with vector-mediated
+        active-neutrino interactions and three vector realizations.
+    unresolved_items:
+    - Full transfer-function likelihood for vector-produced sterile neutrinos was not extracted.
+  evidence:
+    particle_content:
+    - reference_id: primary
+      note: The dark matter candidate is the heavier mostly sterile mass eigenstate nu4, a keV-scale gauge-singlet
+        fermion with small active mixing.
+      confidence: high
+    symmetries:
+    - reference_id: primary
+      note: The neutrinophilic vector coupling is generated through a higher-dimensional operator and
+        a proof-of-existence U(1)' UV completion.
+      confidence: high
+    interactions:
+    - reference_id: primary
+      note: A new vector mediator changes active-neutrino scattering rates and thermal potentials.
+      confidence: high
+    - reference_id: primary
+      note: At low energies the vector V couples only to active neutrinos in the neutrinophilic model.
+      confidence: high
+    production_mechanism:
+    - reference_id: primary
+      note: Sterile neutrinos are produced by active-sterile oscillations repeatedly reset by neutrino
+        scattering in the early universe.
+      confidence: high
+    cosmological_history:
+    - reference_id: primary
+      note: The relic-density calculation integrates phase-space production from an active thermal bath
+        with zero lepton asymmetry.
+      confidence: high
+    parameter_ranges:
+    - reference_id: primary
+      note: Benchmarks include m4=7.1 keV and 50 keV, with vector masses in MeV-GeV ranges and couplings
+        around 1e-6 to 1e-2 in the summary.
+      confidence: medium
+    validity_domain:
+    - reference_id: primary
+      note: The paper identifies three vector-mass/coupling regimes A, B, and C that affect the relic-density
+        scaling.
+      confidence: high
+    constraints:
+    - confidence: high
+      note: Primary text overlays relic-density curves with X-ray, structure, BBN/SN, and lab constraints.
+      page: null
+      reference_id: src_2005_03681
+      section: null
+    - confidence: medium
+      note: Related local text links light mediators to Delta N_eff tests.
+      page: null
+      reference_id: src_2011_02487
+      section: null
+    observables:
+    - confidence: high
+      note: Primary text presents neutrinophilic relic-density targets and probes.
+      page: null
+      reference_id: src_2005_03681
+      section: null
+    - confidence: medium
+      note: Related local text supports 3.5 keV line context.
+      page: null
+      reference_id: src_1402_2301
+      section: null
+    - confidence: medium
+      note: Related local text supports NuSTAR line-search context.
+      page: null
+      reference_id: src_1901_01262
+      section: null
+    routes:
+    - confidence: high
+      note: Primary text derives thermal potential, scattering rate, and phase-space evolution.
+      page: null
+      reference_id: src_2005_03681
+      section: null
+  review:
+    human_reviewed: false
+    reviewed_by: null
+    review_date: null
+    expert_reviewed: false
+    expert_reviewer: null
+    expert_review_date: null
+    reviewer_notes: []
+    scientific_confidence: high
+    implementation_confidence: medium
+robustness:
+  overall: medium
+  theory_robustness: medium
+  observational_robustness: unknown
+  computational_robustness: medium
+  dominant_uncertainties:
+  - The neutrinophilic coupling is effective and its UV completion is only sketched.
+  - Flavor off-diagonal choices may be strongly limited; the card records the flavor-diagonal scenario
+    supported by the relic-density discussion.
+  validation_status: expert_judgment_only
+  notes: Variant split follows the paper's three vector realizations rather than its production-regime
+    labels.
+agent_failure_modes:
+  warnings:
+  - id: regime_not_variant
+    severity: low
+    category: other
+    warning: The A/B/C regimes are production regimes, not separate model-card rows here.
+  - id: small_mixing_required
+    severity: medium
+    category: assumption_mismatch
+    warning: The sterile-neutrino lifetime and abundance logic rely on tiny active-sterile mixing.
+observables:
+- caveats:
+  - Vector interactions change production, not the basic radiative line handle.
+  channel: indirect_detection
+  effect_direction: spectral_line
+  environments:
+  - clusters
+  - M31
+  - Milky Way halo
+  id: neutrinophilic_xray
+  key_quantities:
+  - description: Mostly sterile DM mass.
+    name: sterile mass
+    range: benchmarks include 7.1 keV and 50 keV
+    role: core
+    source_reference_ids:
+    - src_2005_03681
+    status: inferred
+    symbol: m4
+    unit: keV
+  - description: Controls production and decay.
+    name: mixing
+    range: benchmarks include 7e-11 and 1e-15
+    role: core
+    source_reference_ids:
+    - src_2005_03681
+    status: inferred
+    symbol: sin^2(2 theta)
+  linked_constraints:
+  - neutrinophilic_xray_limits
+  linked_routes:
+  - neutrinophilic_route
+  name: Sterile-neutrino X-ray decay line (neutrinophilic)
+  notes: Primary paper uses X-ray constraints to choose benchmarks.
+  observability: high
+  predicted_effect: The keV sterile neutrino decays radiatively through active-sterile mixing, producing
+    a line constrained by clusters, galaxies, and NuSTAR-like observations.
+  redshift_range: low-redshift halos
+  relevance: high
+  scale_range: null
+  source_reference_ids:
+  - src_2005_03681
+  - src_1402_2301
+  - src_1901_01262
+  subchannel: radiative decay
+- caveats:
+  - No full transfer-function likelihood per vector scenario.
+  channel: lyman_alpha
+  effect_direction: suppression
+  environments:
+  - Lyman-alpha forest
+  - dwarf galaxies
+  id: neutrinophilic_structure
+  key_quantities:
+  - description: Mostly sterile DM mass.
+    name: sterile mass
+    role: core
+    source_reference_ids:
+    - src_2005_03681
+    status: inferred
+    symbol: m4
+    unit: keV
+  - description: Produced phase-space density.
+    name: distribution
+    role: derived
+    source_reference_ids:
+    - src_2005_03681
+    status: inferred
+    symbol: f_4(x,z)
+  linked_constraints:
+  - neutrinophilic_structure_bounds
+  linked_routes:
+  - neutrinophilic_route
+  name: Small-scale structure for neutrinophilic
+  notes: Primary paper treats 7.1 keV as rough lower viable margin.
+  observability: medium
+  predicted_effect: Free streaming, dwarf phase-space, and Lyman-alpha considerations leave limited room
+    below the 7.1 keV benchmark.
+  redshift_range: null
+  relevance: high
+  scale_range: small-scale matter power
+  source_reference_ids:
+  - src_2005_03681
+  subchannel: dwarf/Lyman-alpha lower-mass pressure
+- caveats:
+  - Sensitivity depends on vector charge assignment.
+  channel: precision_laboratory
+  effect_direction: rate_change
+  environments:
+  - laboratory beams
+  - colliders
+  - neutrino detectors
+  id: neutrinophilic_lab
+  key_quantities:
+  - description: New vector mediator mass.
+    name: vector mass
+    range: MeV to GeV scale in viable summary
+    role: core
+    source_reference_ids:
+    - src_2005_03681
+    status: inferred
+    symbol: m_V
+    unit: GeV
+  - description: Coupling controlling production and lab signals.
+    name: vector coupling
+    range: about 1e-6 to 1e-2 across viable vector scenarios
+    role: core
+    source_reference_ids:
+    - src_2005_03681
+    status: inferred
+    symbol: lambda
+  linked_constraints:
+  - neutrinophilic_lab_bounds
+  linked_routes:
+  - neutrinophilic_route
+  name: Laboratory vector signal for neutrinophilic
+  notes: Primary paper differentiates lab phenomenology by vector model.
+  observability: medium
+  predicted_effect: invisible Higgs/Z/W-neutrino processes, BBN/SN1987A, and DUNE-like mono-neutrino signatures
+  redshift_range: null
+  relevance: high
+  scale_range: null
+  source_reference_ids:
+  - src_2005_03681
+  subchannel: invisible Higgs/Z/W-neutrino processes, BBN/SN1987A, and DUNE-like mono-neutrino signatures
+constraints:
+- allowed_regions:
+  - Small mixings can remain allowed while vector interactions produce the abundance.
+  applies: parameter_dependent
+  assumptions: []
+  benchmark_implications:
+  - X-ray bounds motivate vector-assisted production beyond Dodelson-Widrow.
+  caveats:
+  - Current line datasets should be updated for final limits.
+  constrained_parameters:
+  - m4
+  - sin^2(2 theta)
+  constraint_type: indirect_detection
+  data_release: Cluster, galaxy, M31, and NuSTAR X-ray line searches
+  excluded_regions:
+  - Mixing angles that overproduce X-ray decay flux are excluded.
+  id: neutrinophilic_xray_limits
+  likelihood_available: unknown
+  likelihood_reference: null
+  name: X-ray decay constraints for neutrinophilic
+  notes: Applies through active-sterile mixing.
+  observable_channel: monoenergetic X-ray line
+  recasting_needed: partial
+  robustness: medium
+  source_reference_ids:
+  - src_2005_03681
+  - src_1402_2301
+  - src_1901_01262
+- allowed_regions:
+  - The 7.1 keV benchmark is roughly the lower viable relic-density target.
+  applies: parameter_dependent
+  assumptions: []
+  benchmark_implications:
+  - This lower margin fixes meaningful vector target curves.
+  caveats:
+  - No full transfer-function likelihood.
+  constrained_parameters:
+  - m4
+  - f_4(x,z)
+  constraint_type: cosmological
+  data_release: Dwarf-galaxy and Lyman-alpha arguments in primary paper
+  excluded_regions:
+  - Masses much lighter than 7.1 keV are disfavored in the primary discussion.
+  id: neutrinophilic_structure_bounds
+  likelihood_available: unknown
+  likelihood_reference: null
+  name: Dwarf/Lyman-alpha lower-mass pressure for neutrinophilic
+  notes: Use as recast target.
+  observable_channel: small-scale structure
+  recasting_needed: 'yes'
+  robustness: medium
+  source_reference_ids:
+  - src_2005_03681
+- allowed_regions:
+  - Least constrained of the three vector scenarios; some target space remains uncovered.
+  applies: parameter_dependent
+  assumptions: []
+  benchmark_implications:
+  - HL-LHC and DUNE-like mono-neutrino probes test parts of the target space.
+  caveats:
+  - Coverage statements depend on experiment-specific projections.
+  constrained_parameters:
+  - m_V
+  - lambda
+  - m4
+  - sin^2(2 theta)
+  constraint_type: laboratory
+  data_release: LHC Higgs invisible width, precision electroweak widths, BBN/SN1987A, and DUNE projections
+  excluded_regions:
+  - m_V below about 5 MeV is conservatively ruled out by BBN if thermalized; Higgs invisible decay is
+    the strongest present lab limit.
+  id: neutrinophilic_lab_bounds
+  likelihood_available: unknown
+  likelihood_reference: null
+  name: Laboratory and early-universe bounds for neutrinophilic
+  notes: Primary paper overlays relic-density target curves with these probes.
+  observable_channel: invisible Higgs/Z/W-neutrino processes, BBN/SN1987A, and DUNE-like mono-neutrino
+    signatures
+  recasting_needed: 'yes'
+  robustness: medium
+  source_reference_ids:
+  - src_2005_03681
+  - src_2011_02487
+theory_to_observable_routing:
+  routes:
+  - agent_notes: Production route is common; lab overlay is model-specific.
+    caveats:
+    - Future coverage is projection based.
+    constraint_ids:
+    - neutrinophilic_xray_limits
+    - neutrinophilic_structure_bounds
+    - neutrinophilic_lab_bounds
+    derived_quantities:
+    - f_4(x,z)
+    - Omega_4 h^2
+    - Delta N_eff
+    - line flux
+    - lab rate
+    description: Compute vector-assisted sterile-neutrino production for neutrinophilic and overlay X-ray,
+      structure, and laboratory probes.
+    forward_model_chain:
+    - inputs:
+      - m_V
+      - lambda
+      - temperature
+      notes: Compute thermal potential and scattering rate.
+      outputs:
+      - V_T
+      - Gamma
+      step_id: potential_rate
+      step_type: analytic_formula
+      tool_or_code: null
+      validity: Primary formulas across mediator regimes.
+    - inputs:
+      - V_T
+      - Gamma
+      - mixing
+      - m4
+      notes: Integrate production.
+      outputs:
+      - f_4
+      - Omega_4
+      step_id: phase_space
+      step_type: boltzmann_solver
+      tool_or_code: null
+      validity: Primary phase-space equation.
+    - inputs:
+      - m_V
+      - lambda
+      - m4
+      - mixing
+      notes: Overlay target curves.
+      outputs:
+      - constraint coverage
+      step_id: overlay
+      step_type: recasting
+      tool_or_code: null
+      validity: Experiment-specific likelihoods needed.
+    id: neutrinophilic_route
+    input_parameters:
+    - m4
+    - sin^2(2 theta)
+    - m_V
+    - lambda
+    likelihoods:
+    - X-ray and lab likelihoods not packaged.
+    observable_ids:
+    - neutrinophilic_xray
+    - neutrinophilic_structure
+    - neutrinophilic_lab
+    required_code_resources:
+    - phase-space solver
+    - X-ray likelihood
+    - vector-mediator recasts
+    route_status: planned
+    source_model_features:
+    - keV sterile neutrino
+    - neutrinophilic vector mediator
+    - active-sterile mixing
+    validation_tests:
+    - reproduce primary relic-density curves

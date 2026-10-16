@@ -1,0 +1,623 @@
+_source:
+  shard: arXiv_src_1806_024_wds.tar
+  paper_id: '1806_08579'
+  source_member: 1806_08579.json
+  enriched: true
+  enrichment_schema_version: dm_model_ocr_enrichment_smoke_v0
+schema_version: model_only_v0
+model_id: 1806_08579_neutrino_portal_freeze_in_dm_v1
+identity:
+  name: Neutrino portal freeze-in dark matter
+  family: freeze_in_dark_matter
+  aliases:
+  - minimal NPDM freeze-in
+  - neutrino portal FIMP
+  short_description: A minimal neutrino-portal model where right-handed neutrinos generate active neutrino
+    masses and mediate freeze-in production of a stable dark fermion or scalar.
+  historical_origin_or_motivation: Combines type-I seesaw neutrino masses with feebly coupled dark matter
+    production through a neutrino portal.
+  status: speculative
+  model_kind: simplified_model
+theory:
+  theory_level: simplified_model
+  parent_frameworks:
+  - type-I seesaw
+  - neutrino portal dark matter
+  - freeze-in
+  lagrangian_available: 'yes'
+  renormalizable: 'yes'
+  embedded_in_larger_framework: unknown
+  notes: The relevant Lagrangian contains SM-neutrino Yukawa terms, Majorana masses for right-handed neutrinos,
+    and a Yukawa coupling to the dark fermion and scalar.
+particle_content:
+  dark_matter_candidate:
+    name: lighter of the dark fermion and dark scalar
+    spin: unknown
+    statistics: unknown
+    elementary_or_composite: elementary
+    number_of_components: single_component
+  additional_dark_sector_particles:
+  - dark fermion
+  - dark scalar
+  mediators:
+  - right-handed neutrinos N_i
+  dark_radiation_species: []
+  excited_or_degenerate_states: []
+  long_lived_particles: []
+  unstable_parent_particles:
+  - right-handed neutrinos
+  standard_model_extension: substantial
+symmetries:
+  stabilizing_mechanism: A dark U(1) or Z2 symmetry forbids direct SM-dark couplings and stabilizes the
+    lighter dark-sector particle.
+  symmetries:
+  - name: dark U(1) or Z2
+    type: unknown
+    exact_or_approximate: exact
+  topological_defects_possible: unknown
+interactions:
+  portals:
+  - neutrino
+  standard_model_targets:
+  - lepton doublets
+  - Higgs doublet
+  - active neutrinos
+  dark_sector_couplings:
+  - Yukawa coupling y_chi between right-handed neutrino, dark fermion, and dark scalar
+  mediator_types:
+  - right-handed neutrino
+  interaction_operators:
+  - Y_nu L h nu_R
+  - Majorana mass for nu_R
+  - y_chi nu_R dark_fermion dark_scalar
+  scattering:
+    elastic: unknown
+    inelastic: unknown
+    momentum_dependence: unknown
+    velocity_dependence: unknown
+    spin_dependence: unknown
+  annihilation_channels:
+  - SM particles to dark fermion plus dark scalar through N
+  tree_or_loop_level: tree
+parameters:
+  core:
+  - name: right-handed neutrino mass
+    symbol: M_N
+    description: Mediator mass in the type-I seesaw neutrino portal.
+    range: O(10 TeV) in one non-resonant democratic-coupling estimate
+    unit: GeV
+    role: core
+    status: inferred
+  - name: dark matter mass
+    symbol: m_DM
+    description: Mass of the lighter dark-sector state.
+    range: '> 3 keV for viable resonant freeze-in quoted in the abstract'
+    unit: keV
+    role: core
+    status: inferred
+  - name: dark Yukawa coupling
+    symbol: y_chi
+    description: Coupling of right-handed neutrinos to the dark fermion and scalar.
+    range: feeble; O(1e-5) discussed in resonant production
+    role: core
+    status: inferred
+  - name: neutrino Yukawa coupling
+    symbol: y_nu
+    description: Seesaw coupling connecting right-handed neutrinos to SM leptons and Higgs.
+    range: small, seesaw-motivated
+    role: core
+    status: inferred
+production:
+  mechanisms:
+  - freeze-in through neutrino portal
+  - resonant production through on-shell N
+  - non-resonant production through off-shell N
+  thermal_equilibrium_with_standard_model: 'no'
+  thermal_equilibrium_with_hidden_sector: unknown
+  abundance_set_by:
+  - y_nu
+  - y_chi
+  - M_N
+  - dark-sector masses
+  - resonant versus non-resonant kinematics
+  depends_on_reheating_temperature: unknown
+  can_produce_all_dark_matter: 'yes'
+  nonthermal_momentum_distribution: 'yes'
+  notes: The paper solves number-density and momentum-distribution Boltzmann equations for freeze-in production.
+relic_density:
+  full_or_subcomponent: full_dark_matter
+  target_fraction: null
+  calculation_type: nonthermal
+  key_dependencies:
+  - right-handed-neutrino mediator abundance
+  - dark Yukawa coupling
+  - DM mass
+  - resonant condition M_N > m_dark_fermion + m_dark_scalar
+  requires_entropy_dilution: unknown
+  overclosure_risk: parameter_dependent
+  underproduction_risk: parameter_dependent
+  tuning_assessment: unknown
+cosmological_history:
+  standard_history_assumed: true
+  nonstandard_features: []
+  dark_sector_temperature: null
+  delta_neff: null
+  kinetic_decoupling: null
+  chemical_decoupling: null
+  phase_transitions: []
+  topological_defects: []
+  isocurvature_perturbations: unknown
+  bbn_relevance: unknown
+  cmb_relevance: unknown
+phase_space:
+  distribution_type: nonthermal
+  distribution_function_available: 'yes'
+  notes: The numerical treatment solves Boltzmann equations at the momentum-distribution level for freeze-in.
+structure_formation:
+  linear:
+    behaves_like_cdm: scale_dependent
+    transfer_function_shape: smooth_cutoff
+    small_scale_power_effect: suppression
+  nonlinear:
+    halo_mass_function_effect: unknown
+    subhalo_mass_function_effect: unknown
+    simulation_calibrated: unknown
+validity_domain:
+- id: feeble_coupling_regime
+  applies_to: production
+  condition: Freeze-in treatment assumes the dark sector remains feebly coupled and back reactions can
+    be neglected.
+  status: assumed
+  extrapolation_risk: medium
+- id: neglected_higgs_portal
+  applies_to: model
+  condition: The extracted model ignores Higgs-portal contributions and possible vector kinetic mixing
+    as stated in the paper.
+  status: assumed
+  extrapolation_risk: medium
+assumptions:
+  global:
+  - id: dark_symmetry_unbroken
+    description: The dark U(1) or Z2 symmetry remains unbroken enough to stabilize the lighter dark-sector
+      particle.
+    scope: theory
+    status: assumed
+  - id: seesaw_neutrino_portal
+    description: The same right-handed neutrinos both generate neutrino masses and mediate DM production.
+    scope: theory
+    status: assumed
+associated_code:
+  has_associated_code: unknown
+provenance:
+  model_id: 1806_08579_neutrino_portal_freeze_in_dm_v1
+  model_name: Neutrino portal freeze-in dark matter
+  model_family: freeze_in_dark_matter
+  entry_version: 0.1.0
+  status: machine_extracted
+  created_at: '2026-05-31'
+  last_updated: '2026-05-31'
+  sources:
+    primary_papers:
+    - reference_id: 1806_08579_paper
+      title: Dark Matter from Freeze-In via the Neutrino Portal
+      year: 2018
+      arxiv_id: '1806.08579'
+      doi: null
+      url: null
+      role: original_model
+      notes: Assigned full text from local SQLite database.
+    - arxiv_id: '1806.08579'
+      authors:
+      - Becker, Mathias
+      doi: 10.1140/epjc/s10052-019-7095-7
+      notes: Primary paper for this model-card row.
+      reference_id: src-1806-08579
+      role: original_model
+      title: Dark matter from freeze-in via the neutrino portal
+      url: https://arxiv.org/abs/1806.08579
+      year: 2019
+    constraint_papers:
+    - arxiv_id: '2003.01723'
+      authors:
+      - Cosme, Catarina
+      - Dutra, Maíra
+      - Ma, Teng
+      - Wu, Yongcheng
+      - Yang, Litao
+      doi: 10.1007/JHEP03(2021)026
+      notes: Locally resolved related text read for context or constraints.
+      reference_id: src-2003-01723
+      role: constraint
+      title: Neutrino portal to FIMP dark matter with an early matter era
+      url: https://arxiv.org/abs/2003.01723
+      year: 2021
+    - arxiv_id: '1806.10606'
+      authors:
+      - Chianese, Marco
+      - King, Stephen F.
+      doi: 10.1088/1475-7516/2018/09/027
+      notes: Locally resolved related text read for context or constraints.
+      reference_id: src-1806-10606
+      role: constraint
+      title: 'The dark side of the Littlest Seesaw: freeze-in, the two right-handed neutrino portal and
+        leptogenesis-friendly fimpzillas'
+      url: https://arxiv.org/abs/1806.10606
+      year: 2018
+    - arxiv_id: '2005.13933'
+      authors:
+      - Bandyopadhyay, Priyotosh
+      - Chun, Eung Jin
+      - Mandal, Rusa
+      doi: 10.1088/1475-7516/2020/08/019
+      notes: Locally resolved related text read for context or constraints.
+      reference_id: src-2005-13933
+      role: constraint
+      title: Feeble neutrino portal dark matter at neutrino detectors
+      url: https://arxiv.org/abs/2005.13933
+      year: 2020
+    external_databases: []
+    review_papers: []
+  extraction:
+    method: llm_assisted
+    extracted_by: codex_batch_0000
+    extractor_name: gpt-5.5_dark_matter_model_worker
+    extraction_date: '2026-05-31'
+    confidence: high
+    source_chunks_or_sections:
+    - reference_id: 1806_08579_paper
+      section: Abstract and model setup
+      page: null
+      quote_or_summary: The paper investigates minimal neutrino-portal DM produced by freeze-in through
+        right-handed neutrinos.
+    unresolved_items:
+    - No exact direct-detection, LFV, or indirect-detection contour was extracted.
+    - A full Lyman-alpha transfer-function recast remains required for new benchmark points.
+  evidence:
+    particle_content:
+    - reference_id: 1806_08579_paper
+      note: The SM is extended by three right-handed neutrinos; the dark sector consists of a fermion
+        and a scalar, with the lighter dark particle stable.
+      confidence: high
+      section: Model setup
+    symmetries:
+    - reference_id: 1806_08579_paper
+      note: A dark U(1) or Z2 symmetry charges the dark fermion and scalar while SM particles are uncharged,
+        stabilizing the lighter dark particle.
+      confidence: high
+      section: Model setup
+    interactions:
+    - reference_id: 1806_08579_paper
+      note: Right-handed neutrinos mediate between the SM and dark sector through a Yukawa coupling to
+        the dark fermion and scalar.
+      confidence: high
+      section: Model setup
+    production_mechanism:
+    - reference_id: 1806_08579_paper
+      note: The paper explores freeze-in production through the neutrino portal, including resonant and
+        non-resonant regimes, motivated by small seesaw Yukawa couplings.
+      confidence: high
+      section: Abstract and Boltzmann sections
+    cosmological_history:
+    - reference_id: 1806_08579_paper
+      note: The relic density is obtained by solving Boltzmann equations, including non-thermal momentum
+        distributions in the numerical treatment.
+      confidence: high
+      section: Boltzmann discussion
+    parameter_ranges:
+    - reference_id: 1806_08579_paper
+      note: The abstract reports M_N around 10 TeV for a democratic non-resonant case and resonant freeze-in
+        viable for m_DM above about 3 keV.
+      confidence: medium
+      section: Abstract
+    validity_domain:
+    - reference_id: 1806_08579_paper
+      note: The analysis neglects Higgs-portal relic contributions and kinetic mixing of possible vector
+        mediators.
+      confidence: medium
+      section: Model setup
+    constraints:
+    - confidence: high
+      note: Primary text states the Lyman-alpha/free-streaming conclusions and names direct detection,
+        LFV, and indirect-detection bounds.
+      page: null
+      reference_id: src-1806-08579
+      section: abstract and bounds section
+    observables:
+    - confidence: high
+      note: Primary text says freeze-in is motivated by small neutrino Yukawa couplings and discusses
+        momentum-distribution Boltzmann solutions.
+      page: null
+      reference_id: src-1806-08579
+      section: abstract and methods
+    - confidence: medium
+      note: Related local text connects neutrino-portal FIMP production to nonstandard cosmological histories
+        and relic abundance.
+      page: null
+      reference_id: src-2003-01723
+      section: introduction
+    routes:
+    - confidence: high
+      note: Primary text lays out analytic number-density estimates followed by numerical momentum-distribution
+        Boltzmann equations.
+      page: null
+      reference_id: src-1806-08579
+      section: methods
+  review:
+    human_reviewed: false
+    reviewed_by: null
+    review_date: null
+    expert_reviewed: false
+    expert_reviewer: null
+    expert_review_date: null
+    reviewer_notes: []
+    scientific_confidence: high
+    implementation_confidence: medium
+robustness:
+  overall: medium
+  dominant_uncertainties:
+  - Machine extraction from converted full text; numerical bounds and detailed spectra were not re-derived.
+  validation_status: expert_judgment_only
+agent_failure_modes:
+  warnings:
+  - id: candidate_identity_branch
+    severity: medium
+    category: notation_conflict
+    warning: The lighter of the dark fermion and scalar is the DM candidate; do not assume a fixed spin
+      without checking the mass ordering.
+  - id: structure_bounds_context
+    severity: medium
+    category: other
+    warning: Lyman-alpha/free-streaming conclusions depend on the resonant or non-resonant production
+      regime and momentum distribution.
+observables:
+- caveats:
+  - The exact bound depends on the full momentum distribution, not only number density.
+  channel: lyman_alpha
+  effect_direction: suppression
+  environments:
+  - Lyman-alpha forest
+  - small-scale structure
+  id: neutrino-portal-free-streaming
+  key_quantities:
+  - description: Mass of the stable dark-sector particle.
+    name: dark matter mass
+    notes: null
+    range: resonant freeze-in viable for m_DM > 3 keV in the primary abstract statement.
+    role: core
+    scale: null
+    source_reference_ids:
+    - src-1806-08579
+    status: inferred
+    symbol: m_DM
+    unit: keV
+  - description: Mediator mass in the neutrino portal.
+    name: right-handed neutrino mass
+    notes: null
+    role: core
+    scale: null
+    source_reference_ids:
+    - src-1806-08579
+    status: inferred
+    symbol: M_N
+    unit: null
+    value: about 10 TeV in the non-resonant democratic-coupling estimate
+  linked_constraints:
+  - lyman-alpha-free-streaming-constraint
+  linked_routes:
+  - momentum-boltzmann-neutrino-portal-route
+  name: Free-streaming and Lyman-alpha response of neutrino-portal freeze-in DM
+  notes: Primary paper explicitly solves momentum-distribution Boltzmann equations and links structure
+    formation to free streaming.
+  observability: medium
+  predicted_effect: Freeze-in through the neutrino portal can produce a nonthermal momentum distribution
+    whose free-streaming suppresses small-scale structure.
+  redshift_range: production epoch to matter era
+  relevance: critical
+  scale_range: Lyman-alpha forest/free-streaming scales
+  source_reference_ids:
+  - src-1806-08579
+  - src-2003-01723
+  subchannel: nonthermal momentum distribution and structure formation
+- caveats:
+  - The model assumes feeble couplings and no initial thermal dark-sector abundance.
+  channel: cosmology
+  effect_direction: rate_change
+  environments:
+  - early Universe
+  - freeze-in cosmology
+  id: freeze-in-relic-density
+  key_quantities:
+  - description: Feeble coupling between the right-handed neutrino and dark-sector states.
+    name: dark Yukawa coupling
+    notes: null
+    range: O(1e-5) can appear in resonant production in the primary abstract statement.
+    role: core
+    scale: null
+    source_reference_ids:
+    - src-1806-08579
+    status: inferred
+    symbol: y_chi
+    unit: null
+  - description: Seesaw-motivated SM-neutrino Yukawa coupling.
+    name: neutrino Yukawa coupling
+    notes: null
+    role: core
+    scale: null
+    source_reference_ids:
+    - src-1806-08579
+    status: inferred
+    symbol: y_nu
+    unit: null
+  linked_constraints:
+  - lyman-alpha-free-streaming-constraint
+  - direct-detection-lfv-neutrino-portal
+  linked_routes:
+  - momentum-boltzmann-neutrino-portal-route
+  name: Freeze-in relic-density target through right-handed neutrino mediation
+  notes: Related local text connects two-right-handed-neutrino portal setups with freeze-in relic-density
+    calculations.
+  observability: medium
+  predicted_effect: Feeble right-handed-neutrino-mediated interactions populate the dark sector without
+    thermal equilibrium; the relic density depends on resonant versus non-resonant production.
+  redshift_range: radiation era production
+  relevance: critical
+  scale_range: null
+  source_reference_ids:
+  - src-1806-08579
+  - src-1806-10606
+  subchannel: nonthermal relic abundance
+constraints:
+- allowed_regions:
+  - The same statement keeps resonant freeze-in viable only for m_DM > 3 keV.
+  applies: 'yes'
+  assumptions:
+  - can_be_relaxed: 'no'
+    description: Free-streaming constraints use the nonthermal momentum distribution, not a thermal relic
+      template.
+    id: momentum-distribution-needed
+    impact_if_violated: A thermal approximation can misestimate the Lyman-alpha mapping.
+    notes: null
+    scope: structure-formation recast
+    source_reference_ids:
+    - src-1806-08579
+    status: assumed
+  benchmark_implications:
+  - Momentum-level Boltzmann solutions are required before comparing a benchmark to Lyman-alpha limits.
+  caveats:
+  - The exact Lyman-alpha likelihood and transfer-function mapping were not reproduced in this batch.
+  constrained_parameters:
+  - m_DM
+  - M_N
+  - y_chi
+  - momentum distribution
+  constraint_type: cosmological
+  data_release: Lyman-alpha forest measurements as used in the primary paper
+  excluded_regions:
+  - The primary abstract states that the feebly coupled freeze-out case is ruled out by Lyman-alpha forest
+    measurements.
+  id: lyman-alpha-free-streaming-constraint
+  likelihood_available: partial
+  likelihood_reference: Paper-level Lyman-alpha/free-streaming analysis.
+  name: Lyman-alpha/free-streaming constraint on resonant neutrino-portal production
+  notes: Structured from the primary abstract and bounds-section statements.
+  observable_channel: Lyman-alpha forest and structure formation
+  recasting_needed: 'yes'
+  robustness: medium
+  source_reference_ids:
+  - src-1806-08579
+- allowed_regions:
+  - Feeble freeze-in couplings can evade many conventional bounds, but the paper still requires dedicated
+    checks by region.
+  applies: parameter_dependent
+  assumptions:
+  - can_be_relaxed: 'yes'
+    description: The direct/LFV/indirect limits depend on flavor structure and mass hierarchy.
+    id: model-dependent-bounds
+    impact_if_violated: Different flavor choices can change which searches dominate.
+    notes: null
+    scope: constraint interpretation
+    source_reference_ids:
+    - src-1806-08579
+    - src-2005-13933
+    status: assumed
+  benchmark_implications:
+  - Treat these as recast-required guardrails rather than a single exclusion curve.
+  caveats:
+  - No precise numerical direct-detection or LFV contour was extracted into this row.
+  constrained_parameters:
+  - M_N
+  - y_chi
+  - y_nu
+  - dark-sector masses
+  constraint_type: other
+  data_release: Primary-paper bounds discussion; related neutrino-detector phenomenology
+  excluded_regions:
+  - Some parameter regions are constrained by direct detection, lepton-flavor violation, indirect detection,
+    or stability considerations.
+  id: direct-detection-lfv-neutrino-portal
+  likelihood_available: unknown
+  likelihood_reference: null
+  name: Direct-detection, LFV, and indirect constraints on the neutrino portal
+  notes: The primary text names these constraints; the related neutrino-detector paper supports broader
+    feeble-neutrino-portal phenomenology.
+  observable_channel: direct detection, charged lepton flavor violation, and indirect detection
+  recasting_needed: 'yes'
+  robustness: low
+  source_reference_ids:
+  - src-1806-08579
+  - src-2005-13933
+theory_to_observable_routing:
+  routes:
+  - agent_notes: No new numerical Boltzmann solve was run in this batch.
+    caveats:
+    - Nonstandard cosmologies, such as early matter eras in related work, are outside the primary structured
+      route.
+    constraint_ids:
+    - lyman-alpha-free-streaming-constraint
+    - direct-detection-lfv-neutrino-portal
+    derived_quantities:
+    - momentum distribution f(p)
+    - Omega_DM h^2
+    - free-streaming scale
+    - direct/LFV rates
+    description: Solve neutrino-portal freeze-in Boltzmann equations at momentum-distribution level, compute
+      relic density and free-streaming, then recast structure and laboratory bounds.
+    forward_model_chain:
+    - inputs:
+      - M_N
+      - m_DM
+      - y_chi
+      - y_nu
+      notes: Primary paper uses analytic formulas before numerical treatment.
+      outputs:
+      - Y_DM estimate
+      step_id: number-density-estimate
+      step_type: analytic_formula
+      tool_or_code: paper analytic freeze-in formulas
+      validity: parametric scan
+    - inputs:
+      - matrix elements
+      - thermal history
+      notes: Primary paper emphasizes momentum-level numerical solution.
+      outputs:
+      - f(p)
+      - Omega_DM h^2
+      step_id: momentum-boltzmann
+      step_type: simulation
+      tool_or_code: momentum-distribution Boltzmann solver
+      validity: freeze-in nonthermal distribution
+    - inputs:
+      - f(p)
+      - model couplings
+      notes: Needed for final phenomenology.
+      outputs:
+      - allowed benchmark status
+      step_id: constraint-map
+      step_type: recasting
+      tool_or_code: Lyman-alpha/direct/LFV recasts
+      validity: model-dependent
+    id: momentum-boltzmann-neutrino-portal-route
+    input_parameters:
+    - M_N
+    - m_DM
+    - y_chi
+    - y_nu
+    - dark-sector mass splitting
+    - reheating/temperature history
+    likelihoods:
+    - Lyman-alpha/free-streaming
+    - direct detection/LFV recasts
+    observable_ids:
+    - neutrino-portal-free-streaming
+    - freeze-in-relic-density
+    required_code_resources:
+    - Boltzmann solver for distribution functions
+    - structure-formation transfer mapping
+    route_status: planned
+    source_model_features:
+    - type-I-seesaw right-handed neutrino mediator
+    - dark fermion plus dark scalar sector
+    - feeble freeze-in production
+    validation_tests:
+    - recover primary statements M_N about 10 TeV in non-resonant democratic coupling and m_DM > 3 keV
+      for resonant freeze-in viability

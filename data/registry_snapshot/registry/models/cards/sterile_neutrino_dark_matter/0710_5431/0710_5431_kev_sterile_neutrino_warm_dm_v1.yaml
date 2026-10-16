@@ -1,0 +1,661 @@
+_source:
+  shard: arXiv_src_0710_003_wds.tar
+  paper_id: '0710_5431'
+  source_member: 0710_5431.json
+  enriched: true
+  enrichment_schema_version: dm_model_ocr_enrichment_smoke_v0
+schema_version: model_only_v0
+model_id: 0710_5431_kev_sterile_neutrino_warm_dm_v1
+identity:
+  name: keV sterile-neutrino warm dark matter with radiative decay
+  family: sterile_neutrino_dark_matter
+  aliases:
+  - sterile dark matter
+  - keV sterile-neutrino WDM
+  short_description: A warm dark-matter scenario in which several-keV sterile neutrinos mix weakly with
+    active neutrinos, decay radiatively into X-ray photons plus active neutrinos, and alter primordial
+    gas cooling and first-star formation.
+  historical_origin_or_motivation: The paper develops the structure-formation consequences of sterile-neutrino
+    WDM, emphasizing that decay X-rays can offset delayed star formation by catalyzing molecular hydrogen.
+  status: speculative
+  model_kind: phenomenological_parameterization
+theory:
+  theory_level: phenomenological_parameterization
+  parent_frameworks:
+  - Standard Model plus right-handed gauge-singlet neutrinos
+  - warm dark matter cosmology
+  lagrangian_available: 'no'
+  renormalizable: unknown
+  embedded_in_larger_framework: 'yes'
+  notes: The text motivates sterile neutrinos from neutrino masses and treats mass, mixing, decay, and
+    production mechanisms phenomenologically.
+particle_content:
+  dark_matter_candidate:
+    name: keV sterile neutrino
+    spin: 1/2
+    statistics: fermion
+    elementary_or_composite: elementary
+    number_of_components: single_component
+  additional_dark_sector_particles:
+  - active neutrinos
+  mediators:
+  - active-sterile neutrino mixing
+  - radiative decay photon
+  dark_radiation_species: []
+  excited_or_degenerate_states: []
+  long_lived_particles:
+  - sterile neutrino
+  unstable_parent_particles: []
+  standard_model_extension: minimal
+symmetries:
+  stabilizing_mechanism: The sterile neutrino is not exactly stable but has a cosmological lifetime due
+    to very small active-neutrino mixing.
+  symmetries:
+  - name: small active-sterile mixing
+    type: approximate
+    exact_or_approximate: approximate
+    breaking: mixing permits radiative decay to active neutrino plus photon
+    breaking_scale: null
+  topological_defects_possible: unknown
+interactions:
+  portals:
+  - neutrino
+  - other
+  standard_model_targets:
+  - active neutrinos
+  - X-ray photons
+  - neutral hydrogen and helium in primordial gas
+  dark_sector_couplings:
+  - small active-sterile mixing angle
+  mediator_types:
+  - neutrino mixing
+  - radiative decay photon
+  interaction_operators: []
+  scattering:
+    elastic: unknown
+    inelastic: unknown
+    momentum_dependence: unknown
+    velocity_dependence: unknown
+    spin_dependence: unknown
+  annihilation_channels: []
+  decay_channels:
+  - sterile neutrino to active neutrino plus photon
+  self_scattering_channels: []
+  tree_or_loop_level: loop
+parameters:
+  core:
+  - name: sterile neutrino mass
+    symbol: m_s
+    description: Mass of the warm dark matter sterile neutrino.
+    value: several keV
+    unit: keV
+    role: core
+    status: inferred
+    source_reference_ids:
+    - primary
+  - name: active-sterile mixing angle
+    symbol: theta
+    description: Small mixing angle with ordinary neutrinos controlling decay and production.
+    value: small; not numerically specified
+    role: core
+    status: inferred
+    source_reference_ids:
+    - primary
+  - name: radiative decay photon energy
+    symbol: E_gamma
+    description: Photon energy from sterile-neutrino radiative decay.
+    value: m_s/2
+    unit: keV
+    role: derived
+    status: inferred
+    source_reference_ids:
+    - primary
+  - name: minimal collapsing halo mass
+    symbol: M
+    description: Halo/cloud mass whose collapse threshold is reduced by sterile-neutrino decay X-rays
+      in the paper analysis.
+    value: benchmark-dependent
+    role: astrophysical
+    status: inferred
+    source_reference_ids:
+    - primary
+  - name: molecular hydrogen fraction
+    symbol: x_H2
+    description: H2 fraction enhanced by X-rays from sterile-neutrino decay.
+    value: computed in benchmark cases
+    role: astrophysical
+    status: inferred
+    source_reference_ids:
+    - primary
+production:
+  mechanisms:
+  - production from active-neutrino oscillations
+  - production from Higgs decays
+  - production from couplings to a low-scale inflaton
+  thermal_equilibrium_with_standard_model: unknown
+  thermal_equilibrium_with_hidden_sector: not_applicable
+  abundance_set_by:
+  - sterile-neutrino mass
+  - active-sterile mixing angle
+  - choice of early-universe production mechanism
+  depends_on_reheating_temperature: parameter_dependent
+  can_produce_all_dark_matter: parameter_dependent
+  nonthermal_momentum_distribution: parameter_dependent
+  notes: The paper lists several production mechanisms but focuses on decay-driven structure-formation
+    effects rather than a detailed abundance calculation.
+relic_density:
+  full_or_subcomponent: full_dark_matter
+  target_fraction: null
+  calculation_type: nonthermal
+  key_dependencies:
+  - mass of several keV
+  - small active-neutrino mixing angle
+  - production mechanism
+  requires_entropy_dilution: unknown
+  overclosure_risk: parameter_dependent
+  underproduction_risk: parameter_dependent
+  tuning_assessment: unknown
+cosmological_history:
+  standard_history_assumed: true
+  nonstandard_features:
+  - warm dark matter free streaming
+  - late radiative decays creating an X-ray background that affects primordial gas cooling
+  dark_sector_temperature: null
+  delta_neff: null
+  kinetic_decoupling: null
+  chemical_decoupling: null
+  phase_transitions: []
+  topological_defects: []
+  isocurvature_perturbations: unknown
+  bbn_relevance: unknown
+  cmb_relevance: medium
+phase_space:
+  distribution_type: nonthermal
+  distribution_function_available: 'no'
+  free_streaming_length: null
+  notes: The paper treats the candidate as WDM and notes small-scale suppression, but does not give a
+    distribution function.
+structure_formation:
+  linear:
+    behaves_like_cdm: 'no'
+    transfer_function_shape: smooth_cutoff
+    small_scale_power_effect: suppression
+  nonlinear:
+    halo_mass_function_effect: reduced minimal mass for gas clouds able to collapse in the benchmark sterile-neutrino
+      WDM cases
+    subhalo_mass_function_effect: warm dark matter suppresses small-scale structure below the free-streaming
+      scale
+    simulation_calibrated: 'no'
+validity_domain:
+- id: kev_mass_small_mixing
+  applies_to: model
+  condition: The source discussion assumes sterile neutrinos of several keV with a small mixing angle
+    with ordinary neutrinos.
+  status: assumed
+  extrapolation_risk: medium
+  caveats: []
+  source_reference_ids:
+  - primary
+- id: radiative_decay_relevant
+  applies_to: cosmological_history
+  condition: The X-ray decay channel must provide enough ionization to enhance molecular hydrogen without
+    excessive heating.
+  status: inferred
+  extrapolation_risk: medium
+  caveats: []
+  source_reference_ids:
+  - primary
+- id: single_zone_cloud_model
+  applies_to: structure_formation
+  condition: The collapse calculation uses simplified baryonic top-hat/single-zone cloud modeling and
+    omits filamentary star formation.
+  status: inferred
+  extrapolation_risk: medium
+  caveats: []
+  source_reference_ids:
+  - primary
+assumptions:
+  global:
+  - id: sterile_neutrino_wdm
+    description: Warm dark matter consists of keV sterile neutrinos rather than a generic WDM particle.
+    scope: theory
+    status: assumed
+    can_be_relaxed: unknown
+    source_reference_ids:
+    - primary
+  - id: small_mixing_long_lifetime
+    description: The active-sterile mixing is small enough for cosmological longevity but nonzero so radiative
+      decay occurs.
+    scope: theory
+    status: assumed
+    can_be_relaxed: unknown
+    source_reference_ids:
+    - primary
+  - id: benchmark_structure_calculation
+    description: The structure-formation result is based on benchmark cases and simplified primordial
+      gas chemistry.
+    scope: structure_formation
+    status: assumed
+    can_be_relaxed: unknown
+    source_reference_ids:
+    - primary
+associated_code:
+  has_associated_code: unknown
+  code_summary: The paper mentions incorporating sterile-neutrino decay effects into previous gas-evolution
+    code, but no named or public model-specific code is identified in the assigned text.
+provenance:
+  model_id: 0710_5431_kev_sterile_neutrino_warm_dm_v1
+  model_name: keV sterile-neutrino warm dark matter with radiative decay
+  model_family: sterile_neutrino_dark_matter
+  entry_version: 0.1.0
+  status: machine_extracted
+  created_at: '2026-05-30'
+  last_updated: '2026-05-30'
+  sources:
+    primary_papers:
+    - reference_id: primary
+      title: Sterile neutrinos and structure formation
+      year: 2007
+      arxiv_id: '0710.5431'
+      doi: null
+      url: null
+      role: extension
+      notes: null
+      authors:
+      - Jaroslaw Stasielak
+      - Peter L. Biermann
+      - Alexander Kusenko
+    - arxiv_id: '0710.5431'
+      authors:
+      - Stasielak, J.
+      - Biermann, P. L.
+      - Kusenko, A.
+      doi: 10.48550/arXiv.0710.5431
+      notes: Primary full text resolved locally from dark_matter_model_astro_lexical; text_chars=19389.
+      reference_id: '0710_5431'
+      role: original_model
+      title: Sterile Neutrinos and Structure Formation
+      url: https://arxiv.org/abs/0710.5431
+      year: 2007
+    constraint_papers:
+    - arxiv_id: astro-ph/0606435
+      authors:
+      - Stasielak, Jaroslaw
+      - Biermann, Peter L.
+      - Kusenko, Alexander
+      doi: 10.1086/509066
+      notes: Web/arXiv fallback source read; closely related gas-cooling calculation.
+      reference_id: astro-ph0606435
+      role: extension
+      title: Thermal Evolution of the Primordial Clouds in Warm Dark Matter Models with keV Sterile Neutrinos
+      url: https://arxiv.org/abs/astro-ph/0606435
+      year: 2007
+    - arxiv_id: '0707.1495'
+      authors:
+      - Palazzo, A.
+      - Cumberbatch, D.
+      - Slosar, A.
+      - Silk, J.
+      doi: 10.1103/PhysRevD.76.103511
+      notes: Web/arXiv fallback source read; subdominant sterile-neutrino WDM constraints context.
+      reference_id: 0707_1495
+      role: constraint
+      title: Sterile neutrinos as subdominant warm dark matter
+      url: https://arxiv.org/abs/0707.1495
+      year: 2007
+    external_databases: []
+    review_papers:
+    - arxiv_id: '0906.2968'
+      authors:
+      - Kusenko, Alexander
+      doi: 10.1016/j.physrep.2009.07.004
+      notes: Web/arXiv fallback source read; sterile-neutrino review context.
+      reference_id: 0906_2968
+      role: review
+      title: 'Sterile neutrinos: The dark side of the light fermions'
+      url: https://arxiv.org/abs/0906.2968
+      year: 2009
+  extraction:
+    method: llm_assisted
+    extracted_by: gpt55_dark_matter_batch_worker_batch_0018
+    extractor_name: Codex
+    extraction_date: '2026-05-30'
+    confidence: medium
+    source_chunks_or_sections:
+    - reference_id: primary
+      section: opening
+      page: null
+      quote_or_summary: The paper describes WDM made of keV sterile neutrinos that radiatively decay to
+        X-ray photons and active neutrinos.
+    - reference_id: primary
+      section: particle-physics motivation
+      page: null
+      quote_or_summary: The text lists early-universe production from oscillations, Higgs decays, or low-scale
+        inflaton couplings.
+    - reference_id: primary
+      section: summary
+      page: null
+      quote_or_summary: The authors find that decay X-rays enhance H2 and reduce the minimal halo mass
+        able to collapse in examined WDM models.
+    unresolved_items:
+    - The primary paper does not provide a reusable likelihood or full production-dependent distribution
+      function.
+    - Numerical mass/mixing exclusions were not promoted without a dedicated recast.
+  evidence:
+    particle_content:
+    - reference_id: primary
+      note: The dark matter candidate is a several-keV sterile neutrino with small mixing with ordinary
+        neutrinos.
+      confidence: high
+      section: introduction
+    interactions:
+    - reference_id: primary
+      note: The radiative decay channel produces one active neutrino and one photon with energy m_s/2.
+      confidence: high
+      section: decay discussion
+    production_mechanism:
+    - reference_id: primary
+      note: The text names production by neutrino oscillations, Higgs decays, and low-scale inflaton couplings.
+      confidence: high
+      section: particle-physics motivation
+    cosmological_history:
+    - reference_id: primary
+      note: Decay X-rays alter primordial gas ionization, molecular-hydrogen formation, and high-redshift
+        cooling.
+      confidence: high
+      section: gas-cloud evolution
+    parameter_ranges:
+    - reference_id: primary
+      note: The model uses sterile neutrino masses of several keV and a small active-neutrino mixing angle.
+      confidence: high
+      section: introduction
+    structure_formation:
+    - reference_id: primary
+      note: The paper finds reduced minimal collapsing cloud masses in the WDM benchmark cases it examines.
+      confidence: high
+      section: summary
+    validity_domain:
+    - reference_id: primary
+      note: The authors caution that more detailed sterile-neutrino free-streaming and filamentary star
+        formation could affect results.
+      confidence: medium
+      section: summary
+    constraints:
+    - confidence: medium
+      note: Review context summarizes sterile-neutrino structure and X-ray constraints.
+      page: null
+      reference_id: 0906_2968
+      section: review
+    - confidence: medium
+      note: Subdominant sterile-neutrino WDM paper provides related parameter-dependence context.
+      page: null
+      reference_id: 0707_1495
+      section: abstract/introduction
+    observables:
+    - confidence: high
+      note: Primary abstract and discussion state that decay X-rays catalyze H2 and reduce the minimum
+        halo mass for collapse.
+      page: null
+      reference_id: '0710_5431'
+      section: abstract/introduction
+    - confidence: high
+      note: Primary paper identifies WDM free-streaming as the small-scale suppression mechanism.
+      page: null
+      reference_id: '0710_5431'
+      section: introduction
+    routes:
+    - confidence: high
+      note: Primary paper links sterile-neutrino decay, X-ray ionization, H2 production, and cloud collapse.
+      page: null
+      reference_id: '0710_5431'
+      section: gas-cloud evolution
+  review:
+    human_reviewed: false
+    expert_reviewed: false
+    scientific_confidence: medium
+    implementation_confidence: medium
+    reviewer_notes: []
+  caveats:
+  - This paper substantially develops structure-formation implications of an existing sterile-neutrino
+    WDM scenario rather than claiming the original invention of sterile-neutrino dark matter.
+robustness:
+  overall: medium
+  theory_robustness: medium
+  observational_robustness: medium
+  computational_robustness: medium
+  validation_status: expert_judgment_only
+  notes: The decay/structure-formation logic is explicit; exact production and relic-density details are
+    summarized rather than derived.
+agent_failure_modes:
+  warnings:
+  - id: existing_model_extension
+    severity: low
+    category: other
+    warning: Treat this as a paper-level extension of sterile-neutrino WDM phenomenology, not as the original
+      sterile-neutrino DM proposal.
+    source_reference_ids:
+    - primary
+  - id: structure_model_limits
+    severity: medium
+    category: extrapolation
+    warning: The collapse result uses simplified gas-cloud modeling and may change with more detailed
+      free-streaming or filamentary star formation treatments.
+    source_reference_ids:
+    - primary
+observables:
+- caveats:
+  - The primary paper uses benchmark cloud calculations rather than a public likelihood.
+  channel: small_scale_structure
+  effect_direction: enhancement
+  environments:
+  - primordial gas clouds
+  - first star-forming halos
+  id: obs_0710_xray_h2_first_star_formation
+  key_quantities:
+  - description: Warm dark-matter particle mass.
+    name: sterile neutrino mass
+    role: core
+    source_reference_ids:
+    - '0710_5431'
+    status: inferred
+    symbol: m_s
+    unit: keV
+    value: several keV
+  - description: Controls the radiative decay rate and X-ray background.
+    name: active-sterile mixing angle
+    role: core
+    source_reference_ids:
+    - '0710_5431'
+    status: inferred
+    symbol: theta
+    value: small
+  - description: Photon energy from nu_s -> nu_a + gamma.
+    name: radiative photon energy
+    role: derived
+    source_reference_ids:
+    - '0710_5431'
+    status: inferred
+    symbol: E_gamma
+    unit: keV
+    value: m_s/2
+  - description: Gas-chemistry variable enhanced by X-ray catalysis.
+    name: molecular hydrogen fraction
+    role: astrophysical
+    source_reference_ids:
+    - '0710_5431'
+    - astro-ph0606435
+    status: inferred
+    symbol: x_H2
+  linked_constraints:
+  - con_0710_wdm_xray_structure_bounds
+  linked_routes:
+  - route_0710_decay_structure_chemistry
+  name: Sterile-neutrino decay X-rays catalyze primordial H2 cooling
+  notes: null
+  observability: medium
+  predicted_effect: Radiative decays of several-keV sterile neutrinos produce X-ray photons that increase
+    ionization, catalyze molecular-hydrogen formation, and reduce the minimal halo mass that can cool
+    and collapse at high redshift.
+  redshift_range: high redshift first-star era
+  relevance: high
+  scale_range: minihalo and free-streaming scales
+  source_reference_ids:
+  - '0710_5431'
+  - astro-ph0606435
+  subchannel: first-star formation
+- caveats:
+  - Numerical transfer functions and production-dependent momentum distributions are not tabulated in
+    the primary paper.
+  channel: lyman_alpha
+  effect_direction: suppression
+  environments:
+  - Lyman-alpha forest
+  - dwarf galaxies
+  - reionization history
+  id: obs_0710_wdm_free_streaming_small_scales
+  key_quantities:
+  - description: Scale below which WDM suppresses small-scale structure.
+    name: free-streaming length
+    role: derived
+    source_reference_ids:
+    - '0710_5431'
+    - 0906_2968
+    status: inferred
+  - description: Fraction of dark matter in sterile neutrinos for subdominant scenarios.
+    name: sterile-neutrino fraction
+    role: cosmological
+    source_reference_ids:
+    - 0707_1495
+    status: inferred
+    symbol: f_s
+  linked_constraints:
+  - con_0710_wdm_xray_structure_bounds
+  linked_routes:
+  - route_0710_decay_structure_chemistry
+  name: Warm-dark-matter free-streaming suppression on small scales
+  notes: null
+  observability: medium
+  predicted_effect: The warm sterile-neutrino phase space suppresses structure below the free-streaming
+    length while potentially easing small-scale CDM tensions such as overly cuspy profiles.
+  redshift_range: post-recombination to low redshift structure formation
+  relevance: high
+  scale_range: sub-Mpc to dwarf-galaxy scales
+  source_reference_ids:
+  - '0710_5431'
+  - 0707_1495
+  - 0906_2968
+  subchannel: small-scale matter power and satellite-scale structure
+constraints:
+- allowed_regions:
+  - Several-keV sterile-neutrino WDM benchmarks where decay X-rays speed primordial cooling without violating
+    structure constraints.
+  applies: parameter_dependent
+  assumptions:
+  - can_be_relaxed: partial
+    description: Radiative decays produce an X-ray background large enough to affect gas chemistry while
+      remaining cosmologically allowed.
+    id: assumption_0710_decay_background
+    impact_if_violated: The first-star enhancement disappears or violates X-ray bounds.
+    scope: astrophysical
+    source_reference_ids:
+    - '0710_5431'
+    status: assumed
+  benchmark_implications:
+  - The assigned model needs a production-specific transfer function and radiative-decay rate before precision
+    recasting.
+  caveats:
+  - ADS-related papers were used for context; no single likelihood package was identified.
+  constrained_parameters:
+  - m_s
+  - theta
+  - production momentum distribution
+  - sterile-neutrino dark-matter fraction
+  constraint_type: cosmological
+  data_release: null
+  excluded_regions:
+  - Too-warm spectra that erase excessive small-scale power or delay reionization.
+  - Mixing angles or abundances that overproduce radiative-decay X-rays.
+  id: con_0710_wdm_xray_structure_bounds
+  likelihood_available: partial
+  likelihood_reference: null
+  name: Joint structure-formation and X-ray-decay viability
+  notes: null
+  observable_channel: lyman_alpha_and_first_stars
+  recasting_needed: 'yes'
+  robustness: medium
+  source_reference_ids:
+  - '0710_5431'
+  - 0707_1495
+  - 0906_2968
+theory_to_observable_routing:
+  routes:
+  - agent_notes: A complete recast needs both particle-production and astrophysical chemistry modules.
+    caveats:
+    - No public likelihood or distribution function was found in the assigned text.
+    constraint_ids:
+    - con_0710_wdm_xray_structure_bounds
+    derived_quantities:
+    - decay X-ray background
+    - ionization fraction
+    - x_H2
+    - minimum cooling halo mass
+    - matter transfer function
+    description: Propagate sterile-neutrino mass, mixing, and production history to matter-power suppression
+      and high-redshift gas cooling.
+    forward_model_chain:
+    - inputs:
+      - m_s
+      - theta
+      notes: null
+      outputs:
+      - X-ray photon energy
+      - decay rate
+      step_id: step_0710_decay_rate
+      step_type: analytic_formula
+      tool_or_code: null
+      validity: Radiative channel is standard but model production must set abundance.
+    - inputs:
+      - m_s
+      - momentum distribution
+      notes: Use a production-aware WDM transfer function.
+      outputs:
+      - small-scale power suppression
+      step_id: step_0710_transfer
+      step_type: transfer_function
+      tool_or_code: null
+      validity: Depends on sterile-neutrino production mechanism.
+    - inputs:
+      - X-ray background
+      - halo mass
+      - redshift
+      notes: null
+      outputs:
+      - H2 fraction
+      - cooling time
+      - collapse threshold
+      step_id: step_0710_gas_chemistry
+      step_type: simulation
+      tool_or_code: null
+      validity: Primary paper presents benchmark chemistry results rather than a reusable code path.
+    id: route_0710_decay_structure_chemistry
+    input_parameters:
+    - m_s
+    - theta
+    - production distribution
+    - halo mass
+    - redshift
+    likelihoods: []
+    observable_ids:
+    - obs_0710_xray_h2_first_star_formation
+    - obs_0710_wdm_free_streaming_small_scales
+    required_code_resources:
+    - Boltzmann/transfer solver for sterile-neutrino production
+    - primordial gas chemistry network
+    route_status: planned
+    source_model_features:
+    - keV sterile-neutrino WDM
+    - radiative decay to active neutrino plus X-ray photon
+    - primordial gas chemistry
+    validation_tests:
+    - Recover the primary-paper trend that decay X-rays reduce the minimum collapsing halo mass in its
+      benchmark cases.

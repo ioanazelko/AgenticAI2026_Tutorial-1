@@ -1,0 +1,777 @@
+_source:
+  shard: arXiv_src_1412_009_wds.tar
+  paper_id: '1412_4391'
+  source_member: 1412_4391.json
+  enriched: true
+  enrichment_schema_version: dm_model_ocr_enrichment_smoke_v0
+agent_failure_modes:
+  warnings:
+  - category: assumption_mismatch
+    id: late_decay_variant
+    mitigation: Recheck against the full paper before registry promotion.
+    severity: medium
+    source_reference_ids: []
+    warning: Use only with the stated mass ordering; the paper treats the variants separately.
+associated_code:
+  code_summary: No associated public code is stated in the extracted text.
+  has_associated_code: unknown
+  notebooks: []
+  packages_or_modules: []
+  repositories: []
+  scripts: []
+assumptions:
+  global:
+  - can_be_relaxed: unknown
+    description: The paper assumes R parity conservation so that the LSP is a dark matter candidate.
+    id: r_parity_conserved
+    impact_if_violated: null
+    notes: null
+    scope: theory
+    source_reference_ids: []
+    status: assumed
+  - can_be_relaxed: unknown
+    description: The dominant late decay considered has no electromagnetic, hadronic, or neutrino primary
+      products.
+    id: invisible_late_decay
+    impact_if_violated: null
+    notes: null
+    scope: cosmological_history
+    source_reference_ids: []
+    status: assumed
+cosmological_history:
+  bbn_relevance: high
+  chemical_decoupling: null
+  cmb_relevance: high
+  dark_sector_temperature: null
+  delta_neff: null
+  isocurvature_perturbations: unknown
+  kinetic_decoupling: null
+  nonstandard_features:
+  - late invisible NLSP decay
+  - possible relativistic decay products contributing to dark radiation
+  phase_transitions: []
+  standard_history_assumed: false
+  topological_defects: []
+identity:
+  aliases:
+  - late invisible gravitino decay dark matter
+  family: supersymmetric_late_decay_dark_matter
+  historical_origin_or_motivation: Motivated by allowing late gravitino-related decays to produce dark
+    matter without electromagnetic or hadronic decay products.
+  model_kind: complete_theory
+  name: Gravitino NLSP decay to N-superpartner plus stable N
+  short_description: A late invisible-decay dark matter variant with gravitino NLSP and N-superpartner
+    LSP, where stable N is the dominant dark matter component and relativistic N-superpartner quanta can
+    affect the nonthermal phase-space distribution.
+  status: speculative
+interactions:
+  annihilation_channels: []
+  cp_structure: unknown
+  dark_sector_couplings:
+  - X N u^c
+  - Xbar d^c d^c
+  - Majorana mass term for N
+  decay_channels:
+  - gravitino to N-superpartner plus N
+  flavor_structure: flavor-indexed quark couplings with antisymmetric lambda_prime_ij
+  interaction_operators:
+  - W_new = lambda X N u^c + lambda_prime Xbar d^c d^c + M_X X Xbar + M_N N N / 2
+  mediator_types:
+  - color-triplet superfields
+  - gravitino
+  portals:
+  - gravitational
+  - other
+  scattering:
+    elastic: unknown
+    inelastic: unknown
+    momentum_dependence: unknown
+    spin_dependence: unknown
+    velocity_dependence: unknown
+  self_scattering_channels: []
+  standard_model_targets:
+  - right-handed up and down quark superfields through X/Xbar couplings
+  tree_or_loop_level: both
+model_id: 1412_4391_gravitino_nlsp_to_n_superpartner_and_n_dm_v1
+parameters:
+  core:
+  - description: Stable N mass set near the proton mass by the kinematic stability window.
+    name: singlet fermion mass
+    notes: null
+    range: m_p - m_e < M_N < m_p + m_e
+    role: core
+    source_reference_ids: []
+    status: inferred
+    symbol: M_N
+    unit: GeV
+    value: null
+  - description: Mass of the X and Xbar superfields.
+    name: color-triplet mass
+    notes: null
+    range: null
+    role: core
+    source_reference_ids: []
+    status: inferred
+    symbol: M_X
+    unit: TeV
+    value: null
+  - description: Controls late decay lifetimes and mass ordering.
+    name: gravitino mass
+    notes: null
+    range: null
+    role: core
+    source_reference_ids: []
+    status: inferred
+    symbol: m_G
+    unit: GeV
+    value: null
+  - description: Controls late decay lifetimes and mass ordering.
+    name: N-superpartner mass
+    notes: null
+    range: null
+    role: core
+    source_reference_ids: []
+    status: inferred
+    symbol: m_Ntilde
+    unit: GeV
+    value: null
+particle_content:
+  additional_dark_sector_particles:
+  - gravitino NLSP
+  - color-triplet X and Xbar superfields
+  dark_matter_candidate:
+    elementary_or_composite: elementary
+    name: stable singlet fermion N plus N-superpartner LSP
+    number_of_components: multi_component
+    spin: 1/2 and 0
+    statistics: fermion
+  dark_radiation_species:
+  - relativistically produced gravitino, N, or N-superpartner quanta depending on mass ordering
+  excited_or_degenerate_states: []
+  long_lived_particles:
+  - NLSP in the specified mass ordering
+  mediators:
+  - iso-singlet color-triplet superfields X and Xbar
+  - gravitino interactions
+  standard_model_extension: substantial
+  unstable_parent_particles:
+  - N-superpartner NLSP or gravitino NLSP
+phase_space:
+  distribution_function_available: unknown
+  distribution_type: decay_produced
+  notes: Late decays can produce relativistic components whose momenta redshift after decay.
+production:
+  abundance_set_by:
+  - late invisible NLSP decay abundance
+  - stable N kinematic window
+  - mass ordering of gravitino and N-superpartner
+  can_produce_all_dark_matter: 'yes'
+  depends_on_reheating_temperature: 'yes'
+  mechanisms:
+  - late invisible decay
+  - nonthermal production
+  nonthermal_momentum_distribution: 'yes'
+  notes: For m_G > m_Ntilde > M_N, the gravitino decays invisibly and stable N is the dominant dark matter
+    component.
+  thermal_equilibrium_with_hidden_sector: unknown
+  thermal_equilibrium_with_standard_model: unknown
+provenance:
+  caveats: []
+  created_at: '2026-05-31'
+  entry_version: 0.1.0
+  evidence:
+    cosmological_history:
+    - confidence: high
+      note: The late decay products may be relativistic near matter-radiation equality and are studied
+        through dark-radiation and free-streaming estimates.
+      page: null
+      reference_id: '1412_4391'
+      section: dark radiation/structure formation
+    interactions:
+    - confidence: high
+      note: The superpotential contains X N u^c, Xbar d^c d^c, M_X X Xbar, and M_N N N terms.
+      page: null
+      reference_id: '1412_4391'
+      section: model
+    parameter_ranges:
+    - confidence: medium
+      note: M_N is fixed near 1 GeV by the kinematic stability condition; the mass-ordering case is scanned
+        in the m_Ntilde-m_G plane.
+      page: null
+      reference_id: '1412_4391'
+      section: model/results
+    particle_content:
+    - confidence: high
+      note: The model extends the MSSM by color-triplet X/Xbar superfields and a singlet N superfield,
+        with the LSP and stable N as dark matter candidates.
+      page: null
+      reference_id: '1412_4391'
+      section: model
+    production_mechanism:
+    - confidence: high
+      note: The paper shows the specified late invisible decay can produce the entire dark matter abundance
+        in allowed parameter regions.
+      page: null
+      reference_id: '1412_4391'
+      section: late invisible decays/results
+    symmetries:
+    - confidence: high
+      note: R parity is assumed conserved; N stability follows from the proton-stability mass window.
+      page: null
+      reference_id: '1412_4391'
+      section: model
+    validity_domain:
+    - confidence: high
+      note: Each variant applies only for the stated NLSP/LSP mass ordering and invisible decay channel.
+      page: null
+      reference_id: '1412_4391'
+      section: late invisible decays
+    constraints:
+    - confidence: high
+      note: Primary paper discusses BBN/CMB, galaxy power, and Lyman-alpha constraints for the invisible
+        decay scenario.
+      page: null
+      reference_id: '1412_4391'
+      section: null
+    - confidence: medium
+      note: Related local text summarizes standard BBN constraints on gravitino decays with visible showers.
+      page: null
+      reference_id: 0804_3745
+      section: null
+    - confidence: medium
+      note: Related local text quotes a percent-level bound on relativistic nonthermal DM fraction from
+        structure data.
+      page: null
+      reference_id: '1304_5243'
+      section: null
+    observables:
+    - confidence: high
+      note: Primary paper states that invisible decays can generate dark radiation and suppress structure
+        while avoiding visible BBN/CMB products.
+      page: null
+      reference_id: '1412_4391'
+      section: null
+    - confidence: medium
+      note: Related local text discusses nonthermal relativistic DM fractions, free streaming, and Lyman-alpha
+        limits.
+      page: null
+      reference_id: '1304_5243'
+      section: null
+    - confidence: medium
+      note: Related local text gives a modern two-body decaying-DM treatment with warm and massless daughters.
+      page: null
+      reference_id: '2102_12498'
+      section: null
+    routes:
+    - confidence: high
+      note: Primary paper supplies the median-velocity and free-streaming framework for the daughter particles.
+      page: null
+      reference_id: '1412_4391'
+      section: null
+  extraction:
+    confidence: high
+    extracted_by: codex_gpt5_worker_batch_0013
+    extraction_date: '2026-05-31'
+    extractor_name: Codex GPT-5
+    method: llm_assisted
+    source_chunks_or_sections:
+    - page: null
+      quote_or_summary: 'Variant case 3: gravitino NLSP with m_G > m_Ntilde > M_N, decaying invisibly
+        to N-superpartner plus stable N.'
+      reference_id: '1412_4391'
+      section: model and late invisible decays
+    unresolved_items: []
+  last_updated: '2026-05-31'
+  model_family: supersymmetric_late_decay_dark_matter
+  model_id: 1412_4391_gravitino_nlsp_to_n_superpartner_and_n_dm_v1
+  model_name: Gravitino NLSP decay to N-superpartner plus stable N
+  review:
+    expert_review_date: null
+    expert_reviewed: false
+    expert_reviewer: null
+    human_reviewed: false
+    implementation_confidence: medium
+    review_date: null
+    reviewed_by: null
+    reviewer_notes: []
+    scientific_confidence: high
+  sources:
+    primary_papers:
+    - arxiv_id: '1412.4391'
+      authors:
+      - Rouzbeh Allahverdi
+      - Bhaskar Dutta
+      - Farinaldo S. Queiroz
+      - Louis E. Strigari
+      - Mei-Yu Wang
+      doi: null
+      notes: null
+      reference_id: '1412_4391'
+      role: original_model
+      title: Dark Matter from Late Invisible Decays to/of Gravitinos
+      url: null
+      year: 2014
+    - arxiv_id: '1412.4391'
+      authors:
+      - Allahverdi, Rouzbeh
+      - Dutta, Bhaskar
+      - Queiroz, Farinaldo S.
+      - Strigari, Louis E.
+      - Wang, Mei-Yu
+      doi: 10.1103/PhysRevD.91.055033
+      notes: null
+      reference_id: '1412_4391'
+      role: original_model
+      title: Dark matter from late invisible decays to and of gravitinos
+      url: https://arxiv.org/abs/1412.4391
+      year: 2015
+    constraint_papers:
+    - arxiv_id: '2102.12498'
+      authors:
+      - Abellán, Guillermo F.
+      - Murgia, Riccardo
+      - Poulin, Vivian
+      doi: 10.1103/PhysRevD.104.123533
+      notes: null
+      reference_id: '2102_12498'
+      role: constraint
+      title: Linear cosmological constraints on two-body decaying dark matter scenarios and the S<SUB>8</SUB>
+        tension
+      url: https://arxiv.org/abs/2102.12498
+      year: 2021
+    - arxiv_id: '0804.3745'
+      authors:
+      - Kawasaki, Masahiro
+      - Kohri, Kazunori
+      - Moroi, Takeo
+      - Yotsuyanagi, Akira
+      doi: 10.1103/PhysRevD.78.065011
+      notes: null
+      reference_id: 0804_3745
+      role: constraint
+      title: Big-bang nucleosynthesis and gravitinos
+      url: https://arxiv.org/abs/0804.3745
+      year: 2008
+    - arxiv_id: '1304.5243'
+      authors:
+      - Kelso, Chris
+      - Profumo, Stefano
+      - Queiroz, Farinaldo S.
+      doi: 10.1103/PhysRevD.88.023511
+      notes: null
+      reference_id: '1304_5243'
+      role: constraint
+      title: Nonthermal WIMPs as ``dark radiation'' in light of ATACAMA, SPT, WMAP9, and Planck
+      url: https://arxiv.org/abs/1304.5243
+      year: 2013
+    external_databases: []
+    review_papers: []
+  status: machine_extracted
+relic_density:
+  calculation_type: nonthermal
+  full_or_subcomponent: full_dark_matter
+  key_dependencies:
+  - m_G
+  - m_Ntilde
+  - M_N
+  - NLSP lifetime
+  - relative abundance f
+  overclosure_risk: parameter_dependent
+  requires_entropy_dilution: unknown
+  target_fraction: null
+  tuning_assessment: unknown
+  underproduction_risk: parameter_dependent
+robustness:
+  computational_robustness: unknown
+  dominant_uncertainties:
+  - mass ordering, NLSP abundance, and approximate structure-formation treatment
+  notes: null
+  overall: medium
+  theory_robustness: medium
+  validation_status: expert_judgment_only
+schema_version: model_only_v0
+structure_formation:
+  linear:
+    behaves_like_cdm: scale_dependent
+    small_scale_power_effect: suppression
+    transfer_function_shape: smooth_cutoff
+  nonlinear:
+    halo_mass_function_effect: unknown
+    simulation_calibrated: 'no'
+    subhalo_mass_function_effect: unknown
+symmetries:
+  stabilizing_mechanism: R parity stabilizes the LSP; stable N is also protected by proton stability plus
+    the kinematic mass window around the proton mass.
+  symmetries:
+  - breaking: not specified
+    breaking_scale: null
+    exact_or_approximate: exact
+    name: R parity
+    type: discrete
+  topological_defects_possible: unknown
+theory:
+  embedded_in_larger_framework: 'yes'
+  lagrangian_available: 'yes'
+  notes: The paper gives a superpotential extending the MSSM by X, Xbar and singlet N superfields.
+  parent_frameworks:
+  - MSSM extension with color-triplet superfields and singlet N
+  - R-parity conserving supersymmetry
+  renormalizable: 'yes'
+  theory_level: uv_complete
+validity_domain:
+- applies_to: model
+  caveats: []
+  condition: 'Variant case 3: gravitino NLSP with m_G > m_Ntilde > M_N, decaying invisibly to N-superpartner
+    plus stable N.'
+  extrapolation_risk: medium
+  id: mass_ordering
+  notes: null
+  source_reference_ids: []
+  status: assumed
+  valid_range: null
+- applies_to: model
+  caveats: []
+  condition: Stable N requires m_p - m_e < M_N < m_p + m_e.
+  extrapolation_risk: high
+  id: stable_n_window
+  notes: null
+  source_reference_ids: []
+  status: inferred
+  valid_range: null
+observables:
+- caveats:
+  - Only the relativistic fraction contributes as dark radiation; massive daughters redshift into warm/cold
+    matter depending on kinematics.
+  channel: cosmology
+  effect_direction: enhancement
+  environments:
+  - cosmic radiation bath
+  id: late_decay_dark_radiation
+  key_quantities:
+  - description: Lifetime of the NLSP or gravitino parent.
+    name: parent lifetime
+    range: late, potentially after BBN onset for light gravitinos
+    role: core
+    source_reference_ids:
+    - '1412_4391'
+    status: inferred
+    symbol: tau
+    unit: s
+  - description: Controls daughter momenta and relativistic energy fraction.
+    name: mass splitting
+    role: core
+    source_reference_ids:
+    - '1412_4391'
+    status: inferred
+    symbol: Delta m
+  - description: Effective extra radiation produced by relativistic daughters.
+    name: dark-radiation fraction
+    role: derived
+    source_reference_ids:
+    - '1412_4391'
+    - '1304_5243'
+    status: inferred
+    symbol: Delta N_eff
+  linked_constraints:
+  - dark_radiation_neff_limit
+  linked_routes:
+  - late_invisible_decay_cosmology_route
+  name: Dark radiation from relativistic invisible decay products
+  notes: Primary paper explicitly studies dark-radiation output from invisible decays.
+  observability: medium
+  predicted_effect: The invisible two-body decays can leave one or both daughters relativistic, contributing
+    to dark radiation while avoiding electromagnetic or hadronic showers.
+  redshift_range: BBN through CMB and structure-formation epochs
+  relevance: high
+  scale_range: null
+  source_reference_ids:
+  - '1412_4391'
+  - '1304_5243'
+  subchannel: Delta N_eff / radiation density
+- caveats:
+  - A precise bound requires solving the daughter phase-space distribution, not only using thermal WDM
+    limits.
+  channel: lyman_alpha
+  effect_direction: suppression
+  environments:
+  - linear matter power
+  - Lyman-alpha forest
+  id: free_streaming_matter_power_suppression
+  key_quantities:
+  - description: Velocity entering the Jeans/free-streaming scale.
+    name: daughter median velocity
+    role: derived
+    source_reference_ids:
+    - '1412_4391'
+    status: inferred
+    symbol: v_med
+  - description: Scale below which perturbations are suppressed.
+    name: free-streaming wavenumber
+    range: galaxy power spectrum roughly 0.02-0.2 h/Mpc in the primary discussion
+    role: derived
+    source_reference_ids:
+    - '1412_4391'
+    status: inferred
+    symbol: k_fs
+    unit: h/Mpc
+  - description: Fraction of DM born relativistic in analogous nonthermal dark-radiation analyses.
+    name: relativistic nonthermal fraction
+    range: less than about 0.01 in the cited Lyman-alpha combination
+    role: derived
+    source_reference_ids:
+    - '1304_5243'
+    status: inferred
+    symbol: f
+  linked_constraints:
+  - matter_power_free_streaming_limit
+  linked_routes:
+  - late_invisible_decay_cosmology_route
+  name: Matter-power suppression from energetic daughter dark matter
+  notes: This is the central structure-formation observable for invisible late decays.
+  observability: medium
+  predicted_effect: Daughter particles born with large velocities suppress perturbations below the free-streaming
+    scale, with galaxy power spectrum and Lyman-alpha forest data providing the relevant handles.
+  redshift_range: late times after decay
+  relevance: critical
+  scale_range: galaxy power and Lyman-alpha forest scales
+  source_reference_ids:
+  - '1412_4391'
+  - '1304_5243'
+  - '2102_12498'
+  subchannel: free streaming / galaxy power spectrum
+- caveats:
+  - Secondary effects from energetic neutrinos or nonzero visible branching would need a separate BBN/CMB
+    treatment.
+  channel: cmb
+  effect_direction: null_signal
+  environments:
+  - primordial plasma
+  - CMB
+  id: visible_decay_bbn_cmb_absence
+  key_quantities:
+  - description: Branching fraction into electromagnetic or hadronic products.
+    name: visible branching ratio
+    role: derived
+    source_reference_ids:
+    - '1412_4391'
+    status: assumed
+    symbol: B_visible
+    value: 0
+  - description: Controls whether gravitationally suppressed decays occur after BBN in standard gravitino
+      cosmology.
+    name: gravitino mass
+    range: below about 40 TeV gives post-BBN timing in the primary discussion
+    role: core
+    source_reference_ids:
+    - '1412_4391'
+    status: inferred
+    symbol: m_3/2
+    unit: TeV
+  linked_constraints:
+  - gravitino_visible_bbn_cmb_bound
+  linked_routes:
+  - late_invisible_decay_cosmology_route
+  name: Suppressed visible energy-injection signatures
+  notes: This observable is a null/avoidance feature rather than a positive detection channel.
+  observability: low
+  predicted_effect: Because the decay products are invisible dark-sector states, the usual electromagnetic
+    and hadronic late-decay signals are absent or strongly reduced compared with visible gravitino decays.
+  redshift_range: BBN/CMB spectral-distortion epochs
+  relevance: medium
+  scale_range: null
+  source_reference_ids:
+  - '1412_4391'
+  - 0804_3745
+  subchannel: BBN/CMB energy injection
+constraints:
+- allowed_regions:
+  - Large primary-paper regions where invisible decays provide all DM while satisfying dark-radiation
+    bounds
+  applies: parameter_dependent
+  assumptions:
+  - can_be_relaxed: partial
+    description: The decay products are dark-sector particles with negligible electromagnetic/hadronic
+      branching.
+    id: invisible_final_states
+    impact_if_violated: Visible branching would reintroduce strong BBN/CMB energy-injection limits.
+    notes: null
+    scope: decay phenomenology
+    source_reference_ids:
+    - '1412_4391'
+    status: assumed
+  benchmark_implications:
+  - Controls how much of the daughter population may remain relativistic.
+  caveats:
+  - Use a Boltzmann treatment for precision Delta N_eff and CMB recasts.
+  constrained_parameters:
+  - Delta N_eff
+  - tau
+  - mass splitting
+  - daughter masses
+  constraint_type: cosmological
+  data_release: null
+  excluded_regions:
+  - Benchmarks with too much relativistic daughter energy at BBN or recombination
+  id: dark_radiation_neff_limit
+  likelihood_available: unknown
+  likelihood_reference: null
+  name: CMB/BBN limit on extra dark radiation from invisible decays
+  notes: Primary and related texts motivate this as a radiation-density/structure constraint rather than
+    a direct-detection one.
+  observable_channel: CMB / BBN
+  recasting_needed: 'yes'
+  robustness: medium
+  source_reference_ids:
+  - '1412_4391'
+  - '1304_5243'
+- allowed_regions:
+  - Kinematics/lifetimes where daughter velocities redshift enough before structure formation
+  applies: parameter_dependent
+  assumptions:
+  - can_be_relaxed: partial
+    description: Thermal-WDM and nonthermal-decay limits must be mapped carefully to the daughter distribution.
+    id: linear_power_mapping
+    impact_if_violated: Incorrect mapping can overstate or understate the Lyman-alpha exclusion.
+    notes: null
+    scope: structure formation
+    source_reference_ids:
+    - '1412_4391'
+    - '2102_12498'
+    status: approximate
+  benchmark_implications:
+  - Can be the leading observable constraint once visible BBN/CMB bounds are avoided.
+  caveats:
+  - The primary paper uses analytic/free-streaming estimates; no likelihood file is provided.
+  constrained_parameters:
+  - v_med
+  - k_fs
+  - tau
+  - daughter masses
+  - relativistic fraction
+  constraint_type: astrophysical
+  data_release: null
+  excluded_regions:
+  - Daughter spectra with free-streaming lengths that erase observed small-scale structure
+  id: matter_power_free_streaming_limit
+  likelihood_available: unknown
+  likelihood_reference: null
+  name: Galaxy-power and Lyman-alpha free-streaming limit
+  notes: Late invisible decay models are constrained by the daughter velocity distribution.
+  observable_channel: large_scale_structure / Lyman-alpha
+  recasting_needed: 'yes'
+  robustness: medium
+  source_reference_ids:
+  - '1412_4391'
+  - '1304_5243'
+  - '2102_12498'
+- allowed_regions:
+  - Invisible channels with negligible visible energy release
+  applies: 'no'
+  assumptions:
+  - can_be_relaxed: partial
+    description: Hadronic/electromagnetic daughter production is absent in the model-card channel.
+    id: negligible_visible_showers
+    impact_if_violated: Any visible shower would require applying standard gravitino BBN limits.
+    notes: null
+    scope: decay products
+    source_reference_ids:
+    - '1412_4391'
+    - 0804_3745
+    status: assumed
+  benchmark_implications:
+  - Explains why the model can evade tight late-decay bounds that apply to visible channels.
+  caveats:
+  - Neutrino secondaries and dark-radiation effects remain possible.
+  constrained_parameters:
+  - visible branching ratio
+  - tau
+  - m_3/2
+  constraint_type: cosmological
+  data_release: null
+  excluded_regions:
+  - Long-lived visible electromagnetic/hadronic decays after BBN in ordinary gravitino scenarios
+  id: gravitino_visible_bbn_cmb_bound
+  likelihood_available: 'no'
+  likelihood_reference: null
+  name: Visible gravitino/NLSP decay BBN-CMB bound as an avoided constraint
+  notes: Included to distinguish the invisible channel from standard late gravitino constraints.
+  observable_channel: BBN / CMB
+  recasting_needed: partial
+  robustness: high
+  source_reference_ids:
+  - '1412_4391'
+  - 0804_3745
+theory_to_observable_routing:
+  routes:
+  - agent_notes: The route is well-defined, but a production recast needs a Boltzmann implementation of
+      the nonthermal daughters.
+    caveats:
+    - Primary paper does not provide machine-readable likelihoods.
+    constraint_ids:
+    - dark_radiation_neff_limit
+    - matter_power_free_streaming_limit
+    - gravitino_visible_bbn_cmb_bound
+    derived_quantities:
+    - Delta N_eff
+    - v_med(a)
+    - k_fs(a)
+    - daughter relic fractions
+    description: Propagate invisible two-body decay kinematics into dark radiation, daughter velocities,
+      and CMB/Lyman-alpha constraints.
+    forward_model_chain:
+    - inputs:
+      - parent mass
+      - daughter masses
+      notes: Determines relativistic versus massive daughter fractions.
+      outputs:
+      - daughter momenta
+      - energy partition
+      step_id: decay_kinematics
+      step_type: analytic_formula
+      tool_or_code: null
+      validity: Two-body decay approximation.
+    - inputs:
+      - daughter momenta
+      - lifetime
+      notes: Primary text provides the median-velocity/free-streaming setup.
+      outputs:
+      - v_med(a)
+      - Delta N_eff
+      step_id: cosmological_redshifting
+      step_type: semi_analytic_model
+      tool_or_code: null
+      validity: Assumes homogeneous background expansion after decay.
+    - inputs:
+      - v_med(a)
+      - daughter fractions
+      notes: Related decaying-DM work supplies a modern linear-cosmology analogue.
+      outputs:
+      - matter-power suppression
+      - Lyman-alpha consistency
+      step_id: power_constraints
+      step_type: recasting
+      tool_or_code: null
+      validity: Requires a nonthermal transfer-function recast for precision.
+    id: late_invisible_decay_cosmology_route
+    input_parameters:
+    - parent mass
+    - daughter masses
+    - lifetime
+    - initial parent abundance
+    likelihoods: []
+    observable_ids:
+    - late_decay_dark_radiation
+    - free_streaming_matter_power_suppression
+    - visible_decay_bbn_cmb_absence
+    required_code_resources:
+    - Boltzmann solver for decaying dark matter/dark radiation
+    - linear matter-power likelihood or emulator
+    route_status: planned
+    source_model_features:
+    - gravitationally suppressed late decay
+    - two dark-sector daughter particles
+    - no primary electromagnetic or hadronic products
+    validation_tests:
+    - Check energy conservation in two-body decay
+    - Check Delta N_eff and daughter matter fractions sum consistently
+    - Verify linked evidence reference IDs

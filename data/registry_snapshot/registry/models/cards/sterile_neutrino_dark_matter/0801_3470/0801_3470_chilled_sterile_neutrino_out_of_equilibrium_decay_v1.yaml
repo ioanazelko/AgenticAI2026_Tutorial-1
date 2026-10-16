@@ -1,0 +1,773 @@
+_source:
+  shard: arXiv_src_0801_002_wds.tar
+  paper_id: 0801_3470
+  source_member: 0801_3470.json
+  enriched: true
+  enrichment_schema_version: dm_model_ocr_enrichment_smoke_v0
+schema_version: model_only_v0
+model_id: 0801_3470_chilled_sterile_neutrino_out_of_equilibrium_decay_v1
+identity:
+  name: Chilled sterile neutrino dark matter from out-of-equilibrium singlet decays
+  family: sterile_neutrino_dark_matter
+  aliases:
+  - Chilled Dark Matter, out-of-equilibrium decay case
+  short_description: A keV sterile-neutrino dark matter variant in which a weakly coupled real gauge-singlet
+    scalar decouples early and later decays out of equilibrium, producing sterile neutrinos with a nonthermal
+    spectrum and warmer structure-formation properties than the in-equilibrium case.
+  historical_origin_or_motivation: The paper calls these singlet-decay sterile neutrinos chilled dark
+    matter because entropy release lowers their momenta relative to nonresonant production.
+  status: speculative
+  model_kind: simplified_model
+theory:
+  theory_level: simplified_model
+  parent_frameworks:
+  - sterile-neutrino dark matter
+  - singlet-extended Higgs sector
+  - seesaw-like neutrino mass framework
+  lagrangian_available: 'yes'
+  renormalizable: 'yes'
+  eft_cutoff: null
+  embedded_in_larger_framework: unknown
+  notes: The paper gives a Standard Model extension with right-handed neutrinos and a real gauge-singlet
+    scalar S.
+particle_content:
+  dark_matter_candidate:
+    name: keV sterile neutrino N
+    spin: 1/2
+    statistics: fermion
+    elementary_or_composite: elementary
+    number_of_components: single_component
+  additional_dark_sector_particles:
+  - real gauge-singlet scalar S
+  mediators:
+  - singlet scalar S
+  - Standard Model Higgs through scalar mixing terms
+  dark_radiation_species: []
+  excited_or_degenerate_states: []
+  long_lived_particles:
+  - sterile neutrino N
+  unstable_parent_particles:
+  - singlet scalar S
+  standard_model_extension: substantial
+symmetries:
+  stabilizing_mechanism: No exact stabilizing symmetry is specified; the keV sterile neutrino is treated
+    as cosmologically long-lived through very weak couplings.
+  symmetries: []
+  topological_defects_possible: unknown
+interactions:
+  portals:
+  - neutrino
+  - higgs
+  standard_model_targets:
+  - lepton doublets
+  - Standard Model Higgs
+  - right-handed neutrinos
+  dark_sector_couplings:
+  - Yukawa coupling f S N^c N
+  - active-sterile Yukawa coupling y H L N
+  - scalar potential couplings between H and S
+  mediator_types:
+  - real gauge-singlet scalar S
+  interaction_operators:
+  - S N^c N
+  - H L N
+  - '|H|^2 S'
+  - '|H|^2 S^2'
+  scattering:
+    elastic: unknown
+    inelastic: unknown
+    momentum_dependence: unknown
+    velocity_dependence: unknown
+    spin_dependence: unknown
+  annihilation_channels: []
+  decay_channels:
+  - S -> N N
+  self_scattering_channels: []
+  cp_structure: unknown
+  flavor_structure: sterile-neutrino Yukawa couplings y_a and f_a are flavor-indexed in the paper's Lagrangian.
+  tree_or_loop_level: tree
+parameters:
+  core:
+  - name: sterile neutrino mass
+    symbol: m
+    description: Mass of the sterile-neutrino dark matter particle.
+    range: keV range
+    unit: keV
+    role: core
+    status: inferred
+  - name: singlet scalar mass
+    symbol: m_S
+    description: Mass scale of the decaying singlet scalar; paper uses an electroweak-scale value and
+      m_S = 200 GeV for definiteness.
+    value: 200 in one figure
+    range: around 10^2 GeV
+    unit: GeV
+    role: core
+    status: inferred
+  - name: singlet scalar vacuum expectation value
+    symbol: <S>
+    description: VEV that gives right-handed neutrino Majorana masses.
+    range: same order as m_S, near the electroweak scale
+    unit: GeV
+    role: core
+    status: inferred
+  - name: sterile-neutrino singlet Yukawa coupling
+    symbol: f
+    description: Coupling of S to right-handed neutrinos controlling production.
+    range: model-dependent
+    role: core
+    status: inferred
+  - name: entropy dilution factor
+    symbol: xi
+    description: Dilution from decoupling of Standard Model degrees of freedom after production.
+    value: about 33
+    role: derived
+    status: approximate
+  nuisance: []
+  derived:
+  - name: free-streaming length
+    symbol: lambda_fs
+    description: Computed for sterile neutrinos from out-of-equilibrium singlet scalar decays.
+    value: larger than the in-equilibrium case in the paper's comparison
+    unit: Mpc
+    role: derived
+    status: approximate
+  - name: primordial phase-space density
+    symbol: Q
+    description: Computed phase-space density for the out-of-equilibrium decay case.
+    value: lower than the in-equilibrium case in the paper's comparison
+    unit: M_sun / pc^3 / (km/s)^3
+    role: derived
+    status: approximate
+production:
+  mechanisms:
+  - nonthermal sterile-neutrino production from out-of-equilibrium S-boson decays
+  thermal_equilibrium_with_standard_model: 'no'
+  thermal_equilibrium_with_hidden_sector: unknown
+  abundance_set_by:
+  - S -> N N decays
+  - singlet scalar abundance
+  - Yukawa coupling f
+  - entropy dilution after production
+  depends_on_reheating_temperature: unknown
+  can_produce_all_dark_matter: 'yes'
+  nonthermal_momentum_distribution: 'yes'
+  notes: For weak singlet-Higgs couplings the S bosons decouple early and later decay out of equilibrium
+    into sterile neutrinos.
+relic_density:
+  full_or_subcomponent: full_dark_matter
+  target_fraction:
+    name: dark matter fraction
+    symbol: Omega_N/Omega_DM
+    description: The paper considers the case where the keV sterile neutrino constitutes all dark matter.
+    value: 1
+    role: derived
+    status: assumed
+  calculation_type: nonthermal
+  key_dependencies:
+  - sterile neutrino mass
+  - S-boson mass and VEV
+  - Yukawa coupling f
+  - thermal history of S
+  - entropy dilution
+  requires_entropy_dilution: 'yes'
+  overclosure_risk: parameter_dependent
+  underproduction_risk: parameter_dependent
+  tuning_assessment: unknown
+cosmological_history:
+  standard_history_assumed: true
+  nonstandard_features:
+  - late or thermal singlet-scalar decay production
+  - entropy dilution chills the sterile-neutrino spectrum
+  dark_sector_temperature: null
+  delta_neff: null
+  kinetic_decoupling: null
+  chemical_decoupling: null
+  phase_transitions:
+  - singlet scalar spontaneous symmetry breaking gives Majorana masses
+  topological_defects: []
+  isocurvature_perturbations: unknown
+  bbn_relevance: unknown
+  cmb_relevance: low
+phase_space:
+  distribution_type: decay_produced
+  distribution_function_available: 'yes'
+  f_of_p_or_q: The paper gives a distribution function for sterile neutrinos from out-of-equilibrium S
+    decays and computes free-streaming and phase-space quantities.
+  average_momentum_relative_to_thermal: about three times lower than in the Dodelson-Widrow mechanism
+    for the chilled scenario discussed in the paper
+  free_streaming_length:
+    name: free-streaming length
+    symbol: lambda_fs
+    description: Computed for sterile neutrinos from out-of-equilibrium singlet scalar decays.
+    value: larger than the in-equilibrium case in the paper's comparison
+    unit: Mpc
+    role: derived
+    status: approximate
+  velocity_dispersion_today: null
+  phase_space_bounds:
+  - finite primordial phase-space density Q computed in the paper
+  notes: The paper gives a distribution function for sterile neutrinos from out-of-equilibrium S decays
+    and computes free-streaming and phase-space quantities.
+structure_formation:
+  linear:
+    behaves_like_cdm: 'no'
+    transfer_function_shape: smooth_cutoff
+    small_scale_power_effect: suppression
+    half_mode_mass: null
+    impact_on_sigma8_s8: not discussed
+  nonlinear:
+    halo_mass_function_effect: small-scale halos affected through nonzero free-streaming and finite phase-space
+      density
+    subhalo_mass_function_effect: suppression expected relative to cold dark matter
+    simulation_calibrated: 'no'
+validity_domain:
+- id: out_of_equilibrium_decay_case
+  applies_to: production
+  condition: The singlet scalar is weakly coupled to Standard Model particles, decouples early, and decays
+    later out of equilibrium.
+  valid_range: null
+  status: inferred
+  extrapolation_risk: medium
+  caveats: []
+  source_reference_ids:
+  - 0801_3470
+  notes: null
+- id: electroweak_singlet_scale
+  applies_to: model
+  condition: The paper studies keV sterile neutrino dark matter produced by singlet decays around the
+    electroweak scale.
+  valid_range: null
+  status: inferred
+  extrapolation_risk: medium
+  caveats: []
+  source_reference_ids:
+  - 0801_3470
+  notes: null
+assumptions:
+  global:
+  - id: singlet_extended_higgs_sector
+    description: The Higgs sector is extended by a real gauge singlet S coupled to right-handed neutrinos.
+    scope: theory
+    status: assumed
+    impact_if_violated: null
+    can_be_relaxed: unknown
+    source_reference_ids:
+    - 0801_3470
+    notes: null
+  - id: keV_sterile_neutrino_all_dm
+    description: The sterile neutrino is in the keV range and is considered as all of the dark matter.
+    scope: production
+    status: assumed
+    impact_if_violated: null
+    can_be_relaxed: unknown
+    source_reference_ids:
+    - 0801_3470
+    notes: null
+  - id: entropy_dilution
+    description: Entropy release from decoupling of Standard Model degrees of freedom chills the produced
+      sterile neutrinos.
+    scope: cosmological_history
+    status: inferred
+    impact_if_violated: null
+    can_be_relaxed: unknown
+    source_reference_ids:
+    - 0801_3470
+    notes: null
+associated_code:
+  has_associated_code: unknown
+  code_summary: No associated model code is identified in the assigned text.
+  primary_code_role: null
+  repositories: []
+  packages_or_modules: []
+  notebooks: []
+  scripts: []
+  containers_or_environments: []
+  expected_inputs: []
+  expected_outputs: []
+  reproducibility:
+    reproducibility_level: unknown
+    has_tests: unknown
+    has_examples: unknown
+    has_documentation: unknown
+    pinned_dependencies: unknown
+    notes: null
+  validation:
+    validation_status: unknown
+    benchmark_references: []
+    validation_notes: null
+  caveats: []
+provenance:
+  model_id: 0801_3470_chilled_sterile_neutrino_out_of_equilibrium_decay_v1
+  model_name: Chilled sterile neutrino dark matter from out-of-equilibrium singlet decays
+  model_family: sterile_neutrino_dark_matter
+  entry_version: 0.1.0
+  status: machine_extracted
+  created_at: '2026-05-30'
+  last_updated: '2026-05-30'
+  sources:
+    primary_papers:
+    - reference_id: 0801_3470
+      title: Small-scale structure formation properties of chilled sterile neutrinos as dark matter
+      authors:
+      - Kalliopi Petraki
+      year: 2008
+      arxiv_id: '0801.3470'
+      doi: null
+      url: null
+      role: extension
+      notes: Assigned full text from the run-local SQLite database.
+    - arxiv_id: '0801.3470'
+      authors:
+      - Kalliopi Petraki
+      doi: 10.1103/PhysRevD.77.105004
+      notes: Primary model paper read from local full-text cache.
+      reference_id: primary_0801_3470
+      role: original_model
+      title: Small-scale structure formation properties of chilled sterile neutrinos as dark matter
+      url: https://arxiv.org/abs/0801.3470
+      year: 2008
+    constraint_papers:
+    - arxiv_id: '0807.0646'
+      authors:
+      - Daniel Boyanovsky
+      doi: 10.1103/PhysRevD.78.103505
+      notes: Related local full text; used for transfer-function and Lyman/X-ray context.
+      reference_id: rel_0807_0646
+      role: extension
+      title: Clustering properties of a sterile neutrino dark matter candidate
+      url: https://arxiv.org/abs/0807.0646
+      year: 2008
+    - arxiv_id: '1412.1592'
+      authors:
+      - Atsushi Harada
+      - Ayuki Kamada
+      doi: 10.1088/1475-7516/2016/01/031
+      notes: Related local full text; used for satellite/Lyman/X-ray constraint context.
+      reference_id: rel_1412_1592
+      role: constraint
+      title: 'Structure formation in a mixed dark matter model with decaying sterile neutrino: the 3.5
+        keV X-ray line and the Galactic satellites'
+      url: https://arxiv.org/abs/1412.1592
+      year: 2016
+    external_databases: []
+    review_papers: []
+  extraction:
+    method: llm_assisted
+    extracted_by: codex_batch_0002
+    extractor_name: Codex GPT-5
+    extraction_date: '2026-05-30'
+    confidence: medium
+    source_chunks_or_sections:
+    - reference_id: 0801_3470
+      section: abstract
+      page: null
+      quote_or_summary: The paper calculates free-streaming length and phase-space density for sterile
+        neutrinos produced by gauge-singlet Higgs-sector decays.
+    - reference_id: 0801_3470
+      section: model setup
+      page: null
+      quote_or_summary: The Lagrangian extends the Higgs sector by a real gauge singlet S coupled to right-handed
+        neutrinos.
+    - reference_id: 0801_3470
+      section: out-of-equilibrium decays
+      page: null
+      quote_or_summary: The paper derives the distribution function and structure-formation quantities
+        when S decays after early decoupling.
+    - reference_id: 0801_3470
+      section: conclusion
+      page: null
+      quote_or_summary: The paper compares in-equilibrium and out-of-equilibrium decays and finds the
+        latter warmer than the former.
+    unresolved_items:
+    - No modern full Lyman-alpha likelihood or X-ray decay likelihood is packaged in the primary paper.
+    - Out-of-equilibrium values are figure/evaluation dependent; use the primary distribution rather than
+      a single universal number.
+  evidence:
+    particle_content:
+    - reference_id: 0801_3470
+      note: The candidate is a keV sterile neutrino; the Higgs-sector singlet S gives Majorana masses
+        to right-handed neutrinos and decays into sterile neutrinos.
+      confidence: medium
+      section: model setup
+      page: null
+    interactions:
+    - reference_id: 0801_3470
+      note: The paper writes an extended Lagrangian with y H L N and f S N^c N couplings plus a scalar
+        potential V(H,S).
+      confidence: medium
+      section: model setup
+      page: null
+    production_mechanism:
+    - reference_id: 0801_3470
+      note: For weak singlet-Higgs couplings the S bosons decouple early and later decay out of equilibrium
+        into sterile neutrinos.
+      confidence: medium
+      section: decay production
+      page: null
+    relic_density:
+    - reference_id: 0801_3470
+      note: The paper states that requiring a keV sterile neutrino to constitute all dark matter fixes
+        the S-boson scale near 10^2 GeV.
+      confidence: medium
+      section: model setup
+      page: null
+    phase_space:
+    - reference_id: 0801_3470
+      note: The paper gives a distribution function for sterile neutrinos from out-of-equilibrium S decays
+        and computes free-streaming and phase-space quantities.
+      confidence: medium
+      section: free-streaming and phase-space density
+      page: null
+    structure_formation:
+    - reference_id: 0801_3470
+      note: The paper computes free-streaming length and phase-space density because the nonzero free-streaming
+        length affects small-scale structure formation.
+      confidence: medium
+      section: free-streaming and phase-space density
+      page: null
+    parameter_ranges:
+    - reference_id: 0801_3470
+      note: The model uses keV sterile neutrinos, an electroweak-scale singlet scalar, a dilution factor
+        around 33, and m_S = 200 GeV for a figure.
+      confidence: medium
+      section: model setup
+      page: null
+    validity_domain:
+    - reference_id: 0801_3470
+      note: The two variants are distinguished by whether S decays in equilibrium or out of equilibrium.
+      confidence: medium
+      section: decay production
+      page: null
+    constraints:
+    - confidence: high
+      note: Primary paper quotes the SDSS Lyman-alpha free-streaming comparison and discusses X-ray/Lyman-alpha
+        tension for nonresonant sterile neutrinos.
+      page: null
+      reference_id: primary_0801_3470
+      section: null
+    - confidence: medium
+      note: Related local text discusses Lyman-alpha, satellite, and X-ray constraints in sterile-neutrino/mixed
+        dark matter.
+      page: null
+      reference_id: rel_1412_1592
+      section: null
+    observables:
+    - confidence: high
+      note: Primary paper defines lambda_fs, Q, the two S-decay regimes, and compares chilled spectra
+        with Lyman-alpha/phase-space observables.
+      page: null
+      reference_id: primary_0801_3470
+      section: null
+    - confidence: medium
+      note: Related local paper studies clustering/transfer-function behavior for singlet-decay sterile
+        neutrinos.
+      page: null
+      reference_id: rel_0807_0646
+      section: null
+    - confidence: medium
+      note: Related local paper gives sterile-neutrino structure-formation and X-ray-line context.
+      page: null
+      reference_id: rel_1412_1592
+      section: null
+    routes:
+    - confidence: high
+      note: Primary paper provides the decay-distribution to lambda_fs/Q route.
+      page: null
+      reference_id: primary_0801_3470
+      section: null
+  review:
+    human_reviewed: false
+    reviewed_by: null
+    review_date: null
+    expert_reviewed: false
+    expert_reviewer: null
+    expert_review_date: null
+    reviewer_notes: []
+    scientific_confidence: medium
+    implementation_confidence: medium
+  caveats:
+  - The singlet-decay production mechanism was motivated by earlier work; this paper substantially develops
+    the phase-space and structure-formation model properties.
+robustness:
+  overall: medium
+  theory_robustness: medium
+  computational_robustness: medium
+  dominant_uncertainties:
+  - thermal history of the singlet scalar
+  - sterile-neutrino mixing and lifetime not fully specified in this model-card row
+  - mapping from free-streaming estimates to nonlinear structure
+  validation_status: expert_judgment_only
+  notes: The paper provides analytic phase-space and free-streaming estimates for this production scenario.
+agent_failure_modes:
+  warnings:
+  - id: production_variant_scope
+    severity: medium
+    category: assumption_mismatch
+    warning: Keep the equilibrium state of the singlet decay attached to this row; the paper treats in-equilibrium
+      and out-of-equilibrium decays as different production cases.
+    mitigation: Do not merge the two production variants without human review.
+    source_reference_ids:
+    - 0801_3470
+observables:
+- caveats:
+  - Transfer from lambda_fs to an exact Lyman-alpha likelihood requires the full nonthermal transfer function,
+    not just the single free-streaming scale.
+  - Out-of-equilibrium S decays occur after early decoupling and are warmer than the equilibrium-decay
+    case.
+  channel: lyman_alpha
+  effect_direction: suppression
+  environments:
+  - intergalactic medium
+  - small dark-matter halos
+  id: obs_lalpha_free_streaming_cutoff
+  key_quantities:
+  - description: keV sterile-neutrino mass entering lambda_fs and Q.
+    name: sterile neutrino mass
+    range: keV scale
+    role: core
+    source_reference_ids:
+    - primary_0801_3470
+    status: inferred
+    symbol: m_N
+    unit: keV
+  - description: Comoving free-streaming length evaluated from the nonthermal distribution.
+    name: free-streaming length today
+    range: model-dependent; primary quotes the SDSS Lyman-alpha comparison limit lambda_fs about 1.1 Mpc
+      today
+    role: derived
+    source_reference_ids:
+    - primary_0801_3470
+    status: approximate
+    symbol: lambda_fs
+    unit: Mpc
+  - description: Dilution from decoupling of relativistic degrees of freedom after production.
+    name: entropy dilution factor
+    range: 25-33 for electroweak-scale production in the paper
+    role: derived
+    source_reference_ids:
+    - primary_0801_3470
+    status: approximate
+    symbol: xi
+  linked_constraints:
+  - con_lyman_alpha_free_streaming
+  - con_xray_decay_mixing
+  linked_routes:
+  - route_decay_distribution_to_structure
+  name: Free-streaming cutoff in the matter power spectrum
+  notes: For equilibrium decays the paper gives analytic expressions for lambda_fs and Q; for out-of-equilibrium
+    decays it evaluates them from the frozen-out S distribution.
+  observability: medium
+  predicted_effect: Singlet-decay sterile neutrinos have a nonthermal momentum distribution whose free-streaming
+    length suppresses density perturbations below the corresponding scale.
+  redshift_range: z approx 2-6 for the Lyman-alpha forest comparison quoted in the primary paper
+  relevance: critical
+  scale_range: sub-Mpc to Mpc comoving cutoff scale
+  source_reference_ids:
+  - primary_0801_3470
+  - rel_0807_0646
+  subchannel: SDSS Lyman-alpha forest and small-scale structure
+- caveats:
+  - The primary paper notes that lambda_fs and Q are useful summaries but do not capture the entire perturbation
+    spectrum.
+  channel: dwarf_galaxies
+  effect_direction: model_dependent
+  environments:
+  - dark-matter dominated dwarf galaxies
+  id: obs_phase_space_density
+  key_quantities:
+  - description: Coarse-grained phase-space density computed from the nonthermal momentum distribution.
+    name: primordial phase-space density
+    range: higher than Dodelson-Widrow production; equilibrium decays are colder than out-of-equilibrium
+      decays
+    role: derived
+    source_reference_ids:
+    - primary_0801_3470
+    status: approximate
+    symbol: Q
+    unit: M_sun pc^-3 (km/s)^-3
+  - description: Distribution function after S decay, with x=p/T.
+    name: momentum distribution
+    role: derived
+    source_reference_ids:
+    - primary_0801_3470
+    status: established
+    symbol: n(x)
+  linked_constraints:
+  - con_lyman_alpha_free_streaming
+  linked_routes:
+  - route_decay_distribution_to_structure
+  name: Primordial phase-space density for dwarf-galaxy cores
+  notes: Out-of-equilibrium S decays occur after early decoupling and are warmer than the equilibrium-decay
+    case.
+  observability: medium
+  predicted_effect: The nonthermal sterile-neutrino distribution fixes a primordial coarse-grained phase-space
+    density Q, which can be compared with observed dark-matter dominated dwarf-galaxy cores.
+  redshift_range: null
+  relevance: high
+  scale_range: dwarf-galaxy central phase-space estimates
+  source_reference_ids:
+  - primary_0801_3470
+  subchannel: Tremaine-Gunn style phase-space comparison
+constraints:
+- allowed_regions:
+  - Chilled singlet-decay spectra can satisfy current observational limits for suitable mass and decay
+    histories.
+  applies: parameter_dependent
+  assumptions:
+  - can_be_relaxed: 'yes'
+    description: The sterile neutrino is assumed to make up all of the dark matter when comparing to structure
+      limits.
+    id: assume_full_dm_fraction
+    impact_if_violated: If it is only a subcomponent, the Lyman-alpha mapping changes.
+    notes: null
+    scope: relic abundance and structure
+    source_reference_ids:
+    - primary_0801_3470
+    status: assumed
+  benchmark_implications:
+  - Out-of-equilibrium S decays occur after early decoupling and are warmer than the equilibrium-decay
+    case.
+  caveats:
+  - The primary paper uses a free-streaming summary rather than a modern full likelihood.
+  constrained_parameters:
+  - m_N
+  - lambda_fs
+  - n(x)
+  - xi
+  constraint_type: cosmological
+  data_release: SDSS Lyman-alpha forest comparison quoted in the primary paper
+  excluded_regions:
+  - Primary paper quotes the SDSS Lyman-alpha comparison as k_fs about 2 Mpc^-1, equivalent to lambda_fs
+    about 1.1 Mpc today.
+  id: con_lyman_alpha_free_streaming
+  likelihood_available: 'no'
+  likelihood_reference: null
+  name: Lyman-alpha free-streaming bound
+  notes: Use as a routing target, not as a final exclusion contour without a transfer-function recast.
+  observable_channel: lyman_alpha
+  recasting_needed: 'yes'
+  robustness: medium
+  source_reference_ids:
+  - primary_0801_3470
+  - rel_0807_0646
+  - rel_1412_1592
+- allowed_regions:
+  - Singlet-decay production changes the abundance/momentum relation and can evade that production-specific
+    tension, while radiative decay bounds still constrain the mixing angle.
+  applies: parameter_dependent
+  assumptions:
+  - can_be_relaxed: partial
+    description: The active-sterile mixing controlling X-ray decay is treated separately from the singlet
+      decay coupling that sets production.
+    id: separate_mixing_parameter
+    impact_if_violated: If the model fixes the mixing by another relation, X-ray limits become model-specific.
+    notes: null
+    scope: indirect detection
+    source_reference_ids:
+    - primary_0801_3470
+    status: inferred
+  benchmark_implications:
+  - The production coupling f is not directly the X-ray decay mixing; the model needs a separate active-sterile
+    mixing choice.
+  caveats:
+  - No X-ray likelihood is supplied in the primary paper.
+  constrained_parameters:
+  - m_N
+  - active-sterile mixing angle
+  constraint_type: indirect_detection
+  data_release: X-ray bounds discussed qualitatively in primary and related sterile-neutrino literature
+  excluded_regions:
+  - Dodelson-Widrow production is described as being in tension with the combination of X-ray and Lyman-alpha
+    bounds.
+  id: con_xray_decay_mixing
+  likelihood_available: 'no'
+  likelihood_reference: null
+  name: Radiative-decay X-ray bounds on sterile-neutrino mixing
+  notes: Structured as a parameter-dependent constraint because the paper emphasizes production, not a
+    fixed decay line benchmark.
+  observable_channel: x_ray
+  recasting_needed: 'yes'
+  robustness: medium
+  source_reference_ids:
+  - primary_0801_3470
+  - rel_1412_1592
+theory_to_observable_routing:
+  routes:
+  - agent_notes: Route is scientifically clear but only partially implemented by the primary-paper summary
+      statistics.
+    caveats:
+    - The exact exclusion depends on the full momentum distribution and dark-matter fraction.
+    constraint_ids:
+    - con_lyman_alpha_free_streaming
+    - con_xray_decay_mixing
+    derived_quantities:
+    - n(x)
+    - lambda_fs
+    - Q
+    - linear transfer-function cutoff
+    description: Compute the sterile-neutrino distribution from S decays, derive lambda_fs and Q, then
+      compare the resulting small-scale suppression and phase-space density with Lyman-alpha and dwarf-galaxy
+      data.
+    forward_model_chain:
+    - inputs:
+      - m_S
+      - f
+      - decay regime
+      notes: null
+      outputs:
+      - n(x)
+      step_id: derive_distribution
+      step_type: analytic_formula
+      tool_or_code: Primary-paper decay distribution equations
+      validity: Valid for the singlet-decay scenarios in the paper.
+    - inputs:
+      - n(x)
+      - m_N
+      - xi
+      notes: null
+      outputs:
+      - lambda_fs
+      - Q
+      step_id: compute_structure_summaries
+      step_type: analytic_formula
+      tool_or_code: Primary-paper lambda_fs and Q formulae
+      validity: Useful summary statistics; not a substitute for a full Boltzmann/Lyman-alpha likelihood.
+    - inputs:
+      - lambda_fs
+      - transfer function
+      - observed Lyman-alpha spectra
+      - dwarf phase-space estimates
+      notes: Primary paper gives the routing but not a reusable likelihood.
+      outputs:
+      - allowed or excluded mass-production region
+      step_id: recast_constraints
+      step_type: recasting
+      tool_or_code: null
+      validity: Requires modern data and simulation calibration.
+    id: route_decay_distribution_to_structure
+    input_parameters:
+    - m_N
+    - m_S
+    - f
+    - scalar-Higgs couplings
+    - xi
+    - decay regime
+    likelihoods:
+    - Lyman-alpha forest likelihood would need external implementation
+    - X-ray line likelihood would need separate sterile-neutrino decay model
+    observable_ids:
+    - obs_lalpha_free_streaming_cutoff
+    - obs_phase_space_density
+    required_code_resources:
+    - Boltzmann/Vlasov transfer-function solver for nonthermal sterile-neutrino spectra
+    - X-ray decay-line recast
+    route_status: planned
+    source_model_features:
+    - gauge-singlet scalar S decays to sterile neutrinos
+    - Out-of-equilibrium S decays occur after early decoupling and are warmer than the equilibrium-decay
+      case.
+    - entropy dilution after electroweak-scale production
+    validation_tests:
+    - Recover primary-paper equilibrium lambda_fs and Q expressions
+    - Check limiting behavior against Dodelson-Widrow and resonant-production comparisons

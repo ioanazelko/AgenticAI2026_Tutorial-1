@@ -1,0 +1,964 @@
+_source:
+  shard: arXiv_src_1310_001_wds.tar
+  paper_id: '1310_0265'
+  source_member: 1310_0265.json
+  enriched: true
+  enrichment_schema_version: dm_model_ocr_enrichment_smoke_v0
+schema_version: model_only_v0
+model_id: 1310_0265_mlrsm_kev_rh_neutrino_dm_v1
+identity:
+  name: Minimal left-right symmetric keV right-handed neutrino dark matter
+  family: sterile_neutrino_dark_matter
+  aliases:
+  - keV RH neutrino dark matter in the MLRSM
+  - N1 dark matter
+  short_description: A minimal left-right symmetric model variant in which the lightest right-handed neutrino
+    N1 is keV-scale dark matter and heavier right-handed neutrinos dilute its thermal abundance.
+  historical_origin_or_motivation: Motivated by testing whether a future neutrinoless double beta decay
+    signal can coexist with a successful dark matter candidate in the MLRSM.
+  status: speculative
+  model_kind: complete_theory
+theory:
+  theory_level: uv_complete
+  parent_frameworks:
+  - minimal left-right symmetric model
+  - SU(3)_c x SU(2)_L x SU(2)_R x U(1)_{B-L} gauge symmetry
+  lagrangian_available: partial
+  renormalizable: 'yes'
+  eft_cutoff: null
+  embedded_in_larger_framework: 'yes'
+  notes: The text describes the MLRSM gauge symmetry, scalar triplets and bi-doublet, and right-handed
+    neutrino mass generation through the SU(2)_R triplet vev.
+particle_content:
+  dark_matter_candidate:
+    name: N1 right-handed neutrino
+    spin: 1/2
+    statistics: fermion
+    elementary_or_composite: elementary
+    number_of_components: single_component
+  additional_dark_sector_particles:
+  - N2 right-handed neutrino
+  - N3 right-handed neutrino
+  mediators:
+  - W_R
+  - Z_R
+  dark_radiation_species: []
+  excited_or_degenerate_states: []
+  long_lived_particles:
+  - keV N1
+  unstable_parent_particles:
+  - N2
+  - N3
+  standard_model_extension: substantial
+symmetries:
+  stabilizing_mechanism: N1 must be sufficiently long-lived and weakly mixed to serve as keV dark matter;
+    no separate exact stabilizing symmetry is specified.
+  symmetries:
+  - name: SU(2)_R x U(1)_{B-L}
+    type: gauge
+    exact_or_approximate: broken
+    breaking: Broken by the right-handed scalar triplet vev v_R.
+    breaking_scale: null
+  - name: discrete left-right symmetry
+    type: discrete
+    exact_or_approximate: broken
+    breaking: Broken with left-right symmetry breaking.
+    breaking_scale: null
+  topological_defects_possible: unknown
+interactions:
+  portals:
+  - neutrino
+  - vector
+  standard_model_targets:
+  - SM leptons
+  - SM particles reached through W_R or Z_R exchange
+  dark_sector_couplings:
+  - right-handed weak interactions
+  - active-heavy neutrino mixing
+  - right-handed flavor structure controlling N2 and N3 decays
+  mediator_types:
+  - right-handed charged gauge boson W_R
+  - right-handed neutral gauge boson Z_R
+  interaction_operators:
+  - right-handed gauge exchange for thermal production
+  - left-right W_L-W_R channel relevant to neutrinoless double beta decay
+  scattering:
+    elastic: unknown
+    inelastic: unknown
+    momentum_dependence: unknown
+    velocity_dependence: unknown
+    spin_dependence: unknown
+  annihilation_channels: []
+  decay_channels:
+  - out-of-equilibrium N2 and/or N3 decays to Standard Model particles inject entropy
+  self_scattering_channels: []
+  cp_structure: unknown
+  flavor_structure: particular right-handed flavor structure can make N2 couple more strongly to SM leptons
+    than N1
+  tree_or_loop_level: both
+parameters:
+  core:
+  - name: N1 mass
+    symbol: M1
+    description: Mass of the lightest right-handed neutrino dark matter candidate.
+    range: keV scale; Lyman-alpha discussion requires M1 > 1 keV in the summarized scenario
+    unit: keV
+    role: core
+    status: inferred
+    source_reference_ids: []
+  - name: heavier right-handed neutrino masses
+    symbol: M2,M3
+    description: Masses of heavier right-handed neutrinos whose decays can dilute N1.
+    range: about 1-10 GeV in the mixed scenario; an alternative cited spectrum uses 140 MeV and 245 MeV
+    unit: GeV
+    role: core
+    status: inferred
+    source_reference_ids: []
+  - name: right-handed W mass
+    symbol: M_W_R
+    description: Mass of the right-handed charged gauge boson relevant for N1 freeze-out and 0nu beta
+      beta phenomenology.
+    range: about 10-16 TeV for the entropy-injection scenario, with an alternative cited 5 TeV flavor-structured
+      case
+    unit: TeV
+    role: core
+    status: inferred
+    source_reference_ids: []
+  - name: freeze-out temperature
+    symbol: T_f
+    description: Approximate freeze-out temperature for thermally produced N1 via W_R or Z_R exchange.
+    value: 400 MeV * (g_*(T_f)/70)^(1/6) * (M_W_R/5 TeV)^(4/3)
+    unit: MeV
+    role: core
+    status: inferred
+    source_reference_ids: []
+  - name: N1 relic density before dilution
+    symbol: Omega_N1
+    description: Thermal N1 abundance before entropy dilution.
+    value: 3.3 * (M1/1 keV) * (70/g_*(T_f))
+    role: core
+    status: inferred
+    source_reference_ids: []
+  - name: active-heavy mixing
+    symbol: theta
+    description: Mixing between active and heavy neutrinos relevant for neutrinoless double beta decay
+      and longevity.
+    range: model dependent; mixed scenario discussion uses about 1e-7 to 1e-5 for a possible signal
+    role: core
+    status: inferred
+    source_reference_ids: []
+production:
+  mechanisms:
+  - thermal production via W_R or Z_R exchange
+  - relativistic freeze-out
+  - late entropy dilution from out-of-equilibrium N2 and/or N3 decays
+  thermal_equilibrium_with_standard_model: 'yes'
+  thermal_equilibrium_with_hidden_sector: not_applicable
+  abundance_set_by:
+  - freeze-out temperature T_f
+  - N1 mass M1
+  - entropy injection from heavier right-handed neutrino decays
+  depends_on_reheating_temperature: unknown
+  can_produce_all_dark_matter: parameter_dependent
+  nonthermal_momentum_distribution: parameter_dependent
+  notes: The paper states that thermal N1 overproduces dark matter unless entropy injection dilutes its
+    abundance.
+relic_density:
+  full_or_subcomponent: full_dark_matter
+  target_fraction: null
+  calculation_type: mixed
+  key_dependencies:
+  - M1
+  - g_*(T_f)
+  - M_W_R
+  - N2/N3 masses and lifetimes
+  - right-handed flavor structure
+  requires_entropy_dilution: 'yes'
+  overclosure_risk: 'yes'
+  underproduction_risk: unknown
+  tuning_assessment: tuned
+cosmological_history:
+  standard_history_assumed: false
+  nonstandard_features:
+  - entropy injection after N1 freeze-out from out-of-equilibrium N2 and/or N3 decays
+  dark_sector_temperature: null
+  delta_neff: null
+  kinetic_decoupling: null
+  chemical_decoupling:
+    name: N1 freeze-out temperature
+    symbol: T_f
+    description: N1 decouples while relativistic.
+    value: about 400 MeV for M_W_R = 5 TeV and g_* = 70
+    unit: MeV
+    role: cosmological
+    status: inferred
+    source_reference_ids: []
+  phase_transitions:
+  - left-right symmetry breaking through v_R
+  topological_defects: []
+  isocurvature_perturbations: unknown
+  bbn_relevance: medium
+  cmb_relevance: unknown
+phase_space:
+  distribution_type: thermal
+  distribution_function_available: unknown
+  phase_space_bounds:
+  - The paper cites Lyman-alpha requiring M1 > 1 keV in the entropy-dilution scenario.
+  notes: N1 freezes out while relativistic, so the keV candidate is warm-like unless diluted or otherwise
+    modified.
+structure_formation:
+  linear:
+    behaves_like_cdm: 'no'
+    transfer_function_shape: smooth_cutoff
+    small_scale_power_effect: suppression
+  nonlinear:
+    halo_mass_function_effect: unknown
+    subhalo_mass_function_effect: unknown
+    simulation_calibrated: unknown
+validity_domain:
+- id: kev_n1_window
+  applies_to: N1 mass
+  condition: N1 is a keV-scale right-handed neutrino; the paper cites Lyman-alpha requiring M1 > 1 keV
+    in one scenario.
+  valid_range: M1 around keV
+  status: inferred
+  extrapolation_risk: medium
+  caveats: []
+  source_reference_ids:
+  - '1310.0265'
+  notes: null
+- id: entropy_dilution_required
+  applies_to: relic density
+  condition: Thermal N1 overproduces dark matter unless entropy is injected after freeze-out by N2 and/or
+    N3 decays.
+  valid_range: null
+  status: inferred
+  extrapolation_risk: high
+  caveats: []
+  source_reference_ids:
+  - '1310.0265'
+  notes: null
+- id: mixed_rh_neutrino_spectrum
+  applies_to: right-handed neutrino spectrum
+  condition: The DM-compatible spectrum lies in the mixed scenario with M1 below MeV and heavier N2,N3
+    around GeV, or in a cited MeV-scale alternative.
+  valid_range: M1 < MeV with M2,M3 around GeV; cited alternative M1 = 0.5 keV, M2 = 140 MeV, M3 = 245
+    MeV
+  status: inferred
+  extrapolation_risk: high
+  caveats: []
+  source_reference_ids:
+  - '1310.0265'
+  notes: null
+- id: wr_mass_tension
+  applies_to: M_W_R
+  condition: Entropy injection favors M_W_R about 10-16 TeV, in tension with but not excluding future
+    0nu beta beta signal regions.
+  valid_range: about 10-16 TeV, or 5 TeV in a flavor-structured alternative
+  status: inferred
+  extrapolation_risk: high
+  caveats: []
+  source_reference_ids:
+  - '1310.0265'
+  notes: null
+assumptions:
+  global:
+  - id: minimal_lrsm_framework
+    description: The particle content and interactions follow the minimal left-right symmetric model described
+      in the paper.
+    scope: theory
+    status: assumed
+    impact_if_violated: null
+    can_be_relaxed: unknown
+    source_reference_ids:
+    - '1310.0265'
+    notes: null
+  - id: thermal_n1_initial_abundance
+    description: N1 was once in thermal equilibrium through W_R or Z_R exchange and decoupled while relativistic.
+    scope: production
+    status: assumed
+    impact_if_violated: Without thermal N1 production, the entropy-dilution relic calculation would not
+      apply.
+    can_be_relaxed: unknown
+    source_reference_ids:
+    - '1310.0265'
+    notes: null
+  - id: late_entropy_injection
+    description: N2 and/or N3 decay out of equilibrium after N1 freeze-out and dilute the N1 number density.
+    scope: cosmological_history
+    status: assumed
+    impact_if_violated: Without dilution, the paper states that keV N1 overproduces dark matter.
+    can_be_relaxed: unknown
+    source_reference_ids:
+    - '1310.0265'
+    notes: null
+  - id: specific_rh_flavor_structure
+    description: A particular right-handed flavor structure may be needed in the lower M_W_R alternative
+      so N2 couples more strongly to SM leptons than N1.
+    scope: theory
+    status: speculative
+    impact_if_violated: The lower M_W_R scenario may fail without this flavor structure.
+    can_be_relaxed: unknown
+    source_reference_ids:
+    - '1310.0265'
+    notes: null
+associated_code:
+  has_associated_code: unknown
+  code_summary: No model-specific associated code was identified in the assigned paper text.
+  primary_code_role: null
+  repositories: []
+  packages_or_modules: []
+  notebooks: []
+  scripts: []
+  containers_or_environments: []
+  expected_inputs: []
+  expected_outputs: []
+  supported_observable_channels: []
+  caveats: []
+provenance:
+  model_id: 1310_0265_mlrsm_kev_rh_neutrino_dm_v1
+  model_name: Minimal left-right symmetric keV right-handed neutrino dark matter
+  model_family: sterile_neutrino_dark_matter
+  entry_version: 0.1.0
+  status: machine_extracted
+  created_at: '2026-05-31'
+  last_updated: '2026-05-31'
+  sources:
+    primary_papers:
+    - reference_id: '1310.0265'
+      title: On neutrinoless double beta decay in the minimal left-right symmetric model
+      authors:
+      - Wei-Chih Huang
+      - J. Lopez-Pavon
+      year: 2013
+      arxiv_id: '1310.0265'
+      doi: null
+      url: null
+      role: extension
+      notes: Assigned SQLite full text; paper studies compatibility of a keV right-handed neutrino dark
+        matter candidate with the minimal left-right symmetric model and future neutrinoless double beta
+        decay signals.
+    - reference_id: '1310.0265'
+      title: On neutrinoless double beta decay in the minimal left-right symmetric model
+      authors:
+      - Huang, Wei-Chih
+      - Lopez-Pavon, J.
+      year: 2014
+      arxiv_id: '1310.0265'
+      doi: 10.1140/epjc/s10052-014-2853-z
+      url: https://arxiv.org/abs/1310.0265
+      role: original_model
+      notes: Primary assigned paper text resolved locally.
+    constraint_papers:
+    - reference_id: '1310.6218'
+      title: The Effect of Cancellation in Neutrinoless Double Beta Decay
+      authors:
+      - Pascoli, Silvia
+      - Mitra, Manimala
+      - Wong, Steven
+      year: 2013
+      arxiv_id: '1310.6218'
+      doi: 10.48550/arXiv.1310.6218
+      url: https://arxiv.org/abs/1310.6218
+      role: constraint
+      notes: Related full text resolved locally and read within the three-paper cap.
+    - reference_id: '1506.03456'
+      title: Stringent dilepton bounds on left-right models using LHC data
+      authors:
+      - Patra, Sudhanwa
+      - Queiroz, Farinaldo S.
+      - Rodejohann, Werner
+      year: 2016
+      arxiv_id: '1506.03456'
+      doi: 10.1016/j.physletb.2015.11.009
+      url: https://arxiv.org/abs/1506.03456
+      role: constraint
+      notes: Related full text resolved locally and read within the three-paper cap.
+    review_papers:
+    - reference_id: '1502.06541'
+      title: Neutrinos and collider physics
+      authors:
+      - Deppisch, Frank F.
+      - Bhupal Dev, P. S.
+      - Pilaftsis, Apostolos
+      year: 2015
+      arxiv_id: '1502.06541'
+      doi: 10.1088/1367-2630/17/7/075019
+      url: https://arxiv.org/abs/1502.06541
+      role: review
+      notes: Related full text resolved locally and read within the three-paper cap.
+    external_databases: []
+  extraction:
+    method: llm_assisted
+    extracted_by: codex
+    extractor_name: GPT-5 Codex
+    extraction_date: '2026-05-31'
+    confidence: medium
+    source_chunks_or_sections:
+    - reference_id: '1310.0265'
+      section: abstract/introduction
+      page: null
+      quote_or_summary: The paper says a keV sterile neutrino can be accommodated as dark matter in left-right
+        symmetric models.
+    - reference_id: '1310.0265'
+      section: dark matter discussion
+      page: null
+      quote_or_summary: N1 is thermally produced by W_R or Z_R exchange and overproduces dark matter without
+        entropy dilution.
+    - reference_id: '1310.0265'
+      section: dark matter discussion
+      page: null
+      quote_or_summary: N2 and/or N3 decays can inject entropy after N1 freezes out, reducing the N1 density.
+    unresolved_items:
+    - The cited entropy-injection scenario was not independently recalculated.
+    - X-ray and Lyman-alpha limits are recorded from primary-paper discussion, not from a fresh likelihood.
+  evidence:
+    particle_content:
+    - reference_id: '1310.0265'
+      note: The candidate is the lightest right-handed neutrino N1 with keV-scale mass; N2 and N3 provide
+        possible entropy dilution.
+      confidence: high
+      section: dark matter discussion
+      page: null
+    interactions:
+    - reference_id: '1310.0265'
+      note: N1 is thermally produced through W_R or Z_R exchange in the left-right symmetric model.
+      confidence: high
+      section: dark matter discussion
+      page: null
+    production_mechanism:
+    - reference_id: '1310.0265'
+      note: The text gives a freeze-out temperature scaling with M_W_R and states that N1 decouples relativistically.
+      confidence: high
+      section: dark matter discussion
+      page: null
+    cosmological_history:
+    - reference_id: '1310.0265'
+      note: Entropy injection from out-of-equilibrium N2 or N3 decays is needed to reduce the thermal
+        N1 abundance.
+      confidence: high
+      section: dark matter discussion
+      page: null
+    parameter_ranges:
+    - reference_id: '1310.0265'
+      note: The DM-compatible spectrum has keV N1 and heavier right-handed neutrinos around GeV, with
+        M_W_R around 10-16 TeV or a cited 5 TeV alternative.
+      confidence: medium
+      section: dark matter discussion
+      page: null
+    validity_domain:
+    - reference_id: '1310.0265'
+      note: The paper emphasizes that the keV RH neutrino dark matter option is possible but not generic
+        in the MLRSM.
+      confidence: high
+      section: summary
+      page: null
+    observables:
+    - reference_id: '1310.0265'
+      note: Primary paper discusses keV N1 dark matter, entropy dilution, X-ray limits, Lyman-alpha, and
+        0nu beta beta compatibility.
+      confidence: high
+      section: Dark matter section
+      page: null
+    - reference_id: '1506.03456'
+      note: Related local text supplies left-right dilepton collider-bound context.
+      confidence: medium
+      section: LHC bounds
+      page: null
+    - reference_id: '1310.6218'
+      note: Related local text supports 0nu beta beta cancellation and sterile-neutrino context.
+      confidence: medium
+      section: 0nu beta beta analysis
+      page: null
+    constraints:
+    - reference_id: '1310.0265'
+      note: Primary paper quotes the N1 overproduction, entropy-injection, Lyman-alpha, X-ray, and 0nu
+        beta beta conditions.
+      confidence: high
+      section: Dark matter and phenomenology sections
+      page: null
+    - reference_id: '1506.03456'
+      note: Related local text derives stringent LHC dilepton bounds on left-right models.
+      confidence: medium
+      section: Collider bounds
+      page: null
+    routes:
+    - reference_id: '1310.0265'
+      note: Primary paper provides the relations among MLRSM parameters, N1 abundance, and 0nu beta beta
+        phenomenology.
+      confidence: high
+      section: Model and dark matter sections
+      page: null
+  review:
+    human_reviewed: false
+    reviewed_by: null
+    review_date: null
+    expert_reviewed: false
+    expert_reviewer: null
+    expert_review_date: null
+    reviewer_notes: []
+    scientific_confidence: medium
+    implementation_confidence: low
+  caveats:
+  - The dark matter mechanism relies partly on scenarios summarized from cited work; this paper uses them
+    to test compatibility with its MLRSM neutrinoless double beta decay regions.
+  - The neutral right-handed triplet scalar possibility is discussed but not emitted because the paper
+    finds it unfeasible for relevant 0nu beta beta phenomenology.
+robustness:
+  overall: low
+  theory_robustness: medium
+  observational_robustness: low
+  computational_robustness: unknown
+  constraint_robustness: not_applicable
+  dominant_uncertainties:
+  - Entropy dilution and flavor structure are required for viability.
+  - Some dark matter parameter details are imported in the paper from cited studies rather than derived
+    fully in this text.
+  validation_status: expert_judgment_only
+  notes: The assigned text supports the model variant, but the viability is narrow and not generic.
+agent_failure_modes:
+  warnings:
+  - id: not_generic_mlrsm_feature
+    severity: high
+    category: assumption_mismatch
+    warning: Do not treat keV N1 dark matter as a generic prediction of the MLRSM; the paper says it is
+      possible but not generic.
+    mitigation: Require the keV N1 spectrum plus entropy dilution assumptions before using this entry.
+    source_reference_ids:
+    - '1310.0265'
+  - id: entropy_dilution_required
+    severity: high
+    category: extrapolation
+    warning: Thermal keV N1 overproduces dark matter without late entropy injection.
+    mitigation: Include N2/N3 out-of-equilibrium decay history when computing relic abundance.
+    source_reference_ids:
+    - '1310.0265'
+  - id: triplet_scalar_not_emitted
+    severity: medium
+    category: invalid_mapping
+    warning: The paper also mentions a neutral right-handed triplet scalar, but finds it unfeasible for
+      the relevant phenomenology.
+    mitigation: Do not conflate the emitted N1 sterile-neutrino card with the discarded triplet-scalar
+      option.
+    source_reference_ids:
+    - '1310.0265'
+observables:
+- id: kev_n1_structure_suppression
+  name: Warm dark matter free-streaming from keV right-handed neutrino
+  channel: lyman_alpha
+  subchannel: small-scale power suppression
+  predicted_effect: A keV N1 dark matter state is warm enough for Lyman-alpha and structure constraints
+    to impose a lower mass bound in the thermal-history scenario discussed.
+  effect_direction: suppression
+  key_quantities:
+  - name: N1 mass
+    symbol: M1
+    range: keV scale; primary text cites M1 > 1 keV from Lyman-alpha in the entropy-injection scenario
+    unit: keV
+    role: core
+    status: inferred
+    source_reference_ids:
+    - '1310.0265'
+  - name: entropy dilution factor
+    symbol: S
+    description: Dilution from out-of-equilibrium N2/N3 decays.
+    role: derived
+    status: inferred
+    source_reference_ids:
+    - '1310.0265'
+  redshift_range: radiation era through structure formation
+  scale_range: Lyman-alpha forest scales
+  environments:
+  - intergalactic medium
+  - small-scale structure
+  observability: medium
+  relevance: high
+  linked_constraints:
+  - lyman_alpha_n1_mass_bound
+  - thermal_overproduction_entropy_dilution
+  linked_routes:
+  - mlrsm_neutrino_dm_to_observables
+  caveats:
+  - The primary paper quotes a bound from cited literature and does not recompute the Lyman-alpha likelihood.
+  source_reference_ids:
+  - '1310.0265'
+  notes: null
+- id: n1_xray_decay_line
+  name: X-ray decay constraint from active-heavy mixing
+  channel: indirect_detection
+  subchannel: X-ray line searches
+  predicted_effect: If N1 is the dark matter, its mixing-induced radiative decays create X-ray limits
+    on the allowed mixing and mass region.
+  effect_direction: spectral_line
+  key_quantities:
+  - name: active-heavy mixing
+    symbol: theta
+    role: core
+    status: inferred
+    source_reference_ids:
+    - '1310.0265'
+  - name: N1 mass
+    symbol: M1
+    unit: keV
+    role: core
+    status: inferred
+    source_reference_ids:
+    - '1310.0265'
+  redshift_range: late universe
+  scale_range: galaxy and cluster X-ray observations
+  environments:
+  - dark matter halos
+  observability: medium
+  relevance: high
+  linked_constraints:
+  - xray_mixing_decay_bound
+  linked_routes:
+  - mlrsm_neutrino_dm_to_observables
+  caveats:
+  - Exact excluded region is graphical in the primary text.
+  source_reference_ids:
+  - '1310.0265'
+  notes: null
+- id: neutrinoless_double_beta_lr_signal
+  name: Left-right contribution to neutrinoless double beta decay
+  channel: precision_laboratory
+  subchannel: 0nu beta beta decay
+  predicted_effect: Right-handed currents and heavy-neutrino exchange can dominate the 0nu beta beta rate
+    in restricted MLRSM parameter regions compatible with the keV N1 scenario.
+  effect_direction: rate_change
+  key_quantities:
+  - name: right-handed W mass
+    symbol: M_W_R
+    range: about 10-16 TeV for entropy injection; lower alternatives require flavor structure
+    unit: TeV
+    role: core
+    status: inferred
+    source_reference_ids:
+    - '1310.0265'
+  - name: heavy right-handed neutrino masses
+    symbol: M2, M3
+    range: about 1-10 GeV in the mixed scenario; alternative 140 MeV and 245 MeV example quoted
+    unit: GeV
+    role: core
+    status: inferred
+    source_reference_ids:
+    - '1310.0265'
+  redshift_range: present-day laboratory experiments
+  scale_range: nuclear matrix element scale
+  environments:
+  - 0nu beta beta experiments
+  observability: medium
+  relevance: high
+  linked_constraints:
+  - neutrinoless_double_beta_np_window
+  linked_routes:
+  - mlrsm_neutrino_dm_to_observables
+  caveats:
+  - Nuclear matrix elements and cancellations in the light-neutrino term affect the interpretation.
+  source_reference_ids:
+  - '1310.0265'
+  - '1310.6218'
+  notes: null
+- id: lr_gauge_boson_collider_bounds
+  name: Collider limits on right-handed gauge bosons
+  channel: collider
+  subchannel: dilepton and heavy-neutrino searches
+  predicted_effect: The W_R/Z_R scale entering N1 thermal history and 0nu beta beta phenomenology is constrained
+    by collider searches for left-right gauge bosons.
+  effect_direction: rate_change
+  key_quantities:
+  - name: right-handed gauge-boson scale
+    symbol: v_R or M_W_R
+    unit: TeV
+    role: core
+    status: inferred
+    source_reference_ids:
+    - '1310.0265'
+    - '1506.03456'
+  redshift_range: LHC era
+  scale_range: TeV partonic scales
+  environments:
+  - hadron colliders
+  observability: medium
+  relevance: medium
+  linked_constraints:
+  - collider_lr_gauge_boson_bounds
+  linked_routes:
+  - mlrsm_neutrino_dm_to_observables
+  caveats:
+  - Collider bounds are model dependent and need branching-ratio assumptions.
+  source_reference_ids:
+  - '1310.0265'
+  - '1506.03456'
+  notes: null
+constraints:
+- id: thermal_overproduction_entropy_dilution
+  name: Thermal N1 overproduction requires entropy dilution
+  constraint_type: cosmological
+  observable_channel: relic abundance
+  applies: parameter_dependent
+  constrained_parameters:
+  - M1
+  - M_W_R
+  - M2
+  - M3
+  - entropy injection
+  excluded_regions:
+  - Thermal N1 abundance for keV M1 without sufficient dilution overcloses the observed dark matter density.
+  allowed_regions:
+  - Out-of-equilibrium N2/N3 decays can dilute N1; primary text quotes M_W_R about 10-16 TeV and M2,M3
+    around 1-10 GeV for one scenario.
+  benchmark_implications:
+  - Successful keV N1 dark matter is possible but not generic in the MLRSM.
+  likelihood_available: 'no'
+  likelihood_reference: null
+  data_release: null
+  recasting_needed: 'yes'
+  robustness: medium
+  assumptions:
+  - id: thermal_n1_initial_state
+    description: N1 was once in thermal equilibrium through right-handed interactions.
+    scope: early-universe abundance
+    status: assumed
+    impact_if_violated: Nonthermal N1 production would change the relic-density constraint.
+    can_be_relaxed: 'yes'
+    source_reference_ids:
+    - '1310.0265'
+    notes: null
+  caveats:
+  - The detailed entropy-injection model is cited rather than recomputed.
+  source_reference_ids:
+  - '1310.0265'
+  notes: null
+- id: lyman_alpha_n1_mass_bound
+  name: Lyman-alpha lower bound on keV N1 mass
+  constraint_type: cosmological
+  observable_channel: lyman_alpha
+  applies: 'yes'
+  constrained_parameters:
+  - M1
+  - momentum distribution
+  excluded_regions:
+  - Primary text quotes Lyman-alpha requiring M1 > 1 keV in the summarized thermal-dilution scenario.
+  allowed_regions:
+  - M1 above about 1 keV, subject to the assumed production and dilution history.
+  benchmark_implications:
+  - Very light N1 benchmarks are disfavored unless their distribution is colder than assumed.
+  likelihood_available: 'no'
+  likelihood_reference: null
+  data_release: null
+  recasting_needed: 'yes'
+  robustness: medium
+  assumptions:
+  - id: thermal_warm_distribution
+    description: The N1 momentum distribution follows the cited thermal-plus-dilution scenario.
+    scope: structure formation
+    status: assumed
+    impact_if_violated: A colder distribution would weaken the bound.
+    can_be_relaxed: partial
+    source_reference_ids:
+    - '1310.0265'
+    notes: null
+  caveats:
+  - No Lyman-alpha transfer-function calculation was performed here.
+  source_reference_ids:
+  - '1310.0265'
+  notes: null
+- id: xray_mixing_decay_bound
+  name: X-ray limits on N1 dark matter mixing
+  constraint_type: astrophysical
+  observable_channel: X-ray searches
+  applies: 'yes'
+  constrained_parameters:
+  - M1
+  - theta
+  excluded_regions:
+  - The region between the red dashed X-ray lines in the primary figure is ruled out when N1 is dark matter.
+  allowed_regions:
+  - Mixing angles below the X-ray excluded band for the chosen M1 and neutrino parameters.
+  benchmark_implications:
+  - 0nu beta beta regions with too-large active-heavy mixing are excluded if N1 is all dark matter.
+  likelihood_available: 'no'
+  likelihood_reference: null
+  data_release: null
+  recasting_needed: 'yes'
+  robustness: medium
+  assumptions:
+  - id: n1_all_dm
+    description: The X-ray bound applies when N1 constitutes the dark matter abundance.
+    scope: indirect detection
+    status: assumed
+    impact_if_violated: A subdominant N1 fraction would rescale the limit.
+    can_be_relaxed: 'yes'
+    source_reference_ids:
+    - '1310.0265'
+    notes: null
+  caveats:
+  - The exclusion is graphical in the primary text.
+  source_reference_ids:
+  - '1310.0265'
+  notes: null
+- id: neutrinoless_double_beta_np_window
+  name: 0nu beta beta new-physics dominated window
+  constraint_type: laboratory
+  observable_channel: 0nu beta beta
+  applies: parameter_dependent
+  constrained_parameters:
+  - v_R
+  - M_W_R
+  - M2
+  - M3
+  - theta
+  - Y_Delta_ee
+  excluded_regions:
+  - Parameter regions where light-neutrino exchange dominates or experimental bounds on W_R/mixing are
+    violated.
+  allowed_regions:
+  - Specific mixed or hierarchical right-handed-neutrino spectra can yield a future new-physics dominated
+    signal.
+  benchmark_implications:
+  - The keV N1 dark matter scenario can coexist with a 0nu beta beta signal only in restricted regions.
+  likelihood_available: partial
+  likelihood_reference: null
+  data_release: null
+  recasting_needed: 'yes'
+  robustness: medium
+  assumptions:
+  - id: no_uncontrolled_cancellation
+    description: The analysis keeps correlations from neutrino mass generation and avoids untracked fine-tuned
+      cancellations except where stated.
+    scope: 0nu beta beta amplitude
+    status: assumed
+    impact_if_violated: Additional cancellations can change the signal window.
+    can_be_relaxed: partial
+    source_reference_ids:
+    - '1310.0265'
+    - '1310.6218'
+    notes: null
+  caveats:
+  - Nuclear matrix element and phase-space uncertainties are not propagated.
+  source_reference_ids:
+  - '1310.0265'
+  - '1310.6218'
+  notes: null
+- id: collider_lr_gauge_boson_bounds
+  name: LHC dilepton bounds on left-right gauge bosons
+  constraint_type: collider
+  observable_channel: dilepton resonance searches
+  applies: recast_required
+  constrained_parameters:
+  - M_W_R
+  - M_Z_R
+  - g_R
+  - branching fractions
+  excluded_regions:
+  - Low right-handed gauge-boson masses with visible dilepton branching fractions are excluded by LHC
+    searches.
+  allowed_regions:
+  - Higher gauge-boson masses or branching patterns that evade dilepton limits.
+  benchmark_implications:
+  - Collider bounds can tension low-M_W_R entropy-dilution or 0nu beta beta scenarios.
+  likelihood_available: partial
+  likelihood_reference: null
+  data_release: null
+  recasting_needed: 'yes'
+  robustness: medium
+  assumptions:
+  - id: minimal_lr_couplings
+    description: The collider limit assumes left-right gauge couplings and visible branching ratios similar
+      to the related-paper setup.
+    scope: collider recast
+    status: assumed
+    impact_if_violated: Hidden or nonstandard decays can weaken the limit.
+    can_be_relaxed: 'yes'
+    source_reference_ids:
+    - '1506.03456'
+    notes: null
+  caveats:
+  - The batch did not run a collider simulation.
+  source_reference_ids:
+  - '1506.03456'
+  - '1310.0265'
+  notes: null
+theory_to_observable_routing:
+  routes:
+  - id: mlrsm_neutrino_dm_to_observables
+    description: Combine MLRSM neutrino masses and right-handed currents with N1 relic abundance, X-ray
+      decay, Lyman-alpha, 0nu beta beta, and collider constraints.
+    source_model_features:
+    - SU(2)_L x SU(2)_R x U(1)_{B-L} gauge structure
+    - keV lightest right-handed neutrino dark matter
+    - heavier right-handed neutrino entropy injection
+    input_parameters:
+    - M1
+    - M2
+    - M3
+    - M_W_R
+    - v_R
+    - theta
+    - Y_Delta_ee
+    derived_quantities:
+    - N1 relic density before and after dilution
+    - radiative decay rate
+    - 0nu beta beta effective amplitude
+    - collider production cross section
+    forward_model_chain:
+    - step_id: thermal_abundance
+      step_type: analytic_formula
+      tool_or_code: null
+      inputs:
+      - M1
+      - M_W_R
+      - g_star
+      outputs:
+      - Omega_N1 before dilution
+      validity: Applies when N1 is thermally produced through right-handed interactions.
+      notes: Primary text quotes the abundance scaling.
+    - step_id: entropy_and_structure
+      step_type: semi_analytic_model
+      tool_or_code: entropy-injection plus warm-DM transfer estimate
+      inputs:
+      - M2
+      - M3
+      - N1 momentum distribution
+      outputs:
+      - diluted abundance
+      - Lyman-alpha viability
+      validity: Requires a production-specific momentum distribution for precision.
+      notes: null
+    - step_id: laboratory_and_collider
+      step_type: recasting
+      tool_or_code: 0nu beta beta and LHC recasts
+      inputs:
+      - mixing matrix
+      - v_R
+      - gauge boson masses
+      outputs:
+      - 0nu beta beta rate
+      - collider exclusions
+      validity: Nuclear matrix elements and branching fractions must be specified.
+      notes: null
+    observable_ids:
+    - kev_n1_structure_suppression
+    - n1_xray_decay_line
+    - neutrinoless_double_beta_lr_signal
+    - lr_gauge_boson_collider_bounds
+    constraint_ids:
+    - thermal_overproduction_entropy_dilution
+    - lyman_alpha_n1_mass_bound
+    - xray_mixing_decay_bound
+    - neutrinoless_double_beta_np_window
+    - collider_lr_gauge_boson_bounds
+    likelihoods: []
+    required_code_resources:
+    - sterile-neutrino decay calculator
+    - warm-DM transfer-function recast
+    - 0nu beta beta nuclear-matrix-element inputs
+    - LHC LR-model recast
+    validation_tests:
+    - Recover quoted Omega_N1 scaling
+    - Recover M1 > 1 keV and M_W_R 10-16 TeV thermal-dilution benchmark
+    route_status: planned
+    agent_notes: null
+    caveats:
+    - Several constraints are cited or graphical in the primary paper and need external recasts for precision.

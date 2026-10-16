@@ -1,0 +1,725 @@
+_source:
+  shard: arXiv_src_1812_033_wds.tar
+  paper_id: '1812_10963'
+  source_member: 1812_10963.json
+  enriched: true
+  enrichment_schema_version: dm_model_ocr_enrichment_smoke_v0
+schema_version: model_only_v0
+model_id: 1812_10963_leptophilic_light_flavon_hot_relic_v1
+identity:
+  name: Leptophilic light flavon hot-relic model
+  family: freeze_in_dark_matter
+  aliases:
+  - light pseudo-Goldstone flavon relic
+  - leptophilic flavon relic
+  short_description: A Froggatt-Nielsen leptophilic flavon setup where the imaginary component is a very
+    light pseudo-Goldstone relic produced by freeze-out or freeze-in and allowed only as a subdominant
+    hot relic.
+  historical_origin_or_motivation: Uses the Froggatt-Nielsen mechanism to generate charged-lepton Yukawa
+    structure and studies the cosmological abundance of the light pseudo-Goldstone component.
+  status: speculative
+  model_kind: effective_field_theory
+theory:
+  theory_level: effective_field_theory
+  parent_frameworks:
+  - Froggatt-Nielsen mechanism
+  - leptophilic flavon model
+  lagrangian_available: partial
+  renormalizable: 'no'
+  embedded_in_larger_framework: 'yes'
+  notes: The paper writes effective Froggatt-Nielsen Yukawa operators and a scalar potential for a complex
+    flavon; only the charged-lepton sector is modeled explicitly.
+particle_content:
+  dark_matter_candidate:
+    name: light pseudo-Goldstone flavon eta
+    spin: '0'
+    statistics: scalar
+    elementary_or_composite: elementary
+    number_of_components: subcomponent
+  additional_dark_sector_particles:
+  - real flavon scalar rho
+  mediators:
+  - flavon-Higgs mixing
+  - flavor-violating charged-lepton couplings
+  dark_radiation_species: []
+  excited_or_degenerate_states: []
+  long_lived_particles:
+  - light pseudo-Goldstone flavon eta
+  unstable_parent_particles: []
+  standard_model_extension: substantial
+symmetries:
+  stabilizing_mechanism: No exact stabilizing symmetry is identified; the relic is light and feebly coupled,
+    with dominant decay to two photons for m_eta below 2 m_e.
+  symmetries:
+  - name: global Froggatt-Nielsen U(1)
+    type: global
+    exact_or_approximate: broken
+    breaking: spontaneous breaking by the flavon vev, leaving a light pseudo-Goldstone mode
+    breaking_scale:
+      name: flavon vev
+      symbol: v_phi
+      range: v_phi > 14.4 TeV from the charged-lepton flavor setup; freeze-out for roughly 1e4-1e8 GeV
+        and freeze-in above about 1e9 GeV
+      unit: GeV
+      role: core
+      status: inferred
+      source_reference_ids:
+      - '1812_10963'
+  topological_defects_possible: unknown
+interactions:
+  portals:
+  - higgs
+  - other
+  standard_model_targets:
+  - charged leptons
+  - photons from eta decay
+  - SM Higgs sector
+  dark_sector_couplings:
+  - flavon self interactions
+  - eta-rho-Higgs interactions
+  mediator_types:
+  - scalar flavon
+  - SM Higgs mixing
+  interaction_operators:
+  - Froggatt-Nielsen charged-lepton Yukawa operators
+  - flavon-Higgs scalar potential terms
+  annihilation_channels:
+  - charged-lepton final states through flavon interactions when thermally coupled
+  decay_channels:
+  - eta -> gamma gamma for m_eta < 2 m_e
+  tree_or_loop_level: both
+parameters:
+  core:
+  - name: pseudo-Goldstone flavon mass
+    symbol: m_eta
+    description: Mass range studied below the electron-pair threshold.
+    range: 0 < m_eta < 2 m_e
+    unit: energy
+    role: core
+    status: inferred
+    source_reference_ids:
+    - '1812_10963'
+  - name: flavon vev
+    symbol: v_phi
+    description: Controls the coupling to the SM bath and the switch between freeze-out and freeze-in.
+    range: v_phi > 14.4 TeV; freeze-out around 1e4-1e8 GeV; freeze-in for v_phi above about 1e9 GeV
+    unit: GeV
+    role: core
+    status: inferred
+    source_reference_ids:
+    - '1812_10963'
+    scale: log
+  - name: flavor-violating flavon coupling matrix
+    symbol: lambda_ij
+    description: Charged-lepton couplings induced after diagonalizing the Froggatt-Nielsen Yukawa texture.
+    range: model-dependent and proportional to v_h / v_phi
+    role: core
+    status: inferred
+    source_reference_ids:
+    - '1812_10963'
+  derived:
+  - name: would-be stable relic abundance
+    symbol: Omega_eta,0 h^2
+    description: Abundance the flavon relic would have today if stable; the actual abundance is reduced
+      by decay.
+    range: below the observed dark matter abundance in the allowed regions discussed
+    role: derived
+    status: inferred
+    source_reference_ids:
+    - '1812_10963'
+production:
+  mechanisms:
+  - relativistic freeze-out for smaller v_phi
+  - freeze-in for larger v_phi
+  thermal_equilibrium_with_standard_model: partial
+  thermal_equilibrium_with_hidden_sector: not_applicable
+  abundance_set_by:
+  - flavon vev
+  - pseudo-Goldstone mass
+  - charged-lepton interaction rates
+  - decay lifetime
+  depends_on_reheating_temperature: unknown
+  can_produce_all_dark_matter: 'no'
+  nonthermal_momentum_distribution: parameter_dependent
+  notes: The paper describes freeze-out for v_phi of order 1e4-1e8 GeV and freeze-in above about 1e9 GeV,
+    with abundance below the observed DM density.
+relic_density:
+  full_or_subcomponent: subcomponent
+  target_fraction: null
+  calculation_type: mixed
+  key_dependencies:
+  - m_eta
+  - v_phi
+  - eta lifetime
+  - charged-lepton flavor couplings
+  requires_entropy_dilution: unknown
+  overclosure_risk: parameter_dependent
+  underproduction_risk: 'yes'
+  tuning_assessment: unknown
+cosmological_history:
+  standard_history_assumed: true
+  nonstandard_features:
+  - late energy injection from eta decays may be relevant when the lifetime is long
+  dark_sector_temperature: null
+  delta_neff: null
+  kinetic_decoupling: null
+  chemical_decoupling:
+    name: eta freeze-out or freeze-in transition
+    range: set mainly by v_phi
+    role: derived
+    status: inferred
+    source_reference_ids:
+    - '1812_10963'
+  phase_transitions:
+  - Froggatt-Nielsen U(1) breaking
+  topological_defects: []
+  isocurvature_perturbations: unknown
+  bbn_relevance: high
+  cmb_relevance: high
+phase_space:
+  distribution_type: mixed_cold_warm
+  distribution_function_available: 'no'
+  average_momentum_relative_to_thermal: relativistic for the freeze-out hot-relic regime
+  free_streaming_length: null
+  velocity_dispersion_today: null
+  phase_space_bounds:
+  - small-scale structure restricts the hot relic fraction
+  notes: The paper treats the particle as a hot relic for masses below a few keV and only a small subcomponent
+    is feasible.
+structure_formation:
+  linear:
+    behaves_like_cdm: 'no'
+    transfer_function_shape: smooth_cutoff
+    small_scale_power_effect: suppression
+  nonlinear:
+    halo_mass_function_effect: unknown for subdominant fraction
+    subhalo_mass_function_effect: unknown for subdominant fraction
+    simulation_calibrated: 'no'
+validity_domain:
+- id: m_eta_below_pair_threshold
+  applies_to: model
+  condition: The analysis is restricted to m_eta < 2 m_e so that the dominant decay is to two photons.
+  status: assumed
+  extrapolation_risk: unknown
+  source_reference_ids:
+  - '1812_10963'
+- id: leptophilic_sector_only
+  applies_to: model
+  condition: Only the charged-lepton sector is explicitly modeled; other fermion textures would require
+    extra flavons or symmetries.
+  status: assumed
+  extrapolation_risk: unknown
+  source_reference_ids:
+  - '1812_10963'
+assumptions:
+  global:
+  - id: subcomponent_relic
+    description: The light flavon is treated as a relic whose abundance is below the total observed dark
+      matter abundance.
+    scope: production
+    status: inferred
+    can_be_relaxed: unknown
+    source_reference_ids:
+    - '1812_10963'
+  - id: fn_charge_texture
+    description: The chosen Froggatt-Nielsen charge assignment determines the charged-lepton Yukawa texture
+      and flavor-violating couplings.
+    scope: theory
+    status: assumed
+    can_be_relaxed: unknown
+    source_reference_ids:
+    - '1812_10963'
+associated_code:
+  has_associated_code: unknown
+  code_summary: No model-specific public code was identified in the assigned text.
+  repositories: []
+  packages_or_modules: []
+  notebooks: []
+  scripts: []
+provenance:
+  model_id: 1812_10963_leptophilic_light_flavon_hot_relic_v1
+  model_name: Leptophilic light flavon hot-relic model
+  model_family: freeze_in_dark_matter
+  entry_version: 0.1.0
+  status: machine_extracted
+  created_at: '2026-05-31'
+  last_updated: '2026-05-31'
+  sources:
+    primary_papers:
+    - reference_id: '1812_10963'
+      title: Cosmological constraints on light flavons
+      year: 2018
+      arxiv_id: '1812.10963'
+      doi: null
+      url: null
+      role: original_model
+      notes: Assigned SQLite full text used as the only source.
+    - arxiv_id: '1812.10963'
+      authors:
+      - Matti Heikinheimo
+      - Katri Huitu
+      - Venus Keus
+      - Niko Koivunen
+      doi: 10.1007/JHEP06(2019)065
+      notes: Primary assigned paper; full text resolved locally.
+      reference_id: src_1812_10963
+      role: original_model
+      title: Cosmological constraints on light flavons
+      url: https://arxiv.org/abs/1812.10963
+      year: 2019
+    constraint_papers:
+    - arxiv_id: '1610.10051'
+      authors:
+      - Poulin, Vivian
+      - Lesgourgues, Julien
+      - Serpico, Pasquale D.
+      doi: 10.1088/1475-7516/2017/03/043
+      notes: Related ADS-shortlist paper resolved and read locally.
+      reference_id: src_1610_10051
+      role: constraint
+      title: Cosmological constraints on exotic injection of electromagnetic energy
+      url: https://arxiv.org/abs/1610.10051
+      year: 2017
+    - arxiv_id: '1702.01764'
+      authors:
+      - Iršič, Vid
+      - Viel, Matteo
+      - Haehnelt, Martin G.
+      - Bolton, James S.
+      - Cristiani, Stefano
+      - Becker, George D.
+      doi: 10.1103/PhysRevD.96.023522
+      notes: Related ADS-shortlist paper resolved and read locally.
+      reference_id: src_1702_01764
+      role: constraint
+      title: New constraints on the free-streaming of warm dark matter from intermediate and small scale
+        Lyman-α forest data
+      url: https://arxiv.org/abs/1702.01764
+      year: 2017
+    external_databases: []
+    review_papers:
+    - arxiv_id: '2202.09371'
+      authors:
+      - Carmona, Adrian
+      - Elahi, Fatemeh
+      - Scherb, Christiane
+      - Schwaller, Pedro
+      doi: 10.1007/JHEP07(2022)122
+      notes: Related ADS-shortlist paper resolved and read locally.
+      reference_id: src_2202_09371
+      role: other
+      title: 'The ALPs from the top: searching for long lived axion-like particles from exotic top decays'
+      url: https://arxiv.org/abs/2202.09371
+      year: 2022
+  extraction:
+    method: llm_assisted
+    extracted_by: codex_batch_0012
+    extractor_name: Codex GPT-5
+    extraction_date: '2026-05-31'
+    confidence: medium
+    source_chunks_or_sections:
+    - reference_id: '1812_10963'
+      section: Introduction
+      page: null
+      quote_or_summary: The paper studies a leptophilic flavon with a very light pseudo-Goldstone component
+        and its cosmological abundance.
+    - reference_id: '1812_10963'
+      section: Thermal history and conclusions
+      page: null
+      quote_or_summary: Freeze-out occurs for smaller v_phi, freeze-in for larger v_phi, and the abundance
+        is below the observed DM relic density.
+    unresolved_items:
+    - No dedicated mixed hot+cold transfer-function likelihood is supplied for the subdominant hot flavon
+      fraction.
+    - The third locally read related text was tangential collider/ALP context and was not used for structured
+      scientific claims.
+  evidence:
+    particle_content:
+    - reference_id: '1812_10963'
+      note: The complex flavon contains a real scalar and a light pseudo-Goldstone mode eta.
+      confidence: medium
+      section: Froggatt-Nielsen setup
+    symmetries:
+    - reference_id: '1812_10963'
+      note: A global U(1) Froggatt-Nielsen symmetry is spontaneously broken by the flavon vev.
+      confidence: medium
+      section: Froggatt-Nielsen mechanism
+    interactions:
+    - reference_id: '1812_10963'
+      note: The paper derives charged-lepton flavon couplings and states eta decays dominantly to two
+        photons for m_eta < 2 m_e.
+      confidence: medium
+      section: Charged-lepton sector
+    production_mechanism:
+    - reference_id: '1812_10963'
+      note: The production mechanism changes from relativistic freeze-out to freeze-in as v_phi is increased.
+      confidence: medium
+      section: Thermal history
+    cosmological_history:
+    - reference_id: '1812_10963'
+      note: BBN, CMB, and small-scale-structure relevance are discussed for the light relic and its decays.
+      confidence: medium
+      section: Cosmological constraints
+    parameter_ranges:
+    - reference_id: '1812_10963'
+      note: The text gives v_phi > 14.4 TeV from the charged-lepton setup and focuses on m_eta < 2 m_e.
+      confidence: medium
+      section: CLFV and thermal history
+    validity_domain:
+    - reference_id: '1812_10963'
+      note: Only the leptonic sector is treated explicitly; other fermion textures need additional model
+        ingredients.
+      confidence: medium
+      section: Model setup
+    constraints:
+    - confidence: high
+      note: Primary paper gives the m_eta-v_phi allowed-region discussion and CLFV lower bound.
+      page: null
+      reference_id: src_1812_10963
+      section: null
+    - confidence: medium
+      note: Energy-injection paper describes BBN/CMB constraint channels for electromagnetic decays.
+      page: null
+      reference_id: src_1610_10051
+      section: null
+    observables:
+    - confidence: high
+      note: Primary text identifies eta decay, freeze-out/freeze-in regimes, hot-relic behavior, and CLFV
+        origin.
+      page: null
+      reference_id: src_1812_10963
+      section: null
+    - confidence: medium
+      note: Related paper supports use of BBN/CMB energy-injection constraints for decaying relics.
+      page: null
+      reference_id: src_1610_10051
+      section: null
+    - confidence: medium
+      note: Related Lyman-alpha paper supports free-streaming constraints for warm/hot components.
+      page: null
+      reference_id: src_1702_01764
+      section: null
+    routes:
+    - confidence: high
+      note: Primary paper outlines the abundance/lifetime calculation chain.
+      page: null
+      reference_id: src_1812_10963
+      section: null
+  review:
+    human_reviewed: false
+    reviewed_by: null
+    review_date: null
+    expert_reviewed: false
+    expert_reviewer: null
+    expert_review_date: null
+    reviewer_notes: []
+    scientific_confidence: medium
+    implementation_confidence: medium
+  caveats:
+  - 'Borderline inclusion: the paper frames the particle as a constrained light relic/subcomponent rather
+    than the full dark matter abundance.'
+robustness:
+  overall: medium
+  theory_robustness: medium
+  observational_robustness: unknown
+  computational_robustness: unknown
+  dominant_uncertainties:
+  - Whether the light flavon should be interpreted as a dark-matter subcomponent rather than merely a
+    constrained relic.
+  validation_status: expert_judgment_only
+  notes: Accepted only as a subcomponent hot relic model-card candidate.
+agent_failure_modes:
+  warnings:
+  - id: not_full_dm
+    severity: medium
+    category: assumption_mismatch
+    warning: Do not treat this flavon relic as the full dark matter abundance; the paper finds only subdominant
+      abundance is feasible.
+    source_reference_ids:
+    - '1812_10963'
+observables:
+- caveats: []
+  channel: cmb
+  effect_direction: enhancement
+  environments:
+  - early Universe
+  id: obs_photon_energy_injection
+  key_quantities:
+  - name: pseudo-Goldstone flavon mass
+    range: 0 < m_eta < 2 m_e
+    role: derived
+    source_reference_ids:
+    - src_1812_10963
+    status: inferred
+    symbol: m_eta
+  - name: flavon lifetime
+    role: derived
+    source_reference_ids:
+    - src_1812_10963
+    status: inferred
+    symbol: tau_eta
+  - name: would-be stable abundance
+    role: derived
+    source_reference_ids:
+    - src_1812_10963
+    status: inferred
+    symbol: Omega_eta,0 h^2
+  linked_constraints:
+  - con_bbn_cmb_energy_injection
+  linked_routes:
+  - route_flavon_abundance_decay
+  name: Two-photon decay energy injection
+  notes: null
+  observability: high
+  predicted_effect: For m_eta below the electron-pair threshold, the pseudo-Goldstone flavon decays dominantly
+    to two photons; its lifetime and abundance determine energy injection during or after BBN and recombination.
+  redshift_range: BBN through recombination for long lifetimes
+  relevance: high
+  scale_range: null
+  source_reference_ids:
+  - src_1812_10963
+  - src_1610_10051
+  subchannel: BBN/recombination electromagnetic injection
+- caveats:
+  - The primary paper does not provide a dedicated mixed hot+cold transfer-function likelihood.
+  channel: lyman_alpha
+  effect_direction: suppression
+  environments:
+  - intergalactic medium
+  - small-scale structure
+  id: obs_hot_relic_small_scale_suppression
+  key_quantities:
+  - name: hot relic fraction
+    role: derived
+    source_reference_ids:
+    - src_1812_10963
+    status: inferred
+    symbol: f_eta
+  - name: mass
+    role: derived
+    source_reference_ids:
+    - src_1812_10963
+    status: inferred
+    symbol: m_eta
+  - name: flavon vev
+    role: derived
+    source_reference_ids:
+    - src_1812_10963
+    status: inferred
+    symbol: v_phi
+  linked_constraints:
+  - con_hot_relic_fraction
+  linked_routes:
+  - route_flavon_abundance_decay
+  name: Hot-relic small-scale suppression
+  notes: null
+  observability: medium
+  predicted_effect: For m_eta below a few keV, the relic is hot and cannot be the dominant dark matter
+    component without suppressing small-scale structure; the primary paper keeps only small subdominant
+    fractions viable.
+  redshift_range: null
+  relevance: high
+  scale_range: small cosmological scales probed by Lyman-alpha and structure formation
+  source_reference_ids:
+  - src_1812_10963
+  - src_1702_01764
+  subchannel: subdominant hot relic free streaming
+- caveats: []
+  channel: precision_laboratory
+  effect_direction: rate_change
+  environments:
+  - laboratory charged-lepton experiments
+  id: obs_charged_lepton_flavor_violation
+  key_quantities:
+  - name: flavon vev
+    role: derived
+    source_reference_ids:
+    - src_1812_10963
+    status: inferred
+    symbol: v_phi
+  - name: flavor-violating couplings
+    role: derived
+    source_reference_ids:
+    - src_1812_10963
+    status: inferred
+    symbol: lambda_ij
+  linked_constraints:
+  - con_clfv_lower_vev
+  linked_routes:
+  - route_flavon_abundance_decay
+  name: Charged-lepton flavor violation
+  notes: null
+  observability: high
+  predicted_effect: The leptophilic Froggatt-Nielsen texture induces flavor-violating scalar interactions;
+    non-observation of CLFV processes sets a lower bound on the flavon vev.
+  redshift_range: null
+  relevance: high
+  scale_range: null
+  source_reference_ids:
+  - src_1812_10963
+  subchannel: charged-lepton flavor violation
+constraints:
+- allowed_regions:
+  - The first-pass card records v_phi > 14.4 TeV and the primary text describes an O(TeV) lower bound.
+  applies: 'yes'
+  assumptions: []
+  benchmark_implications:
+  - Allowed cosmological regions must also satisfy the CLFV vev floor.
+  caveats: []
+  constrained_parameters:
+  - v_phi
+  - lambda_ij
+  constraint_type: laboratory
+  data_release: null
+  excluded_regions:
+  - v_phi below the CLFV lower bound is excluded for the chosen leptophilic texture.
+  id: con_clfv_lower_vev
+  likelihood_available: unknown
+  likelihood_reference: null
+  name: Lower bound on flavon vev from CLFV
+  notes: null
+  observable_channel: charged-lepton flavor violation
+  recasting_needed: 'no'
+  robustness: medium
+  source_reference_ids:
+  - src_1812_10963
+- allowed_regions:
+  - Freeze-in regions with very small abundance and some low-mass long-lived cases remain allowed.
+  applies: parameter_dependent
+  assumptions:
+  - can_be_relaxed: 'no'
+    description: The analysis is restricted to m_eta < 2 m_e so the two-photon channel dominates.
+    id: two_photon_decay
+    impact_if_violated: Above threshold, charged-lepton decays would change the energy-deposition history.
+    notes: null
+    scope: decay
+    source_reference_ids:
+    - src_1812_10963
+    status: assumed
+  benchmark_implications:
+  - Masses in the eV-to-MeV range require checking decay lifetime and abundance together.
+  caveats: []
+  constrained_parameters:
+  - tau_eta
+  - Omega_eta,0 h^2
+  - m_eta
+  constraint_type: cosmological
+  data_release: null
+  excluded_regions:
+  - Large abundance with lifetimes depositing photons during/after BBN or recombination is excluded by
+    light-element and CMB observations.
+  id: con_bbn_cmb_energy_injection
+  likelihood_available: unknown
+  likelihood_reference: null
+  name: BBN/CMB energy-injection constraints
+  notes: null
+  observable_channel: electromagnetic energy deposition
+  recasting_needed: 'yes'
+  robustness: medium
+  source_reference_ids:
+  - src_1812_10963
+  - src_1610_10051
+- allowed_regions:
+  - The paper uses an order-one-percent hot-relic fraction as a conservative viable scale for freeze-in
+    relics.
+  applies: parameter_dependent
+  assumptions: []
+  benchmark_implications:
+  - Treat the flavon as a subcomponent, not all dark matter, unless a transfer-function analysis is supplied.
+  caveats:
+  - The one-percent criterion is an estimate in the primary paper, not a dedicated likelihood.
+  constrained_parameters:
+  - f_eta
+  - m_eta
+  constraint_type: cosmological
+  data_release: null
+  excluded_regions:
+  - A dominant hot relic below a few keV is disfavored by small-scale structure suppression.
+  id: con_hot_relic_fraction
+  likelihood_available: 'no'
+  likelihood_reference: null
+  name: Small hot-relic fraction requirement
+  notes: null
+  observable_channel: small-scale structure/free streaming
+  recasting_needed: 'yes'
+  robustness: medium
+  source_reference_ids:
+  - src_1812_10963
+  - src_1702_01764
+theory_to_observable_routing:
+  routes:
+  - agent_notes: The primary paper supplies the physics workflow but no reusable code was found.
+    caveats:
+    - Other Froggatt-Nielsen charge textures are outside the assigned model.
+    constraint_ids:
+    - con_clfv_lower_vev
+    - con_bbn_cmb_energy_injection
+    - con_hot_relic_fraction
+    derived_quantities:
+    - freeze-out/freeze-in abundance
+    - eta lifetime
+    - hot relic fraction
+    - energy-deposition history
+    description: Compute the light-flavon abundance and map it to CLFV, hot-relic, and energy-injection
+      constraints.
+    forward_model_chain:
+    - inputs:
+      - v_phi
+      - m_eta
+      - charged-lepton couplings
+      notes: Switches from relativistic freeze-out to freeze-in at large v_phi.
+      outputs:
+      - freeze-out or freeze-in regime
+      - Omega_eta,0 h^2
+      step_id: s1
+      step_type: analytic_formula
+      tool_or_code: null
+      validity: Matches the primary paper approximations.
+    - inputs:
+      - m_eta
+      - v_phi
+      notes: Decay lifetime controls BBN/CMB exposure.
+      outputs:
+      - tau_eta -> gamma gamma
+      step_id: s2
+      step_type: analytic_formula
+      tool_or_code: null
+      validity: Valid below the e+e- threshold.
+    - inputs:
+      - tau_eta
+      - abundance
+      - hot fraction
+      notes: Primary paper presents allowed regions rather than reusable likelihood code.
+      outputs:
+      - allowed/excluded regions
+      step_id: s3
+      step_type: recasting
+      tool_or_code: BBN/CMB and Lyman-alpha/hot-relic comparisons
+      validity: Needs external likelihoods for precise boundaries.
+    id: route_flavon_abundance_decay
+    input_parameters:
+    - m_eta
+    - v_phi
+    - lambda_ij
+    - initial thermal history
+    likelihoods:
+    - BBN light-element likelihood
+    - CMB anisotropy/spectral-distortion energy-injection likelihood
+    - Lyman-alpha/hot relic transfer likelihood
+    observable_ids:
+    - obs_photon_energy_injection
+    - obs_hot_relic_small_scale_suppression
+    - obs_charged_lepton_flavor_violation
+    required_code_resources:
+    - thermal-rate calculator
+    - energy-injection likelihood tables
+    - mixed hot+cold transfer solver
+    route_status: partially_implemented
+    source_model_features:
+    - leptophilic Froggatt-Nielsen flavon
+    - pseudo-Goldstone eta with m_eta < 2 m_e
+    - standard cosmological history
+    validation_tests:
+    - reproduce the primary m_eta-v_phi allowed-region plot
+    - recover CLFV vev floor
+    - verify hot-relic subcomponent assumption

@@ -1,0 +1,1026 @@
+_source:
+  shard: arXiv_src_2305_048_wds.tar
+  paper_id: '2305_06364'
+  source_member: 2305_06364.json
+  enriched: true
+  enrichment_schema_version: dm_model_ocr_enrichment_smoke_v0
+schema_version: model_only_v0
+model_id: 2305_06364_twin_sterile_neutrino_dark_matter_v1
+identity:
+  name: Twin sterile neutrino dark matter
+  family: sterile_neutrino_dark_matter
+  aliases:
+  - twin-sector sterile neutrino dark matter
+  - mirror twin Higgs sterile neutrino dark matter
+  short_description: A mirror twin Higgs scenario in which the dark matter is the twin-sector sterile
+    neutrino N_B, produced mainly by twin-sector active-sterile oscillations.
+  historical_origin_or_motivation: Combines mirror twin Higgs neutral naturalness with sterile-neutrino
+    dark matter while using sterile-neutrino decays to dilute the twin sector.
+  status: speculative
+  model_kind: simplified_model
+theory:
+  theory_level: simplified_model
+  parent_frameworks:
+  - mirror twin Higgs
+  - sterile neutrino seesaw
+  - Dodelson-Widrow production
+  lagrangian_available: partial
+  renormalizable: 'yes'
+  eft_cutoff: null
+  embedded_in_larger_framework: 'yes'
+  notes: The paper supplements a minimal mirror twin Higgs setup with one generation of right-handed neutrinos,
+    Majorana masses, and an inter-sector sterile-neutrino mixing term.
+particle_content:
+  dark_matter_candidate:
+    name: twin sterile neutrino N_B
+    spin: 1/2
+    statistics: fermion
+    elementary_or_composite: elementary
+    number_of_components: single_component
+  additional_dark_sector_particles:
+  - twin active neutrino nu_B
+  - twin Higgs doublet H_B
+  - twin charged leptons
+  - mirror twin Standard Model bath
+  mediators:
+  - twin electroweak gauge bosons W_B and Z_B
+  - sterile-neutrino mass mixing M_AB
+  dark_radiation_species:
+  - twin photons
+  - twin active neutrinos
+  excited_or_degenerate_states: []
+  long_lived_particles:
+  - twin sterile neutrino N_B
+  unstable_parent_particles:
+  - SM-sector sterile neutrino N_A
+  standard_model_extension: substantial
+symmetries:
+  stabilizing_mechanism: The dark matter is metastable because active-sterile and SM-twin mixings are
+    small, suppressing decays to Standard Model final states.
+  symmetries:
+  - name: mirror twin Z2
+    type: discrete
+    exact_or_approximate: broken
+    breaking: The neutrino sector allows M_A != M_B and y_nu^A != y_nu^B, and the benchmark uses v_B/v_A
+      = 3.
+    breaking_scale: null
+  - name: twin gauge symmetry
+    type: gauge
+    exact_or_approximate: exact
+    breaking: Broken by twin electroweak symmetry breaking.
+    breaking_scale: null
+  topological_defects_possible: unknown
+interactions:
+  portals:
+  - neutrino
+  - other
+  standard_model_targets:
+  - SM active neutrinos through sterile-sector mixing
+  - highly suppressed SM photons from loop-induced decays
+  dark_sector_couplings:
+  - twin neutrino Yukawa coupling y_nu^B H_B l_L^B nu_R^B
+  - twin Majorana mass M_B
+  - inter-sector sterile-neutrino mixing M_AB
+  mediator_types:
+  - twin electroweak gauge bosons
+  - sterile-neutrino mass mixing
+  interaction_operators:
+  - y_nu^i H^i l_L^i nu_R^i
+  - M_i nu_R^i nu_R^i / 2
+  - M_AB nu_R^A nu_R^B
+  scattering:
+    elastic: unknown
+    inelastic: unknown
+    momentum_dependence: unknown
+    velocity_dependence: unknown
+    spin_dependence: unknown
+  annihilation_channels: []
+  decay_channels:
+  - N_B decays mostly within the twin sector; SM photon-producing decays are suppressed when inter-sector
+    mixing is small
+  self_scattering_channels: []
+  cp_structure: unknown
+  flavor_structure: one neutrino generation is used for simplicity, with extension to three generations
+    noted as possible
+  tree_or_loop_level: both
+parameters:
+  core:
+  - name: twin sterile neutrino mass
+    symbol: M_N_B
+    description: Mass of the dark matter candidate, equal to M_B in the seesaw limit.
+    value: null
+    range: keV-scale region scanned in the paper figures
+    unit: keV
+    role: core
+    status: inferred
+    source_reference_ids:
+    - '2305_06364'
+    notes: The flattened text preserves the keV scaling in the production temperature but not exact figure-axis
+      ranges.
+  - name: twin active neutrino mass
+    symbol: m_nu_B
+    description: Twin active neutrino mass controlling the active-sterile mixing theta_B = m_B/M_B.
+    value: null
+    range: varied in the viable M_N_B - m_nu_B plane
+    unit: null
+    role: core
+    status: inferred
+    source_reference_ids:
+    - '2305_06364'
+    notes: null
+  - name: SM sterile neutrino mass
+    symbol: M_N_A
+    description: Mass of the heavier SM-sector sterile neutrino that freezes out and decays out of equilibrium.
+    value: null
+    range: viable region selected by N_A production and decay timing
+    unit: null
+    role: core
+    status: inferred
+    source_reference_ids:
+    - '2305_06364'
+    notes: null
+  - name: SM active neutrino mass parameter
+    symbol: m_nu_A
+    description: Controls production and decay of N_A through active-sterile mixing in the SM sector.
+    value: null
+    range: varied with M_N_A in the paper parameter scan
+    unit: null
+    role: core
+    status: inferred
+    source_reference_ids:
+    - '2305_06364'
+    notes: null
+  - name: inter-sector sterile mixing
+    symbol: theta_AB
+    description: Mixing between sterile states induced by M_AB / |M_A - M_B|, controlling SM-visible decays.
+    value: null
+    range: small enough to suppress SM photon-producing decays
+    unit: null
+    role: core
+    status: inferred
+    source_reference_ids:
+    - '2305_06364'
+    notes: null
+  - name: twin-to-SM Higgs vev ratio
+    symbol: v_B/v_A
+    description: Benchmark ratio used throughout the calculation.
+    value: 3
+    fiducial_value: 3
+    range: null
+    unit: null
+    role: core
+    status: assumed
+    source_reference_ids:
+    - '2305_06364'
+    notes: The introduction notes broader mirror-twin-Higgs viability for ratios about 3-5, while the
+      calculation adopts 3.
+  nuisance: []
+  derived:
+  - name: dark matter abundance
+    symbol: Omega_N_B
+    description: Relic abundance of twin sterile neutrinos after production and dilution by N_A decays.
+    value: Omega_DM in viable regions
+    range: null
+    unit: null
+    role: derived
+    status: inferred
+    source_reference_ids:
+    - '2305_06364'
+    notes: null
+production:
+  mechanisms:
+  - twin-sector Dodelson-Widrow active-to-sterile oscillations
+  - freeze-in from twin active neutrino oscillations
+  - hot-relic freeze-out in sufficiently large-mixing regions
+  thermal_equilibrium_with_standard_model: 'no'
+  thermal_equilibrium_with_hidden_sector: partial
+  abundance_set_by:
+  - M_N_B
+  - m_nu_B
+  - twin-sector matter effects
+  - entropy dilution from N_A decay
+  - v_B/v_A
+  depends_on_reheating_temperature: unknown
+  can_produce_all_dark_matter: parameter_dependent
+  nonthermal_momentum_distribution: parameter_dependent
+  notes: The paper numerically solves the twin-sector production equation together with temperature and
+    N_A evolution; most N_B production occurs near T_max proportional to (M_N_B/keV)^(1/3).
+relic_density:
+  full_or_subcomponent: full_dark_matter
+  target_fraction:
+    name: target dark matter abundance
+    symbol: Omega_DM
+    description: Observed total dark matter abundance targeted by the model.
+    value: 0.26
+    unit: null
+    role: derived
+    status: assumed
+    source_reference_ids:
+    - '2305_06364'
+    notes: Paper text states Omega_DM about 0.26.
+  calculation_type: mixed
+  key_dependencies:
+  - active-sterile mixing in the twin sector
+  - N_A freeze-out and out-of-equilibrium decay
+  - suppression of inter-sector mixing to avoid visible decays
+  - thermal history of SM and twin sectors
+  requires_entropy_dilution: 'yes'
+  overclosure_risk: parameter_dependent
+  underproduction_risk: parameter_dependent
+  tuning_assessment: unknown
+cosmological_history:
+  standard_history_assumed: false
+  nonstandard_features:
+  - SM and twin sectors are initially in equilibrium in the mirror twin Higgs setup
+  - SM-sector sterile neutrino N_A can freeze out and decay out of equilibrium
+  - N_A decays heat the SM bath and dilute twin-sector energy density
+  - dilution reduces the effective temperature of N_B dark matter
+  dark_sector_temperature: null
+  delta_neff: null
+  kinetic_decoupling: null
+  chemical_decoupling: null
+  phase_transitions: []
+  topological_defects: []
+  isocurvature_perturbations: unknown
+  bbn_relevance: high
+  cmb_relevance: high
+phase_space:
+  distribution_type: nonthermal
+  distribution_function_available: approximate
+  f_of_p_or_q: Produced by twin active-neutrino oscillations with matter-suppressed mixing; detailed distribution
+    is not tabulated in the flattened text.
+  average_momentum_relative_to_thermal: reduced by entropy injection from N_A decay
+  free_streaming_length: null
+  velocity_dispersion_today: null
+  phase_space_bounds: []
+  notes: The paper describes the sterile neutrino dark matter as effectively cooler after SM-sector entropy
+    injection, relaxing warm-DM structure limits.
+structure_formation:
+  linear:
+    behaves_like_cdm: approximately
+    transfer_function_shape: smooth_cutoff
+    small_scale_power_effect: suppression
+    half_mode_mass: null
+    thermal_wdm_mapping:
+      available: false
+      validity: unknown
+      warning: No explicit thermal-WDM mapping is extracted from the flattened text.
+    impact_on_sigma8_s8: unknown
+  nonlinear:
+    halo_mass_function_effect: unknown
+    subhalo_mass_function_effect: unknown
+    infall_subhalo_mass_function_effect: unknown
+    present_day_bound_subhalo_mass_function_effect: unknown
+    concentration_mass_relation_effect: unknown
+    density_profile_effect: unknown
+    core_or_cusp_effect: unknown
+    subhalo_survival_effect: unknown
+    tidal_stripping_effect: unknown
+    smallest_galaxies_effect: warm sterile-neutrino behavior can suppress small-scale structure, but no
+      nonlinear model is provided in the paper text used here
+    simulation_calibrated: 'no'
+validity_domain:
+- id: small_mixing_seesaw_limit
+  applies_to: model
+  condition: Uses M_A, M_B much larger than M_AB, m_A, and m_B so that the active-sterile and SM-twin
+    seesaw diagonalization is valid.
+  valid_range: null
+  status: assumed
+  extrapolation_risk: medium
+  caveats:
+  - The extraction does not cover large inter-sector mixing.
+  source_reference_ids:
+  - '2305_06364'
+  notes: null
+- id: benchmark_twin_vev_ratio
+  applies_to: model
+  condition: The numerical analysis adopts v_B/v_A = 3.
+  valid_range: v_B/v_A = 3 benchmark
+  status: assumed
+  extrapolation_risk: medium
+  caveats:
+  - Other mirror-twin-Higgs vev ratios are motivated but not extracted as separate variants.
+  source_reference_ids:
+  - '2305_06364'
+  notes: null
+- id: abundance_region
+  applies_to: parameter
+  condition: Observed abundance is obtained only in the viable M_N_B and m_nu_B regions after accounting
+    for N_A dilution.
+  valid_range: white Omega_N_B = Omega_DM region in the paper figure
+  status: inferred
+  extrapolation_risk: high
+  caveats:
+  - Flattened source text does not preserve exact figure contours.
+  source_reference_ids:
+  - '2305_06364'
+  notes: null
+assumptions:
+  global:
+  - id: one_neutrino_generation
+    description: The calculation uses one generation of neutrinos for simplicity, while noting extension
+      to three generations is possible.
+    scope: theory
+    status: assumed
+    impact_if_violated: Flavor structure and viable parameter ranges may change.
+    can_be_relaxed: 'yes'
+    source_reference_ids:
+    - '2305_06364'
+    notes: null
+  - id: small_intersector_mixing
+    description: The SM-twin sterile mixing is kept small enough that dark matter decays do not yield
+      appreciable SM photon lines.
+    scope: theory
+    status: assumed
+    impact_if_violated: The scenario approaches excluded canonical sterile-neutrino behavior.
+    can_be_relaxed: unknown
+    source_reference_ids:
+    - '2305_06364'
+    notes: null
+  - id: entropy_dilution_from_na
+    description: The heavier SM-sector sterile neutrino is produced and decays out of equilibrium, heating
+      the SM bath and diluting the twin sector.
+    scope: cosmological_history
+    status: inferred
+    impact_if_violated: The twin-sector radiation density and N_B momentum distribution would be too large
+      in parts of parameter space.
+    can_be_relaxed: unknown
+    source_reference_ids:
+    - '2305_06364'
+    notes: null
+  constraint_specific: []
+  computation_specific: []
+associated_code:
+  has_associated_code: unknown
+  code_summary: No associated public code is identified in the assigned text.
+  primary_code_role: null
+  repositories: []
+  packages_or_modules: []
+  notebooks: []
+  scripts: []
+  containers_or_environments: []
+  expected_inputs: []
+  expected_outputs: []
+  supported_observable_channels: []
+  reproducibility:
+    reproducibility_level: unknown
+    has_tests: unknown
+    has_examples: unknown
+    has_documentation: unknown
+    pinned_dependencies: unknown
+    notes: null
+  validation:
+    validation_status: unknown
+    benchmark_references: []
+    validation_notes: null
+  caveats: []
+provenance:
+  model_id: 2305_06364_twin_sterile_neutrino_dark_matter_v1
+  model_name: Twin sterile neutrino dark matter
+  model_family: sterile_neutrino_dark_matter
+  entry_version: 0.1.0
+  status: machine_extracted
+  created_at: '2026-05-31'
+  last_updated: '2026-05-31'
+  sources:
+    primary_papers:
+    - reference_id: '2305_06364'
+      title: Twin Sterile Neutrino Dark Matter
+      authors:
+      - Ian Holst
+      - Dan Hooper
+      - Gordan Krnjaic
+      - Deheng Song
+      year: 2023
+      arxiv_id: '2305.06364'
+      doi: null
+      url: null
+      role: original_model
+      notes: Assigned SQLite full text for batch-0004.
+    - arxiv_id: '2305.06364'
+      authors:
+      - Holst, Ian
+      - Hooper, Dan
+      - Krnjaic, Gordan
+      - Song, Deheng
+      doi: 10.1103/PhysRevD.109.063514
+      notes: primary local full text used for model-specific enrichment
+      reference_id: src_2305_06364_primary
+      role: original_model
+      title: Twin sterile neutrino dark matter
+      url: https://arxiv.org/abs/2305.06364
+      year: 2024
+    review_papers: []
+    constraint_papers:
+    - arxiv_id: '1908.03559'
+      authors:
+      - Koren, Seth
+      - McGehee, Robert
+      doi: 10.1103/PhysRevD.101.055024
+      notes: twin-sector freeze-in dark matter paper read locally
+      reference_id: src_2305_06364_1908_03559
+      role: extension
+      title: Freezing-in twin dark matter
+      url: https://arxiv.org/abs/1908.03559
+      year: 2020
+    - arxiv_id: '1601.07553'
+      authors:
+      - Schneider, Aurel
+      doi: 10.1088/1475-7516/2016/04/059
+      notes: resonantly produced sterile-neutrino astrophysical constraint study read locally
+      reference_id: src_2305_06364_1601_07553
+      role: constraint
+      title: Astrophysical constraints on resonantly produced sterile neutrino dark matter
+      url: https://arxiv.org/abs/1601.07553
+      year: 2016
+    - arxiv_id: '1901.01262'
+      authors:
+      - Ng, Kenny C. Y.
+      - Roach, Brandon M.
+      - Perez, Kerstin
+      - Beacom, John F.
+      - Horiuchi, Shunsaku
+      - Krivonos, Roman
+      - Wik, Daniel R.
+      doi: 10.1103/PhysRevD.99.083005
+      notes: NuSTAR M31 sterile-neutrino X-ray constraint study read locally
+      reference_id: src_2305_06364_1901_01262
+      role: constraint
+      title: New constraints on sterile neutrino dark matter from NuSTAR M31 observations
+      url: https://arxiv.org/abs/1901.01262
+      year: 2019
+    external_databases: []
+  extraction:
+    method: llm_assisted
+    extracted_by: codex_batch_0004
+    extractor_name: dark-matter model-card extraction worker
+    extraction_date: '2026-05-31'
+    confidence: high
+    source_chunks_or_sections:
+    - reference_id: '2305_06364'
+      section: abstract
+      page: null
+      quote_or_summary: The abstract proposes sterile neutrinos in the twin sector of a mirror twin Higgs
+        model as dark matter.
+    - reference_id: '2305_06364'
+      section: model setup
+      page: null
+      quote_or_summary: The paper adds right-handed neutrino Yukawa terms, Majorana masses, and M_AB mixing
+        to the two sectors.
+    - reference_id: '2305_06364'
+      section: production
+      page: null
+      quote_or_summary: Twin sterile neutrinos are produced by a Dodelson-Widrow-like mechanism entirely
+        within the twin sector.
+    unresolved_items:
+    - Exact numerical contours from figures are not recoverable from the flattened text and are left as
+      qualitative ranges.
+    - Visible branching fractions for twin sterile-neutrino decay need explicit calculation before applying
+      standard line limits.
+    - Warmness constraints are represented by the primary scaling; full transfer functions remain to be
+      computed.
+  evidence:
+    particle_content:
+    - reference_id: '2305_06364'
+      note: The text identifies N_B as the twin sterile neutrino dark matter candidate and N_A as a heavier
+        SM-sector sterile state.
+      confidence: high
+      section: model setup
+      page: null
+    symmetries:
+    - reference_id: '2305_06364'
+      note: The model is based on mirror twin Higgs Z2 structure but explicitly allows neutrino-sector
+        breaking and v_B/v_A = 3.
+      confidence: high
+      section: model setup
+      page: null
+    interactions:
+    - reference_id: '2305_06364'
+      note: The supplemented Lagrangian contains neutrino Yukawa terms, Majorana masses, and an inter-sector
+        sterile mixing term M_AB.
+      confidence: high
+      section: model setup
+      page: null
+    production_mechanism:
+    - reference_id: '2305_06364'
+      note: N_B production proceeds through twin-sector active-to-sterile oscillations, with freeze-in
+        or hot-relic freeze-out depending on mixing.
+      confidence: high
+      section: production
+      page: null
+    cosmological_history:
+    - reference_id: '2305_06364'
+      note: Out-of-equilibrium N_A decay heats the SM bath, dilutes the twin sector, and cools the N_B
+        distribution.
+      confidence: high
+      section: cosmology
+      page: null
+    parameter_ranges:
+    - reference_id: '2305_06364'
+      note: The scan is expressed in M_N_A, m_nu_A, M_N_B, and m_nu_B with v_B/v_A fixed to 3.
+      confidence: medium
+      section: parameter space
+      page: null
+    validity_domain:
+    - reference_id: '2305_06364'
+      note: The analytic diagonalization assumes M_A and M_B are much larger than M_AB, m_A, and m_B.
+      confidence: high
+      section: model setup
+      page: null
+    constraints:
+    - confidence: high
+      note: Primary text states X-ray/gamma, N_eff and large-scale-structure constraints and the approximate
+        warmness scaling.
+      page: null
+      reference_id: src_2305_06364_primary
+      section: constraints/results discussion
+    - confidence: medium
+      note: Related NuSTAR M31 text supports X-ray sterile-neutrino line constraint context.
+      page: null
+      reference_id: src_2305_06364_1901_01262
+      section: abstract
+    - confidence: medium
+      note: Related resonant sterile-neutrino text supports astrophysical constraint context.
+      page: null
+      reference_id: src_2305_06364_1601_07553
+      section: abstract
+    observables:
+    - confidence: high
+      note: Primary text states twin-sector Dodelson-Widrow production, suppressed visible photons, entropy
+        injection and warmness relaxation.
+      page: null
+      reference_id: src_2305_06364_primary
+      section: abstract and model discussion
+    - confidence: medium
+      note: Related twin dark-matter text supports twin-sector freeze-in context.
+      page: null
+      reference_id: src_2305_06364_1908_03559
+      section: abstract
+    - confidence: medium
+      note: Related sterile-neutrino constraint text supports line/structure constraint context.
+      page: null
+      reference_id: src_2305_06364_1601_07553
+      section: abstract
+    routes:
+    - confidence: high
+      note: Primary text gives the thermal timeline and cooling mechanism for routing.
+      page: null
+      reference_id: src_2305_06364_primary
+      section: model timeline/results
+    - confidence: medium
+      note: Related twin freeze-in text supports coupled-sector dark-matter production route.
+      page: null
+      reference_id: src_2305_06364_1908_03559
+      section: abstract
+  review:
+    human_reviewed: false
+    reviewed_by: null
+    review_date: null
+    expert_reviewed: false
+    expert_reviewer: null
+    expert_review_date: null
+    reviewer_notes: []
+    scientific_confidence: medium
+    implementation_confidence: medium
+  caveats:
+  - Figure-derived viable ranges are summarized qualitatively only.
+  related_entries: []
+  external_links:
+    public_codes: []
+    likelihoods: []
+    datasets: []
+robustness:
+  overall: medium
+  theory_robustness: medium
+  observational_robustness: unknown
+  computational_robustness: unknown
+  constraint_robustness: unknown
+  dominant_uncertainties:
+  - figure contours not captured numerically
+  - warm-dark-matter mapping not extracted
+  - one-generation neutrino simplification
+  validation_status: expert_judgment_only
+  notes: The paper provides a concrete model and numerical evolution, but this machine card keeps figure-dependent
+    ranges qualitative.
+agent_failure_modes:
+  warnings:
+  - id: figure_ranges_qualitative
+    severity: medium
+    category: other
+    warning: Do not treat the qualitative parameter ranges in this card as exact exclusions or contours.
+    mitigation: Review the original paper figures before numerical use.
+    source_reference_ids:
+    - '2305_06364'
+  - id: constraints_omitted_by_profile
+    severity: medium
+    category: approximate_constraint
+    warning: The paper discusses X-ray, gamma-ray, Delta N_eff, and structure bounds, but this run intentionally
+      omits constraint entries.
+    mitigation: Use a later constraint-extraction pass for bound-level reasoning.
+    source_reference_ids:
+    - '2305_06364'
+observables:
+- caveats:
+  - Requires simultaneous evolution of the SM and twin bath temperatures.
+  channel: cosmology
+  effect_direction: rate_change
+  environments:
+  - twin-sector radiation bath
+  - early Universe
+  id: twin_dw_relic_abundance
+  key_quantities:
+  - description: mass of the twin sterile-neutrino dark matter
+    name: twin sterile neutrino mass
+    role: core
+    source_reference_ids:
+    - src_2305_06364_primary
+    status: inferred
+    symbol: M_NB
+    unit: keV
+  - description: in-medium twin active-sterile mixing
+    name: twin mixing angle
+    role: core
+    source_reference_ids:
+    - src_2305_06364_primary
+    status: inferred
+    symbol: sin^2(2theta_B^m)
+  - description: temperature ratio after SM-sector entropy injection
+    name: twin-to-SM temperature ratio
+    role: cosmological
+    source_reference_ids:
+    - src_2305_06364_primary
+    status: inferred
+    symbol: T_B/T_A
+  linked_constraints:
+  - twin_relic_and_neff_constraint
+  linked_routes:
+  - route_twin_sterile_thermal_history
+  name: Twin-sector Dodelson-Widrow sterile-neutrino abundance
+  notes: null
+  observability: medium
+  predicted_effect: Twin sterile neutrinos are produced through active-sterile oscillations in the twin
+    bath; depending on mixing they can freeze in or approach an equilibrium hot relic before freezing
+    out.
+  redshift_range: pre-equality production epoch
+  relevance: critical
+  scale_range: null
+  source_reference_ids:
+  - src_2305_06364_primary
+  - src_2305_06364_1908_03559
+  subchannel: active-sterile oscillations inside the twin sector
+- caveats:
+  - Line limits are relaxed, not automatically absent; visible branching and mixing must be computed.
+  channel: indirect_detection
+  effect_direction: null_signal
+  environments:
+  - galaxies
+  - M31
+  - galaxy clusters
+  id: suppressed_visible_xray_gamma_lines
+  key_quantities:
+  - description: suppression factor for ordinary line searches
+    name: visible branching fraction
+    role: derived
+    source_reference_ids:
+    - src_2305_06364_primary
+    status: inferred
+    symbol: Br(N_B -> SM photons + ... )
+  - description: sets any line energy scale
+    name: twin sterile neutrino mass
+    role: core
+    source_reference_ids:
+    - src_2305_06364_primary
+    status: inferred
+    symbol: M_NB
+    unit: keV
+  linked_constraints:
+  - xray_gamma_line_relaxed_constraint
+  linked_routes:
+  - route_twin_line_and_structure
+  name: Suppressed visible X-ray and gamma-ray lines from twin sterile neutrino decay
+  notes: null
+  observability: low
+  predicted_effect: Because the dark matter resides in the twin sector, its decays produce few observable
+    SM photons, weakening ordinary X-ray and gamma-ray line constraints relative to standard sterile-neutrino
+    dark matter.
+  redshift_range: null
+  relevance: high
+  scale_range: null
+  source_reference_ids:
+  - src_2305_06364_primary
+  - src_2305_06364_1601_07553
+  - src_2305_06364_1901_01262
+  subchannel: line photons from rare visible-sector decay channels
+- caveats:
+  - The primary scaling is an approximate reinterpretation of standard Dodelson-Widrow warmness bounds.
+  channel: large_scale_structure
+  effect_direction: suppression
+  environments:
+  - Milky Way satellites
+  - large-scale structure
+  id: cooled_twin_wdm_structure
+  key_quantities:
+  - description: cooling factor for the twin dark matter
+    name: temperature ratio
+    role: cosmological
+    source_reference_ids:
+    - src_2305_06364_primary
+    status: inferred
+    symbol: T_B/T_A
+  - description: warmness lower bound scales approximately with 25 keV times T_B/T_A in the primary discussion
+    name: minimum mass scaling
+    role: derived
+    source_reference_ids:
+    - src_2305_06364_primary
+    status: inferred
+    symbol: M_NB,min
+    unit: keV
+  linked_constraints:
+  - lss_warmness_constraint
+  linked_routes:
+  - route_twin_line_and_structure
+  name: Cooled warm-dark-matter structure suppression
+  notes: null
+  observability: medium
+  predicted_effect: Entropy injection from SM-sector sterile-neutrino decays lowers the twin temperature,
+    cooling the twin sterile-neutrino dark matter and relaxing large-scale-structure warmness constraints.
+  redshift_range: null
+  relevance: high
+  scale_range: small-scale structure and satellite scales
+  source_reference_ids:
+  - src_2305_06364_primary
+  subchannel: satellite counts and small-scale clustering
+- caveats:
+  - All entropy-injection steps must complete before BBN.
+  channel: cmb
+  effect_direction: rate_change
+  environments:
+  - cosmic radiation background
+  id: twin_sector_delta_neff
+  key_quantities:
+  - description: radiation-density observable
+    name: effective number of neutrino species
+    role: cosmological
+    source_reference_ids:
+    - src_2305_06364_primary
+    status: inferred
+    symbol: N_eff
+  - description: controls entropy injection before BBN
+    name: SM sterile neutrino decay time
+    role: cosmological
+    source_reference_ids:
+    - src_2305_06364_primary
+    status: inferred
+    symbol: tau_NA
+    unit: s
+  - description: sets the twin radiation density contribution
+    name: twin-to-SM temperature ratio
+    role: derived
+    source_reference_ids:
+    - src_2305_06364_primary
+    status: inferred
+    symbol: T_B/T_A
+  linked_constraints:
+  - twin_relic_and_neff_constraint
+  linked_routes:
+  - route_twin_sterile_thermal_history
+  name: Twin-sector contribution to effective relativistic species
+  notes: null
+  observability: high
+  predicted_effect: Out-of-equilibrium SM sterile-neutrino decays can heat the SM bath, reduce the relative
+    twin energy density, and thereby reduce Delta N_eff before BBN.
+  redshift_range: BBN and recombination
+  relevance: critical
+  scale_range: null
+  source_reference_ids:
+  - src_2305_06364_primary
+  subchannel: Delta N_eff from twin radiation
+constraints:
+- allowed_regions:
+  - regions where SM-sector sterile decays dilute twin radiation and yield the observed dark matter abundance
+  applies: parameter_dependent
+  assumptions:
+  - can_be_relaxed: 'no'
+    description: SM-sector sterile-neutrino decays heat the SM bath before BBN.
+    id: pre_bbn_decay
+    impact_if_violated: Twin radiation can exceed N_eff limits and the dark matter may remain too warm.
+    notes: null
+    scope: thermal-history viability
+    source_reference_ids:
+    - src_2305_06364_primary
+    status: assumed
+  benchmark_implications:
+  - The model is viable only when the entropy-injection timeline completes before BBN and gives the right
+    abundance.
+  caveats:
+  - Requires solving coupled SM/twin temperatures and decay histories.
+  constrained_parameters:
+  - M_NB
+  - sin^2(2theta_B^m)
+  - T_B/T_A
+  - N_eff
+  - SM sterile decay parameters
+  constraint_type: cosmological
+  data_release: Planck/BBN abundance and N_eff constraints
+  excluded_regions:
+  - regions overproducing dark matter or leaving excessive twin radiation
+  id: twin_relic_and_neff_constraint
+  likelihood_available: partial
+  likelihood_reference: null
+  name: Relic abundance and Delta N_eff consistency in the twin thermal history
+  notes: null
+  observable_channel: dark-matter abundance and radiation density
+  recasting_needed: 'yes'
+  robustness: medium
+  source_reference_ids:
+  - src_2305_06364_primary
+  - src_2305_06364_1908_03559
+- allowed_regions:
+  - large regions with small visible branching can evade standard sterile-neutrino line limits
+  applies: parameter_dependent
+  assumptions: []
+  benchmark_implications:
+  - The primary paper uses this suppression as a central advantage over ordinary sterile-neutrino dark
+    matter.
+  caveats:
+  - A quantitative line recast needs the model-specific visible branching ratio.
+  constrained_parameters:
+  - M_NB
+  - visible branching fraction
+  - mixing angles
+  - dark-matter column density
+  constraint_type: indirect_detection
+  data_release: X-ray/gamma line searches including NuSTAR M31 context
+  excluded_regions:
+  - regions where the residual visible decay flux exceeds line-search limits
+  id: xray_gamma_line_relaxed_constraint
+  likelihood_available: partial
+  likelihood_reference: null
+  name: X-ray and gamma-ray line constraints with suppressed visible branching
+  notes: null
+  observable_channel: sterile-neutrino decay-line searches
+  recasting_needed: 'yes'
+  robustness: medium
+  source_reference_ids:
+  - src_2305_06364_primary
+  - src_2305_06364_1601_07553
+  - src_2305_06364_1901_01262
+- allowed_regions:
+  - cooled regions where M_NB exceeds the temperature-rescaled warmness lower bound
+  applies: parameter_dependent
+  assumptions: []
+  benchmark_implications:
+  - SM-bath heating relaxes the standard Dodelson-Widrow lower-mass pressure.
+  caveats:
+  - Primary paper uses a scaled standard bound; precision work requires transfer functions.
+  constrained_parameters:
+  - M_NB
+  - T_B/T_A
+  - momentum distribution
+  constraint_type: astrophysical
+  data_release: null
+  excluded_regions:
+  - dark matter too warm for all viable entropy-injection choices
+  id: lss_warmness_constraint
+  likelihood_available: approximate
+  likelihood_reference: null
+  name: Large-scale-structure warmness constraint on twin sterile neutrinos
+  notes: null
+  observable_channel: satellite counts and small-scale structure
+  recasting_needed: 'yes'
+  robustness: medium
+  source_reference_ids:
+  - src_2305_06364_primary
+theory_to_observable_routing:
+  routes:
+  - agent_notes: This is the central viability route for the model.
+    caveats: []
+    constraint_ids:
+    - twin_relic_and_neff_constraint
+    derived_quantities:
+    - Omega_NB h^2
+    - T_B/T_A
+    - Delta N_eff
+    - freeze-in or freeze-out regime
+    description: Evolve SM and twin baths, sterile-neutrino production, entropy injection and N_eff.
+    forward_model_chain:
+    - inputs:
+      - sector temperatures
+      - SM sterile decay rates
+      - twin oscillation rates
+      notes: Track the sequence of events in the primary timeline.
+      outputs:
+      - T_A(t)
+      - T_B(t)
+      - N_B abundance
+      step_id: thermal_history
+      step_type: boltzmann_solver
+      tool_or_code: coupled Boltzmann equations
+      validity: valid if decays finish before BBN
+    - inputs:
+      - T_B/T_A
+      - relativistic species
+      notes: Compare to BBN and CMB constraints.
+      outputs:
+      - Delta N_eff
+      step_id: neff
+      step_type: analytic_formula
+      tool_or_code: radiation-density calculator
+      validity: standard after entropy injection
+    - inputs:
+      - in-medium mixing
+      - matter potentials
+      - expansion history
+      notes: Identify freeze-in versus hot relic regions.
+      outputs:
+      - Omega_NB h^2
+      step_id: abundance
+      step_type: boltzmann_solver
+      tool_or_code: sterile-neutrino production solver
+      validity: requires twin-sector matter effects
+    id: route_twin_sterile_thermal_history
+    input_parameters:
+    - M_NA
+    - M_NB
+    - m_nuA
+    - m_nuB
+    - mixing angles
+    - v_B/v_A
+    - initial temperature ratio
+    likelihoods:
+    - Planck abundance
+    - BBN/CMB N_eff
+    observable_ids:
+    - twin_dw_relic_abundance
+    - twin_sector_delta_neff
+    required_code_resources:
+    - custom coupled Boltzmann solver
+    - CLASS/CAMB for radiation-density checks
+    route_status: planned
+    source_model_features:
+    - mirror twin Higgs sector
+    - twin sterile-neutrino dark matter
+    - SM-sector sterile-neutrino entropy injection
+    validation_tests:
+    - reproduce primary abundance contours
+    - verify all entropy injection is pre-BBN
+  - agent_notes: Line and structure recasts should be downstream of the thermal-history solution.
+    caveats: []
+    constraint_ids:
+    - xray_gamma_line_relaxed_constraint
+    - lss_warmness_constraint
+    derived_quantities:
+    - line flux
+    - thermal-equivalent warmness
+    - minimum allowed mass
+    description: Recast line-search and warmness limits after twin-sector cooling and visible-branching
+      suppression.
+    forward_model_chain:
+    - inputs:
+      - M_NB
+      - mixing
+      - visible branching
+      - target column density
+      notes: Compare to standard sterile-neutrino limits after suppression.
+      outputs:
+      - expected SM photon flux
+      step_id: line_flux
+      step_type: analytic_formula
+      tool_or_code: sterile-neutrino decay calculator with visible branching
+      validity: model-dependent visible branching must be supplied
+    - inputs:
+      - M_NB
+      - T_B/T_A
+      - momentum distribution
+      notes: Run full transfer functions for precision constraints.
+      outputs:
+      - matter-power cutoff
+      - satellite warmness flag
+      step_id: structure
+      step_type: transfer_function
+      tool_or_code: CLASS/CAMB or scaled transfer-function emulator
+      validity: approximate if only using the 25 keV temperature scaling
+    id: route_twin_line_and_structure
+    input_parameters:
+    - M_NB
+    - T_B/T_A
+    - visible branching fraction
+    - mixing angles
+    likelihoods:
+    - X-ray/gamma line likelihood
+    - Lyman-alpha/satellite warmness likelihood
+    observable_ids:
+    - suppressed_visible_xray_gamma_lines
+    - cooled_twin_wdm_structure
+    required_code_resources:
+    - sterile-neutrino decay tools
+    - CLASS/CAMB
+    - line-search limit tables
+    route_status: planned
+    source_model_features:
+    - twin sterile-neutrino dark matter
+    - suppressed visible photon decays
+    - cooled momentum distribution
+    validation_tests:
+    - recover primary warmness boundary
+    - compare suppressed line flux to NuSTAR-style limits

@@ -1,0 +1,356 @@
+_source:
+  shard: arXiv_src_0711_002_wds.tar
+  paper_id: 0711_2823
+  source_member: 0711_2823.json
+schema_version: model_only_v0
+model_id: 0711_2823_singlet_scalar_sterile_neutrino_dm_v1
+identity:
+  name: Singlet-scalar decay sterile-neutrino dark matter
+  family: sterile_neutrino_dark_matter
+  aliases:
+  - keV sterile neutrino dark matter from singlet Higgs decays
+  short_description: A keV sterile-neutrino dark matter scenario in which a real singlet scalar gives
+    Majorana masses to sterile neutrinos and can produce the relic population through decays near the
+    electroweak scale.
+  historical_origin_or_motivation: Motivated by right-handed neutrinos introduced for active-neutrino
+    masses, with an electroweak-scale singlet scalar mass-generation sector that can also populate sterile-neutrino
+    dark matter.
+  status: speculative
+  model_kind: simplified_model
+theory:
+  theory_level: simplified_model
+  parent_frameworks:
+  - Standard Model plus sterile neutrinos
+  - singlet-scalar Majorana mass generation
+  lagrangian_available: partial
+  renormalizable: 'yes'
+  embedded_in_larger_framework: unknown
+  notes: The paper writes a Standard Model extension with singlet fermions N_a, a real SU(2)-singlet scalar
+    S, Yukawa terms y_a H L N_a, and h_a S N_a N_a, leaving the scalar potential schematic as V(H,S).
+particle_content:
+  dark_matter_candidate:
+    name: keV sterile neutrino
+    spin: 1/2
+    statistics: fermion
+    elementary_or_composite: elementary
+    number_of_components: single_component
+  additional_dark_sector_particles:
+  - real SU(2)-singlet scalar S
+  - additional sterile neutrinos N_a
+  mediators:
+  - singlet scalar S
+  - active-sterile neutrino mixing
+  dark_radiation_species: []
+  excited_or_degenerate_states: []
+  long_lived_particles:
+  - keV sterile neutrino
+  unstable_parent_particles:
+  - singlet scalar S
+  standard_model_extension: substantial
+symmetries:
+  stabilizing_mechanism: No exact stabilizing symmetry is specified; the sterile neutrino is cosmologically
+    long-lived because of very small Yukawa couplings and active-sterile mixing.
+  symmetries: []
+  topological_defects_possible: unknown
+interactions:
+  portals:
+  - higgs
+  - neutrino
+  standard_model_targets:
+  - Higgs doublet
+  - active lepton doublets
+  dark_sector_couplings:
+  - h_a S N_a N_a
+  - y_a H L N_a
+  mediator_types:
+  - singlet scalar
+  - active-sterile mixing
+  interaction_operators:
+  - S N_a N_a Majorana-mass Yukawa term
+  - H L N_a neutrino Yukawa term
+  scattering:
+    elastic: unknown
+    inelastic: unknown
+    momentum_dependence: unknown
+    velocity_dependence: unknown
+    spin_dependence: unknown
+  annihilation_channels: []
+  decay_channels:
+  - sterile neutrino to lighter neutrino plus X-ray photon
+  - sterile neutrino to lighter active neutrinos
+  self_scattering_channels: []
+  cp_structure: unknown
+  flavor_structure: sterile-neutrino Yukawa couplings to active lepton doublets are present but not fully
+    specified.
+  tree_or_loop_level: tree
+parameters:
+  core:
+  - name: sterile_neutrino_mass
+    symbol: M_s
+    description: Mass of the sterile-neutrino dark matter candidate.
+    range: keV scale
+    unit: keV
+    role: core
+    status: inferred
+    notes: The text repeatedly identifies keV sterile neutrinos as the dark matter candidate.
+  - name: active_sterile_mixing_angle
+    symbol: theta
+    description: Mixing angle controlling oscillation production and radiative decay.
+    range: model-dependent small mixing
+    role: core
+    status: inferred
+    notes: For singlet-scalar decay production, abundance need not be tied directly to the mixing angle.
+  - name: singlet_yukawa_coupling
+    symbol: h_a
+    description: Yukawa coupling giving sterile-neutrino Majorana masses through the singlet scalar vev.
+    range: h less than about 1e-6 for out-of-equilibrium sterile-neutrino production in the discussed
+      regime
+    role: core
+    status: approximate
+  - name: singlet_scalar_vev
+    symbol: v_1
+    description: Vacuum expectation value of S setting M_a = h_a v_1.
+    range: electroweak scale
+    unit: GeV
+    role: core
+    status: inferred
+  - name: singlet_scalar_mass
+    symbol: m_S
+    description: Mass scale of the decaying singlet scalar.
+    range: order 100 GeV in the electroweak-scale production discussion
+    unit: GeV
+    role: core
+    status: approximate
+production:
+  mechanisms:
+  - out-of-equilibrium production from decays of the singlet scalar S near the electroweak scale
+  - possible subdominant active-neutrino oscillation production
+  thermal_equilibrium_with_standard_model: 'no'
+  thermal_equilibrium_with_hidden_sector: unknown
+  abundance_set_by:
+  - singlet Yukawa coupling h_a
+  - singlet scalar abundance and mass scale
+  - active-sterile mixing for any oscillation component
+  depends_on_reheating_temperature: unknown
+  can_produce_all_dark_matter: parameter_dependent
+  nonthermal_momentum_distribution: 'yes'
+  notes: The paper emphasizes that if the relic population comes from singlet/Higgs decays, its abundance
+    is controlled by h rather than directly by the active-sterile mixing angle.
+relic_density:
+  full_or_subcomponent: either
+  target_fraction: null
+  calculation_type: nonthermal
+  key_dependencies:
+  - sterile-neutrino mass
+  - singlet Yukawa coupling h_a
+  - singlet scalar vev and mass
+  - entropy dilution after production
+  requires_entropy_dilution: 'no'
+  overclosure_risk: parameter_dependent
+  underproduction_risk: parameter_dependent
+  tuning_assessment: unknown
+cosmological_history:
+  standard_history_assumed: true
+  nonstandard_features:
+  - sterile neutrinos produced from singlet scalar decays at temperatures of order 100 GeV
+  dark_sector_temperature: null
+  delta_neff: null
+  kinetic_decoupling: null
+  chemical_decoupling: null
+  phase_transitions:
+  - electroweak-scale singlet/Higgs symmetry breaking assumed for sterile-neutrino mass generation
+  topological_defects: []
+  isocurvature_perturbations: unknown
+  bbn_relevance: unknown
+  cmb_relevance: low
+phase_space:
+  distribution_type: decay_produced
+  distribution_function_available: unknown
+  average_momentum_relative_to_thermal: colder than Dodelson-Widrow oscillation production because the
+    momenta redshift after production near 100 GeV
+  free_streaming_length: null
+  velocity_dispersion_today: null
+  phase_space_bounds: []
+  notes: The paper states that singlet-scalar decay production gives a colder sterile-neutrino population
+    than oscillation production, weakening Lyman-alpha bounds.
+structure_formation:
+  linear:
+    behaves_like_cdm: scale_dependent
+    transfer_function_shape: smooth_cutoff
+    small_scale_power_effect: suppression
+  nonlinear:
+    halo_mass_function_effect: unknown
+    subhalo_mass_function_effect: unknown
+    simulation_calibrated: unknown
+validity_domain:
+- id: sterile_out_of_equilibrium
+  applies_to: production
+  condition: The keV sterile neutrinos remain out of equilibrium because the relevant Yukawa couplings
+    are very small.
+  status: assumed
+  extrapolation_risk: medium
+  source_reference_ids: []
+- id: singlet_decay_regime
+  applies_to: production
+  condition: The singlet scalar is assumed capable of producing most of the relic sterile neutrinos through
+    decays at temperatures above or around its mass, of order the electroweak scale.
+  status: inferred
+  extrapolation_risk: medium
+  source_reference_ids: []
+- id: single_paper_scope
+  applies_to: model
+  condition: This row captures the singlet-scalar decay variant discussed in the paper, not every sterile-neutrino
+    production mechanism mentioned there.
+  status: inferred
+  extrapolation_risk: low
+  source_reference_ids: []
+assumptions:
+  global:
+  - id: small_yukawa_mixing
+    description: Sterile-neutrino Yukawa couplings and active-sterile mixing are small enough for cosmological
+      longevity and out-of-equilibrium production.
+    scope: production
+    status: assumed
+  - id: singlet_scalar_population
+    description: The singlet scalar S is populated in the early universe and can decay into sterile neutrinos
+      near the electroweak scale.
+    scope: cosmological_history
+    status: assumed
+  - id: standard_entropy_evolution
+    description: The standard reduction in relativistic degrees of freedom after electroweak-scale production
+      redshifts and dilutes the sterile-neutrino population.
+    scope: cosmological_history
+    status: assumed
+associated_code:
+  has_associated_code: unknown
+  code_summary: No model-specific public code is identified in the assigned text.
+  primary_code_role: null
+provenance:
+  model_id: 0711_2823_singlet_scalar_sterile_neutrino_dm_v1
+  model_name: Singlet-scalar decay sterile-neutrino dark matter
+  model_family: sterile_neutrino_dark_matter
+  entry_version: 0.1.0
+  status: machine_extracted
+  created_at: '2026-05-30'
+  last_updated: '2026-05-30'
+  sources:
+    primary_papers:
+    - reference_id: 0711_2823
+      title: Dark matter's X-files
+      authors:
+      - Alexander Kusenko
+      year: 2007
+      arxiv_id: '0711.2823'
+      doi: null
+      url: null
+      role: extension
+      notes: Assigned full text used as the only source.
+  extraction:
+    method: llm_assisted
+    extracted_by: codex_batch_0004
+    extractor_name: Codex GPT-5
+    extraction_date: '2026-05-30'
+    confidence: medium
+    source_chunks_or_sections:
+    - reference_id: 0711_2823
+      section: opening model discussion
+      page: null
+      quote_or_summary: The text writes an SM extension with N_a and a real singlet S, then states that
+        this model can generate sterile-neutrino dark matter.
+    - reference_id: 0711_2823
+      section: production discussion
+      page: null
+      quote_or_summary: The text contrasts oscillation production with singlet/Higgs decays near 100 GeV
+        and notes that the decay-produced component is colder.
+    unresolved_items:
+    - The article is proceedings-like and discusses several sterile-neutrino mechanisms; only the singlet-scalar
+      decay variant is extracted here.
+  evidence:
+    particle_content:
+    - reference_id: 0711_2823
+      note: The paper introduces singlet fermions N_a and a real SU(2)-singlet scalar S, with a keV sterile
+        neutrino serving as the dark matter candidate.
+      confidence: high
+      section: opening model discussion
+      page: null
+    symmetries:
+    - reference_id: 0711_2823
+      note: No exact stabilizing symmetry is specified; longevity follows from small Yukawa couplings
+        and small active-sterile mixing.
+      confidence: medium
+      section: sterile-neutrino dark matter discussion
+      page: null
+    interactions:
+    - reference_id: 0711_2823
+      note: The displayed Lagrangian includes y_a H L N_a and h_a S N_a N_a terms.
+      confidence: high
+      section: opening model discussion
+      page: null
+    production_mechanism:
+    - reference_id: 0711_2823
+      note: The text states that sterile neutrinos can be produced from decays of S bosons at temperatures
+        above the S mass, around 100 GeV.
+      confidence: high
+      section: production discussion
+      page: null
+    cosmological_history:
+    - reference_id: 0711_2823
+      note: The text notes entropy increase and dilution between production near 100 GeV and much later
+        keV temperatures.
+      confidence: medium
+      section: production discussion
+      page: null
+    parameter_ranges:
+    - reference_id: 0711_2823
+      note: The paper ties M_a to h_a v_1, identifies keV sterile-neutrino masses, and argues that v_1
+        is near the electroweak scale for the discussed abundance.
+      confidence: medium
+      section: model discussion
+      page: null
+    validity_domain:
+    - reference_id: 0711_2823
+      note: The extraction is limited to the singlet-scalar decay mechanism because the paper also reviews
+        other sterile-neutrino production modes.
+      confidence: medium
+      section: whole paper
+      page: null
+  review:
+    human_reviewed: false
+    reviewed_by: null
+    review_date: null
+    expert_reviewed: false
+    expert_reviewer: null
+    expert_review_date: null
+    reviewer_notes: []
+    scientific_confidence: medium
+    implementation_confidence: medium
+  caveats:
+  - The paper has review/proceedings features; the accepted row is for the explicit singlet-scalar sterile-neutrino
+    construction supported in the text.
+robustness:
+  overall: medium
+  theory_robustness: medium
+  observational_robustness: unknown
+  computational_robustness: unknown
+  constraint_robustness: not_applicable
+  dominant_uncertainties:
+  - singlet scalar thermal history
+  - mapping of nonthermal momenta to structure-formation bounds
+  validation_status: expert_judgment_only
+  notes: Model card is based only on the assigned paper text.
+agent_failure_modes:
+  warnings:
+  - id: do_not_merge_production_modes
+    severity: medium
+    category: assumption_mismatch
+    warning: Do not conflate singlet-scalar decay production with Dodelson-Widrow oscillation production;
+      the paper says the abundance dependencies differ.
+    source_reference_ids: []
+    mitigation: Track production mode before using mixing-angle abundance relations.
+  - id: proceedings_scope
+    severity: low
+    category: other
+    warning: The article discusses several sterile-neutrino mechanisms; this row is not a canonical all-purpose
+      sterile-neutrino DM entry.
+    source_reference_ids: []
+    mitigation: Use this row only for the singlet-scalar decay variant supported by the paper.

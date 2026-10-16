@@ -1,0 +1,562 @@
+_source:
+  shard: arXiv_src_2311_017_wds.tar
+  paper_id: '2311_02052'
+  source_member: 2311_02052.json
+  enriched: true
+  enrichment_schema_version: dm_model_ocr_enrichment_smoke_v0
+schema_version: model_only_v0
+model_id: 2311_02052_extreme_axion_cosine_fluid_dark_matter_v1
+identity:
+  name: Extreme axion dark matter with cosine potential fluid modeling
+  family: axion_like_dark_matter
+  aliases:
+  - Extreme Axion Dark Matter
+  - Extreme Wave Dark Matter
+  short_description: An axion-like-particle dark matter model in which the axion starts near the top of
+    its cosine potential, giving tachyonic growth and enhanced small-scale matter power relative to vanilla
+    fuzzy axions.
+  historical_origin_or_motivation: The paper substantially develops the extreme axion variant by replacing
+    the quadratic approximation with the cosine potential and an efficient fluid treatment.
+  status: emerging
+  model_kind: phenomenological_parameterization
+theory:
+  theory_level: effective_field_theory
+  parent_frameworks:
+  - axion-like particle dark matter
+  - fuzzy dark matter
+  - generalized dark matter fluid
+  lagrangian_available: partial
+  renormalizable: 'no'
+  embedded_in_larger_framework: unknown
+  notes: The paper gives the scalar-field equation of motion, cosine potential, density, and pressure;
+    no UV completion is specified.
+particle_content:
+  dark_matter_candidate:
+    name: axion-like particle field with extreme starting angle
+    spin: '0'
+    statistics: boson
+    elementary_or_composite: elementary
+    number_of_components: single_component
+  additional_dark_sector_particles: []
+  mediators: []
+  dark_radiation_species: []
+  excited_or_degenerate_states: []
+  long_lived_particles:
+  - coherent axion field
+  unstable_parent_particles: []
+  standard_model_extension: minimal
+symmetries:
+  stabilizing_mechanism: Approximate shift symmetry and coherent field longevity; no decay channel is
+    specified in the text.
+  symmetries:
+  - name: axion shift symmetry
+    type: shift
+    exact_or_approximate: approximate
+    breaking: cosine potential
+    breaking_scale: null
+  topological_defects_possible: unknown
+interactions:
+  portals:
+  - unknown
+  standard_model_targets: []
+  dark_sector_couplings:
+  - self-interaction from the cosine field potential
+  mediator_types: []
+  interaction_operators: []
+  scattering:
+    elastic: unknown
+    inelastic: unknown
+    momentum_dependence: unknown
+    velocity_dependence: unknown
+    spin_dependence: not_applicable
+  annihilation_channels: []
+  decay_channels: []
+  self_scattering_channels: []
+  tree_or_loop_level: not_applicable
+parameters:
+  core:
+  - name: axion mass
+    symbol: m_a
+    description: Mass controlling the cosine potential curvature and structure scale.
+    range: 10^-23 eV to 10^-22.5 eV highlighted for weakened Ly-alpha fraction limits; broader examples
+      include 10^-24 to 10^-22 eV
+    unit: eV
+    role: core
+    status: inferred
+    source_reference_ids: []
+  - name: axion decay constant
+    symbol: f_a
+    description: Symmetry-breaking scale/periodicity of the cosine potential.
+    role: core
+    status: inferred
+    source_reference_ids: []
+  - name: initial field angle
+    symbol: theta_i
+    description: Starting angle placed close to the top of the cosine potential; the paper treats it as
+      the extra extreme-axion parameter.
+    range: near the potential top; rendered text highlights 10^-1 to 10^-2 offsets
+    role: core
+    status: inferred
+    source_reference_ids: []
+  - name: axion density fraction
+    symbol: Omega_a h^2 or axion fraction
+    description: Desired final axion density/fraction reproduced by shooting over f_a.
+    role: core
+    status: inferred
+    source_reference_ids: []
+  - name: effective axion sound speed
+    symbol: c_ax^2
+    description: Modified effective sound speed used after onset of oscillations to capture tachyonic
+      growth.
+    role: derived
+    status: approximate
+    source_reference_ids: []
+  derived: []
+production:
+  mechanisms:
+  - coherent axion field evolution from a high starting angle near the cosine-potential maximum
+  thermal_equilibrium_with_standard_model: 'no'
+  thermal_equilibrium_with_hidden_sector: not_applicable
+  abundance_set_by:
+  - axion mass
+  - axion decay constant
+  - initial field angle
+  - target final axion density
+  depends_on_reheating_temperature: unknown
+  can_produce_all_dark_matter: parameter_dependent
+  nonthermal_momentum_distribution: 'no'
+  notes: The code treatment selects f_a by shooting so that the chosen starting angle and mass reproduce
+    a desired final axion density.
+relic_density:
+  full_or_subcomponent: either
+  target_fraction:
+    name: axion dark matter fraction
+    symbol: f_ax
+    description: Paper varies the axion fraction and notes pure CDM is approached at low axion fraction.
+    range: model-dependent
+    role: core
+    status: inferred
+    source_reference_ids: []
+  calculation_type: nonthermal
+  key_dependencies:
+  - m_a
+  - f_a
+  - theta_i
+  - final axion density
+  requires_entropy_dilution: unknown
+  overclosure_risk: parameter_dependent
+  underproduction_risk: parameter_dependent
+  tuning_assessment: tuned
+cosmological_history:
+  standard_history_assumed: true
+  nonstandard_features:
+  - axion field initially near top of cosine potential
+  - delayed onset of oscillations
+  - tachyonic growth from negative potential curvature
+  phase_transitions: []
+  topological_defects: []
+  isocurvature_perturbations: unknown
+  bbn_relevance: none
+  cmb_relevance: medium
+phase_space:
+  distribution_type: field_like
+  distribution_function_available: approximate
+  notes: The paper models the axion as a scalar field at early times and switches to an effective fluid
+    after oscillations begin.
+structure_formation:
+  linear:
+    behaves_like_cdm: scale_dependent
+    transfer_function_shape: enhanced_small_scale_power
+    small_scale_power_effect: enhancement
+  nonlinear:
+    halo_mass_function_effect: unknown
+    subhalo_mass_function_effect: unknown
+    simulation_calibrated: 'no'
+validity_domain:
+- id: extreme_starting_angle
+  applies_to: parameter
+  condition: Extreme behavior requires the axion field to start near the top of the cosine potential.
+  status: assumed
+  extrapolation_risk: high
+  caveats: []
+  source_reference_ids:
+  - '2311.02052'
+- id: fluid_approximation
+  applies_to: model
+  condition: The method switches from exact field evolution to an effective fluid approximation after
+    oscillations begin.
+  status: approximate
+  extrapolation_risk: medium
+  caveats: []
+  source_reference_ids:
+  - '2311.02052'
+- id: linear_power_comparison
+  applies_to: structure_formation
+  condition: The paper treats its data comparison as qualitative pending hydrodynamical simulations.
+  status: approximate
+  extrapolation_risk: medium
+  caveats: []
+  source_reference_ids:
+  - '2311.02052'
+assumptions:
+  global:
+  - id: canonical_cosine_potential
+    description: The ALP potential is taken to be V = m_a^2 f_a^2 [1 - cos(phi/f_a)].
+    scope: theory
+    status: assumed
+    can_be_relaxed: unknown
+    source_reference_ids:
+    - '2311.02052'
+  - id: specified_final_density
+    description: For fixed m_a and theta_i, f_a is chosen to reproduce the desired final axion density.
+    scope: production
+    status: assumed
+    can_be_relaxed: unknown
+    source_reference_ids:
+    - '2311.02052'
+  - id: effective_sound_speed_model
+    description: A modified effective sound speed approximates tachyonic growth after the onset of oscillations.
+    scope: computation
+    status: approximate
+    can_be_relaxed: unknown
+    source_reference_ids:
+    - '2311.02052'
+associated_code:
+  has_associated_code: partial
+  code_summary: The paper describes modifications to axionCAMB and a lookup-table acceleration, but no
+    repository URL is present in the assigned text.
+  primary_code_role: boltzmann_solver_patch
+provenance:
+  model_id: 2311_02052_extreme_axion_cosine_fluid_dark_matter_v1
+  model_name: Extreme axion dark matter with cosine potential fluid modeling
+  model_family: axion_like_dark_matter
+  entry_version: 0.1.0
+  status: machine_extracted
+  created_at: '2026-05-31'
+  last_updated: '2026-05-31'
+  sources:
+    primary_papers:
+    - reference_id: '2311.02052'
+      title: 'Extreme Axions Unveiled: a Novel Fluid Approach for Cosmological Modeling'
+      year: 2023
+      arxiv_id: '2311.02052'
+      role: extension
+    - arxiv_id: '2311.02052'
+      authors:
+      - Winch, Harrison
+      - Hložek, Renée
+      - Marsh, David J. E.
+      - Grin, Daniel
+      - Rogers, Keir K.
+      doi: 10.1103/PhysRevD.110.043517
+      notes: 'Primary paper text resolved locally from the assigned GalaxyWiki text cache. Source cache:
+        dark_matter_model_astro_lexical.'
+      reference_id: paper
+      role: original_model
+      title: 'Extreme axions unveiled: A novel fluid approach for cosmological modeling'
+      url: https://arxiv.org/abs/2311.02052
+      year: 2024
+    constraint_papers: []
+    external_databases:
+    - name: NASA ADS
+      note: Used for sanitized metadata discovery.
+      url: https://ui.adsabs.harvard.edu/
+    review_papers: []
+  extraction:
+    method: llm_assisted
+    extracted_by: codex_batch_0017
+    extractor_name: Codex dark-matter model-card worker
+    extraction_date: '2026-05-31'
+    confidence: high
+    source_chunks_or_sections:
+    - reference_id: '2311.02052'
+      section: Opening summary
+      quote_or_summary: The paper considers extreme axions with high starting angle and presents a novel
+        fluid method.
+    - reference_id: '2311.02052'
+      section: Review of axionCAMB
+      quote_or_summary: The paper gives the axion field equation, cosine potential, density, and pressure.
+    - reference_id: '2311.02052'
+      section: Summary of changes to axionCAMB
+      quote_or_summary: The method replaces the quadratic approximation with a cosine potential and samples
+        extreme starting angles.
+    unresolved_items:
+    - Full hydrodynamical Lyman-alpha simulations/emulators are needed for robust constraints.
+    - A full MCMC with CMB and galaxy-clustering likelihoods is described as future work.
+  evidence:
+    particle_content:
+    - reference_id: '2311.02052'
+      note: ALPs are treated as low-mass pseudo-Nambu-Goldstone boson dark matter candidates.
+      confidence: high
+      section: Opening summary
+    symmetries:
+    - reference_id: '2311.02052'
+      note: The text connects ALPs to broken symmetries and the axion decay constant controlling potential
+        periodicity.
+      confidence: medium
+      section: Introduction
+    interactions:
+    - reference_id: '2311.02052'
+      note: The full cosine potential creates self-interaction/negative-curvature effects absent in the
+        quadratic approximation.
+      confidence: high
+      section: Introduction
+    production_mechanism:
+    - reference_id: '2311.02052'
+      note: The model fixes a starting angle and chooses f_a to reproduce the desired final axion density.
+      confidence: high
+      section: Methods
+    cosmological_history:
+    - reference_id: '2311.02052'
+      note: The field is fixed at early times, later oscillates, and eventually redshifts like CDM.
+      confidence: high
+      section: Review of axionCAMB
+    parameter_ranges:
+    - reference_id: '2311.02052'
+      note: The paper highlights masses around 10^-23 to 10^-22.5 eV and extreme starting-angle offsets.
+      confidence: medium
+      section: Opening summary and conclusions
+    validity_domain:
+    - reference_id: '2311.02052'
+      note: The authors call for hydrodynamical analysis for robust comparison to high-resolution data.
+      confidence: medium
+      section: Opening summary
+    constraints:
+    - confidence: medium
+      note: The paper compares linear MPS predictions to eBOSS DR14 Lyman-alpha estimates and explains
+        the need for hydrodynamical follow-up.
+      page: null
+      reference_id: paper
+      section: Results and discussion
+    observables:
+    - confidence: high
+      note: The paper states that extreme axions enhance small-scale power and can weaken eBOSS DR14 Lyman-alpha
+        constraints for m_a around 10^-23 to 10^-22.5 eV.
+      page: null
+      reference_id: paper
+      section: Abstract and results sections
+    routes:
+    - confidence: high
+      note: The paper describes a generalized-dark-matter plus axionCAMB fluid implementation, effective
+        sound-speed changes, and lookup-table acceleration.
+      page: null
+      reference_id: paper
+      section: Implementation sections
+  review:
+    human_reviewed: false
+    expert_reviewed: false
+    scientific_confidence: high
+    implementation_confidence: medium
+    reviewer_notes: []
+  caveats:
+  - The rendered text loses some superscript minus signs in the starting-angle range; the extraction records
+    it as an offset near the potential top.
+robustness:
+  overall: medium
+  theory_robustness: medium
+  computational_robustness: medium
+  dominant_uncertainties:
+  - fine tuning of initial angle near the potential top
+  - effective-fluid approximation during early oscillations
+  validation_status: partially_validated
+  notes: The paper compares the fluid method to exact field evolution and flags future hydrodynamical
+    work.
+agent_failure_modes:
+  warnings:
+  - id: theta_rendering_ambiguity
+    severity: medium
+    category: notation_conflict
+    warning: The extracted text renders the extreme starting-angle range imperfectly; do not use the numeric
+      range without checking the original notation.
+    mitigation: 'Use the qualitative condition: theta_i very near the top of the cosine potential.'
+    source_reference_ids: []
+observables:
+- caveats:
+  - The paper uses linear MPS estimates, not a full hydrodynamical Lyman-alpha likelihood.
+  channel: lyman_alpha
+  effect_direction: enhancement
+  environments:
+  - Lyman-alpha forest
+  - large-scale structure
+  id: tachyonic_mps_enhancement
+  key_quantities:
+  - name: axion mass
+    role: core
+    source_reference_ids:
+    - paper
+    status: established
+    symbol: m_a
+    unit: eV
+    value: 10^-23 to 10^-22.5 mass range highlighted by the paper
+  - name: initial hilltop displacement
+    role: core
+    source_reference_ids:
+    - paper
+    status: approximate
+    symbol: pi - theta_i
+    value: roughly 10^-1 to 10^-2 in the paper summary
+  - name: axion fraction
+    role: cosmological
+    source_reference_ids:
+    - paper
+    status: established
+    symbol: Omega_a h^2 or f_ax
+    value: constrained fraction can be weakened for extreme axions
+  linked_constraints:
+  - eboss_lyman_extreme_axion_constraint
+  linked_routes:
+  - route_extreme_axion_fluid_lyman
+  name: Tachyonic enhancement of small-scale matter power for hilltop axions
+  notes: null
+  observability: high
+  predicted_effect: Starting the axion near the top of the cosine potential produces tachyonic growth
+    and can enhance, rather than suppress, matter power around the axion Jeans scale; this changes the
+    comparison to eBOSS DR14 Lyman-alpha estimates.
+  redshift_range: linear evolution to redshift ranges probed by Lyman-alpha forest
+  relevance: critical
+  scale_range: Jeans-scale and Lyman-alpha matter-power scales
+  source_reference_ids:
+  - paper
+  subchannel: linear matter power spectrum
+- caveats:
+  - CMB constraints are described as future MCMC work rather than completed full likelihood analysis.
+  channel: cmb
+  effect_direction: shape_change
+  environments:
+  - CMB
+  - galaxy clustering
+  - Lyman-alpha forest
+  id: fluid_axioncamb_observable
+  key_quantities:
+  - name: effective axion sound speed
+    role: derived
+    source_reference_ids:
+    - paper
+    status: established
+    symbol: c_ax^2
+    value: modified near onset of oscillations
+  - name: background lookup table
+    role: computational
+    source_reference_ids:
+    - paper
+    status: established
+    symbol: lookup_table
+    value: computational acceleration for repeated spectra
+  linked_constraints:
+  - eboss_lyman_extreme_axion_constraint
+  linked_routes:
+  - route_extreme_axion_fluid_lyman
+  name: Efficient fluid prediction of CMB and matter spectra for extreme axions
+  notes: null
+  observability: medium
+  predicted_effect: The paper combines a generalized-dark-matter treatment with axionCAMB-style effective
+    sound speed and lookup-table innovations to compute CMB and matter-power observables for extreme axions.
+  redshift_range: radiation era through today
+  relevance: high
+  scale_range: CMB and linear matter-power scales
+  source_reference_ids:
+  - paper
+  subchannel: Boltzmann-code fluid approximation
+constraints:
+- allowed_regions:
+  - For m_a between about 10^-23 and 10^-22.5 eV, allowing extreme hilltop starting angles can significantly
+    weaken eBOSS DR14 Lyman-alpha constraints on the axion fraction.
+  applies: parameter_dependent
+  assumptions: []
+  benchmark_implications:
+  - The extra initial-angle parameter can improve fits enough to motivate full hydrodynamical analysis.
+  caveats:
+  - The paper stresses that high-resolution hydrodynamical simulations are needed for robust final constraints.
+  constrained_parameters:
+  - m_a
+  - theta_i
+  - Omega_a h^2
+  - f_ax
+  constraint_type: astrophysical
+  data_release: eBOSS DR14 Lyman-alpha linear MPS estimates
+  excluded_regions:
+  - Vanilla low-angle axions remain strongly constrained by small-scale power suppression in the referenced
+    mass range.
+  id: eboss_lyman_extreme_axion_constraint
+  likelihood_available: approximate
+  likelihood_reference: Linear matter-power comparison to eBOSS DR14 Lyman-alpha estimates in the paper
+  name: eBOSS DR14 Lyman-alpha comparison for extreme axion fraction
+  notes: null
+  observable_channel: lyman_alpha
+  recasting_needed: 'yes'
+  robustness: medium
+  source_reference_ids:
+  - paper
+theory_to_observable_routing:
+  routes:
+  - agent_notes: The paper implements the fluid machinery and linear comparisons; production-grade likelihoods
+      and hydro simulations remain future work.
+    caveats:
+    - Only low-axion-fraction regimes can safely use the CDM-assumed linear Lyman-alpha estimates.
+    constraint_ids:
+    - eboss_lyman_extreme_axion_constraint
+    derived_quantities:
+    - background evolution
+    - effective sound speed
+    - linear MPS
+    - CMB spectra
+    - Lyman-alpha fit residuals
+    description: Use the modified extreme-axion fluid implementation to predict CMB/MPS observables and
+      compare to Lyman-alpha constraints.
+    forward_model_chain:
+    - inputs:
+      - m_a
+      - theta_i
+      - Omega_a h^2
+      notes: Precompute extreme-axion background histories.
+      outputs:
+      - background fluid evolution
+      step_id: background_lookup
+      step_type: data_transform
+      tool_or_code: modified axionCAMB lookup table described in paper
+      validity: Built for efficient repeated spectra.
+    - inputs:
+      - background table
+      - c_ax^2 prescription
+      notes: Evolve perturbations with tachyonic sound-speed modification.
+      outputs:
+      - CMB spectra
+      - matter power spectrum
+      step_id: perturbation_evolution
+      step_type: boltzmann_solver
+      tool_or_code: modified axionCAMB/CAMB
+      validity: Fluid approximation calibrated to field-equation comparisons in the paper.
+    - inputs:
+      - linear MPS
+      - eBOSS DR14 estimates
+      notes: Compare to Lyman-alpha estimates as in the primary paper.
+      outputs:
+      - allowed axion fraction versus m_a and theta_i
+      step_id: lyman_comparison
+      step_type: recasting
+      tool_or_code: null
+      validity: Linear-MPS comparison only; nonlinear hydro needed.
+    id: route_extreme_axion_fluid_lyman
+    input_parameters:
+    - m_a
+    - f_a or Omega_a h^2
+    - theta_i
+    - c_ax^2 prescription
+    likelihoods:
+    - eBOSS DR14 Lyman-alpha linear MPS comparison
+    - future CMB/LSS likelihoods
+    observable_ids:
+    - tachyonic_mps_enhancement
+    - fluid_axioncamb_observable
+    required_code_resources:
+    - modified axionCAMB implementation
+    - hydrodynamical emulator for robust Lyman-alpha constraints
+    route_status: partially_implemented
+    source_model_features:
+    - cosine axion potential
+    - near-hilltop initial angle
+    - tachyonic perturbation growth
+    - modified axionCAMB fluid treatment
+    validation_tests:
+    - Recover agreement with field-equation matter-power spectra for vanilla and extreme cases.
+    - Reproduce weakened Lyman-alpha fraction limits in the highlighted mass range.

@@ -1,0 +1,716 @@
+_source:
+  shard: arXiv_src_2111_026_wds.tar
+  paper_id: '2111_04087'
+  source_member: 2111_04087.json
+  enriched: true
+  enrichment_schema_version: dm_model_ocr_enrichment_smoke_v0
+schema_version: model_only_v0
+model_id: 2111_04087_sterile_neutrino_neutrinophilic_vector_nsi_v1
+identity:
+  name: Sterile neutrino dark matter with neutrinophilic vector NSI
+  family: sterile_neutrino_dark_matter
+  aliases:
+  - neutrinophilic-vector sterile neutrino NSI DM
+  - sterile neutrino DM with NSI
+  short_description: A sterile-neutrino dark matter scenario in which active-sterile production is modified
+    by neutrinophilic-vector neutrino non-standard interactions and by uncertain pre-BBN expansion histories.
+  historical_origin_or_motivation: The paper studies how neutrino NSI and unknown pre-BBN cosmology enlarge
+    viable sterile-neutrino dark matter parameter space.
+  status: speculative
+  model_kind: simplified_model
+theory:
+  theory_level: simplified_model
+  parent_frameworks:
+  - sterile neutrino dark matter
+  - non-standard neutrino interactions
+  - nonstandard pre-BBN cosmology
+  lagrangian_available: partial
+  renormalizable: unknown
+  eft_cutoff: null
+  embedded_in_larger_framework: unknown
+  notes: The paper uses a representative neutrinophilic U(1)_np gauge interaction as a vector-mediated
+    NSI benchmark for sterile-neutrino production.
+particle_content:
+  dark_matter_candidate:
+    name: sterile neutrino
+    spin: 1/2
+    statistics: fermion
+    elementary_or_composite: elementary
+    number_of_components: single_component
+  additional_dark_sector_particles:
+  - neutrinophilic U(1)_np vector boson
+  mediators:
+  - neutrinophilic U(1)_np vector boson
+  dark_radiation_species: []
+  excited_or_degenerate_states: []
+  long_lived_particles:
+  - sterile neutrino dark matter
+  unstable_parent_particles: []
+  standard_model_extension: substantial
+symmetries:
+  stabilizing_mechanism: No exact stabilizing symmetry is specified; cosmological longevity follows from
+    tiny active-sterile mixing and keV-scale sterile-neutrino decay rates.
+  symmetries:
+  - name: U(1)_np
+    type: gauge
+    exact_or_approximate: unknown
+    breaking: massive vector boson Vnp; breaking details not specified
+    breaking_scale: null
+  - name: Standard Model gauge singlet sterile neutrino
+    type: unknown
+    exact_or_approximate: unknown
+    breaking: not specified
+    breaking_scale: null
+  topological_defects_possible: unknown
+interactions:
+  portals:
+  - neutrino
+  - vector
+  standard_model_targets:
+  - active neutrinos
+  dark_sector_couplings:
+  - neutrinophilic-vector neutrino NSI
+  - active-sterile flavor mixing
+  mediator_types:
+  - neutrinophilic U(1)_np vector boson
+  interaction_operators:
+  - active-sterile mixing in matter
+  - mediator-induced neutrino interaction rate and thermal potential
+  scattering:
+    elastic: unknown
+    inelastic: unknown
+    momentum_dependence: unknown
+    velocity_dependence: unknown
+    spin_dependence: unknown
+  annihilation_channels: []
+  decay_channels:
+  - sterile neutrino to active neutrino plus photon
+  self_scattering_channels: []
+  cp_structure: unknown
+  flavor_structure: The paper assumes the sterile neutrino couples mostly with the muon-flavor active
+    neutrino.
+  tree_or_loop_level: unknown
+parameters:
+  core:
+  - name: sterile neutrino mass
+    symbol: m_s
+    description: Mass of the sterile-neutrino dark matter candidate.
+    range: 1 keV < m_s < 1 MeV
+    unit: keV to MeV
+    role: core
+    status: established
+    source_reference_ids: []
+  - name: active-sterile mixing
+    symbol: sin^2(2 theta)
+    description: Vacuum mixing parameter controlling production and decay.
+    range: 1e-21 < sin^2(2 theta) < 1e-6
+    role: core
+    status: established
+    source_reference_ids: []
+  - name: neutrinophilic vector mediator mass
+    symbol: m_V
+    description: Mass of the U(1)_np vector boson mediator.
+    range: 5 MeV < m_V < 100 GeV
+    unit: MeV to GeV
+    role: core
+    status: established
+    source_reference_ids: []
+  - name: neutrinophilic vector coupling
+    symbol: g_V
+    description: Gauge coupling of the neutrinophilic vector mediator.
+    range: 1e-8 < g_V < 1
+    role: core
+    status: established
+    source_reference_ids: []
+  - name: transition temperature to standard cosmology
+    symbol: T_tr
+    description: Temperature below which the cosmology is standard radiation domination.
+    value: 5 MeV
+    unit: MeV
+    role: cosmological
+    status: assumed
+    source_reference_ids: []
+  - name: pre-BBN expansion parameters
+    symbol: eta, beta
+    description: Phenomenological parameters in H = eta (T/T_tr)^beta H_Std for nonstandard cosmologies.
+    range: standard, kination, ST1, and ST2 examples
+    role: cosmological
+    status: assumed
+    source_reference_ids: []
+  nuisance:
+  - name: relativistic degrees of freedom
+    symbol: g_*
+    description: The calculation fixes g_*(T) = 10.75 during the relevant production epoch.
+    value: 10.75
+    role: computational
+    status: assumed
+    source_reference_ids: []
+  derived:
+  - name: sterile-neutrino dark matter fraction
+    symbol: f_s
+    description: Computed fraction Omega_s/Omega_DM from the integrated distribution function.
+    range: models selected around f_s = 1, with subdominant extrapolations possible
+    role: derived
+    status: inferred
+    source_reference_ids: []
+production:
+  mechanisms:
+  - active-sterile oscillation production
+  - collisional production modified by neutrino NSI
+  - nonstandard pre-BBN expansion histories
+  thermal_equilibrium_with_standard_model: 'no'
+  thermal_equilibrium_with_hidden_sector: not_applicable
+  abundance_set_by:
+  - m_s
+  - sin^2(2 theta)
+  - mediator mass and coupling
+  - pre-BBN Hubble expansion rate
+  depends_on_reheating_temperature: unknown
+  can_produce_all_dark_matter: parameter_dependent
+  nonthermal_momentum_distribution: 'yes'
+  notes: The paper integrates the Boltzmann equation from 10 GeV to 0.1 MeV and identifies regions where
+    sterile neutrinos can account for all dark matter.
+relic_density:
+  full_or_subcomponent: either
+  target_fraction: null
+  calculation_type: nonthermal
+  key_dependencies:
+  - sterile-neutrino mass
+  - mixing angle
+  - NSI mediator mass and coupling
+  - pre-BBN expansion history
+  requires_entropy_dilution: 'no'
+  overclosure_risk: parameter_dependent
+  underproduction_risk: parameter_dependent
+  tuning_assessment: unknown
+cosmological_history:
+  standard_history_assumed: false
+  nonstandard_features:
+  - standard radiation-dominated comparison
+  - kination model
+  - scalar-tensor ST1 model
+  - scalar-tensor ST2 model
+  - transition to standard cosmology at T_tr = 5 MeV
+  dark_sector_temperature: null
+  delta_neff: null
+  kinetic_decoupling: null
+  chemical_decoupling: null
+  phase_transitions: []
+  topological_defects: []
+  isocurvature_perturbations: unknown
+  bbn_relevance: high
+  cmb_relevance: unknown
+phase_space:
+  distribution_type: nonthermal
+  distribution_function_available: 'yes'
+  f_of_p_or_q: Boltzmann-integrated f_s(p) as a function of comoving momentum variable epsilon.
+  average_momentum_relative_to_thermal: null
+  free_streaming_length: null
+  velocity_dispersion_today: null
+  phase_space_bounds: []
+  notes: The paper notes that momentum distributions can be colder or hotter than Dodelson-Widrow production
+    depending on NSI and cosmology.
+structure_formation:
+  linear:
+    behaves_like_cdm: scale_dependent
+    transfer_function_shape: smooth_cutoff
+    small_scale_power_effect: suppression
+    impact_on_sigma8_s8: unknown
+  nonlinear:
+    halo_mass_function_effect: unknown
+    subhalo_mass_function_effect: unknown
+    simulation_calibrated: 'no'
+validity_domain:
+- id: small_occupation_limit
+  applies_to: production
+  condition: The production equation is valid for f_s << 1 and f_s much smaller than the active-neutrino
+    equilibrium distribution.
+  valid_range: null
+  status: established
+  extrapolation_risk: medium
+  caveats: []
+  source_reference_ids: []
+  notes: null
+- id: pre_bbn_transition
+  applies_to: cosmological_history
+  condition: Nonstandard cosmologies are required to transition to standard radiation domination by T_tr
+    = 5 MeV.
+  valid_range: null
+  status: assumed
+  extrapolation_risk: medium
+  caveats: []
+  source_reference_ids: []
+  notes: null
+- id: fixed_gstar
+  applies_to: production
+  condition: The calculation fixes g_* = 10.75 over the production range as an approximation.
+  valid_range: null
+  status: approximate
+  extrapolation_risk: medium
+  caveats: []
+  source_reference_ids: []
+  notes: null
+assumptions:
+  global:
+  - id: negligible_lepton_asymmetry
+    description: Particle-antiparticle asymmetries are neglected so the density potential V_D is set to
+      zero.
+    scope: production
+    status: assumed
+    impact_if_violated: null
+    can_be_relaxed: unknown
+    source_reference_ids: []
+  - id: muon_flavor_mixing
+    description: The sterile neutrino is assumed to couple mostly with the muon-flavor active neutrino.
+    scope: theory
+    status: assumed
+    impact_if_violated: null
+    can_be_relaxed: unknown
+    source_reference_ids: []
+  - id: abrupt_cosmology_transition
+    description: Scalar-tensor cosmologies are approximated as abruptly transitioning to standard cosmology
+      at T_tr.
+    scope: cosmological_history
+    status: approximate
+    impact_if_violated: null
+    can_be_relaxed: unknown
+    source_reference_ids: []
+  constraint_specific: []
+  computation_specific:
+  - id: finite_temperature_integration_range
+    description: The Boltzmann equation is integrated from 10 GeV to 0.1 MeV because most production occurs
+      in that range.
+    scope: computation
+    status: assumed
+    impact_if_violated: null
+    can_be_relaxed: unknown
+    source_reference_ids: []
+associated_code:
+  has_associated_code: unknown
+  code_summary: No model-specific public code is identified in the assigned paper text.
+  primary_code_role: null
+  repositories: []
+  packages_or_modules: []
+  notebooks: []
+  scripts: []
+  containers_or_environments: []
+  expected_inputs: []
+  expected_outputs: []
+  supported_observable_channels: []
+  caveats: []
+provenance:
+  model_id: 2111_04087_sterile_neutrino_neutrinophilic_vector_nsi_v1
+  model_name: Sterile neutrino dark matter with neutrinophilic vector NSI
+  model_family: sterile_neutrino_dark_matter
+  entry_version: 0.1.0
+  status: machine_extracted
+  created_at: '2026-05-31'
+  last_updated: '2026-05-31'
+  sources:
+    primary_papers:
+    - reference_id: arxiv:2111.04087
+      title: Sterile neutrino dark matter with neutrino non-standard interactions and nonstandard cosmologies
+      year: 2021
+      arxiv_id: '2111.04087'
+      doi: null
+      url: null
+      role: original_model
+      notes: Source text from assigned SQLite database only.
+    - arxiv_id: '2111.04087'
+      authors:
+      - Chichiri, Carlos
+      - Gelmini, Graciela B.
+      - Lu, Philip
+      - Takhistov, Volodymyr
+      doi: 10.1088/1475-7516/2022/09/036
+      notes: Primary assigned paper; full text resolved locally.
+      reference_id: primary_2111_04087
+      role: original_model
+      title: Cosmological dependence of sterile neutrino dark matter with self-interacting neutrinos
+      url: https://arxiv.org/abs/2111.04087
+      year: 2022
+    constraint_papers: []
+    external_databases: []
+    review_papers: []
+  extraction:
+    method: llm_assisted
+    extracted_by: codex_batch_0005
+    extractor_name: Codex GPT-5 batch worker
+    extraction_date: '2026-05-31'
+    confidence: medium
+    source_chunks_or_sections:
+    - reference_id: arxiv:2111.04087
+      section: opening paragraphs
+      page: null
+      quote_or_summary: The paper considers O(keV)-scale sterile neutrinos as dark matter, mixed with
+        one active neutrino.
+    - reference_id: arxiv:2111.04087
+      section: production formalism
+      page: null
+      quote_or_summary: Sterile neutrinos are produced by active-sterile oscillations and collisions;
+        neutrino NSI modify the matter mixing angle and production rate.
+    - reference_id: arxiv:2111.04087
+      section: cosmology scan
+      page: null
+      quote_or_summary: The scan includes standard, kination, and scalar-tensor pre-BBN cosmologies with
+        transition temperature 5 MeV.
+    - reference_id: arxiv:2111.04087
+      section: vector mediator examples
+      page: null
+      quote_or_summary: The paper chooses a neutrinophilic U(1)_np vector boson that couples solely to
+        active neutrinos as one NSI example.
+    unresolved_items:
+    - Lyman-alpha limits are deliberately not plotted in the primary paper and require a model-specific
+      transfer-function recast.
+    - Mediator exclusions are summarized from prior literature rather than supplied as machine-readable
+      likelihoods.
+    - The 3.5 keV line is treated only as a contested benchmark.
+  evidence:
+    particle_content:
+    - reference_id: arxiv:2111.04087
+      note: The dark matter candidate is a sterile right-handed neutrino, an SM gauge singlet with O(keV)
+        to MeV masses in the scan.
+      confidence: medium
+      section: opening paragraphs
+      page: null
+    interactions:
+    - reference_id: arxiv:2111.04087
+      note: The production calculation includes neutrinophilic-vector neutrino non-standard interactions
+        in addition to weak interactions.
+      confidence: medium
+      section: production formalism
+      page: null
+    - reference_id: arxiv:2111.04087
+      note: The U(1)_np mediator couples solely to active neutrinos, with the representative case coupled
+        to the muon-flavor neutrino.
+      confidence: medium
+      section: production formalism
+      page: null
+    production_mechanism:
+    - reference_id: arxiv:2111.04087
+      note: The relic population is generated by active-sterile oscillations and collisional production
+        governed by a Boltzmann equation for f_s.
+      confidence: medium
+      section: production formalism
+      page: null
+    cosmological_history:
+    - reference_id: arxiv:2111.04087
+      note: 'The paper varies pre-BBN expansion histories: standard radiation domination, kination, and
+        two scalar-tensor examples, all transitioning to standard cosmology at T_tr = 5 MeV.'
+      confidence: medium
+      section: cosmology section
+      page: null
+    parameter_ranges:
+    - reference_id: arxiv:2111.04087
+      note: The scan uses 1 keV < m_s < 1 MeV and 1e-21 < sin^2(2 theta) < 1e-6, plus mediator-specific
+        mass and coupling ranges.
+      confidence: medium
+      section: parameter scan
+      page: null
+    - reference_id: arxiv:2111.04087
+      note: The neutrinophilic-vector scan uses 5 MeV < m_V < 100 GeV and 1e-8 < g_V < 1.
+      confidence: medium
+      section: parameter scan
+      page: null
+    validity_domain:
+    - reference_id: arxiv:2111.04087
+      note: The Boltzmann equation assumes f_s << 1 and negligible active-sterile backreaction; the paper
+        also fixes g_* = 10.75 for the production epoch.
+      confidence: medium
+      section: production formalism
+      page: null
+    constraints:
+    - confidence: high
+      note: Primary paper summarizes X-ray, Tremaine-Gunn, Lyman-alpha, and mediator-exclusion constraints.
+      page: null
+      reference_id: primary_2111_04087
+      section: null
+    observables:
+    - confidence: high
+      note: Primary paper states the radiative decay line and the model-dependent free-streaming observable.
+      page: null
+      reference_id: primary_2111_04087
+      section: null
+    routes:
+    - confidence: medium
+      note: Route mirrors the paper's Boltzmann production scan over NSI models and nonstandard cosmologies.
+      page: null
+      reference_id: primary_2111_04087
+      section: null
+  review:
+    human_reviewed: false
+    reviewed_by: null
+    review_date: null
+    expert_reviewed: false
+    expert_reviewer: null
+    expert_review_date: null
+    reviewer_notes: []
+    scientific_confidence: medium
+    implementation_confidence: medium
+  caveats:
+  - The mediator implementations are simplified and rely on production-rate formulae and parameter scans
+    rather than full model construction.
+robustness:
+  overall: medium
+  theory_robustness: medium
+  computational_robustness: medium
+  dominant_uncertainties:
+  - unknown pre-BBN cosmology
+  - mediator model dependence
+  - momentum-distribution dependence
+  validation_status: partially_validated
+  notes: The paper provides a detailed Boltzmann scan but model-card use should preserve the mediator
+    and cosmology assumptions.
+agent_failure_modes:
+  warnings:
+  - id: cosmology_nsi_degeneracy
+    severity: medium
+    category: degeneracy
+    warning: Allowed sterile-neutrino parameter space depends jointly on the assumed pre-BBN expansion
+      history and NSI mediator model.
+    mitigation: Do not reuse a parameter range without carrying the cosmology and mediator assumptions.
+    source_reference_ids: []
+  - id: warm_dm_distribution
+    severity: medium
+    category: assumption_mismatch
+    warning: Warm-dark-matter structure limits depend on the nonthermal momentum distribution, which differs
+      across NSI and cosmology choices.
+    mitigation: Use the paper-specific distribution before applying structure-formation mappings.
+    source_reference_ids: []
+observables:
+- caveats:
+  - Bounds assume an abundance and decay lifetime; very early decays avoid galaxy-based limits.
+  channel: indirect_detection
+  effect_direction: spectral_line
+  environments:
+  - M31
+  - Galactic Center
+  - empty sky fields
+  - diffuse extragalactic background
+  id: obs_2111_xray_decay_line
+  key_quantities:
+  - name: sterile neutrino mass
+    range: 1 keV to 1 MeV scan range
+    role: core
+    status: inferred
+    symbol: m_s
+    unit: keV-MeV
+  - name: active-sterile mixing
+    range: 10^-21 to 10^-6 scan range
+    role: core
+    status: inferred
+    symbol: sin^2(2theta)
+  - description: Fraction of dark matter in sterile neutrinos
+    name: sterile-neutrino fraction
+    role: core
+    status: inferred
+    symbol: f_s
+  linked_constraints:
+  - cons_2111_xray_decay
+  linked_routes:
+  - route_2111_neutrinophilic_production_constraints
+  name: Radiative sterile-neutrino decay line
+  notes: The primary paper treats X-ray limits as a dominant constraint on the full-DM case.
+  observability: high
+  predicted_effect: Sterile neutrinos decay through nu_s -> nu + gamma, producing a photon with E_gamma
+    = m_s/2; X-ray observations constrain masses above a few keV.
+  redshift_range: low redshift galaxies, clusters, and diffuse background
+  relevance: critical
+  scale_range: X-ray photon energy E_gamma = m_s/2
+  source_reference_ids:
+  - primary_2111_04087
+  subchannel: X-ray line
+- caveats:
+  - The authors do not plot Lyman-alpha constraints because the distribution is model and cosmology dependent.
+  channel: lyman_alpha
+  effect_direction: suppression
+  environments:
+  - intergalactic medium
+  - small-scale structure
+  id: obs_2111_free_streaming_lya
+  key_quantities:
+  - name: average momentum
+    role: derived
+    status: inferred
+    symbol: <p/T>
+  - name: sterile neutrino mass
+    role: core
+    status: inferred
+    symbol: m_s
+    unit: keV-MeV
+  - name: pre-BBN expansion model
+    role: cosmological
+    status: inferred
+    symbol: H(T)
+  linked_constraints:
+  - cons_2111_phase_space_lya
+  linked_routes:
+  - route_2111_neutrinophilic_production_constraints
+  name: Warm-dark-matter free-streaming suppression
+  notes: This observable requires deriving a transfer function from the computed nonthermal distribution.
+  observability: medium
+  predicted_effect: The sterile-neutrino momentum distribution sets the free-streaming scale, so Lyman-alpha
+    forest bounds can restrict keV sterile-neutrino dark matter but depend on the NSI model and pre-BBN
+    cosmology.
+  redshift_range: post-recombination structure formation
+  relevance: high
+  scale_range: Lyman-alpha forest and dwarf-galaxy scales
+  source_reference_ids:
+  - primary_2111_04087
+  subchannel: matter power suppression
+constraints:
+- allowed_regions:
+  - A 7.1 keV sterile neutrino with sin^2(2theta) around 5e-11 is discussed as a possible 3.5 keV line
+    interpretation, but the paper notes the interpretation is under scrutiny.
+  applies: 'yes'
+  assumptions: []
+  benchmark_implications:
+  - Any viable NSI/cosmology point must satisfy the X-ray line/non-observation envelope for its abundance
+    fraction.
+  caveats:
+  - The 3.5 keV line interpretation is contested and should not be treated as established evidence.
+  constrained_parameters:
+  - m_s
+  - sin^2(2theta)
+  - f_s
+  constraint_type: indirect_detection
+  data_release: M31, Galactic Center, empty-sky, and DEBRA constraints as summarized in the primary paper
+  excluded_regions:
+  - Full-DM sterile neutrino regions above a few keV with too-large radiative decay rates.
+  - The Dodelson-Widrow dominant-DM region is strongly constrained by X-ray observations.
+  id: cons_2111_xray_decay
+  likelihood_available: partial
+  likelihood_reference: null
+  name: X-ray decay constraints on sterile neutrino dark matter
+  notes: Primary text gives the decay mode, photon energy, and observational classes.
+  observable_channel: X-ray
+  recasting_needed: partial
+  robustness: high
+  source_reference_ids:
+  - primary_2111_04087
+- allowed_regions:
+  - Allowed regions depend on whether NSI and nonstandard expansion histories produce colder or hotter
+    spectra than Dodelson-Widrow production.
+  applies: parameter_dependent
+  assumptions: []
+  benchmark_implications:
+  - A production calculation must output the momentum distribution before applying small-scale-structure
+    constraints.
+  caveats:
+  - The primary paper explicitly omits plotted Lyman-alpha exclusions because of model/cosmology dependence.
+  constrained_parameters:
+  - m_s
+  - momentum distribution
+  - f_s
+  constraint_type: astrophysical
+  data_release: null
+  excluded_regions:
+  - Full-DM sterile neutrinos with m_s below about 2 keV are restricted by the dwarf-spheroidal Tremaine-Gunn
+    bound.
+  - Lyman-alpha bounds can limit abundances for m_s < 30 keV depending on the production spectrum.
+  id: cons_2111_phase_space_lya
+  likelihood_available: 'no'
+  likelihood_reference: null
+  name: Tremaine-Gunn and Lyman-alpha warm-DM restrictions
+  notes: Combines the phase-space and free-streaming restrictions discussed together in the paper.
+  observable_channel: phase-space and Lyman-alpha
+  recasting_needed: 'yes'
+  robustness: medium
+  source_reference_ids:
+  - primary_2111_04087
+- allowed_regions:
+  - 'Scan range quoted in the paper: 5 MeV < m_V < 100 GeV and 10^-8 < g_V < 1 after exclusions.'
+  applies: 'yes'
+  assumptions: []
+  benchmark_implications:
+  - Neutrinophilic vector NSI can expand production parameter space but is limited by multiple non-cosmological
+    bounds.
+  caveats:
+  - SN1987A and laboratory limits are not recast from raw likelihoods in the primary paper.
+  constrained_parameters:
+  - m_V
+  - g_V
+  - m_s
+  - sin^2(2theta)
+  constraint_type: laboratory
+  data_release: null
+  excluded_regions:
+  - Neutrinophilic vector mass-coupling combinations rejected by Higgs invisible decay, kaon decay, Z
+    decay, SN1987A, or BBN bounds.
+  id: cons_2111_neutrinophilic_mediator_bounds
+  likelihood_available: 'no'
+  likelihood_reference: null
+  name: Neutrinophilic vector laboratory, supernova, and BBN exclusions
+  notes: Applies to the neutrinophilic vector row.
+  observable_channel: mediator constraints
+  recasting_needed: partial
+  robustness: medium
+  source_reference_ids:
+  - primary_2111_04087
+theory_to_observable_routing:
+  routes:
+  - agent_notes: The primary paper describes scans but does not provide a packaged likelihood or code
+      in the local batch.
+    caveats:
+    - Pre-BBN cosmology and mediator bounds dominate the recast uncertainty.
+    constraint_ids:
+    - cons_2111_xray_decay
+    - cons_2111_phase_space_lya
+    - cons_2111_neutrinophilic_mediator_bounds
+    derived_quantities:
+    - Omega_s
+    - f_s(p)
+    - decay rate
+    - free-streaming scale
+    description: Solve sterile-neutrino production with a neutrinophilic vector mediator, nonstandard
+      pre-BBN expansion, and map the resulting abundance/distribution to X-ray and structure constraints.
+    forward_model_chain:
+    - inputs:
+      - m_s
+      - mixing
+      - NSI rate
+      - H(T)
+      notes: Integrate the Boltzmann equation over the four cosmologies considered.
+      outputs:
+      - sterile abundance
+      - momentum distribution
+      step_id: 2111_step_boltzmann
+      step_type: boltzmann_solver
+      tool_or_code: null
+      validity: Valid for the production-rate approximations used in the paper.
+    - inputs:
+      - abundance
+      - momentum distribution
+      - decay rate
+      notes: Apply X-ray and phase-space bounds, and defer Lyman-alpha to a dedicated recast.
+      outputs:
+      - X-ray allowed region
+      - warm-DM recast target
+      step_id: 2111_step_constraints
+      step_type: likelihood
+      tool_or_code: null
+      validity: X-ray envelopes can be applied approximately; Lyman-alpha needs a transfer-function recast.
+    id: route_2111_neutrinophilic_production_constraints
+    input_parameters:
+    - m_s
+    - sin^2(2theta)
+    - mediator mass
+    - mediator coupling
+    - H(T) cosmology parameters
+    likelihoods:
+    - X-ray line/non-observation envelopes
+    - Tremaine-Gunn lower-mass bound
+    - future Lyman-alpha recast
+    observable_ids:
+    - obs_2111_xray_decay_line
+    - obs_2111_free_streaming_lya
+    required_code_resources:
+    - Boltzmann production solver
+    - mediator-bound masks
+    route_status: planned
+    source_model_features:
+    - active-sterile oscillations
+    - neutrinophilic vector mediator neutrino NSI
+    - pre-BBN cosmology parameterization
+    validation_tests:
+    - Recover the paper's underproduction/overproduction boundaries for the chosen mediator.

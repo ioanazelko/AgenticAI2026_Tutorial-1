@@ -1,0 +1,839 @@
+_source:
+  shard: arXiv_src_1707_015_wds.tar
+  paper_id: '1707_06418'
+  source_member: 1707_06418.json
+  enriched: true
+  enrichment_schema_version: dm_model_ocr_enrichment_smoke_v0
+schema_version: model_only_v0
+model_id: 1707_06418_dfsz_freeze_in_axino_dm_v1
+identity:
+  name: DFSZ freeze-in axino dark matter with bilinear R-parity violation
+  family: freeze_in_dark_matter
+  aliases:
+  - 7 keV axino dark matter
+  - SUSY DFSZ axino warm dark matter
+  short_description: A supersymmetric DFSZ axion model in which a 7 keV axino is produced by freeze-in
+    through Higgs, Higgsino, and wino bath processes, with saxion entropy production cooling and diluting
+    the abundance.
+  historical_origin_or_motivation: The paper develops 7 keV axino dark matter as a decaying-dark-matter
+    explanation of the 3.5 keV X-ray line while addressing warmness constraints from Ly-alpha forest data.
+  status: speculative
+  model_kind: complete_theory
+theory:
+  theory_level: uv_complete
+  parent_frameworks:
+  - supersymmetric DFSZ axion model
+  - Peccei-Quinn symmetry
+  - bilinear R-parity violation
+  lagrangian_available: partial
+  renormalizable: 'no'
+  eft_cutoff:
+    name: UV scale for higher-dimensional PQ operators
+    symbol: M_*
+    description: Scale suppressing the DFSZ mu-term and bRPV superpotential operators.
+    value: null
+    fiducial_value: 1e16
+    range: around 1e16
+    unit: GeV
+    prior: null
+    scale: log
+    role: core
+    status: assumed
+    source_reference_ids:
+    - '1707.06418'
+    notes: null
+  embedded_in_larger_framework: 'yes'
+  notes: The text gives the DFSZ and bRPV superpotential terms and effective axino couplings after PQ
+    breaking; the UV completion above M_* is not specified.
+particle_content:
+  dark_matter_candidate:
+    name: axino
+    spin: 1/2
+    statistics: fermion
+    elementary_or_composite: elementary
+    number_of_components: single_component
+  additional_dark_sector_particles:
+  - QCD axion
+  - saxion
+  mediators:
+  - Higgs doublets
+  - Higgsinos
+  - winos
+  - active neutrinos through bRPV mixing
+  dark_radiation_species: []
+  excited_or_degenerate_states: []
+  long_lived_particles:
+  - 7 keV axino dark matter
+  unstable_parent_particles:
+  - Higgsino NLSP benchmark
+  - wino NLSP benchmark
+  - lighter Higgs doublet bath state
+  - saxion condensate
+  standard_model_extension: substantial
+symmetries:
+  stabilizing_mechanism: The axino is long-lived rather than absolutely stable; bilinear lepton-number
+    R-parity violation allows slow decay while avoiding proton decay when baryon-number violation is absent.
+  symmetries:
+  - name: Peccei-Quinn symmetry
+    type: global
+    exact_or_approximate: broken
+    breaking: spontaneously broken to generate the axion supermultiplet and the MSSM mu term
+    breaking_scale:
+      name: PQ breaking scale
+      symbol: v_PQ
+      description: PQ scale used in the DFSZ superpotential and axino-neutrino mixing estimate.
+      value: null
+      fiducial_value: 1e10
+      range: benchmark around 1e10
+      unit: GeV
+      prior: null
+      scale: log
+      role: core
+      status: assumed
+      source_reference_ids:
+      - '1707.06418'
+      notes: null
+  - name: bilinear R-parity violation
+    type: approximate
+    exact_or_approximate: broken
+    breaking: lepton-number violating bRPV operators induce axino-neutrino mixing
+    breaking_scale: null
+  topological_defects_possible: unknown
+interactions:
+  portals:
+  - higgs
+  - neutrino
+  - other
+  standard_model_targets:
+  - Higgs doublets
+  - Higgsinos
+  - top quarks through scattering examples
+  - active neutrinos
+  - photons from rare axino decay
+  dark_sector_couplings:
+  - axino-Higgs-Higgsino coupling from DFSZ mu term
+  - axino-neutrino mixing from bRPV
+  - saxion coherent oscillation and decay
+  mediator_types:
+  - Higgs/Higgsino bath states
+  - wino bath state
+  - neutrino mixing
+  - saxion entropy source
+  interaction_operators:
+  - W_DFSZ = Z(XY - v_PQ^2/2) + y_0 X^2 H_u H_d / M_*
+  - W_bRPV = y_i X^3 L_i H_u / M_*^2
+  - effective axino-Higgs-Higgsino interactions after PQ breaking
+  scattering:
+    elastic: not_applicable
+    inelastic: unknown
+    momentum_dependence: unknown
+    velocity_dependence: unknown
+    spin_dependence: unknown
+  annihilation_channels: []
+  decay_channels:
+  - axino -> active neutrino + photon through bRPV-induced mixing
+  - axino -> light active neutrinos through mixing
+  self_scattering_channels: []
+  cp_structure: unknown
+  flavor_structure: bRPV mixing is taken mainly in the third lepton generation in the paper estimate
+  tree_or_loop_level: both
+parameters:
+  core:
+  - name: axino mass
+    symbol: m_axino
+    description: Mass of the warm axino dark matter candidate motivated by a 3.5 keV photon line.
+    value: null
+    fiducial_value: '7'
+    range: fixed benchmark 7
+    unit: keV
+    prior: null
+    scale: linear
+    role: core
+    status: assumed
+    source_reference_ids:
+    - '1707.06418'
+    notes: null
+  - name: axino-neutrino mixing angle
+    symbol: sin^2(2theta)
+    description: Mixing required for the axino decay interpretation of the 3.5 keV line.
+    value: null
+    fiducial_value: 2e-10
+    range: around 2e-10
+    unit: null
+    prior: null
+    scale: log
+    role: core
+    status: assumed
+    source_reference_ids:
+    - '1707.06418'
+    notes: null
+  - name: PQ breaking scale
+    symbol: v_PQ
+    description: PQ scale entering the DFSZ mu term, bRPV terms, and axino-neutrino mixing.
+    value: null
+    fiducial_value: 1e10
+    range: benchmark around 1e10
+    unit: GeV
+    prior: null
+    scale: log
+    role: core
+    status: assumed
+    source_reference_ids:
+    - '1707.06418'
+    notes: null
+  - name: Higgsino mass parameter
+    symbol: mu
+    description: Sets the Higgsino threshold for freeze-in production.
+    value: null
+    fiducial_value: 500 in BM1; 1e4 in BM2
+    range: benchmark dependent
+    unit: GeV
+    prior: null
+    scale: log
+    role: core
+    status: benchmark
+    source_reference_ids:
+    - '1707.06418'
+    notes: The extracted text writes BM1 mu=500 and BM2 mu=10 TeV-like notation.
+  - name: wino mass
+    symbol: M_2
+    description: Sets the wino NLSP threshold in the second benchmark.
+    value: null
+    fiducial_value: 1e4 in BM1; 500 in BM2
+    range: benchmark dependent
+    unit: GeV
+    prior: null
+    scale: log
+    role: core
+    status: benchmark
+    source_reference_ids:
+    - '1707.06418'
+    notes: null
+  - name: entropy dilution factor
+    symbol: Delta
+    description: Dilution and cooling factor from saxion domination and decay.
+    value: null
+    fiducial_value: null
+    range: minimum values inferred from Ly-alpha comparisons; examples include 4.7, 20, and 41 for benchmark
+      cases
+    unit: null
+    prior: null
+    scale: linear
+    role: cosmological
+    status: inferred
+    source_reference_ids:
+    - '1707.06418'
+    notes: null
+  nuisance: []
+  derived:
+  - name: nonthermal phase-space distribution
+    symbol: f(q)
+    description: Yield-weighted superposition of freeze-in distributions from decays and scatterings.
+    value: null
+    fiducial_value: null
+    range: computed per production channel and benchmark
+    unit: null
+    prior: null
+    scale: null
+    role: derived
+    status: inferred
+    source_reference_ids:
+    - '1707.06418'
+    notes: null
+production:
+  mechanisms:
+  - freeze-in from 2-body decays
+  - freeze-in from 3-body decays
+  - freeze-in from 2-to-2 scatterings
+  - saxion entropy dilution after production
+  thermal_equilibrium_with_standard_model: 'no'
+  thermal_equilibrium_with_hidden_sector: unknown
+  abundance_set_by:
+  - Higgs/Higgsino/wino bath production rates
+  - reheating temperature
+  - saxion dilution factor
+  depends_on_reheating_temperature: parameter_dependent
+  can_produce_all_dark_matter: parameter_dependent
+  nonthermal_momentum_distribution: 'yes'
+  notes: Axinos are feebly interacting and produced near process threshold in the DFSZ model; the paper
+    solves Boltzmann equations for multiple channels.
+relic_density:
+  full_or_subcomponent: full_dark_matter
+  target_fraction:
+    name: target dark matter abundance
+    symbol: Omega_axino h^2
+    description: Axino abundance is intended to account for the observed dark matter density after dilution.
+    value: null
+    fiducial_value: observed dark matter density
+    range: null
+    unit: null
+    prior: null
+    scale: null
+    role: derived
+    status: inferred
+    source_reference_ids:
+    - '1707.06418'
+    notes: null
+  calculation_type: nonthermal
+  key_dependencies:
+  - freeze-in collision terms
+  - Higgsino or wino NLSP spectrum
+  - reheating temperature
+  - saxion decay dilution
+  requires_entropy_dilution: parameter_dependent
+  overclosure_risk: parameter_dependent
+  underproduction_risk: parameter_dependent
+  tuning_assessment: unknown
+cosmological_history:
+  standard_history_assumed: false
+  nonstandard_features:
+  - saxion coherent oscillation can dominate the energy density
+  - late saxion decay injects entropy into the Standard Model bath
+  - axino momenta are redshifted by entropy production
+  dark_sector_temperature: null
+  delta_neff: null
+  kinetic_decoupling: null
+  chemical_decoupling: null
+  phase_transitions:
+  - PQ symmetry breaking
+  - electroweak phase transition occurs after the main DFSZ freeze-in processes in the benchmark discussion
+  topological_defects: []
+  isocurvature_perturbations: unknown
+  bbn_relevance: medium
+  cmb_relevance: medium
+phase_space:
+  distribution_type: nonthermal
+  distribution_function_available: 'yes'
+  f_of_p_or_q: The paper computes f(q) from reduced collision terms for 2-body decays, 3-body decays,
+    and 2-to-2 scattering, and combines channels for BM1/BM2.
+  average_momentum_relative_to_thermal: colder than typical thermal cases for the studied freeze-in channels;
+    exact value is process dependent
+  free_streaming_length: null
+  velocity_dispersion_today: null
+  phase_space_bounds:
+  - Compared directly to conventional WDM matter power spectra and Ly-alpha lower bounds.
+  notes: 3-body decays are coldest channel-by-channel, while realistic benchmarks are yield-weighted mixtures.
+structure_formation:
+  linear:
+    behaves_like_cdm: scale_dependent
+    transfer_function_shape: smooth_cutoff
+    small_scale_power_effect: suppression
+    half_mode_mass: null
+    impact_on_sigma8_s8: unknown
+  nonlinear:
+    halo_mass_function_effect: warm-dark-matter-like suppression is inferred from the linear matter power
+      spectrum
+    subhalo_mass_function_effect: suppressed small-scale abundance expected if the cutoff is large
+    infall_subhalo_mass_function_effect: unknown
+    present_day_bound_subhalo_mass_function_effect: unknown
+    concentration_mass_relation_effect: unknown
+    density_profile_effect: unknown
+    core_or_cusp_effect: unknown
+    subhalo_survival_effect: unknown
+    tidal_stripping_effect: unknown
+    smallest_galaxies_effect: suppressed small-scale structure is the Ly-alpha concern
+    simulation_calibrated: 'no'
+validity_domain:
+- id: dfs_z_freeze_in_threshold_regime
+  applies_to: production
+  condition: DFSZ axino production is dominated near Higgs/Higgsino/wino threshold scales through effective
+    dimension-4 couplings.
+  valid_range: benchmark spectra BM1 and BM2 in the paper
+  status: inferred
+  extrapolation_risk: medium
+  caveats:
+  - Changing the superpartner spectrum can reshuffle dominant production channels.
+  source_reference_ids:
+  - '1707.06418'
+  notes: null
+- id: saxion_entropy_after_axino_production
+  applies_to: cosmological_history
+  condition: Saxion domination and decay occur after axino production so the axino distribution is diluted
+    and cooled without being thermally distorted.
+  valid_range: requires saxion equality temperature below the freeze-in threshold and decay before problematic
+    late times
+  status: assumed
+  extrapolation_risk: high
+  caveats:
+  - Very low saxion decay temperatures may be disfavored by BBN.
+  source_reference_ids:
+  - '1707.06418'
+  notes: null
+assumptions:
+  global:
+  - id: single_axino_dm_component
+    description: The 7 keV axino is treated as the dark matter component of interest; low-temperature
+      Dodelson-Widrow-like axino production is neglected as a small fraction.
+    scope: production
+    status: assumed
+    impact_if_violated: The relic density and phase-space distribution would need an additional component.
+    can_be_relaxed: 'yes'
+    source_reference_ids:
+    - '1707.06418'
+    notes: null
+  - id: baryon_number_safe_rpv
+    description: R-parity violation is lepton-number violating, avoiding proton decay operators that require
+      both lepton and baryon number violation.
+    scope: theory
+    status: assumed
+    impact_if_violated: The long-lived dark matter interpretation could conflict with proton stability.
+    can_be_relaxed: unknown
+    source_reference_ids:
+    - '1707.06418'
+    notes: null
+  constraint_specific: []
+  computation_specific: []
+associated_code:
+  has_associated_code: unknown
+  code_summary: The assigned text reports numerical Boltzmann and matter-power calculations but does not
+    describe a public code release.
+  primary_code_role: null
+  repositories: []
+  packages_or_modules: []
+  notebooks: []
+  scripts: []
+  containers_or_environments: []
+  expected_inputs: []
+  expected_outputs: []
+  supported_observable_channels: []
+  caveats:
+  - No external code lookup was performed.
+provenance:
+  model_id: 1707_06418_dfsz_freeze_in_axino_dm_v1
+  model_name: DFSZ freeze-in axino dark matter with bilinear R-parity violation
+  model_family: freeze_in_dark_matter
+  entry_version: 0.1.0
+  status: machine_extracted
+  created_at: '2026-05-31'
+  last_updated: '2026-05-31'
+  sources:
+    primary_papers:
+    - reference_id: '1707.06418'
+      title: 'Light Axinos from Freeze-in: production processes, phase space distributions, and Ly-alpha
+        constraints'
+      authors:
+      - Kyu Jung Bae
+      - Ayuki Kamada
+      - Seng Pei Liew
+      - Keisuke Yanagi
+      year: 2017
+      arxiv_id: '1707.06418'
+      doi: null
+      url: null
+      role: original_model
+      notes: Assigned full text from target_text.sqlite.
+    - arxiv_id: '1707.06418'
+      authors:
+      - Bae, Kyu Jung
+      - Kamada, Ayuki
+      - Pei Liew, Seng
+      - Yanagi, Keisuke
+      doi: 10.1088/1475-7516/2018/01/054
+      notes: Primary paper text resolved locally from completed_dark_matter_target.
+      reference_id: src_1707_06418_primary
+      role: original_model
+      title: 'Light axinos from freeze-in: production processes, phase space distributions, and Ly-α forest
+        constraints'
+      url: https://arxiv.org/abs/1707.06418
+      year: 2018
+    constraint_papers: []
+    external_databases: []
+    review_papers: []
+  extraction:
+    method: llm_assisted
+    extracted_by: codex_dark_matter_worker_batch_0016
+    extractor_name: Codex GPT-5 worker
+    extraction_date: '2026-05-31'
+    confidence: high
+    source_chunks_or_sections:
+    - reference_id: '1707.06418'
+      section: Abstract
+      page: null
+      quote_or_summary: The paper considers freeze-in production of 7 keV axino DM in the SUSY DFSZ model.
+    - reference_id: '1707.06418'
+      section: DFSZ model with bRPV
+      page: null
+      quote_or_summary: The text gives DFSZ and bRPV superpotential terms and derives axino-neutrino mixing.
+    - reference_id: '1707.06418'
+      section: Phase-space distributions and matter power
+      page: null
+      quote_or_summary: Boltzmann equations are solved for decay and scattering production channels and
+        compared with WDM spectra.
+    unresolved_items:
+    - The exact UV completion above the PQ-operator scale is not specified.
+    - Several parameter symbols are degraded by text extraction, so benchmark values are recorded conservatively.
+    - Need target-specific X-ray likelihoods and a modern Lyman-alpha likelihood to convert the paper
+      comparisons into current exclusions.
+    - The 3.5 keV line interpretation remains disputed, so line-motivated parameters should not be treated
+      as established evidence.
+  evidence:
+    particle_content:
+    - reference_id: '1707.06418'
+      note: The axino is identified as the fermion SUSY partner of the QCD axion and as a possible keV
+        warm dark matter candidate.
+      confidence: high
+      section: Introduction
+      page: null
+    symmetries:
+    - reference_id: '1707.06418'
+      note: The model uses PQ symmetry breaking and bilinear lepton-number R-parity violation; the text
+        discusses avoiding proton decay.
+      confidence: high
+      section: DFSZ model with bRPV
+      page: null
+    interactions:
+    - reference_id: '1707.06418'
+      note: DFSZ axino couplings to Higgses and Higgsinos arise effectively from the mu-term; bRPV induces
+        axino-neutrino mixing.
+      confidence: high
+      section: DFSZ model with bRPV
+      page: null
+    production_mechanism:
+    - reference_id: '1707.06418'
+      note: The paper studies freeze-in from Higgs/Higgsino/wino decays and scatterings and solves the
+        Boltzmann equation.
+      confidence: high
+      section: Production and phase-space sections
+      page: null
+    cosmological_history:
+    - reference_id: '1707.06418'
+      note: Saxion coherent oscillation can dominate the Universe and later dilute and cool the axino
+        abundance.
+      confidence: high
+      section: Dilution from saxion decay
+      page: null
+    parameter_ranges:
+    - reference_id: '1707.06418'
+      note: Benchmarks include 7 keV axino mass, v_PQ around 1e10 GeV, sin^2(2theta) around 2e-10, and
+        BM1/BM2 SUSY spectra.
+      confidence: high
+      section: Model and benchmarks
+      page: null
+    validity_domain:
+    - reference_id: '1707.06418'
+      note: The Ly-alpha viability depends on freeze-in phase-space distributions and saxion entropy dilution
+        inferred by comparison to conventional WDM.
+      confidence: high
+      section: Matter power spectra
+      page: null
+    constraints:
+    - confidence: high
+      note: Primary text cites the 5.3 keV conventional WDM Lyman-alpha bound and discusses debated X-ray
+        line constraints.
+      page: null
+      reference_id: src_1707_06418_primary
+      section: primary paper
+    observables:
+    - confidence: high
+      note: Primary text connects 7 keV freeze-in axinos to Lyman-alpha power suppression and a possible
+        3.5 keV X-ray line.
+      page: null
+      reference_id: src_1707_06418_primary
+      section: primary paper
+    routes:
+    - confidence: high
+      note: Primary text derives collision terms, nonthermal phase-space distributions, and transfer-function
+        comparisons for freeze-in axinos.
+      page: null
+      reference_id: src_1707_06418_primary
+      section: methods/results sections
+  review:
+    human_reviewed: false
+    reviewed_by: null
+    review_date: null
+    expert_reviewed: false
+    expert_reviewer: null
+    expert_review_date: null
+    reviewer_notes: []
+    scientific_confidence: high
+    implementation_confidence: medium
+  caveats:
+  - This row does not import external axino or sterile-neutrino constraints beyond what the assigned text
+    states.
+robustness:
+  overall: medium
+  theory_robustness: medium
+  observational_robustness: medium
+  computational_robustness: medium
+  constraint_robustness: medium
+  dominant_uncertainties:
+  - text-extracted benchmark notation ambiguity
+  - saxion decay history
+  - mapping nonthermal spectra to Ly-alpha WDM limits
+  validation_status: expert_judgment_only
+  notes: The paper gives detailed Boltzmann calculations, but this extraction records only model-card
+    level content.
+agent_failure_modes:
+  warnings:
+  - id: do_not_treat_as_thermal_wdm
+    severity: high
+    category: invalid_mapping
+    warning: Do not map the 7 keV axino directly to a conventional thermal WDM particle without using
+      the nonthermal distribution and entropy dilution.
+    mitigation: Use the paper-specific phase-space distribution or matter-power comparison.
+    source_reference_ids:
+    - '1707.06418'
+  - id: spectrum_dependent_freeze_in
+    severity: medium
+    category: assumption_mismatch
+    warning: The dominant freeze-in channel depends on the Higgsino/wino spectrum and reheating temperature.
+    mitigation: Check whether the BM1 or BM2 assumptions apply before reusing the card.
+    source_reference_ids:
+    - '1707.06418'
+observables:
+- caveats:
+  - The Lyman-alpha constraint must be mapped from conventional WDM to the nonthermal axino distribution.
+  - Different production processes can be colder or warmer.
+  channel: lyman_alpha
+  effect_direction: suppression
+  environments:
+  - intergalactic medium
+  - linear matter power spectrum
+  id: lyman_alpha_power_suppression
+  key_quantities:
+  - description: Benchmark mass motivated by the 3.5 keV line interpretation.
+    name: axino mass
+    role: core
+    status: inferred
+    symbol: m_axino
+    unit: keV
+    value: '7'
+  - description: Nonthermal distribution calculated from collision terms for different production channels.
+    name: phase-space distribution
+    role: derived
+    status: inferred
+    symbol: f(q)
+  - description: The primary text cites a 5.3 keV conventional WDM Lyman-alpha bound as a benchmark.
+    name: conventional WDM bound
+    role: astrophysical
+    status: inferred
+    symbol: m_WDM
+    unit: keV
+    value: '5.3'
+  linked_constraints:
+  - lyman_alpha_wdm_recast
+  linked_routes:
+  - axino_phase_space_power_route
+  name: Lyman-alpha suppression from warm freeze-in axino phase space
+  notes: null
+  observability: high
+  predicted_effect: A 7 keV freeze-in axino can have a nonthermal momentum distribution that suppresses
+    small-scale matter power; the amount of suppression depends on whether axinos are produced by two-body
+    decay, three-body decay, or scattering.
+  redshift_range: Lyman-alpha forest redshifts
+  relevance: critical
+  scale_range: linear matter power and half-mode scales
+  source_reference_ids:
+  - src_1707_06418_primary
+  subchannel: linear matter power cutoff
+- caveats:
+  - The primary paper states the dark-matter origin of the line is debated and constraints are not conclusive.
+  - Line morphology and target-to-target consistency require separate observational treatment.
+  channel: indirect_detection
+  effect_direction: spectral_line
+  environments:
+  - Perseus cluster
+  - Andromeda galaxy
+  - galaxy clusters
+  id: xray_3p5kev_decay_line
+  key_quantities:
+  - description: Half the axino mass for two-body radiative decay.
+    name: photon line energy
+    role: derived
+    status: inferred
+    symbol: E_gamma
+    unit: keV
+    value: '3.5'
+  - description: Controls the X-ray line flux.
+    name: axino lifetime
+    role: core
+    status: inferred
+    symbol: tau_axino
+  - description: Set the radiative decay rate in the model context.
+    name: DFSZ/RPV parameters
+    role: core
+    status: inferred
+    symbol: f_a and bilinear RPV mixing
+  linked_constraints:
+  - xray_line_decay_bounds
+  linked_routes:
+  - axino_phase_space_power_route
+  name: 3.5 keV X-ray line from 7 keV axino decay
+  notes: null
+  observability: medium
+  predicted_effect: A 7 keV axino with a rare radiative decay can contribute a monochromatic 3.5 keV X-ray
+    line, while null searches and morphology tests challenge parts of the interpretation.
+  redshift_range: nearby galaxies and clusters; line searches in astrophysical objects
+  relevance: high
+  scale_range: X-ray telescope angular and spectral resolution
+  source_reference_ids:
+  - src_1707_06418_primary
+  subchannel: X-ray spectral line
+constraints:
+- allowed_regions:
+  - Colder nonthermal production histories whose linear power spectrum remains above the benchmark WDM
+    exclusion curve over the relevant k range.
+  applies: recast_required
+  assumptions:
+  - can_be_relaxed: partial
+    description: Conventional WDM bounds are mapped by comparing linear transfer functions rather than
+      by mass alone.
+    id: wdm_transfer_mapping
+    impact_if_violated: A mass-only mapping can overstate or understate the exclusion for nonthermal axinos.
+    scope: structure formation constraint
+    source_reference_ids:
+    - src_1707_06418_primary
+    status: established
+  benchmark_implications:
+  - A 7 keV thermal-like relic is in tension with the cited 5.3 keV conventional WDM bound, but nonthermal
+    freeze-in distributions require direct transfer-function comparison.
+  caveats:
+  - The primary paper compares transfer functions but does not provide a Lyman-alpha likelihood implementation.
+  constrained_parameters:
+  - m_axino
+  - f(q)
+  - T_R
+  - NLSP spectrum
+  - production channel
+  constraint_type: astrophysical
+  data_release: null
+  excluded_regions:
+  - Production channels whose transfer function is warmer than the conventional WDM spectra excluded by
+    Lyman-alpha data.
+  id: lyman_alpha_wdm_recast
+  likelihood_available: 'no'
+  likelihood_reference: null
+  name: Lyman-alpha recast for nonthermal freeze-in axino distributions
+  notes: null
+  observable_channel: Lyman-alpha flux power spectra
+  recasting_needed: 'yes'
+  robustness: high
+  source_reference_ids:
+  - src_1707_06418_primary
+- allowed_regions:
+  - Parameter space where a 7 keV axino can remain compatible with the debated 3.5 keV line interpretation
+    and existing non-detections.
+  applies: parameter_dependent
+  assumptions:
+  - can_be_relaxed: 'yes'
+    description: The 3.5 keV excess is interpreted as radiative decay of a 7 keV dark matter particle.
+    id: decaying_dm_line
+    impact_if_violated: If the excess is astrophysical or instrumental, the line-motivated benchmark loses
+      force.
+    scope: indirect detection interpretation
+    source_reference_ids:
+    - src_1707_06418_primary
+    status: speculative
+  benchmark_implications:
+  - The line interpretation motivates the 7 keV mass, while the warmness constraint controls viable freeze-in
+    histories.
+  caveats:
+  - The primary text explicitly notes that the line interpretation is challenged and not conclusive.
+  constrained_parameters:
+  - m_axino
+  - tau_axino
+  - f_a
+  - RPV mixing
+  constraint_type: indirect_detection
+  data_release: null
+  excluded_regions:
+  - Axino lifetimes or mixings that overproduce X-ray line fluxes in objects where null or conflicting
+    searches apply.
+  id: xray_line_decay_bounds
+  likelihood_available: partial
+  likelihood_reference: null
+  name: X-ray line searches and lifetime bounds for radiative axino decay
+  notes: null
+  observable_channel: X-ray spectral line flux
+  recasting_needed: 'yes'
+  robustness: medium
+  source_reference_ids:
+  - src_1707_06418_primary
+theory_to_observable_routing:
+  routes:
+  - agent_notes: This is one of the more directly observable assignments because the primary paper connects
+      phase space to Lyman-alpha and X-ray line searches.
+    caveats:
+    - A precision Lyman-alpha likelihood and target-specific X-ray likelihood are not bundled.
+    constraint_ids:
+    - lyman_alpha_wdm_recast
+    - xray_line_decay_bounds
+    derived_quantities:
+    - f(q)
+    - linear transfer function
+    - half-mode scale
+    - X-ray line energy
+    - radiative decay lifetime
+    description: Compute freeze-in axino phase-space distributions, evolve linear matter power, and compare
+      with WDM/Lyman-alpha and X-ray-line constraints.
+    forward_model_chain:
+    - inputs:
+      - DFSZ couplings
+      - thermal masses
+      - production channel
+      notes: null
+      outputs:
+      - reduced collision terms
+      step_id: collision_terms
+      step_type: analytic_formula
+      tool_or_code: null
+      validity: freeze-in, negligible backreaction
+    - inputs:
+      - collision terms
+      - thermal history
+      notes: null
+      outputs:
+      - nonthermal f(q)
+      - axino yield
+      step_id: phase_space_distribution
+      step_type: boltzmann_solver
+      tool_or_code: null
+      validity: channel-specific freeze-in assumptions
+    - inputs:
+      - f(q)
+      - cosmological parameters
+      notes: null
+      outputs:
+      - matter transfer function
+      - half-mode scale
+      step_id: linear_power
+      step_type: transfer_function
+      tool_or_code: CLASS-like non-cold relic solver
+      validity: linear theory
+    - inputs:
+      - m_axino
+      - lifetime
+      - dark matter column density
+      notes: null
+      outputs:
+      - 3.5 keV line flux
+      step_id: xray_decay_flux
+      step_type: analytic_formula
+      tool_or_code: null
+      validity: decaying-dark-matter line model
+    id: axino_phase_space_power_route
+    input_parameters:
+    - m_axino
+    - T_R
+    - mu
+    - M_2
+    - f_a
+    - RPV mixing
+    - production process
+    likelihoods: []
+    observable_ids:
+    - lyman_alpha_power_suppression
+    - xray_3p5kev_decay_line
+    required_code_resources:
+    - Freeze-in collision-term solver
+    - CLASS or equivalent nonthermal transfer-function calculation
+    - X-ray line flux recast tools
+    route_status: planned
+    source_model_features:
+    - DFSZ axino
+    - freeze-in from Higgsino/wino decays and scatterings
+    - bilinear R-parity violation enabling radiative decay
+    - 7 keV line-motivated mass
+    validation_tests:
+    - Recover the paper transfer-function comparison for 2-body, 3-body, and scattering production benchmarks.
+    - Verify E_gamma equals m_axino/2 for the radiative line benchmark.

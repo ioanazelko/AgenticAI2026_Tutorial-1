@@ -1,0 +1,303 @@
+_source:
+  shard: arXiv_src_1103_005_wds.tar
+  paper_id: '1103_4394'
+  source_member: 1103_4394.json
+schema_version: model_only_v0
+model_id: 1103_4394_gravitino_freeze_in_v1
+identity:
+  name: Gravitino freeze-in dark matter
+  family: freeze_in_dark_matter
+  aliases:
+  - gravitino FIMP dark matter
+  short_description: A supersymmetric dark matter scenario in which gravitinos are produced by freeze-in
+    from decays of thermalized superpartners.
+  historical_origin_or_motivation: Introduced as an alternative to thermal-scattering and superWIMP origins
+    of gravitino dark matter that avoids strong reheating-temperature dependence.
+  status: speculative
+  model_kind: simplified_model
+theory:
+  theory_level: simplified_model
+  parent_frameworks:
+  - supersymmetry
+  - supergravity
+  - freeze-in dark matter
+  lagrangian_available: partial
+  renormalizable: 'no'
+  eft_cutoff: null
+  embedded_in_larger_framework: 'yes'
+  notes: The extraction uses the paper's gravitino production setup rather than a fully specified supersymmetric
+    spectrum.
+particle_content:
+  dark_matter_candidate:
+    name: gravitino
+    spin: 3/2
+    statistics: fermion
+    elementary_or_composite: elementary
+    number_of_components: single_component
+  additional_dark_sector_particles:
+  - next-to-lightest superpartner
+  - thermalized superpartners
+  mediators:
+  - goldstino/gravitino interactions
+  dark_radiation_species: []
+  excited_or_degenerate_states: []
+  long_lived_particles:
+  - NLSP can be long-lived on collider time scales
+  unstable_parent_particles:
+  - superpartners decaying to gravitinos
+  standard_model_extension: substantial
+symmetries:
+  stabilizing_mechanism: R-parity stabilizes the gravitino LSP in the paper setup.
+  symmetries:
+  - name: R-parity
+    type: discrete
+    exact_or_approximate: exact
+  topological_defects_possible: unknown
+interactions:
+  portals:
+  - gravitational
+  - other
+  standard_model_targets:
+  - superpartners in the thermal bath
+  dark_sector_couplings:
+  - gravitino/goldstino coupling set by soft masses and m_3/2
+  mediator_types:
+  - supergravity-suppressed goldstino coupling
+  interaction_operators:
+  - superpartner decay to gravitino plus Standard Model partner
+  scattering:
+    elastic: not_applicable
+    inelastic: not_applicable
+    momentum_dependence: unknown
+    velocity_dependence: unknown
+    spin_dependence: unknown
+  annihilation_channels: []
+  decay_channels: []
+  self_scattering_channels: []
+  cp_structure: unknown
+  flavor_structure: set by superpartner spectrum
+  tree_or_loop_level: unknown
+parameters:
+  core:
+  - name: gravitino mass
+    symbol: m_3/2
+    description: Mass of the gravitino LSP.
+    range: keV to 1 GeV highlighted in the paper
+    unit: GeV
+    role: core
+    status: inferred
+  - name: reheating temperature
+    symbol: T_R
+    description: Temperature after inflation; freeze-in abundance is largely independent of it once relevant
+      parents are populated.
+    unit: GeV
+    role: core
+    status: inferred
+  - name: superpartner masses
+    symbol: m_i
+    description: Masses of thermal parent superpartners whose decays source freeze-in.
+    unit: GeV
+    role: core
+    status: inferred
+  - name: superpartner partial widths to gravitino
+    symbol: Gamma_i
+    description: Partial decay widths entering the freeze-in yield.
+    unit: GeV
+    role: core
+    status: inferred
+  - name: NLSP lifetime
+    symbol: tau_NLSP
+    description: Lifetime fixed by the spectrum if freeze-in accounts for the observed abundance.
+    unit: s
+    role: core
+    status: inferred
+  nuisance: []
+  derived:
+  - name: gravitino yield from decays
+    symbol: Y_3/2^decay
+    description: Freeze-in yield from superpartner decays in equilibrium.
+    role: derived
+    status: inferred
+production:
+  mechanisms:
+  - freeze-in from decays of thermal-equilibrium superpartners
+  thermal_equilibrium_with_standard_model: 'no'
+  thermal_equilibrium_with_hidden_sector: not_applicable
+  abundance_set_by:
+  - superpartner spectrum
+  - gravitino mass
+  - partial decay widths to gravitino
+  depends_on_reheating_temperature: 'no'
+  can_produce_all_dark_matter: parameter_dependent
+  nonthermal_momentum_distribution: 'yes'
+  notes: The paper emphasizes that freeze-in can dominate over thermal scattering for broad spectra, especially
+    with heavy scalars.
+relic_density:
+  full_or_subcomponent: full_dark_matter
+  target_fraction: null
+  calculation_type: nonthermal
+  key_dependencies:
+  - m_3/2
+  - superpartner masses
+  - NLSP lifetime
+  - freeze-in decay yield
+  requires_entropy_dilution: unknown
+  overclosure_risk: parameter_dependent
+  underproduction_risk: parameter_dependent
+  tuning_assessment: unknown
+cosmological_history:
+  standard_history_assumed: true
+  nonstandard_features:
+  - freeze-in abundance largely independent of T_R
+  - BBN relevance from late superpartner decays
+  dark_sector_temperature: null
+  delta_neff: null
+  kinetic_decoupling: null
+  chemical_decoupling: null
+  phase_transitions: []
+  topological_defects: []
+  isocurvature_perturbations: unknown
+  bbn_relevance: high
+  cmb_relevance: unknown
+phase_space:
+  distribution_type: decay_produced
+  distribution_function_available: 'no'
+  notes: Produced gravitinos are initially relativistic; the paper states they become cold for sufficiently
+    large m_3/2 and warm for very light masses.
+structure_formation:
+  linear:
+    behaves_like_cdm: approximately
+    transfer_function_shape: unknown
+    small_scale_power_effect: unknown
+  nonlinear:
+    halo_mass_function_effect: unknown
+    subhalo_mass_function_effect: unknown
+    simulation_calibrated: unknown
+validity_domain:
+- id: freeze_in_dominance
+  applies_to: production
+  condition: Model card applies when the gravitino abundance is dominated by decays of equilibrium superpartners
+    rather than superWIMP decays or thermal scattering.
+  status: assumed
+  extrapolation_risk: high
+  caveats: []
+assumptions:
+  global:
+  - id: r_parity_lsp
+    description: The gravitino is the R-parity-stabilized lightest superpartner.
+    scope: theory
+    status: assumed
+    can_be_relaxed: 'yes'
+    impact_if_violated: Without this, the gravitino need not be stable dark matter.
+  - id: superwimp_negligible
+    description: SuperWIMP contributions are neglected in the paper's freeze-in-focused treatment.
+    scope: production
+    status: assumed
+    can_be_relaxed: 'yes'
+    impact_if_violated: A sizable superWIMP component would change the relic-density accounting.
+associated_code:
+  has_associated_code: unknown
+  code_summary: No model-specific public code is identified in the extracted text.
+provenance:
+  model_id: 1103_4394_gravitino_freeze_in_v1
+  entry_version: 0.1.0
+  status: machine_extracted
+  created_at: '2026-05-31'
+  last_updated: '2026-05-31'
+  sources:
+    primary_papers:
+    - reference_id: '1103_4394'
+      title: Gravitino Freeze-In
+      authors:
+      - Clifford Cheung
+      - Gilly Elor
+      - Lawrence Hall
+      year: 2011
+      arxiv_id: '1103.4394'
+      doi: null
+      url: null
+      role: original_model
+      notes: null
+  extraction:
+    method: llm_assisted
+    extracted_by: Codex batch-0008
+    extractor_name: gpt-5-codex
+    extraction_date: '2026-05-31'
+    confidence: high
+    source_chunks_or_sections: []
+    unresolved_items: []
+  evidence:
+    particle_content:
+    - reference_id: '1103_4394'
+      note: The model uses the gravitino as the lightest superpartner and dark matter candidate, with
+        superpartners decaying to gravitinos.
+      confidence: medium
+      section: null
+      page: null
+    symmetries:
+    - reference_id: '1103_4394'
+      note: The paper describes the gravitino as an R-parity stabilized dark matter candidate.
+      confidence: medium
+      section: null
+      page: null
+    interactions:
+    - reference_id: '1103_4394'
+      note: The gravitino/goldstino couplings to superpartners are fixed by soft masses and the gravitino
+        mass; decays of thermal superpartners source the abundance.
+      confidence: medium
+      section: null
+      page: null
+    production_mechanism:
+    - reference_id: '1103_4394'
+      note: Relic gravitinos originate from decays of superpartners still in thermal equilibrium, i.e.
+        freeze-in, and this contribution can dominate over thermal scattering.
+      confidence: medium
+      section: null
+      page: null
+    cosmological_history:
+    - reference_id: '1103_4394'
+      note: The freeze-in abundance is largely independent of reheating temperature and can make cold
+        dark matter, while very light gravitinos can be warm.
+      confidence: medium
+      section: null
+      page: null
+    parameter_ranges:
+    - reference_id: '1103_4394'
+      note: The text highlights keV to 1 GeV gravitino masses, superpartner spectra, and an NLSP lifetime
+        fixed if freeze-in accounts for the dark matter.
+      confidence: medium
+      section: null
+      page: null
+    validity_domain:
+    - reference_id: '1103_4394'
+      note: The paper neglects superWIMP contributions and focuses on freeze-in and thermal-scattering
+        production channels.
+      confidence: medium
+      section: null
+      page: null
+  review:
+    human_reviewed: false
+    reviewed_by: null
+    review_date: null
+    expert_reviewed: false
+    expert_reviewer: null
+    expert_review_date: null
+    reviewer_notes: []
+    scientific_confidence: high
+    implementation_confidence: medium
+robustness:
+  overall: medium
+  theory_robustness: medium
+  observational_robustness: unknown
+  computational_robustness: unknown
+  dominant_uncertainties:
+  - Dependence on the unmeasured superpartner spectrum and NLSP lifetime.
+  validation_status: expert_judgment_only
+agent_failure_modes:
+  warnings:
+  - id: production_channel_confusion
+    severity: high
+    category: assumption_mismatch
+    warning: Do not conflate freeze-in gravitino production with thermal scattering or superWIMP production;
+      the paper separates these channels.
+    mitigation: Track which yield component is being used.
