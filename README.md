@@ -16,7 +16,7 @@ is bundled in `data/registry_snapshot/`.
 ## Setup
 
 ```bash
-git clone [tutorial-repo-url] && cd tutorial1-tool-using-agent
+git clone https://github.com/ioanazelko/tutorial1-tool-using-agent && cd tutorial1-tool-using-agent
 pip install -r requirements.txt
 cp .env.example .env        # your key, and REGISTRY_DIR if you clone the full registry
 python -m pytest            # offline, a few seconds
