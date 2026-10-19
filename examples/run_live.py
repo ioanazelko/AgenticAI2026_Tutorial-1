@@ -60,7 +60,7 @@ def main() -> None:
     args = parser.parse_args()
     key = "OPENROUTER_API_KEY" if args.provider == "openrouter" else "ANTHROPIC_API_KEY"
     if not os.environ.get(key):
-        parser.exit(1, f"No {key} found. Put OPENROUTER_API_KEY=sk-or-v1-... (your real key) "
+        parser.exit(1, f"No API key found ({key} is empty). Put OPENROUTER_API_KEY=sk-or-v1-... (your real key) "
                        "in .env, or export it.\n")
 
     from agentbook import ToolRegistry, Tracer, load_trace, run_agent
