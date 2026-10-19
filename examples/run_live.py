@@ -32,7 +32,9 @@ def load_env(path: Path = ROOT / ".env") -> None:
         line = line.strip()
         if line and not line.startswith("#") and "=" in line:
             key, value = line.split("=", 1)
-            os.environ.setdefault(key.strip(), value.strip().strip("\"'"))
+            value = value.strip().strip("\"'")
+            if value and not value.endswith("..."):  # skip the placeholders from .env.example
+                os.environ.setdefault(key.strip(), value)
 
 
 def make_model(provider: str, name: str | None):
@@ -56,6 +58,9 @@ def main() -> None:
     parser.add_argument("--max-steps", type=int, default=15)
     parser.add_argument("--budget", type=int, default=200_000, help="stop after this many tokens")
     args = parser.parse_args()
+    key = "OPENROUTER_API_KEY" if args.provider == "openrouter" else "ANTHROPIC_API_KEY"
+    if not os.environ.get(key):
+        parser.exit(1, f"No {key} found. Put your key in .env (see .env.example) or export it.\n")
 
     from agentbook import ToolRegistry, Tracer, load_trace, run_agent
     from agentbook.guardrails import check_cited_ids, tool_outputs_from_trace
