@@ -52,11 +52,11 @@ def test_loop_detection():
 
 
 def test_ground_truth_files_match_code():
-    stored = json.loads((DATA / "ground_truth_lyman_alpha_snapshot.json").read_text())
+    stored = json.loads((DATA / "ground_truth_lyman_alpha_snapshot.json").read_text(encoding="utf-8"))
     fresh = lyman_alpha_ground_truth(REG)
     for key in ("n_blocked", "top_capability", "blocked_model_ids", "themes"):
         assert stored[key] == fresh[key]
-    full = json.loads((DATA / "ground_truth_lyman_alpha.json").read_text())
+    full = json.loads((DATA / "ground_truth_lyman_alpha.json").read_text(encoding="utf-8"))
     assert full["n_cards"] == 6145 and full["n_blocked"] >= fresh["n_blocked"]
 
 

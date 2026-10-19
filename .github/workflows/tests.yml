@@ -1,0 +1,35 @@
+name: tests
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  test:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+        python: ["3.10", "3.13"]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Install, exactly as in the README
+        run: pip install -r requirements.txt
+      - name: Tests
+        run: python -m pytest -q
+      - name: Examples
+        run: |
+          python -m examples.minimal_loop
+          python -m examples.lyman_alpha_plan
+          python -m examples.failure_trace
+      - name: run_live without a key gives a clear message
+        shell: bash
+        run: |
+          cp .env.example .env
+          ! python -m examples.run_live > out.txt 2>&1
+          grep "No API key found" out.txt

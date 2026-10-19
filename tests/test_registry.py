@@ -23,7 +23,7 @@ def test_index(tmp_path):
                     root / "registry" / "models" / "cards" / "sterile_neutrino_dark_matter")
     reg = Registry(root, cache_dir=tmp_path / "cache")
     path = root / reg.index[CLEAN]["path"]
-    path.write_text(path.read_text().replace("name:", "name: EDITED", 1))
+    path.write_text(path.read_text(encoding="utf-8").replace("name:", "name: EDITED", 1), encoding="utf-8")
     st = path.stat()
     os.utime(path, ns=(st.st_atime_ns, st.st_mtime_ns + 10**9))
     assert Registry(root, cache_dir=tmp_path / "cache").index[CLEAN]["name"].startswith("EDITED")

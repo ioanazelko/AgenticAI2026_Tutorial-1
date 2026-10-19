@@ -266,7 +266,7 @@ class Registry:
 
     def observable_channels(self) -> list[str]:
         """The channel enum from observable.schema.yaml."""
-        schema = yaml.safe_load((self.schemas_dir / "observable.schema.yaml").read_text())
+        schema = yaml.safe_load((self.schemas_dir / "observable.schema.yaml").read_text(encoding="utf-8"))
         return _find_enum(schema, "channel")
 
     def validate_card(self, yaml_text: str, section: str | None = None) -> dict:
@@ -299,7 +299,7 @@ class Registry:
 
     def section_names(self) -> list[str]:
         """The 31 top-level sections defined by bsm_model.schema.yaml."""
-        schema = yaml.safe_load((self.schemas_dir / "bsm_model.schema.yaml").read_text())
+        schema = yaml.safe_load((self.schemas_dir / "bsm_model.schema.yaml").read_text(encoding="utf-8"))
         return list(schema["properties"])
 
 

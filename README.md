@@ -1,5 +1,7 @@
 # AgenticAI2026_Tutorial-1: Building a Tool-Using Agent
 
+[![tests](https://github.com/ioanazelko/AgenticAI2026_Tutorial-1/actions/workflows/tests.yml/badge.svg)](https://github.com/ioanazelko/AgenticAI2026_Tutorial-1/actions/workflows/tests.yml)
+
 Code for Tutorial 1 of the [Fall School on Agentic AI in Science 2026](https://ai-for-science.org/).
 
 A small, readable agent harness: a model adapter, a tool registry, a 24-line
@@ -22,7 +24,8 @@ cp .env.example .env        # your key, and REGISTRY_DIR if you clone the full r
 python -m pytest            # offline, a few seconds
 ```
 
-Python 3.10 or newer.
+Python 3.10 or newer, on Linux, macOS or Windows. On Windows, use
+`copy .env.example .env` in Command Prompt (PowerShell accepts `cp`).
 
 For the full registry (about 200 MB):
 
@@ -30,7 +33,8 @@ For the full registry (about 200 MB):
 git clone --depth 1 https://github.com/ioanazelko/darkmatterfm-registry ~/darkmatterfm-registry
 ```
 
-and set `REGISTRY_DIR=~/darkmatterfm-registry` in `.env`. The first tool call
+and set `REGISTRY_DIR=~/darkmatterfm-registry` in `.env`. On Windows, if git reports
+"Filename too long", run `git config --global core.longpaths true` and clone again. The first tool call
 builds an index of all 6,145 cards, which takes about 30 seconds; later runs
 read it from `.cache/`.
 
