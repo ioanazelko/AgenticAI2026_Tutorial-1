@@ -36,6 +36,10 @@ read it from `.cache/`.
 
 ## Run it
 
+New to agent loops? Read [HOW_THE_LOOP_WORKS.md](HOW_THE_LOOP_WORKS.md)
+first: it walks through `run_agent` line by line, using `minimal_loop` as the
+example.
+
 | Command | What it shows | Talk section |
 |---|---|---|
 | `python -m examples.minimal_loop` | The loop on one question, the message list after each step, and the trace | 2. The minimal loop |
@@ -75,7 +79,8 @@ tests/               pytest, offline
 
 ## Exercises
 
-See [EXERCISES.md](EXERCISES.md).
+See [EXERCISES.md](EXERCISES.md). For how the loop works, see
+[HOW_THE_LOOP_WORKS.md](HOW_THE_LOOP_WORKS.md).
 
 ## Two ways to run an agent
 
