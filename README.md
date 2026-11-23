@@ -96,5 +96,6 @@ the loop, the prompts and the trace format. See the talk's section 8.
 ## Licence
 
 The code is under the [MIT licence](LICENSE). The registry snapshot in
-`data/registry_snapshot/` comes from DarkMatterFM-Registry and keeps that
-repository's terms; see `data/registry_snapshot/REGISTRY_COPYRIGHT.md`.
+`data/registry_snapshot/` comes from DarkMatterFM-Registry: its cards, schemas
+and data are under CC BY 4.0 and its `validate_schema.py` under the MIT
+licence; see `data/registry_snapshot/SNAPSHOT.md`.

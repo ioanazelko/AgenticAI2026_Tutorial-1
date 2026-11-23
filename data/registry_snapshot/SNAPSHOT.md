@@ -14,8 +14,11 @@ registry and set `REGISTRY_DIR` to it.
 - In `capability_gap_roadmap.jsonl`, members are filtered to the snapshot and
   `n_gaps`/`n_models` recomputed; `weight` and the other aggregates are
   full-registry values.
-- `REGISTRY_README.md` and `REGISTRY_COPYRIGHT.md` are the registry's own
-  README and copyright notice; the copyright terms apply to this subset.
+- `REGISTRY_README.md` is the registry's README at the source commit.
+  `REGISTRY_LICENSE` and `REGISTRY_LICENSE-DATA.md` are the registry's license
+  files from commit `070cf6c`, and they apply to this subset:
+  `scripts/validate_schema.py` is under the MIT License, everything else
+  under CC BY 4.0. Credit the registry as `REGISTRY_LICENSE-DATA.md` describes.
 
 Card content is machine-extracted from paper full texts and is not
 expert-verified.
